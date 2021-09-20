@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Igris CLI &#8212; Igris Shell  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+    <script>
+    window.addEventListener('load', () => {
+        Array.from(document.getElementsByClassName('zoomable-callgraph')).forEach(function(element) {
+            svgPanZoom(element);
+        });
+    })
+    </script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="smbmodule" href="smbmodule.html" />
+    <link rel="prev" title="Igris Shell Methods and Classes" href="modules.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-igris">
+<span id="igris-cli"></span><h1>Igris CLI<a class="headerlink" href="#module-igris" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="igris.Igris_Shell">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">igris.</span></span><span class="sig-name descname"><span class="pre">Igris_Shell</span></span><a class="headerlink" href="#igris.Igris_Shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">cmd2.cmd2.Cmd</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="igris.Igris_Shell.banner">
+<span class="sig-name descname"><span class="pre">banner</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#igris.Igris_Shell.banner" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function to prepare the banner ]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="igris.Igris_Shell.check_settable_variables_value">
+<span class="sig-name descname"><span class="pre">check_settable_variables_value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">necessary_settable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#igris.Igris_Shell.check_settable_variables_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function that checks if the settable variables value don’t have an empty value ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>necessary_settable</strong> (<em>dict</em><em>[</em><em>str</em><em>]</em>) – [ Dictionary with all settable variables used by the calling funcition ]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[ Returns if all variables are correct ]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="igris.Igris_Shell.color_text">
+<span class="sig-name descname"><span class="pre">color_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#igris.Igris_Shell.color_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function that will color the banner ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – [ Text to be colored ]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[ Colored text ]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="igris.Igris_Shell.complete_cd">
+<span class="sig-name descname"><span class="pre">complete_cd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">begidx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endidx</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#igris.Igris_Shell.complete_cd" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Allow  user auto-complete when using cd ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – [ The string prefix we are attempting to match]</p></li>
+<li><p><strong>line</strong> (<em>str</em>) – [ the current input line with leading whitespace removed]</p></li>
+<li><p><strong>begidx</strong> (<em>int</em>) – [ The beginning index of the prefix text]</p></li>
+<li><p><strong>endidx</strong> (<em>int</em>) – [ the ending index of the prefix text]</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns</dt><dd><p>List[str] : [ A list of possible tab completions ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="igris.Igris_Shell.do_cd">
+<span class="sig-name descname"><span class="pre">do_cd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#igris.Igris_Shell.do_cd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the directoy.
+Usage:</p>
+<blockquote>
+<div><p>cd &lt;new_dir&gt;</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="igris.Igris_Shell.logger">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">logger</span></span><a class="headerlink" href="#igris.Igris_Shell.logger" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="igris.Igris_Shell.postcmd">
+<span class="sig-name descname"><span class="pre">postcmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">line</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#igris.Igris_Shell.postcmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Hook method executed just after a command dispatch is finished ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stop</strong> (<em>bool</em>) – [return True to request the command loop terminate]</p></li>
+<li><p><strong>line</strong> (<em>str</em>) – [ input of the user ]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[ True if the user use the command ‘quit’ ]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="igris.Igris_Shell.scan_thread">
+<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">scan_thread</span></span><a class="headerlink" href="#igris.Igris_Shell.scan_thread" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="igris.Igris_Shell.set_up_loggers">
+<span class="sig-name descname"><span class="pre">set_up_loggers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#igris.Igris_Shell.set_up_loggers" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function to prepare the logger ]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="igris.Igris_Shell.show_settable_variables_necessary">
+<span class="sig-name descname"><span class="pre">show_settable_variables_necessary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">necessary_settable_variables</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#igris.Igris_Shell.show_settable_variables_necessary" title="Permalink to this definition">¶</a></dt>
+<dd><p>[  Show all settable variables that will be needed in the calling command ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>necessary_settable_variables</strong> (<em>dict</em><em>[</em><em>str</em><em>]</em>) – [  Dictionary with all settable variables used by the calling funcition ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="igris.Igris_Shell.smbmodule_postloop">
+<span class="sig-name descname"><span class="pre">smbmodule_postloop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#igris.Igris_Shell.smbmodule_postloop" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function that will be performe when the user exits the shell]</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Igris Shell</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Igris Shell Methods and Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Igris CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="smbmodule.html">smbmodule</a></li>
+<li class="toctree-l2"><a class="reference internal" href="psexecinfo.html">psexecinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaninfo.html">scaninfo</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Commands:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Commands/scan.html">Scan command</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Igris Shell Methods and Classes</a><ul>
+      <li>Previous: <a href="modules.html" title="previous chapter">Igris Shell Methods and Classes</a></li>
+      <li>Next: <a href="smbmodule.html" title="next chapter">smbmodule</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Rubén Santos García.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/Igris_docs/igris.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

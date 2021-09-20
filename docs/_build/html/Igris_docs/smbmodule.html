@@ -1,0 +1,743 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>smbmodule &#8212; Igris Shell  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+    <script>
+    window.addEventListener('load', () => {
+        Array.from(document.getElementsByClassName('zoomable-callgraph')).forEach(function(element) {
+            svgPanZoom(element);
+        });
+    })
+    </script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="psexecinfo" href="psexecinfo.html" />
+    <link rel="prev" title="Igris CLI" href="igris.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-smbmodule">
+<span id="smbmodule"></span><h1>smbmodule<a class="headerlink" href="#module-smbmodule" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">smbmodule.</span></span><span class="sig-name descname"><span class="pre">SMBCommandSet</span></span><a class="headerlink" href="#smbmodule.SMBCommandSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">cmd2.command_definition.CommandSet</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.argParser">
+<span class="sig-name descname"><span class="pre">argParser</span></span><em class="property"> <span class="pre">=</span> <span class="pre">Cmd2ArgumentParser(prog='psexec',</span> <span class="pre">usage=None,</span> <span class="pre">description='Tool</span> <span class="pre">to</span> <span class="pre">execute</span> <span class="pre">commands</span> <span class="pre">remotely',</span> <span class="pre">formatter_class=&lt;class</span> <span class="pre">'cmd2.argparse_custom.Cmd2HelpFormatter'&gt;,</span> <span class="pre">conflict_handler='error',</span> <span class="pre">add_help=True)</span></em><a class="headerlink" href="#smbmodule.SMBCommandSet.argParser" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.asynchronous_way">
+<span class="sig-name descname"><span class="pre">asynchronous_way</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.asynchronous_way" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function that will start the asynchronous scan]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.cd_case_previous_directory">
+<span class="sig-name descname"><span class="pre">cd_case_previous_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">separate_dir</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.cd_case_previous_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to prepare everithing for ‘cd ..’]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [ Object that containing information of the current session psexec ]</p></li>
+<li><p><strong>separate_dir</strong> (<em>str</em>) – [ Current directory in a list ]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.change_directory">
+<span class="sig-name descname"><span class="pre">change_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.change_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function that performs directory change ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [Object that containing information of the current session psexec]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[Returns if the directory  change was successful ]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.check_connectivity_of_scan">
+<span class="sig-name descname"><span class="pre">check_connectivity_of_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.UserInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ipaddress.IPv4Address</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">smb.gatherinfo.scaninfo.TargetInfo</span><span class="p"><span class="pre">,</span> </span><span class="pre">impacket.smbconnection.SMBConnection</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.check_connectivity_of_scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to check if the connectivity to a specific remote host is possible]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.UserInfo" title="scaninfo.UserInfo"><em>UserInfo</em></a>) – [Argument that contains values needed for
+login]</p></li>
+<li><p><strong>subnet</strong> (<em>str</em>) – [Target subnet to do the scan ]</p></li>
+<li><p><strong>ip</strong> (<em>IPv4Address</em>) – [Ip of the current machine that the scan is analizing]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>[ Returns the statuts of the connection  with</dt><dd><p>information collected from the target]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple [bool, <a class="reference internal" href="scaninfo.html#scaninfo.TargetInfo" title="scaninfo.TargetInfo">TargetInfo</a>, SMBConnection]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.check_psexec_possibility">
+<span class="sig-name descname"><span class="pre">check_psexec_possibility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smbclient</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">impacket.smbconnection.SMBConnection</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.check_psexec_possibility" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>[Function that checks ifa user could do psexec listing the contents</dt><dd><p>of the admin folder]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>smbclient</strong> (<em>SMBConnection</em>) – [Object with the current smb connection]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[Returns whether the user can do psexec ]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.check_scan_login_possibility">
+<span class="sig-name descname"><span class="pre">check_scan_login_possibility</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.UserInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smbclient</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">impacket.smbconnection.SMBConnection</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.check_scan_login_possibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to know if a user can log in]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.UserInfo" title="scaninfo.UserInfo"><em>UserInfo</em></a>) – [User info needed to login to the remote
+machine(user,password)]</p></li>
+<li><p><strong>smbclient</strong> (<em>SMBConnection</em>) – [Argument to manipulate the smb
+connection, in this case is use
+to perform the login]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[variable to notify login status]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.clean_paexec_files">
+<span class="sig-name descname"><span class="pre">clean_paexec_files</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smbmodule.SMBCommandSet.clean_paexec_files" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.close_connection">
+<span class="sig-name descname"><span class="pre">close_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pypsexec.client.Client</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.close_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function to close psexec connection ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>conn</strong> (<em>Client</em>) – [ Object containing the connection ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.cmd2_default_help_category">
+<span class="sig-name descname"><span class="pre">cmd2_default_help_category</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'SMB</span> <span class="pre">recon'</span></em><a class="headerlink" href="#smbmodule.SMBCommandSet.cmd2_default_help_category" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.cmd_powershell_commands">
+<span class="sig-name descname"><span class="pre">cmd_powershell_commands</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.Namespace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.cmd_powershell_commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to launch commands using cmd.exe or powershell.exe]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>argparser.Namespace</em>) – [ Arguments passed to the do_psexec command]</p></li>
+<li><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [ Info of the current connection ]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.configure_scan_info">
+<span class="sig-name descname"><span class="pre">configure_scan_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.configure_scan_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function that will configure the dictionary scan_info to do the scan]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>[Returns the existence of a previous analysis of the</dt><dd><p>current subnet or if the user want to repeat the scan]</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.configure_target_info_of_scan">
+<span class="sig-name descname"><span class="pre">configure_target_info_of_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.TargetInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">smbclient</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">impacket.smbconnection.SMBConnection</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.configure_target_info_of_scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to set different values of smbclient into TargetInfo object]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.TargetInfo" title="scaninfo.TargetInfo"><em>TargetInfo</em></a>) – [Argument to set information contained
+in smbclient]</p></li>
+<li><p><strong>smbclient</strong> (<em>SMBConnection</em>) – [Argument that contains all information about
+the current smb connection]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.directory_operations">
+<span class="sig-name descname"><span class="pre">directory_operations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.directory_operations" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Procedure to make a directory change ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [ Object that contains everything necessary to perform commands ]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[ Returns if cd has been used ]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.do_psexec">
+<span class="sig-name descname"><span class="pre">do_psexec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.do_psexec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tool to execute commands remotely</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.do_scan">
+<span class="sig-name descname"><span class="pre">do_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.do_scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tool to know if there is a possibility to perform psexec.
+Without arguments this tool will scan the Subnet</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.exec_particular_command">
+<span class="sig-name descname"><span class="pre">exec_particular_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pypsexec.client.Client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.exec_particular_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function to run a command like ‘whoami.exe’ outside of cmd.exe or powershell.exe ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conn</strong> (<em>Client</em>) – [ Object to run the command on the remote machine ]</p></li>
+<li><p><strong>args</strong> (<em>argparse.Namespace</em>) – [Arguments passed to the psexec command]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.exec_shell_command">
+<span class="sig-name descname"><span class="pre">exec_shell_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.exec_shell_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to run a command within the cmd.exe or powershell.exe context]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [ Object that containing information of the current session psexec ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.is_user_in_admin_group_asynchronous">
+<span class="sig-name descname"><span class="pre">is_user_in_admin_group_asynchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.UserInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ipaddress.IPv4Address</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.is_user_in_admin_group_asynchronous" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>[Function that is used to know if the user is an administrator and</dt><dd><p>is currently able to psexec(asynchronous way)]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.UserInfo" title="scaninfo.UserInfo"><em>UserInfo</em></a>) – [User info needed to know user privileges]</p></li>
+<li><p><strong>subnet</strong> (<em>str</em>) – [Target subnet to scan]</p></li>
+<li><p><strong>ip</strong> (<em>IPv4Address</em>) – [Ip target of the current remote host]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.is_user_in_admin_group_synchronous">
+<span class="sig-name descname"><span class="pre">is_user_in_admin_group_synchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.UserInfo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ipaddress.IPv4Address</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">smb.gatherinfo.scaninfo.TargetInfo</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.is_user_in_admin_group_synchronous" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>[Function that is used to know if the user is an administrator and</dt><dd><p>is currently able to psexec(synchronous way)]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.UserInfo" title="scaninfo.UserInfo"><em>UserInfo</em></a>) – [User info needed to know user privileges]</p></li>
+<li><p><strong>subnet</strong> (<em>str</em>) – [Target subnet to scan]</p></li>
+<li><p><strong>ip</strong> (<em>IPv4Address</em>) – [Ip target of the current remote host]</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[ Returns the target information ]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="scaninfo.html#scaninfo.TargetInfo" title="scaninfo.TargetInfo">TargetInfo</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.manage_actual_directory">
+<span class="sig-name descname"><span class="pre">manage_actual_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">success_changing_directory</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.manage_actual_directory" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>[ Set the attributes  of psexec_info to change directory based on the success</dt><dd><p>of the ‘change_directory’ function]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [Object that containing information of the current session psexec]</p></li>
+<li><p><strong>success_changing_directory</strong> (<em>bool</em>) – [ Argument to know if the directory change has been made successfully]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.prepare_service">
+<span class="sig-name descname"><span class="pre">prepare_service</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pypsexec.client.Client</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.prepare_service" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Set up the psexec service on the remote machine]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>conn</strong> (<em>Client</em>) – [ Object with the connection to the remote machine ]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[ Returns if the service has been created successfully ]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.process_to_perform_psexec">
+<span class="sig-name descname"><span class="pre">process_to_perform_psexec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.process_to_perform_psexec" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function that connect, create the service and execute commands on the remote machine ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<em>argparse.Namespace</em>) – [ Arguments passed to the psexec command ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.psexec_execution_options">
+<span class="sig-name descname"><span class="pre">psexec_execution_options</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.Namespace</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pypsexec.client.Client</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.psexec_execution_options" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function that checks what type of command the user is going to perform ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>args</strong> (<em>argparse.Namespace</em>) – [ Arguments passed to the psexec command ]</p></li>
+<li><p><strong>conn</strong> (<em>Client</em>) – [ Object with the client options to execute commands on the remote machine ]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.select_command_line">
+<span class="sig-name descname"><span class="pre">select_command_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.select_command_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to generate command line]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [Object that containing information of the current session psexec]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[Returns the command line based on whether cmd.exe or powershell.exe]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.set_up_directory">
+<span class="sig-name descname"><span class="pre">set_up_directory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.set_up_directory" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function to set the new directory ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [ Object that containing information of the current session psexec ]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[ Returns if the cd command has been used]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.set_up_executing_in_shell">
+<span class="sig-name descname"><span class="pre">set_up_executing_in_shell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.set_up_executing_in_shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Configure everything based on the comand entered by the user]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [ Object that contains everything necessary to perform commands ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.set_up_scan_actions_asynchronous">
+<span class="sig-name descname"><span class="pre">set_up_scan_actions_asynchronous</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.set_up_scan_actions_asynchronous" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Prepare everything to scan asynchronously  using threads]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.set_up_scan_actions_synchronous">
+<span class="sig-name descname"><span class="pre">set_up_scan_actions_synchronous</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.set_up_scan_actions_synchronous" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Prepare everything to scan synchronously  using threads]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.set_up_scan_results_asynchronous">
+<span class="sig-name descname"><span class="pre">set_up_scan_results_asynchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smbclient</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">impacket.smbconnection.SMBConnection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.TargetInfo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.set_up_scan_results_asynchronous" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>[Prepare everything to later show the saved information of the connection</dt><dd><p>asynchronously]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>smbclient</strong> (<em>SMBConnection</em>) – [Object with the current smb connection]</p></li>
+<li><p><strong>target_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.TargetInfo" title="scaninfo.TargetInfo"><em>TargetInfo</em></a>) – [Object that contains info of the current target]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.set_up_scan_results_synchronous">
+<span class="sig-name descname"><span class="pre">set_up_scan_results_synchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">smbclient</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">impacket.smbconnection.SMBConnection</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.TargetInfo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.set_up_scan_results_synchronous" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>[Prepare everything to later show the saved information of the connection</dt><dd><p>synchronously]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>smbclient</strong> (<em>SMBConnection</em>) – [Object with the current smb connection]</p></li>
+<li><p><strong>target_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.TargetInfo" title="scaninfo.TargetInfo"><em>TargetInfo</em></a>) – [Object that contains info of the current target]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.shell">
+<span class="sig-name descname"><span class="pre">shell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.psexecinfo.PsexecShellVariables</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.shell" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to perform interactively cmd.exe or powershell.exe]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>psexec_info</strong> (<a class="reference internal" href="psexecinfo.html#psexecinfo.PsexecShellVariables" title="psexecinfo.PsexecShellVariables"><em>PsexecShellVariables</em></a>) – [Object that contains everything necessary to perform commands]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.show_scan_info">
+<span class="sig-name descname"><span class="pre">show_scan_info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.show_scan_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function that will check if it is possible to display the scan
+info of a current username and password]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.show_scan_results_asynchronous">
+<span class="sig-name descname"><span class="pre">show_scan_results_asynchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.TargetInfo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.show_scan_results_asynchronous" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Display the results of an asynchronous scan]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>target_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.TargetInfo" title="scaninfo.TargetInfo"><em>TargetInfo</em></a>) – [Contains all the info to be displayed]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.show_scan_results_synchronous">
+<span class="sig-name descname"><span class="pre">show_scan_results_synchronous</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.TargetInfo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.show_scan_results_synchronous" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Display the results of an synchronous scan]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>target_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.TargetInfo" title="scaninfo.TargetInfo"><em>TargetInfo</em></a>) – [Contains all the info to be displayed]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.show_scan_subnets">
+<span class="sig-name descname"><span class="pre">show_scan_subnets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.show_scan_subnets" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Shows the result of scanning all subnets of the
+current username and password]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.show_specific_subnet_info">
+<span class="sig-name descname"><span class="pre">show_specific_subnet_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passwd</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subnet</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.show_specific_subnet_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Shows the information of a specific subnet]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user</strong> (<em>str</em>) – [Current value of the settable variable USER]</p></li>
+<li><p><strong>passwd</strong> (<em>str</em>) – [Current value of the settable variable PASSWD]</p></li>
+<li><p><strong>subnet</strong> (<em>str</em>) – [Subnet whose information is going to be displayed]</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.show_user_passwd">
+<span class="sig-name descname"><span class="pre">show_user_passwd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.show_user_passwd" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Shows the user and password content of the settable variables]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.start_scan">
+<span class="sig-name descname"><span class="pre">start_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">argparse.Namespace</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.start_scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Start scan of the subnet ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>args</strong> (<em>argparse.Namespace</em>) – [ Arguments passed to the scan command ]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.store_scan_results">
+<span class="sig-name descname"><span class="pre">store_scan_results</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_info</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">smb.gatherinfo.scaninfo.TargetInfo</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.store_scan_results" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to store scan results into scan_info dictionary]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>target_info</strong> (<a class="reference internal" href="scaninfo.html#scaninfo.TargetInfo" title="scaninfo.TargetInfo"><em>TargetInfo</em></a>) – [Argument that contains all parameters
+needed for store the scan results(user,subnet …)]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.synchronous_way">
+<span class="sig-name descname"><span class="pre">synchronous_way</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.synchronous_way" title="Permalink to this definition">¶</a></dt>
+<dd><p>[ Function that will start the synchronous scan]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.try_create_service_of_psexec">
+<span class="sig-name descname"><span class="pre">try_create_service_of_psexec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pypsexec.client.Client</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.try_create_service_of_psexec" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to create the service to perform psexec]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>conn</strong> (<em>Client</em>) – [ Object to create the service on the remote machine ]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[Returns if the service has been created]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.try_psexec_connection">
+<span class="sig-name descname"><span class="pre">try_psexec_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">pypsexec.client.Client</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.try_psexec_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>[Function to try to connect to the target machine to perform psexec]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>conn</strong> (<em>Client</em>) – [Object to established the connection]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[Returns if the connection has been established]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.try_scan_connection_with_smb1">
+<span class="sig-name descname"><span class="pre">try_scan_connection_with_smb1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ipaddress.IPv4Address</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">impacket.smbconnection.SMBConnection</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.try_scan_connection_with_smb1" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>[This function will try to connect to a remote host</dt><dd><p>using smb1]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ip</strong> (<em>IPv4Address</em>) – [ip of the remote host]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[Returns the state of the connection and the variable to manipulate the connection]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[bool, SMBConnection]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.try_scan_connection_with_smb3">
+<span class="sig-name descname"><span class="pre">try_scan_connection_with_smb3</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">ipaddress.IPv4Address</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">bool</span><span class="p"><span class="pre">,</span> </span><span class="pre">impacket.smbconnection.SMBConnection</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#smbmodule.SMBCommandSet.try_scan_connection_with_smb3" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>[This function will try to connect to a remote host</dt><dd><p>using smb3]</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ip</strong> (<em>IPv4Address</em>) – [ip of the remote host]</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>[Returns the state of the connection and the variable to manipulate the connection]</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>Tuple[bool, SMBConnection]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="smbmodule.SMBCommandSet.try_to_execute_command">
+<span class="sig-name descname"><span class="pre">try_to_execute_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psexec_info</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#smbmodule.SMBCommandSet.try_to_execute_command" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Igris Shell</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Igris Shell</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="igris.html">Igris CLI</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">smbmodule</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="psexecinfo.html">psexecinfo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="scaninfo.html">scaninfo</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Commands/scan.html">Scan command</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">Igris Shell</a><ul>
+      <li>Previous: <a href="igris.html" title="previous chapter">Igris CLI</a></li>
+      <li>Next: <a href="psexecinfo.html" title="next chapter">psexecinfo</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Rubén Santos García.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/Igris_docs/smbmodule.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

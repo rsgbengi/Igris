@@ -1,0 +1,48 @@
+2021-09-20 18:07:15.376 | INFO     | smb.smbmodule:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2021-09-20 18:07:15.377 | INFO     | __main__:show_settable_variables_necessary:183 - Showing necessary settable variables
+2021-09-20 18:56:58.066 | INFO     | smb.smbmodule:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2021-09-20 18:56:58.066 | INFO     | __main__:check_settable_variables_value:163 - Checking the correct value of the necessary settable variables 
+2021-09-20 18:56:58.067 | INFO     | smb.smbmodule:synchronous_way:532 - Using synchronous scan
+2021-09-20 18:56:58.068 | INFO     | smb.smbmodule:set_up_scan_actions_synchronous:504 - Starting to launch threads based on your cpu
+2021-09-20 18:57:12.151 | INFO     | smb.smbmodule:try_scan_connection_with_smb1:60 - Connection success using smb1 at 192.168.253.129
+2021-09-20 18:57:14.130 | INFO     | smb.smbmodule:try_scan_connection_with_smb1:60 - Connection success using smb1 at 192.168.253.134
+2021-09-20 18:57:14.969 | INFO     | smb.smbmodule:check_scan_login_possibility:114 - Login successful at 192.168.253.134
+2021-09-20 18:57:14.970 | INFO     | smb.smbmodule:configure_target_info_of_scan:158 - Loading target info of DC-COMPANY at 192.168.253.134
+2021-09-20 18:57:15.043 | INFO     | smb.smbmodule:check_psexec_possibility:180 - Possibility of psexec on DC-COMPANY at 192.168.253.134
+2021-09-20 18:57:15.043 | INFO     | smb.smbmodule:store_scan_results:132 - Saving scan information
+2021-09-20 18:57:30.222 | SUCCESS  | smb.smbmodule:set_up_scan_actions_synchronous:525 - Synchronous scanning has been completed
+2021-09-20 18:57:56.800 | INFO     | smb.smbmodule:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2021-09-20 18:57:56.801 | INFO     | __main__:check_settable_variables_value:163 - Checking the correct value of the necessary settable variables 
+2021-09-20 18:58:01.588 | WARNING  | smb.smbmodule:configure_scan_info:280 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2021-09-20 18:58:09.858 | INFO     | smb.smbmodule:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2021-09-20 18:58:09.858 | INFO     | __main__:check_settable_variables_value:163 - Checking the correct value of the necessary settable variables 
+2021-09-20 18:58:09.859 | INFO     | smb.smbmodule:synchronous_way:532 - Using synchronous scan
+2021-09-20 18:58:09.860 | INFO     | smb.smbmodule:set_up_scan_actions_synchronous:504 - Starting to launch threads based on your cpu
+2021-09-20 18:58:24.047 | INFO     | smb.smbmodule:try_scan_connection_with_smb1:60 - Connection success using smb1 at 192.168.253.129
+2021-09-20 18:58:24.223 | INFO     | smb.smbmodule:check_scan_login_possibility:114 - Login successful at 192.168.253.129
+2021-09-20 18:58:24.223 | INFO     | smb.smbmodule:configure_target_info_of_scan:158 - Loading target info of PC-ALEX at 192.168.253.129
+2021-09-20 18:58:24.301 | INFO     | smb.smbmodule:check_psexec_possibility:180 - Possibility of psexec on PC-ALEX at 192.168.253.129
+2021-09-20 18:58:24.301 | INFO     | smb.smbmodule:store_scan_results:132 - Saving scan information
+2021-09-20 18:58:25.913 | INFO     | smb.smbmodule:try_scan_connection_with_smb1:60 - Connection success using smb1 at 192.168.253.134
+2021-09-20 18:58:25.923 | INFO     | smb.smbmodule:check_scan_login_possibility:114 - Login successful at 192.168.253.134
+2021-09-20 18:58:25.923 | INFO     | smb.smbmodule:configure_target_info_of_scan:158 - Loading target info of DC-COMPANY at 192.168.253.134
+2021-09-20 18:58:25.960 | INFO     | smb.smbmodule:check_psexec_possibility:180 - Possibility of psexec on DC-COMPANY at 192.168.253.134
+2021-09-20 18:58:25.961 | INFO     | smb.smbmodule:store_scan_results:132 - Saving scan information
+2021-09-20 18:58:42.081 | SUCCESS  | smb.smbmodule:set_up_scan_actions_synchronous:525 - Synchronous scanning has been completed
+2021-09-20 19:00:07.035 | INFO     | smb.smbmodule:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2021-09-20 19:00:07.037 | INFO     | smb.smbmodule:show_scan_info:241 - Starting to show all the scan info of the different subnets using user: Administrator passwd: P@$$w0rd!
+2021-09-20 19:02:44.870 | INFO     | smb.smbmodule:do_scan:599 - Starting scan command using user: apuia passwd: Password2 subnet: 192.168.253.0/24
+2021-09-20 19:02:44.871 | INFO     | __main__:check_settable_variables_value:163 - Checking the correct value of the necessary settable variables 
+2021-09-20 19:02:44.873 | INFO     | smb.smbmodule:asynchronous_way:414 - Using asynchronous scan. The command will be disabled while its execution
+2021-09-20 19:02:44.875 | INFO     | smb.smbmodule:set_up_scan_actions_asynchronous:389 - Starting to launch threads based on your cpu
+2021-09-20 19:02:58.985 | INFO     | smb.smbmodule:try_scan_connection_with_smb1:60 - Connection success using smb1 at 192.168.253.129
+2021-09-20 19:02:59.036 | INFO     | smb.smbmodule:check_scan_login_possibility:114 - Login successful at 192.168.253.129
+2021-09-20 19:02:59.037 | INFO     | smb.smbmodule:configure_target_info_of_scan:158 - Loading target info of PC-ALEX at 192.168.253.129
+2021-09-20 19:02:59.097 | INFO     | smb.smbmodule:check_psexec_possibility:180 - Possibility of psexec on PC-ALEX at 192.168.253.129
+2021-09-20 19:02:59.098 | INFO     | smb.smbmodule:store_scan_results:132 - Saving scan information
+2021-09-20 19:03:00.963 | INFO     | smb.smbmodule:try_scan_connection_with_smb1:60 - Connection success using smb1 at 192.168.253.134
+2021-09-20 19:03:01.042 | INFO     | smb.smbmodule:check_scan_login_possibility:114 - Login successful at 192.168.253.134
+2021-09-20 19:03:01.042 | INFO     | smb.smbmodule:configure_target_info_of_scan:158 - Loading target info of DC-COMPANY at 192.168.253.134
+2021-09-20 19:03:01.043 | INFO     | smb.smbmodule:check_psexec_possibility:184 - Error of psexec on DC-COMPANY at 192.168.253.134
+2021-09-20 19:03:01.044 | INFO     | smb.smbmodule:store_scan_results:132 - Saving scan information
+2021-09-20 19:03:17.019 | SUCCESS  | smb.smbmodule:set_up_scan_actions_asynchronous:407 - Asynchronous scanning has been completed. Enabling scan command... 

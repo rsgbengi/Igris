@@ -1,0 +1,12 @@
+"""[Function to know if a user can log in]
+
+        Args:
+            user_info ([UserInfo]): [User info needed to login to the remote
+                                        machine(user,password)]
+            smbclient ([SMBConnection]): [Argument to manipulate the smb
+                                            connection, in this case is use
+                                            to perform the login]
+        Returns:
+            succed_in_login [boolean]: [variable to notify login status]
+
+        """
