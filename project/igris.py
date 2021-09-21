@@ -11,7 +11,7 @@ from art import text2art
 from tabulate import tabulate
 from loguru import logger
 
-from smb import smbmodule
+from .smb import smbmodule
 
 COLORS = {
     "black": "\u001b[30;1m",
@@ -240,8 +240,8 @@ class Igris_Shell(cmd2.Cmd):
         self.logger.add("logs/info_and_above.log", level="INFO", rotation="1 week")
 
 
-if __name__ == "__main__":
-    Shell = Igris_Shell()
-    # debugging
-    Shell.debug = True
-    sys.exit(Shell.cmdloop())
+# if __name__ == "__main__":
+#    Shell = Igris_Shell()
+#    # debugging
+#    Shell.debug = True
+#    sys.exit(Shell.cmdloop())

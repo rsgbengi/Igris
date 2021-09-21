@@ -117,9 +117,9 @@ def cleaner():
 def startPoison():
     try:
         ipv6 = "fe80::250:56ff:fec0:8"
-        ip = "192.168.253.132"
+        ip = "192.168.253.1"
         ether = "00:50:56:c0:00:08"
-        iface = "ens33"
+        iface = "vmnet8"
 
         MDNSPoison = threading.Thread(target=mdnsPoison, args=(ipv6, ip, ether, iface))
         MDNSPoison.daemon = True
@@ -135,7 +135,7 @@ def startPoison():
         # poisonLLMNR.start()
         # poisonLLMNR.join()
         server.join()
-        mdnsPoison.join()
+        MDNSPoison.join()
         sleeper.join()
     except KeyboardInterrupt:
         print("Saliendo ...")

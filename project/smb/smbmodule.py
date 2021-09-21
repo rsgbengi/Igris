@@ -25,8 +25,8 @@ from smbprotocol.exceptions import CannotDelete
 from spinners.spinners import Spinners
 from tabulate import tabulate
 
-from smb.gatherinfo.scaninfo import TargetInfo, UserInfo
-from smb.gatherinfo.psexecinfo import PsexecShellVariables
+from .gatherinfo.scaninfo import TargetInfo, UserInfo
+from .gatherinfo.psexecinfo import PsexecShellVariables
 
 
 @with_default_category("SMB recon")
