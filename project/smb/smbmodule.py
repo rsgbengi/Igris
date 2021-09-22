@@ -29,7 +29,7 @@ from .gatherinfo.scaninfo import TargetInfo, UserInfo
 from .gatherinfo.psexecinfo import PsexecShellVariables
 
 
-@with_default_category("SMB recon")
+@with_default_category("SMB Recon")
 class SMBCommandSet(CommandSet):
     def __init__(self):
         super().__init__()

@@ -115,3 +115,38 @@ Traceback (most recent call last):
 
 KeyboardInterrupt: Got a keyboard interrupt
 2021-09-20 16:10:11.517 | SUCCESS  | smb.smbmodule:set_up_scan_actions_synchronous:525 - Synchronous scanning has been completed
+2021-09-22 17:10:37.407 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
+            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
+            00:0c:29:89:df:69
+2021-09-22 17:11:30.492 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
+            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
+            00:0c:29:89:df:69
+2021-09-22 17:11:30.494 | INFO     | project.igris:show_settable_variables_necessary:199 - Showing necessary settable variables
+2021-09-22 17:11:42.224 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
+            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
+            00:0c:29:89:df:69
+2021-09-22 17:11:42.227 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
+2021-09-22 17:14:04.020 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
+            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
+            00:0c:29:89:df:69
+2021-09-22 17:14:04.023 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
+2021-09-22 17:17:33.352 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
+            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
+            00:0c:29:89:df:69
+2021-09-22 17:17:33.355 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
+2021-09-22 17:18:18.797 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
+            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
+            00:0c:29:89:df:69
+2021-09-22 17:18:18.799 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
+2021-09-22 17:19:53.298 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
+            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
+            00:0c:29:89:df:69
+2021-09-22 17:19:53.298 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
+2021-09-22 17:20:25.400 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
+            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
+            00:0c:29:89:df:69
+2021-09-22 17:20:25.403 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
+2021-09-22 17:22:17.172 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
+            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
+            00:0c:29:89:df:69
+2021-09-22 17:22:17.282 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 

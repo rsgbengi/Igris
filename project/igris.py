@@ -12,6 +12,8 @@ from tabulate import tabulate
 from loguru import logger
 
 from .smb import smbmodule
+from .RelayAttacks import relayattacks
+
 
 COLORS = {
     "black": "\u001b[30;1m",
@@ -52,6 +54,20 @@ class Igris_Shell(cmd2.Cmd):
         # IP_TARGET
         self.IP_TARGET = "192.168.253.134"
         self.add_settable(cmd2.Settable("IP_TARGET", str, "Set ip of the target", self))
+
+        self.IPV6_TARGET = "fe80::20c:29ff:fe89:df69"
+        self.add_settable(
+            cmd2.Settable("IPV6_TARGET", str, "Set ipv6 of the target", self)
+        )
+
+        self.INTERFACE = "ens33"
+        self.add_settable(
+            cmd2.Settable("INTERFACE", str, "Set interface to sniff packets", self)
+        )
+        self.MAC_ADDRESS = "00:0c:29:89:df:69"
+        self.add_settable(
+            cmd2.Settable("MAC_ADDRESS", str, "Set mac address of your interface", self)
+        )
 
         self.intro = self.banner() + "\n" + text2art("Igris Shell")
 
