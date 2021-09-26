@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+from logging import Logger
 from typing import List
 import cmd2
 import sys
@@ -10,8 +11,11 @@ from cmd2 import ansi
 from art import text2art
 from tabulate import tabulate
 from loguru import logger
-
-from .smb import smbmodule
+import logging
+from colorama import Fore, Style
+from .interceptlogging import InterceptHandler
+from .smb import scan
+from .smb import psexec
 from .RelayAttacks import relayattacks
 
 
@@ -35,7 +39,7 @@ class Igris_Shell(cmd2.Cmd):
     def __init__(self):
         super().__init__()
         # Set LHOST option
-        self.LHOST = "127.0.0.1"
+        self.LHOST = "0.0.0.0"
         self.add_settable(cmd2.Settable("LHOST", str, "Set ip of your machine", self))
 
         # Set SUBNET option
@@ -55,11 +59,6 @@ class Igris_Shell(cmd2.Cmd):
         self.IP_TARGET = "192.168.253.134"
         self.add_settable(cmd2.Settable("IP_TARGET", str, "Set ip of the target", self))
 
-        self.IPV6_TARGET = "fe80::20c:29ff:fe89:df69"
-        self.add_settable(
-            cmd2.Settable("IPV6_TARGET", str, "Set ipv6 of the target", self)
-        )
-
         self.INTERFACE = "ens33"
         self.add_settable(
             cmd2.Settable("INTERFACE", str, "Set interface to sniff packets", self)
@@ -68,6 +67,8 @@ class Igris_Shell(cmd2.Cmd):
         self.add_settable(
             cmd2.Settable("MAC_ADDRESS", str, "Set mac address of your interface", self)
         )
+        self.LPORT = "445"
+        self.add_settable(cmd2.Settable("MAC_ADDRESS", str, "Set local port", self))
 
         self.intro = self.banner() + "\n" + text2art("Igris Shell")
 
@@ -84,15 +85,15 @@ class Igris_Shell(cmd2.Cmd):
         self.set_up_loggers()
 
     @property
-    def logger(self):
+    def logger(self) -> Logger:
         return self._logger
 
     @property
-    def scan_thread(self):
+    def scan_thread(self) -> threading.Thread:
         return self._scan_thread
 
     @scan_thread.setter
-    def scan_thread(self, new_thread):
+    def scan_thread(self, new_thread) -> None:
         self._scan_thread = new_thread
 
     def smbmodule_postloop(self) -> None:
@@ -107,7 +108,7 @@ class Igris_Shell(cmd2.Cmd):
             self.scan_thread.join()
             self.poutput(ansi.style("The thread has finished", fg=ansi.fg.bright_green))
 
-    def _set_prompt(self):
+    def _set_prompt(self) -> None:
         """[Function that will set the command line format]"""
         self.path = os.getcwd()
         self.prompt = ansi.style("Igris shell -> ", fg=ansi.fg.blue) + ansi.style(
@@ -128,7 +129,7 @@ class Igris_Shell(cmd2.Cmd):
         return stop
 
     @cmd2.with_argument_list
-    def do_cd(self, args):
+    def do_cd(self, args: List[str]) -> None:
         """Change the directoy.
         Usage:
             cd <new_dir>
@@ -190,7 +191,7 @@ class Igris_Shell(cmd2.Cmd):
 
     def show_settable_variables_necessary(
         self, necessary_settable_variables: dict[str]
-    ):
+    ) -> None:
         """[  Show all settable variables that will be needed in the calling command ]
 
         Args:
@@ -227,7 +228,7 @@ class Igris_Shell(cmd2.Cmd):
             text = text.replace("[[" + color + "]]", COLORS[color])
         return text
 
-    def banner(self):
+    def banner(self) -> str:
         """[ Function to prepare the banner ]"""
         logo = """
         [[black]] _____[[black]]__▄____________    
@@ -249,15 +250,9 @@ class Igris_Shell(cmd2.Cmd):
         """
         return self.color_text(logo)
 
-    def set_up_loggers(self):
+    def set_up_loggers(self) -> None:
         """[ Function to prepare the logger ]"""
         # export LOGURU_AUTOINIT=False
-        self.logger.add("logs/all.log", level="DEBUG", rotation="1 week")
-        self.logger.add("logs/info_and_above.log", level="INFO", rotation="1 week")
-
-
-# if __name__ == "__main__":
-#    Shell = Igris_Shell()
-#    # debugging
-#    Shell.debug = True
-#    sys.exit(Shell.cmdloop())
+        logging.basicConfig(handlers=[InterceptHandler()], level=0)
+        logger.add("logs/all.log", level="DEBUG", rotation="1 week")
+        logger.add("logs/info_and_above.log", level="INFO", rotation="1 week")

@@ -1,152 +1,36 @@
-2021-09-20 16:10:09.342 | INFO     | smb.smbmodule:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
-2021-09-20 16:10:09.344 | INFO     | __main__:check_settable_variables_value:163 - Checking the correct value of the necessary settable variables 
-2021-09-20 16:10:09.345 | INFO     | smb.smbmodule:synchronous_way:532 - Using synchronous scan
-2021-09-20 16:10:09.348 | INFO     | smb.smbmodule:set_up_scan_actions_synchronous:504 - Starting to launch threads based on your cpu
-2021-09-20 16:10:09.364 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.0
-2021-09-20 16:10:09.368 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.1
-2021-09-20 16:10:09.369 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.0
-2021-09-20 16:10:09.372 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.1
-2021-09-20 16:10:10.369 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.6
-2021-09-20 16:10:10.370 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.5
-2021-09-20 16:10:10.371 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.2
-2021-09-20 16:10:10.371 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.7
-2021-09-20 16:10:10.373 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.3
-2021-09-20 16:10:10.375 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.8
-2021-09-20 16:10:10.376 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.4
-2021-09-20 16:10:10.376 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.12
-2021-09-20 16:10:10.377 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.9
-2021-09-20 16:10:10.377 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.11
-2021-09-20 16:10:10.378 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.10
-2021-09-20 16:10:10.379 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.14
-2021-09-20 16:10:10.379 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.15
-2021-09-20 16:10:10.380 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.13
-2021-09-20 16:10:10.384 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.17
-2021-09-20 16:10:10.384 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb1:63 - Connection refused using smb1 at 192.168.253.16
-2021-09-20 16:10:11.373 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.5
-2021-09-20 16:10:11.376 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.6
-2021-09-20 16:10:11.377 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.2
-2021-09-20 16:10:11.378 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.3
-2021-09-20 16:10:11.379 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.7
-2021-09-20 16:10:11.380 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.8
-2021-09-20 16:10:11.381 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.4
-2021-09-20 16:10:11.382 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.12
-2021-09-20 16:10:11.383 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.9
-2021-09-20 16:10:11.384 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.10
-2021-09-20 16:10:11.384 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.11
-2021-09-20 16:10:11.385 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.14
-2021-09-20 16:10:11.386 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.15
-2021-09-20 16:10:11.386 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.17
-2021-09-20 16:10:11.387 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.13
-2021-09-20 16:10:11.389 | DEBUG    | smb.smbmodule:try_scan_connection_with_smb3:86 - Connection refused using smb3 at 192.168.253.16
-2021-09-20 16:10:11.391 | ERROR    | smb.smbmodule:set_up_scan_actions_synchronous:523 - The scan was interrupted
-Traceback (most recent call last):
-
-  File "/home/rsgbengi/Documents/GitHub/Igris/project/igris.py", line 247, in <module>
-    sys.exit(Shell.cmdloop())
-    │   │    │     └ <function Cmd.cmdloop at 0x7f1cc0c99ee0>
-    │   │    └ <__main__.Igris_Shell object at 0x7f1cc15d5fa0>
-    │   └ <built-in function exit>
-    └ <module 'sys' (built-in)>
-
-  File "/home/rsgbengi/Documents/GitHub/Igris/.venv/lib/python3.9/site-packages/cmd2/cmd2.py", line 5280, in cmdloop
-    self._cmdloop()
-    │    └ <function Cmd._cmdloop at 0x7f1cc0d96af0>
-    └ <__main__.Igris_Shell object at 0x7f1cc15d5fa0>
-  File "/home/rsgbengi/Documents/GitHub/Igris/.venv/lib/python3.9/site-packages/cmd2/cmd2.py", line 3125, in _cmdloop
-    stop = self.onecmd_plus_hooks(line)
-           │    │                 └ 'scan'
-           │    └ <function Cmd.onecmd_plus_hooks at 0x7f1cc0d961f0>
-           └ <__main__.Igris_Shell object at 0x7f1cc15d5fa0>
-  File "/home/rsgbengi/Documents/GitHub/Igris/.venv/lib/python3.9/site-packages/cmd2/cmd2.py", line 2385, in onecmd_plus_hooks
-    stop = self.onecmd(statement, add_to_history=add_to_history)
-           │    │      │                         └ True
-           │    │      └ Statement(args='', raw='scan', command='scan', arg_list=[], multiline_command='', terminator='', suffix='', pipe_to='', outpu...
-           │    └ <function Cmd.onecmd at 0x7f1cc0d96790>
-           └ <__main__.Igris_Shell object at 0x7f1cc15d5fa0>
-  File "/home/rsgbengi/Documents/GitHub/Igris/.venv/lib/python3.9/site-packages/cmd2/cmd2.py", line 2836, in onecmd
-    stop = func(statement)
-           │    └ Statement(args='', raw='scan', command='scan', arg_list=[], multiline_command='', terminator='', suffix='', pipe_to='', outpu...
-           └ <bound method SMBCommandSet.do_scan of <smb.smbmodule.SMBCommandSet object at 0x7f1cb4c091f0>>
-  File "/home/rsgbengi/Documents/GitHub/Igris/.venv/lib/python3.9/site-packages/cmd2/decorators.py", line 379, in cmd_wrapper
-    return func(*args_list, **kwargs)  # type: ignore[call-arg]
-           │     │            └ {}
-           │     └ [<smb.smbmodule.SMBCommandSet object at 0x7f1cb4c091f0>, Namespace(show_info=False, asynchronous=False, show_settable=False, ...
-           └ <function SMBCommandSet.do_scan at 0x7f1cb4bfa790>
-
-  File "/home/rsgbengi/Documents/GitHub/Igris/project/smb/smbmodule.py", line 614, in do_scan
-    self.start_scan(args)
-    │    │          └ Namespace(show_info=False, asynchronous=False, show_settable=False, cmd2_statement=<cmd2.argparse_custom.Cmd2AttributeWrapper...
-    │    └ <function SMBCommandSet.start_scan at 0x7f1cb4bfa5e0>
-    └ <smb.smbmodule.SMBCommandSet object at 0x7f1cb4c091f0>
-
-  File "/home/rsgbengi/Documents/GitHub/Igris/project/smb/smbmodule.py", line 558, in start_scan
-    self.synchronous_way()
-    │    └ <function SMBCommandSet.synchronous_way at 0x7f1cb4bfa550>
-    └ <smb.smbmodule.SMBCommandSet object at 0x7f1cb4c091f0>
-
-  File "/home/rsgbengi/Documents/GitHub/Igris/project/smb/smbmodule.py", line 539, in synchronous_way
-    self.set_up_scan_actions_synchronous()
-    │    └ <function SMBCommandSet.set_up_scan_actions_synchronous at 0x7f1cb4bfa4c0>
-    └ <smb.smbmodule.SMBCommandSet object at 0x7f1cb4c091f0>
-
-> File "/home/rsgbengi/Documents/GitHub/Igris/project/smb/smbmodule.py", line 513, in set_up_scan_actions_synchronous
-    for target_info in results:
-        │              └ <generator object Executor.map.<locals>.result_iterator at 0x7f1cb4c64ba0>
-        └ None
-
-  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 608, in result_iterator
-    yield fs.pop().result()
-          │  └ <method 'pop' of 'list' objects>
-          └ [<Future at 0x7f1cb1c6e640 state=cancelled>, <Future at 0x7f1cb1c6e4f0 state=cancelled>, <Future at 0x7f1cb1c6e3a0 state=canc...
-  File "/usr/lib64/python3.9/concurrent/futures/_base.py", line 440, in result
-    self._condition.wait(timeout)
-    │                    └ None
-    └ None
-  File "/usr/lib64/python3.9/threading.py", line 312, in wait
-    waiter.acquire()
-    │      └ <method 'acquire' of '_thread.lock' objects>
-    └ <locked _thread.lock object at 0x7f1cb4babf30>
-  File "/home/rsgbengi/Documents/GitHub/Igris/.venv/lib/python3.9/site-packages/cmd2/cmd2.py", line 2255, in sigint_handler
-    self._raise_keyboard_interrupt()
-    │    └ <function Cmd._raise_keyboard_interrupt at 0x7f1cc0d92e50>
-    └ <__main__.Igris_Shell object at 0x7f1cc15d5fa0>
-  File "/home/rsgbengi/Documents/GitHub/Igris/.venv/lib/python3.9/site-packages/cmd2/cmd2.py", line 2259, in _raise_keyboard_interrupt
-    raise KeyboardInterrupt("Got a keyboard interrupt")
-
-KeyboardInterrupt: Got a keyboard interrupt
-2021-09-20 16:10:11.517 | SUCCESS  | smb.smbmodule:set_up_scan_actions_synchronous:525 - Synchronous scanning has been completed
-2021-09-22 17:10:37.407 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
-            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
-            00:0c:29:89:df:69
-2021-09-22 17:11:30.492 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
-            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
-            00:0c:29:89:df:69
-2021-09-22 17:11:30.494 | INFO     | project.igris:show_settable_variables_necessary:199 - Showing necessary settable variables
-2021-09-22 17:11:42.224 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
-            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
-            00:0c:29:89:df:69
-2021-09-22 17:11:42.227 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
-2021-09-22 17:14:04.020 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
-            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
-            00:0c:29:89:df:69
-2021-09-22 17:14:04.023 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
-2021-09-22 17:17:33.352 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
-            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
-            00:0c:29:89:df:69
-2021-09-22 17:17:33.355 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
-2021-09-22 17:18:18.797 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
-            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
-            00:0c:29:89:df:69
-2021-09-22 17:18:18.799 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
-2021-09-22 17:19:53.298 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
-            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
-            00:0c:29:89:df:69
-2021-09-22 17:19:53.298 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
-2021-09-22 17:20:25.400 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
-            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
-            00:0c:29:89:df:69
-2021-09-22 17:20:25.403 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
-2021-09-22 17:22:17.172 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:31 - Starting smb relay attack using ip: 192.168.253.134 ipv6: 
-            fe80::20c:29ff:fe89:df69 interface: ens33 mac_address: 
-            00:0c:29:89:df:69
-2021-09-22 17:22:17.282 | INFO     | project.igris:check_settable_variables_value:179 - Checking the correct value of the necessary settable variables 
+2021-09-26 17:34:22.832 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-26 17:34:22.832 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
+2021-09-26 17:51:29.770 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-26 17:51:29.770 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
+2021-09-26 17:51:59.980 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-26 17:51:59.982 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
+2021-09-26 17:54:06.158 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-26 17:54:06.159 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
+2021-09-26 17:54:06.170 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-26 17:54:06.172 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-26 17:54:06.173 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-26 17:54:34.106 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-26 17:54:34.107 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
+2021-09-26 17:54:34.116 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-26 17:54:34.118 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-26 17:54:34.120 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-26 18:15:03.978 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-26 18:15:03.980 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
+2021-09-26 18:15:03.988 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-26 18:15:03.990 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-26 18:15:03.991 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-26 18:16:33.904 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-26 18:16:33.906 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
+2021-09-26 18:23:49.445 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-26 18:23:49.447 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
+2021-09-26 18:23:49.460 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-26 18:23:49.461 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-26 18:23:49.463 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
