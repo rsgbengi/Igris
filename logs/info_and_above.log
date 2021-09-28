@@ -1,36 +1,96 @@
-2021-09-26 17:34:22.832 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+2021-09-28 17:35:37.874 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
             interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
-2021-09-26 17:34:22.832 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
-2021-09-26 17:51:29.770 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+2021-09-28 17:35:37.875 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 17:35:37.898 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 17:35:37.899 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 17:35:37.900 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 17:36:56.972 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
             interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
-2021-09-26 17:51:29.770 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
-2021-09-26 17:51:59.980 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+2021-09-28 17:36:56.973 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 17:36:56.983 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 17:36:56.985 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 17:36:56.986 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 17:38:02.033 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
             interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
-2021-09-26 17:51:59.982 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
-2021-09-26 17:54:06.158 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+2021-09-28 17:38:02.034 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 17:38:02.056 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 17:38:02.058 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 17:38:02.062 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 17:40:09.859 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
             interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
-2021-09-26 17:54:06.159 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
-2021-09-26 17:54:06.170 | INFO     | impacket.smbserver:log:4132 - Config file parsed
-2021-09-26 17:54:06.172 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
-2021-09-26 17:54:06.173 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
-2021-09-26 17:54:34.106 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+2021-09-28 17:40:09.860 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 17:40:09.889 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 17:40:09.899 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 17:40:09.900 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 17:44:21.611 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
             interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
-2021-09-26 17:54:34.107 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
-2021-09-26 17:54:34.116 | INFO     | impacket.smbserver:log:4132 - Config file parsed
-2021-09-26 17:54:34.118 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
-2021-09-26 17:54:34.120 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
-2021-09-26 18:15:03.978 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+2021-09-28 17:44:21.613 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 17:44:21.634 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 17:44:21.635 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 17:44:21.636 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 17:50:38.125 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
             interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
-2021-09-26 18:15:03.980 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
-2021-09-26 18:15:03.988 | INFO     | impacket.smbserver:log:4132 - Config file parsed
-2021-09-26 18:15:03.990 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
-2021-09-26 18:15:03.991 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
-2021-09-26 18:16:33.904 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+2021-09-28 17:50:38.126 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 17:50:38.137 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 17:50:38.138 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 17:50:38.139 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 17:50:59.942 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
             interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
-2021-09-26 18:16:33.906 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
-2021-09-26 18:23:49.445 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:39 - Starting smb relay attack using ip: 192.168.253.134
+2021-09-28 17:50:59.942 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 17:50:59.954 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 17:50:59.955 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 17:50:59.955 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 17:58:39.322 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
             interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
-2021-09-26 18:23:49.447 | INFO     | project.igris:check_settable_variables_value:180 - Checking the correct value of the necessary settable variables 
-2021-09-26 18:23:49.460 | INFO     | impacket.smbserver:log:4132 - Config file parsed
-2021-09-26 18:23:49.461 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
-2021-09-26 18:23:49.463 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 17:58:39.768 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 17:58:39.805 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 17:58:39.808 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 17:58:39.810 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 17:59:55.590 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-28 17:59:55.592 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 17:59:55.609 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 17:59:55.611 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 17:59:55.612 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 18:07:37.288 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-28 18:07:37.288 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 18:07:37.307 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 18:07:37.310 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 18:07:37.311 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 18:08:20.554 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-28 18:08:20.557 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 18:08:20.600 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 18:08:20.602 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 18:08:20.610 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 18:10:24.329 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-28 18:10:24.330 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 18:10:24.354 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 18:10:24.357 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 18:10:24.358 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 18:11:11.010 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-28 18:11:11.011 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 18:11:11.039 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 18:11:11.044 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 18:11:11.045 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 18:12:42.371 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-28 18:12:42.374 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 18:12:42.407 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 18:12:42.409 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 18:12:42.411 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 18:13:15.785 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-28 18:13:15.787 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 18:13:15.796 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 18:13:15.799 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 18:13:15.803 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-09-28 18:13:46.896 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:65 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-09-28 18:13:46.898 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-09-28 18:13:46.928 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-09-28 18:13:46.933 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-09-28 18:13:46.935 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0

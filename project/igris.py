@@ -16,7 +16,7 @@ from colorama import Fore, Style
 from .interceptlogging import InterceptHandler
 from .smb import scan
 from .smb import psexec
-from .RelayAttacks import relayattacks
+from .RelayAttacks import SmbRelay
 
 
 COLORS = {
@@ -69,6 +69,11 @@ class Igris_Shell(cmd2.Cmd):
         )
         self.LPORT = "445"
         self.add_settable(cmd2.Settable("MAC_ADDRESS", str, "Set local port", self))
+
+        self.IPV6 = "fe80::20c:29ff:fe89:df69"
+        self.add_settable(
+            cmd2.Settable("IPV6", str, "Set the IPV6 of the target", self)
+        )
 
         self.intro = self.banner() + "\n" + text2art("Igris Shell")
 

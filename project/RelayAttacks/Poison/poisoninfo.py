@@ -1,6 +1,7 @@
 class PoisonNetworkInfo:
-    def __init__(self, ip: str, mac_addres: str, iface: str) -> None:
+    def __init__(self, ip: str, ipv6: str, mac_addres: str, iface: str) -> None:
         self._ip = ip
+        self._ipv6 = ipv6
         self._mac_address = mac_addres
         self._iface = iface
 
@@ -15,6 +16,14 @@ class PoisonNetworkInfo:
     @property
     def iface(self) -> str:
         return self._iface
+
+    @property
+    def ipv6(self)->str:
+        return self._ipv6
+
+    @ipv6.setter
+    def ipv6(self, ipv6: str) -> None:
+        self._ipv6 = ipv6
 
     @ip.setter
     def ip(self, ip: str) -> None:

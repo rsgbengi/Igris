@@ -1,5 +1,7 @@
+from multiprocessing.context import Process
 from impacket import smbserver
-from threading import Event
+import multiprocessing
+import signal
 import sys
 
 
@@ -8,6 +10,7 @@ class SmbServer:
         self._lhost = lhost
         self._port = port
         self._output = output
+        self._server_process = None
 
     @property
     def lhost(self) -> str:
@@ -40,4 +43,3 @@ class SmbServer:
         )
         server.setSMBChallenge("")
         server.start()
-        print("Exiting smbserver ...", file=self.output)

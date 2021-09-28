@@ -17,7 +17,7 @@ from log_symbols import LogSymbols
 from spinners.spinners import Spinners
 from tabulate import tabulate
 
-from .gatherinfo.scaninfo import TargetInfo, UserInfo
+from .gatherinfo import TargetInfo, UserInfo
 
 
 @with_default_category("SMB Recon")
