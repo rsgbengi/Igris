@@ -11,12 +11,12 @@ from cmd2 import ansi
 from art import text2art
 from tabulate import tabulate
 from loguru import logger
-import logging
+
 from colorama import Fore, Style
-from .interceptlogging import InterceptHandler
 from .smb import scan
 from .smb import psexec
 from .RelayAttacks import SmbRelay
+from impacket.examples import logger as log
 
 
 COLORS = {
@@ -39,7 +39,7 @@ class Igris_Shell(cmd2.Cmd):
     def __init__(self):
         super().__init__()
         # Set LHOST option
-        self.LHOST = "0.0.0.0"
+        self.LHOST = "192.168.253.135"
         self.add_settable(cmd2.Settable("LHOST", str, "Set ip of your machine", self))
 
         # Set SUBNET option
@@ -258,6 +258,5 @@ class Igris_Shell(cmd2.Cmd):
     def set_up_loggers(self) -> None:
         """[ Function to prepare the logger ]"""
         # export LOGURU_AUTOINIT=False
-        logging.basicConfig(handlers=[InterceptHandler()], level=0)
         logger.add("logs/all.log", level="DEBUG", rotation="1 week")
         logger.add("logs/info_and_above.log", level="INFO", rotation="1 week")

