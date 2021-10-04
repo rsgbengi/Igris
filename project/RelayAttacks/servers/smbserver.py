@@ -67,6 +67,7 @@ class SmbServer:
         self._log_stream = stream
 
     def user_info(self, i: int, user_info_matches: str) -> Tuple[str, str]:
+        #esto es una prueba amigos
         normalize_user_info = (
             user_info_matches[i].split()[1].replace("(", "").replace(")", "").split(",")
         )
