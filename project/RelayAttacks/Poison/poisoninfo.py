@@ -1,4 +1,13 @@
 class PoisonNetworkInfo:
+    """[ Class with all the information needed to perform a poisoning attack ]
+
+    Args:
+        ip (str): [ ipv4 of the attacker ]
+        ipv6 (str): [ ipv6 of the attacker ]
+        mac_addres (str): [ mac_address of the attacker ]
+        iface (str): [ interface for sniffing packets  ]
+    """
+
     def __init__(self, ip: str, ipv6: str, mac_addres: str, iface: str) -> None:
         self._ip = ip
         self._ipv6 = ipv6
@@ -18,7 +27,7 @@ class PoisonNetworkInfo:
         return self._iface
 
     @property
-    def ipv6(self)->str:
+    def ipv6(self) -> str:
         return self._ipv6
 
     @ipv6.setter

