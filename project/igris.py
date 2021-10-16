@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from logging import Logger
-from typing import List
+from typing import List, Tuple
 import cmd2
 import sys
 import os
@@ -11,6 +11,7 @@ from cmd2 import ansi
 from art import text2art
 from tabulate import tabulate
 from loguru import logger
+from log_symbols import LogSymbols
 
 from colorama import Fore, Style
 from .smb import scan
@@ -38,14 +39,40 @@ COLORS = {
 class Igris_Shell(cmd2.Cmd):
     def __init__(self):
         super().__init__()
-        # Set LHOST option
-        self.LHOST = "192.168.253.135"
-        self.add_settable(cmd2.Settable("LHOST", str, "Set ip of your machine", self))
+        self.__credentials_config_variables()
+        self.__network_config_variables()
+        # Defect for intro messsage
+        self.intro = self.__banner() + "\n" + text2art("Igris Shell")
 
-        # Set SUBNET option
-        self.SUBNET = "192.168.253.0/24"
-        self.add_settable(cmd2.Settable("SUBNET", str, "Set subnet target", self))
+        self.__path = ""
+        self._set_prompt()
 
+        # Options
+        self.allow_style = ansi.STYLE_TERMINAL
+
+        self.register_postloop_hook(self.smbmodule_postloop)
+
+        self._scan_thread = threading.Thread()
+        self._info_logger, self._error_logger = self.__set_up_output_loggers()
+
+    @property
+    def info_logger(self) -> Logger:
+        return self._info_logger
+
+    @property
+    def error_logger(self) -> Logger:
+        return self._error_logger
+
+    @property
+    def scan_thread(self) -> threading.Thread:
+        return self._scan_thread
+
+    @scan_thread.setter
+    def scan_thread(self, new_thread) -> None:
+        self._scan_thread = new_thread
+
+    def __credentials_config_variables(self):
+        """[ Settable Variables for credentials ]"""
         # User
         self.USER = "Administrator"
         self.add_settable(cmd2.Settable("USER", str, "Set user target", self))
@@ -55,6 +82,17 @@ class Igris_Shell(cmd2.Cmd):
         self.add_settable(
             cmd2.Settable("PASSWD", str, "Set password of the target", self)
         )
+
+    def __network_config_variables(self):
+        """[ Settable variables for network ]"""
+        # Set LHOST option
+        self.LHOST = "192.168.253.135"
+        self.add_settable(cmd2.Settable("LHOST", str, "Set ip of your machine", self))
+
+        # Set SUBNET option
+        self.SUBNET = "192.168.253.0/24"
+        self.add_settable(cmd2.Settable("SUBNET", str, "Set subnet target", self))
+
         # IP_TARGET
         self.IP_TARGET = "192.168.253.134"
         self.add_settable(cmd2.Settable("IP_TARGET", str, "Set ip of the target", self))
@@ -75,32 +113,6 @@ class Igris_Shell(cmd2.Cmd):
             cmd2.Settable("IPV6", str, "Set the IPV6 of the target", self)
         )
 
-        self.intro = self.banner() + "\n" + text2art("Igris Shell")
-
-        self.path = ""
-        self._set_prompt()
-
-        # Options
-        self.allow_style = ansi.STYLE_TERMINAL
-
-        self.register_postloop_hook(self.smbmodule_postloop)
-
-        self._scan_thread = threading.Thread()
-        self._logger = logger
-        self.set_up_loggers()
-
-    @property
-    def logger(self) -> Logger:
-        return self._logger
-
-    @property
-    def scan_thread(self) -> threading.Thread:
-        return self._scan_thread
-
-    @scan_thread.setter
-    def scan_thread(self, new_thread) -> None:
-        self._scan_thread = new_thread
-
     def smbmodule_postloop(self) -> None:
         """[Function that will be performe when the user exits the shell]"""
         if self.scan_thread.is_alive():
@@ -115,9 +127,9 @@ class Igris_Shell(cmd2.Cmd):
 
     def _set_prompt(self) -> None:
         """[Function that will set the command line format]"""
-        self.path = os.getcwd()
+        self.__path = os.getcwd()
         self.prompt = ansi.style("Igris shell -> ", fg=ansi.fg.blue) + ansi.style(
-            self.path + " ", fg=ansi.fg.cyan
+            self.__path + " ", fg=ansi.fg.cyan
         )
 
     def postcmd(self, stop: bool, line: str) -> bool:
@@ -140,7 +152,7 @@ class Igris_Shell(cmd2.Cmd):
             cd <new_dir>
         """
         if args == [] or len(args) != 1:
-            self.perror("cd needs one argument:")
+            self.error_logger.error("cd needs one argument:")
             self.do_help("cd")
             return
 
@@ -157,7 +169,7 @@ class Igris_Shell(cmd2.Cmd):
             except Exception as exception:
                 error = exception
         if error:
-            self.perror(error)
+            self.error_logger.error(error)
 
     def complete_cd(self, text: str, line: str, begidx: int, endidx: int) -> List[str]:
         """[ Allow  user auto-complete when using cd ]
@@ -182,15 +194,15 @@ class Igris_Shell(cmd2.Cmd):
         Returns:
             bool: [ Returns if all variables are correct ]
         """
-        self.logger.info(
+        self.info_logger.info(
             "Checking the correct value of the necessary settable variables "
         )
         for settable_name, settable_value in necessary_settable.items():
             if settable_value == "":
-                self.perror(
+                self.error_logger.error(
                     f"The settable variable {settable_name} is not initialized. Run the command with -SS to show Settable variables"
                 )
-                self.logger.error(f"Missing settable variable: {settable_name}")
+                self.error_logger.error(f"Missing settable variable: {settable_name}")
                 return False
         return True
 
@@ -202,7 +214,7 @@ class Igris_Shell(cmd2.Cmd):
         Args:
             necessary_settable_variables (dict[str]): [  Dictionary with all settable variables used by the calling funcition ]
         """
-        self.logger.info("Showing necessary settable variables")
+        self.info_logger.info("Showing necessary settable variables")
         settable_variables = ansi.style("Variable", fg=ansi.fg.bright_magenta)
         settable_variables_value = ansi.style("Value", fg=ansi.fg.bright_magenta)
         necessary_settable_variables_value_with_color = [
@@ -220,7 +232,7 @@ class Igris_Shell(cmd2.Cmd):
         }
         self.poutput(tabulate(variables, headers="keys", tablefmt="psql"))
 
-    def color_text(self, text: str) -> str:
+    def __color_text(self, text: str) -> str:
         """[ Function that will color the banner ]
 
         Args:
@@ -233,7 +245,7 @@ class Igris_Shell(cmd2.Cmd):
             text = text.replace("[[" + color + "]]", COLORS[color])
         return text
 
-    def banner(self) -> str:
+    def __banner(self) -> str:
         """[ Function to prepare the banner ]"""
         logo = """
         [[black]] _____[[black]]__▄____________    
@@ -253,10 +265,45 @@ class Igris_Shell(cmd2.Cmd):
         [[black]] ________[[red]]½[[black]]__________
         [[blue]]
         """
-        return self.color_text(logo)
+        return self.__color_text(logo)
 
-    def set_up_loggers(self) -> None:
+    def __set_up_file_loggers(self) -> Tuple[Logger, Logger]:
+        logger.add(
+            "logs/all.log",
+            level="DEBUG",
+            rotation="1 week",
+        )
+        logger.add(
+            "logs/info_and_above.log",
+            level="INFO",
+            rotation="1 week",
+        )
+
+    def __set_up_output_loggers(self) -> Tuple[Logger, Logger]:
         """[ Function to prepare the logger ]"""
         # export LOGURU_AUTOINIT=False
-        logger.add("logs/all.log", level="DEBUG", rotation="1 week")
-        logger.add("logs/info_and_above.log", level="INFO", rotation="1 week")
+
+        logger.level("DEBUG", icon=LogSymbols.INFO.value)
+        logger.level("SUCCESS", icon=LogSymbols.SUCCESS.value)
+        logger.level("INFO", icon=LogSymbols.INFO.value)
+        logger.level("WARNING", icon=LogSymbols.WARNING.value)
+        logger.level("ERROR", icon=LogSymbols.ERROR.value)
+        fmt = "{level.icon} {message}"
+        logger.add(
+            self.stdout,
+            colorize=True,
+            level="INFO",
+            format=fmt,
+            filter=lambda record: record["extra"].get("name") == "info",
+        )
+        logger.add(
+            sys.stderr,
+            colorize=True,
+            level="WARNING",
+            format=fmt,
+            filter=lambda record: record["extra"].get("name") == "error",
+        )
+
+        info_logger = logger.bind(name="info")
+        error_logger = logger.bind(name="error")
+        return info_logger, error_logger

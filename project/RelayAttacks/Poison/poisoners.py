@@ -183,5 +183,5 @@ class MDNS(PoisonNetworkInfo):
     def cleaner(self) -> None:
         """[ Function to clean the list of objectives every 3 seconds ]"""
         while True:
-            time.sleep(3)
+            time.sleep(10)
             self.targets_used.clear()

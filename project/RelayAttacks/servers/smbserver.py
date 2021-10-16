@@ -239,7 +239,7 @@ class SmbServer:
         Ataques = {"SMB": SMBAttack}
         Clientes = {"SMB": SMBRelayClient}
         target = TargetsProcessor(
-            singleTarget="192.168.253.129",
+            singleTarget="192.168.253.130",
             protocolClients=Clientes,
         )
 
