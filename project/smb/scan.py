@@ -72,9 +72,9 @@ class ScanForPsexec(CommandSet):
         try:
             smbclient = SMBConnection(str(ip), str(ip), timeout=1)
             succeed_in_connection = True
-            self._cmd.info_logger.info(f"Connection success using smb3 at {ip}")
+            self._cmd.info_logger.debug(f"Connection success using smb3 at {ip}")
         except Exception:
-            self._cmd.info_logger.info(f"Connection success using smb3 at {ip}")
+            self._cmd.info_logger.debug(f"Connection fails using smb3 at {ip}")
 
         return succeed_in_connection, smbclient
 
@@ -102,9 +102,9 @@ class ScanForPsexec(CommandSet):
         try:
             smbclient.login(user, password)
             succeed_in_login = True
-            self._cmd.info__logger.info(f"Login successful at {ip}")
+            self._cmd.info_logger.debug(f"Login successful at {ip}")
         except Exception:
-            self._cmd.info_logger.info(f"Login successful at {ip}")
+            self._cmd.info_logger.debug(f"Login successful at {ip}")
         return succeed_in_login
 
     def __store_scan_results(self, target_info: TargetInfo) -> None:
@@ -146,7 +146,7 @@ class ScanForPsexec(CommandSet):
                                     the current smb connection]
         """
         ip = smbclient.getRemoteName()
-        self._cmd.info_file_logger.info(
+        self._cmd.info_logger.debug(
             f"Loading target info of {smbclient.getServerName()} at {ip}"
         )
         target_info.signed = smbclient.isSigningRequired()
@@ -168,7 +168,7 @@ class ScanForPsexec(CommandSet):
         try:
             smbclient.listPath("ADMIN$", ntpath.normpath("\\*"))
             success_in_psexec = True
-            self._cmd.info_file_logger.info(
+            self._cmd.info_logger.debug(
                 f"Possibility of psexec on {smbclient.getServerName()} at {ip}"
             )
         except Exception:
@@ -199,7 +199,7 @@ class ScanForPsexec(CommandSet):
             passwd (str): [Current value of the settable variable PASSWD]
             subnet (str): [Subnet whose information is going to be displayed]
         """
-        self._cmd.logger(
+        self._cmd.info_logger.info(
             ansi.style("SUBNET -> ", fg=ansi.fg.red)
             + ansi.style(subnet, fg=ansi.fg.blue)
         )

@@ -53,6 +53,7 @@ class Igris_Shell(cmd2.Cmd):
         self.register_postloop_hook(self.smbmodule_postloop)
 
         self._scan_thread = threading.Thread()
+        self.__set_up_file_loggers()
         self._info_logger, self._error_logger = self.__set_up_output_loggers()
 
     @property
@@ -94,8 +95,8 @@ class Igris_Shell(cmd2.Cmd):
         self.add_settable(cmd2.Settable("SUBNET", str, "Set subnet target", self))
 
         # IP_TARGET
-        self.IP_TARGET = "192.168.253.134"
-        self.add_settable(cmd2.Settable("IP_TARGET", str, "Set ip of the target", self))
+        self.RHOST = "192.168.253.134"
+        self.add_settable(cmd2.Settable("RHOST", str, "Set ip of the target", self))
 
         self.INTERFACE = "ens33"
         self.add_settable(
@@ -267,7 +268,7 @@ class Igris_Shell(cmd2.Cmd):
         """
         return self.__color_text(logo)
 
-    def __set_up_file_loggers(self) -> Tuple[Logger, Logger]:
+    def __set_up_file_loggers(self) -> None:
         logger.add(
             "logs/all.log",
             level="DEBUG",

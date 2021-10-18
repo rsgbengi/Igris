@@ -61,7 +61,7 @@ class Psexec(CommandSet):
             )
 
             if result[0].decode("utf-8"):
-                self.info_logger.info(result[0].decode("utf-8"))
+                self._cmd.info_logger.info(result[0].decode("utf-8"))
             if result[1].decode("utf-8"):
                 self._cmd.error_logger.error(result[1].decode("utf-8"))
         except KeyboardInterrupt:
@@ -211,9 +211,6 @@ class Psexec(CommandSet):
                 """The current psexec session has been stopped. You will have to restart Igris to continue.
                     After that you will have to use 'psexec -CL' to clean paexec files """
             )
-            self._cmd.error_logger.error(
-                "The current psexec session has been stopped. You will have to restart Igris to continue."
-            )
 
     def __set_up_executing_in_shell(self, psexec_info: PsexecShellVariables) -> None:
         """[Configure everything based on the comand entered by the user]
@@ -284,7 +281,7 @@ class Psexec(CommandSet):
         try:
             conn.create_service()
             success_creating_service = True
-            self._cmd.info_logger.info("The servide has been created successfully")
+            self._cmd.info_logger.debug("The servide has been created successfully")
             self.__spinner.succeed("The service has been created")
         except Exception:
             self._cmd.error_logger.error("Error when creating the service")
@@ -354,7 +351,7 @@ class Psexec(CommandSet):
         if "cmd" in args.command or "powershell" in args.command:
             self.__cmd_powershell_commands(args, psexec_info)
         elif args.interactive:
-            self._cmd.erro_logger.error(
+            self._cmd.error_logger.error(
                 "Interactive only is valid with cmd.exe or powershell.exe"
             )
         else:
@@ -366,12 +363,12 @@ class Psexec(CommandSet):
         Args:
             args (argparse.Namespace): [ Arguments passed to the psexec command ]
         """
-        ip_target = self._cmd.IP_TARGET
+        rhost = self._cmd.RHOST
         user = self._cmd.USER
         passwd = self._cmd.PASSWD
 
         conn = Client(
-            ip_target,
+            rhost,
             user,
             passwd,
             encrypt=args.encryption,
@@ -383,12 +380,12 @@ class Psexec(CommandSet):
                 self.__psexec_execution_options(args, conn)
 
     def __clean_paexec_files(self, args):
-        ip_target = self._cmd.IP_TARGET
+        rhost = self._cmd.RHOST
         user = self._cmd.USER
         passwd = self._cmd.PASSWD
 
         conn = Client(
-            ip_target,
+            rhost,
             user,
             passwd,
             encrypt=args.encryption,
@@ -397,14 +394,12 @@ class Psexec(CommandSet):
         try:
             conn.cleanup()
             conn.disconnect()
-            self._cmd.error_logger.info("Successful Cleaning")
-            self._cmd.erro_logger.info(
-                f"Successful cleaning at {ip_target} with user {user} and passwd {passwd}"
+            self._cmd.info_logger.info(
+                f"Successful cleaning at {rhost} with user: {user} and passwd: {passwd}"
             )
         except SCMRException:
-            self._cmd.error_logger.error("Cannot delete files. Please restart Igris")
             self._cmd.error_logger.error(
-                f"Cannot delete files in {ip_target}. Please restart Igris"
+                f"Cannot delete files in {rhost}. Please restart Igris"
             )
 
     argParser = cmd2.Cmd2ArgumentParser(description="Tool to execute commands remotely")
@@ -450,19 +445,18 @@ class Psexec(CommandSet):
         Args:
             args (argparse.Namespace): [Arguments passed to the  psexec command]
         """
-        ip_target = self._cmd.IP_TARGET
+        rhost = self._cmd.RHOST
         user = self._cmd.USER
         passwd = self._cmd.PASSWD
 
         settable_variables_required = {
-            "IP_TARGET": ip_target,
+            "RHOST": rhost,
             "USER": user,
             "PASSWD": passwd,
         }
         self._cmd.info_logger.debug(
-            f"Starting psexec with the user {user} and the password {passwd} in {ip_target}"
+            f"Starting psexec with the user {user} and the password {passwd} in {rhost}"
         )
-
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
             return

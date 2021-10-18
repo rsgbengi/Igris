@@ -1,7 +1,8 @@
 from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
 import argparse
-from .servers import SmbServer
+
+from project.RelayAttacks.servers.smbserver import MaliciousSmbServer
 from .Poison import MDNS
 from multiprocessing import Process
 from threading import Thread
@@ -64,10 +65,10 @@ class SmbRelay(CommandSet):
         )
 
         # output in case of -SS command
-        smbserver = SmbServer(self._cmd.LHOST, self._cmd.LPORT, self._cmd.stdout)
+        smbserver = MaliciousSmbServer(self._cmd.LHOST, self._cmd.LPORT)
 
-        self._cmd.logger.info(
-            f"""Starting smb relay attack using ip: {self._cmd.IP_TARGET} ipv6:{self._cmd.IPV6}
+        self._cmd.info_logger.debug(
+            f"""Starting smb relay attack using ip: {self._cmd.LHOST} ipv6:{self._cmd.IPV6}
             interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS} lport:{self._cmd.LPORT}"""
         )
 
