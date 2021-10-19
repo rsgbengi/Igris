@@ -16,7 +16,7 @@ from log_symbols import LogSymbols
 from colorama import Fore, Style
 from .smb import scan
 from .smb import psexec
-from .RelayAttacks import SmbRelay
+from .ManInTheMiddle import SmbServerAttack
 from impacket.examples import logger as log
 
 

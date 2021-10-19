@@ -22,6 +22,7 @@ class InterceptHandler(logging.Handler):
             logger.bind(name="error").opt(depth=depth, exception=record.exc_info).log(
                 level, record.getMessage()
             )
-        logger.opt(depth=depth, exception=record.exc_info).log(
-            level, record.getMessage()
-        )
+
+            logger.opt(depth=depth, exception=record.exc_info).log(
+                level, record.getMessage()
+            )

@@ -1,0 +1,9 @@
+2021-10-19 11:19:07.215 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 11:19:15.178 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57431)
+2021-10-19 11:19:15.181 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57431)
+2021-10-19 11:19:29.264 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 11:19:29.264 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-19 11:19:37.012 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57432)
+2021-10-19 11:19:37.012 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57432)
+2021-10-19 11:19:37.015 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57432)
+2021-10-19 11:19:37.015 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57432)
