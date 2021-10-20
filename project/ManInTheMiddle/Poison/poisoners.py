@@ -6,6 +6,7 @@ from typing import List, Tuple, Type
 from scapy.all import DNSRR, DNS, Ether, IP, UDP, sendp, sniff, packet, IPv6
 from .poisoninfo import PoisonNetworkInfo
 import time
+from loguru import logger
 from threading import Thread
 from colorama import Fore, Style
 
@@ -133,8 +134,12 @@ class MDNS(PoisonNetworkInfo):
             response (packet): [ Malicious packet ]
             ip_of_the_packet (str): [ ip of the victim ]
         """
+        logger.bind(name="info").debug("Packet crafted: ")
+        logger.bind(name="info").debug(response.summary())
         if ip_of_the_packet not in self.targets_used:
-            print(f"{Fore.CYAN}Sending packet to {ip_of_the_packet}{Style.RESET_ALL}")
+            logger.bind(name="info").info(
+                f"{Fore.CYAN}Sending packet to {ip_of_the_packet}{Style.RESET_ALL}"
+            )
             sendp(response, verbose=False)
             self.targets_used = ip_of_the_packet
 
@@ -170,6 +175,7 @@ class MDNS(PoisonNetworkInfo):
         """[ Function to start the poisoner ]"""
         # Port of mdns 5353
         # filter="udp and port mdns",
+        logger.bind(name="info").info("Starting mdns poisoning...")
         cleaner_trhead = Thread(target=self.cleaner)
         cleaner_trhead.daemon = True
         cleaner_trhead.start()

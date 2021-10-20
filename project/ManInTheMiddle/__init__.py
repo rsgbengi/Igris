@@ -1,1 +1,1 @@
-from .maninthemiddle import SmbServerAttack
+from .maninthemiddle import SmbServerAttack, NtlmRelay

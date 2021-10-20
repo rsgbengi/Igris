@@ -1,2 +1,2 @@
-from .smbserver import MaliciousSmbServer
+from .smbserver import MaliciousSmbServer, NtlmRelayServer
 from .interceptlogging import InterceptHandler
