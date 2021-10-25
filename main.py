@@ -6,3 +6,4 @@ if __name__ == "__main__":
     # debugging
     Shell.debug = True
     sys.exit(Shell.cmdloop())
+    print("prueba")

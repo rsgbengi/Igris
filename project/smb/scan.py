@@ -27,6 +27,29 @@ class ScanForPsexec(CommandSet):
         self.__scan_info = {}
         self.__spinner_list = [key.name for key in Spinners]
         self.__spinner = None
+        self._scan_thread = threading.Thread()
+
+    @property
+    def scan_thread(self) -> threading.Thread:
+        return self._scan_thread
+
+    @scan_thread.setter
+    def scan_thread(self, new_thread) -> None:
+        self._scan_thread = new_thread
+
+    def scan_postloop(self) -> None:
+        """[Function that will be performe when the user exits the shell]"""
+        if self.scan_thread.is_alive():
+            self._cmd.info_logger.info(
+                ansi.style(
+                    "The scan Thread must finished before exit...",
+                    fg=ansi.fg.bright_yellow,
+                )
+            )
+            self.scan_thread.join()
+            self._cmd.info_logger.success(
+                ansi.style("The thread has finished", fg=ansi.fg.bright_green)
+            )
 
     def __try_scan_connection_with_smb1(
         self, ip: IPv4Address
@@ -172,7 +195,7 @@ class ScanForPsexec(CommandSet):
                 f"Possibility of psexec on {smbclient.getServerName()} at {ip}"
             )
         except Exception:
-            self._cmd.info_logger.info(
+            self._cmd.info_logger.debug(
                 f"Error of psexec on {smbclient.getServerName()} at {ip}"
             )
 
@@ -420,10 +443,10 @@ class ScanForPsexec(CommandSet):
             )
         )
 
-        self._cmd.scan_thread = threading.Thread(
+        self.scan_thread = threading.Thread(
             target=self.__set_up_scan_actions_asynchronous
         )
-        self._cmd.scan_thread.start()
+        self.scan_thread.start()
 
     def __show_scan_results_synchronous(self, target_info: TargetInfo) -> None:
         """[Display the results of an synchronous scan]
