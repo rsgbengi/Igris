@@ -20,9 +20,12 @@ class MDNS(PoisonNetworkInfo):
         iface (str): [ interface of the current subnet used ]
     """
 
-    def __init__(self, ip: str, ipv6: str, mac_address: str, iface: str):
+    def __init__(
+        self, ip: str, ipv6: str, mac_address: str, iface: str, level: str = "INFO"
+    ):
         super().__init__(ip, ipv6, mac_address, iface)
         self._targets_used = []
+        self.__logger_level = level
 
     @property
     def targets_used(self) -> List[str]:
@@ -31,6 +34,14 @@ class MDNS(PoisonNetworkInfo):
     @targets_used.setter
     def targets_used(self, ip: str) -> None:
         self.targets_used.append(ip)
+
+    @property
+    def logger_level(self) -> str:
+        return self.__logger_level
+
+    @logger_level.setter
+    def logger_level(self, level) -> None:
+        self.__logger_level = level
 
     def dns_record(self, pkt: packet) -> DNSRR:
         """[ Function to configure dns record for the response ]
@@ -137,8 +148,9 @@ class MDNS(PoisonNetworkInfo):
         logger.bind(name="info").debug("Packet crafted: ")
         logger.bind(name="info").debug(response.summary())
         if ip_of_the_packet not in self.targets_used:
-            logger.bind(name="info").info(
-                f"{Fore.CYAN}Sending packet to {ip_of_the_packet}{Style.RESET_ALL}"
+            logger.bind(name="info").log(
+                self.__logger_level,
+                f"{Fore.CYAN}Sending packet to {ip_of_the_packet}{Style.RESET_ALL}",
             )
             sendp(response, verbose=False)
             self.targets_used = ip_of_the_packet
@@ -175,10 +187,10 @@ class MDNS(PoisonNetworkInfo):
         """[ Function to start the poisoner ]"""
         # Port of mdns 5353
         # filter="udp and port mdns",
-        logger.bind(name="info").info("Starting mdns poisoning...")
-        cleaner_trhead = Thread(target=self.cleaner)
-        cleaner_trhead.daemon = True
-        cleaner_trhead.start()
+        logger.bind(name="info").log(self.__logger_level, "Starting mdns poisoning...")
+        cleaner_thread = Thread(target=self.cleaner)
+        cleaner_thread.daemon = True
+        cleaner_thread.start()
         sniff(
             filter="udp and port mdns",
             iface=self.iface,
