@@ -5,8 +5,7 @@ from .interceptlogging import InterceptHandlerOnlyFiles, InterceptHandlerStdout
 
 from impacket.examples.ntlmrelayx.servers.smbrelayserver import SMBRelayServer
 from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
-import contextlib
-import sys
+import cmd2
 
 
 class MaliciousSmbServer(SimpleSMBServer):
@@ -61,40 +60,30 @@ class NoOutput(object):
 
 class SmbRelayServer:
     def __init__(
-        self,
-        asynchronous: bool,
-        config: NTLMRelayxConfig,
+        self, asynchronous: bool, config: NTLMRelayxConfig, igris_shell: cmd2 = None
     ) -> None:
         self.__asynchronous = asynchronous
         self.__config = config
+        self.__igris_shell = igris_shell
 
     @property
     def asynchronous(self) -> bool:
         return self.__asynchronous
 
-    @contextlib.contextmanager
-    def no_stdout(self):
-        save = sys.stdout
-        sys.stdout = NoOutput()
-        yield
-        sys.stdout = save
-
     def start_smb_relay_server(self) -> None:
         if self.asynchronous:
-            logging.basicConfig(handlers=[InterceptHandlerOnlyFiles()], level=0)
-            logger.info("Starting ntlm-relay attack...")
+            logging.basicConfig(
+                handlers=[InterceptHandlerOnlyFiles(self.__igris_shell)], level=0
+            )
+            logger.info("Starting smb-relay server...")
         else:
             logging.basicConfig(handlers=[InterceptHandlerStdout()], level=0)
-            logger.bind(name="info").info("Starting ntlm-relay attack...")
+            logger.bind(name="info").info("Starting smb-relay server...")
 
         server = SMBRelayServer(self.__config)
         server.daemon = True
         if self.__asynchronous:
-            # with self.no_stdout():
-            save = sys.stdout
-            sys.stdout = NoOutput()
             server.start()
-            sys.stdout = save
         else:
             server.start()
         server.join()

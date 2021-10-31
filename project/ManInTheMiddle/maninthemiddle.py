@@ -139,10 +139,10 @@ class NtlmRelay(CommandSet):
     def ntlm_relay_attack(self, attack: SmbRelayServer) -> None:
         self.__smb_relay_server = attack
 
-    def try_exit(self, signum, frame):
+    def __try_exit(self, signum, frame):
         self._cmd.info_logger.debug("Block exit ...")
 
-    def launch_necessary_components(self, args: argparse.Namespace) -> None:
+    def __launch_necessary_components(self, args: argparse.Namespace) -> None:
         """[ Function to launch the threads that will control the mdns poisoner and the smb server]
 
         Args:
@@ -161,19 +161,22 @@ class NtlmRelay(CommandSet):
             move_sam_result.daemon = True
             move_sam_result.start()
 
+        if args.Asynchronous:
+            sys.stdout = open("/dev/null", "w")
+
         if args.proxy:
             Proxy()
 
         if args.Asynchronous:
             self.mdns_poisoner.logger_level = "DEBUG"
-            signal.signal(signal.SIGINT, self.try_exit)
+            signal.signal(signal.SIGINT, self.__try_exit)
         mdns_thread = Thread(target=self.mdns_poisoner.start_mdns_poisoning)
         mdns_thread.daemon = True
 
         mdns_thread.start()
         self.__smb_relay_server.start_smb_relay_server()
 
-    def synchronous_attack(self):
+    def __synchronous_attack(self):
         try:
             self.__ntlm_relay_process.join()
         except KeyboardInterrupt:
@@ -181,7 +184,7 @@ class NtlmRelay(CommandSet):
             self.__ntlm_relay_process.join()
             self._cmd.error_logger.warning("Exiting smb relay attack ...")
 
-    def asynchronous_attack(self) -> None:
+    def __asynchronous_attack(self) -> None:
         self._cmd.disable_command(
             "ntlm_relay",
             ansi.style(
@@ -194,7 +197,7 @@ class NtlmRelay(CommandSet):
             f"Running ntlm relay on the background the results will be saved at: {saved_file} "
         )
 
-    def configure_ntlm_relay_attack(self):
+    def __configure_ntlm_relay_attack(self):
         target = TargetsProcessor(
             singleTarget=self._cmd.RHOST,
             protocolClients=self.__clients,
@@ -270,9 +273,11 @@ class NtlmRelay(CommandSet):
             self._cmd.INTERFACE,
         )
 
-        self.configure_ntlm_relay_attack()
+        self.__configure_ntlm_relay_attack()
         # output in case of -SS command
-        self.__smb_relay_server = SmbRelayServer(args.Asynchronous, self.__config)
+        self.__smb_relay_server = SmbRelayServer(
+            args.Asynchronous, self.__config, self._cmd
+        )
 
         self._cmd.info_logger.debug(
             f"""Starting ntlm relay attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} ipv6:{self._cmd.IPV6}
@@ -292,14 +297,13 @@ class NtlmRelay(CommandSet):
         elif self._cmd.check_settable_variables_value(settable_variables_required):
 
             self.__ntlm_relay_process = Process(
-                target=self.launch_necessary_components, args=(args,)
+                target=self.__launch_necessary_components, args=(args,)
             )
             self.__ntlm_relay_process.start()
             if not args.Asynchronous:
-                self.synchronous_attack()
+                self.__synchronous_attack()
             else:
-                self.asynchronous_attack()
-                sleep(1)
+                self.__asynchronous_attack()
 
     argParser = Cmd2ArgumentParser(description="Command to show actual connections")
 
