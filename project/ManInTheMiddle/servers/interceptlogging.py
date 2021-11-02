@@ -27,10 +27,6 @@ class InterceptHandlerStdout(logging.Handler):
 
 
 class InterceptHandlerOnlyFiles(logging.Handler):
-    def __init__(self, igris_shell: cmd2.Cmd):
-        super().__init__()
-        self.__igris_shell = igris_shell
-
     def emit(self, record):
         # Get corresponding Loguru level if it exists
         try:
@@ -46,6 +42,11 @@ class InterceptHandlerOnlyFiles(logging.Handler):
             logger.bind(name="info").opt(depth=depth, exception=record.exc_info).log(
                 level, record.getMessage()
             )
+        if "Enjoy" in record.getMessage():
+            logger.bind(name="info").opt(depth=depth, exception=record.exc_info).log(
+                level, record.getMessage()
+            )
+
         logger.opt(depth=depth, exception=record.exc_info).log(
             level, record.getMessage()
         )

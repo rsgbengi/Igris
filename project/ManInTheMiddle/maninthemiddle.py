@@ -20,6 +20,8 @@ from loguru import logger
 from time import sleep
 from json import loads
 import shutil
+from requests import get, RequestException
+from tabulate import tabulate
 
 try:
     from urllib.request import ProxyHandler, build_opener, Request
@@ -165,7 +167,9 @@ class NtlmRelay(CommandSet):
             sys.stdout = open("/dev/null", "w")
 
         if args.proxy:
-            Proxy()
+            proxy_server = Proxy()
+            sock_server = proxy_server.server
+            self.__config.setRunSocks(True, sock_server)
 
         if args.Asynchronous:
             self.mdns_poisoner.logger_level = "DEBUG"
@@ -276,7 +280,7 @@ class NtlmRelay(CommandSet):
         self.__configure_ntlm_relay_attack()
         # output in case of -SS command
         self.__smb_relay_server = SmbRelayServer(
-            args.Asynchronous, self.__config, self._cmd
+            args.Asynchronous, args.proxy, self.__config
         )
 
         self._cmd.info_logger.debug(
@@ -308,16 +312,25 @@ class NtlmRelay(CommandSet):
     argParser = Cmd2ArgumentParser(description="Command to show actual connections")
 
     def do_show_connections(self, args: argparse.Namespace) -> None:
-        url = "http://localhost:9090/ntlmrelayx/api/v1.0/relays"
+
+        url = "http://192.168.253.135:9090/ntlmrelayx/api/v1.0/relays"
         try:
-            handler = ProxyHandler({})
-            open_handler = build_opener(handler)
-            response = Request(url)
-            read_response = open_handler.open(response)
-            items_from_response = loads(read_response)
-            print(items_from_response)
-        except Exception:
-            self._cmd.error_logger.error("Error when opening connections")
+            response = get(url)
+            headers = ["Protocol", "Target", "Username", "Admin", "Port"]
+            print(tabulate(response.json(), headers=headers))
+        except RequestException:
+            self.error_logger("Error while trying to connect")
+
+        # try:
+
+        #    handler = ProxyHandler({})
+        #    open_handler = build_opener(handler)
+        #    response = Request(url)
+        #    read_response = open_handler.open(response)
+        #    items_from_response = loads(read_response.read())
+        #    print(items_from_response)
+        # except Exception:
+        #    self._cmd.error_logger.error("Error when opening connections")
 
     argParser = Cmd2ArgumentParser(
         description="""Command to stop ntlm relay attack in the background"""

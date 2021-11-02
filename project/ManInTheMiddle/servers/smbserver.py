@@ -60,21 +60,22 @@ class NoOutput(object):
 
 class SmbRelayServer:
     def __init__(
-        self, asynchronous: bool, config: NTLMRelayxConfig, igris_shell: cmd2 = None
+        self,
+        asynchronous: bool,
+        proxy: bool,
+        config: NTLMRelayxConfig,
     ) -> None:
         self.__asynchronous = asynchronous
+        self.__proxy = proxy
         self.__config = config
-        self.__igris_shell = igris_shell
 
     @property
     def asynchronous(self) -> bool:
         return self.__asynchronous
 
     def start_smb_relay_server(self) -> None:
-        if self.asynchronous:
-            logging.basicConfig(
-                handlers=[InterceptHandlerOnlyFiles(self.__igris_shell)], level=0
-            )
+        if self.__asynchronous:
+            logging.basicConfig(handlers=[InterceptHandlerOnlyFiles()], level=0)
             logger.info("Starting smb-relay server...")
         else:
             logging.basicConfig(handlers=[InterceptHandlerStdout()], level=0)
@@ -82,8 +83,5 @@ class SmbRelayServer:
 
         server = SMBRelayServer(self.__config)
         server.daemon = True
-        if self.__asynchronous:
-            server.start()
-        else:
-            server.start()
+        server.start()
         server.join()
