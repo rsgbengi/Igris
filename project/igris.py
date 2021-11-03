@@ -52,6 +52,8 @@ class Igris_Shell(cmd2.Cmd):
         self.load_modules()
 
         self.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
+
+        self.register_postloop_hook(self.__mss_module.mss_postloop)
         self.register_postloop_hook(self.__scan_module.scan_postloop)
 
         self.__set_up_file_loggers()
