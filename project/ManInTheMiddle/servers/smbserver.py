@@ -8,7 +8,7 @@ from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
 import cmd2
 
 
-class MaliciousSmbServer(SimpleSMBServer):
+class MaliciousSmbServer:
     """[ Class that contains the configuration for the smbserver ]
 
     Args:
@@ -16,10 +16,10 @@ class MaliciousSmbServer(SimpleSMBServer):
         port (str): [ port for the smb server ]
     """
 
-    def __init__(self, lhost: str, port: str) -> None:
-        super().__init__(listenAddress=lhost, listenPort=int(port))
+    def __init__(self, lhost: str, port: str, asynchronous) -> None:
         self.__lhost = lhost
         self.__port = port
+        self.__asynchronous = asynchronous
         self.output_of_connections()
 
     @property
@@ -48,22 +48,18 @@ class MaliciousSmbServer(SimpleSMBServer):
     def start_malicious_smbserver(self) -> None:
         """[ Function to start the smb server ]"""
         logger.bind(name="info").info("Starting Malicious SMB Server ...")
-        logging.basicConfig(handlers=[InterceptHandlerStdout()], level=0)
-        super().setSMBChallenge("")
-        super().start()
-
-
-class NoOutput(object):
-    def write(self, x):
-        pass
+        if self.__asynchronous:
+            logging.basicConfig(handlers=[InterceptHandlerOnlyFiles()], level=0)
+        else:
+            logging.basicConfig(handlers=[InterceptHandlerStdout()], level=0)
+        server = SimpleSMBServer(self.__lhost, int(self.__port))
+        server.setSMBChallenge("")
+        server.start()
 
 
 class SmbRelayServer:
     def __init__(
-        self,
-        asynchronous: bool,
-        proxy: bool,
-        config: NTLMRelayxConfig,
+        self, asynchronous: bool, proxy: bool, config: NTLMRelayxConfig
     ) -> None:
         self.__asynchronous = asynchronous
         self.__proxy = proxy
@@ -75,7 +71,9 @@ class SmbRelayServer:
 
     def start_smb_relay_server(self) -> None:
         if self.__asynchronous:
-            logging.basicConfig(handlers=[InterceptHandlerOnlyFiles()], level=0)
+            logging.basicConfig(
+                handlers=[InterceptHandlerOnlyFiles(self.__igris)], level=0
+            )
             logger.info("Starting smb-relay server...")
         else:
             logging.basicConfig(handlers=[InterceptHandlerStdout()], level=0)

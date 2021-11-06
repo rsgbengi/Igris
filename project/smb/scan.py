@@ -419,7 +419,7 @@ class ScanForPsexec(CommandSet):
                 )
             )
             self._cmd.terminal_lock.release()
-        self._cmd.info_logger.success(
+        self._cmd.info_logger.debug(
             "Asynchronous scanning has been completed. Enabling scan command... "
         )
         self._cmd.enable_command("scan")
