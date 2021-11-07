@@ -59,11 +59,16 @@ class MaliciousSmbServer:
 
 class SmbRelayServer:
     def __init__(
-        self, asynchronous: bool, proxy: bool, config: NTLMRelayxConfig
+        self,
+        asynchronous: bool,
+        proxy: bool,
+        config: NTLMRelayxConfig,
+        alerts_dictionary: dict,
     ) -> None:
         self.__asynchronous = asynchronous
         self.__proxy = proxy
         self.__config = config
+        self.__alerts_dictionary = alerts_dictionary
 
     @property
     def asynchronous(self) -> bool:
@@ -72,7 +77,7 @@ class SmbRelayServer:
     def start_smb_relay_server(self) -> None:
         if self.__asynchronous:
             logging.basicConfig(
-                handlers=[InterceptHandlerOnlyFiles(self.__igris)], level=0
+                handlers=[InterceptHandlerOnlyFiles(self.__alerts_dictionary)], level=0
             )
             logger.info("Starting smb-relay server...")
         else:

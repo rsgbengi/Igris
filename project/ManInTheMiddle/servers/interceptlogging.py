@@ -27,6 +27,10 @@ class InterceptHandlerStdout(logging.Handler):
 
 
 class InterceptHandlerOnlyFiles(logging.Handler):
+    def __init__(self, alerts_dictionary):
+        super().__init__()
+        self.__alerts_dictionary = alerts_dictionary
+
     def emit(self, record):
         # Get corresponding Loguru level if it exists
         try:
@@ -38,6 +42,11 @@ class InterceptHandlerOnlyFiles(logging.Handler):
         while frame.f_code.co_filename == logging.__file__:
             frame = frame.f_back
             depth += 1
+        if "Done dumping SAM hashes for host:" in record.getMessage():
+            self.__alerts_dictionary["sam_dump"] = 1
+
+        if "Enjoy" in record.getMessage():
+            self.__alerts_dictionary["new_connection"] = 1
 
         logger.opt(depth=depth, exception=record.exc_info).log(
             level, record.getMessage()

