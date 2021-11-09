@@ -1,7 +1,11 @@
 from impacket.smbserver import SimpleSMBServer
 import logging
 from loguru import logger
-from .interceptlogging import InterceptHandlerOnlyFiles, InterceptHandlerStdout
+from .interceptlogging import (
+    InterceptHandlerOnlyFilesNtlmRelay,
+    InterceptHandlerStdout,
+    InterceptHandlerOnlyFilesMss,
+)
 
 from impacket.examples.ntlmrelayx.servers.smbrelayserver import SMBRelayServer
 from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
@@ -49,7 +53,7 @@ class MaliciousSmbServer:
         """[ Function to start the smb server ]"""
         logger.bind(name="info").info("Starting Malicious SMB Server ...")
         if self.__asynchronous:
-            logging.basicConfig(handlers=[InterceptHandlerOnlyFiles()], level=0)
+            logging.basicConfig(handlers=[InterceptHandlerOnlyFilesMss()], level=0)
         else:
             logging.basicConfig(handlers=[InterceptHandlerStdout()], level=0)
         server = SimpleSMBServer(self.__lhost, int(self.__port))
@@ -77,7 +81,8 @@ class SmbRelayServer:
     def start_smb_relay_server(self) -> None:
         if self.__asynchronous:
             logging.basicConfig(
-                handlers=[InterceptHandlerOnlyFiles(self.__alerts_dictionary)], level=0
+                handlers=[InterceptHandlerOnlyFilesNtlmRelay(self.__alerts_dictionary)],
+                level=0,
             )
             logger.info("Starting smb-relay server...")
         else:

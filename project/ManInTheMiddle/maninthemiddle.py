@@ -23,10 +23,7 @@ import shutil
 from requests import get, RequestException
 from tabulate import tabulate
 
-try:
-    from urllib.request import ProxyHandler, build_opener, Request
-except ImportError:
-    from urllib2 import ProxyHandler, build_opener, Request
+from log_symbols import LogSymbols
 
 
 @with_default_category("Man in the middle attacks")
@@ -209,35 +206,43 @@ class NtlmRelay(CommandSet):
     def __define_alerts(self):
         self.__alerts_dictionary["sam_dump"] = 0
         self.__alerts_dictionary["new_connection"] = 0
+        self.__alerts_dictionary["stop"] = 0
 
     def __configure_alert_thread(self):
-        self.__alerts_hunter = Thread(target=self.__is_sam_dumping)
+        self.__alerts_hunter = Thread(target=self.__display_alerts)
         self.__alerts_hunter.dameon = True
         self.__alerts_hunter.start()
 
-    def __is_sam_dumping(self):
-        while True:
-            if self.__alerts_dictionary["sam_dump"] == 1:
-                print("hola")
-                if self._cmd.terminal_lock.acquire(blocking=False):
-                    self._cmd.async_alert(
-                        f"The SAM of {self._cmd.RHOST} has been dumped"
-                    )
-                    self._cmd.logger_info.debug(
-                        f"The SAM of {self._cmd.RHOST} has been dumped"
-                    )
-                    self._cmd.terminal_lock.release()
+    def __display_sam_alert(self):
+        if self.__alerts_dictionary["sam_dump"] == 1:
+            if self._cmd.terminal_lock.acquire(blocking=False):
+                self._cmd.async_alert(
+                    f"{LogSymbols.INFO.value} The SAM of {self._cmd.RHOST} has been dumped"
+                )
+                self._cmd.info_logger.debug(
+                    f"The SAM of {self._cmd.RHOST} has been dumped"
+                )
+                self._cmd.terminal_lock.release()
 
-                self.__alerts_dictionary["sam_dump"] = 0
-        """
-        while True:
-            if os.path.exists(self.__output_sam_dir + self.__output_sam_file):
-                if self.terminal_lock.acquire(blocking=False):
-                    self._cmd.info_logger.info(
-                        f"{self._cmd.RHOST} sam hashes have been dumped"
-                    )
-                    self.terminal_lock.release()
-        """
+            self.__alerts_dictionary["sam_dump"] = 0
+
+    def __display_connection_alert(self):
+        if self.__alerts_dictionary["new_connection"] == 1:
+            if self._cmd.terminal_lock.acquire(blocking=False):
+                self._cmd.async_alert(
+                    f"{LogSymbols.INFO.value} New connection! Use show_connections to see it "
+                )
+                self._cmd.info_logger.debug(
+                    f"{LogSymbols.INFO.value} New connection! Use show_connections to see it "
+                )
+                self._cmd.terminal_lock.release()
+
+            self.__alerts_dictionary["new_connection"] = 0
+
+    def __display_alerts(self):
+        while True and self.__alerts_dictionary["stop"] != 1:
+            self.__display_sam_alert()
+            self.__display_connection_alert()
 
     def __try_exit(self, signum, frame):
         self._cmd.info_logger.debug("Block exit ...")
@@ -288,7 +293,7 @@ class NtlmRelay(CommandSet):
     def __asynchronous_attack(self) -> None:
         saved_file = ansi.style("logs/ntlm_relay.log", fg=ansi.fg.green)
         self._cmd.info_logger.info(
-            f"Running ntlm relay on the background the results will be saved at: {saved_file} "
+            f"Running ntlm relay on the background the results will be saved at: {self.__ouput_sam_dir}/{self.__output_sam_file} "
         )
 
     def __configure_ntlm_relay_attack(self):
@@ -370,6 +375,7 @@ class NtlmRelay(CommandSet):
         Args:
             args (argparse.Namespace): [Arguments passed to the ntlm relay attack ]
         """
+        print(self.__alerts_dictionary)
         if args.output_sam != ".":
             self.__output_sam_dir = args.output_sam
         else:
@@ -451,6 +457,12 @@ class NtlmRelay(CommandSet):
             self.__ntlm_relay_process.terminate()
             self.__ntlm_relay_process.join()
             self.__ntlm_relay_process = None
+            if self.__alerts_hunter.is_alive():
+                self._cmd.info_logger.debug("Finishing alerts thread ...")
+                self.__alerts_dictionary["stop"] = 1
+                self.__alerts_hunter.join()
+                self.__alerts_dictionary["stop"] = 0
+
         else:
             self._cmd.error_logger.error(
                 "There is not ntlm_relay process in the background"
@@ -458,5 +470,10 @@ class NtlmRelay(CommandSet):
 
     def ntlm_relay_postloop(self) -> None:
         if self.__ntlm_relay_process is not None and self.__ntlm_relay_process.is_alive:
+            self._cmd.info_logger.debug("Finishing ntlm_relay process ...")
             self.__ntlm_relay_process.terminate()
             self.__ntlm_relay_process.join()
+        if self.__alerts_hunter != None and self.__alerts_hunter.is_alive():
+            self.__alerts_dictionary["stop"] = 1
+            self._cmd.info_logger.debug("Finishing alerts thread ...")
+            self.__alerts_hunter.join()
