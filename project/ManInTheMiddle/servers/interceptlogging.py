@@ -28,10 +28,10 @@ class InterceptHandlerStdout(logging.Handler):
 
 
 class InterceptHandlerOnlyFilesMss(logging.Handler):
-    def __init__(self, alerts_dictionary: dict, regex_pattern):
+    def __init__(self, alerts_dictionary: dict, ntlmv2_collected: list):
         super().__init__()
         self.__alerts_dictionary = alerts_dictionary
-        self.__regex_pattern = regex_pattern
+        self.__ntlmv2_collected = ntlmv2_collected
 
     def emit(self, record):
         # Get corresponding Loguru level if it exists
@@ -44,6 +44,12 @@ class InterceptHandlerOnlyFilesMss(logging.Handler):
         while frame.f_code.co_filename == logging.__file__:
             frame = frame.f_back
             depth += 1
+        if (
+            "::" in record.getMessage()
+            and record.getMessage() not in self.__ntlmv2_collected
+        ):
+            self.__users_collected.append(record.getMessage())
+            self.__alerts_dictionary["new_ntlmv2"] = 1
 
         logger.opt(depth=depth, exception=record.exc_info).log(
             level, record.getMessage()

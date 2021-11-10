@@ -20,10 +20,20 @@ class MaliciousSmbServer:
         port (str): [ port for the smb server ]
     """
 
-    def __init__(self, lhost: str, port: str, asynchronous) -> None:
+    def __init__(
+        self,
+        lhost: str,
+        port: str,
+        asynchronous,
+        alerts_dictionary: dict = None,
+        ntlmv2_collected=None,
+    ) -> None:
         self.__lhost = lhost
         self.__port = port
         self.__asynchronous = asynchronous
+        self.__alerts_dictionary = alerts_dictionary
+        self.__ntlmv2_collected = ntlmv2_collected
+
         self.output_of_connections()
 
     @property
@@ -53,7 +63,14 @@ class MaliciousSmbServer:
         """[ Function to start the smb server ]"""
         logger.bind(name="info").info("Starting Malicious SMB Server ...")
         if self.__asynchronous:
-            logging.basicConfig(handlers=[InterceptHandlerOnlyFilesMss()], level=0)
+            logging.basicConfig(
+                handlers=[
+                    InterceptHandlerOnlyFilesMss(
+                        self.__alerts_dictionary, self.__ntlmv2_collected
+                    )
+                ],
+                level=0,
+            )
         else:
             logging.basicConfig(handlers=[InterceptHandlerStdout()], level=0)
         server = SimpleSMBServer(self.__lhost, int(self.__port))
