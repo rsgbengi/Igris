@@ -39,11 +39,17 @@ class SmbServerAttack(CommandSet):
         self.__define_alerts()
         self.__alerts_hunter = None
         self.__ntlmv2_collected = []
+        self.__path_file = os.getcwd()
 
     def __configure_alerts_thread(self):
         self.__alerts_hunter = Thread(target=self.__display_alerts)
         self.__alerts_hunter.dameon = True
         self.__alerts_hunter.start()
+
+    def __check_directory(self) -> bool:
+        return os.path.isdir(self.__path_file) and os.access(
+            self.__path_file, os.X_OK | os.W_OK
+        )  # Executing and wirte
 
     def __define_alerts(self):
         self.__alerts_dictionary["new_ntlmv2"] = 0
@@ -103,12 +109,6 @@ class SmbServerAttack(CommandSet):
             self.__attack = None
             self._cmd.error_logger.warning("Exiting smb relay attack ...")
 
-    def __asynchronous_attack(self):
-        saved_file = ansi.style("logs/hashes_ntlm.log", fg=ansi.fg.green)
-        self._cmd.info_logger.info(
-            f"Running ntlm relay on the background the results will be saved at: {saved_file} "
-        )
-
     argParser = Cmd2ArgumentParser(
         description="""Malicious smb server attack to get hashes net-NTLMV """
     )
@@ -130,6 +130,13 @@ class SmbServerAttack(CommandSet):
         action="store_true",
         help="End the attack in the background process",
     )
+    argParser.add_argument(
+        "-ON",
+        "--output_ntlmv2",
+        action="store",
+        default=".",
+        help="Output of the hashes ntlmv2",
+    )
 
     @with_argparser(argParser)
     def do_mss(self, args: argparse.Namespace) -> None:
@@ -146,6 +153,12 @@ class SmbServerAttack(CommandSet):
                 "The attack is already running in the background"
             )
             return
+        if args.output_ntlmv2 != ".":
+            self.__path_file = args.output_ntlmv2
+
+        if not self.__check_directory():
+            self._cmd.error_logger.warning("Error with output file")
+            return
 
         if args.Asynchronous:
             self.__configure_alerts_thread()
@@ -159,7 +172,12 @@ class SmbServerAttack(CommandSet):
 
         # output in case of -SS command
         self.__smbserver = MaliciousSmbServer(
-            self._cmd.LHOST, self._cmd.LPORT, args.Asynchronous, self.__ntlmv2_collected
+            self._cmd.LHOST,
+            self._cmd.LPORT,
+            args.Asynchronous,
+            self.__ntlmv2_collected,
+            self.__path_file,
+            self.__alerts_dictionary
         )
 
         self._cmd.info_logger.debug(
@@ -182,9 +200,10 @@ class SmbServerAttack(CommandSet):
                 target=self.__launch_necessary_components, args=(args,)
             )
             self.__attack.start()
-            if args.Asynchronous:
-                self.__asynchronous_attack()
-            else:
+            if not args.Asynchronous:
+                self._cmd.info_logger.info(
+                    f"Running mss the results will be saved in : {self.__path_file} "
+                )
                 self.__synchronous_attack()
 
     def mss_postloop(self) -> None:
@@ -398,7 +417,7 @@ class NtlmRelay(CommandSet):
         "--output_sam",
         action="store",
         default=".",
-        help="Use a proxy server",
+        help="Output from the sam hashes",
     )
     argParser.add_argument(
         "-E",
