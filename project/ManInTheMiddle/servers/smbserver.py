@@ -25,8 +25,8 @@ class MaliciousSmbServer:
         self,
         lhost: str,
         port: str,
-        asynchronous:bool = None,
-        ntlmv2_collected:list =None,
+        ntlmv2_collected: dict,
+        asynchronous: bool = None,
         path_file: str = None,
         alerts_dictionary: dict = None,
     ) -> None:
@@ -34,9 +34,8 @@ class MaliciousSmbServer:
         self.__port = port
         self.__asynchronous = asynchronous
         self.__alerts_dictionary = alerts_dictionary
-        self.__ntlmv2_collected = ntlmv2_collected
         self.__path_file = path_file
-
+        self.__ntlmv2_collected = ntlmv2_collected
         self.output_of_connections()
 
     @property
@@ -70,8 +69,8 @@ class MaliciousSmbServer:
                 handlers=[
                     InterceptHandlerOnlyFilesMss(
                         self.__alerts_dictionary,
-                        self.__ntlmv2_collected,
                         self.__path_file,
+                        self.__ntlmv2_collected
                     )
                 ],
                 level=0,

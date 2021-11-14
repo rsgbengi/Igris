@@ -58,6 +58,7 @@ class Igris_Shell(cmd2.Cmd):
 
         self.__set_up_file_loggers()
         self.__info_logger, self.__error_logger = self.__set_up_output_loggers()
+        self.__set_up_global_variables()
 
     @property
     def info_logger(self) -> Logger:
@@ -66,6 +67,10 @@ class Igris_Shell(cmd2.Cmd):
     @property
     def error_logger(self) -> Logger:
         return self.__error_logger
+
+    def __set_up_global_variables(self):
+        self.poutput("A"*32)
+        self.ntlmv2_collected = {}
 
     def load_modules(self) -> None:
         self.__scan_module = ScanForPsexec()

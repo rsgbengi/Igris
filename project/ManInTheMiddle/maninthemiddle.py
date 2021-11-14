@@ -36,9 +36,9 @@ class SmbServerAttack(CommandSet):
         self.__smbserver = None
         self.__attack = None
         self.__alerts_dictionary = Manager().dict()
+        self.__ntlmv2_collected = Manager().dict()
         self.__define_alerts()
         self.__alerts_hunter = None
-        self.__ntlmv2_collected = []
         self.__path_file = os.getcwd()
 
     def __configure_alerts_thread(self):
@@ -144,6 +144,7 @@ class SmbServerAttack(CommandSet):
 
         Args:
             args (argparse.Namespace): [Arguments passed to the smb_relay command]
+
         """
         if args.end_attack:
             self.__ends_process_in_the_background()
@@ -174,10 +175,10 @@ class SmbServerAttack(CommandSet):
         self.__smbserver = MaliciousSmbServer(
             self._cmd.LHOST,
             self._cmd.LPORT,
-            args.Asynchronous,
             self.__ntlmv2_collected,
+            args.Asynchronous,
             self.__path_file,
-            self.__alerts_dictionary
+            self.__alerts_dictionary,
         )
 
         self._cmd.info_logger.debug(
@@ -375,7 +376,6 @@ class NtlmRelay(CommandSet):
 
     def __file_exits(self) -> bool:
         exit = False
-        print(f"{self.__ouput_sam_dir}/{self.__output_sam_file}")
         if os.path.exists(f"{self.__ouput_sam_dir}/{self.__output_sam_file}"):
             self._cmd.error_logger.warning(
                 "The file will be overwrite, do you want to continue ?(y)"
@@ -433,7 +433,6 @@ class NtlmRelay(CommandSet):
         Args:
             args (argparse.Namespace): [Arguments passed to the ntlm relay attack ]
         """
-        print(self.__alerts_dictionary)
         if args.output_sam != ".":
             self.__output_sam_dir = args.output_sam
         else:

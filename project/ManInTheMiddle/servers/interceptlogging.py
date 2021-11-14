@@ -3,16 +3,18 @@ import logging
 import cmd2
 import sys
 import os
+import re
 
 # https://stackoverflow.com/questions/65329555/standard-library-logging-plus-loguru
 class InterceptHandlerStdoutMss(logging.Handler):
 
-    def __init__(self,path_file:str ,ntlmv2_collected:list):
+    def __init__(self, path_file: str, ntlmv2_collected: dict):
         super().__init__()
         self.__path_file = path_file
         self.__ntlmv2_collected = ntlmv2_collected
 
     def __open_the_file(self, message: str) -> None:
+
         file_created = f"{self.__path_file}/ntlmv2_hashes.txt"
         if os.path.exists(file_created):
             with open(file_created, "a") as output_file:
@@ -40,22 +42,22 @@ class InterceptHandlerStdoutMss(logging.Handler):
             logger.bind(name="error").opt(depth=depth, exception=record.exc_info).log(
                 level, record.getMessage()
             )
+        if ("::" in record.getMessage()):
 
-        logger.bind(name="info").info(self.__ntlmv2_collected)
-        if (
-            "::" in record.getMessage()
-            and record.getMessage() not in self.__ntlmv2_collected
-        ):
-            self.__ntlmv2_collected.append(record.getMessage())
-            self.__open_the_file(record.getMessage())
+            user = record.getMessage().split("::")[0]
+            if(user not in self.__ntlmv2_collected.keys()):
+                self.__ntlmv2_collected[user] = 1
+
+                print(self.__ntlmv2_collected)
+                self.__open_the_file(record.getMessage())
 
 
 class InterceptHandlerOnlyFilesMss(logging.Handler):
-    def __init__(self, alerts_dictionary: dict, ntlmv2_collected: list, path_file: str):
+    def __init__(self, alerts_dictionary: dict, path_file: str, ntlmv2_collected:dict ):
         super().__init__()
         self.__alerts_dictionary = alerts_dictionary
-        self.__ntlmv2_collected = ntlmv2_collected
         self.__path_file = path_file
+        self.__ntlmv2_collected = ntlmv2_collected
 
     def __open_the_file(self, message: str) -> None:
         file_created = f"{self.__path_file}/nlvm2_hashes.txt"
@@ -77,13 +79,16 @@ class InterceptHandlerOnlyFilesMss(logging.Handler):
         while frame.f_code.co_filename == logging.__file__:
             frame = frame.f_back
             depth += 1
-        if (
-            "::" in record.getMessage()
-            and record.getMessage() not in self.__ntlmv2_collected
-        ):
-            self.__users_collected.append(record.getMessage())
-            self.__alerts_dictionary["new_ntlmv2"] = 1
-            self.__open_the_file(record.getMessage())
+
+        if ("::" in record.getMessage()):
+
+            user = record.getMessage().split("::")[0]
+            logger.bind(name="info").warning(user)
+            if(user not in self.__ntlmv2_collected.keys()):
+                self.__ntlmv2_collected[user] = 1
+
+                print(self.__ntlmv2_collected)
+                self.__open_the_file(record.getMessage())
 
         logger.opt(depth=depth, exception=record.exc_info).log(
             level, record.getMessage()
