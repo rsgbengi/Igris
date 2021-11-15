@@ -82,6 +82,7 @@ class MaliciousSmbServer:
         server = SimpleSMBServer(self.__lhost, int(self.__port))
         server.setSMBChallenge("")
         server.start()
+        server.join()
 
 
 class SmbRelayServer:
