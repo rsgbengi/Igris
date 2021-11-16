@@ -25,18 +25,19 @@ class MaliciousSmbServer:
         self,
         lhost: str,
         port: str,
-        ntlmv2_collected: dict,
+        info_logger:logger,
+        ntlmv2_collected: dict = None,
         asynchronous: bool = None,
         path_file: str = None,
         alerts_dictionary: dict = None,
     ) -> None:
         self.__lhost = lhost
         self.__port = port
+        self.__info_logger = info_logger
         self.__asynchronous = asynchronous
         self.__alerts_dictionary = alerts_dictionary
         self.__path_file = path_file
         self.__ntlmv2_collected = ntlmv2_collected
-        self.output_of_connections()
 
     @property
     def lhost(self) -> str:
@@ -54,16 +55,9 @@ class MaliciousSmbServer:
     def lhost(self, lhost: str) -> None:
         self.__lhost = lhost
 
-    def output_of_connections(self) -> None:
-        logger.add(
-            "logs/hashes_ntlm.log",
-            level="INFO",
-            rotation="1 week",
-        )
-
     def start_malicious_smbserver(self) -> None:
         """[ Function to start the smb server ]"""
-        logger.bind(name="info").info("Starting Malicious SMB Server ...")
+        self.__info_logger.info("Starting Malicious SMB Server ...")
         if self.__asynchronous:
             logging.basicConfig(
                 handlers=[
@@ -82,19 +76,18 @@ class MaliciousSmbServer:
         server = SimpleSMBServer(self.__lhost, int(self.__port))
         server.setSMBChallenge("")
         server.start()
-        server.join()
 
 
 class SmbRelayServer:
     def __init__(
         self,
-        asynchronous: bool,
-        proxy: bool,
         config: NTLMRelayxConfig,
-        alerts_dictionary: dict,
+        info_logger: logger,
+        asynchronous: bool = None,
+        alerts_dictionary: dict = None,
     ) -> None:
+        self.__info_logger = logger
         self.__asynchronous = asynchronous
-        self.__proxy = proxy
         self.__config = config
         self.__alerts_dictionary = alerts_dictionary
 
@@ -108,10 +101,10 @@ class SmbRelayServer:
                 handlers=[InterceptHandlerOnlyFilesNtlmRelay(self.__alerts_dictionary)],
                 level=0,
             )
-            logger.info("Starting smb-relay server...")
+            self.__info_logger.info("Starting smb-relay server...")
         else:
             logging.basicConfig(handlers=[InterceptHandlerStdoutNtlmRelay()], level=0)
-            logger.bind(name="info").info("Starting smb-relay server...")
+            self.__info_logger.info("Starting smb-relay server...")
 
         server = SMBRelayServer(self.__config)
         server.daemon = True

@@ -21,11 +21,18 @@ class MDNS(PoisonNetworkInfo):
     """
 
     def __init__(
-        self, ip: str, ipv6: str, mac_address: str, iface: str, level: str = "INFO"
+        self,
+        ip: str,
+        ipv6: str,
+        mac_address: str,
+        iface: str,
+        info_logger: logger,
+        level: str = "INFO",
     ):
         super().__init__(ip, ipv6, mac_address, iface)
         self._targets_used = []
         self.__logger_level = level
+        self.__info_logger = info_logger
 
     @property
     def targets_used(self) -> List[str]:
@@ -145,10 +152,10 @@ class MDNS(PoisonNetworkInfo):
             response (packet): [ Malicious packet ]
             ip_of_the_packet (str): [ ip of the victim ]
         """
-        logger.bind(name="info").debug("Packet crafted: ")
-        logger.bind(name="info").debug(response.summary())
+        self.__info_logger.debug("Packet crafted: ")
+        self.__info_logger.debug(response.summary())
         if ip_of_the_packet not in self.targets_used:
-            logger.bind(name="info").log(
+            self.__info_logger.log(
                 self.__logger_level,
                 f"{Fore.CYAN}Sending packet to {ip_of_the_packet}{Style.RESET_ALL}",
             )
@@ -187,7 +194,7 @@ class MDNS(PoisonNetworkInfo):
         """[ Function to start the poisoner ]"""
         # Port of mdns 5353
         # filter="udp and port mdns",
-        logger.bind(name="info").log(self.__logger_level, "Starting mdns poisoning...")
+        self.__info_logger.log(self.__logger_level, "Starting mdns poisoning...")
         cleaner_thread = Thread(target=self.cleaner)
         cleaner_thread.daemon = True
         cleaner_thread.start()
