@@ -3,10 +3,12 @@
 
 from impacket.examples.ntlmrelayx.servers.socksserver import SOCKS
 from threading import Thread
-
+from loguru import logger
 
 class Proxy:
-    def __init__(self):
+    def __init__(self,info_logger:logger):
+        self.__info_logger = info_logger
+        self.__info_logger.info("Starting socks server ...")
         self.__server = SOCKS()
         self.__server.daemon_threads = True
         self.__server_thread = Thread(target=self.__server.serve_forever)

