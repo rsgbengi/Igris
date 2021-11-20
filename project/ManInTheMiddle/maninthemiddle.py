@@ -153,11 +153,11 @@ class SmbServerAttack(CommandSet):
         )
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
-        """[ Method to check attack options
+        """[ Method to check attack options ]
 
            Args:
                 args (argparse.Namespace): [ Arguments passed to the attack ]
-        ]"""
+        """
         if args.end_attack:
             self.__ends_process_in_the_background()
             return
@@ -237,7 +237,7 @@ class SmbServerAttack(CommandSet):
             self.__launching_attack(args)
 
     def mss_postloop(self) -> None:
-        """[ Metodo para detener el ataque antes de que se cierre la aplicacion ]"""
+        """[method to stop the attack before the application is terminated]"""
         if self.__attack is not None and self.__attack.is_alive:
             self.__attack.terminate()
             self.__attack.join()
@@ -315,7 +315,7 @@ class NtlmRelay(CommandSet):
             self.__display_sam_alert()
             self.__display_connection_alert()
 
-    def __checking_directory_options(self, args: argparse.Nampesace) -> None:
+    def __checking_directory_options(self, args: argparse.Namespace) -> None:
         """[Method that will check the options of the output]
 
         Args:
@@ -333,7 +333,7 @@ class NtlmRelay(CommandSet):
             move_sam_result.start()
 
     def __checking_asynchronous_options(self, args: argparse.Namespace) -> None:
-        """[Method that will check the options of the asynchronnous attack]
+        """[Method that will check the options of the asynchronous attack]
 
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]

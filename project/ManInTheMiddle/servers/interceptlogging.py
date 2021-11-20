@@ -9,6 +9,12 @@ import re
 
 
 class InterceptHandlerMss(logging.Handler):
+    """[ Class to intercept log messages and adapt them to the mss attack ]
+        Args:
+            path_file (str): [ Path to the output file ].
+            ntlmv2_collected: (dict): [ All ntlm hashes will be saved here ].
+            alerts_dictionary (dict,optional): [  Attribute that contains the dictionary that manages alerts ]. Default to None
+    """
     def __init__(
         self, path_file: str, ntlmv2_collected: dict, alerts_dictionary: dict = None
     ) -> None:
@@ -18,6 +24,10 @@ class InterceptHandlerMss(logging.Handler):
         self.__alerts_dictionary = alerts_dictionary
 
     def __open_the_file(self, message: str) -> None:
+        """[ Method to create or rewrite the file with the hashes found ]
+            Args:
+                message (str): [ Intercepted message containing the hash ]
+        """
         file_created = f"{self.__path_file}/ntlmv2_hashes.txt"
         if os.path.exists(file_created):
             with open(file_created, "a") as output_file:
@@ -27,6 +37,10 @@ class InterceptHandlerMss(logging.Handler):
                 output_file.write(message + "\n")
 
     def __save_hashes(self, message: str) -> None:
+        """ [ Method to save the new hashes in a file ]
+            Args:
+                message (str): [ Intercepted message ]
+        """
         if "::" in message:
             user = message.split("::")[0]
             if user not in self.__ntlmv2_collected.keys():
@@ -36,6 +50,10 @@ class InterceptHandlerMss(logging.Handler):
                 self.__open_the_file(message)
 
     def emit(self, record: LogRecord) -> Tuple[str, int]:
+        """[ Method that intercepts messages from other loggers ]
+            Args:
+                record (LogRecord): [ Log with intercepted messages ]
+        """
         # Get corresponding Loguru level if it exists
         try:
             level = logger.level(record.levelname).name
@@ -55,11 +73,20 @@ class InterceptHandlerMss(logging.Handler):
 
 # https://stackoverflow.com/questions/65329555/standard-library-logging-plus-loguru
 class InterceptHandlerStdoutMss(InterceptHandlerMss):
+    """[ Class to display intercepted messages on screen ]
+        Args:
+            path_file (str): [ Path to the output file ].
+            ntlmv2_collected: (dict): [ All ntlm hashes will be saved here ].
+    """
+
     def __init__(self, path_file: str, ntlmv2_collected: dict) -> None:
         super().__init__(path_file, ntlmv2_collected)
 
     def emit(self, record) -> None:
-
+        """[ Method that intercepts messages from other loggers and display them on the screen ]
+            Args:
+                record (LogRecord): [ Log with intercepted messages ]
+        """
         level, depth = super().emit(record)
         if level == "INFO":
             logger.bind(name="info").opt(depth=depth, exception=record.exc_info).log(
@@ -72,6 +99,13 @@ class InterceptHandlerStdoutMss(InterceptHandlerMss):
 
 
 class InterceptHandlerOnlyFilesMss(InterceptHandlerMss):
+    """[ Class to intercept the messages and save them in the log files ]
+        Args:
+            path_file (str): [ Path to the output file ].
+            ntlmv2_collected: (dict): [ All ntlm hashes will be saved here ].
+            alerts_dictionary (dict,optional): [  Attribute that contains the dictionary that manages alerts ]. Default to None
+    """
+
     def __init__(self, alerts_dictionary: dict, path_file: str, ntlmv2_collected: dict):
         super().__init__(path_file, ntlmv2_collected, alerts_dictionary)
 
@@ -83,6 +117,10 @@ class InterceptHandlerOnlyFilesMss(InterceptHandlerMss):
 
 
 class InterceptHandlerNtlmRelay(logging.Handler):
+    """[ Class to intercept messages and adapt them to the ntlm relay attack ]
+        Args:
+            alerts_dictionary (dict): [  Attribute that contains the dictionary that manages alerts ].
+    """
     def __init__(self, alerts_dictionary: dict) -> None:
         super().__init__()
         self.__alerts_dictionary = alerts_dictionary
@@ -102,6 +140,11 @@ class InterceptHandlerNtlmRelay(logging.Handler):
 
 
 class InterceptHandlerStdoutNtlmRelay(InterceptHandlerNtlmRelay):
+    """[ Class to intercept messages and display them on the screen ]
+        Args:
+            alerts_dictionary (dict,optional): [  Attribute that contains the dictionary that manages alerts ]. Default to None
+    """
+
     def __init__(self, alerts_dictionary: dict = None) -> None:
         super().__init__(alerts_dictionary)
 
@@ -118,7 +161,12 @@ class InterceptHandlerStdoutNtlmRelay(InterceptHandlerNtlmRelay):
 
 
 class InterceptHandlerOnlyFilesNtlmRelay(InterceptHandlerNtlmRelay):
-    def __init__(self, alerts_dictionary) -> None:
+    """[ Class to intercept messages and save them in the log file ]
+        Args:
+            alerts_dictionary (dict): [  Attribute that contains the dictionary that manages alerts ].
+    """
+
+    def __init__(self, alerts_dictionary:dict) -> None:
         super().__init__(alerts_dictionary)
         self.__alerts_dictionary = alerts_dictionary
 
