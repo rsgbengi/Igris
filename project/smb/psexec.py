@@ -11,10 +11,12 @@ import cmd2
 from cmd2 import CommandSet, ansi, with_default_category
 from pypsexec.client import Client
 from pypsexec.exceptions import PAExecException, SCMRException
+from smbprotocol.exceptions import LogonFailure
 from smbprotocol.exceptions import CannotDelete
 from spinners.spinners import Spinners
 
 from .gatherinfo import PsexecShellVariables
+from .pth import PthOverPsexec
 
 
 @with_default_category("SMB Recon")
@@ -262,9 +264,9 @@ class Psexec(CommandSet):
             self._cmd.info_logger.info(
                 "The connection has been established successfully"
             )
-        except ValueError:
+        except (ValueError, LogonFailure):
             self._cmd.error_logger.error(
-                "Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.."
+                "Error when creating the connection. Use the scan command to find out if your user has the ability to psexec."
             )
         return connection_result
 
@@ -379,7 +381,7 @@ class Psexec(CommandSet):
             if success_creating_service:
                 self.__psexec_execution_options(args, conn)
 
-    def __clean_paexec_files(self, args):
+    def __clean_paexec_files(self, args: argparse.Namespace) -> None:
         rhost = self._cmd.RHOST
         user = self._cmd.USER
         passwd = self._cmd.PASSWD
@@ -401,6 +403,17 @@ class Psexec(CommandSet):
             self._cmd.error_logger.error(
                 f"Cannot delete files in {rhost}. Please restart Igris"
             )
+
+    def __pth(self, args: argparse.Namespace) -> None:
+        executer = PthOverPsexec(
+            args.command,
+            None,
+            None,
+            None,
+            username=f"{self._cmd.USER}@{self._cmd.RHOST}",
+            hashes=self._cmd.LM + ":" + self._cmd.NT,
+        )
+        executer.run(self._cmd.RHOST, self._cmd.RHOST)
 
     argParser = cmd2.Cmd2ArgumentParser(description="Tool to execute commands remotely")
     argParser.add_argument(
@@ -437,6 +450,12 @@ class Psexec(CommandSet):
         action="store_true",
         help="Command to clean PaExec files on failure",
     )
+    argParser.add_argument(
+        "-PTH",
+        "--pass_the_hash",
+        action="store_true",
+        help="Command to use hashes nt y lm to perform psexec using impacket",
+    )
 
     @cmd2.with_argparser(argParser)
     def do_psexec(self, args: argparse.Namespace) -> None:
@@ -448,12 +467,17 @@ class Psexec(CommandSet):
         rhost = self._cmd.RHOST
         user = self._cmd.USER
         passwd = self._cmd.PASSWD
+        nt = self._cmd.NT
+        lm = self._cmd.LM
 
         settable_variables_required = {
             "RHOST": rhost,
             "USER": user,
             "PASSWD": passwd,
+            "NT": nt,
+            "LM": lm,
         }
+
         self._cmd.info_logger.debug(
             f"Starting psexec with the user {user} and the password {passwd} in {rhost}"
         )
@@ -464,6 +488,9 @@ class Psexec(CommandSet):
             return
         if args.clean_remote_files:
             self.__clean_paexec_files(args)
+            return
+        if args.pass_the_hash:
+            self.__pth(args)
             return
 
         self.__process_to_perform_psexec(args)

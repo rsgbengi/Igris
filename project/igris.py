@@ -69,7 +69,7 @@ class Igris_Shell(cmd2.Cmd):
         return self.__error_logger
 
     def __set_up_global_variables(self):
-        self.poutput("A"*32)
+        self.poutput("A" * 32)
         self.ntlmv2_collected = {}
 
     def load_modules(self) -> None:
@@ -123,6 +123,14 @@ class Igris_Shell(cmd2.Cmd):
         self.IPV6 = "fe80::20c:29ff:fe89:df69"
         self.add_settable(
             cmd2.Settable("IPV6", str, "Set the IPV6 of the target", self)
+        )
+        self.NT = "31d6cfe0d16ae931b73c59d7e0c089c0"
+        self.add_settable(
+            cmd2.Settable("NT", str, "Set the NT hash for pass the hash", self)
+        )
+        self.LM = "aad3b435b51404eeaad3b435b51404ee"
+        self.add_settable(
+            cmd2.Settable("LM", str, "Set the LM hash for pass the hash", self)
         )
 
     def _set_prompt(self) -> None:
