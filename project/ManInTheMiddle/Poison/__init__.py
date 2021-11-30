@@ -1,1 +1,1 @@
-from .poisoners import MDNS
+from .poisoners import MDNS, LLMNR

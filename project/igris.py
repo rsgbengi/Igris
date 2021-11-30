@@ -124,7 +124,7 @@ class Igris_Shell(cmd2.Cmd):
         self.add_settable(
             cmd2.Settable("IPV6", str, "Set the IPV6 of the target", self)
         )
-        self.NT = "31d6cfe0d16ae931b73c59d7e0c089c0"
+        self.NT = "c39f2beb3d2ec06a62cb887fb391dee0"
         self.add_settable(
             cmd2.Settable("NT", str, "Set the NT hash for pass the hash", self)
         )

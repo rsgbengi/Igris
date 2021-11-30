@@ -1,6 +1,89 @@
-2021-11-22 10:32:45.890 | DEBUG    | project.smb.psexec:do_psexec:481 - Starting psexec with the user Administrator and the password P@$$w0rd! in 192.168.253.129
-2021-11-22 10:32:45.892 | INFO     | project.igris:show_settable_variables_necessary:225 - Showing necessary settable variables
-2021-11-22 10:33:13.564 | DEBUG    | project.smb.psexec:do_psexec:481 - Starting psexec with the user Administrator and the password P@$$w0rd! in 192.168.253.129
-2021-11-22 10:33:13.565 | DEBUG    | project.igris:check_settable_variables_value:205 - Checking the correct value of the necessary settable variables 
-2021-11-22 10:39:45.453 | DEBUG    | project.smb.psexec:do_psexec:481 - Starting psexec with the user Administrator and the password P@$$w0rd! in 192.168.253.129
-2021-11-22 10:39:45.454 | DEBUG    | project.igris:check_settable_variables_value:205 - Checking the correct value of the necessary settable variables 
+2021-11-30 17:39:52.330 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:228 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-30 17:39:52.332 | DEBUG    | project.igris:check_settable_variables_value:205 - Checking the correct value of the necessary settable variables 
+2021-11-30 17:39:52.339 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:127 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-30 17:39:52.350 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_llmnr_poisoning:382 - Starting llmnr poisoning...
+2021-11-30 17:39:52.351 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-30 17:39:52.429 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-30 17:39:52.430 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-30 17:39:52.431 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-30 17:40:23.952 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:118 - Exiting smb relay attack ...
+2021-11-30 17:44:06.081 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:228 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-30 17:44:06.082 | DEBUG    | project.igris:check_settable_variables_value:205 - Checking the correct value of the necessary settable variables 
+2021-11-30 17:44:06.086 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:127 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-30 17:44:06.094 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_llmnr_poisoning:383 - Starting llmnr poisoning...
+2021-11-30 17:44:06.095 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-30 17:44:06.103 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-30 17:44:06.108 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-30 17:44:06.108 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-30 17:44:16.165 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:118 - Exiting smb relay attack ...
+2021-11-30 18:05:26.278 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:228 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-30 18:05:26.280 | DEBUG    | project.igris:check_settable_variables_value:205 - Checking the correct value of the necessary settable variables 
+2021-11-30 18:05:26.286 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:127 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-30 18:05:26.299 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_llmnr_poisoning:383 - Starting llmnr poisoning...
+2021-11-30 18:05:26.300 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-30 18:05:26.307 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-30 18:05:26.308 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-30 18:05:26.311 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-30 18:06:00.793 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:118 - Exiting smb relay attack ...
+2021-11-30 18:06:47.369 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:228 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-30 18:06:47.371 | DEBUG    | project.igris:check_settable_variables_value:205 - Checking the correct value of the necessary settable variables 
+2021-11-30 18:06:47.379 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:127 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-30 18:06:47.394 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_llmnr_poisoning:383 - Starting llmnr poisoning...
+2021-11-30 18:06:47.395 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-30 18:06:47.400 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-30 18:06:47.402 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-30 18:06:47.402 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-30 18:06:52.487 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:__send_packet:339 - Packet crafted: 
+2021-11-30 18:06:52.489 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:__send_packet:340 - Ether / IPv6 / UDP fe80::20c:29ff:fe89:df69:'5355' > fe80::1cb7:6a5:258:73f9:62724 / LLMNRResponse
+2021-11-30 18:06:52.489 | INFO     | project.ManInTheMiddle.Poison.poisoners:__send_packet:342 - [36m(LLMNR) Sending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-30 18:06:56.238 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:118 - Exiting smb relay attack ...
+2021-11-30 18:09:30.161 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:228 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-30 18:09:30.162 | DEBUG    | project.igris:check_settable_variables_value:205 - Checking the correct value of the necessary settable variables 
+2021-11-30 18:09:30.164 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:127 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-30 18:09:30.170 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_llmnr_poisoning:385 - Starting llmnr poisoning...
+2021-11-30 18:09:30.171 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-30 18:09:30.174 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-30 18:09:30.175 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-30 18:09:30.175 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-30 18:09:36.230 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:__send_packet:340 - Packet crafted: 
+2021-11-30 18:09:36.232 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:__send_packet:341 - Ether / IPv6 / UDP fe80::20c:29ff:fe89:df69:'5355' > fe80::1cb7:6a5:258:73f9:59485 / LLMNRResponse
+2021-11-30 18:09:36.232 | INFO     | project.ManInTheMiddle.Poison.poisoners:__send_packet:343 - [36m(LLMNR) Sending packet to fe80::1cb7:6a5:258:73f9[0m
+2021-11-30 18:09:38.422 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:118 - Exiting smb relay attack ...
+2021-11-30 18:10:48.543 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:228 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-30 18:10:48.544 | DEBUG    | project.igris:check_settable_variables_value:205 - Checking the correct value of the necessary settable variables 
+2021-11-30 18:10:48.546 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:127 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-30 18:10:48.551 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_llmnr_poisoning:385 - Starting llmnr poisoning...
+2021-11-30 18:10:48.551 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-30 18:10:48.559 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-30 18:10:48.560 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-30 18:10:48.561 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-30 18:10:52.633 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:__send_packet:340 - Packet crafted: 
+2021-11-30 18:10:52.634 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:__send_packet:341 - Ether / IP / UDP 192.168.253.135:'5355' > 192.168.253.1:hostmon / LLMNRResponse
+2021-11-30 18:10:52.634 | INFO     | project.ManInTheMiddle.Poison.poisoners:__send_packet:343 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2021-11-30 18:10:56.258 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:118 - Exiting smb relay attack ...
+2021-11-30 18:17:03.414 | DEBUG    | project.ManInTheMiddle.maninthemiddle:do_mss:228 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe89:df69
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-11-30 18:17:03.416 | DEBUG    | project.igris:check_settable_variables_value:205 - Checking the correct value of the necessary settable variables 
+2021-11-30 18:17:03.424 | INFO     | project.ManInTheMiddle.maninthemiddle:__launching_attack:127 - Running mss the results will be saved in : /home/rsgbengi/Igris
+2021-11-30 18:17:03.442 | INFO     | project.ManInTheMiddle.Poison.poisoners:start_llmnr_poisoning:385 - Starting llmnr poisoning...
+2021-11-30 18:17:03.444 | INFO     | project.ManInTheMiddle.servers.smbserver:start_malicious_smbserver:65 - Starting Malicious SMB Server ...
+2021-11-30 18:17:03.455 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-11-30 18:17:03.456 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-11-30 18:17:03.460 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-11-30 18:17:07.506 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:__send_packet:340 - Packet crafted: 
+2021-11-30 18:17:07.508 | DEBUG    | project.ManInTheMiddle.Poison.poisoners:__send_packet:341 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2021-11-30 18:17:07.508 | INFO     | project.ManInTheMiddle.Poison.poisoners:__send_packet:343 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2021-11-30 18:17:07.547 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.129,50291)
+2021-11-30 18:17:07.689 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (RSGBENGICORP\apuia,PC-ALEX)
+2021-11-30 18:17:07.690 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-ALEX\apuia authenticated successfully
+2021-11-30 18:17:07.700 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - apuia::RSGBENGICORP:aaaaaaaaaaaaaaaa:f0d3706d5f4ed3b415671d38a827c194:01010000000000008053b77b16e6d7011f9d2de56590059f00000000010010007a0067004c006b006900590053006d00030010007a0067004c006b006900590053006d000200100041004c006700470045007900720043000400100041004c00670047004500790072004300070008008053b77b16e6d70106000400020000000800300030000000000000000100000000200000f45919a3b25f436d357a66d0351550d519d6761e86cb54425214b83fc40227b60a001000000000000000000000000000000000000900620063006900660073002f006c006d0061006f006f006f0061006d00690067006f0073007300730073006400650079006f00750074007500620065006a0065006a0065006a006f006a006f002e006c006f00630061006c0064006f006d00610069006e000000000000000000
+2021-11-30 18:17:07.783 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2021-11-30 18:17:07.827 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2021-11-30 18:17:08.460 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2021-11-30 18:17:18.121 | WARNING  | project.ManInTheMiddle.maninthemiddle:__synchronous_attack:118 - Exiting smb relay attack ...
