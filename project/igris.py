@@ -3,21 +3,18 @@
 
 from logging import Logger
 from typing import List, Tuple
-import cmd2
-import sys
+
 import os
+import sys
+import cmd2
 from cmd2 import ansi
 from art import text2art
 from tabulate import tabulate
 from loguru import logger
 from log_symbols import LogSymbols
-
-from colorama import Fore, Style
-
 from .smb import ScanForPsexec
 from .smb import Psexec
 from .ManInTheMiddle import SmbServerAttack, NtlmRelay
-from impacket.examples import logger as log
 
 
 COLORS = {
@@ -58,7 +55,6 @@ class Igris_Shell(cmd2.Cmd):
 
         self.__set_up_file_loggers()
         self.__info_logger, self.__error_logger = self.__set_up_output_loggers()
-        self.__set_up_global_variables()
 
     @property
     def info_logger(self) -> Logger:
@@ -68,11 +64,8 @@ class Igris_Shell(cmd2.Cmd):
     def error_logger(self) -> Logger:
         return self.__error_logger
 
-    def __set_up_global_variables(self):
-        self.poutput("A" * 32)
-        self.ntlmv2_collected = {}
-
     def load_modules(self) -> None:
+        """[ Function to activate the available modules ]"""
         self.__scan_module = ScanForPsexec()
         self.__psexec_module = Psexec()
         self.__ntlm_relay_module = NtlmRelay()
@@ -89,10 +82,15 @@ class Igris_Shell(cmd2.Cmd):
         self.USER = "Administrator"
         self.add_settable(cmd2.Settable("USER", str, "Set user target", self))
 
-        # Password
+        # Password aad3b435b51404eeaad3b435b51404ee:c39f2beb3d2ec06a62cb887fb391dee0
         self.PASSWD = "P@$$w0rd!"
         self.add_settable(
-            cmd2.Settable("PASSWD", str, "Set password of the target", self)
+            cmd2.Settable(
+                "PASSWD",
+                str,
+                "Set password of the target. It could be ntlm hash to perform pass the hash",
+                self,
+            )
         )
 
     def __network_config_variables(self):
@@ -123,14 +121,6 @@ class Igris_Shell(cmd2.Cmd):
         self.IPV6 = "fe80::20c:29ff:fe89:df69"
         self.add_settable(
             cmd2.Settable("IPV6", str, "Set the IPV6 of the target", self)
-        )
-        self.NT = "c39f2beb3d2ec06a62cb887fb391dee0"
-        self.add_settable(
-            cmd2.Settable("NT", str, "Set the NT hash for pass the hash", self)
-        )
-        self.LM = "aad3b435b51404eeaad3b435b51404ee"
-        self.add_settable(
-            cmd2.Settable("LM", str, "Set the LM hash for pass the hash", self)
         )
 
     def _set_prompt(self) -> None:
@@ -299,14 +289,12 @@ class Igris_Shell(cmd2.Cmd):
         fmt = "{level.icon} {message}"
         logger.add(
             self.stdout,
-            colorize=True,
             level="INFO",
             format=fmt,
             filter=lambda record: record["extra"].get("name") == "info",
         )
         logger.add(
             sys.stderr,
-            colorize=True,
             level="WARNING",
             format=fmt,
             filter=lambda record: record["extra"].get("name") == "error",

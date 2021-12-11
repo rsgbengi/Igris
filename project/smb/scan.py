@@ -6,7 +6,6 @@ import ntpath
 import random
 
 from halo import Halo
-import threading
 from typing import Tuple
 import cmd2
 import pandas as pd
@@ -17,7 +16,9 @@ from log_symbols import LogSymbols
 from spinners.spinners import Spinners
 from tabulate import tabulate
 
+from spnego._ntlm_raw.crypto import is_ntlm_hash
 from .gatherinfo import TargetInfo, UserInfo
+from multiprocessing import Process
 
 
 @with_default_category("SMB Recon")
@@ -27,28 +28,21 @@ class ScanForPsexec(CommandSet):
         self.__scan_info = {}
         self.__spinner_list = [key.name for key in Spinners]
         self.__spinner = None
-        self._scan_thread = threading.Thread()
-
-    @property
-    def scan_thread(self) -> threading.Thread:
-        return self._scan_thread
-
-    @scan_thread.setter
-    def scan_thread(self, new_thread) -> None:
-        self._scan_thread = new_thread
+        self.__scan_process = None
 
     def scan_postloop(self) -> None:
         """[Function that will be performe when the user exits the shell]"""
-        if self.scan_thread.is_alive():
+        if self.__is_running():
             self._cmd.info_logger.info(
                 ansi.style(
-                    "The scan Thread must finished before exit...",
+                    "The scan process must finished before exit...",
                     fg=ansi.fg.bright_yellow,
                 )
             )
-            self.scan_thread.join()
+            self.__scan_process.terminate()
+            self.__scan_process.join()
             self._cmd.info_logger.success(
-                ansi.style("The thread has finished", fg=ansi.fg.bright_green)
+                ansi.style("The scan has finished", fg=ansi.fg.bright_green)
             )
 
     def __try_scan_connection_with_smb1(
@@ -121,9 +115,15 @@ class ScanForPsexec(CommandSet):
         user = user_info.user
         password = user_info.passwd
         ip = smbclient.getRemoteName()
+        nt = None
+        lm = None
 
         try:
-            smbclient.login(user, password)
+            if is_ntlm_hash(password):
+                lm, nt = password.split(":")
+                smbclient.login(user, password="", lmhash=lm, nthash=nt)
+            else:
+                smbclient.login(user, password)
             succeed_in_login = True
             self._cmd.info_logger.debug(f"Login successful at {ip}")
         except Exception:
@@ -419,23 +419,11 @@ class ScanForPsexec(CommandSet):
                 )
             )
             self._cmd.terminal_lock.release()
-        self._cmd.info_logger.debug(
-            "Asynchronous scanning has been completed. Enabling scan command... "
-        )
-        self._cmd.enable_command("scan")
+        self._cmd.info_logger.debug("Asynchronous scanning has been completed.")
 
     def __asynchronous_way(self) -> None:
         """[Function that will start the asynchronous scan]"""
-        self._cmd.info_logger.info(
-            "Using asynchronous scan. The command will be disabled while its execution"
-        )
-        self._cmd.disable_command(
-            "scan",
-            ansi.style(
-                "The scan command will be disabled while it is running",
-                fg=ansi.fg.bright_yellow,
-            ),
-        )
+        self._cmd.info_logger.info("Using asynchronous scan.")
         self._cmd.info_logger.info(
             ansi.style(
                 "Starting... The messeges will be displayed as new computer is found",
@@ -443,10 +431,8 @@ class ScanForPsexec(CommandSet):
             )
         )
 
-        self.scan_thread = threading.Thread(
-            target=self.__set_up_scan_actions_asynchronous
-        )
-        self.scan_thread.start()
+        self.__scan_process = Process(target=self.__set_up_scan_actions_asynchronous)
+        self.__scan_process.start()
 
     def __show_scan_results_synchronous(self, target_info: TargetInfo) -> None:
         """[Display the results of an synchronous scan]
@@ -459,7 +445,6 @@ class ScanForPsexec(CommandSet):
         if target_info.psexec:
             admin = ansi.style("PsExec here!", fg=ansi.fg.yellow)
             self.__spinner.warn(admin + " " + os_with_color + " " + ip_with_color)
-            # self._cmd.info("")
         else:
             self.__spinner.info(" " + os_with_color + " " + ip_with_color)
 
@@ -479,7 +464,6 @@ class ScanForPsexec(CommandSet):
         self.__configure_target_info_of_scan(target_info, smbclient)
         success_in_psexec_checker = self.__check_psexec_possibility(smbclient)
         target_info.psexec = success_in_psexec_checker
-        # self.show_scan_results_synchronous(target_info)
         self.__store_scan_results(target_info)
         return target_info
 
@@ -520,6 +504,7 @@ class ScanForPsexec(CommandSet):
         user_info = UserInfo(user, password)
 
         self._cmd.info_logger.info("Starting to launch threads based on your cpu")
+
         with concurrent.futures.ThreadPoolExecutor() as executor:
             try:
                 results = executor.map(
@@ -575,18 +560,40 @@ class ScanForPsexec(CommandSet):
             else:
                 self.__synchronous_way()
 
+    def __end_scan(self) -> None:
+        """[ Process to finished the scan process ]"""
+        if self.__is_running:
+            self._cmd.error_logger.warning("Exiting ...")
+            self.__scan_process.terminate()
+            self.__scan_process.join()
+
+    def __is_running(self) -> None:
+        """[ Method to check if the scan is already in progress ]"""
+        return self.__scan_process is not None and self.__scan_process.is_alive()
+
     argParser = cmd2.Cmd2ArgumentParser(
         description="""Tool to know if there is a possibility to perform psexec. 
         Without arguments this tool will scan the Subnet"""
     )
-    argParser.add_argument(
+    display_options = argParser.add_argument_group(
+        " Arguments for displaying information "
+    )
+    display_options.add_argument(
         "-SI",
         "--show_info",
         action="store_true",
         help="""It shows the information of all the subnets of the current user 
             and password specified in the settable variables(USER, PASSWD)""",
     )
-    argParser.add_argument(
+    display_options.add_argument(
+        "-SS",
+        "--show_settable",
+        action="store_true",
+        help="Show Settable variables for this command",
+    )
+
+    run_options = argParser.add_argument_group(" Arguments for ways to run a program ")
+    run_options.add_argument(
         "-A",
         "--asynchronous",
         action="store_true",
@@ -594,11 +601,11 @@ class ScanForPsexec(CommandSet):
         the application must be running in a terminal that supports VT100 
         control characters and readline""",
     )
-    argParser.add_argument(
-        "-SS",
-        "--show_settable",
+    run_options.add_argument(
+        "-E",
+        "--end_scan",
         action="store_true",
-        help="Show Settable variables for this command",
+        help="Finish the scan in the background",
     )
 
     @cmd2.with_argparser(argParser)
@@ -623,9 +630,15 @@ class ScanForPsexec(CommandSet):
             "USER": user,
             "PASSWD": passwd,
         }
-
         if args.show_info:
             self.__show_scan_info()
+            return
+        if args.end_scan:
+            self.__end_scan()
+            return
+        if self.__is_running():
+            self._cmd.error_logger.warning("The scan is already running in the background ...")
+            return
         elif args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):

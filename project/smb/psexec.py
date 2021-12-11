@@ -404,57 +404,45 @@ class Psexec(CommandSet):
                 f"Cannot delete files in {rhost}. Please restart Igris"
             )
 
-    def __pth(self, args: argparse.Namespace) -> None:
-        executer = PthOverPsexec(
-            args.command,
-            None,
-            None,
-            None,
-            username=f"{self._cmd.USER}@{self._cmd.RHOST}",
-            hashes=self._cmd.LM + ":" + self._cmd.NT,
-        )
-        executer.run(self._cmd.RHOST, self._cmd.RHOST)
-
     argParser = cmd2.Cmd2ArgumentParser(description="Tool to execute commands remotely")
-    argParser.add_argument(
+    command_options = argParser.add_argument_group("Options for running commands")
+    command_options.add_argument(
         "-C", "--command", help="Run a command on the windows machine."
     )
-    argParser.add_argument(
+    command_options.add_argument(
         "-I",
         "--interactive",
         action="store_true",
         help="For an interactive cmd.exe or powershell.exe",
     )
-    argParser.add_argument(
+    command_options.add_argument(
         "-ARG",
         "--arguments",
         help="""Arguments for a selected command. If there is more than one, 
         quotes must be used""",
     )
-    argParser.add_argument(
+    command_options.add_argument(
         "-E",
         "--encryption",
         action="store_true",
         help="""Argument to encrypt the communication. Encryption does not 
         work with windows 7 and server 2008""",
     )
-    argParser.add_argument(
-        "-SS",
-        "--show_settable",
-        action="store_true",
-        help="Show Settable variables for this command",
-    )
-    argParser.add_argument(
+    command_options.add_argument(
         "-CL",
         "--clean_remote_files",
         action="store_true",
         help="Command to clean PaExec files on failure",
     )
-    argParser.add_argument(
-        "-PTH",
-        "--pass_the_hash",
+
+    display_options = argParser.add_argument_group(
+        " Arguments for displaying information "
+    )
+    display_options.add_argument(
+        "-SS",
+        "--show_settable",
         action="store_true",
-        help="Command to use hashes nt y lm to perform psexec using impacket",
+        help="Show Settable variables for this command",
     )
 
     @cmd2.with_argparser(argParser)
@@ -467,15 +455,11 @@ class Psexec(CommandSet):
         rhost = self._cmd.RHOST
         user = self._cmd.USER
         passwd = self._cmd.PASSWD
-        nt = self._cmd.NT
-        lm = self._cmd.LM
 
         settable_variables_required = {
             "RHOST": rhost,
             "USER": user,
             "PASSWD": passwd,
-            "NT": nt,
-            "LM": lm,
         }
 
         self._cmd.info_logger.debug(
@@ -488,9 +472,6 @@ class Psexec(CommandSet):
             return
         if args.clean_remote_files:
             self.__clean_paexec_files(args)
-            return
-        if args.pass_the_hash:
-            self.__pth(args)
             return
 
         self.__process_to_perform_psexec(args)

@@ -11,16 +11,16 @@ class UserInfo:
 
     def __init__(self, user: str, passwd: str) -> None:
 
-        self._user = user
-        self._passwd = passwd
+        self.__user = user
+        self.__passwd = passwd
 
     @property
     def user(self):
-        return self._user
+        return self.__user
 
     @property
     def passwd(self):
-        return self._passwd
+        return self.__passwd
 
 
 class TargetInfo:
@@ -47,54 +47,54 @@ class TargetInfo:
         psexec: bool = False,
     ) -> None:
 
-        self._subnet = subnet
-        self._os = os
-        self._signed = signed
-        self._computer_name = computer_name
-        self._ip = ip
-        self._user_info = user_info
-        self._psexec = psexec
+        self.__subnet = subnet
+        self.__os = os
+        self.__signed = signed
+        self.__computer_name = computer_name
+        self.__ip = ip
+        self.__user_info = user_info
+        self.__psexec = psexec
 
     @property
     def user_info(self) -> None:
-        return self._user_info
+        return self.__user_info
 
     @property
     def subnet(self) -> None:
-        return self._subnet
+        return self.__subnet
 
     @property
     def ip(self) -> None:
-        return self._ip
+        return self.__ip
 
     @property
     def psexec(self) -> None:
-        return self._psexec
+        return self.__psexec
 
     @property
     def os(self) -> None:
-        return self._os
+        return self.__os
 
     @property
     def computer_name(self) -> None:
-        return self._computer_name
+        return self.__computer_name
 
     @property
     def signed(self) -> None:
-        return self._signed
+        return self.__signed
 
     @os.setter
     def os(self, os: str) -> None:
-        self._os = ansi.style(os, fg=ansi.fg.bright_magenta)
+        self.__os = ansi.style(os, fg=ansi.fg.bright_magenta)
 
     @signed.setter
     def signed(self, signed: bool) -> bool:
-        self._signed = ansi.style(signed, fg=ansi.fg.bright_magenta)
+        self.__signed = ansi.style(signed, fg=ansi.fg.bright_magenta)
 
     @computer_name.setter
     def computer_name(self, computer_name: str) -> str:
-        self._computer_name = ansi.style(computer_name, fg=ansi.fg.bright_magenta)
+        self.__computer_name = ansi.style(computer_name, fg=ansi.fg.bright_magenta)
 
     @psexec.setter
     def psexec(self, psexec: bool) -> bool:
-        self._psexec = psexec
+        self.__psexec = psexec

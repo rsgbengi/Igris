@@ -78,9 +78,12 @@ class MaliciousSmbServer:
             logging.basicConfig(
                 handlers=[InterceptHandlerStdoutMss(self.__path_file, self.__ntlmv2_collected)], level=0
             )
-        server = SimpleSMBServer(self.__lhost, int(self.__port))
-        server.setSMBChallenge("")
-        server.start()
+        try:
+            server = SimpleSMBServer(self.__lhost, int(self.__port))
+            server.setSMBChallenge("")
+            server.start()
+        except OSError:
+            self.__info_logger.error("Address already in use. Is ntlm_relay running ? ")
 
 
 class SmbRelayServer:
@@ -118,8 +121,10 @@ class SmbRelayServer:
         else:
             logging.basicConfig(handlers=[InterceptHandlerStdoutNtlmRelay()], level=0)
             self.__info_logger.info("Starting smb-relay server...")
-
-        server = SMBRelayServer(self.__config)
-        server.daemon = True
-        server.start()
-        server.join()
+        try:
+            server = SMBRelayServer(self.__config)
+            server.daemon = True
+            server.start()
+            server.join()
+        except OSError:
+            self.__info_logger.error("Address already in use. Is mss running ? ")
