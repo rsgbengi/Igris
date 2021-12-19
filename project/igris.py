@@ -14,7 +14,7 @@ from loguru import logger
 from log_symbols import LogSymbols
 from .smb import ScanForPsexec
 from .smb import Psexec
-from .ManInTheMiddle import SmbServerAttack, NtlmRelay
+from .mitm import SmbServerAttack, NtlmRelay
 
 
 COLORS = {

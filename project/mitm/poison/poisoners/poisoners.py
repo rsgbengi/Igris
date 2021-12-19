@@ -692,19 +692,8 @@ class DNS(PoisonNetworkInfo):
 
         response /= DNS(
             id=pkt[DNS].id,
-            qr=1,
-            opcode="QUERY",
-            aa=1,
-            rd=0,
-            rcode="ok",
-            qdcount=0,
             ancount=1,
-            nscount=0,
-            arcount=0,
-            qd=None,
             an=self.__dns_resource_record(pkt),
-            ns=None,
-            ar=None,
         )
 
         return response

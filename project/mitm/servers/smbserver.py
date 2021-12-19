@@ -13,6 +13,7 @@ from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
 import cmd2
 
 
+
 class MaliciousSmbServer:
     """[ Class that contains the configuration for the smbserver ]
 
@@ -121,7 +122,9 @@ class SmbRelayServer:
         else:
             logging.basicConfig(handlers=[InterceptHandlerStdoutNtlmRelay()], level=0)
             self.__info_logger.info("Starting smb-relay server...")
+
         try:
+
             server = SMBRelayServer(self.__config)
             server.daemon = True
             server.start()
