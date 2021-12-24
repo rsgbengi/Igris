@@ -104,7 +104,7 @@ class Igris_Shell(cmd2.Cmd):
         self.add_settable(cmd2.Settable("SUBNET", str, "Set subnet target", self))
 
         # IP_TARGET
-        self.RHOST = "192.168.253.129"
+        self.RHOST = "192.168.253.138"
         self.add_settable(cmd2.Settable("RHOST", str, "Set ip of the target", self))
 
         self.INTERFACE = "ens33"
@@ -118,7 +118,7 @@ class Igris_Shell(cmd2.Cmd):
         self.LPORT = "445"
         self.add_settable(cmd2.Settable("MAC_ADDRESS", str, "Set local port", self))
 
-        self.IPV6 = "fe80::20c:29ff:fe89:df69"
+        self.IPV6 = "fe80::20c:29ff:fe0e:d73b"
         self.add_settable(
             cmd2.Settable("IPV6", str, "Set the IPV6 of the target", self)
         )

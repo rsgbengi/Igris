@@ -1,30 +1,18 @@
 #!/usr/bin/env python3
-from cmd2.command_definition import with_default_category
-from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
-import argparse
-
-from .servers import MaliciousSmbServer, SmbRelayServer, Proxy
-from impacket.examples.ntlmrelayx.clients.smbrelayclient import SMBRelayClient
-from impacket.examples.ntlmrelayx.attacks.smbattack import SMBAttack
-from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
-from impacket.examples.ntlmrelayx.utils.targetsutils import TargetsProcessor
-from .poison import PoisonLauncher
+#
 from multiprocessing import Process, Manager
-from threading import Thread
 import sys
 import os
 import signal
-from cmd2 import ansi
-import cmd2
-import logging
-from loguru import logger
-from time import sleep
-from json import loads
-import shutil
-from requests import get, RequestException
-from tabulate import tabulate
 
+import argparse
 from log_symbols import LogSymbols
+from threading import Thread
+from cmd2.command_definition import with_default_category
+from cmd2 import CommandSet, Cmd2ArgumentParser, with_argparser
+
+from .servers import MaliciousSmbServer
+from .poison import PoisonLauncher
 
 @with_default_category("Man in the middle attacks")
 class SmbServerAttack(CommandSet):

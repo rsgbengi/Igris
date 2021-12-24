@@ -141,7 +141,6 @@ class PoisonNetwork:
         """
 
         self._info_logger.debug("Crafting transport layer")
-        pass
 
     def _application_layer(self, pkt: packet, response: packet) -> packet:
         """[ Add application layer to the response packet ]
@@ -155,7 +154,6 @@ class PoisonNetwork:
         """
 
         self._info_logger.debug("Crafting application layer layer")
-        pass
 
     def _cleaner(self) -> None:
         """[ Function to clean the list of objectives every 3 seconds ]"""

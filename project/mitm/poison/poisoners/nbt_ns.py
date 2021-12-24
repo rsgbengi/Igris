@@ -39,7 +39,7 @@ class NBT_NS(PoisonNetwork):
         info_logger: logger,
         level: str = "INFO",
     ):
-        super().__init__(ip, None, mac_address, iface)
+        super().__init__(ip, None, mac_address, iface, info_logger, level)
         self.__targets_used = []
         self.__logger_level = level
         self.__info_logger = info_logger
