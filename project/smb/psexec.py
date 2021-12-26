@@ -16,8 +16,6 @@ from smbprotocol.exceptions import CannotDelete
 from spinners.spinners import Spinners
 
 from .gatherinfo import PsexecShellVariables
-from .pth import PthOverPsexec
-
 
 @with_default_category("SMB Recon")
 class Psexec(CommandSet):

@@ -9,6 +9,7 @@ from scapy.all import (
     packet,
 )
 import time
+from threading import Thread
 
 
 class PoisonNetwork:
@@ -103,7 +104,6 @@ class PoisonNetwork:
         Returns:
             [ packet ]: [ Package with link layer added ]
         """
-        self._info_logger.debug("Crafting data link layer")
         return Ether(dst=pkt[Ether].src, src=self._mac_address)
 
     def _network_layer(self, pkt: packet, response: packet) -> Tuple[packet.Type, str]:
@@ -116,7 +116,6 @@ class PoisonNetwork:
         Returns:
             Tuple[packet.Type, str]: [ malicious package and ip of the target ]
         """
-        self._info_logger.debug("Crafting network layer")
         ip_of_the_packet = None
         if IP in pkt:
             if pkt[IP].src == self._ip:
@@ -130,32 +129,13 @@ class PoisonNetwork:
             ip_of_the_packet = pkt[IPv6].src
         return response, ip_of_the_packet
 
-    def _transport_layer(self, response: packet) -> packet:
-        """[ Add transport layer to the response packet ]
+    def _start_cleaner(self):
+        """[ Method to start the cleaner thread ]"""
+        cleaner_thread = Thread(target=self.__cleaner)
+        cleaner_thread.daemon = True
+        cleaner_thread.start()
 
-        Args:
-            response (packet): [ Packet to be send to the victim ]
-
-        Returns:
-            packet: [ Malicious packet ]
-        """
-
-        self._info_logger.debug("Crafting transport layer")
-
-    def _application_layer(self, pkt: packet, response: packet) -> packet:
-        """[ Add application layer to the response packet ]
-
-        Args:
-            pkt (packet): [ Sniffed packet ]
-            response (packet): [ packet to be send to the victim ]
-
-        Returns:
-            packet: [ Malicious packet ]
-        """
-
-        self._info_logger.debug("Crafting application layer layer")
-
-    def _cleaner(self) -> None:
+    def __cleaner(self) -> None:
         """[ Function to clean the list of objectives every 3 seconds ]"""
         while True:
             time.sleep(10)
