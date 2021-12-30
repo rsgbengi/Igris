@@ -26,6 +26,7 @@ from tabulate import tabulate
 
 from log_symbols import LogSymbols
 
+
 @with_default_category("Man in the middle attacks")
 class NtlmRelay(CommandSet):
     """[Class containing the ntlm relay attack]"""
@@ -258,7 +259,6 @@ class NtlmRelay(CommandSet):
         self.__output_sam_file = f"{self._cmd.RHOST}_samhashes.sam"
         self.__output_sam_dir = args.output_sam
 
-
         exit_value = self.__file_exits()
         if exit_value:
             self._cmd.info_logger.info("Exiting ...")
@@ -270,7 +270,7 @@ class NtlmRelay(CommandSet):
 
     def __poison_configuration(self, args: argparse.Namespace) -> dict:
 
-        poison_selector = {"MDNS": 0, "NBT_NS": 0, "LLMNR": 0}
+        poison_selector = {"MDNS": 0, "NBT_NS": 0, "LLMNR": 0, "DHCP6": 0}
         if args.mdns:
             poison_selector["MDNS"] = 1
         if args.nbt_ns:
@@ -409,7 +409,7 @@ class NtlmRelay(CommandSet):
         "-OS",
         "--output_sam",
         action="store",
-        default="/home/igris/loot",
+        default="/home/rsgbengi/Igris/loot",
         help="Output from the sam hashes",
     )
     attack_options.add_argument(

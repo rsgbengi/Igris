@@ -676,3 +676,387 @@
 2021-12-25 17:25:07.420 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
 2021-12-25 17:25:07.457 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
 2021-12-25 17:25:15.605 | WARNING  | project.mitm.mss:__synchronous_attack:99 - Exiting smb relay attack ...
+2021-12-27 15:42:50.418 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:42:50.436 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning...
+2021-12-27 15:42:50.437 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:42:50.461 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:42:50.477 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:42:50.483 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:42:52.324 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:43:49.615 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:43:53.704 | WARNING  | project.mitm.mss:__checking_conditions_for_attack:172 - The attack is already running in the background
+2021-12-27 15:43:56.864 | SUCCESS  | project.mitm.mss:__ends_process_in_the_background:53 - Finishing mss attack in the background ...
+2021-12-27 15:44:04.373 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:44:39.344 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:44:39.347 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:44:39.350 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:44:39.350 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:44:39.351 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:44:41.004 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:44:44.658 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:44:44.666 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning...
+2021-12-27 15:44:44.666 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:44:44.671 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:44:44.678 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:44:44.679 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:44:48.876 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:45:58.192 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:45:58.206 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning...
+2021-12-27 15:45:58.209 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:45:58.231 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:45:58.234 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:45:58.242 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:47:31.588 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:49:55.785 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:49:55.799 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning...
+2021-12-27 15:49:55.800 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:49:55.808 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:49:55.816 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:49:55.818 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:51:21.828 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:51:21.833 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-27 15:51:21.834 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:51:21.841 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:51:21.843 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:51:21.843 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:52:34.722 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:52:47.672 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:52:47.688 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-27 15:52:47.689 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:52:47.697 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:52:47.706 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:52:47.708 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:53:02.551 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:53:11.407 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:53:11.421 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-27 15:53:11.422 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:53:11.428 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:53:11.429 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:53:11.430 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:53:54.416 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:55:58.503 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:55:58.511 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-27 15:55:58.512 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:55:58.523 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:55:58.524 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:55:58.525 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:56:15.879 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-27 15:56:27.718 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:26:53.040 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:26:53.052 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-29 11:26:53.053 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:26:53.063 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:26:53.064 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:26:53.065 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:27:16.301 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:27:24.671 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:27:36.666 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:27:52.659 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:28:24.664 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:31:45.580 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:32:05.219 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:32:05.237 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-29 11:32:05.239 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:32:05.247 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:32:05.248 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:32:05.249 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:32:06.892 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:32:18.274 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:32:18.279 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:32:18.279 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:32:18.283 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:32:18.284 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:32:18.285 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:32:44.490 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:32:48.327 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:33:02.380 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:33:18.398 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:33:50.400 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:35:04.856 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:38:06.385 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:38:06.402 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:38:06.404 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:38:06.417 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:38:06.423 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:38:06.425 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:38:26.822 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:38:36.493 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:39:00.528 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:39:06.728 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:44:28.439 | INFO     | project.igris:show_settable_variables_necessary:215 - Showing necessary settable variables
+2021-12-29 11:44:48.391 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:44:48.405 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:44:48.407 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:44:48.414 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:44:48.418 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:44:48.421 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:45:05.777 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:45:08.799 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:45:25.276 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:45:28.580 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:47:48.007 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:47:48.026 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:47:48.028 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:47:48.039 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:47:48.044 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:47:48.051 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:50:13.688 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:58:45.437 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:58:45.443 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:155 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:58:45.443 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:58:45.451 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:58:45.453 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:58:45.454 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:59:12.005 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:59:16.847 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:59:26.276 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:07:24.029 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:07:24.042 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 12:07:24.043 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:07:24.051 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:07:24.053 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:07:24.054 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:07:41.134 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:07:45.664 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:07:57.707 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:08:13.723 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:08:22.900 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:08:41.029 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:08:41.035 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 12:08:41.035 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:08:41.038 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:08:41.039 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:08:41.039 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:08:56.497 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:09:02.260 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:09:14.270 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:09:30.273 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:09:43.636 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:09:52.438 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:09:52.443 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 12:09:52.444 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:09:52.447 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:09:52.448 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:09:52.448 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:10:08.906 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:10:12.705 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:10:26.729 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:10:42.745 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:10:46.676 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:11:21.450 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:11:21.466 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 12:11:21.468 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:11:21.482 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:11:21.484 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:11:21.494 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:11:41.297 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:11:42.320 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:11:52.814 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:11:54.224 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:18:43.288 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:18:43.307 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 12:18:43.309 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:18:43.328 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:18:43.330 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:18:43.333 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:19:00.060 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:19:03.834 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:19:17.845 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:19:24.548 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 14:14:42.982 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 14:14:42.989 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 14:14:42.990 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 14:14:42.996 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 14:14:43.003 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 14:14:43.005 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 14:15:12.188 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:15:13.189 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:15:27.960 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 14:29:19.548 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 14:29:19.555 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 14:29:19.557 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 14:29:19.564 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 14:29:19.565 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 14:29:19.566 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 14:30:03.563 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:30:11.586 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:30:17.268 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 14:30:50.401 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 14:30:50.407 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:155 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 14:30:50.407 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 14:30:50.411 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 14:30:50.412 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 14:30:50.413 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 14:31:15.857 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:31:21.511 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:31:33.590 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:31:49.607 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:31:52.700 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:16:20.147 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:16:20.163 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:156 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:16:20.164 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:16:20.191 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:16:20.193 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:16:20.194 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:16:37.308 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:16:41.049 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:16:43.342 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:23:01.902 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:23:01.915 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:156 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:23:01.918 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:23:01.925 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:23:01.926 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:23:01.927 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:23:19.759 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:23:32.794 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:29:59.032 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:29:59.050 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:160 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:29:59.054 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:29:59.069 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:29:59.071 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:29:59.072 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:30:16.203 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:116 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:30:20.970 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:31:59.831 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:31:59.847 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:154 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:31:59.849 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:31:59.856 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:31:59.861 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:31:59.866 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:32:15.672 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:32:20.461 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:32:35.508 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:115 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:33:29.962 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:34:20.101 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:34:20.105 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:154 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:34:20.105 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:34:20.109 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:34:20.110 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:34:20.111 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:34:46.994 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:35:46.229 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:35:46.244 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:35:46.246 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:35:46.255 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:35:46.257 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:35:46.269 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:36:03.061 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:36:07.973 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:36:18.774 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:36:54.572 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:36:54.579 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:154 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:36:54.580 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:36:54.586 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:36:54.593 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:36:54.594 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:37:10.392 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:37:14.870 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:37:17.830 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:38:16.209 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:38:16.228 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:154 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:38:16.230 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:38:16.239 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:38:16.242 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:38:16.247 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:38:32.520 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:38:37.031 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:38:40.130 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:51:13.743 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:51:13.748 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:51:13.748 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:51:13.751 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:51:13.752 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:51:13.753 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:51:39.191 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:51:43.999 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:51:59.033 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:53:09.218 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:54:55.585 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:54:55.599 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:149 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:54:55.602 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:54:55.615 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:54:55.623 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:54:55.626 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:55:33.871 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:55:35.872 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:111 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:56:17.678 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 16:01:15.991 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:01:15.995 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:01:15.998 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:01:15.998 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:01:15.999 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:01:37.790 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 16:01:43.659 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:01:43.673 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 16:01:43.674 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:01:43.681 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:01:43.682 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:01:43.685 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:02:01.287 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:02:04.227 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:02:20.257 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:03:05.442 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 16:08:28.717 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:08:28.731 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:08:28.735 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:08:28.735 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:08:28.736 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:08:37.062 | SUCCESS  | project.mitm.mss:__ends_process_in_the_background:53 - Finishing mss attack in the background ...
+2021-12-30 16:11:03.348 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:11:03.372 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:11:03.381 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:11:03.400 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:11:03.400 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:13:18.593 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:13:18.601 | INFO     | project.mitm.poison.poisonlauncher:__create_llmnr:81 - Running llmnr poisoning in the background
+2021-12-30 16:13:18.602 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:13:18.605 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:13:18.605 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:13:18.605 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:26:02.963 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:26:02.983 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:159 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 16:26:02.984 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:26:02.999 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:26:03.005 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:26:03.015 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:26:22.699 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:92 - [36m(DHCP6)Capturing SOLICIT packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:22.703 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:116 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:23.728 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:98 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:23.731 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:121 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:34.613 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:92 - [36m(DHCP6)Capturing SOLICIT packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:34.617 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:116 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:35.625 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:98 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:36.630 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:98 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:38.643 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:98 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:40.150 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 16:26:53.772 | WARNING  | project.mitm.ntlmrelay:__checking_directory_options:105 - The specified directory does not exists or you don't have access
+2021-12-30 16:27:37.896 | WARNING  | project.mitm.ntlmrelay:__checking_directory_options:105 - The specified directory does not exists or you don't have access
+2021-12-30 16:27:37.898 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:124 - Starting smb-relay server...
+2021-12-30 16:27:37.899 | ERROR    | project.mitm.servers.smbserver:start_smb_relay_server:133 - Address already in use. Is mss running ? 
+2021-12-30 16:28:27.335 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:124 - Starting smb-relay server...
+2021-12-30 16:28:27.338 | ERROR    | project.mitm.servers.smbserver:start_smb_relay_server:133 - Address already in use. Is mss running ? 
+2021-12-30 16:31:07.071 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:124 - Starting smb-relay server...
+2021-12-30 16:31:07.066 | INFO     | project.mitm.poison.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2021-12-30 16:31:07.088 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-12-30 16:31:25.974 | WARNING  | project.mitm.ntlmrelay:__synchronous_attack:166 - Exiting smb relay attack ...
+2021-12-30 16:31:30.384 | INFO     | project.igris:show_settable_variables_necessary:215 - Showing necessary settable variables
+2021-12-30 16:33:45.107 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:124 - Starting smb-relay server...
+2021-12-30 16:33:45.100 | INFO     | project.mitm.poison.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2021-12-30 16:33:45.155 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-12-30 16:33:52.450 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2021-12-30 16:33:52.494 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2021-12-30 16:33:52.528 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.139[0m
+2021-12-30 16:33:53.440 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2021-12-30 16:33:53.600 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2021-12-30 16:33:53.612 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2021-12-30 16:33:53.813 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-12-30 16:33:53.883 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2021-12-30 16:33:53.925 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-12-30 16:33:55.296 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2021-12-30 16:33:55.543 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-12-30 16:33:57.395 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2021-12-30 16:33:57.412 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-12-30 16:33:57.425 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2021-12-30 16:34:00.789 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2021-12-30 16:34:00.828 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.139[0m
+2021-12-30 16:34:00.886 | WARNING  | project.mitm.ntlmrelay:__synchronous_attack:166 - Exiting smb relay attack ...

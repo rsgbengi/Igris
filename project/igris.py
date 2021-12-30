@@ -111,7 +111,7 @@ class Igris_Shell(cmd2.Cmd):
         self.add_settable(
             cmd2.Settable("INTERFACE", str, "Set interface to sniff packets", self)
         )
-        self.MAC_ADDRESS = "00:0c:29:89:df:69"
+        self.MAC_ADDRESS = "00:0c:29:0e:d7:3b"
         self.add_settable(
             cmd2.Settable("MAC_ADDRESS", str, "Set mac address of your interface", self)
         )

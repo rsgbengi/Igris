@@ -14,6 +14,7 @@ from cmd2 import CommandSet, Cmd2ArgumentParser, with_argparser
 from .servers import MaliciousSmbServer
 from .poison import PoisonLauncher
 
+
 @with_default_category("Man in the middle attacks")
 class SmbServerAttack(CommandSet):
     """[ Class containing smbrelay attack ]"""
@@ -114,13 +115,21 @@ class SmbServerAttack(CommandSet):
 
     def __poison_configuration(self, args: argparse.Namespace) -> dict:
 
-        poison_selector = {"MDNS": 0, "NBT_NS": 0, "LLMNR": 0}
+        poison_selector = {"MDNS": 0, "NBT_NS": 0, "LLMNR": 0, "DHCP6": 0}
         if args.mdns:
             poison_selector["MDNS"] = 1
         if args.nbt_ns:
             poison_selector["NBT_NS"] = 1
         if args.llmnr:
             poison_selector["LLMNR"] = 1
+        if args.dhcp6:
+            if args.domain != "":
+                poison_selector["DHCP6"] = 1
+            else:
+                self._cmd.error_logger.error(
+                    "Enter the target domain to activate the dhcp6 poisoner"
+                )
+
         return poison_selector
 
     def __creating_components(self, args: argparse.Namespace) -> None:
@@ -138,6 +147,7 @@ class SmbServerAttack(CommandSet):
             self._cmd.info_logger,
             args.Asynchronous,
             poison_selector,
+            args.domain,
         )
 
         self.__smbserver = MaliciousSmbServer(
@@ -229,6 +239,20 @@ class SmbServerAttack(CommandSet):
         "--nbt_ns",
         action="store_true",
         help="To use NBT_NS poisoning",
+    )
+    attack_options.add_argument(
+        "-D",
+        "--dhcp6",
+        action="store_true",
+        help="To use dhcp6 poisoning",
+    )
+    attack_options.add_argument(
+        "-DOM",
+        "--domain",
+        action="store",
+        type=str,
+        required=False,
+        help="Target domain",
     )
 
     @with_argparser(argParser)
