@@ -91,8 +91,9 @@ class Igris_Shell(cmd2.Cmd):
     def __network_config_variables(self):
         """[ Settable variables for network ]"""
         # Set LHOST option
-        self.LHOST = "192.168.253.135"
+        self.LHOST = "192.168.253.1"
         self.add_settable(cmd2.Settable("LHOST", str, "Set ip of your machine", self))
+
 
         # Set SUBNET option
         self.SUBNET = "192.168.253.0/24"
@@ -102,7 +103,7 @@ class Igris_Shell(cmd2.Cmd):
         self.RHOST = "192.168.253.129"
         self.add_settable(cmd2.Settable("RHOST", str, "Set ip of the target", self))
 
-        self.INTERFACE = "ens33"
+        self.INTERFACE = "vmnet8"
         self.add_settable(
             cmd2.Settable("INTERFACE", str, "Set interface to sniff packets", self)
         )
