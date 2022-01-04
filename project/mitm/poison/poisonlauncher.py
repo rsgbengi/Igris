@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from loguru import logger
-from .poisoners import MDNS, NBT_NS, LLMNR, DHCP6
+from .poisoners import MDNS, NBT_NS, LLMNR, DHCP6, DNSPoison
 from threading import Thread
 
 
@@ -94,6 +94,20 @@ class PoisonLauncher:
             self.__info_logger.info("Running dhcp6 poisoning in the background")
             self.__dhcp6_poisoner.logger_level = "DEBUG"
 
+    def __create_dns(self):
+        """[ Method to configure dns poisoner ]"""
+        self.__dns_poisoner = DNSPoison(
+            self.__ip,
+            self.__ipv6,
+            self.__mac_address,
+            self.__iface,
+            self.__info_logger,
+        )
+
+        if self.__asynchronous:
+            self.__info_logger.info("Running dns poisoning in the background")
+            self.__dns_poisoner.logger_level = "DEBUG"
+
     def __start_mdns(self):
         """[ Method to start the mdns poisoner]"""
         mdns_thread = Thread(target=self.__mdns_poisoner.start_mdns_poisoning)
@@ -118,17 +132,34 @@ class PoisonLauncher:
         dhcp6_thread.dameon = True
         dhcp6_thread.start()
 
-    def start_poisoners(self):
-        if self.__poisoner_selector["MDNS"] == 1:
+    def __start_dns(self):
+        """[ Method to start the dhcp6 poisoner ]"""
+        dns_thread = Thread(target=self.__dns_poisoner.start_dns_poisoning)
+        dns_thread.dameon = True
+        dns_thread.start()
 
+    def start_poisoners(self):
+        if "MDNS" in self.__poisoner_selector and self.__poisoner_selector["MDNS"] == 1:
             self.__create_mdns()
             self.__start_mdns()
-        if self.__poisoner_selector["LLMNR"] == 1:
+        if (
+            "LLMNR" in self.__poisoner_selector
+            and self.__poisoner_selector["LLMNR"] == 1
+        ):
             self.__create_llmnr()
             self.__start_llmnr()
-        if (self.__poisoner_selector["NBT_NS"]) == 1:
+        if (
+            "NBT_NS" in self.__poisoner_selector
+            and self.__poisoner_selector["NBT_NS"] == 1
+        ):
             self.__create_nbt_ns()
             self.__start_nbt_ns()
-        if self.__poisoner_selector["DHCP6"] == 1:
+        if (
+            "DHCP6" in self.__poisoner_selector
+            and self.__poisoner_selector["DHCP6"] == 1
+        ):
             self.__create_dhcp6()
             self.__start_dhcp6()
+        if "DNS" in self.__poisoner_selector and self.__poisoner_selector["DNS"] == 1:
+            self.__create_dns()
+            self.__start_dns()

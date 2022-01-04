@@ -5,3 +5,4 @@ from .llmnr import LLMNR
 from .nbt_ns import NBT_NS
 from .dnspoison import DNS
 from .dhcp6 import DHCP6
+from .dns import DNSPoison
