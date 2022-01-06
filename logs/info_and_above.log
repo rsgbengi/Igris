@@ -994,3 +994,97 @@
 2022-01-04 17:51:06.600 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-18: Connection from SHADOW/ADMINISTRATOR@::ffff:192.168.253.138 controlled, attacking target smb://192.168.253.138
 2022-01-04 17:51:06.654 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/ADMINISTRATOR FAILED
 2022-01-04 17:51:20.997 | WARNING  | project.mitm.ntlmrelay:__synchronous_attack:166 - Exiting ntlm relay attack ...
+2022-01-05 15:23:15.145 | INFO     | project.mitm.servers.proxyserver:__init__:11 - Starting socks server ...
+2022-01-05 15:23:15.232 | INFO     | project.mitm.poison.poisoners.dhcp6:start_dhcp6_poisoning:190 - Starting dhcp6 poisoning to attack shadow.local.
+2022-01-05 15:23:15.238 | INFO     | project.mitm.poison.poisoners.dns:start_dns_poisoning:133 - Starting dns poisoning...
+2022-01-05 15:23:15.254 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:124 - Starting smb-relay server...
+2022-01-05 15:23:15.290 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-05 15:23:24.600 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:111 - [36m(DHCP6)Capturing SOLICIT packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:23:24.615 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:143 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:23:24.656 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:117 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:23:24.659 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:148 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:23:25.196 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'PC-Beru.SHADOW.local.'[0m
+2022-01-05 15:23:25.236 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'SHADOW.local.'[0m
+2022-01-05 15:23:25.268 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'local.'[0m
+2022-01-05 15:23:25.516 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'wpad.SHADOW.local.'[0m
+2022-01-05 15:23:25.548 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'wpad.shadow.local.'[0m
+2022-01-05 15:23:33.223 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'PC-Beru.SHADOW.local.'[0m
+2022-01-05 15:23:33.261 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'SHADOW.local.'[0m
+2022-01-05 15:23:33.293 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'local.'[0m
+2022-01-05 15:23:33.329 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:111 - [36m(DHCP6)Capturing SOLICIT packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:23:33.332 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:143 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:23:33.386 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:111 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-05 15:23:33.389 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:143 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-05 15:23:34.331 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:117 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:23:34.335 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:148 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:23:34.396 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:117 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-05 15:23:34.401 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:148 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-05 15:23:37.376 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-05 15:23:37.417 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-05 15:23:37.452 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-05 15:23:37.489 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-05 15:23:37.525 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'SHADOW.local.'[0m
+2022-01-05 15:23:38.069 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'PC-Iron.SHADOW.local.'[0m
+2022-01-05 15:23:38.117 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'SHADOW.local.'[0m
+2022-01-05 15:23:38.153 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'local.'[0m
+2022-01-05 15:23:44.425 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'PC-Iron.SHADOW.local.'[0m
+2022-01-05 15:23:44.464 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'SHADOW.local.'[0m
+2022-01-05 15:23:44.501 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'local.'[0m
+2022-01-05 15:23:44.552 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:111 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-05 15:23:44.555 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:143 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-05 15:23:45.563 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:117 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-05 15:23:45.566 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:148 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-05 15:23:45.775 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'tile-service.weather.microsoft.com.'[0m
+2022-01-05 15:23:45.968 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'cdn.onenote.net.'[0m
+2022-01-05 15:23:46.215 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'v20.events.data.microsoft.com.'[0m
+2022-01-05 15:23:46.253 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'PC-Iron.SHADOW.local.'[0m
+2022-01-05 15:23:46.306 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'SHADOW.local.'[0m
+2022-01-05 15:23:46.353 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'local.'[0m
+2022-01-05 15:23:47.306 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'api.msn.com.'[0m
+2022-01-05 15:23:47.553 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'PC-Iron.SHADOW.local.'[0m
+2022-01-05 15:23:47.597 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'SHADOW.local.'[0m
+2022-01-05 15:23:47.653 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'local.'[0m
+2022-01-05 15:23:50.568 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'PC-Iron.SHADOW.local.'[0m
+2022-01-05 15:23:50.604 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'SHADOW.local.'[0m
+2022-01-05 15:23:50.648 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'local.'[0m
+2022-01-05 15:23:50.741 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'www.bing.com.'[0m
+2022-01-05 15:23:52.846 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'wpad.SHADOW.local.'[0m
+2022-01-05 15:23:52.885 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'wpad.shadow.local.'[0m
+2022-01-05 15:23:53.965 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::11cd:3852:b2df:f387 responding b'fs.microsoft.com.'[0m
+2022-01-05 15:24:01.212 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'checkappexec.microsoft.com.'[0m
+2022-01-05 15:24:04.638 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'slscr.update.microsoft.com.'[0m
+2022-01-05 15:24:04.938 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'holiiiii.SHADOW.local.'[0m
+2022-01-05 15:24:04.977 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'nav.smartscreen.microsoft.com.'[0m
+2022-01-05 15:24:05.012 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'config.teams.microsoft.com.'[0m
+2022-01-05 15:24:05.049 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'login.live.com.'[0m
+2022-01-05 15:24:05.081 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'g.live.com.'[0m
+2022-01-05 15:24:05.122 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-05 15:24:05.174 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-01-05 15:24:05.176 | INFO     | threading:run:892 - SOCKS: Adding SHADOW/IRON@192.168.253.138(445) to active SOCKS connection. Enjoy
+2022-01-05 15:24:05.178 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-01-05 15:24:05.765 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'wpad.SHADOW.local.'[0m
+2022-01-05 15:24:05.810 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'config.edge.skype.com.'[0m
+2022-01-05 15:24:06.307 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'login.microsoftonline.com.'[0m
+2022-01-05 15:24:06.376 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'edge.microsoft.com.'[0m
+2022-01-05 15:24:08.739 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-12: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-01-05 15:24:09.532 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'PC-BERU.SHADOW.local.'[0m
+2022-01-05 15:24:11.764 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'qnfpjdaw.SHADOW.local.'[0m
+2022-01-05 15:24:11.796 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'tuatuzcy.SHADOW.local.'[0m
+2022-01-05 15:24:11.832 | INFO     | project.mitm.poison.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::192:168:253:139 responding b'troubmwdjzzprkl.SHADOW.local.'[0m
+2022-01-05 15:24:15.908 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:111 - [36m(DHCP6)Capturing SOLICIT packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:24:15.910 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:143 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:24:16.921 | INFO     | project.mitm.poison.poisoners.dhcp6:__application_layer:117 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:24:16.923 | INFO     | project.mitm.poison.poisoners.dhcp6:__send_packet:148 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-05 15:24:18.255 | WARNING  | project.mitm.ntlmrelay:__synchronous_attack:166 - Exiting ntlm relay attack ...
+2022-01-05 15:24:25.241 | INFO     | project.mitm.ntlmrelay:__launching_attack:337 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/loot/192.168.253.138_samhashes.sam 
+2022-01-05 15:24:25.256 | INFO     | project.mitm.servers.proxyserver:__init__:11 - Starting socks server ...
+2022-01-05 15:24:25.321 | INFO     | project.mitm.poison.poisonlauncher:__create_dhcp6:94 - Running dhcp6 poisoning in the background
+2022-01-05 15:24:25.350 | INFO     | project.mitm.poison.poisonlauncher:__create_dns:108 - Running dns poisoning in the background
+2022-01-05 15:24:25.370 | INFO     | project.mitm.servers.smbserver:start_smb_relay_server:121 - Starting smb-relay server...
+2022-01-05 15:24:25.396 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-05 15:24:32.491 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-05 15:24:32.577 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-01-05 15:24:32.590 | INFO     | threading:run:892 - SOCKS: Adding SHADOW/IRON@192.168.253.138(445) to active SOCKS connection. Enjoy
+2022-01-05 15:24:32.591 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-01-05 15:24:32.675 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-12: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-01-05 15:25:45.039 | SUCCESS  | project.mitm.ntlmrelay:__ends_ntlm_relay:359 - Finishing ntlm relay attack in the background ...
