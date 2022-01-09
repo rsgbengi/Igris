@@ -23,7 +23,7 @@ class SmbServerAttack(CommandSet):
     def __init__(self) -> None:
         super().__init__()
         self.__smbserver = None
-        self.__mss_attack = None
+        self.__attack = None
         self.__alerts_dictionary = Manager().dict()
         self.__ntlmv2_collected = Manager().dict()
         self.__define_alerts()
@@ -49,11 +49,11 @@ class SmbServerAttack(CommandSet):
 
     def __ends_process_in_the_background(self):
         """[ Method to stop the attack by the user ]"""
-        if self.__mss_attack is not None and self.__mss_attack.is_alive:
+        if self.__attack is not None and self.__attack.is_alive:
             self._cmd.info_logger.success("Finishing mss attack in the background ...")
-            self.__mss_attack.terminate()
-            self.__mss_attack.join()
-            self.__mss_attack = None
+            self.__attack.terminate()
+            self.__attack.join()
+            self.__attack = None
             if self.__alerts_hunter is not None and self.__alerts_hunter.is_alive():
                 self.__alerts_dictionary["stop"] = 1
                 self.__alerts_hunter.join()
@@ -79,10 +79,9 @@ class SmbServerAttack(CommandSet):
 
     def __components_to_launch(self):
         """[ Method to launch the poisoner and malicious smb server ]"""
-        self.__poison_launcher.start_poisoners()
         self.__smbserver.start_malicious_smbserver()
 
-    def __launch_attack(self, args: argparse.Namespace) -> None:
+    def __launch_necessary_components(self, args: argparse.Namespace) -> None:
         """[ Method to launch the components necessary for the attack ]"""
         if args.Asynchronous:
             self.__async_options()
@@ -92,20 +91,20 @@ class SmbServerAttack(CommandSet):
         """[ Method to launch the synchronous attack ]"""
         try:
             # If ctrl+c then the process terminate and smb_relay exits
-            self.__mss_attack.join()
+            self.__attack.join()
         except KeyboardInterrupt:
-            self.__mss_attack.terminate()
-            self.__mss_attack.join()
-            self.__mss_attack = None
-            self._cmd.error_logger.warning("Exiting mss attack ...")
+            self.__attack.terminate()
+            self.__attack.join()
+            self.__attack = None
+            self._cmd.error_logger.warning("Exiting smb relay attack ...")
 
-    def __wrapper_attack(self, args: argparse.Namespace) -> None:
+    def __launching_attack(self, args: argparse.Namespace) -> None:
         """[ Method to launch the attack ]
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
         """
-        self.__mss_attack = Process(target=self.__launch_attack, args=(args,))
-        self.__mss_attack.start()
+        self.__attack = Process(target=self.__launch_necessary_components, args=(args,))
+        self.__attack.start()
         self._cmd.info_logger.info(
             f"Running mss the results will be saved in : {self.__path_file}"
         )
@@ -113,29 +112,13 @@ class SmbServerAttack(CommandSet):
         if not args.Asynchronous:
             self.__synchronous_attack()
 
-    def __poison_configuration(self, args: argparse.Namespace):
-        if args.mdns:
-            self.__poison_launcher.activate_mdns()
-        if args.nbt_ns:
-            self.__poison_launcher.activate_nbt_ns()
-        if args.llmnr:
-            self.__poison_launcher.activate_llmnr()
-
     def __creating_components(self, args: argparse.Namespace) -> None:
         """[ Method to create the necessary classes ]
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
 
         """
-        self.__poison_launcher = PoisonLauncher(
-            self._cmd.LHOST,
-            self._cmd.IPV6,
-            self._cmd.MAC_ADDRESS,
-            self._cmd.INTERFACE,
-            self._cmd.info_logger,
-            args.Asynchronous,
-        )
-        self.__poison_configuration(args)
+
         self.__smbserver = MaliciousSmbServer(
             self._cmd.LHOST,
             self._cmd.LPORT,
@@ -155,7 +138,7 @@ class SmbServerAttack(CommandSet):
         if args.end_attack:
             self.__ends_process_in_the_background()
             return
-        if self.__mss_attack is not None:
+        if self.__attack is not None:
             self._cmd.error_logger.warning(
                 "The attack is already running in the background"
             )
@@ -208,27 +191,9 @@ class SmbServerAttack(CommandSet):
         default="/home/rsgbengi/Igris/loot",
         help="Output of the hashes ntlmv2",
     )
-    poison_options = argParser.add_argument_group(" Options to select the poisoners")
-    poison_options.add_argument(
-        "-L",
-        "--llmnr",
-        action="store_true",
-        help="To use llmnr poisoning",
-    )
-    poison_options.add_argument(
-        "-M",
-        "--mdns",
-        action="store_true",
-        help="To use MDNS poisoning",
-    )
-    poison_options.add_argument(
-        "-N",
-        "--nbt_ns",
-        action="store_true",
-        help="To use NBT_NS poisoning",
-    )
 
     @with_argparser(argParser)
+    @as_subcommand_to("poison", "mss", argParser)
     def do_mss(self, args: argparse.Namespace) -> None:
         """[ Command to create a malicious smb server to get ntlm hashes ]
 
@@ -255,13 +220,13 @@ class SmbServerAttack(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
-            self.__wrapper_attack(args)
+            self.__launching_attack(args)
 
     def mss_postloop(self) -> None:
         """[method to stop the attack before the application is terminated]"""
-        if self.__mss_attack is not None and self.__mss_attack.is_alive:
-            self.__mss_attack.terminate()
-            self.__mss_attack.join()
+        if self.__attack is not None and self.__attack.is_alive:
+            self.__attack.terminate()
+            self.__attack.join()
             if self.__alerts_hunter is not None and self.__alerts_hunter.is_alive():
                 self.__alerts_dictionary["stop"] = 1
                 self.__alerts_hunter.join()

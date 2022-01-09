@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 from cmd2.command_definition import with_default_category
-from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
+from cmd2 import (
+    CommandSet,
+    with_default_category,
+    Cmd2ArgumentParser,
+    with_argparser,
+    as_subcommand_to,
+    ansi,
+)
 import argparse
 
 from .servers import MaliciousSmbServer, SmbRelayServer, Proxy
@@ -14,8 +21,6 @@ from threading import Thread
 import sys
 import os
 import signal
-from cmd2 import ansi
-import cmd2
 import logging
 from loguru import logger
 from time import sleep
@@ -145,7 +150,7 @@ class NtlmRelay(CommandSet):
         self.__checking_asynchronous_options(args)
         self.__checking_proxy_options(args)
 
-    def __launch_attack(self, args: argparse.Namespace) -> None:
+    def __launch_necessary_components(self, args: argparse.Namespace) -> None:
         """[ Method that check options of the attack and  launch the threads that will control the mdns poisoner and the smb server ]
 
         Args:
@@ -274,21 +279,23 @@ class NtlmRelay(CommandSet):
 
     def __poison_configuration(self, args: argparse.Namespace) -> dict:
 
+        poison_selector = {"MDNS": 0, "NBT_NS": 0, "LLMNR": 0, "DHCP6": 0, "DNS": 0}
         if args.mdns:
-            self.__poison_launcher.activate_mdns()
+            poison_selector["MDNS"] = 1
         if args.nbt_ns:
-            self.__poison_launcher.activate_nbt_ns()
+            poison_selector["NBT_NS"] = 1
         if args.llmnr:
-            self.__poison_launcher.activate_llmnr()
-
+            poison_selector["LLMNR"] = 1
         if args.ipv6:
-            self.__poison_launcher.activate_dns()
             if args.domain != "":
-                self.__poison_launcher.activate_dhcp6()
+                poison_selector["DHCP6"] = 1
+                poison_selector["DNS"] = 1
             else:
                 self._cmd.error_logger.error(
-                    "Enter the target domain to activate the dhcp6 poisoner.Otherwise the dhcp6 spoofer could not be activated"
+                    "Enter the target domain to activate the dhcp6 poisoner"
                 )
+
+        return poison_selector
 
     def __creating_components(self, args: argparse.Namespace) -> None:
         """[ Method to configure the classes to use ]
@@ -297,6 +304,7 @@ class NtlmRelay(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the attack ]
 
         """
+        poison_selector = self.__poison_configuration(args)
         self.__poison_launcher = PoisonLauncher(
             self._cmd.LHOST,
             self._cmd.IPV6,
@@ -304,9 +312,9 @@ class NtlmRelay(CommandSet):
             self._cmd.INTERFACE,
             self._cmd.info_logger,
             args.Asynchronous,
+            poison_selector,
             args.domain,
         )
-        self.__poison_configuration(args)
 
         self.__configure_ntlm_relay_attack(args)
 
@@ -317,13 +325,15 @@ class NtlmRelay(CommandSet):
             self.__alerts_dictionary,
         )
 
-    def __wrapper_attack(self, args: argparse.Namespace) -> None:
+    def __launching_attack(self, args: argparse.Namespace) -> None:
         """[ Method to launch the attack
             Args:
                 args (argparse.Namespace): [ Arguments passed to the attack ]
 
         ]"""
-        self.__ntlm_relay_process = Process(target=self.__launch_attack, args=(args,))
+        self.__ntlm_relay_process = Process(
+            target=self.__launch_necessary_components, args=(args,)
+        )
         self.__ntlm_relay_process.start()
         if not args.Asynchronous:
             self.__synchronous_attack()
@@ -381,6 +391,9 @@ class NtlmRelay(CommandSet):
     argParser = Cmd2ArgumentParser(
         description="""Command to perform ntlm relay attack"""
     )
+    possible_workflows = argParser.add_subparsers(
+        title="workflows", help="Select the workflow of the attack"
+    )
 
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "
@@ -434,27 +447,16 @@ class NtlmRelay(CommandSet):
         help="To attack with ipv6",
     )
 
-    poison_options = argParser.add_argument_group(" Options to select the poisoners")
-    poison_options.add_argument(
-        "-L",
-        "--llmnr",
-        action="store_true",
-        help="To use llmnr poisoning",
-    )
-    poison_options.add_argument(
-        "-M",
-        "--mdns",
-        action="store_true",
-        help="To use MDNS poisoning",
-    )
-    poison_options.add_argument(
-        "-N",
-        "--nbt_ns",
-        action="store_true",
-        help="To use NBT_NS poisoning",
+    attack_options.add_argument(
+        "-DOM",
+        "--domain",
+        action="store",
+        type=str,
+        required=False,
+        help="Target domain",
     )
 
-    @with_argparser(argParser)
+    @as_subcommand_to("poison", "ntlm_relay", argParser)
     def do_ntlm_relay(self, args: argparse.Namespace) -> None:
         """[ Command to perform ntlm relay attack ]
 
@@ -481,4 +483,4 @@ class NtlmRelay(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
-            self.__wrapper_attack(args)
+            self.__launching_attack(args)
