@@ -12,9 +12,8 @@ from art import text2art
 from tabulate import tabulate
 from loguru import logger
 from log_symbols import LogSymbols
-from .smb import ScanForPsexec
-from .smb import Psexec
-from .mitm import SmbServerAttack, NtlmRelay,PoisonSelector
+from .utils import ScanForPsexec, Psexec
+from .network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
 
 
 COLORS = {
@@ -46,6 +45,10 @@ class Igris_Shell(cmd2.Cmd):
 
         # Options
         self.allow_style = ansi.STYLE_TERMINAL
+
+        self.__set_up_file_loggers()
+        self.__info_logger, self.__error_logger = self.__set_up_output_loggers()
+
         self.load_modules()
 
         self.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
@@ -53,8 +56,11 @@ class Igris_Shell(cmd2.Cmd):
         self.register_postloop_hook(self.__mss_module.mss_postloop)
         self.register_postloop_hook(self.__scan_module.scan_postloop)
 
-        self.__set_up_file_loggers()
-        self.__info_logger, self.__error_logger = self.__set_up_output_loggers()
+        self.register_postloop_hook(self.__poison_module.poison_postloop)
+
+        self.register_postloop_hook(self.__dnstakeover_module.dnstakeover_postloop)
+        # Enabled Attacks
+        self.__configure_enabled_attacks()
 
     @property
     def info_logger(self) -> Logger:
@@ -64,17 +70,39 @@ class Igris_Shell(cmd2.Cmd):
     def error_logger(self) -> Logger:
         return self.__error_logger
 
+    def active_attacks_status(self, attack: str) -> bool:
+        return self.__active_attacks[attack]
+
+    def active_attacks_configure(self, attack: str, status: bool) -> None:
+        self.__active_attacks[attack] = status
+
+    def __configure_enabled_attacks(self) -> None:
+
+        self.__active_attacks = {
+            "MDNS_Poisoning": False,
+            "LLMNR_Poisoning": False,
+            "NBT_NS_Poisoning": False,
+            "DNS_Poisoning": False,
+            "DHCP6_Rogue": False,
+            "MSS": False,
+            "NTLM_Relay": False,
+        }
+
     def load_modules(self) -> None:
         """[ Function to activate the available modules ]"""
         self.__scan_module = ScanForPsexec()
         self.__psexec_module = Psexec()
         self.__ntlm_relay_module = NtlmRelay()
         self.__mss_module = SmbServerAttack()
+        self.__poison_module = PoisonCommand()
+        self.__dnstakeover_module = DNSTakeOverCommand()
 
         self.register_command_set(self.__psexec_module)
         self.register_command_set(self.__scan_module)
         self.register_command_set(self.__ntlm_relay_module)
         self.register_command_set(self.__mss_module)
+        self.register_command_set(self.__dnstakeover_module)
+        self.register_command_set(self.__poison_module)
 
     def __credentials_config_variables(self):
         """[ Settable Variables for credentials ]"""
