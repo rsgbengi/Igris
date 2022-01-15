@@ -29,7 +29,6 @@ class SmbServerAttack(CommandSet):
         self.__define_alerts()
         self.__alerts_hunter = None
         self.__path_file = os.getcwd()
-        self.__threads = []
 
     def __check_directory(self) -> bool:
         """[ Method to check if a directory exists ]"""
@@ -53,18 +52,9 @@ class SmbServerAttack(CommandSet):
                     self._cmd.terminal_lock.release()
                 self.__alerts_dictionary["new_ntlmv2"] = 0
 
-    def __wait_for_threads(self):
-        for thread in self.__threads:
-            thread.join()
-        self.__threads = []
-
     def __components_to_launch(self):
         """[ Method to launch the poisoner and malicious smb server ]"""
-        self.__poison_launcher.start_poisoners()
-        smb_server_thread = Thread(target=self.__smbserver.start_malicious_smbserver)
-        smb_server_thread.start()
-        self.__threads.append(smb_server_thread)
-        self.__wait_for_threads()
+        self.__smbserver.start_malicious_smbserver()
 
     def __async_options(self):
         """[ Configuration in case of an asynchronous attack ]"""
@@ -101,54 +91,12 @@ class SmbServerAttack(CommandSet):
         if not args.Asynchronous:
             self.__synchronous_attack()
 
-    def __mdns_configuration(self, args: argparse.Namespace) -> None:
-        if args.mdns and not self._cmd.active_attacks_status("MDNS_Poisoning"):
-            self.__poison_launcher.activate_mdns()
-            self._cmd.active_attacks_configure("MDNS_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The mdns poisoning is already being used by another process"
-            )
-
-    def __nbt_ns_configuration(self, args: argparse.Namespace) -> None:
-        if args.nbt_ns and not self._cmd.active_attacks_status("NBT_NS_Poisoning"):
-            self.__poison_launcher.activate_nbt_ns()
-            self._cmd.active_attacks_configure("NBT_NS_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The nbt_ns poisoning is already being used by another process"
-            )
-
-    def __llmnr_configuration(self, args: argparse.Namespace) -> None:
-        if args.llmnr and not self._cmd.active_attacks_status("LLMNR_Poisoning"):
-            self.__poison_launcher.activate_llmnr()
-            self._cmd.active_attacks_configure("LLMNR_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The llmnr poisoning is already being used by another process"
-            )
-
-    def __poison_configuration(self, args: argparse.Namespace):
-        self.__mdns_configuration(args)
-        self.__nbt_ns_configuration(args)
-        self.__llmnr_configuration(args)
-        self.__threads += self.__poison_launcher.threads
-
     def __creating_components(self, args: argparse.Namespace) -> None:
         """[ Method to create the necessary classes ]
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
 
         """
-        self.__poison_launcher = PoisonLauncher(
-            self._cmd.LHOST,
-            self._cmd.IPV6,
-            self._cmd.MAC_ADDRESS,
-            self._cmd.INTERFACE,
-            self._cmd.info_logger,
-            args.Asynchronous,
-        )
-        self.__poison_configuration(args)
         self.__smbserver = MaliciousSmbServer(
             self._cmd.LHOST,
             self._cmd.LPORT,
@@ -158,6 +106,7 @@ class SmbServerAttack(CommandSet):
             self.__path_file,
             self.__alerts_dictionary,
         )
+        self._cmd.active_attacks_configure("MSS",True)
 
     def __end_process_in_the_background(self):
         """[ Method to stop the attack by the user ]"""
@@ -166,12 +115,13 @@ class SmbServerAttack(CommandSet):
             self.__mss_attack.terminate()
             self.__mss_attack.join()
             self.__mss_attack = None
+            self._cmd.active_attacks_configure("MSS",False)
             if self.__alerts_hunter is not None and self.__alerts_hunter.is_alive():
                 self.__alerts_dictionary["stop"] = 1
                 self.__alerts_hunter.join()
                 self.__alerts_dictionary["stop"] = 0
         else:
-            self.cmd._error_logger.error("Not background process found ")
+            self._cmd._error_logger.error("Not background process found ")
 
     def __configure_alerts_thread(self):
         """[ Method to configure the thread that shows alerts ]"""
@@ -239,25 +189,6 @@ class SmbServerAttack(CommandSet):
         action="store",
         default="/home/rsgbengi/Igris/loot",
         help="Output of the hashes ntlmv2",
-    )
-    poison_options = argParser.add_argument_group(" Options to select the poisoners")
-    poison_options.add_argument(
-        "-L",
-        "--llmnr",
-        action="store_true",
-        help="To use llmnr poisoning",
-    )
-    poison_options.add_argument(
-        "-M",
-        "--mdns",
-        action="store_true",
-        help="To use MDNS poisoning",
-    )
-    poison_options.add_argument(
-        "-N",
-        "--nbt_ns",
-        action="store_true",
-        help="To use NBT_NS poisoning",
     )
 
     @with_argparser(argParser)

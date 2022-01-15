@@ -1439,3 +1439,349 @@
 2022-01-13 15:48:57.631 | WARNING  | project.network.poison.dnstakeover:__poison_configuration:23 - The attack is already being used by another process
 2022-01-13 15:49:30.554 | WARNING  | project.network.poison.dnstakeover:__poison_configuration:23 - The attack is already being used by another process
 2022-01-13 15:49:30.557 | WARNING  | project.network.poison.dnstakeover:__poison_configuration:31 - The attack is already being used by another process
+2022-01-14 14:43:04.064 | INFO     | project.network.mitm.mss:__wrapper_attack:89 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-14 14:43:04.069 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-14 14:43:04.077 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-14 14:43:04.079 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-14 14:43:04.079 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-14 14:43:06.604 | WARNING  | project.network.mitm.mss:__synchronous_attack:79 - Exiting attack ...
+2022-01-14 14:43:08.759 | INFO     | project.network.mitm.mss:__wrapper_attack:89 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-14 14:43:08.777 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-14 14:43:08.794 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-14 14:43:08.796 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-14 14:43:08.797 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-14 14:43:12.359 | SUCCESS  | project.network.mitm.mss:__end_process_in_the_background:115 - Finishing attack in the background ...
+2022-01-14 14:51:11.093 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:131 - Starting smb-relay server...
+2022-01-14 14:51:11.107 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-14 14:51:12.991 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-14 14:51:16.654 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:301 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/loot/192.168.253.138_samhashes.sam 
+2022-01-14 14:51:16.669 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:127 - Starting smb relay server...
+2022-01-14 14:51:16.680 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-14 14:51:20.416 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:323 - Finishing ntlm relay attack in the background ...
+2022-01-14 14:51:21.869 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-14 14:51:21.882 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-14 14:51:21.884 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-14 14:51:21.885 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-14 14:51:21.885 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-14 14:51:24.335 | SUCCESS  | project.network.mitm.mss:__end_process_in_the_background:113 - Finishing attack in the background ...
+2022-01-14 14:52:32.845 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:131 - Starting smb-relay server...
+2022-01-14 14:52:32.860 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-14 14:52:35.011 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-14 14:52:37.135 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:301 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/loot/192.168.253.138_samhashes.sam 
+2022-01-14 14:52:37.145 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:127 - Starting smb relay server...
+2022-01-14 14:52:37.152 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-14 14:52:39.833 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:323 - Finishing ntlm relay attack in the background ...
+2022-01-14 15:30:30.722 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:130 - Setting up SMB Server
+2022-01-14 15:30:30.736 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-14 15:30:32.390 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-14 15:30:59.224 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-14 15:31:00.006 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-14 15:31:03.896 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:304 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/loot/192.168.253.138_samhashes.sam 
+2022-01-14 15:31:03.916 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:127 - Setting up SMB Server
+2022-01-14 15:31:03.943 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-14 15:31:08.392 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:326 - Finishing ntlm relay attack in the background ...
+2022-01-14 15:42:48.240 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:304 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/loot/192.168.253.138_samhashes.sam 
+2022-01-14 15:42:48.255 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:127 - Setting up SMB Server
+2022-01-14 15:42:48.258 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-14 15:42:52.108 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:326 - Finishing ntlm relay attack in the background ...
+2022-01-14 15:42:59.607 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-14 15:43:00.878 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-14 16:08:58.557 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-14 16:08:58.570 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-14 16:08:58.581 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-14 16:08:58.582 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-14 16:08:58.582 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-14 16:09:14.292 | SUCCESS  | project.network.mitm.mss:__end_process_in_the_background:114 - Finishing attack in the background ...
+2022-01-14 16:10:49.752 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-14 16:10:49.769 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-14 16:10:49.784 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-14 16:10:49.788 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-14 16:10:49.791 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-14 16:10:54.618 | SUCCESS  | project.network.mitm.mss:__end_process_in_the_background:114 - Finishing attack in the background ...
+2022-01-15 17:01:01.975 | ERROR    | project.shell.attackstatus:__show_one:39 - This attack does not exist
+2022-01-15 17:21:55.334 | INFO     | project.shell.igris:show_settable_variables_necessary:269 - Showing necessary settable variables
+2022-01-15 17:22:19.966 | INFO     | project.shell.igris:show_settable_variables_necessary:269 - Showing necessary settable variables
+2022-01-15 17:22:43.892 | INFO     | project.shell.igris:show_settable_variables_necessary:269 - Showing necessary settable variables
+2022-01-15 17:22:48.116 | INFO     | project.shell.igris:show_settable_variables_necessary:269 - Showing necessary settable variables
+2022-01-15 17:23:51.236 | INFO     | project.shell.igris:show_settable_variables_necessary:269 - Showing necessary settable variables
+2022-01-15 17:30:34.714 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 17:30:34.715 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 17:30:34.715 | INFO     | project.utils.scan:__synchronous_way:535 - Using synchronous scan
+2022-01-15 17:30:34.722 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:506 - Starting to launch threads based on your cpu
+2022-01-15 17:30:42.786 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:525 - 
+Exiting ...
+2022-01-15 17:30:42.814 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:528 - Synchronous scanning has been completed
+2022-01-15 17:31:23.788 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 17:31:23.789 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 17:31:23.791 | WARNING  | project.utils.scan:__show_scan_subnets:243 - The scan on 192.168.253.0/24 has not collected any information 
+2022-01-15 17:31:59.098 | INFO     | project.shell.igris:show_settable_variables_necessary:269 - Showing necessary settable variables
+2022-01-15 17:32:10.223 | WARNING  | project.utils.scan:__configure_scan_info:289 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-15 17:32:14.996 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 17:32:14.997 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 17:32:14.998 | INFO     | project.utils.scan:__synchronous_way:535 - Using synchronous scan
+2022-01-15 17:32:15.002 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:506 - Starting to launch threads based on your cpu
+2022-01-15 17:33:39.344 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:528 - Synchronous scanning has been completed
+2022-01-15 17:33:42.573 | INFO     | project.shell.igris:show_settable_variables_necessary:269 - Showing necessary settable variables
+2022-01-15 17:33:47.273 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 17:33:47.275 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 17:33:47.277 | INFO     | project.utils.scan:__show_specific_subnet_info:225 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:08:39.828 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:08:39.831 | INFO     | project.utils.scan:__show_user_passwd:215 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:08:39.837 | INFO     | project.utils.scan:__synchronous_way:549 - Using synchronous scan
+2022-01-15 18:08:39.846 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:520 - Starting to launch threads based on your cpu
+2022-01-15 18:09:37.437 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:539 - 
+Exiting ...
+2022-01-15 18:09:37.494 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:542 - Synchronous scanning has been completed
+2022-01-15 18:09:47.712 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:09:47.712 | INFO     | project.utils.scan:__show_user_passwd:215 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:09:47.713 | INFO     | project.utils.scan:__show_specific_subnet_info:228 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:11:55.883 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:11:55.883 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:11:55.883 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:11:55.885 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:12:49.398 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:542 - 
+Exiting ...
+2022-01-15 18:12:49.408 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:545 - Synchronous scanning has been completed
+2022-01-15 18:13:03.311 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:13:03.312 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:13:03.313 | INFO     | project.utils.scan:__show_specific_subnet_info:226 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:13:31.720 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:13:31.720 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:13:31.720 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:13:31.722 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:14:22.764 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:542 - 
+Exiting ...
+2022-01-15 18:14:22.838 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:545 - Synchronous scanning has been completed
+2022-01-15 18:14:26.214 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:14:26.215 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:14:26.216 | INFO     | project.utils.scan:__show_specific_subnet_info:226 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:16:21.584 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:16:21.584 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:16:21.585 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:16:21.586 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:17:11.469 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:542 - 
+Exiting ...
+2022-01-15 18:17:11.525 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:545 - Synchronous scanning has been completed
+2022-01-15 18:17:15.903 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:17:15.903 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:17:15.903 | INFO     | project.utils.scan:__show_specific_subnet_info:226 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:20:21.908 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:20:21.909 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:20:21.910 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:20:21.912 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:21:12.993 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:542 - 
+Exiting ...
+2022-01-15 18:21:13.038 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:545 - Synchronous scanning has been completed
+2022-01-15 18:21:16.781 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:21:16.782 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:21:16.783 | INFO     | project.utils.scan:__show_specific_subnet_info:226 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:22:19.723 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:22:19.723 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:22:19.723 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:22:19.725 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:23:12.050 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:542 - 
+Exiting ...
+2022-01-15 18:23:12.097 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:545 - Synchronous scanning has been completed
+2022-01-15 18:23:13.760 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:23:13.760 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:23:13.761 | INFO     | project.utils.scan:__show_specific_subnet_info:226 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:42:48.447 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:42:48.447 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:42:48.447 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:42:48.449 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:43:56.164 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:43:56.164 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:43:56.166 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:43:56.175 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:44:50.405 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:542 - 
+Exiting ...
+2022-01-15 18:44:50.421 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:545 - Synchronous scanning has been completed
+2022-01-15 18:44:56.578 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:44:56.579 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:44:56.579 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:46:15.639 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:46:15.642 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:46:15.643 | INFO     | project.utils.scan:__synchronous_way:551 - Using synchronous scan
+2022-01-15 18:46:15.649 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:522 - Starting to launch threads based on your cpu
+2022-01-15 18:48:08.217 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:48:08.218 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:48:08.218 | INFO     | project.utils.scan:__synchronous_way:551 - Using synchronous scan
+2022-01-15 18:48:08.221 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:522 - Starting to launch threads based on your cpu
+2022-01-15 18:50:54.522 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:50:54.524 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:50:54.526 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:50:54.535 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:51:56.966 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:51:56.968 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:51:56.970 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:51:56.980 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:53:12.564 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:53:12.565 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:53:12.566 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:53:30.602 | WARNING  | project.utils.scan:__configure_scan_info:307 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-15 18:54:34.050 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:54:34.052 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:54:34.054 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 18:54:34.064 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 18:56:08.071 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:545 - Synchronous scanning has been completed
+2022-01-15 18:56:12.133 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:56:12.135 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:56:12.136 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:56:15.757 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:56:15.759 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:56:15.761 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 18:57:54.996 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 18:57:54.996 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 18:57:54.996 | INFO     | project.utils.scan:__synchronous_way:551 - Using synchronous scan
+2022-01-15 18:57:54.998 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:522 - Starting to launch threads based on your cpu
+2022-01-15 19:00:46.152 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:00:46.802 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:00:46.936 | INFO     | project.utils.scan:__synchronous_way:551 - Using synchronous scan
+2022-01-15 19:00:48.313 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:522 - Starting to launch threads based on your cpu
+2022-01-15 19:01:42.342 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:541 - 
+Exiting ...
+2022-01-15 19:01:42.379 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:544 - Synchronous scanning has been completed
+2022-01-15 19:01:44.850 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:01:44.851 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:01:44.852 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 19:04:42.903 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:04:42.905 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:04:42.906 | INFO     | project.utils.scan:__synchronous_way:551 - Using synchronous scan
+2022-01-15 19:04:42.911 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:522 - Starting to launch threads based on your cpu
+2022-01-15 19:06:07.276 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:544 - Synchronous scanning has been completed
+2022-01-15 19:21:12.387 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:21:12.388 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:21:12.389 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 19:21:56.585 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:21:56.586 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:21:56.587 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 19:22:29.760 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:22:29.760 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:22:29.761 | INFO     | project.utils.scan:__synchronous_way:551 - Using synchronous scan
+2022-01-15 19:22:29.763 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:522 - Starting to launch threads based on your cpu
+2022-01-15 19:23:37.084 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:23:37.085 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:23:37.087 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 19:24:37.928 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:24:37.929 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:24:37.930 | INFO     | project.utils.scan:__synchronous_way:551 - Using synchronous scan
+2022-01-15 19:24:37.935 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:522 - Starting to launch threads based on your cpu
+2022-01-15 19:25:28.252 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:541 - 
+Exiting ...
+2022-01-15 19:25:28.506 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:544 - Synchronous scanning has been completed
+2022-01-15 19:25:30.969 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:25:30.970 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:25:30.971 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 19:26:16.424 | WARNING  | project.utils.scan:__configure_scan_info:307 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-15 19:26:17.201 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:26:17.203 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:26:17.205 | INFO     | project.utils.scan:__asynchronous_way:443 - Using asynchronous scan.
+2022-01-15 19:26:17.207 | INFO     | project.utils.scan:__asynchronous_way:444 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 19:26:17.232 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:421 - Starting to launch threads based on your cpu
+
+2022-01-15 19:27:45.710 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:27:45.711 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:27:45.712 | WARNING  | project.utils.scan:__show_scan_subnets:261 - The scan on 192.168.253.0/24 has not collected any information 
+2022-01-15 19:30:53.355 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:30:53.356 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:30:53.358 | INFO     | project.utils.scan:__synchronous_way:552 - Using synchronous scan
+2022-01-15 19:30:53.366 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:523 - Starting to launch threads based on your cpu
+2022-01-15 19:32:02.503 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:32:02.504 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:32:02.506 | INFO     | project.utils.scan:__show_specific_subnet_info:225 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 19:32:48.590 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:32:48.591 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:32:48.592 | INFO     | project.utils.scan:__asynchronous_way:442 - Using asynchronous scan.
+2022-01-15 19:32:48.592 | INFO     | project.utils.scan:__asynchronous_way:443 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 19:32:48.615 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:420 - Starting to launch threads based on your cpu
+
+2022-01-15 19:40:17.697 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:40:17.698 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:40:17.699 | INFO     | project.utils.scan:__asynchronous_way:443 - Using asynchronous scan.
+2022-01-15 19:40:17.699 | INFO     | project.utils.scan:__asynchronous_way:444 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 19:40:17.721 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:421 - Starting to launch threads based on your cpu
+
+2022-01-15 19:41:51.610 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:41:51.611 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:41:51.613 | INFO     | project.utils.scan:__asynchronous_way:443 - Using asynchronous scan.
+2022-01-15 19:41:51.614 | INFO     | project.utils.scan:__asynchronous_way:444 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 19:41:51.636 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:421 - Starting to launch threads based on your cpu
+
+2022-01-15 19:43:13.879 | INFO     | project.utils.scan:scan_postloop:39 - [93mThe scan process must finished before exit...[39m
+2022-01-15 19:43:13.892 | SUCCESS  | project.utils.scan:scan_postloop:47 - [92mThe scan has finished[39m
+2022-01-15 19:43:46.152 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:43:46.154 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:43:46.154 | INFO     | project.utils.scan:__asynchronous_way:443 - Using asynchronous scan.
+2022-01-15 19:43:46.155 | INFO     | project.utils.scan:__asynchronous_way:444 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 19:43:46.174 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:421 - Starting to launch threads based on your cpu
+
+2022-01-15 19:49:10.014 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:49:10.015 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:49:10.015 | WARNING  | project.utils.scan:__show_scan_subnets:259 - The scan on 192.168.253.0/24 has not collected any information 
+2022-01-15 19:49:50.180 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:49:50.182 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:49:50.182 | INFO     | project.utils.scan:__asynchronous_way:443 - Using asynchronous scan.
+2022-01-15 19:49:50.183 | INFO     | project.utils.scan:__asynchronous_way:444 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 19:49:50.207 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:421 - Starting to launch threads based on your cpu
+
+2022-01-15 19:51:09.760 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:51:09.761 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:51:09.762 | WARNING  | project.utils.scan:__show_scan_subnets:259 - The scan on 192.168.253.0/24 has not collected any information 
+2022-01-15 19:54:15.503 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:54:15.503 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:54:15.503 | INFO     | project.utils.scan:__asynchronous_way:442 - Using asynchronous scan.
+2022-01-15 19:54:15.503 | INFO     | project.utils.scan:__asynchronous_way:443 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 19:54:15.515 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:420 - Starting to launch threads based on your cpu
+
+2022-01-15 19:54:17.370 | WARNING  | project.utils.scan:__end_scan:583 - Exiting ...
+2022-01-15 19:57:41.596 | INFO     | project.utils.scan:__show_user_passwd:209 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 19:57:41.596 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 19:57:41.598 | ERROR    | project.utils.scan:__show_scan_info:279 - Current user and password not used yet user: Administrator passwd: P@$$w0rd! 
+2022-01-15 20:16:36.484 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:16:36.485 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:16:36.486 | INFO     | project.utils.scan:__synchronous_way:553 - Using synchronous scan
+2022-01-15 20:16:36.492 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:524 - Starting to launch threads based on your cpu
+2022-01-15 20:16:40.541 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:543 - 
+Exiting ...
+2022-01-15 20:16:40.617 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:546 - Synchronous scanning has been completed
+2022-01-15 20:16:44.665 | WARNING  | project.utils.scan:__configure_scan_info:306 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-15 20:16:45.834 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:16:45.837 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:16:45.838 | INFO     | project.utils.scan:__asynchronous_way:443 - Using asynchronous scan.
+2022-01-15 20:16:45.839 | INFO     | project.utils.scan:__asynchronous_way:444 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 20:16:45.865 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:421 - Starting to launch threads based on your cpu
+
+2022-01-15 20:18:01.804 | WARNING  | project.utils.scan:do_scan:658 - The scan is already running in the background ...
+2022-01-15 20:18:14.757 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:18:14.758 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:18:14.759 | WARNING  | project.utils.scan:__show_scan_subnets:261 - The scan on 192.168.253.0/24 has not collected any information 
+2022-01-15 20:18:19.013 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:18:19.014 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:18:19.014 | WARNING  | project.utils.scan:__show_scan_subnets:261 - The scan on 192.168.253.0/24 has not collected any information 
+2022-01-15 20:20:29.968 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:20:29.972 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:20:29.973 | INFO     | project.utils.scan:__asynchronous_way:443 - Using asynchronous scan.
+2022-01-15 20:20:29.973 | INFO     | project.utils.scan:__asynchronous_way:444 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 20:20:29.987 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:421 - Starting to launch threads based on your cpu
+
+2022-01-15 20:22:07.369 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:22:07.370 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:22:07.374 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 20:24:52.260 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:24:52.262 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:24:52.263 | INFO     | project.utils.scan:__asynchronous_way:444 - Using asynchronous scan.
+2022-01-15 20:24:52.263 | INFO     | project.utils.scan:__asynchronous_way:445 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 20:24:52.276 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:422 - Starting to launch threads based on your cpu
+
+2022-01-15 20:26:20.141 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:26:20.142 | INFO     | project.utils.scan:__show_user_passwd:214 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:26:20.148 | INFO     | project.utils.scan:__show_specific_subnet_info:227 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-15 20:27:46.119 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:27:46.123 | INFO     | project.utils.scan:__show_user_passwd:215 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:27:46.124 | INFO     | project.utils.scan:__asynchronous_way:444 - Using asynchronous scan.
+2022-01-15 20:27:46.124 | INFO     | project.utils.scan:__asynchronous_way:445 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-15 20:27:46.138 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:422 - Starting to launch threads based on your cpu
+
+2022-01-15 20:29:15.842 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-15 20:29:15.843 | INFO     | project.utils.scan:__show_user_passwd:215 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-15 20:29:15.849 | INFO     | project.utils.scan:__show_specific_subnet_info:228 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m

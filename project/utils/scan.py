@@ -4,6 +4,9 @@ import functools
 from ipaddress import IPv4Address, IPv4Network
 import ntpath
 import random
+from rich.console import Console
+from rich.table import Table
+
 
 from halo import Halo
 from typing import Tuple
@@ -18,10 +21,10 @@ from tabulate import tabulate
 
 from spnego._ntlm_raw.crypto import is_ntlm_hash
 from .gatherinfo import TargetInfo, UserInfo
-from multiprocessing import Process
+from multiprocessing import Process, Manager
 
 
-@with_default_category("Utils")
+@with_default_category("Utilities")
 class ScanForPsexec(CommandSet):
     def __init__(self):
         super().__init__()
@@ -68,7 +71,7 @@ class ScanForPsexec(CommandSet):
             self._cmd.info_logger.debug(f"Connection success using smb1 at {ip}")
             succeed_in_connection = True
         except Exception:  # SessionError not working as expected
-            self._cmd.info_logger.debug(f"Connection success using smb1 at {ip}")
+            self._cmd.info_logger.debug(f"Connection fails using smb1 at {ip}")
 
         return succeed_in_connection, smbclient
 
@@ -140,22 +143,22 @@ class ScanForPsexec(CommandSet):
         user = target_info.user_info.user
         passwd = target_info.user_info.passwd
         subnet = target_info.subnet
-        ip_with_color = target_info.ip
+        ip = target_info.ip
         psexec_possibility = target_info.psexec
 
         self._cmd.info_logger.debug(f"Saving scan information")
 
-        self.__scan_info[user][passwd][subnet][ip_with_color] = {
-            ansi.style("Server Name", fg=ansi.fg.red): target_info.computer_name,
-            ansi.style("Operating System", fg=ansi.fg.red): target_info.os,
-            ansi.style("Signed", fg=ansi.fg.red): target_info.signed,
+        self.__scan_info[user][passwd][subnet][ip] = {
+            "Server Name": target_info.computer_name,
+            "Operating System": target_info.os,
+            "Signed": target_info.signed,
         }
 
         if psexec_possibility:
-            admin = ansi.style("PsExec here!", fg=ansi.fg.yellow)
-            self.__scan_info[user][passwd][subnet][ip_with_color][
-                ansi.style("PsExec", fg=ansi.fg.red)
-            ] = admin
+            self.__scan_info[user][passwd][subnet][ip]["PsExec"] = "PsExec here!"
+        else:
+            self.__scan_info[user][passwd][subnet][ip]["PsExec"] = "Not here!"
+
 
     def __configure_target_info_of_scan(
         self, target_info: TargetInfo, smbclient: SMBConnection
@@ -226,8 +229,24 @@ class ScanForPsexec(CommandSet):
             ansi.style("SUBNET -> ", fg=ansi.fg.red)
             + ansi.style(subnet, fg=ansi.fg.blue)
         )
-        scan_frame = pd.DataFrame(data=self.__scan_info[user][passwd][subnet])
-        self._cmd.poutput(tabulate(scan_frame.T, headers="keys", tablefmt="psql"))
+        # scan_frame = pd.DataFrame(data=self.__scan_info[user][passwd][subnet])
+        # self._cmd.poutput(tabulate(scan_frame.T, headers="keys", tablefmt="psql"))
+        console = Console()
+        table = Table(show_header=True, header_style="bold magenta")
+        table.add_column("IP")
+        table.add_column("Operating System")
+        table.add_column("PsExec")
+        table.add_column("Server Name")
+        table.add_column("Signed")
+        for ip, value in self.__scan_info[user][passwd][subnet].items():
+            table.add_row(
+                f"[blue]{ip}[/blue]",
+                f"[cyan]{value['Operating System']}[/cyan]",
+                f"[yellow]{value['PsExec']}[/yellow]",
+                f"[cyan]{value['Server Name']}[/cyan]",
+                f"[cyan]{value['Signed']}[/cyan]",
+            )
+        console.print(table)
 
     def __show_scan_subnets(self) -> None:
         """[Shows the result of scanning all subnets of the
@@ -285,7 +304,6 @@ class ScanForPsexec(CommandSet):
         if passwd not in self.__scan_info[user].keys():
             self.__scan_info[user][passwd] = {}
         if subnet in self.__scan_info[user][passwd].keys():
-
             self._cmd.error_logger.warning(
                 f"The scan has already been passed with user: {user} passwd: {passwd} in {subnet}"
             )
@@ -313,15 +331,14 @@ class ScanForPsexec(CommandSet):
         possibility_of_login = False
         target_info = None
 
-        ip_with_color = ansi.style(ip, fg=ansi.fg.blue)
         conn_with_smb_dialect, smbclient = self.__try_scan_connection_with_smb1(ip)
         if not conn_with_smb_dialect:
             conn_without_smb_dialect, smbclient = self.__try_scan_connection_with_smb3(
-                ip
+                str(ip)
             )
 
         if conn_with_smb_dialect or conn_without_smb_dialect:
-            target_info = TargetInfo(ip_with_color, subnet, user_info)
+            target_info = TargetInfo(str(ip), subnet, user_info)
             possibility_of_login = self.__check_scan_login_possibility(
                 user_info, smbclient
             )
@@ -334,9 +351,10 @@ class ScanForPsexec(CommandSet):
         Args:
             target_info (TargetInfo): [Contains all the info to be displayed]
         """
-        os_with_color = target_info.os
-        ip_with_color = target_info.ip
-
+        os = target_info.os
+        ip = target_info.ip
+        ip_with_color = ansi.style(ip, fg=ansi.fg.blue)
+        os_with_color = ansi.style(os, fg=ansi.fg.cyan)
         if target_info.psexec:
             admin = ansi.style("PsExec here!", fg=ansi.fg.yellow)
             if self._cmd.terminal_lock.acquire(blocking=False):
@@ -440,8 +458,10 @@ class ScanForPsexec(CommandSet):
         Args:
             target_info (TargetInfo): [Contains all the info to be displayed]
         """
-        os_with_color = target_info.os
-        ip_with_color = target_info.ip
+        os = target_info.os
+        ip = target_info.ip
+        ip_with_color = ansi.style(ip, fg=ansi.fg.blue)
+        os_with_color = ansi.style(os, fg=ansi.fg.cyan)
         if target_info.psexec:
             admin = ansi.style("PsExec here!", fg=ansi.fg.yellow)
             self.__spinner.warn(admin + " " + os_with_color + " " + ip_with_color)
@@ -482,8 +502,7 @@ class ScanForPsexec(CommandSet):
             TargetInfo: [ Returns the target information ]
         """
 
-        ip_with_color = ansi.style(str(ip), fg=ansi.fg.blue)
-        self.__spinner.text = "Working in " + ip_with_color
+        self.__spinner.text = "Working in " + str(ip)
         (
             possibility_of_login,
             target_info,
@@ -553,7 +572,7 @@ class ScanForPsexec(CommandSet):
 
         exists_subnet = self.__configure_scan_info()
         if not exists_subnet:
-            self.__scan_info[user][passwd][subnet] = {}
+            self.__scan_info[user][passwd][subnet] = Manager().dict()
             self.__show_user_passwd()
             if args.asynchronous:
                 self.__asynchronous_way()
@@ -637,7 +656,9 @@ class ScanForPsexec(CommandSet):
             self.__end_scan()
             return
         if self.__is_running():
-            self._cmd.error_logger.warning("The scan is already running in the background ...")
+            self._cmd.error_logger.warning(
+                "The scan is already running in the background ..."
+            )
             return
         elif args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)

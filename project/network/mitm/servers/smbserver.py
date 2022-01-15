@@ -124,17 +124,17 @@ class ConfigurationSmbRelayServer:
                 level=0,
             )
 
-            self.__info_logger.info("Starting smb relay server...")
+            self.__info_logger.info("Setting up SMB Server")
         else:
 
             logging.basicConfig(handlers=[InterceptHandlerStdoutNtlmRelay()], level=0)
-            self.__info_logger.info("Starting smb-relay server...")
 
         try:
 
             server = SMBRelayServer(self.__config)
             server.daemon = True
             server.start()
+            server.join()
         except OSError:
             self.__info_logger.error("Address already in use. Is ntlm_relay running ? ")
         return server

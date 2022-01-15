@@ -17,7 +17,7 @@ from spinners.spinners import Spinners
 
 from .gatherinfo import PsexecShellVariables
 
-@with_default_category("Utils")
+@with_default_category("Utilities")
 class Psexec(CommandSet):
     def __init__(self):
         super().__init__()

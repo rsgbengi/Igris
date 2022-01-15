@@ -14,47 +14,27 @@ class PoisonCommand(CommandSet):
         self.__poisoner_process = None
         self.__poison_launcher = None
 
-    def __mdns_configuration(self, args: argparse.Namespace) -> None:
-        if args.mdns and not self._cmd.active_attacks_status("MDNS_Poisoning"):
-            self.__poison_launcher.activate_mdns()
-            self._cmd.active_attacks_configure("MDNS_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The mdns poisoning is already being used by another process"
-            )
+    def __mdns_configuration(self) -> None:
+        self.__poison_launcher.activate_mdns()
+        self._cmd.active_attacks_configure("MDNS_Poisoning", True)
 
-    def __nbt_ns_configuration(self, args: argparse.Namespace) -> None:
-        if args.nbt_ns and not self._cmd.active_attacks_status("NBT_NS_Poisoning"):
-            self.__poison_launcher.activate_nbt_ns()
-            self._cmd.active_attacks_configure("NBT_NS_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The nbt_ns poisoning is already being used by another process"
-            )
+    def __nbt_ns_configuration(self) -> None:
+        self.__poison_launcher.activate_nbt_ns()
+        self._cmd.active_attacks_configure("NBT_NS_Poisoning", True)
 
-    def __llmnr_configuration(self, args: argparse.Namespace) -> None:
-        if args.llmnr and not self._cmd.active_attacks_status("LLMNR_Poisoning"):
-            self.__poison_launcher.activate_llmnr()
-            self._cmd.active_attacks_configure("LLMNR_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The llmnr poisoning is already being used by another process"
-            )
+    def __llmnr_configuration(self) -> None:
+        self.__poison_launcher.activate_llmnr()
+        self._cmd.active_attacks_configure("LLMNR_Poisoning", True)
 
-    def __dns_configuration(self, args: argparse.Namespace) -> None:
-        if args.dns and not self._cmd.active_attacks_status("DNS_Poisoning"):
-            self.__poison_launcher.activate_dns()
-            self._cmd.active_attacks_configure("DNS_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The dns poisoning is already being used by another process"
-            )
+    def __dns_configuration(self) -> None:
+        self.__poison_launcher.activate_dns()
+        self._cmd.active_attacks_configure("DNS_Poisoning", True)
 
-    def __poison_configuration(self, args: argparse.Namespace):
-        self.__mdns_configuration(args)
-        self.__nbt_ns_configuration(args)
-        self.__llmnr_configuration(args)
-        self.__dns_configuration(args)
+    def __poison_configuration(self):
+        self.__mdns_configuration()
+        self.__nbt_ns_configuration()
+        self.__llmnr_configuration()
+        self.__dns_configuration()
 
     def __create_necessary_components(self, args: argparse.Namespace) -> None:
         """[ Method to create the necessary classes ]
@@ -70,7 +50,7 @@ class PoisonCommand(CommandSet):
             self._cmd.info_logger,
             args.Asynchronous,
         )
-        self.__poison_configuration(args)
+        self.__poison_configuration()
 
     def __end_process_in_the_background(self):
         """[ Method to stop the attack by the user ]"""
@@ -79,6 +59,10 @@ class PoisonCommand(CommandSet):
             self.__poisoner_process.terminate()
             self.__poisoner_process.join()
             self.__poisoner_process = None
+            self._cmd.active_attacks_configure("DNS_Poisoning", False)
+            self._cmd.active_attacks_configure("LLMNR_Poisoning", False)
+            self._cmd.active_attacks_configure("NBT_NS_Poisoning", False)
+            self._cmd.active_attacks_configure("MDNS_Poisoning", False)
 
     def __launch_poison_attack(self, args: argparse.Namespace) -> None:
         self.__create_necessary_components(args)

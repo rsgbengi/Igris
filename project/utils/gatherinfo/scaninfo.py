@@ -85,15 +85,15 @@ class TargetInfo:
 
     @os.setter
     def os(self, os: str) -> None:
-        self.__os = ansi.style(os, fg=ansi.fg.bright_magenta)
+        self.__os = os
 
     @signed.setter
     def signed(self, signed: bool) -> bool:
-        self.__signed = ansi.style(signed, fg=ansi.fg.bright_magenta)
+        self.__signed = signed
 
     @computer_name.setter
     def computer_name(self, computer_name: str) -> str:
-        self.__computer_name = ansi.style(computer_name, fg=ansi.fg.bright_magenta)
+        self.__computer_name = computer_name
 
     @psexec.setter
     def psexec(self, psexec: bool) -> bool:

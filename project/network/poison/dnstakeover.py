@@ -14,30 +14,10 @@ class DNSTakeOverCommand(CommandSet):
         super().__init__()
         self.__dnstakeover_process = None
         self.__poison_launcher = None
-    def __dns_configuration(self,args:argparse.Namespace)->None:
-        if not self._cmd.active_attacks_status("DNS_Poisoning"):
-            self.__poison_launcher.activate_dns()
-            self._cmd.active_attacks_configure("DNS_Poisoning", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The dns poisoning is already being used by another process"
-            )
 
-    def __dhcp6_configuration(self,args:argparse.Namespace):
-        if not self._cmd.active_attacks_status("DHCP6_Rogue"):
-            self.__poison_launcher.activate_dhcp6()
-            self._cmd.active_attacks_configure("DHCP6_Rogue", True)
-        else:
-            self._cmd.error_logger.warning(
-                "The dhcp6 rogue attack is already being used by another process"
-            )
-
-
-
-    def __poison_configuration(self, args: argparse.Namespace):
-        self.__dns_configuration(args)
-        self.__dhcp6_configuration(args)
-
+    def __poison_configuration(self):
+        self.__poison_launcher.activate_dhcp6()
+        self._cmd.active_attacks_configure("DHCP6_Rogue", True)
 
     def __create_necessary_components(self, args: argparse.Namespace) -> None:
         """[ Method to create the necessary classes ]
@@ -54,7 +34,7 @@ class DNSTakeOverCommand(CommandSet):
             args.Asynchronous,
             args.domain,
         )
-        self.__poison_configuration(args)
+        self.__poison_configuration()
 
     def __launch_attack(self, args: argparse.Namespace) -> None:
         self.__create_necessary_components(args)
@@ -72,7 +52,6 @@ class DNSTakeOverCommand(CommandSet):
             self.__dnstakeover_process.terminate()
             self.__dnstakeover_process.join()
             self.__dnstakeover_process = None
-            self._cmd.active_attacks("DNS_Poisoning", False)
             self._cmd.active_attacks("DHCP6_Rogue", False)
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> None:
@@ -82,12 +61,6 @@ class DNSTakeOverCommand(CommandSet):
         if self.__dnstakeover_process is not None:
             self._cmd.error_logger.warning(
                 "The attack is already running in the background"
-            )
-            return False
-        if args.domain is None:
-            self._cmd.do_help("dns_takeover")
-            self._cmd.error_logger.error(
-                "Error: the following arguments are required: -DOM/--domain "
             )
             return False
 
@@ -137,7 +110,7 @@ class DNSTakeOverCommand(CommandSet):
         "--domain",
         action="store",
         type=str,
-        required=False,
+        required=True,
         help="Target domain",
     )
 
