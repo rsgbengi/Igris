@@ -163,6 +163,8 @@ class NtlmRelay(CommandSet):
             self.__ntlm_relay_process.join()
             self.__ntlm_relay_process = None
             self._cmd.error_logger.warning("Exiting ntlm relay attack ...")
+        finally:
+            self._cmd.active_attacks_configure("NTLM_Relay", False)
 
     def __configure_ntlm_relay_attack(self, args: argparse.Namespace) -> None:
         """[ Method to configure the class NTLMRelayxConfig
@@ -422,12 +424,10 @@ class NtlmRelay(CommandSet):
 
         if not self.__checking_conditions_for_attack(args):
             return
-        self.__creating_components(args)
 
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,
             "RHOST": self._cmd.RHOST,
-            "IPV6": self._cmd.IPV6,
             "INTERFACE": self._cmd.INTERFACE,
             "MAC_ADDRESS": self._cmd.MAC_ADDRESS,
             "LPORT": self._cmd.LPORT,
@@ -435,4 +435,5 @@ class NtlmRelay(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
+            self.__creating_components(args)
             self.__wrapper_attack(args)

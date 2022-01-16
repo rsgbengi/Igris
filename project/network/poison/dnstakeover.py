@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-
+import sys
+import signal
 from .poisonengine import PoisonLauncher
 import argparse
 from cmd2.command_definition import with_default_category
@@ -36,11 +37,16 @@ class DNSTakeOverCommand(CommandSet):
         )
         self.__poison_configuration()
 
+    def __async_options(self) -> None:
+        """[ Configuration in case of an asynchronous attack ]"""
+        sys.stdout = open("/dev/null", "w")
+        signal.signal(signal.SIGINT, signal.SIG_IGN)
+
     def __launch_attack(self, args: argparse.Namespace) -> None:
-        self.__create_necessary_components(args)
+        if args.Asynchronous:
+            self.__async_options()
         self.__poison_launcher.start_poisoners()
-        if not args.Asynchronous:
-            self.__poison_launcher.wait_for_the_poisoners()
+        self.__poison_launcher.wait_for_the_poisoners()
 
     def __end_process_in_the_background(self) -> None:
         """[ Method to stop the attack by the user ]"""
@@ -52,7 +58,8 @@ class DNSTakeOverCommand(CommandSet):
             self.__dnstakeover_process.terminate()
             self.__dnstakeover_process.join()
             self.__dnstakeover_process = None
-            self._cmd.active_attacks("DHCP6_Rogue", False)
+
+            self._cmd.active_attacks_configure("DHCP6_Rogue", False)
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> None:
         if args.end_attack:
@@ -75,6 +82,8 @@ class DNSTakeOverCommand(CommandSet):
         except KeyboardInterrupt:
             self.__dnstakeover_process.terminate()
             self.__dnstakeover_process.join()
+            self.__dnstakeover_process = None
+            self._cmd.active_attacks_configure("DHCP6_Rogue", False)
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform dns takeover over ipv6 using dhcp6 rogue."""
@@ -139,6 +148,8 @@ class DNSTakeOverCommand(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
+
+            self.__create_necessary_components(args)
             self.__wrapper_attack(args)
 
     def dnstakeover_postloop(self) -> None:

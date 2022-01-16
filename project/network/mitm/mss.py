@@ -76,6 +76,9 @@ class SmbServerAttack(CommandSet):
             self.__mss_attack.join()
             self.__mss_attack = None
             self._cmd.error_logger.warning("Exiting attack ...")
+        finally:
+            self._cmd.active_attacks_configure("MSS", False)
+
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
         """[ Method to launch the attack ]
@@ -121,7 +124,7 @@ class SmbServerAttack(CommandSet):
                 self.__alerts_hunter.join()
                 self.__alerts_dictionary["stop"] = 0
         else:
-            self._cmd._error_logger.error("Not background process found ")
+            self._cmd.error_logger.error("Not background process found ")
 
     def __configure_alerts_thread(self):
         """[ Method to configure the thread that shows alerts ]"""
@@ -206,7 +209,6 @@ class SmbServerAttack(CommandSet):
         if not (self.__checking_conditions_for_attack(args)):
             return
 
-        self.__creating_components(args)
 
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,
@@ -218,6 +220,8 @@ class SmbServerAttack(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
+
+            self.__creating_components(args)
             self.__wrapper_attack(args)
 
     def mss_postloop(self) -> None:

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 from .poisonengine import PoisonLauncher
 import argparse
+import sys
+import signal
 from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
 from threading import Thread
@@ -30,11 +32,15 @@ class PoisonCommand(CommandSet):
         self.__poison_launcher.activate_dns()
         self._cmd.active_attacks_configure("DNS_Poisoning", True)
 
-    def __poison_configuration(self):
-        self.__mdns_configuration()
-        self.__nbt_ns_configuration()
-        self.__llmnr_configuration()
-        self.__dns_configuration()
+    def __poison_configuration(self, args: argparse.Namespace):
+        if args.mdns:
+            self.__mdns_configuration()
+        if args.nbt_ns:
+            self.__nbt_ns_configuration()
+        if args.llmnr:
+            self.__llmnr_configuration()
+        if args.dns:
+            self.__dns_configuration()
 
     def __create_necessary_components(self, args: argparse.Namespace) -> None:
         """[ Method to create the necessary classes ]
@@ -50,7 +56,13 @@ class PoisonCommand(CommandSet):
             self._cmd.info_logger,
             args.Asynchronous,
         )
-        self.__poison_configuration()
+        self.__poison_configuration(args)
+
+    def __change_attack_status(self):
+        self._cmd.active_attacks_configure("DNS_Poisoning", False)
+        self._cmd.active_attacks_configure("LLMNR_Poisoning", False)
+        self._cmd.active_attacks_configure("NBT_NS_Poisoning", False)
+        self._cmd.active_attacks_configure("MDNS_Poisoning", False)
 
     def __end_process_in_the_background(self):
         """[ Method to stop the attack by the user ]"""
@@ -59,16 +71,18 @@ class PoisonCommand(CommandSet):
             self.__poisoner_process.terminate()
             self.__poisoner_process.join()
             self.__poisoner_process = None
-            self._cmd.active_attacks_configure("DNS_Poisoning", False)
-            self._cmd.active_attacks_configure("LLMNR_Poisoning", False)
-            self._cmd.active_attacks_configure("NBT_NS_Poisoning", False)
-            self._cmd.active_attacks_configure("MDNS_Poisoning", False)
+            self.__change_attack_status()
+
+    def __async_options(self) -> None:
+        """[ Configuration in case of an asynchronous attack ]"""
+        sys.stdout = open("/dev/null", "w")
+        signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __launch_poison_attack(self, args: argparse.Namespace) -> None:
-        self.__create_necessary_components(args)
+        if args.Asynchronous:
+            self.__async_options()
         self.__poison_launcher.start_poisoners()
-        if not args.Asynchronous:
-            self.__poison_launcher.wait_for_the_poisoners()
+        self.__poison_launcher.wait_for_the_poisoners()
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace):
         if args.end_attack:
@@ -93,6 +107,8 @@ class PoisonCommand(CommandSet):
         except KeyboardInterrupt:
             self.__poisoner_process.terminate()
             self.__poisoner_process.join()
+            self.__poisoner_process = None
+            self.__change_attack_status()
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform mdns poisoning attack"""
@@ -174,6 +190,8 @@ class PoisonCommand(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
+
+            self.__create_necessary_components(args)
             self.__wrapper_attack(args)
 
     def poison_postloop(self) -> None:

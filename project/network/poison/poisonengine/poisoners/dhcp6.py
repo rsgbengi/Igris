@@ -52,7 +52,7 @@ class DHCP6(PoisonNetwork):
         self.__domain = domain + "."
 
     def __generate_ipv6_address(self, pkt: packet) -> DHCP6OptIAAddress:
-        return DHCP6OptIAAddress(addr=pkt[IPv6].src, preflft=300, validlft=300)
+        return DHCP6OptIAAddress(addr="fe80::192.168.253.139", preflft=300, validlft=300)
 
     def __server_duid(self) -> DUID_LL:
         return DUID_LL(lladdr=self.mac_address)

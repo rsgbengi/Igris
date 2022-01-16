@@ -98,3 +98,9 @@ class TargetInfo:
     @psexec.setter
     def psexec(self, psexec: bool) -> bool:
         self.__psexec = psexec
+
+    def psexec_info(self) -> str:
+        if self.__psexec:
+            return "PsExec here!"
+        else:
+            return "Not PsExec here!"
