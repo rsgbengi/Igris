@@ -7,6 +7,7 @@ from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
 from threading import Thread
 from multiprocessing import Process
+from ipaddress import IPv6Network, AddressValueError
 
 
 @with_default_category("Spoofing Attacks")
@@ -16,7 +17,8 @@ class DNSTakeOverCommand(CommandSet):
         self.__dnstakeover_process = None
         self.__poison_launcher = None
 
-    def __poison_configuration(self):
+    def __poison_configuration(self) -> None:
+        """[ Method to configure the dhcp6 rogue attack ]"""
         self.__poison_launcher.activate_dhcp6()
         self._cmd.active_attacks_configure("DHCP6_Rogue", True)
 
@@ -65,6 +67,11 @@ class DNSTakeOverCommand(CommandSet):
             self._cmd.error_logger.warning("The attack is not activated")
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> None:
+        """[ Method to check if the attack cant be performed]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+        """
         if args.end_attack:
             self.__end_process_in_the_background()
             return False
@@ -82,10 +89,21 @@ class DNSTakeOverCommand(CommandSet):
             self._cmd.error_logger.error(
                 "Error: the following arguments are required: -DOM/--domain"
             )
+        try:
+            IPv6Network(args.mask)
+        except AddressValueError:
+            self._cmd.error_logger.error("Mask invalid")
+            return False
 
         return True
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
+        """[ Method to prepare the attack ]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+        """
+
         self.__dnstakeover_process = Process(target=self.__launch_attack, args=(args,))
         try:
             self.__dnstakeover_process.start()
@@ -132,7 +150,7 @@ class DNSTakeOverCommand(CommandSet):
         action="store",
         type=str,
         required=False,
-        help="Target domain",
+        help="Target domain: Ej: domain.local",
     )
     attack_options.add_argument(
         "-M",
@@ -140,18 +158,18 @@ class DNSTakeOverCommand(CommandSet):
         action="store",
         type=str,
         required=False,
-        help="IPv6 mask",
+        help="IPv6 mask: Ej: fe80::/64",
     )
 
     @with_argparser(argParser)
     def do_dns_takeover(self, args: argparse.Namespace) -> None:
-        """[ Command to perform mdns poisoning attack ]
+        """[ Command to perform dns takeover over ipv6 attack ]
 
         Args:
-            args (argparse.Namespace): [Arguments passed to the mdns poisoning attack ]
+            args (argparse.Namespace): [Arguments passed to the attack ]
         """
         self._cmd.info_logger.debug(
-            f"""Starting mdns poisoning attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} ipv6:{self._cmd.IPV6}
+            f"""Starting dns takeover attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} ipv6:{self._cmd.IPV6}
             interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS}"""
         )
         if not (self.__checking_conditions_for_attack(args)):

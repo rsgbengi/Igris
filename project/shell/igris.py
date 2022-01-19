@@ -298,11 +298,13 @@ class Igris_Shell(cmd2.Cmd):
             "logs/all.log",
             level="DEBUG",
             rotation="1 week",
+            enqueue = True
         )
         logger.add(
             "logs/info_and_above.log",
             level="INFO",
             rotation="1 week",
+            enqueue = True
         )
 
     def __set_up_output_loggers(self) -> Tuple[Logger, Logger]:
@@ -314,13 +316,14 @@ class Igris_Shell(cmd2.Cmd):
         logger.level("INFO", icon=LogSymbols.INFO.value)
         logger.level("WARNING", icon=LogSymbols.WARNING.value)
         logger.level("ERROR", icon=LogSymbols.ERROR.value)
-        fmt = "{level.icon} {message}"
+        fmt = "{level.icon} <blue>{message}</blue>"
         logger.add(
             self.stdout,
             level="INFO",
             format=fmt,
             filter=lambda record: record["extra"].get("name") == "info",
         )
+
         logger.add(
             sys.stderr,
             level="WARNING",

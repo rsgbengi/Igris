@@ -59,10 +59,31 @@ class MDNS(PoisonNetwork):
         )
 
     def __transport_layer(self, response: packet) -> packet:
+        """[ Method to create the transport layer of the response packet ]
+
+        Args:
+            pkt (packet): [ sniffed packet ]
+            response (packet): [ Malicious packet ]
+        Returns:
+            packet: [Returns the packet modified packet]
+
+
+        """
+
         response /= UDP(sport="mdns", dport="mdns")
         return response
 
     def __application_layer(self, pkt: packet, response: packet) -> packet:
+        """[ Method to create the transport layer of the response packet ]
+
+        Args:
+            pkt (packet): [ sniffed packet ]
+            response (packet): [ Malicious packet ]
+        Returns:
+            packet: [Returns the packet modified packet]
+
+        """
+
         response /= DNS(
             id=pkt[DNS].id,
             qr=1,

@@ -19,7 +19,7 @@ from .poisonnetwork import PoisonNetwork
 
 
 class DNSPoison(PoisonNetwork):
-    """[ MDNS poisoner ]
+    """[ DNS poisoner ]
     Args:
         ip (str): [ if of the attacker ]
         ipv6 (str): [ ipv6 of the attacker ]
@@ -60,10 +60,28 @@ class DNSPoison(PoisonNetwork):
         )
 
     def __transport_layer(self, response: packet, pkt: packet) -> packet:
+        """[ Method to create the transport layer of the response packet ]
+
+        Args:
+            pkt (packet): [ sniffed packet ]
+            response (packet): [ Malicious packet ]
+        Returns:
+            packet: [Returns the packet modified packet]
+
+        """
         response /= UDP(sport=53, dport=pkt[UDP].sport)
         return response
 
     def __application_layer(self, pkt: packet, response: packet) -> packet:
+        """[ Method to create the application layer of the response packet]
+        Args:
+            pkt (packet): [ sniffed packet ]
+            response (packet): [ Malicious packet ]
+        Returns:
+            packet: [Returns the packet modified packet]
+
+
+        """
         response /= DNS(
             id=pkt[DNS].id,
             qr=1,

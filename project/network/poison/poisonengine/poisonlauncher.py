@@ -173,10 +173,13 @@ class PoisonLauncher:
         self.__threads.append(dns_thread)
 
     def wait_for_the_poisoners(self):
+
+        """[ Method to wait for poisoners to finish ]"""
         for thread in self.__threads:
             thread.join()
 
     def start_poisoners(self):
+        """[ Method to start the poisoners selected ]"""
         if self.__poisoner_selector["MDNS"] == 1:
             self.__create_mdns()
             self.__start_mdns()

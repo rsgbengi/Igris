@@ -17,22 +17,35 @@ class PoisonCommand(CommandSet):
         self.__poison_launcher = None
 
     def __mdns_configuration(self) -> None:
+
+        """[ Method to configure mdns poisoner]"""
         self.__poison_launcher.activate_mdns()
         self._cmd.active_attacks_configure("MDNS_Poisoning", True)
 
     def __nbt_ns_configuration(self) -> None:
+
+        """[ Method to configure nbt_ns poisoner]"""
         self.__poison_launcher.activate_nbt_ns()
         self._cmd.active_attacks_configure("NBT_NS_Poisoning", True)
 
     def __llmnr_configuration(self) -> None:
+
+        """[ Method to configure llmnr poisoner]"""
         self.__poison_launcher.activate_llmnr()
         self._cmd.active_attacks_configure("LLMNR_Poisoning", True)
 
     def __dns_configuration(self) -> None:
+        """[ Method to configure dns poisoner]"""
         self.__poison_launcher.activate_dns()
         self._cmd.active_attacks_configure("DNS_Poisoning", True)
 
     def __poison_configuration(self, args: argparse.Namespace):
+        """[ Method to configure poisoners ]
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+
+        """
+
         if args.mdns:
             self.__mdns_configuration()
         if args.nbt_ns:
@@ -59,6 +72,7 @@ class PoisonCommand(CommandSet):
         self.__poison_configuration(args)
 
     def __change_attack_status(self):
+        """[ To change the status of the poisoners ]"""
         self._cmd.active_attacks_configure("DNS_Poisoning", False)
         self._cmd.active_attacks_configure("LLMNR_Poisoning", False)
         self._cmd.active_attacks_configure("NBT_NS_Poisoning", False)
@@ -79,12 +93,19 @@ class PoisonCommand(CommandSet):
         signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __launch_poison_attack(self, args: argparse.Namespace) -> None:
+        """[ Function to launch the components for the attack ]"""
         if args.Asynchronous:
             self.__async_options()
         self.__poison_launcher.start_poisoners()
         self.__poison_launcher.wait_for_the_poisoners()
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace):
+        """[ Method to check if the attack cant be performed]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+        """
+
         if args.end_attack:
             self.__end_process_in_the_background()
             return False
@@ -97,6 +118,12 @@ class PoisonCommand(CommandSet):
         return True
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
+        """[ Method to prepare the attack ]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+        """
+
         self.__poisoner_process = Process(
             target=self.__launch_poison_attack, args=(args,)
         )
@@ -166,13 +193,13 @@ class PoisonCommand(CommandSet):
 
     @with_argparser(argParser)
     def do_poison(self, args: argparse.Namespace) -> None:
-        """[ Command to perform mdns poisoning attack ]
+        """[ Command to perform mdns,dns,llmnr and nbt_ns  poisoning ]
 
         Args:
-            args (argparse.Namespace): [Arguments passed to the mdns poisoning attack ]
+            args (argparse.Namespace): [Arguments passed to the attack ]
         """
         self._cmd.info_logger.debug(
-            f"""Starting mdns poisoning attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} ipv6:{self._cmd.IPV6}
+            f"""Starting poison attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} ipv6:{self._cmd.IPV6}
             interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS}"""
         )
 

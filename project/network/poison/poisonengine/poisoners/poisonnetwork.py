@@ -20,6 +20,8 @@ class PoisonNetwork:
         ipv6 (str): [ ipv6 of the attacker ]
         mac_addres (str): [ mac_address of the attacker ]
         iface (str): [ interface for sniffing packets  ]
+        info_logger (logger): [ Logger for the output ]
+        level (logger): [ Logger level to display information ]
     """
 
     def __init__(
