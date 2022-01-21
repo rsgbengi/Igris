@@ -79,7 +79,6 @@ class SmbServerAttack(CommandSet):
         finally:
             self._cmd.active_attacks_configure("MSS", False)
 
-
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
         """[ Method to launch the attack ]
         Args:
@@ -109,7 +108,7 @@ class SmbServerAttack(CommandSet):
             self.__path_file,
             self.__alerts_dictionary,
         )
-        self._cmd.active_attacks_configure("MSS",True)
+        self._cmd.active_attacks_configure("MSS", True)
 
     def __end_process_in_the_background(self):
         """[ Method to stop the attack by the user ]"""
@@ -118,7 +117,7 @@ class SmbServerAttack(CommandSet):
             self.__mss_attack.terminate()
             self.__mss_attack.join()
             self.__mss_attack = None
-            self._cmd.active_attacks_configure("MSS",False)
+            self._cmd.active_attacks_configure("MSS", False)
             if self.__alerts_hunter is not None and self.__alerts_hunter.is_alive():
                 self.__alerts_dictionary["stop"] = 1
                 self.__alerts_hunter.join()
@@ -158,7 +157,8 @@ class SmbServerAttack(CommandSet):
         return True
 
     argParser = Cmd2ArgumentParser(
-        description="""Malicious smb server attack to get hashes net-NTLMv2 """
+        description="""Malicious smb server attack to get hashes net-NTLMv2 """,
+        epilog="This command is not designed to use pipes(|) or redirections( >< ) when the server is in used",
     )
 
     display_options = argParser.add_argument_group(
@@ -208,7 +208,6 @@ class SmbServerAttack(CommandSet):
         )
         if not (self.__checking_conditions_for_attack(args)):
             return
-
 
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,

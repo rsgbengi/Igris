@@ -6,6 +6,7 @@ import ntpath
 import random
 from rich.console import Console
 from rich.table import Table
+import json
 
 
 from halo import Halo
@@ -21,14 +22,25 @@ from tabulate import tabulate
 
 from spnego._ntlm_raw.crypto import is_ntlm_hash
 from .gatherinfo import TargetInfo, UserInfo
-from multiprocessing import Process, Manager
+from multiprocessing import Process, Manager, managers
+
+
+class JSONEncoderWithDictProxy(json.JSONEncoder):
+    def default(self, o):
+        if isinstance(o, managers.DictProxy):
+            return dict(o)
+        return json.JSONEncoder.default(self, o)
 
 
 @with_default_category("Utilities")
 class ScanForPsexec(CommandSet):
     def __init__(self):
         super().__init__()
-        self.__scan_info = {}
+        try:
+            f = open("/home/rsgbengi/Igris/save/scan.json", "r")
+            self.__scan_info = json.load(f)
+        except FileNotFoundError:
+            self.__scan_info = {}
         self.__spinner_list = [key.name for key in Spinners]
         self.__spinner = None
         self.__scan_process = None
@@ -47,6 +59,7 @@ class ScanForPsexec(CommandSet):
             self._cmd.info_logger.success(
                 ansi.style("The scan has finished", fg=ansi.fg.bright_green)
             )
+            self.__save_state()
 
     def __try_scan_connection_with_smb1(
         self, ip: IPv4Address
@@ -204,10 +217,10 @@ class ScanForPsexec(CommandSet):
         user = self._cmd.USER
         passwd = self._cmd.PASSWD
 
-        self._cmd.info_logger.info(
+        self._cmd.poutput(
             ansi.style("USER -> ", fg=ansi.fg.red) + ansi.style(user, fg=ansi.fg.blue)
         )
-        self._cmd.info_logger.info(
+        self._cmd.poutput(
             ansi.style("PASSWD -> ", fg=ansi.fg.red)
             + ansi.style(passwd, fg=ansi.fg.blue)
         )
@@ -220,12 +233,10 @@ class ScanForPsexec(CommandSet):
             passwd (str): [Current value of the settable variable PASSWD]
             subnet (str): [Subnet whose information is going to be displayed]
         """
-        self._cmd.info_logger.info(
+        self._cmd.poutput(
             ansi.style("SUBNET -> ", fg=ansi.fg.red)
             + ansi.style(subnet, fg=ansi.fg.blue)
         )
-        # scan_frame = pd.DataFrame(data=self.__scan_info[user][passwd][subnet])
-        # self._cmd.poutput(tabulate(scan_frame.T, headers="keys", tablefmt="psql"))
         console = Console()
         table = Table(show_header=True, header_style="bold magenta")
         table.add_column("IP")
@@ -547,6 +558,10 @@ class ScanForPsexec(CommandSet):
             synchronous_scan_process.join()
             self._cmd.poutput("\n")
 
+    def __save_state(self):
+        with open("/home/rsgbengi/Igris/save/scan.json", "w") as outfile:
+            json.dump(self.__scan_info, outfile, cls=JSONEncoderWithDictProxy)
+
     def __start_scan(self, args: argparse.Namespace) -> None:
         """[ Start scan of the subnet ]
 
@@ -565,6 +580,7 @@ class ScanForPsexec(CommandSet):
                 self.__asynchronous_way()
             else:
                 self.__synchronous_way()
+                self.__save_state()
 
     def __end_scan(self) -> None:
         """[ Process to finished the scan process ]"""
@@ -572,6 +588,7 @@ class ScanForPsexec(CommandSet):
             self._cmd.error_logger.warning("Exiting ...")
             self.__scan_process.terminate()
             self.__scan_process.join()
+            self.__save_state()
 
     def __is_running(self) -> None:
         """[ Method to check if the scan is already in progress ]"""
@@ -593,7 +610,8 @@ class ScanForPsexec(CommandSet):
 
     argParser = cmd2.Cmd2ArgumentParser(
         description="""Tool to know if there is a possibility to perform psexec. 
-        Without arguments this tool will scan the Subnet"""
+        Without arguments this tool will scan the Subnet""",
+        epilog="This command is not designed to use pipes(|) or redirections( >< ) when using the scan",
     )
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "

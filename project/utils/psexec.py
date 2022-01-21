@@ -380,6 +380,12 @@ class Psexec(CommandSet):
                 self.__psexec_execution_options(args, conn)
 
     def __clean_paexec_files(self, args: argparse.Namespace) -> None:
+        """[Function to clean files from the remote host]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the psexec command ]
+        """
+
         rhost = self._cmd.RHOST
         user = self._cmd.USER
         passwd = self._cmd.PASSWD

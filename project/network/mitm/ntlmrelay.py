@@ -355,7 +355,8 @@ class NtlmRelay(CommandSet):
             self.__alerts_hunter.join()
 
     argParser = Cmd2ArgumentParser(
-        description="""Command to perform ntlm relay attack"""
+        description="""Command to perform ntlm relay attack""",
+        epilog = "This command is not designed to use pipes(|) or redirections( >< ) when the relay attacks are in used"
     )
 
     display_options = argParser.add_argument_group(

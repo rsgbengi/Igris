@@ -36,7 +36,9 @@ COLORS = {
 
 class Igris_Shell(cmd2.Cmd):
     def __init__(self):
-        super().__init__(auto_load_commands=False)
+        super().__init__(
+            auto_load_commands=False, persistent_history_file="/home/rsgbengi/Igris/save/history.json"
+        )
         self.__credentials_config_variables()
         self.__network_config_variables()
         # Defect for intro messsage
@@ -294,17 +296,9 @@ class Igris_Shell(cmd2.Cmd):
         return self.__color_text(logo)
 
     def __set_up_file_loggers(self) -> None:
+        logger.add("logs/all.log", level="DEBUG", rotation="1 week", enqueue=True)
         logger.add(
-            "logs/all.log",
-            level="DEBUG",
-            rotation="1 week",
-            enqueue = True
-        )
-        logger.add(
-            "logs/info_and_above.log",
-            level="INFO",
-            rotation="1 week",
-            enqueue = True
+            "logs/info_and_above.log", level="INFO", rotation="1 week", enqueue=True
         )
 
     def __set_up_output_loggers(self) -> Tuple[Logger, Logger]:
@@ -316,7 +310,7 @@ class Igris_Shell(cmd2.Cmd):
         logger.level("INFO", icon=LogSymbols.INFO.value)
         logger.level("WARNING", icon=LogSymbols.WARNING.value)
         logger.level("ERROR", icon=LogSymbols.ERROR.value)
-        fmt = "{level.icon} <blue>{message}</blue>"
+        fmt = "{level.icon} {message}"
         logger.add(
             self.stdout,
             level="INFO",

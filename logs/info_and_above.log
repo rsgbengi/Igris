@@ -2425,3 +2425,121 @@ Exiting ...
 2022-01-19 17:19:26.044 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to 192.168.253.139[0m
 2022-01-19 17:19:26.095 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:94 - [36m(MDNS) Sending packet to fe80::ad5d:a0a0:f1d:bb1d[0m
 2022-01-19 17:19:57.813 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:108 - Running llmnr poisoning in the background
+2022-01-20 16:49:10.822 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 16:49:16.021 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-01-20 16:49:16.058 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-20 16:49:27.504 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 16:49:39.249 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-01-20 16:49:39.290 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-20 16:50:00.105 | INFO     | project.shell.igris:show_settable_variables_necessary:251 - Showing necessary settable variables
+2022-01-20 16:50:24.779 | INFO     | project.shell.igris:show_settable_variables_necessary:251 - Showing necessary settable variables
+2022-01-20 16:51:04.517 | ERROR    | project.shell.igris:do_cd:206 - /home/rsgbengi/pro is not a directory
+2022-01-20 16:51:17.226 | ERROR    | project.shell.igris:do_cd:206 - /home/rsgbengi/Igris/project/loot is not a directory
+2022-01-20 16:53:24.914 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 16:53:32.192 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-01-20 16:53:32.227 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-20 16:53:42.888 | INFO     | project.shell.igris:show_settable_variables_necessary:251 - Showing necessary settable variables
+2022-01-20 17:07:35.406 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 17:08:32.348 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:156 - Starting llmnr poisoning...
+2022-01-20 17:08:58.761 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:113 - The attack is already running in the background
+2022-01-20 17:09:02.343 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-01-20 17:09:09.249 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 17:09:17.827 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 17:29:23.916 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:113 - The attack is already running in the background
+2022-01-20 17:29:26.808 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-01-20 17:29:35.782 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:113 - The attack is already running in the background
+2022-01-20 17:29:39.107 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-01-20 17:29:59.715 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 17:40:40.432 | INFO     | project.shell.igris:show_settable_variables_necessary:251 - Showing necessary settable variables
+2022-01-20 17:43:54.692 | INFO     | project.shell.igris:show_settable_variables_necessary:251 - Showing necessary settable variables
+2022-01-20 17:48:04.361 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 17:48:09.838 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-01-20 17:48:09.870 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-20 17:48:20.361 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 17:48:22.307 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-01-20 17:48:22.346 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::11cd:3852:b2df:f387[0m
+2022-01-20 17:59:53.779 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-01-20 18:00:00.123 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:113 - The attack is already running in the background
+2022-01-20 18:00:02.792 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-01-20 18:06:38.447 | INFO     | project.shell.igris:show_settable_variables_necessary:251 - Showing necessary settable variables
+2022-01-20 18:06:43.369 | INFO     | project.utils.psexec:__try_psexec_connection:262 - The connection has been established successfully
+2022-01-20 18:06:43.553 | INFO     | project.utils.psexec:__shell:234 - Starting cmd.exe interactively
+2022-01-20 18:06:51.444 | INFO     | project.utils.psexec:__shell:246 - Exiting cmd.exe
+2022-01-20 18:12:42.365 | INFO     | project.shell.igris:show_settable_variables_necessary:253 - Showing necessary settable variables
+2022-01-20 18:12:55.486 | INFO     | project.shell.igris:show_settable_variables_necessary:253 - Showing necessary settable variables
+2022-01-20 18:23:17.757 | INFO     | project.utils.scan:__show_user_passwd:208 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-20 18:23:17.758 | INFO     | project.utils.scan:__show_user_passwd:211 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-20 18:23:17.759 | INFO     | project.utils.scan:__synchronous_way:532 - Using synchronous scan
+2022-01-20 18:23:17.775 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:503 - Starting to launch threads based on your cpu
+2022-01-20 18:24:42.106 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:525 - Synchronous scanning has been completed
+2022-01-20 19:11:08.860 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-20 19:11:08.866 | INFO     | project.utils.scan:__show_user_passwd:216 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-20 19:11:08.868 | INFO     | project.utils.scan:__synchronous_way:537 - Using synchronous scan
+2022-01-20 19:11:08.917 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:508 - Starting to launch threads based on your cpu
+2022-01-20 19:12:33.359 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:530 - Synchronous scanning has been completed
+2022-01-21 14:42:51.720 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 14:42:51.722 | INFO     | project.utils.scan:__show_user_passwd:216 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 14:42:51.723 | INFO     | project.utils.scan:__synchronous_way:537 - Using synchronous scan
+2022-01-21 14:42:51.759 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:508 - Starting to launch threads based on your cpu
+2022-01-21 14:44:23.931 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:530 - Synchronous scanning has been completed
+2022-01-21 14:48:00.549 | INFO     | project.utils.scan:__show_user_passwd:213 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 14:48:00.550 | INFO     | project.utils.scan:__show_user_passwd:216 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 14:48:00.550 | INFO     | project.utils.scan:__synchronous_way:537 - Using synchronous scan
+2022-01-21 14:48:00.561 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:508 - Starting to launch threads based on your cpu
+2022-01-21 14:53:06.488 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 14:53:06.490 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 14:53:06.490 | INFO     | project.utils.scan:__synchronous_way:544 - Using synchronous scan
+2022-01-21 14:53:06.507 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:515 - Starting to launch threads based on your cpu
+2022-01-21 14:54:14.180 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 14:54:14.182 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 14:54:14.187 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 14:54:28.528 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 14:54:28.529 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 14:54:28.531 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 14:54:34.577 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 14:54:34.579 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 14:54:34.581 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 14:57:33.399 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 14:57:33.400 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 14:57:33.403 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 14:57:45.827 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 14:57:45.829 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 14:57:45.831 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 14:58:17.351 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 14:58:17.353 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 14:58:17.355 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 14:59:32.171 | WARNING  | project.utils.scan:__configure_scan_info:314 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-21 15:01:03.051 | INFO     | project.utils.scan:__show_user_passwd:221 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:01:03.053 | INFO     | project.utils.scan:__show_user_passwd:224 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:01:03.055 | ERROR    | project.utils.scan:__show_scan_info:290 - Current user and password not used yet user: Administrator passwd: P@$$w0rd! 
+2022-01-21 15:01:09.522 | INFO     | project.utils.scan:__show_user_passwd:221 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:01:09.525 | INFO     | project.utils.scan:__show_user_passwd:224 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:01:09.526 | INFO     | project.utils.scan:__synchronous_way:544 - Using synchronous scan
+2022-01-21 15:01:09.544 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:515 - Starting to launch threads based on your cpu
+2022-01-21 15:01:57.339 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:01:57.339 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:01:57.340 | WARNING  | project.utils.scan:__show_scan_subnets:268 - The scan on 192.168.253.0/24 has not collected any information 
+2022-01-21 15:02:09.391 | WARNING  | project.utils.scan:__configure_scan_info:314 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-21 15:02:23.665 | WARNING  | project.utils.scan:__configure_scan_info:314 - The scan has already been passed with user: Administrator passwd: P@$$w0rd! in 192.168.253.0/24
+2022-01-21 15:02:24.495 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:02:24.499 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:02:24.501 | INFO     | project.utils.scan:__synchronous_way:543 - Using synchronous scan
+2022-01-21 15:02:24.533 | INFO     | project.utils.scan:__set_up_scan_actions_synchronous:514 - Starting to launch threads based on your cpu
+2022-01-21 15:03:24.263 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:03:24.264 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:03:24.266 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 15:03:32.325 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:03:32.325 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:03:32.326 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 15:03:37.659 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:03:37.659 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:03:37.660 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 15:03:43.184 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:03:43.396 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:03:47.198 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 15:04:29.404 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:04:29.404 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:04:29.406 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m
+2022-01-21 15:04:38.489 | INFO     | project.utils.scan:__show_user_passwd:220 - [31mUSER -> [39m[34mAdministrator[39m
+2022-01-21 15:04:38.492 | INFO     | project.utils.scan:__show_user_passwd:223 - [31mPASSWD -> [39m[34mP@$$w0rd![39m
+2022-01-21 15:04:38.495 | INFO     | project.utils.scan:__show_specific_subnet_info:236 - [31mSUBNET -> [39m[34m192.168.253.0/24[39m

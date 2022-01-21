@@ -116,7 +116,9 @@ class DNSTakeOverCommand(CommandSet):
             self._cmd.active_attacks_configure("DHCP6_Rogue", False)
 
     argParser = Cmd2ArgumentParser(
-        description="""Command to perform dns takeover over ipv6 using dhcp6 rogue."""
+        description="""Command to perform dns takeover over ipv6 using dhcp6 rogue.""",
+        epilog = "This command is not designed to use pipes(|) or redirections( >< ) when poisoners are invoked"
+
     )
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "

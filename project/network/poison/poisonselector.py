@@ -138,7 +138,8 @@ class PoisonCommand(CommandSet):
             self.__change_attack_status()
 
     argParser = Cmd2ArgumentParser(
-        description="""Command to perform mdns poisoning attack"""
+        description="""Command to perform mdns poisoning attack""",
+        epilog="This command is not designed to use pipes(|) or redirections( >< ) when poisoners are invoked",
     )
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "
@@ -202,10 +203,8 @@ class PoisonCommand(CommandSet):
             f"""Starting poison attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} ipv6:{self._cmd.IPV6}
             interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS}"""
         )
-
         if not (self.__checking_conditions_for_attack(args)):
             return
-
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,
             "RHOST": self._cmd.RHOST,
@@ -220,6 +219,8 @@ class PoisonCommand(CommandSet):
 
             self.__create_necessary_components(args)
             self.__wrapper_attack(args)
+            if (not args.Asynchronous):
+                self.__poisoner_process = None
 
     def poison_postloop(self) -> None:
         """[method to stop the attack before the application is terminated]"""
