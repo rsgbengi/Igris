@@ -21,26 +21,15 @@ from spinners.spinners import Spinners
 from tabulate import tabulate
 
 from spnego._ntlm_raw.crypto import is_ntlm_hash
-from .gatherinfo import TargetInfo, UserInfo
+from .gatherinfo import TargetInfo, UserInfo, SubnetInfo
 from multiprocessing import Process, Manager, managers
-
-
-class JSONEncoderWithDictProxy(json.JSONEncoder):
-    def default(self, o):
-        if isinstance(o, managers.DictProxy):
-            return dict(o)
-        return json.JSONEncoder.default(self, o)
-
+import pickle
 
 @with_default_category("Utilities")
 class ScanForPsexec(CommandSet):
     def __init__(self):
         super().__init__()
-        try:
-            f = open("/home/rsgbengi/Igris/save/scan.json", "r")
-            self.__scan_info = json.load(f)
-        except FileNotFoundError:
-            self.__scan_info = {}
+        self.__parse_json()
         self.__spinner_list = [key.name for key in Spinners]
         self.__spinner = None
         self.__scan_process = None
@@ -61,6 +50,15 @@ class ScanForPsexec(CommandSet):
             )
             self.__save_state()
 
+    def __parse_json(self):
+        try:
+            f = open("/home/rsgbengi/Igris/save/scan", "rb")
+            self.__scan_info = pickle.load(f)
+            for subnet in self.__scan_info.values():
+                subnet.casting_to_manager_list_computers()
+        except FileNotFoundError:
+            self.__scan_info = {}
+
     def __try_scan_connection_with_smb1(
         self, ip: IPv4Address
     ) -> Tuple[bool, SMBConnection]:
@@ -73,7 +71,6 @@ class ScanForPsexec(CommandSet):
         Returns:
             Tuple[bool, SMBConnection]: [Returns the state of the connection and the variable to manipulate the connection]
         """
-
         succeed_in_connection = False
         smbclient = None
         try:
@@ -146,28 +143,6 @@ class ScanForPsexec(CommandSet):
             self._cmd.info_logger.debug(f"Login successful at {ip}")
         return succeed_in_login
 
-    def __store_scan_results(self, target_info: TargetInfo) -> None:
-        """[Function to store scan results into scan_info dictionary]
-
-        Args:
-            target_info (TargetInfo): [Argument that contains all parameters
-                                        needed for store the scan results(user,subnet ...)]
-        """
-        user = target_info.user_info.user
-        passwd = target_info.user_info.passwd
-        subnet = target_info.subnet
-        ip = target_info.ip
-        psexec_possibility = target_info.psexec
-
-        self._cmd.info_logger.debug(f"Saving scan information")
-
-        self.__scan_info[user][passwd][subnet][ip] = {
-            "Server Name": target_info.computer_name,
-            "Operating System": target_info.os,
-            "Signed": target_info.signed,
-            "PsExec": target_info.psexec_info(),
-        }
-
     def __configure_target_info_of_scan(
         self, target_info: TargetInfo, smbclient: SMBConnection
     ) -> None:
@@ -225,98 +200,82 @@ class ScanForPsexec(CommandSet):
             + ansi.style(passwd, fg=ansi.fg.blue)
         )
 
-    def __show_specific_subnet_info(self, user: str, passwd: str, subnet: str) -> None:
-        """[Shows the information of a specific subnet]
-
-        Args:
-            user (str): [Current value of the settable variable USER]
-            passwd (str): [Current value of the settable variable PASSWD]
-            subnet (str): [Subnet whose information is going to be displayed]
-        """
-        self._cmd.poutput(
-            ansi.style("SUBNET -> ", fg=ansi.fg.red)
-            + ansi.style(subnet, fg=ansi.fg.blue)
-        )
+    def __show_subnet_information(self) -> None:
+        """[Shows the information of a specific subnet]"""
         console = Console()
         table = Table(show_header=True, header_style="bold magenta")
         table.add_column("IP")
         table.add_column("Operating System")
-        table.add_column("PsExec")
-        table.add_column("Server Name")
+        table.add_column("Psexec")
+        table.add_column("Computer Name")
         table.add_column("Signed")
-        for ip, value in self.__scan_info[user][passwd][subnet].items():
+        for computer in self.__scan_info[self._cmd.SUBNET].computers:
+            user_status = computer.users[self._cmd.USER + self._cmd.PASSWD]
             table.add_row(
-                f"[blue]{ip}[/blue]",
-                f"[cyan]{value['Operating System']}[/cyan]",
-                f"[yellow]{value['PsExec']}[/yellow]",
-                f"[cyan]{value['Server Name']}[/cyan]",
-                f"[cyan]{value['Signed']}[/cyan]",
+                f"[blue]{computer.ip}[/blue]",
+                f"[cyan]{computer.os}[/cyan]",
+                f"[yellow]{user_status.psexec_info()}[/yellow]",
+                f"[cyan]{computer.computer_name}[/cyan]",
+                f"[cyan]{computer.signed}[/cyan]",
             )
         console.print(table)
-
-    def __show_scan_subnets(self) -> None:
-        """[Shows the result of scanning all subnets of the
-        current username and password]
-        """
-        user = self._cmd.USER
-        passwd = self._cmd.PASSWD
-
-        for subnet in self.__scan_info[user][passwd].keys():
-            if len(self.__scan_info[user][passwd][subnet].keys()) != 0:
-                self.__show_specific_subnet_info(user, passwd, subnet)
-            else:
-                self._cmd.error_logger.warning(
-                    f"The scan on {subnet} has not collected any information "
-                )
 
     def __show_scan_info(self) -> None:
         """[Function that will check if it is possible to display the scan
         info of a current username and password]
         """
+        subnet = self._cmd.SUBNET
 
-        user = self._cmd.USER
-        passwd = self._cmd.PASSWD
-
-        self._cmd.info_logger.debug(
-            f"Starting to show all the scan info of the different subnets using user: {user} passwd: {passwd}"
+        user_to_search = UserInfo(self._cmd.USER, self._cmd.PASSWD)
+        self._cmd.poutput(
+            ansi.style("SUBNET -> ", fg=ansi.fg.red)
+            + ansi.style(subnet, fg=ansi.fg.blue)
         )
-
-        self.__show_user_passwd()
-        if user in self.__scan_info.keys() and passwd in self.__scan_info[user].keys():
-            self.__show_scan_subnets()
+        if (
+            subnet in self.__scan_info.keys()
+            and len(self.__scan_info[subnet].computers) != 0
+            and user_to_search in self.__scan_info[subnet].users_used
+        ):
+            self.__show_subnet_information()
         else:
-            self._cmd.error_logger.error(
-                f"Current user and password not used yet user: {user} passwd: {passwd} "
+            self._cmd.error_logger.warning(
+                f"the analysis of this {subnet} has not collected any information or no scan has been performed with it yet"
             )
 
-            self._cmd.do_help("scan")
+    def __configure_users_used(self, user: UserInfo) -> bool:
+        """[Function that will configure the users used used]
+
+        Returns:
+            bool : [Returns if the scan can continue]
+        """
+
+        continue_operations = True
+        if not self.__scan_info[self._cmd.SUBNET].check_if_user_exits(user):
+            self.__scan_info[self._cmd.SUBNET].add_new_user(user)
+        else:
+            answer = input(
+                "This user and password has already been used on this subnet. Press 'y' to continue if not any\n"
+            )
+            continue_operations = answer == "y" or "Y"
+        return continue_operations
 
     def __configure_scan_info(self) -> bool:
         """[Function that will configure the dictionary scan_info to do the scan]
 
         Returns:
-            bool : [Returns the existence of a previous analysis of the
-                        current subnet or if the user want to repeat the scan]
+            bool : [Returns if the scan can continue]
         """
-        exists_subnet = False
-        key = None
 
         user = self._cmd.USER
         passwd = self._cmd.PASSWD
         subnet = self._cmd.SUBNET
 
-        if user not in self.__scan_info.keys():
-            self.__scan_info[user] = {}
-        if passwd not in self.__scan_info[user].keys():
-            self.__scan_info[user][passwd] = {}
-        if subnet in self.__scan_info[user][passwd].keys():
-            self._cmd.error_logger.warning(
-                f"The scan has already been passed with user: {user} passwd: {passwd} in {subnet}"
-            )
-
-            key = input("Do you want to repeat the scan ? Press 'y' but any other key:")
-            exists_subnet = True
-        return exists_subnet and key != ("y" or "Y")
+        user = UserInfo(user, passwd)
+        continue_operations = True
+        if subnet not in self.__scan_info.keys():
+            self.__scan_info[subnet] = SubnetInfo(subnet)
+        continue_operations = self.__configure_users_used(user)
+        return continue_operations
 
     def __check_conectivity_of_scan(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
@@ -351,21 +310,24 @@ class ScanForPsexec(CommandSet):
 
         return possibility_of_login, target_info, smbclient
 
-    def __set_up_scan_results_asynchronous(
-        self, smbclient: SMBConnection, target_info: TargetInfo
+    def __set_up_scan_results(
+        self,
+        smbclient: SMBConnection,
+        target_info: TargetInfo,
+        user_info: UserInfo,
+        subnet: str,
     ) -> None:
         """[Prepare everything to later show the saved information of the connection
                 asynchronously]
 
         Args:
             smbclient (SMBConnection): [Object with the current smb connection]
-            target_info (TargetInfo): [Object that contains info of the current target]
-        """
-
+            target_info (targetinfo): [object that contains info of the current target]"""
         self.__configure_target_info_of_scan(target_info, smbclient)
         success_in_psexec = self.__check_psexec_possibility(smbclient)
-        target_info.psexec = success_in_psexec
-        self.__store_scan_results(target_info)
+        user_info.psexec = success_in_psexec
+        target_info.users = user_info
+        self.__scan_info[subnet].computers = target_info
 
     def __is_user_in_admin_group_asynchronous(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
@@ -384,7 +346,7 @@ class ScanForPsexec(CommandSet):
             smbclient,
         ) = self.__check_conectivity_of_scan(user_info, subnet, ip)
         if possibility_of_login:
-            self.__set_up_scan_results_asynchronous(smbclient, target_info)
+            self.__set_up_scan_results(smbclient, target_info, user_info, subnet)
         if smbclient is not None:
             smbclient.close()
 
@@ -394,8 +356,6 @@ class ScanForPsexec(CommandSet):
         password = self._cmd.PASSWD
         subnet = self._cmd.SUBNET
         user_info = UserInfo(user, password)
-
-        self._cmd.info_logger.info("Starting to launch threads based on your cpu\n")
 
         with concurrent.futures.ThreadPoolExecutor() as executor:
             executor.map(
@@ -428,7 +388,9 @@ class ScanForPsexec(CommandSet):
         self.__scan_process = Process(target=self.__set_up_scan_actions_asynchronous)
         self.__scan_process.start()
 
-    def __show_scan_results_synchronous(self, target_info: TargetInfo) -> None:
+    def __show_scan_results_synchronous(
+        self, target_info: TargetInfo, user_info: UserInfo
+    ) -> None:
         """[Display the results of an synchronous scan]
 
         Args:
@@ -438,30 +400,13 @@ class ScanForPsexec(CommandSet):
         ip = target_info.ip
         ip_with_color = ansi.style(ip, fg=ansi.fg.blue)
         os_with_color = ansi.style(os, fg=ansi.fg.cyan)
-        if target_info.psexec:
-            admin = ansi.style("PsExec here!", fg=ansi.fg.yellow)
+        if user_info.psexec:
+            admin = ansi.style(user_info.psexec_info(), fg=ansi.fg.yellow)
             self.__spinner.warn(admin + " " + os_with_color + " " + ip_with_color)
         else:
             self.__spinner.info(" " + os_with_color + " " + ip_with_color)
 
         self.__spinner.start()
-
-    def __set_up_scan_results_synchronous(
-        self, smbclient: SMBConnection, target_info: TargetInfo
-    ) -> None:
-        """[Prepare everything to later show the saved information of the connection
-                synchronously]
-
-        Args:
-            smbclient (SMBConnection): [Object with the current smb connection]
-            target_info (TargetInfo): [Object that contains info of the current target]
-        """
-
-        self.__configure_target_info_of_scan(target_info, smbclient)
-        success_in_psexec_checker = self.__check_psexec_possibility(smbclient)
-        target_info.psexec = success_in_psexec_checker
-        self.__store_scan_results(target_info)
-        return target_info
 
     def __is_user_in_admin_group_synchronous(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
@@ -485,7 +430,7 @@ class ScanForPsexec(CommandSet):
             smbclient,
         ) = self.__check_conectivity_of_scan(user_info, subnet, ip)
         if possibility_of_login:
-            self.__set_up_scan_results_synchronous(smbclient, target_info)
+            self.__set_up_scan_results(smbclient, target_info, user_info, subnet)
         if smbclient is not None:
             smbclient.close()
         return target_info
@@ -510,8 +455,6 @@ class ScanForPsexec(CommandSet):
         user_info = UserInfo(user, password)
         self.__set_up_spinner()
 
-        self._cmd.info_logger.info("Starting to launch threads based on your cpu")
-
         with concurrent.futures.ThreadPoolExecutor() as executor:
             try:
                 results = executor.map(
@@ -526,7 +469,7 @@ class ScanForPsexec(CommandSet):
                         and (target_info.os is not None)
                         and (target_info.ip is not None)
                     ):
-                        self.__show_scan_results_synchronous(target_info)
+                        self.__show_scan_results_synchronous(target_info, user_info)
             except KeyboardInterrupt:
                 executor.shutdown()
                 self._cmd.error_logger.warning("\nExiting ...")
@@ -536,16 +479,8 @@ class ScanForPsexec(CommandSet):
 
     def __synchronous_way(self) -> None:
         """[ Function that will start the synchronous scan]"""
-        # number_of_spinner_possibilities = len(self.__spinner_list)
-        # number_of_spinner_selected = random.randrange(number_of_spinner_possibilities)
 
         self._cmd.info_logger.info("Using synchronous scan")
-        # self.__spinner = Halo(
-        #    text="Loading...",
-        #    spinner=self.__spinner_list[number_of_spinner_selected],
-        #    stream=self._cmd.stdout,
-        # )
-        # self.__spinner.start()
 
         synchronous_scan_process = Process(
             target=self.__set_up_scan_actions_synchronous
@@ -559,8 +494,10 @@ class ScanForPsexec(CommandSet):
             self._cmd.poutput("\n")
 
     def __save_state(self):
-        with open("/home/rsgbengi/Igris/save/scan.json", "w") as outfile:
-            json.dump(self.__scan_info, outfile, cls=JSONEncoderWithDictProxy)
+        for subnet in self.__scan_info.values():
+            subnet.casting_to_list_computers()
+        with open("/home/rsgbengi/Igris/save/scan", "wb") as outfile:
+            pickle.dump(self.__scan_info, outfile)
 
     def __start_scan(self, args: argparse.Namespace) -> None:
         """[ Start scan of the subnet ]
@@ -568,14 +505,11 @@ class ScanForPsexec(CommandSet):
         Args:
             args (argparse.Namespace): [ Arguments passed to the scan command ]
         """
-        user = self._cmd.USER
-        passwd = self._cmd.PASSWD
-        subnet = self._cmd.SUBNET
 
-        exists_subnet = self.__configure_scan_info()
-        if not exists_subnet:
-            self.__scan_info[user][passwd][subnet] = Manager().dict()
-            self.__show_user_passwd()
+        continue_operations = self.__configure_scan_info()
+        if continue_operations:
+
+            self._cmd.info_logger.info("Starting to launch threads based on your cpu")
             if args.asynchronous:
                 self.__asynchronous_way()
             else:
