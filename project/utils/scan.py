@@ -25,6 +25,7 @@ from .gatherinfo import TargetInfo, UserInfo, SubnetInfo
 from multiprocessing import Process, Manager, managers
 import pickle
 
+
 @with_default_category("Utilities")
 class ScanForPsexec(CommandSet):
     def __init__(self):
@@ -144,7 +145,7 @@ class ScanForPsexec(CommandSet):
         return succeed_in_login
 
     def __configure_target_info_of_scan(
-        self, target_info: TargetInfo, smbclient: SMBConnection
+        self, target_info: TargetInfo, smbclient: SMBConnection, subnet: str
     ) -> None:
         """[Function to set different values of smbclient into TargetInfo object]
 
@@ -161,6 +162,7 @@ class ScanForPsexec(CommandSet):
         target_info.signed = smbclient.isSigningRequired()
         target_info.computer_name = smbclient.getServerName()
         target_info.os = smbclient.getServerOS()
+        target_info.subnet = subnet
 
     def __check_psexec_possibility(self, smbclient: SMBConnection) -> bool:
         """[Function that checks ifa user could do psexec listing the contents
@@ -232,9 +234,11 @@ class ScanForPsexec(CommandSet):
             + ansi.style(subnet, fg=ansi.fg.blue)
         )
         if (
-            subnet in self.__scan_info.keys()
-            and len(self.__scan_info[subnet].computers) != 0
-            and user_to_search in self.__scan_info[subnet].users_used
+            self._cmd.igris_db.check_if_subnet_exits(subnet)
+            and self._cmd.igris_db.number_of_computers_collected(subnet)
+            and self._cmd.igris_db.check_if_match_user_subnet_exits(
+                self._cmd.USER, self._cmd.PASSWD, subnet
+            )
         ):
             self.__show_subnet_information()
         else:
@@ -242,21 +246,22 @@ class ScanForPsexec(CommandSet):
                 f"the analysis of this {subnet} has not collected any information or no scan has been performed with it yet"
             )
 
-    def __configure_users_used(self, user: UserInfo) -> bool:
+    def __configure_users_used(self, user: UserInfo, subnet: str) -> bool:
         """[Function that will configure the users used used]
 
         Returns:
             bool : [Returns if the scan can continue]
         """
-
         continue_operations = True
-        if not self.__scan_info[self._cmd.SUBNET].check_if_user_exits(user):
-            self.__scan_info[self._cmd.SUBNET].add_new_user(user)
-        else:
+        user_has_been_used = self._cmd.igris_db.init_user_used_in_a_subnet(
+            user.user, user.passwd, subnet
+        )
+        if user_has_been_used:
             answer = input(
-                "This user and password has already been used on this subnet. Press 'y' to continue if not any\n"
+                "This user and password have been used before. Do you want to repeat the scan ?"
             )
-            continue_operations = answer == "y" or "Y"
+            continue_operations = answer == ("y" or "Y")
+
         return continue_operations
 
     def __configure_scan_info(self) -> bool:
@@ -272,9 +277,9 @@ class ScanForPsexec(CommandSet):
 
         user = UserInfo(user, passwd)
         continue_operations = True
-        if subnet not in self.__scan_info.keys():
-            self.__scan_info[subnet] = SubnetInfo(subnet)
-        continue_operations = self.__configure_users_used(user)
+        if not self._cmd.igris_db.check_if_subnet_exits(subnet):
+            self._cmd.igris_db.init_new_subnet(subnet)
+        continue_operations = self.__configure_users_used(user, subnet)
         return continue_operations
 
     def __check_conectivity_of_scan(
@@ -322,12 +327,12 @@ class ScanForPsexec(CommandSet):
 
         Args:
             smbclient (SMBConnection): [Object with the current smb connection]
-            target_info (targetinfo): [object that contains info of the current target]"""
-        self.__configure_target_info_of_scan(target_info, smbclient)
+            target_info (targetinfo): [object that contains info of the current target]
+        """
+        self.__configure_target_info_of_scan(target_info, smbclient, subnet)
         success_in_psexec = self.__check_psexec_possibility(smbclient)
-        user_info.psexec = success_in_psexec
-        target_info.users = user_info
-        self.__scan_info[subnet].computers = target_info
+        target_info.psexec = success_in_psexec
+        self._cmd.igris_db.create_computer_node(target_info, user_info)
 
     def __is_user_in_admin_group_asynchronous(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
@@ -388,9 +393,7 @@ class ScanForPsexec(CommandSet):
         self.__scan_process = Process(target=self.__set_up_scan_actions_asynchronous)
         self.__scan_process.start()
 
-    def __show_scan_results_synchronous(
-        self, target_info: TargetInfo, user_info: UserInfo
-    ) -> None:
+    def __show_scan_results_synchronous(self, target_info: TargetInfo) -> None:
         """[Display the results of an synchronous scan]
 
         Args:
@@ -400,8 +403,8 @@ class ScanForPsexec(CommandSet):
         ip = target_info.ip
         ip_with_color = ansi.style(ip, fg=ansi.fg.blue)
         os_with_color = ansi.style(os, fg=ansi.fg.cyan)
-        if user_info.psexec:
-            admin = ansi.style(user_info.psexec_info(), fg=ansi.fg.yellow)
+        if target_info.psexec:
+            admin = ansi.style(target_info.psexec_info(), fg=ansi.fg.yellow)
             self.__spinner.warn(admin + " " + os_with_color + " " + ip_with_color)
         else:
             self.__spinner.info(" " + os_with_color + " " + ip_with_color)
@@ -469,7 +472,7 @@ class ScanForPsexec(CommandSet):
                         and (target_info.os is not None)
                         and (target_info.ip is not None)
                     ):
-                        self.__show_scan_results_synchronous(target_info, user_info)
+                        self.__show_scan_results_synchronous(target_info)
             except KeyboardInterrupt:
                 executor.shutdown()
                 self._cmd.error_logger.warning("\nExiting ...")
@@ -507,6 +510,7 @@ class ScanForPsexec(CommandSet):
         """
 
         continue_operations = self.__configure_scan_info()
+        print(continue_operations)
         if continue_operations:
 
             self._cmd.info_logger.info("Starting to launch threads based on your cpu")

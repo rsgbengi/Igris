@@ -17,6 +17,7 @@ from rich.table import Table
 from ..utils import ScanForPsexec, Psexec
 from .attackstatus import AttackStatus
 from ..network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
+from ..utils import Neo4jConnection
 
 COLORS = {
     "black": "\u001b[30;1m",
@@ -37,7 +38,8 @@ COLORS = {
 class Igris_Shell(cmd2.Cmd):
     def __init__(self):
         super().__init__(
-            auto_load_commands=False, persistent_history_file="/home/rsgbengi/Igris/save/history.json"
+            auto_load_commands=False,
+            persistent_history_file="/home/rsgbengi/Igris/save/history.json",
         )
         self.__credentials_config_variables()
         self.__network_config_variables()
@@ -66,6 +68,9 @@ class Igris_Shell(cmd2.Cmd):
         # Enabled Attacks
         self.__configure_enabled_attacks()
 
+        # configure database
+        self.__init_databse()
+
     @property
     def info_logger(self) -> Logger:
         return self.__info_logger
@@ -77,6 +82,15 @@ class Igris_Shell(cmd2.Cmd):
     @property
     def active_attacks(self) -> None:
         return self.__active_attacks
+
+    def __init_databse(self) -> None:
+        self.igris_db = Neo4jConnection(
+            "neo4j://localhost:7687",
+            "neo4j",
+            "islaplana56",
+            self.__info_logger,
+            self.__error_logger,
+        )
 
     def active_attacks_status(self, attack: str) -> bool:
         return self.__active_attacks[attack]

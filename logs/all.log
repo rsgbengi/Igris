@@ -14823,3 +14823,102 @@
 2022-01-23 20:40:00.593 | DEBUG    | project.utils.scan:do_scan:618 - Starting scan command using user: hola passwd: P@$$w0rd! subnet: 192.168.253.0/24
 2022-01-23 20:40:00.602 | WARNING  | project.utils.scan:__show_scan_info:263 - the analysis of this 192.168.253.0/24 has not collected any information or no scan has been performed with it yet
 2022-01-23 20:40:16.529 | DEBUG    | project.utils.scan:do_scan:618 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-01-25 21:33:55.935 | ERROR    | project.utils.neo.dboperations:query:58 - Query failed
+2022-01-25 21:34:20.655 | ERROR    | project.utils.neo.dboperations:query:58 - Query failed
+2022-01-25 21:35:47.762 | ERROR    | project.utils.neo.dboperations:query:58 - Query failed
+2022-01-25 21:40:06.769 | ERROR    | project.utils.neo.dboperations:query:61 - Query failed
+2022-01-25 21:41:08.418 | ERROR    | project.utils.neo.dboperations:query:61 - Query failed
+2022-01-25 21:43:38.866 | ERROR    | project.utils.neo.dboperations:query:62 - Query failed
+2022-01-25 21:48:08.643 | ERROR    | project.utils.neo.dboperations:query:62 - Query failed
+2022-01-25 22:04:50.151 | ERROR    | project.utils.neo.dboperations:query:61 - Query failed
+2022-01-26 09:53:59.025 | ERROR    | project.utils.neo.dboperations:query:57 - Query failed
+2022-01-26 09:56:54.540 | ERROR    | project.utils.neo.dboperations:query:61 - Query failed
+2022-01-26 09:57:22.111 | ERROR    | project.utils.neo.dboperations:query:62 - Query failed
+2022-01-26 16:40:03.149 | DEBUG    | project.utils.scan:do_scan:598 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-01-26 16:40:03.157 | DEBUG    | project.shell.igris:check_settable_variables_value:247 - Checking the correct value of the necessary settable variables 
+2022-01-26 16:40:03.877 | ERROR    | project.utils.neo.dboperations:query:108 - Query failed
+2022-01-26 16:40:04.233 | ERROR    | project.utils.neo.dboperations:query:108 - Query failed
+2022-01-26 16:40:04.321 | INFO     | project.utils.scan:__start_scan:514 - Starting to launch threads based on your cpu
+2022-01-26 16:40:04.322 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-26 16:40:04.356 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.0
+2022-01-26 16:40:04.358 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.0
+2022-01-26 16:40:04.361 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.2
+2022-01-26 16:40:04.362 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.2
+2022-01-26 16:40:05.361 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.1
+2022-01-26 16:40:05.363 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.5
+2022-01-26 16:40:05.364 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.3
+2022-01-26 16:40:05.366 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.4
+2022-01-26 16:40:05.569 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.6
+2022-01-26 16:40:05.570 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.7
+2022-01-26 16:50:36.144 | DEBUG    | project.utils.scan:do_scan:598 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-01-26 16:50:36.147 | DEBUG    | project.shell.igris:check_settable_variables_value:247 - Checking the correct value of the necessary settable variables 
+2022-01-26 16:50:36.216 | ERROR    | project.utils.neo.dboperations:query:108 - Query failed
+2022-01-26 16:50:41.723 | INFO     | project.utils.scan:__start_scan:514 - Starting to launch threads based on your cpu
+2022-01-26 16:50:41.724 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-26 16:50:41.783 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.0
+2022-01-26 16:50:41.787 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.0
+2022-01-26 16:50:41.792 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.2
+2022-01-26 16:50:41.806 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.2
+2022-01-26 16:50:42.791 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.1
+2022-01-26 16:50:42.794 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.3
+2022-01-26 16:50:42.796 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.4
+2022-01-26 16:50:42.798 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.5
+2022-01-26 16:50:42.917 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.6
+2022-01-26 16:50:42.919 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.7
+2022-01-26 16:50:43.792 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.1
+2022-01-26 16:50:43.796 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.3
+2022-01-26 16:50:43.798 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.4
+2022-01-26 16:50:43.800 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.5
+2022-01-26 16:50:43.921 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.6
+2022-01-26 16:50:43.923 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.7
+2022-01-26 16:51:44.165 | DEBUG    | project.utils.scan:do_scan:598 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-01-26 16:51:44.168 | DEBUG    | project.shell.igris:check_settable_variables_value:247 - Checking the correct value of the necessary settable variables 
+2022-01-26 16:51:44.193 | ERROR    | project.utils.neo.dboperations:query:108 - Query failed
+2022-01-26 16:51:45.085 | INFO     | project.utils.scan:__start_scan:514 - Starting to launch threads based on your cpu
+2022-01-26 16:51:45.089 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-26 16:51:45.137 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.0
+2022-01-26 16:51:45.139 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.0
+2022-01-26 16:51:45.141 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.2
+2022-01-26 16:51:45.142 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.2
+2022-01-26 16:51:46.141 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.1
+2022-01-26 16:51:46.142 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.3
+2022-01-26 16:51:46.145 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.4
+2022-01-26 16:51:46.146 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.6
+2022-01-26 16:51:46.148 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.5
+2022-01-26 16:51:47.949 | DEBUG    | project.utils.scan:do_scan:598 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-01-26 16:51:47.951 | DEBUG    | project.shell.igris:check_settable_variables_value:247 - Checking the correct value of the necessary settable variables 
+2022-01-26 16:51:47.981 | ERROR    | project.utils.neo.dboperations:query:108 - Query failed
+2022-01-26 16:51:48.934 | INFO     | project.utils.scan:__start_scan:514 - Starting to launch threads based on your cpu
+2022-01-26 16:51:48.938 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-26 16:51:48.975 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.0
+2022-01-26 16:51:48.976 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.0
+2022-01-26 16:51:48.979 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.2
+2022-01-26 16:51:48.980 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.2
+2022-01-26 16:51:49.978 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.1
+2022-01-26 16:51:49.980 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.3
+2022-01-26 16:51:49.981 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.4
+2022-01-26 16:51:49.982 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.5
+2022-01-26 16:51:50.056 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.6
+2022-01-26 16:51:50.057 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.7
+2022-01-26 16:52:14.677 | DEBUG    | project.utils.scan:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-01-26 16:52:14.680 | DEBUG    | project.shell.igris:check_settable_variables_value:247 - Checking the correct value of the necessary settable variables 
+2022-01-26 16:52:14.732 | ERROR    | project.utils.neo.dboperations:query:108 - Query failed
+2022-01-26 16:52:23.997 | DEBUG    | project.utils.scan:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-01-26 16:52:23.999 | DEBUG    | project.shell.igris:check_settable_variables_value:247 - Checking the correct value of the necessary settable variables 
+2022-01-26 16:52:24.031 | ERROR    | project.utils.neo.dboperations:query:108 - Query failed
+2022-01-26 16:52:25.020 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-26 16:52:25.023 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-26 16:52:25.074 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.0
+2022-01-26 16:52:25.080 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.0
+2022-01-26 16:52:25.082 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.2
+2022-01-26 16:52:25.084 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:108 - Connection fails using smb3 at 192.168.253.2
+2022-01-26 16:52:26.082 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.1
+2022-01-26 16:52:26.085 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.3
+2022-01-26 16:52:26.087 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.5
+2022-01-26 16:52:26.088 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.4
+2022-01-26 16:52:26.094 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.7
+2022-01-26 16:52:26.095 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:85 - Connection fails using smb1 at 192.168.253.6
+2022-01-26 16:54:07.261 | DEBUG    | project.utils.scan:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-01-26 16:54:07.264 | DEBUG    | project.shell.igris:check_settable_variables_value:247 - Checking the correct value of the necessary settable variables 
+2022-01-26 17:01:11.792 | DEBUG    | project.utils.scan:do_scan:599 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-01-26 17:01:11.795 | DEBUG    | project.shell.igris:check_settable_variables_value:247 - Checking the correct value of the necessary settable variables 
