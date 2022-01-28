@@ -205,22 +205,35 @@ class ScanForPsexec(CommandSet):
     def __show_subnet_information(self) -> None:
         """[Shows the information of a specific subnet]"""
         console = Console()
+        exits_results = False
+        computers = self._cmd.igris_db.check_computers_of_a_subnet(self._cmd.SUBNET)
         table = Table(show_header=True, header_style="bold magenta")
         table.add_column("IP")
         table.add_column("Operating System")
         table.add_column("Psexec")
         table.add_column("Computer Name")
         table.add_column("Signed")
-        for computer in self.__scan_info[self._cmd.SUBNET].computers:
-            user_status = computer.users[self._cmd.USER + self._cmd.PASSWD]
-            table.add_row(
-                f"[blue]{computer.ip}[/blue]",
-                f"[cyan]{computer.os}[/cyan]",
-                f"[yellow]{user_status.psexec_info()}[/yellow]",
-                f"[cyan]{computer.computer_name}[/cyan]",
-                f"[cyan]{computer.signed}[/cyan]",
+        current_user = UserInfo(self._cmd.USER, self._cmd.PASSWD)
+        for relations in computers:
+            computer_node = relations.nodes[0]
+            psexec_status = self._cmd.igris_db.check_nodes_with_psexec(
+                computer_node, current_user
             )
-        console.print(table)
+            if psexec_status is not None:
+                exits_results = True
+                table.add_row(
+                    f"[blue]{computer_node['ipv4']}[/blue]",
+                    f"[cyan]{computer_node['os']}[/cyan]",
+                    f"[yellow]{psexec_status}[/yellow]",
+                    f"[cyan]{computer_node['computer_name']}[/cyan]",
+                    f"[cyan]{computer_node['signed']}[/cyan]",
+                )
+        if exits_results:
+            console.print(table)
+        else:
+            self._cmd.error_logger.warning(
+                "This user has not recollected any information in this subnet"
+            )
 
     def __show_scan_info(self) -> None:
         """[Function that will check if it is possible to display the scan
@@ -234,10 +247,7 @@ class ScanForPsexec(CommandSet):
         )
         if (
             self._cmd.igris_db.check_if_subnet_exits(subnet)
-            and self._cmd.igris_db.number_of_computers_collected(subnet) != 0
-            and self._cmd.igris_db.check_if_match_user_subnet_exits(
-                self._cmd.USER, self._cmd.PASSWD, subnet
-            )
+            and len(self._cmd.igris_db.check_computers_of_a_subnet(subnet)) != 0
         ):
             self.__show_subnet_information()
         else:
@@ -278,7 +288,7 @@ class ScanForPsexec(CommandSet):
         continue_operations = True
         if not self._cmd.igris_db.check_if_subnet_exits(subnet):
             self._cmd.igris_db.init_new_subnet(subnet)
-        #continue_operations = self.__configure_users_used(user, subnet)
+        # continue_operations = self.__configure_users_used(user, subnet)
         return continue_operations
 
     def __check_conectivity_of_scan(
@@ -331,7 +341,10 @@ class ScanForPsexec(CommandSet):
         self.__configure_target_info_of_scan(target_info, smbclient, subnet)
         success_in_psexec = self.__check_psexec_possibility(smbclient)
         target_info.psexec = success_in_psexec
-        self._cmd.igris_db.create_computer_node(target_info, user_info)
+        self._cmd.igris_db.init_new_user(user_info, target_info.ip)
+        self._cmd.igris_db.init_new_computer(target_info)
+        self._cmd.igris_db.relationship_computer_subnet(target_info)
+        self._cmd.igris_db.relationship_computer_user(target_info, user_info)
 
     def __is_user_in_admin_group_asynchronous(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
@@ -509,7 +522,6 @@ class ScanForPsexec(CommandSet):
         """
 
         continue_operations = self.__configure_scan_info()
-        print(continue_operations)
         if continue_operations:
 
             self._cmd.info_logger.info("Starting to launch threads based on your cpu")

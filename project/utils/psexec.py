@@ -262,7 +262,7 @@ class Psexec(CommandSet):
             self._cmd.info_logger.info(
                 "The connection has been established successfully"
             )
-        except (ValueError, LogonFailure):
+        except Exception:
             self._cmd.error_logger.error(
                 "Error when creating the connection. Use the scan command to find out if your user has the ability to psexec."
             )
