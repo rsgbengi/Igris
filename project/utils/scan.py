@@ -228,14 +228,13 @@ class ScanForPsexec(CommandSet):
         """
         subnet = self._cmd.SUBNET
 
-        user_to_search = UserInfo(self._cmd.USER, self._cmd.PASSWD)
         self._cmd.poutput(
             ansi.style("SUBNET -> ", fg=ansi.fg.red)
             + ansi.style(subnet, fg=ansi.fg.blue)
         )
         if (
             self._cmd.igris_db.check_if_subnet_exits(subnet)
-            and self._cmd.igris_db.number_of_computers_collected(subnet)
+            and self._cmd.igris_db.number_of_computers_collected(subnet) != 0
             and self._cmd.igris_db.check_if_match_user_subnet_exits(
                 self._cmd.USER, self._cmd.PASSWD, subnet
             )
@@ -279,7 +278,7 @@ class ScanForPsexec(CommandSet):
         continue_operations = True
         if not self._cmd.igris_db.check_if_subnet_exits(subnet):
             self._cmd.igris_db.init_new_subnet(subnet)
-        continue_operations = self.__configure_users_used(user, subnet)
+        #continue_operations = self.__configure_users_used(user, subnet)
         return continue_operations
 
     def __check_conectivity_of_scan(

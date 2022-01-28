@@ -79,7 +79,7 @@ class Neo4jConnection:
             self.query(
                 "CREATE (:User {user: '" + user + "',password: '" + passwd + "'})"
             )
-        if self.check_if_match_user_subnet_exits(user, passwd, subnet)!=[]:
+        if self.check_if_match_user_subnet_exits(user, passwd, subnet) == []:
             self.query(
                 "MATCH (s:Subnet),(u:User) WHERE s.subnet = '"
                 + subnet
@@ -102,6 +102,39 @@ class Neo4jConnection:
         print(response[0])
         return response[0]
 
+    def user_of_computer_used(
+        self, user_status: UserInfo, target_info: TargetInfo
+    ) -> None:
+        self.query(
+            "CREATE (:User {user: '"
+            + user_status.user
+            + "',password: '"
+            + user_status.passwd
+            + "'})"
+        )
+        if target_info.psexec:
+            """MATCH (c:Computer) WITH c MATCH (s:Subnet) WHERE c.ipv4="192.168.253.137" and s.subnet="192.168.253.0/24" CREATE (c) - [:PART_OF] ->(s)"""
+            self.query(
+                "MATCH (c:Computer),(u:User) WHERE c.ip = '"
+                + target_info.ip
+                + "' and u.user='"
+                + user_status.user
+                + "' and u.password = '"
+                + user_status.passwd
+                + "' and CREATE (u) - [r:PSEXEC_HERE] -> (c)",
+                db="neo4j",
+            )
+        else:
+            self.query(
+                "MATCH (c:Computer),(u:User) WHERE c.ip = '"
+                + target_info.ip
+                + "' and u.user='"
+                + user_status.user
+                + "' and u.password = '"
+                + user_status.passwd
+                + "' and CREATE (u) - [r:NOT_PSEXEC_HERE] -> (c)",
+                db="neo4j",
+            )
 
     def __check_computer_node(self, target_info: TargetInfo) -> bool:
         exits_node = False
@@ -110,11 +143,11 @@ class Neo4jConnection:
             + target_info.ip
             + "', os:'"
             + target_info.os
-            + "'computer_name: '"
+            + "', computer_name: '"
             + target_info.computer_name
             + "',signed:'"
-            + target_info.signed
-            + "'}) RETURN u IS NOT NULL AS Status",
+            + str(target_info.signed)
+            + "'}) RETURN c IS NOT NULL AS Status",
             db="neo4j",
         )
         if response is not None:
@@ -133,7 +166,7 @@ class Neo4jConnection:
                 + "',computer_name:'"
                 + target_info.computer_name
                 + "',signed:'"
-                + target_info.signed
+                + str(target_info.signed)
                 + "'})",
                 db="neo4j",
             )
@@ -144,17 +177,7 @@ class Neo4jConnection:
                 + target_info.ip
                 + "'CREATE (c) - [r:COMPUTER_OF] -> (s)"
             )
-            if target_info.psexec:
-                self.query(
-                    "MATCH (c:Computer),(u:User) WHERE c.ip = '"
-                    + target_info.ip
-                    + "' and u.user='"
-                    + user_status.user
-                    + "' and u.password = '"
-                    + user_status.passwd
-                    + "' and c.CREATE (u) - [r:PSEXEC_HERE] -> (c)",
-                    db="neo4j",
-                )
+            self.user_of_computer_used(user_status, target_info)
 
     def query(self, query: str, parameters=None, db=None):
         session = None

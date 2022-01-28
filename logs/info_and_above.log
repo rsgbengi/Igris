@@ -129,3 +129,33 @@
 2022-01-26 16:52:24.031 | ERROR    | project.utils.neo.dboperations:query:108 - Query failed
 2022-01-26 16:52:25.020 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
 2022-01-26 16:52:25.023 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 10:54:37.596 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 10:54:37.597 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 10:57:18.454 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 10:57:18.456 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 10:59:36.996 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 10:59:36.997 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 11:00:26.017 | ERROR    | project.utils.neo.dboperations:query:171 - Query failed
+2022-01-27 11:00:26.114 | ERROR    | project.utils.neo.dboperations:query:171 - Query failed
+2022-01-27 11:05:04.220 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 11:05:04.220 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 11:05:50.742 | ERROR    | project.utils.neo.dboperations:query:171 - Query failed
+2022-01-27 11:05:50.771 | ERROR    | project.utils.neo.dboperations:query:171 - Query failed
+2022-01-27 11:29:59.286 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 11:29:59.287 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 11:30:48.031 | ERROR    | project.utils.neo.dboperations:query:171 - Query failed
+2022-01-27 11:39:16.585 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 11:39:16.586 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 11:40:00.871 | ERROR    | project.utils.neo.dboperations:query:182 - Query failed
+2022-01-27 11:40:00.879 | ERROR    | project.utils.neo.dboperations:query:182 - Query failed
+2022-01-27 11:40:59.569 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 11:40:59.569 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 11:42:25.093 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:480 - Synchronous scanning has been completed
+2022-01-27 11:46:35.432 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 11:46:35.432 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 11:47:20.878 | ERROR    | project.utils.neo.dboperations:query:171 - Query failed
+2022-01-27 12:10:50.646 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 12:10:50.646 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 12:11:13.669 | INFO     | project.utils.scan:__start_scan:515 - Starting to launch threads based on your cpu
+2022-01-27 12:11:13.670 | INFO     | project.utils.scan:__synchronous_way:485 - Using synchronous scan
+2022-01-27 12:11:57.981 | ERROR    | project.utils.neo.dboperations:query:194 - Query failed

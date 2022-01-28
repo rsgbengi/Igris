@@ -82,16 +82,20 @@ class TargetInfo:
         self.__os = os
 
     @signed.setter
-    def signed(self, signed: bool) -> bool:
+    def signed(self, signed: bool) -> None:
         self.__signed = signed
 
     @computer_name.setter
-    def computer_name(self, computer_name: str) -> str:
+    def computer_name(self, computer_name: str) -> None:
         self.__computer_name = computer_name
 
     @psexec.setter
-    def psexec(self, psexec: bool) -> bool:
+    def psexec(self, psexec: bool) -> None:
         self.__psexec = psexec
+
+    @subnet.setter
+    def subnet(self, subnet: str) -> None:
+        self.__subnet = subnet
 
     def psexec_info(self) -> str:
         if self.__psexec:
