@@ -7,194 +7,148 @@ import plotly.graph_objects as go
 import dash
 from dash import dcc
 from dash import html
+import dash_cytoscape as cyto
 from textwrap import dedent as d
 from PIL import Image
+from json import dumps, loads
 
-images = {"admin": "icons/admin.png"}
+images = {
+    "admin": "http://localhost:8000/admin.png",
+    "user": "http://localhost:8000/usuario.png",
+    "computer": "http://localhost:8000/computadora.jpg",
+    "subnet": "http://localhost:8000/internet.png",
+}
+
+
+def parse_subnets(subnets, graph):
+    for subnet in loads(subnets):
+        node = {
+            "classes": "subnet",
+            "data": {
+                "id": subnet["subnet"],
+                "label": subnet["subnet"],
+            },
+        }
+        graph.append(node)
+
+
+def parse_users(users, graph):
+    for user in loads(users):
+        user_id = user["ip"] + user["username"] + user["password"]
+        node = {
+            "data": {"id": user_id, "label": user["username"] + "/" + user["password"]}
+        }
+        graph.append(node)
+
+
+def parse_computers(computers, graph):
+    for computer in loads(computers):
+        node = {
+            "classes": "computer",
+            "data": {
+                "id": computer["computer_name"],
+                "label": computer["computer_name"],
+            },
+        }
+        graph.append(node)
+
+
+def computer_psexec_relationships(relationships, graph):
+    for relation in relationships:
+        user_id = (
+            relation["p"].start_node["ip"]
+            + relation["p"].start_node["username"]
+            + relation["p"].start_node["password"]
+        )
+        computer_id = relation["p"].end_node["computer_name"]
+        relation = {"data": {"source": user_id, "target": computer_id}}
+        graph.append(relation)
+
+
+def computer_part_of_relationship(relationships, graph):
+    for relation in relationships:
+        computer_id = relation["p"].start_node["computer_name"]
+        subnet_id = relation["p"].end_node["subnet"]
+        relation = {"data": {"source": computer_id, "target": subnet_id}}
+        graph.append(relation)
+
+
+def define_nodes(graph, graph_result):
+    subnets = dumps(graph.nodes.match("Subnet").all())
+    parse_subnets(subnets, graph_result)
+    users = dumps(graph.nodes.match("User").all())
+    parse_users(users, graph_result)
+    computers = dumps(graph.nodes.match("Computer").all())
+    parse_computers(computers, graph_result)
+    return graph_result
+
+
+def define_edges(graph, graph_result):
+    computers_part_of = graph.run("MATCH p=()-[r:PART_OF]->() RETURN p LIMIT 25").data()
+    computer_part_of_relationship(computers_part_of, graph_result)
+    computers_psexec = graph.run(
+        "MATCH p=()-[r:PSEXEC_HERE]->() RETURN p LIMIT 25"
+    ).data()
+    computer_psexec_relationships(computers_psexec, graph_result)
+    computers_not_psexec = graph.run(
+        "MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p LIMIT 25"
+    ).data()
+    computer_psexec_relationships(computers_not_psexec, graph_result)
+    return graph_result
+
 
 def cytoscope():
-    pass
-def create_graph():
-    driver = GraphDatabase.driver(
-        "bolt://localhost:7687", auth=("neo4j", "islaplana56")
-    )
-    query = """
-    MATCH (n)-[r]->(c) RETURN *
-    """
-    results = driver.session().run(query)
-    print(results)
-    G = nx.MultiDiGraph()
-    nodes = list(results.graph()._nodes.values())
-    for node in nodes:
-        G.add_node(
-            node.id,
-            labels=node._labels,
-            properties=node._properties,
-            image=images["admin"],
-        )
-        rels = list(results.graph()._relationships.values())
-    for rel in rels:
-        G.add_edge(
-            rel.start_node.id,
-            rel.end_node.id,
-            key=rel.id,
-            type=rel.type,
-            properties=rel._properties,
-        )
+    graph = py2neo.Graph("neo4j://localhost:7687", auth=("neo4j", "islaplana56"))
+    # j = dumps(graph.run(" MATCH (n)-[r]->(c) RETURN n,type(r),c").data())
+    graph_result = []
+    define_nodes(graph, graph_result)
+    define_edges(graph, graph_result)
+    return graph_result
 
-    pos = nx.layout.shell_layout(G)
-    for node in G.nodes:
-        G.nodes[node]["pos"] = list(pos[node])
-
-    edge_x = []
-    edge_y = []
-    middle_edge_x = []
-    middle_edge_y = []
-    hovertext = []
-    for edge in G.edges(data=True):
-        hovertext.append(edge[2]["type"])
-        x0, y0 = G.nodes[edge[0]]["pos"]
-        x1, y1 = G.nodes[edge[1]]["pos"]
-        middle_edge_x.append((x0 + x1) / 2)
-        middle_edge_y.append((y0 + y1) / 2)
-        edge_x.append(x0)
-        edge_x.append(x1)
-        edge_x.append(None)
-        edge_y.append(y0)
-        edge_y.append(y1)
-        edge_y.append(None)
-
-    edge_trace = go.Scatter(
-        x=edge_x,
-        y=edge_y,
-        line=dict(width=0.5, color="#888"),
-        hoverinfo="none",
-        mode="lines",
-        line_shape="spline",
-        opacity=1,
-    )
-
-    middle_hover_trace = go.Scatter(
-        x=middle_edge_x,
-        y=middle_edge_y,
-        hovertext=hovertext,
-        mode="markers",
-        hoverinfo="text",
-        marker={"size": 20, "color": "LightSkyBlue"},
-        opacity=0,
-    )
-
-    node_x = []
-    node_y = []
-    hovertext = []
-    text = []
-    for node in G.nodes():
-        x, y = G.nodes[node]["pos"]
-        if "computer_name" in G.nodes[node]["properties"]:
-            hovertext.append(G.nodes[node]["properties"]["ipv4"])
-            text.append(G.nodes[node]["properties"]["computer_name"])
-        if "username" in G.nodes[node]["properties"]:
-            hovertext.append(G.nodes[node]["properties"]["ip"])
-            text.append(
-                G.nodes[node]["properties"]["username"]
-                + "/"
-                + G.nodes[node]["properties"]["password"]
-            )
-        if "subnet" in G.nodes[node]["properties"]:
-            text.append(G.nodes[node]["properties"]["subnet"])
-
-            hovertext.append(G.nodes[node]["properties"]["subnet"])
-
-        node_x.append(x)
-        node_y.append(y)
-
-    node_trace = go.Scatter(
-        x=node_x,
-        y=node_y,
-        hovertext=hovertext,
-        text=text,
-        mode="markers+text",
-        textposition="bottom center",
-        hoverinfo="text",
-        marker={"size": 50, "color": "LightSkyBlue"},
-    )
-
-    # node_adjacencies = []
-    # node_text = []
-    # for node, adjacencies in enumerate(G.adjacency()):
-    #    node_adjacencies.append(len(adjacencies[1]))
-    #    node_text.append("# of connections: " + str(len(adjacencies[1])))
-
-    # node_trace.marker.color = node_adjacencies
-    # node_trace.text = node_text
-
-    fig = go.Figure(
-        data=[edge_trace, node_trace, middle_hover_trace],
-        layout=go.Layout(
-            title="<br>Igris Graph",
-            margin={"b": 40, "l": 40, "r": 40, "t": 40},
-            xaxis={"showgrid": False, "zeroline": False, "showticklabels": False},
-            yaxis={"showgrid": False, "zeroline": False, "showticklabels": False},
-            height=600,
-            clickmode="event+select",
-            annotations=[
-                dict(
-                    ax=(G.nodes[edge[0]]["pos"][0] + G.nodes[edge[1]]["pos"][0]) / 2,
-                    ay=(G.nodes[edge[0]]["pos"][1] + G.nodes[edge[1]]["pos"][1]) / 2,
-                    axref="x",
-                    ayref="y",
-                    x=(G.nodes[edge[1]]["pos"][0] * 3 + G.nodes[edge[0]]["pos"][0]) / 4,
-                    y=(G.nodes[edge[1]]["pos"][1] * 3 + G.nodes[edge[0]]["pos"][1]) / 4,
-                    xref="x",
-                    yref="y",
-                    showarrow=True,
-                    arrowhead=3,
-                    arrowsize=4,
-                    arrowwidth=1,
-                    opacity=1,
-                )
-                for edge in G.edges()
-            ],
-        ),
-    )
-    for node in G.nodes():
-        fig.add_layout_image(
-            dict(
-                source=Image.open("icons/admin.png"),
-                xref="x",
-                yref="y",
-                x=G.nodes[node]["pos"][0],
-                y=G.nodes[node]["pos"][1],
-                sizex=0.1,
-                sizey=0.1,
-                sizing="contain",
-                opacity=1,
-                layer="above",
-            )
-        )
-    return fig
-
-
-# graph = py2neo.Graph("neo4j://localhost:7687", auth=("neo4j", "islaplana56"))
-# matcher = py2neo.NodeMatcher(graph)
-## df = graph.run("MATCH (n) -[r]->(c) RETURN *").data()
-## print(df)
-# G = nx.MultiDiGraph()
-# users = matcher.match("User").all()
-# for node in users:
-#    print(node.identity)
-#    G.add_node(node.identity, labels=node.labels, properties=node)
-#
-# print(G.nodes[0])
-# subnets = pd.DataFrame(graph.nodes.match("Subnet").all())
-# print(subnets)
-# computers = pd.DataFrame(graph.nodes.match("Computer").all())
-# print(computers)
 
 external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 app.title = "Transaction Network"
 if __name__ == "__main__":
+    stylesheet = [
+        {"selector": "node", "style": {"content": "data(label)"}},
+        {
+            "selector": ".admin",
+            "style": {
+                "width": 90,
+                "height": 80,
+                "background-fit": "cover",
+                "background-image": images["admin"],
+            },
+        },
+        {
+            "selector": ".user",
+            "style": {
+                "width": 90,
+                "height": 80,
+                "background-fit": "cover",
+                "background-image": images["user"],
+            },
+        },
+        {
+            "selector": ".computer",
+            "style": {
+                "width": 90,
+                "height": 80,
+                "background-fit": "cover",
+                "background-image": images["computer"],
+            },
+        },
+        {
+            "selector": ".subnet",
+            "style": {
+                "width": 90,
+                "height": 80,
+                "background-fit": "cover",
+                "background-image": images["subnet"],
+            },
+        },
+    ]
     app.layout = html.Div(
         [
             html.Div(
@@ -202,9 +156,20 @@ if __name__ == "__main__":
                 className="row",
                 style={"textAlign": "center"},
             ),
+            # html.Div(
+            #    className="eight columns",
+            #    children=[dcc.Graph(id="my-graph", figure=cytoscope())],
+            # ),
             html.Div(
-                className="eight columns",
-                children=[dcc.Graph(id="my-graph", figure=cytoscope())],
+                [
+                    cyto.Cytoscape(
+                        id="cytoscape-elements-basic",
+                        layout={"name": "cose"},
+                        style={"width": "100%", "height": "550px"},
+                        stylesheet=stylesheet,
+                        elements=cytoscope(),
+                    )
+                ]
             ),
         ]
     )
