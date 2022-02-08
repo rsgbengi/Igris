@@ -12,6 +12,7 @@ from textwrap import dedent as d
 from json import dumps, loads
 import base64
 from dash.dependencies import Input, Output, State
+import dash_bootstrap_components as dbc
 
 images = {
     "admin": base64.b64encode(open("icons/admin.png", "rb").read()),
@@ -28,6 +29,30 @@ def parse_subnets(subnets, graph):
             "data": {
                 "id": subnet["subnet"],
                 "label": subnet["subnet"],
+            },
+        }
+        graph.append(node)
+
+
+def parse_users(users, graph):
+    for user in users:
+        user_id = user["ip"] + user["username"] + user["password"]
+        node = {
+            "classes": "user",
+            "data": {
+                "id": user_id,
+                "label": user["username"] + user["password"],
+            },
+        }
+
+
+def parse_computers(computers, graph):
+    for computer in computers:
+        node = {
+            "classes": "computer",
+            "data": {
+                "id": computer["computer_name"],
+                "label": computer["computer_name"],
             },
         }
         graph.append(node)
@@ -142,6 +167,120 @@ def cytoscope():
     return graph_result
 
 
+def only_psexec_users(relationship):
+    graph = []
+    computers_used = []
+    for edge in relationship:
+
+        computer_id = edge["p"].end_node["computer_name"]
+        user_id = (
+            edge["p"].start_node["ip"]
+            + edge["p"].start_node["username"]
+            + edge["p"].start_node["password"]
+        )
+        user_node = {
+            "classes": "admin",
+            "data": {
+                "id": user_id,
+                "label": edge["p"].start_node["username"]
+                + "/"
+                + edge["p"].start_node["password"],
+            },
+        }
+
+        graph.append(user_node)
+
+        computer_id = edge["p"].end_node["computer_name"]
+        computer_node = {
+            "classes": "computer",
+            "data": {
+                "id": computer_id,
+                "label": computer_id,
+            },
+        }
+        if computer_id not in computers_used:
+            graph.append(computer_node)
+            computers_used.append(computer_id)
+
+        new_edge = {
+            "classes": "admin_arrow",
+            "data": {
+                "source": user_id,
+                "target": computer_id,
+            },
+        }
+        graph.append(new_edge)
+    return graph
+
+
+def only_not_psexec_users(relationship):
+    graph = []
+    computers_used = []
+    for edge in relationship:
+        user_id = (
+            edge["p"].start_node["ip"]
+            + edge["p"].start_node["username"]
+            + edge["p"].start_node["password"]
+        )
+        user_node = {
+            "classes": "user",
+            "data": {
+                "id": user_id,
+                "label": edge["p"].start_node["username"]
+                + "/"
+                + edge["p"].start_node["password"],
+            },
+        }
+
+        graph.append(user_node)
+
+        computer_id = edge["p"].end_node["computer_name"]
+        computer_node = {
+            "classes": "computer",
+            "data": {
+                "id": computer_id,
+                "label": computer_id,
+            },
+        }
+        if computer_id not in computers_used:
+            graph.append(computer_node)
+            computers_used.append(computer_id)
+
+        new_edge = {
+            "classes": "user_arrow",
+            "data": {
+                "source": user_id,
+                "target": computer_id,
+            },
+        }
+        graph.append(new_edge)
+    return graph
+
+
+def only_part_of_computer(relationship, graph_driver):
+    graph = []
+    subnets = graph_driver.nodes.match("Subnet").all()
+    parse_subnets(subnets, graph)
+    for edge in relationship:
+        computer_node = {
+            "classes": "computer",
+            "data": {
+                "id": edge["p"].start_node["computer_name"],
+                "label": edge["p"].start_node["computer_name"],
+            },
+        }
+        graph.append(computer_node)
+
+        computer_id = edge["p"].start_node["computer_name"]
+        subnet_id = edge["p"].end_node["subnet"]
+        new_edge = {
+            "classes": "computer_arrow",
+            "data": {"source": computer_id, "target": subnet_id},
+        }
+        graph.append(new_edge)
+    return graph
+
+
 def define_layout():
     stylesheet = [
         {"selector": "node", "style": {"content": "data(label)"}},
@@ -210,87 +349,97 @@ def define_layout():
             },
         },
     ]
-    app.layout = html.Div(
+    app.layout = dbc.Container(
         [
             html.Div(
-                [html.H1("Igris Graph")],
-                className="row",
-                style={"textAlign": "center"},
-            ),
-            html.Div(
                 [
-                    html.Button("Psexec", id="btn-psexec", n_clicks_timestamp=0),
-                    html.Button(
-                        "Not_Psexec", id="btn-not-psexec", n_clicks_timestamp=0
+                    html.Div(
+                        children=[
+                            html.P(children="🥑", className="header-emoji"),
+                            html.H1(children="Igris Graph", className="bg-primary text-white p-4 mb-2 text-center"),
+                        ],
+                        className="header",
                     ),
-                    html.Button("Computers", id="btn-computers", n_clicks_timestamp=0),
+                    html.Div(
+                        [
+                            html.Button("All", id="btn-all", n_clicks_timestamp=0),
+                            html.Button(
+                                "Psexec", id="btn-psexec", n_clicks_timestamp=0
+                            ),
+                            html.Button(
+                                "Not_Psexec", id="btn-not-psexec", n_clicks_timestamp=0
+                            ),
+                            html.Button(
+                                "Computers", id="btn-computers", n_clicks_timestamp=0
+                            ),
+                        ]
+                    ),
+                    # html.Div(
+                    #    className="eight columns",
+                    #    children=[dcc.Graph(id="my-graph", figure=cytoscope())],
+                    # ),
+                    html.Div(
+                        [
+                            cyto.Cytoscape(
+                                id="igris-elements",
+                                layout={"name": "cose"},
+                                style={"width": "100%", "height": "550px"},
+                                stylesheet=stylesheet,
+                                elements=cytoscope(),
+                            )
+                        ]
+                    ),
                 ]
-            ),
-            # html.Div(
-            #    className="eight columns",
-            #    children=[dcc.Graph(id="my-graph", figure=cytoscope())],
-            # ),
-            html.Div(
-                [
-                    cyto.Cytoscape(
-                        id="igris-elements",
-                        layout={"name": "cose"},
-                        style={"width": "100%", "height": "550px"},
-                        stylesheet=stylesheet,
-                        elements=cytoscope(),
-                    )
-                ]
-            ),
+            )
         ]
     )
 
     @app.callback(
         Output("igris-elements", "elements"),
+        Input("btn-all", "n_clicks_timestamp"),
         Input("btn-psexec", "n_clicks_timestamp"),
         Input("btn-not-psexec", "n_clicks_timestamp"),
         Input("btn-computers", "n_clicks_timestamp"),
         State("igris-elements", "elements"),
     )
-    def update_elements(psexec_count, not_psexec_count, computers_count, elements):
-        if int(psexec_count) > int(not_psexec_count) and int(psexec_count) > (
-            computers_count
-        ):
-            print("hola")
-            result = []
-            graph = py2neo.Graph(
+    def update_elements(
+        all_graph_count, psexec_count, not_psexec_count, computers_count, elements
+    ):
+        values = [all_graph_count, psexec_count, not_psexec_count, computers_count]
+        if all_graph_count == max(values):
+            return cytoscope()
+        if psexec_count == max(values):
+            graph_driver = py2neo.Graph(
                 "neo4j://localhost:7687", auth=("neo4j", "islaplana56")
             )
-            relation = graph.run("MATCH p=()-[r:PSEXEC_HERE]->() RETURN p").data()
-            print(relation)
-            computer_psexec_relationships(relation, result)
-            return result
-        if int(not_psexec_count) > int(psexec_count) and int(not_psexec_count) > (
-            computers_count
-        ):
-            result = []
-            graph = py2neo.Graph(
+            relationship = graph_driver.run(
+                "MATCH p=()-[r:PSEXEC_HERE]->() RETURN p"
+            ).data()
+            new_graph = only_psexec_users(relationship)
+            return new_graph
+        if not_psexec_count == max(values):
+            graph_driver = py2neo.Graph(
                 "neo4j://localhost:7687", auth=("neo4j", "islaplana56")
             )
-            relation = graph.run("MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p").data()
-            computer_not_psexec_relationships(relation, result)
-            return result
-        if int(not_psexec_count) > int(psexec_count) and int(not_psexec_count) > (
-            computers_count
-        ):
-            result = []
-            graph = py2neo.Graph(
+            relationship = graph_driver.run(
+                "MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p"
+            ).data()
+            new_graph = only_not_psexec_users(relationship)
+            return new_graph
+        if computers_count == max(values):
+            graph_driver = py2neo.Graph(
                 "neo4j://localhost:7687", auth=("neo4j", "islaplana56")
             )
-            relation = graph.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
-            computer_part_of_relationship(relation, result)
-            return result
+            relationship = graph_driver.run(
+                "MATCH p=()-[r:PART_OF]->() RETURN p"
+            ).data()
+            return only_part_of_computer(relationship, graph_driver)
 
         return elements
 
 
-external_stylesheets = ["https://codepen.io/chriddyp/pen/bWLwgP.css"]
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-app.title = "Transaction Network"
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app.title = "Igris dashboard"
 if __name__ == "__main__":
     define_layout()
     app.run_server(debug=True)
