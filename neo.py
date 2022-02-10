@@ -14,12 +14,15 @@ import base64
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
 
+cyto.load_extra_layouts()
 images = {
     "admin": base64.b64encode(open("icons/admin.png", "rb").read()),
     "user": base64.b64encode(open("icons/usuario.png", "rb").read()),
     "computer": base64.b64encode(open("icons/ordenador.png", "rb").read()),
     "subnet": base64.b64encode(open("icons/internet.png", "rb").read()),
 }
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app.title = "Igris dashboard"
 
 
 def parse_subnets(subnets, graph):
@@ -59,7 +62,6 @@ def parse_computers(computers, graph):
 
 
 def computer_psexec_relationships(relationships, graph):
-
     for relation in relationships:
         user_id = (
             relation["p"].start_node["ip"]
@@ -102,7 +104,6 @@ def computer_not_psexec_relationships(relationships, graph):
             },
         }
         graph.append(user_node)
-
         computer_id = relation["p"].end_node["computer_name"]
         relation = {
             "classes": "user_arrow",
@@ -281,6 +282,28 @@ def only_part_of_computer(relationship, graph_driver):
     return graph
 
 
+def graph_psexec_users():
+    graph_driver = py2neo.Graph("neo4j://localhost:7687", auth=("neo4j", "islaplana56"))
+    relationship = graph_driver.run("MATCH p=()-[r:PSEXEC_HERE]->() RETURN p").data()
+    new_graph = only_psexec_users(relationship)
+    return new_graph
+
+
+def graph_not_psexec_users():
+    graph_driver = py2neo.Graph("neo4j://localhost:7687", auth=("neo4j", "islaplana56"))
+    relationship = graph_driver.run(
+        "MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p"
+    ).data()
+    new_graph = only_not_psexec_users(relationship)
+    return new_graph
+
+
+def graph_with_computers():
+    graph_driver = py2neo.Graph("neo4j://localhost:7687", auth=("neo4j", "islaplana56"))
+    relationship = graph_driver.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
+    return only_part_of_computer(relationship, graph_driver)
+
+
 def define_layout():
     stylesheet = [
         {"selector": "node", "style": {"content": "data(label)"}},
@@ -349,97 +372,117 @@ def define_layout():
             },
         },
     ]
+
     app.layout = dbc.Container(
         [
             html.Div(
                 [
                     html.Div(
                         children=[
-                            html.P(children="🥑", className="header-emoji"),
-                            html.H1(children="Igris Graph", className="bg-primary text-white p-4 mb-2 text-center"),
+                            html.H1(
+                                children="Igris Graph",
+                                className="bg-primary text-white p-4 mb-2 text-center",
+                            ),
+                            dbc.CardImg(src="/home/rsgbengi/Igris/logo.png", top=True),
                         ],
                         className="header",
                     ),
-                    html.Div(
+                    dbc.Tabs(
                         [
-                            html.Button("All", id="btn-all", n_clicks_timestamp=0),
-                            html.Button(
-                                "Psexec", id="btn-psexec", n_clicks_timestamp=0
+                            dbc.Tab(
+                                label="All Graph",
+                                tab_id="all",
                             ),
-                            html.Button(
-                                "Not_Psexec", id="btn-not-psexec", n_clicks_timestamp=0
+                            dbc.Tab(
+                                label="Psexec",
+                                tab_id="psexec",
                             ),
-                            html.Button(
-                                "Computers", id="btn-computers", n_clicks_timestamp=0
+                            dbc.Tab(
+                                label="Not Psexec",
+                                tab_id="not_psexec",
                             ),
-                        ]
+                            dbc.Tab(
+                                label="Computers",
+                                tab_id="computers",
+                            ),
+                        ],
+                        id="tabs",
+                        active_tab="all",
                     ),
-                    # html.Div(
-                    #    className="eight columns",
-                    #    children=[dcc.Graph(id="my-graph", figure=cytoscope())],
-                    # ),
+                    html.Div(id="tab-content", className="p-4"),
+                ]
+            )
+        ],
+        fluid=True,
+    )
+
+    @app.callback(
+        Output("tab-content", "children"),
+        [Input("tabs", "active_tab")],
+    )
+    def render_tab_content(active_tab):
+        """
+        This callback takes the 'active_tab' property as input, as well as the
+        stored graphs, and renders the tab content depending on what the value of
+        'active_tab' is.
+        """
+        if active_tab:
+            if active_tab == "all":
+                return (
                     html.Div(
                         [
                             cyto.Cytoscape(
-                                id="igris-elements",
-                                layout={"name": "cose"},
+                                layout={"name": "cola"},
                                 style={"width": "100%", "height": "550px"},
                                 stylesheet=stylesheet,
                                 elements=cytoscope(),
                             )
                         ]
                     ),
-                ]
-            )
-        ]
-    )
+                )
+            if active_tab == "psexec":
+                return (
+                    html.Div(
+                        [
+                            cyto.Cytoscape(
+                                layout={"name": "cola"},
+                                style={"width": "100%", "height": "550px"},
+                                stylesheet=stylesheet,
+                                elements=graph_psexec_users(),
+                            )
+                        ]
+                    ),
+                )
+            if active_tab == "not_psexec":
+                return (
+                    html.Div(
+                        [
+                            cyto.Cytoscape(
+                                layout={"name": "cola"},
+                                style={"width": "100%", "height": "550px"},
+                                stylesheet=stylesheet,
+                                elements=graph_not_psexec_users(),
+                            )
+                        ]
+                    ),
+                )
+            if active_tab == "computers":
+                return (
+                    html.Div(
+                        [
+                            cyto.Cytoscape(
+                                layout={"name": "cola"},
+                                style={"width": "100%", "height": "550px"},
+                                stylesheet=stylesheet,
+                                elements=graph_with_computers(),
+                            )
+                        ]
+                    ),
+                )
 
-    @app.callback(
-        Output("igris-elements", "elements"),
-        Input("btn-all", "n_clicks_timestamp"),
-        Input("btn-psexec", "n_clicks_timestamp"),
-        Input("btn-not-psexec", "n_clicks_timestamp"),
-        Input("btn-computers", "n_clicks_timestamp"),
-        State("igris-elements", "elements"),
-    )
-    def update_elements(
-        all_graph_count, psexec_count, not_psexec_count, computers_count, elements
-    ):
-        values = [all_graph_count, psexec_count, not_psexec_count, computers_count]
-        if all_graph_count == max(values):
-            return cytoscope()
-        if psexec_count == max(values):
-            graph_driver = py2neo.Graph(
-                "neo4j://localhost:7687", auth=("neo4j", "islaplana56")
-            )
-            relationship = graph_driver.run(
-                "MATCH p=()-[r:PSEXEC_HERE]->() RETURN p"
-            ).data()
-            new_graph = only_psexec_users(relationship)
-            return new_graph
-        if not_psexec_count == max(values):
-            graph_driver = py2neo.Graph(
-                "neo4j://localhost:7687", auth=("neo4j", "islaplana56")
-            )
-            relationship = graph_driver.run(
-                "MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p"
-            ).data()
-            new_graph = only_not_psexec_users(relationship)
-            return new_graph
-        if computers_count == max(values):
-            graph_driver = py2neo.Graph(
-                "neo4j://localhost:7687", auth=("neo4j", "islaplana56")
-            )
-            relationship = graph_driver.run(
-                "MATCH p=()-[r:PART_OF]->() RETURN p"
-            ).data()
-            return only_part_of_computer(relationship, graph_driver)
-
-        return elements
+        return "No tab selected"
 
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-app.title = "Igris dashboard"
 if __name__ == "__main__":
     define_layout()
     app.run_server(debug=True)
