@@ -20,8 +20,11 @@ images = {
     "user": base64.b64encode(open("icons/usuario.png", "rb").read()),
     "computer": base64.b64encode(open("icons/ordenador.png", "rb").read()),
     "subnet": base64.b64encode(open("icons/internet.png", "rb").read()),
+    "logo": base64.b64encode(open("icons/logo.png", "rb").read()),
 }
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(
+    __name__, external_stylesheets=[dbc.themes.BOOTSTRAP, dbc.icons.BOOTSTRAP]
+)
 app.title = "Igris dashboard"
 
 
@@ -377,41 +380,147 @@ def define_layout():
         [
             html.Div(
                 [
-                    html.Div(
-                        children=[
-                            html.H1(
-                                children="Igris Graph",
-                                className="bg-primary text-white p-4 mb-2 text-center",
-                            ),
-                            dbc.CardImg(src="/home/rsgbengi/Igris/logo.png", top=True),
-                        ],
-                        className="header",
-                    ),
-                    dbc.Tabs(
+                    dbc.Card(
                         [
-                            dbc.Tab(
-                                label="All Graph",
-                                tab_id="all",
-                            ),
-                            dbc.Tab(
-                                label="Psexec",
-                                tab_id="psexec",
-                            ),
-                            dbc.Tab(
-                                label="Not Psexec",
-                                tab_id="not_psexec",
-                            ),
-                            dbc.Tab(
-                                label="Computers",
-                                tab_id="computers",
+                            dbc.Row(
+                                [
+                                    dbc.Col(
+                                        dbc.CardImg(
+                                            src=f'data:image/png;base64,{images["logo"].decode()}',
+                                            className="img-fluid rounded-start",
+                                        ),
+                                        style={"width": "5rem"},
+                                        className="col-md-4",
+                                    ),
+                                    dbc.Col(
+                                        [
+                                            dbc.CardBody(
+                                                [
+                                                    html.H4(
+                                                        "Card title",
+                                                        className="card-title",
+                                                    ),
+                                                    html.P(
+                                                        "This is some card text",
+                                                        className="card-text",
+                                                    ),
+                                                ]
+                                            ),
+                                        ]
+                                    ),
+                                ],
+                                className="g-0 d-flex align-items-center",
                             ),
                         ],
-                        id="tabs",
-                        active_tab="all",
                     ),
-                    html.Div(id="tab-content", className="p-4"),
-                ]
-            )
+                    dbc.Row(
+                        [
+                            dbc.Col(
+                                [
+                                    dbc.ListGroup(
+                                        [
+                                            dbc.ListGroupItem(
+                                                [
+                                                    html.I(
+                                                        className="bi bi-arrow-right-circle-fill",
+                                                        style={"color": "#c93412"},
+                                                    ),
+                                                    "  Psexec Here",
+                                                ],
+                                            ),
+                                            dbc.ListGroupItem(
+                                                [
+                                                    html.I(
+                                                        className="bi bi-arrow-right-circle-fill",
+                                                        style={"color": "blue"},
+                                                    ),
+                                                    "  Not Psexec Here",
+                                                ],
+                                            ),
+                                            dbc.ListGroupItem(
+                                                [
+                                                    html.I(
+                                                        className="bi bi-arrow-right-circle-fill",
+                                                        style={"color": "#383534"},
+                                                    ),
+                                                    "  Part of the subnet",
+                                                ],
+                                            ),
+                                            dbc.ListGroupItem(
+                                                [
+                                                    html.Img(
+                                                        src=f'data:image/png;base64,{images["user"].decode()}',
+                                                        height="20px",
+                                                    ),
+                                                    "  Normal User",
+                                                ],
+                                            ),
+                                            dbc.ListGroupItem(
+                                                [
+                                                    html.Img(
+                                                        src=f'data:image/png;base64,{images["admin"].decode()}',
+                                                        height="20px",
+                                                    ),
+                                                    "  Administrator User",
+                                                ],
+                                            ),
+                                            dbc.ListGroupItem(
+                                                [
+                                                    html.Img(
+                                                        src=f'data:image/png;base64,{images["computer"].decode()}',
+                                                        height="20px",
+                                                    ),
+                                                    "  Workstation",
+                                                ],
+                                            ),
+                                            dbc.ListGroupItem(
+                                                [
+                                                    html.Img(
+                                                        src=f'data:image/png;base64,{images["subnet"].decode()}',
+                                                        height="20px",
+                                                    ),
+                                                    "  Subnet",
+                                                ],
+                                            ),
+                                        ],
+                                        horizontal=True,
+                                        flush=True,
+                                    ),
+                                ],
+                                width="auto",
+                            ),
+                        ],
+                        justify="center",
+                    ),
+                    dbc.Row(
+                        [
+                            dbc.Tabs(
+                                [
+                                    dbc.Tab(
+                                        label="All Graph",
+                                        tab_id="all",
+                                    ),
+                                    dbc.Tab(
+                                        label="Psexec",
+                                        tab_id="psexec",
+                                    ),
+                                    dbc.Tab(
+                                        label="Not Psexec",
+                                        tab_id="not_psexec",
+                                    ),
+                                    dbc.Tab(
+                                        label="Computers",
+                                        tab_id="computers",
+                                    ),
+                                ],
+                                id="tabs",
+                                active_tab="all",
+                            ),
+                            html.Div(id="tab-content", className="p-4"),
+                        ],
+                    ),
+                ],
+            ),
         ],
         fluid=True,
     )
