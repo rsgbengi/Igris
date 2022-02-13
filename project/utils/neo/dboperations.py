@@ -17,8 +17,8 @@ class Neo4jConnection:
         self.__user = user
         self.__passwd = passwd
         self.__dirver = None
-        self.__info_logger = info_logger
-        self.__error_logger = error_logger
+        self.__info_logger = info_logger = None
+        self.__error_logger = error_logger = None
         try:
             self.__graph = Graph(self.__url, auth=(self.__user, self.__passwd))
         except Exception:
@@ -76,13 +76,10 @@ class Neo4jConnection:
 
     def check_nodes_with_psexec(self, computer: Node, user_status: UserInfo) -> str:
         nodes_user = self.get_user(user_status, computer["ipv4"])
-        print("hola")
-        print(nodes_user)
         if nodes_user is not None:
             relation = self.__graph.match(
                 r_type="PSEXEC_HERE", nodes=(nodes_user, computer)
             ).all()
-            print(relation)
         else:
             return None
 
@@ -107,3 +104,19 @@ class Neo4jConnection:
     def init_new_subnet(self, subnet: str) -> None:
         subnet_node = Node("Subnet", subnet=subnet)
         self.__commit(subnet_node)
+
+    def graph_psexec_users(self):
+        relationship = self.__graph.run(
+            "MATCH p=()-[r:PSEXEC_HERE]->() RETURN p"
+        ).data()
+        return relationship
+
+    def graph_not_psexec_users(self):
+        relationship = self.__graph.run(
+            "MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p"
+        ).data()
+        return relationship
+
+    def graph_with_computers(self):
+        relationship = self.__graph.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
+        return relationship

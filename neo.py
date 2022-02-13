@@ -14,6 +14,8 @@ import base64
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
 
+from project.utils.neo.dboperations import Neo4jConnection
+
 cyto.load_extra_layouts()
 images = {
     "admin": base64.b64encode(open("icons/admin.png", "rb").read()),
@@ -119,23 +121,27 @@ def computer_not_psexec_relationships(relationships, graph):
 
 
 def computer_part_of_relationship(relationships, graph):
-    for relation in relationships:
+    for edge in relationships:
         computer_node = {
             "classes": "computer",
             "data": {
-                "id": relation["p"].start_node["computer_name"],
-                "label": relation["p"].start_node["computer_name"],
+                "id": edge["p"].start_node["computer_name"],
+                "label": edge["p"].start_node["computer_name"],
+                "computer_name": edge["p"].start_node["computer_name"],
+                "ipv4": edge["p"].start_node["ipv4"],
+                "os": edge["p"].start_node["os"],
+                "signed": edge["p"].start_node["signed"],
             },
         }
         graph.append(computer_node)
 
-        computer_id = relation["p"].start_node["computer_name"]
-        subnet_id = relation["p"].end_node["subnet"]
-        relation = {
+        computer_id = edge["p"].start_node["computer_name"]
+        subnet_id = edge["p"].end_node["subnet"]
+        edge = {
             "classes": "computer_arrow",
             "data": {"source": computer_id, "target": subnet_id},
         }
-        graph.append(relation)
+        graph.append(edge)
 
 
 def define_nodes(graph, graph_result):
@@ -271,6 +277,10 @@ def only_part_of_computer(relationship, graph_driver):
             "data": {
                 "id": edge["p"].start_node["computer_name"],
                 "label": edge["p"].start_node["computer_name"],
+                "computer_name": edge["p"].start_node["computer_name"],
+                "ipv4": edge["p"].start_node["ipv4"],
+                "os": edge["p"].start_node["os"],
+                "signed": edge["p"].start_node["signed"],
             },
         }
         graph.append(computer_node)
@@ -307,7 +317,7 @@ def graph_with_computers():
     return only_part_of_computer(relationship, graph_driver)
 
 
-def define_layout():
+def define_the_style():
     stylesheet = [
         {"selector": "node", "style": {"content": "data(label)"}},
         {
@@ -375,149 +385,174 @@ def define_layout():
             },
         },
     ]
+    return stylesheet
 
+
+def define_title():
+    return html.H3("Users Graph")
+
+
+def define_logo():
+    return html.Img(
+        src=f'data:image/png;base64,{images["logo"].decode()}', style={"width": "30%"}
+    )
+
+
+def define_legend():
+    return dbc.ListGroup(
+        [
+            dbc.ListGroupItem(
+                [
+                    html.I(
+                        className="bi bi-arrow-right-circle-fill",
+                        style={"color": "#c93412"},
+                    ),
+                    "  Psexec Here",
+                ],
+            ),
+            dbc.ListGroupItem(
+                [
+                    html.I(
+                        className="bi bi-arrow-right-circle-fill",
+                        style={"color": "blue"},
+                    ),
+                    "  Not Psexec Here",
+                ],
+            ),
+            dbc.ListGroupItem(
+                [
+                    html.I(
+                        className="bi bi-arrow-right-circle-fill",
+                        style={"color": "#383534"},
+                    ),
+                    "  Part of the subnet",
+                ],
+            ),
+            dbc.ListGroupItem(
+                [
+                    html.Img(
+                        src=f'data:image/png;base64,{images["user"].decode()}',
+                        height="20px",
+                    ),
+                    "  Normal User",
+                ],
+            ),
+            dbc.ListGroupItem(
+                [
+                    html.Img(
+                        src=f'data:image/png;base64,{images["admin"].decode()}',
+                        height="20px",
+                    ),
+                    "  Administrator User",
+                ],
+            ),
+            dbc.ListGroupItem(
+                [
+                    html.Img(
+                        src=f'data:image/png;base64,{images["computer"].decode()}',
+                        height="20px",
+                    ),
+                    "  Workstation",
+                ],
+            ),
+            dbc.ListGroupItem(
+                [
+                    html.Img(
+                        src=f'data:image/png;base64,{images["subnet"].decode()}',
+                        height="20px",
+                    ),
+                    "  Subnet",
+                ],
+            ),
+        ],
+        horizontal=True,
+        flush=True,
+    )
+
+
+def define_tabs():
+    return (
+        dbc.Tabs(
+            [
+                dbc.Tab(
+                    label="All Graph",
+                    tab_id="all",
+                ),
+                dbc.Tab(
+                    label="Psexec",
+                    tab_id="psexec",
+                ),
+                dbc.Tab(
+                    label="Not Psexec",
+                    tab_id="not_psexec",
+                ),
+                dbc.Tab(
+                    label="Computers",
+                    tab_id="computers",
+                ),
+            ],
+            id="tabs",
+            active_tab="all",
+        ),
+    )
+
+
+def define_the_header():
+    return (
+        dbc.Col(
+            [define_title()],
+            width={"size": "auto"},
+        ),
+    )
+    dbc.Col(
+        [define_logo()],
+        width={"size": "auto"},
+    )
+
+
+def define_the_body():
+    return (
+        dbc.Col(
+            [
+                html.H2("Node Information", className="display-10"),
+                html.Hr(className="my-2"),
+                html.Div(id="node-info-output"),
+            ],
+            width=2,
+        ),
+    )
+    dbc.Col(
+        [
+            define_tabs(),
+            html.Div(id="tab-content", className="p-4"),
+        ],
+        width=10,
+    ),
+
+
+def define_layout(igris_db):
+
+    stylesheet = define_the_style()
     app.layout = dbc.Container(
         [
             html.Div(
                 [
-                    dbc.Card(
-                        [
-                            dbc.Row(
-                                [
-                                    dbc.Col(
-                                        dbc.CardImg(
-                                            src=f'data:image/png;base64,{images["logo"].decode()}',
-                                            className="img-fluid rounded-start",
-                                        ),
-                                        style={"width": "5rem"},
-                                        className="col-md-4",
-                                    ),
-                                    dbc.Col(
-                                        [
-                                            dbc.CardBody(
-                                                [
-                                                    html.H4(
-                                                        "Card title",
-                                                        className="card-title",
-                                                    ),
-                                                    html.P(
-                                                        "This is some card text",
-                                                        className="card-text",
-                                                    ),
-                                                ]
-                                            ),
-                                        ]
-                                    ),
-                                ],
-                                className="g-0 d-flex align-items-center",
-                            ),
-                        ],
+                    dbc.Row(
+                        [define_the_header()],
+                        align="center",
+                        justify="center",
                     ),
                     dbc.Row(
                         [
                             dbc.Col(
-                                [
-                                    dbc.ListGroup(
-                                        [
-                                            dbc.ListGroupItem(
-                                                [
-                                                    html.I(
-                                                        className="bi bi-arrow-right-circle-fill",
-                                                        style={"color": "#c93412"},
-                                                    ),
-                                                    "  Psexec Here",
-                                                ],
-                                            ),
-                                            dbc.ListGroupItem(
-                                                [
-                                                    html.I(
-                                                        className="bi bi-arrow-right-circle-fill",
-                                                        style={"color": "blue"},
-                                                    ),
-                                                    "  Not Psexec Here",
-                                                ],
-                                            ),
-                                            dbc.ListGroupItem(
-                                                [
-                                                    html.I(
-                                                        className="bi bi-arrow-right-circle-fill",
-                                                        style={"color": "#383534"},
-                                                    ),
-                                                    "  Part of the subnet",
-                                                ],
-                                            ),
-                                            dbc.ListGroupItem(
-                                                [
-                                                    html.Img(
-                                                        src=f'data:image/png;base64,{images["user"].decode()}',
-                                                        height="20px",
-                                                    ),
-                                                    "  Normal User",
-                                                ],
-                                            ),
-                                            dbc.ListGroupItem(
-                                                [
-                                                    html.Img(
-                                                        src=f'data:image/png;base64,{images["admin"].decode()}',
-                                                        height="20px",
-                                                    ),
-                                                    "  Administrator User",
-                                                ],
-                                            ),
-                                            dbc.ListGroupItem(
-                                                [
-                                                    html.Img(
-                                                        src=f'data:image/png;base64,{images["computer"].decode()}',
-                                                        height="20px",
-                                                    ),
-                                                    "  Workstation",
-                                                ],
-                                            ),
-                                            dbc.ListGroupItem(
-                                                [
-                                                    html.Img(
-                                                        src=f'data:image/png;base64,{images["subnet"].decode()}',
-                                                        height="20px",
-                                                    ),
-                                                    "  Subnet",
-                                                ],
-                                            ),
-                                        ],
-                                        horizontal=True,
-                                        flush=True,
-                                    ),
-                                ],
+                                [define_legend()],
                                 width="auto",
                             ),
                         ],
                         justify="center",
                     ),
                     dbc.Row(
-                        [
-                            dbc.Tabs(
-                                [
-                                    dbc.Tab(
-                                        label="All Graph",
-                                        tab_id="all",
-                                    ),
-                                    dbc.Tab(
-                                        label="Psexec",
-                                        tab_id="psexec",
-                                    ),
-                                    dbc.Tab(
-                                        label="Not Psexec",
-                                        tab_id="not_psexec",
-                                    ),
-                                    dbc.Tab(
-                                        label="Computers",
-                                        tab_id="computers",
-                                    ),
-                                ],
-                                id="tabs",
-                                active_tab="all",
-                            ),
-                            html.Div(id="tab-content", className="p-4"),
-                        ],
+                        [define_the_body()],
                     ),
                 ],
             ),
@@ -541,6 +576,7 @@ def define_layout():
                     html.Div(
                         [
                             cyto.Cytoscape(
+                                id="igris-graph",
                                 layout={"name": "cola"},
                                 style={"width": "100%", "height": "550px"},
                                 stylesheet=stylesheet,
@@ -554,6 +590,7 @@ def define_layout():
                     html.Div(
                         [
                             cyto.Cytoscape(
+                                id="igris-graph",
                                 layout={"name": "cola"},
                                 style={"width": "100%", "height": "550px"},
                                 stylesheet=stylesheet,
@@ -567,6 +604,7 @@ def define_layout():
                     html.Div(
                         [
                             cyto.Cytoscape(
+                                id="igris-graph",
                                 layout={"name": "cola"},
                                 style={"width": "100%", "height": "550px"},
                                 stylesheet=stylesheet,
@@ -580,6 +618,7 @@ def define_layout():
                     html.Div(
                         [
                             cyto.Cytoscape(
+                                id="igris-graph",
                                 layout={"name": "cola"},
                                 style={"width": "100%", "height": "550px"},
                                 stylesheet=stylesheet,
@@ -592,6 +631,22 @@ def define_layout():
         return "No tab selected"
 
 
+@app.callback(
+    Output("node-info-output", "children"),
+    Input("igris-graph", "tapNodeData"),
+)
+def displayTapNodeData(data):
+    if data:
+        return html.P(data["ipv4"])
+    else:
+        return html.P("Press a node to see info")
+
+
 if __name__ == "__main__":
-    define_layout()
+    igris_db = Neo4jConnection(
+        "neo4j://localhost:7687",
+        "neo4j",
+        "islaplana56",
+    )
+    define_layout(igris_db)
     app.run_server(debug=True)
