@@ -1,22 +1,15 @@
 #!/usr/bin/env python3
-from neo4j import GraphDatabase
 import py2neo
-import pandas as pd
-import networkx as nx
-import plotly.graph_objects as go
-import dash
-from dash import dcc
 from dash import html
-import dash_cytoscape as cyto
-from textwrap import dedent as d
-from json import dumps, loads
+import dash
 import base64
 from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
-
+import dash_cytoscape as cyto
 from project.utils.neo.dboperations import Neo4jConnection
 
 cyto.load_extra_layouts()
+
 images = {
     "admin": base64.b64encode(open("icons/admin.png", "rb").read()),
     "user": base64.b64encode(open("icons/usuario.png", "rb").read()),
@@ -37,30 +30,6 @@ def parse_subnets(subnets, graph):
             "data": {
                 "id": subnet["subnet"],
                 "label": subnet["subnet"],
-            },
-        }
-        graph.append(node)
-
-
-def parse_users(users, graph):
-    for user in users:
-        user_id = user["ip"] + user["username"] + user["password"]
-        node = {
-            "classes": "user",
-            "data": {
-                "id": user_id,
-                "label": user["username"] + user["password"],
-            },
-        }
-
-
-def parse_computers(computers, graph):
-    for computer in computers:
-        node = {
-            "classes": "computer",
-            "data": {
-                "id": computer["computer_name"],
-                "label": computer["computer_name"],
             },
         }
         graph.append(node)
@@ -145,35 +114,25 @@ def computer_part_of_relationship(relationships, graph):
 
 
 def define_nodes(graph, graph_result):
-    subnets = graph.nodes.match("Subnet").all()
+    subnets = graph.get_subnets()
     parse_subnets(subnets, graph_result)
-    # users = graph.nodes.match("User").all()
-    # parse_users(users, graph_result)
-    # computers = graph.nodes.match("Computer").all()
-    # parse_computers(computers, graph_result)
     return graph_result
 
 
-def define_edges(graph, graph_result):
-    computers_part_of = graph.run("MATCH p=()-[r:PART_OF]->() RETURN p LIMIT 25").data()
+def define_edges(graph_driver, graph_result):
+    computers_part_of = graph_driver.graph_with_computers()
     computer_part_of_relationship(computers_part_of, graph_result)
-    computers_psexec = graph.run(
-        "MATCH p=()-[r:PSEXEC_HERE]->() RETURN p LIMIT 25"
-    ).data()
-    computer_psexec_relationships(computers_psexec, graph_result)
-    computers_not_psexec = graph.run(
-        "MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p LIMIT 25"
-    ).data()
+    admin_users = graph_driver.graph_psexec_users()
+    computer_psexec_relationships(admin_users, graph_result)
+    computers_not_psexec = graph_driver.graph_not_psexec_users()
     computer_not_psexec_relationships(computers_not_psexec, graph_result)
     return graph_result
 
 
-def cytoscope():
-    graph = py2neo.Graph("neo4j://localhost:7687", auth=("neo4j", "islaplana56"))
-    # j = dumps(graph.run(" MATCH (n)-[r]->(c) RETURN n,type(r),c").data())
+def all_graph(graph_driver):
     graph_result = []
-    define_nodes(graph, graph_result)
-    define_edges(graph, graph_result)
+    define_nodes(graph_driver, graph_result)
+    define_edges(graph_driver, graph_result)
     return graph_result
 
 
@@ -182,7 +141,6 @@ def only_psexec_users(relationship):
     computers_used = []
     for edge in relationship:
 
-        computer_id = edge["p"].end_node["computer_name"]
         user_id = (
             edge["p"].start_node["ip"]
             + edge["p"].start_node["username"]
@@ -267,54 +225,57 @@ def only_not_psexec_users(relationship):
     return graph
 
 
+def define_computer_node(edge):
+    return {
+        "classes": "computer",
+        "data": {
+            "id": edge["p"].start_node["computer_name"],
+            "label": edge["p"].start_node["computer_name"],
+            "computer_name": edge["p"].start_node["computer_name"],
+            "ipv4": edge["p"].start_node["ipv4"],
+            "os": edge["p"].start_node["os"],
+            "signed": edge["p"].start_node["signed"],
+        },
+    }
+
+
+def define_edge_computer_subnet(edge):
+    computer_id = edge["p"].start_node["computer_name"]
+    subnet_id = edge["p"].end_node["subnet"]
+    return {
+        "classes": "computer_arrow",
+        "data": {"source": computer_id, "target": subnet_id},
+    }
+
+
 def only_part_of_computer(relationship, graph_driver):
     graph = []
     subnets = graph_driver.nodes.match("Subnet").all()
     parse_subnets(subnets, graph)
     for edge in relationship:
-        computer_node = {
-            "classes": "computer",
-            "data": {
-                "id": edge["p"].start_node["computer_name"],
-                "label": edge["p"].start_node["computer_name"],
-                "computer_name": edge["p"].start_node["computer_name"],
-                "ipv4": edge["p"].start_node["ipv4"],
-                "os": edge["p"].start_node["os"],
-                "signed": edge["p"].start_node["signed"],
-            },
-        }
+        computer_node = define_computer_node(edge)
         graph.append(computer_node)
-
-        computer_id = edge["p"].start_node["computer_name"]
-        subnet_id = edge["p"].end_node["subnet"]
-        new_edge = {
-            "classes": "computer_arrow",
-            "data": {"source": computer_id, "target": subnet_id},
-        }
+        new_edge = define_edge_computer_subnet(edge)
         graph.append(new_edge)
     return graph
 
 
-def graph_psexec_users():
-    graph_driver = py2neo.Graph("neo4j://localhost:7687", auth=("neo4j", "islaplana56"))
-    relationship = graph_driver.run("MATCH p=()-[r:PSEXEC_HERE]->() RETURN p").data()
+def graph_psexec_users(graph_driver):
+    relationship = graph_driver.graph_psexec_users()
     new_graph = only_psexec_users(relationship)
     return new_graph
 
 
-def graph_not_psexec_users():
-    graph_driver = py2neo.Graph("neo4j://localhost:7687", auth=("neo4j", "islaplana56"))
-    relationship = graph_driver.run(
-        "MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p"
-    ).data()
+def graph_not_psexec_users(graph_driver):
+    relationship = graph_driver.graph_not_psexec_users()
     new_graph = only_not_psexec_users(relationship)
     return new_graph
 
 
-def graph_with_computers():
-    graph_driver = py2neo.Graph("neo4j://localhost:7687", auth=("neo4j", "islaplana56"))
-    relationship = graph_driver.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
-    return only_part_of_computer(relationship, graph_driver)
+def graph_with_computers(graph_driver):
+    relationship = graph_driver.relationship_computer_subnet()
+    new_graph = only_part_of_computer(relationship, graph_driver)
+    return new_graph
 
 
 def define_the_style():
@@ -386,10 +347,6 @@ def define_the_style():
         },
     ]
     return stylesheet
-
-
-def define_title():
-    return html.H3("Users Graph")
 
 
 def define_logo():
@@ -471,47 +428,49 @@ def define_legend():
 
 
 def define_tabs():
-    return (
-        dbc.Tabs(
-            [
-                dbc.Tab(
-                    label="All Graph",
-                    tab_id="all",
-                ),
-                dbc.Tab(
-                    label="Psexec",
-                    tab_id="psexec",
-                ),
-                dbc.Tab(
-                    label="Not Psexec",
-                    tab_id="not_psexec",
-                ),
-                dbc.Tab(
-                    label="Computers",
-                    tab_id="computers",
-                ),
-            ],
-            id="tabs",
-            active_tab="all",
-        ),
+    return dbc.Tabs(
+        [
+            dbc.Tab(
+                label="All Graph",
+                tab_id="all",
+            ),
+            dbc.Tab(
+                label="Psexec",
+                tab_id="psexec",
+            ),
+            dbc.Tab(
+                label="Not Psexec",
+                tab_id="not_psexec",
+            ),
+            dbc.Tab(
+                label="Computers",
+                tab_id="computers",
+            ),
+        ],
+        id="tabs",
+        active_tab="all",
     )
+
+
+def define_title():
+    return [html.H3("Users Graph")]
 
 
 def define_the_header():
-    return (
+    return [
         dbc.Col(
-            [define_title()],
+            define_title(),
             width={"size": "auto"},
         ),
-    )
-    dbc.Col(
-        [define_logo()],
-        width={"size": "auto"},
-    )
+        dbc.Col(
+            define_logo(),
+            width={"size": "auto"},
+        ),
+    ]
 
 
 def define_the_body():
-    return (
+    return [
         dbc.Col(
             [
                 html.H2("Node Information", className="display-10"),
@@ -520,39 +479,37 @@ def define_the_body():
             ],
             width=2,
         ),
-    )
-    dbc.Col(
-        [
-            define_tabs(),
-            html.Div(id="tab-content", className="p-4"),
-        ],
-        width=10,
-    ),
+        dbc.Col(
+            [
+                define_tabs(),
+                html.Div(id="tab-content", className="p-4"),
+            ],
+            width=10,
+        ),
+    ]
 
 
-def define_layout(igris_db):
-
-    stylesheet = define_the_style()
+def define_layout():
     app.layout = dbc.Container(
         [
             html.Div(
                 [
                     dbc.Row(
-                        [define_the_header()],
+                        define_the_header(),
                         align="center",
                         justify="center",
                     ),
                     dbc.Row(
                         [
                             dbc.Col(
-                                [define_legend()],
+                                define_legend(),
                                 width="auto",
                             ),
                         ],
                         justify="center",
                     ),
                     dbc.Row(
-                        [define_the_body()],
+                        define_the_body(),
                     ),
                 ],
             ),
@@ -560,75 +517,82 @@ def define_layout(igris_db):
         fluid=True,
     )
 
-    @app.callback(
-        Output("tab-content", "children"),
-        [Input("tabs", "active_tab")],
-    )
-    def render_tab_content(active_tab):
-        """
-        This callback takes the 'active_tab' property as input, as well as the
-        stored graphs, and renders the tab content depending on what the value of
-        'active_tab' is.
-        """
-        if active_tab:
-            if active_tab == "all":
-                return (
-                    html.Div(
-                        [
-                            cyto.Cytoscape(
-                                id="igris-graph",
-                                layout={"name": "cola"},
-                                style={"width": "100%", "height": "550px"},
-                                stylesheet=stylesheet,
-                                elements=cytoscope(),
-                            )
-                        ]
-                    ),
-                )
-            if active_tab == "psexec":
-                return (
-                    html.Div(
-                        [
-                            cyto.Cytoscape(
-                                id="igris-graph",
-                                layout={"name": "cola"},
-                                style={"width": "100%", "height": "550px"},
-                                stylesheet=stylesheet,
-                                elements=graph_psexec_users(),
-                            )
-                        ]
-                    ),
-                )
-            if active_tab == "not_psexec":
-                return (
-                    html.Div(
-                        [
-                            cyto.Cytoscape(
-                                id="igris-graph",
-                                layout={"name": "cola"},
-                                style={"width": "100%", "height": "550px"},
-                                stylesheet=stylesheet,
-                                elements=graph_not_psexec_users(),
-                            )
-                        ]
-                    ),
-                )
-            if active_tab == "computers":
-                return (
-                    html.Div(
-                        [
-                            cyto.Cytoscape(
-                                id="igris-graph",
-                                layout={"name": "cola"},
-                                style={"width": "100%", "height": "550px"},
-                                stylesheet=stylesheet,
-                                elements=graph_with_computers(),
-                            )
-                        ]
-                    ),
-                )
 
-        return "No tab selected"
+@app.callback(
+    Output("tab-content", "children"),
+    [Input("tabs", "active_tab")],
+)
+def render_tab_content(active_tab):
+    """
+    This callback takes the 'active_tab' property as input, as well as the
+    stored graphs, and renders the tab content depending on what the value of
+    'active_tab' is.
+    """
+    stylesheet = define_the_style()
+    graph_driver = Neo4jConnection(
+        "neo4j://localhost:7687",
+        "neo4j",
+        "islaplana56",
+    )
+    if active_tab:
+        if active_tab == "all":
+            return (
+                html.Div(
+                    [
+                        cyto.Cytoscape(
+                            id="igris-graph",
+                            layout={"name": "cola"},
+                            style={"width": "100%", "height": "550px"},
+                            stylesheet=stylesheet,
+                            elements=all_graph(graph_driver),
+                        )
+                    ]
+                ),
+            )
+        if active_tab == "psexec":
+            return (
+                html.Div(
+                    [
+                        cyto.Cytoscape(
+                            id="igris-graph",
+                            layout={"name": "cola"},
+                            style={"width": "100%", "height": "550px"},
+                            stylesheet=stylesheet,
+                            elements=graph_psexec_users(graph_driver),
+                        )
+                    ]
+                ),
+            )
+        if active_tab == "not_psexec":
+            return (
+                html.Div(
+                    [
+                        cyto.Cytoscape(
+                            id="igris-graph",
+                            layout={"name": "cola"},
+                            style={"width": "100%", "height": "550px"},
+                            stylesheet=stylesheet,
+                            elements=graph_not_psexec_users(graph_driver),
+                        )
+                    ]
+                ),
+            )
+        if active_tab == "computers":
+            return (
+                html.Div(
+                    [
+                        cyto.Cytoscape(
+                            id="igris-graph",
+                            layout={"name": "cola"},
+                            style={"width": "100%", "height": "550px"},
+                            stylesheet=stylesheet,
+                            elements=graph_with_computers(graph_driver),
+                        )
+                    ]
+                ),
+            )
+
+    return "No tab selected"
 
 
 @app.callback(
@@ -643,10 +607,6 @@ def displayTapNodeData(data):
 
 
 if __name__ == "__main__":
-    igris_db = Neo4jConnection(
-        "neo4j://localhost:7687",
-        "neo4j",
-        "islaplana56",
-    )
-    define_layout(igris_db)
+
+    define_layout()
     app.run_server(debug=True)

@@ -10,15 +10,15 @@ class Neo4jConnection:
         url: str,
         user: str,
         passwd: str,
-        info_logger: logger,
-        error_logger: logger,
+        info_logger: logger = None,
+        error_logger: logger = None,
     ) -> None:
         self.__url = url
         self.__user = user
         self.__passwd = passwd
         self.__dirver = None
-        self.__info_logger = info_logger = None
-        self.__error_logger = error_logger = None
+        self.__info_logger = info_logger
+        self.__error_logger = error_logger
         try:
             self.__graph = Graph(self.__url, auth=(self.__user, self.__passwd))
         except Exception:
@@ -120,3 +120,6 @@ class Neo4jConnection:
     def graph_with_computers(self):
         relationship = self.__graph.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
         return relationship
+
+    def get_subnets(self):
+        return self.__graph.nodes.match("Subnet").all()
