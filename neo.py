@@ -36,81 +36,29 @@ def parse_subnets(subnets, graph):
 
 
 def computer_psexec_relationships(relationships, graph):
-    for relation in relationships:
-        user_id = (
-            relation["p"].start_node["ip"]
-            + relation["p"].start_node["username"]
-            + relation["p"].start_node["password"]
-        )
-        user_node = {
-            "classes": "admin",
-            "data": {
-                "id": user_id,
-                "label": relation["p"].start_node["username"]
-                + "/"
-                + relation["p"].start_node["password"],
-            },
-        }
-
+    for edge in relationships:
+        user_id, user_node = define_admin_user_node(edge["p"].start_node)
         graph.append(user_node)
-        computer_id = relation["p"].end_node["computer_name"]
-        relation = {
-            "classes": "admin_arrow",
-            "data": {"source": user_id, "target": computer_id},
-        }
-        graph.append(relation)
+        computer_id = edge["p"].end_node["computer_name"]
+        new_edge = define_edge_admin_user_computer(computer_id, user_id)
+        graph.append(new_edge)
 
 
 def computer_not_psexec_relationships(relationships, graph):
-    for relation in relationships:
-        user_id = (
-            relation["p"].start_node["ip"]
-            + relation["p"].start_node["username"]
-            + relation["p"].start_node["password"]
-        )
-        user_node = {
-            "classes": "user",
-            "data": {
-                "id": user_id,
-                "label": relation["p"].start_node["username"]
-                + "/"
-                + relation["p"].start_node["password"],
-            },
-        }
+    for edge in relationships:
+        user_id, user_node = define_normal_user_node(edge["p"].start_node)
         graph.append(user_node)
-        computer_id = relation["p"].end_node["computer_name"]
-        relation = {
-            "classes": "user_arrow",
-            "data": {
-                "source": user_id,
-                "target": computer_id,
-            },
-        }
-        graph.append(relation)
+        computer_id = edge["p"].end_node["computer_name"]
+        new_edge = define_edge_normal_user_computer(computer_id, user_id)
+        graph.append(new_edge)
 
 
 def computer_part_of_relationship(relationships, graph):
     for edge in relationships:
-        computer_node = {
-            "classes": "computer",
-            "data": {
-                "id": edge["p"].start_node["computer_name"],
-                "label": edge["p"].start_node["computer_name"],
-                "computer_name": edge["p"].start_node["computer_name"],
-                "ipv4": edge["p"].start_node["ipv4"],
-                "os": edge["p"].start_node["os"],
-                "signed": edge["p"].start_node["signed"],
-            },
-        }
+        computer_id, computer_node = define_computer_node(edge["p"].start_node)
         graph.append(computer_node)
-
-        computer_id = edge["p"].start_node["computer_name"]
-        subnet_id = edge["p"].end_node["subnet"]
-        edge = {
-            "classes": "computer_arrow",
-            "data": {"source": computer_id, "target": subnet_id},
-        }
-        graph.append(edge)
+        new_edge = define_edge_computer_subnet(edge, computer_id)
+        graph.append(new_edge)
 
 
 def define_nodes(graph, graph_result):
@@ -140,107 +88,94 @@ def only_psexec_users(relationship):
     graph = []
     computers_used = []
     for edge in relationship:
-
-        user_id = (
-            edge["p"].start_node["ip"]
-            + edge["p"].start_node["username"]
-            + edge["p"].start_node["password"]
-        )
-        user_node = {
-            "classes": "admin",
-            "data": {
-                "id": user_id,
-                "label": edge["p"].start_node["username"]
-                + "/"
-                + edge["p"].start_node["password"],
-            },
-        }
-
+        user_id, user_node = define_admin_user_node(edge["p"].start_node)
         graph.append(user_node)
-
-        computer_id = edge["p"].end_node["computer_name"]
-        computer_node = {
-            "classes": "computer",
-            "data": {
-                "id": computer_id,
-                "label": computer_id,
-            },
-        }
+        computer_id, computer_node = define_computer_node(edge["p"].end_node)
         if computer_id not in computers_used:
             graph.append(computer_node)
             computers_used.append(computer_id)
-
-        new_edge = {
-            "classes": "admin_arrow",
-            "data": {
-                "source": user_id,
-                "target": computer_id,
-            },
-        }
+        new_edge = define_edge_admin_user_computer(computer_id, user_id)
         graph.append(new_edge)
     return graph
+
+
+def define_edge_admin_user_computer(computer_id, user_id):
+    return {
+        "classes": "admin_arrow",
+        "data": {
+            "source": user_id,
+            "target": computer_id,
+        },
+    }
+
+
+def define_admin_user_node(node):
+    user_id = node["ip"] + node["username"] + node["password"]
+    user_node = {
+        "classes": "admin",
+        "data": {
+            "id": user_id,
+            "label": node["username"] + "/" + node["password"],
+        },
+    }
+    return user_id, user_node
 
 
 def only_not_psexec_users(relationship):
     graph = []
     computers_used = []
     for edge in relationship:
-        user_id = (
-            edge["p"].start_node["ip"]
-            + edge["p"].start_node["username"]
-            + edge["p"].start_node["password"]
-        )
-        user_node = {
-            "classes": "user",
-            "data": {
-                "id": user_id,
-                "label": edge["p"].start_node["username"]
-                + "/"
-                + edge["p"].start_node["password"],
-            },
-        }
-
+        user_id, user_node = define_normal_user_node(edge["p"].start_node)
         graph.append(user_node)
-
-        computer_id = edge["p"].end_node["computer_name"]
-        computer_node = {
-            "classes": "computer",
-            "data": {
-                "id": computer_id,
-                "label": computer_id,
-            },
-        }
+        computer_id, computer_node = define_computer_node(edge["p"].end_node)
         if computer_id not in computers_used:
             graph.append(computer_node)
             computers_used.append(computer_id)
 
-        new_edge = {
-            "classes": "user_arrow",
-            "data": {
-                "source": user_id,
-                "target": computer_id,
-            },
-        }
+        new_edge = define_edge_normal_user_computer(computer_id, user_id)
         graph.append(new_edge)
     return graph
 
 
-def define_computer_node(edge):
+def define_edge_normal_user_computer(computer_id, user_id):
     return {
-        "classes": "computer",
+        "classes": "user_arrow",
         "data": {
-            "id": edge["p"].start_node["computer_name"],
-            "label": edge["p"].start_node["computer_name"],
-            "computer_name": edge["p"].start_node["computer_name"],
-            "ipv4": edge["p"].start_node["ipv4"],
-            "os": edge["p"].start_node["os"],
-            "signed": edge["p"].start_node["signed"],
+            "source": user_id,
+            "target": computer_id,
         },
     }
 
 
-def define_edge_computer_subnet(edge):
-    computer_id = edge["p"].start_node["computer_name"]
+def define_normal_user_node(node):
+    user_id = node["ip"] + node["username"] + node["password"]
+    user_node = {
+        "classes": "user",
+        "data": {
+            "id": user_id,
+            "label": node["username"] + "/" + node["password"],
+        },
+    }
+    return user_id, user_node
+
+
+def define_computer_node(node):
+    computer_id = node["computer_name"]
+    computer_node = {
+        "classes": "computer",
+        "data": {
+            "id": node["computer_name"],
+            "label": node["computer_name"],
+            "computer_name": node["computer_name"],
+            "ipv4": node["ipv4"],
+            "os": node["os"],
+            "signed": node["signed"],
+        },
+    }
+    return computer_id, computer_node
+
+
+def define_edge_computer_subnet(edge, computer_id):
     subnet_id = edge["p"].end_node["subnet"]
     return {
         "classes": "computer_arrow",
@@ -250,12 +185,12 @@ def define_edge_computer_subnet(edge):
 
 def only_part_of_computer(relationship, graph_driver):
     graph = []
-    subnets = graph_driver.nodes.match("Subnet").all()
+    subnets = graph_driver.get_subnets()
     parse_subnets(subnets, graph)
     for edge in relationship:
-        computer_node = define_computer_node(edge)
+        computer_id, computer_node = define_computer_node(edge["p"].start_node)
         graph.append(computer_node)
-        new_edge = define_edge_computer_subnet(edge)
+        new_edge = define_edge_computer_subnet(edge, computer_id)
         graph.append(new_edge)
     return graph
 
@@ -273,7 +208,7 @@ def graph_not_psexec_users(graph_driver):
 
 
 def graph_with_computers(graph_driver):
-    relationship = graph_driver.relationship_computer_subnet()
+    relationship = graph_driver.graph_with_computers()
     new_graph = only_part_of_computer(relationship, graph_driver)
     return new_graph
 
@@ -518,6 +453,70 @@ def define_layout():
     )
 
 
+def all_graph_tab(stylesheet, graph_driver):
+    return (
+        html.Div(
+            [
+                cyto.Cytoscape(
+                    id="igris-graph",
+                    layout={"name": "cola"},
+                    style={"width": "100%", "height": "550px"},
+                    stylesheet=stylesheet,
+                    elements=all_graph(graph_driver),
+                )
+            ]
+        ),
+    )
+
+
+def psexec_graph_tab(stylesheet, graph_driver):
+    return (
+        html.Div(
+            [
+                cyto.Cytoscape(
+                    id="igris-graph",
+                    layout={"name": "cola"},
+                    style={"width": "100%", "height": "550px"},
+                    stylesheet=stylesheet,
+                    elements=graph_psexec_users(graph_driver),
+                )
+            ]
+        ),
+    )
+
+
+def not_psexec_graph_tab(stylesheet, graph_driver):
+    return (
+        html.Div(
+            [
+                cyto.Cytoscape(
+                    id="igris-graph",
+                    layout={"name": "cola"},
+                    style={"width": "100%", "height": "550px"},
+                    stylesheet=stylesheet,
+                    elements=graph_not_psexec_users(graph_driver),
+                )
+            ]
+        ),
+    )
+
+
+def subnet_computer_graph_tab(stylesheet, graph_driver):
+    return (
+        html.Div(
+            [
+                cyto.Cytoscape(
+                    id="igris-graph",
+                    layout={"name": "cola"},
+                    style={"width": "100%", "height": "550px"},
+                    stylesheet=stylesheet,
+                    elements=graph_with_computers(graph_driver),
+                )
+            ]
+        ),
+    )
+
+
 @app.callback(
     Output("tab-content", "children"),
     [Input("tabs", "active_tab")],
@@ -536,61 +535,13 @@ def render_tab_content(active_tab):
     )
     if active_tab:
         if active_tab == "all":
-            return (
-                html.Div(
-                    [
-                        cyto.Cytoscape(
-                            id="igris-graph",
-                            layout={"name": "cola"},
-                            style={"width": "100%", "height": "550px"},
-                            stylesheet=stylesheet,
-                            elements=all_graph(graph_driver),
-                        )
-                    ]
-                ),
-            )
+            return all_graph_tab(stylesheet, graph_driver)
         if active_tab == "psexec":
-            return (
-                html.Div(
-                    [
-                        cyto.Cytoscape(
-                            id="igris-graph",
-                            layout={"name": "cola"},
-                            style={"width": "100%", "height": "550px"},
-                            stylesheet=stylesheet,
-                            elements=graph_psexec_users(graph_driver),
-                        )
-                    ]
-                ),
-            )
+            return psexec_graph_tab(stylesheet, graph_driver)
         if active_tab == "not_psexec":
-            return (
-                html.Div(
-                    [
-                        cyto.Cytoscape(
-                            id="igris-graph",
-                            layout={"name": "cola"},
-                            style={"width": "100%", "height": "550px"},
-                            stylesheet=stylesheet,
-                            elements=graph_not_psexec_users(graph_driver),
-                        )
-                    ]
-                ),
-            )
+            return not_psexec_graph_tab(stylesheet, graph_driver)
         if active_tab == "computers":
-            return (
-                html.Div(
-                    [
-                        cyto.Cytoscape(
-                            id="igris-graph",
-                            layout={"name": "cola"},
-                            style={"width": "100%", "height": "550px"},
-                            stylesheet=stylesheet,
-                            elements=graph_with_computers(graph_driver),
-                        )
-                    ]
-                ),
-            )
+            return subnet_computer_graph_tab(stylesheet, graph_driver)
 
     return "No tab selected"
 
