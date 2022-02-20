@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import py2neo
 from dash import html
 import dash
 import base64
@@ -8,7 +7,6 @@ import dash_bootstrap_components as dbc
 import dash_cytoscape as cyto
 from project.utils.neo.dboperations import Neo4jConnection
 
-cyto.load_extra_layouts()
 
 images = {
     "admin": base64.b64encode(open("icons/admin.png", "rb").read()),
@@ -17,10 +15,6 @@ images = {
     "subnet": base64.b64encode(open("icons/internet.png", "rb").read()),
     "logo": base64.b64encode(open("icons/logo.png", "rb").read()),
 }
-app = dash.Dash(
-    __name__, external_stylesheets=[dbc.themes.BOOTSTRAP, dbc.icons.BOOTSTRAP]
-)
-app.title = "Igris dashboard"
 
 
 def parse_subnets(subnets, graph):
@@ -556,6 +550,12 @@ def displayTapNodeData(data):
     else:
         return html.P("Press a node to see info")
 
+
+cyto.load_extra_layouts()
+app = dash.Dash(
+    __name__, external_stylesheets=[dbc.themes.BOOTSTRAP, dbc.icons.BOOTSTRAP]
+)
+app.title = "Igris dashboard"
 
 if __name__ == "__main__":
 

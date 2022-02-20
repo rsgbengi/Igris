@@ -5,6 +5,7 @@ from cmd2 import CommandSet, Cmd2ArgumentParser, with_argparser
 import argparse
 from .utils import ScanForPsexec, Psexec
 from .network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
+from ..dashboard import DashboardCommand
 
 
 @with_default_category("Starters")
@@ -17,6 +18,7 @@ class LoadUtility(CommandSet):
         self.__mss_module = SmbServerAttack()
         self.__poison_module = PoisonCommand()
         self.__dnstakeover_module = DNSTakeOverCommand()
+        self.__dashboard_command = DashboardCommand()
 
     argParser = Cmd2ArgumentParser(description="Command to load modules")
 
@@ -47,6 +49,7 @@ class LoadUtility(CommandSet):
             try:
                 self._cmd.register_command_set(self.__psexec_module)
                 self._cmd.register_command_set(self.__scan_module)
+                self._cmd.register_command_set(self.__dashboard_command)
             except ValueError:
                 self._cmd.error_logger_error("Utilities module already loaded")
         if args.network:
@@ -90,6 +93,7 @@ class LoadUtility(CommandSet):
         if args.utilities:
             self._cmd.unregister_command_set(self.__psexec_module)
             self._cmd.unregister_command_set(self.__scan_module)
+            self._cmd.unregister_command_set(self.__dashboard_command)
             self._cmd.info_logger.info("Utility module unloaded")
         if args.network:
             self._cmd.unregister_command_set(self.__dnstakeover_module)

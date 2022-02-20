@@ -9,7 +9,6 @@ import sys
 import cmd2
 from cmd2 import ansi
 from art import text2art
-from tabulate import tabulate
 from loguru import logger
 from log_symbols import LogSymbols
 from rich.console import Console
@@ -18,6 +17,9 @@ from ..utils import ScanForPsexec, Psexec
 from .attackstatus import AttackStatus
 from ..network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
 from ..utils import Neo4jConnection
+from ..dashboard import DashboardCommand
+from multiprocessing import Process
+
 
 COLORS = {
     "black": "\u001b[30;1m",
@@ -54,9 +56,7 @@ class Igris_Shell(cmd2.Cmd):
 
         self.__set_up_file_loggers()
         self.__info_logger, self.__error_logger = self.__set_up_output_loggers()
-
         self.load_modules()
-
         self.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
 
         self.register_postloop_hook(self.__mss_module.mss_postloop)
@@ -119,6 +119,7 @@ class Igris_Shell(cmd2.Cmd):
         self.__poison_module = PoisonCommand()
         self.__dnstakeover_module = DNSTakeOverCommand()
         self.__process_status = AttackStatus()
+        self.__dashboard = DashboardCommand()
 
         self.register_command_set(self.__psexec_module)
         self.register_command_set(self.__scan_module)
@@ -127,6 +128,7 @@ class Igris_Shell(cmd2.Cmd):
         self.register_command_set(self.__dnstakeover_module)
         self.register_command_set(self.__poison_module)
         self.register_command_set(self.__process_status)
+        self.register_command_set(self.__dashboard)
 
     def __credentials_config_variables(self):
         """[ Settable Variables for credentials ]"""
@@ -167,8 +169,8 @@ class Igris_Shell(cmd2.Cmd):
         self.add_settable(
             cmd2.Settable("MAC_ADDRESS", str, "Set mac address of your interface", self)
         )
-        self.LPORT = "445"
-        self.add_settable(cmd2.Settable("MAC_ADDRESS", str, "Set local port", self))
+        self.LPORT = "8050"
+        self.add_settable(cmd2.Settable("LPORT", str, "Set local port", self))
 
         self.IPV6 = "fe80::20c:29ff:fe0e:d73b"
         self.add_settable(
