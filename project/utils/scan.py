@@ -6,8 +6,6 @@ import ntpath
 import random
 from rich.console import Console
 from rich.table import Table
-import json
-
 
 from halo import Halo
 from typing import Tuple
@@ -18,12 +16,12 @@ from impacket.smb import SMB_DIALECT
 from impacket.smbconnection import SMBConnection
 from log_symbols import LogSymbols
 from spinners.spinners import Spinners
-from tabulate import tabulate
 
 from spnego._ntlm_raw.crypto import is_ntlm_hash
-from .gatherinfo import TargetInfo, UserInfo, SubnetInfo
-from multiprocessing import Process, Manager, managers
+from .gatherinfo import TargetInfo, UserInfo
+from multiprocessing import Process
 import pickle
+from loguru import logger
 
 
 @with_default_category("Utilities")
@@ -49,7 +47,6 @@ class ScanForPsexec(CommandSet):
             self._cmd.info_logger.success(
                 ansi.style("The scan has finished", fg=ansi.fg.bright_green)
             )
-            self.__save_state()
 
     def __parse_json(self):
         try:
@@ -219,7 +216,7 @@ class ScanForPsexec(CommandSet):
             psexec_status = self._cmd.igris_db.check_nodes_with_psexec(
                 computer_node, current_user
             )
-            if psexec_status is not None:
+            if psexec_status != "":
                 exits_results = True
                 table.add_row(
                     f"[blue]{computer_node['ipv4']}[/blue]",
@@ -240,7 +237,7 @@ class ScanForPsexec(CommandSet):
         info of a current username and password]
         """
         subnet = self._cmd.SUBNET
-
+        self.__show_user_passwd()
         self._cmd.poutput(
             ansi.style("SUBNET -> ", fg=ansi.fg.red)
             + ansi.style(subnet, fg=ansi.fg.blue)
@@ -254,42 +251,6 @@ class ScanForPsexec(CommandSet):
             self._cmd.error_logger.warning(
                 f"the analysis of this {subnet} has not collected any information or no scan has been performed with it yet"
             )
-
-    def __configure_users_used(self, user: UserInfo, subnet: str) -> bool:
-        """[Function that will configure the users used used]
-
-        Returns:
-            bool : [Returns if the scan can continue]
-        """
-        continue_operations = True
-        user_has_been_used = self._cmd.igris_db.init_user_used_in_a_subnet(
-            user.user, user.passwd, subnet
-        )
-        if user_has_been_used:
-            answer = input(
-                "This user and password have been used before. Do you want to repeat the scan ?"
-            )
-            continue_operations = answer == ("y" or "Y")
-
-        return continue_operations
-
-    def __configure_scan_info(self) -> bool:
-        """[Function that will configure the dictionary scan_info to do the scan]
-
-        Returns:
-            bool : [Returns if the scan can continue]
-        """
-
-        user = self._cmd.USER
-        passwd = self._cmd.PASSWD
-        subnet = self._cmd.SUBNET
-
-        user = UserInfo(user, passwd)
-        continue_operations = True
-        if not self._cmd.igris_db.check_if_subnet_exits(subnet):
-            self._cmd.igris_db.init_new_subnet(subnet)
-        # continue_operations = self.__configure_users_used(user, subnet)
-        return continue_operations
 
     def __check_conectivity_of_scan(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
@@ -385,10 +346,11 @@ class ScanForPsexec(CommandSet):
         if self._cmd.terminal_lock.acquire(blocking=False):
             self._cmd.async_alert(
                 ansi.style(
-                    LogSymbols.SUCCESS.value + " The scan has finished!",
+                    f"{LogSymbols.SUCCESS.value} The scan has finished!. uses the YES argument to display the collected information",
                     fg=ansi.fg.green,
                 )
             )
+
             self._cmd.terminal_lock.release()
         self._cmd.info_logger.debug("Asynchronous scanning has been completed.")
 
@@ -508,12 +470,6 @@ class ScanForPsexec(CommandSet):
             synchronous_scan_process.join()
             self._cmd.poutput("\n")
 
-    def __save_state(self):
-        for subnet in self.__scan_info.values():
-            subnet.casting_to_list_computers()
-        with open("/home/rsgbengi/Igris/save/scan", "wb") as outfile:
-            pickle.dump(self.__scan_info, outfile)
-
     def __start_scan(self, args: argparse.Namespace) -> None:
         """[ Start scan of the subnet ]
 
@@ -521,15 +477,15 @@ class ScanForPsexec(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the scan command ]
         """
 
-        continue_operations = self.__configure_scan_info()
-        if continue_operations:
+        subnet = self._cmd.SUBNET
+        if not self._cmd.igris_db.check_if_subnet_exits(subnet):
+            self._cmd.igris_db.init_new_subnet(subnet)
 
-            self._cmd.info_logger.info("Starting to launch threads based on your cpu")
-            if args.asynchronous:
-                self.__asynchronous_way()
-            else:
-                self.__synchronous_way()
-                self.__save_state()
+        self._cmd.info_logger.info("Starting to launch threads based on your cpu")
+        if args.asynchronous:
+            self.__asynchronous_way()
+        else:
+            self.__synchronous_way()
 
     def __end_scan(self) -> None:
         """[ Process to finished the scan process ]"""
@@ -537,7 +493,6 @@ class ScanForPsexec(CommandSet):
             self._cmd.error_logger.warning("Exiting ...")
             self.__scan_process.terminate()
             self.__scan_process.join()
-            self.__save_state()
 
     def __is_running(self) -> None:
         """[ Method to check if the scan is already in progress ]"""
@@ -560,7 +515,7 @@ class ScanForPsexec(CommandSet):
     argParser = cmd2.Cmd2ArgumentParser(
         description="""Tool to know if there is a possibility to perform psexec. 
         Without arguments this tool will scan the Subnet""",
-        epilog="This command is not designed to use pipes(|) or redirections( >< ) when using the scan",
+        usage="scan\nscan -SI\nscan -SS\n scan -A",
     )
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "
@@ -617,6 +572,17 @@ class ScanForPsexec(CommandSet):
             "USER": user,
             "PASSWD": passwd,
         }
+
+        fmt = "{level.icon} {message}"
+        logger.add(
+            self._cmd.stdout,
+            level="INFO",
+            format=fmt,
+            filter=lambda record: record["extra"].get("name") == "pruebas",
+        )
+        prueba = logger.bind(name="pruebas")
+        prueba.info("hola")
+
         if not self.__check_conditions_for_the_attack(args):
             return
         if args.show_settable:

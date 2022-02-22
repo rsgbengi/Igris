@@ -21,10 +21,11 @@ class DashboardCommand(CommandSet):
         action="store_true",
         help="Show Settable variables for this command",
     )
+
     @cmd2.with_argparser(argParser)
     def do_dashboard(self, args: argparse.Namespace) -> None:
         lport = self._cmd.LPORT
-        self._cmd.info_logger.debug(f"Starting dashboard command using user: {lport}")
+        self._cmd.info_logger.debug(f"Starting dashboard command using lport: {lport}")
         settable_variables_required = {
             "LPORT": lport,
         }

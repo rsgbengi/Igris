@@ -16,7 +16,6 @@ class Neo4jConnection:
         self.__url = url
         self.__user = user
         self.__passwd = passwd
-        self.__dirver = None
         self.__info_logger = info_logger
         self.__error_logger = error_logger
         try:
@@ -42,8 +41,7 @@ class Neo4jConnection:
         self.__commit(relationship)
 
     def get_computer(self, target_info: TargetInfo) -> Node:
-        computer = self.__graph.nodes.match("Computer", ipv4=target_info.ip).first()
-        return computer
+        return self.__graph.nodes.match("Computer", ipv4=target_info.ip).first()
 
     def init_new_computer(self, target_info: TargetInfo):
         if self.get_computer(target_info) is None:
@@ -57,10 +55,9 @@ class Neo4jConnection:
             self.__commit(computer)
 
     def get_user(self, user_status: UserInfo, ipv4: str) -> Node:
-        user = self.__graph.nodes.match(
+        return self.__graph.nodes.match(
             "User", ip=ipv4, username=user_status.user, password=user_status.passwd
         ).first()
-        return user
 
     def init_new_user(self, user_status: UserInfo, ipv4: str):
         if self.get_user(user_status, ipv4) is None:
@@ -71,8 +68,7 @@ class Neo4jConnection:
 
     def check_computers_of_a_subnet(self, subnet: str) -> list:
         subnet_node = self.get_subnet(subnet)
-        nodes = self.__graph.match(r_type="PART_OF", nodes=(None, subnet_node)).all()
-        return nodes
+        return self.__graph.match(r_type="PART_OF", nodes=(None, subnet_node)).all()
 
     def check_nodes_with_psexec(self, computer: Node, user_status: UserInfo) -> str:
         nodes_user = self.get_user(user_status, computer["ipv4"])
@@ -81,12 +77,9 @@ class Neo4jConnection:
                 r_type="PSEXEC_HERE", nodes=(nodes_user, computer)
             ).all()
         else:
-            return None
+            return ""
 
-        if not relation:
-            return "Psexec Here!"
-        else:
-            return "Not Psexec Here"
+        return "Psexec Here!" if relation else "Not Psexec Here"
 
     def check_if_subnet_exits(self, subnet: str) -> bool:
         subnet = self.get_subnet(subnet)
@@ -106,20 +99,13 @@ class Neo4jConnection:
         self.__commit(subnet_node)
 
     def graph_psexec_users(self):
-        relationship = self.__graph.run(
-            "MATCH p=()-[r:PSEXEC_HERE]->() RETURN p"
-        ).data()
-        return relationship
+        return self.__graph.run("MATCH p=()-[r:PSEXEC_HERE]->() RETURN p").data()
 
     def graph_not_psexec_users(self):
-        relationship = self.__graph.run(
-            "MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p"
-        ).data()
-        return relationship
+        return self.__graph.run("MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p").data()
 
     def graph_with_computers(self):
-        relationship = self.__graph.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
-        return relationship
+        return self.__graph.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
 
     def get_subnets(self):
         return self.__graph.nodes.match("Subnet").all()

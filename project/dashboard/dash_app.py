@@ -5,6 +5,7 @@ import dash_bootstrap_components as dbc
 import dash_cytoscape as cyto
 import logging
 from .graph_generator import GraphGenerator
+from rich import print
 
 images = {
     "admin": "assets/admin.png",
@@ -258,7 +259,6 @@ def define_layout():
 
 
 def all_graph_tab(graph_generator):
-    print("holaaaaaa")
     return (
         html.Div(
             [
@@ -364,4 +364,9 @@ def start_dashboard(lport: str) -> None:
     log = logging.getLogger("werkzeug")
     log.setLevel(logging.ERROR)
     define_layout()
-    app.run_server(debug=False, port=lport)
+    try:
+        app.run_server(debug=False, port=lport)
+    except OSError:
+        print(
+            f"[red] The port {lport} is already in used. Exiting ... [red]"
+        )

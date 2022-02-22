@@ -7,7 +7,7 @@ from typing import List, Tuple
 import os
 import sys
 import cmd2
-from cmd2 import ansi
+from cmd2 import CommandSet, ansi
 from art import text2art
 from loguru import logger
 from log_symbols import LogSymbols
@@ -18,7 +18,7 @@ from .attackstatus import AttackStatus
 from ..network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
 from ..utils import Neo4jConnection
 from ..dashboard import DashboardCommand
-from multiprocessing import Process
+from logging import StreamHandler
 
 
 COLORS = {
@@ -50,7 +50,6 @@ class Igris_Shell(cmd2.Cmd):
 
         self.__path = ""
         self._set_prompt()
-
         # Options
         self.allow_style = ansi.STYLE_TERMINAL
 
@@ -181,7 +180,7 @@ class Igris_Shell(cmd2.Cmd):
         """[Function that will set the command line format]"""
         self.__path = os.getcwd()
         self.prompt = ansi.style("Igris shell -> ", fg=ansi.fg.blue) + ansi.style(
-            self.__path + " ", fg=ansi.fg.cyan
+            f"{self.__path} ", fg=ansi.fg.cyan
         )
 
     def postcmd(self, stop: bool, line: str) -> bool:
@@ -203,7 +202,7 @@ class Igris_Shell(cmd2.Cmd):
         Usage:
             cd <new_dir>
         """
-        if args == [] or len(args) != 1:
+        if not args or len(args) != 1:
             self.error_logger.error("cd needs one argument:")
             self.do_help("cd")
             return
@@ -212,9 +211,9 @@ class Igris_Shell(cmd2.Cmd):
 
         error = None
         if not os.path.isdir(path_to_change):
-            error = path_to_change + " is not a directory"
+            error = f"{path_to_change} is not a directory"
         elif not os.access(path_to_change, os.R_OK):
-            error = "You do not have read access to " + path_to_change
+            error = f"You do not have read access to {path_to_change}"
         else:
             try:
                 os.chdir(path_to_change)
@@ -286,7 +285,7 @@ class Igris_Shell(cmd2.Cmd):
             str : [ Colored text ]
         """
         for color in COLORS:
-            text = text.replace("[[" + color + "]]", COLORS[color])
+            text = text.replace(f"[[{color}]]", COLORS[color])
         return text
 
     def __banner(self) -> str:
@@ -328,14 +327,14 @@ class Igris_Shell(cmd2.Cmd):
         logger.level("ERROR", icon=LogSymbols.ERROR.value)
         fmt = "{level.icon} {message}"
         logger.add(
-            self.stdout,
+            sink=self.stdout,
             level="INFO",
             format=fmt,
             filter=lambda record: record["extra"].get("name") == "info",
         )
 
         logger.add(
-            sys.stderr,
+            sink=sys.stderr,
             level="WARNING",
             format=fmt,
             filter=lambda record: record["extra"].get("name") == "error",
