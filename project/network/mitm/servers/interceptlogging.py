@@ -125,7 +125,6 @@ class InterceptHandlerNtlmRelay(logging.Handler):
 
     def __init__(self, alerts_dictionary: dict) -> None:
         super().__init__()
-        self.__alerts_dictionary = alerts_dictionary
 
     def emit(self, record: LogRecord) -> Tuple[str, int]:
         # Get corresponding Loguru level if it exists

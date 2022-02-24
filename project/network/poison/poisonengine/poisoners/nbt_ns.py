@@ -59,9 +59,7 @@ class NBT_NS(PoisonNetwork):
             bytes: [ the hexadecimal value of the ip in a bytearray ]
         """
         ip_splited = self.ip.split(".")
-        ip_hex = ""
-        for number in ip_splited:
-            ip_hex = ip_hex + hex(int(number))[2:]
+        ip_hex = "".join(hex(int(number))[2:] for number in ip_splited)
         return bytearray.fromhex(ip_hex)
 
     def __application_layer(self, pkt: packet, response: packet) -> packet:

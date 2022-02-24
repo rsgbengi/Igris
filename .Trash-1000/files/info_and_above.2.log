@@ -86,66 +86,22 @@
 2022-02-22 20:45:50.162 | INFO     | project.utils.scan:do_scan:584 - hola
 2022-02-22 20:45:50.259 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
 2022-02-22 20:45:50.260 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
-2022-02-23 20:47:40.454 | INFO     | project.utils.scan:do_scan:584 - hola
-2022-02-23 20:47:40.600 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
-2022-02-23 20:47:40.601 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
-2022-02-23 20:47:45.128 | INFO     | project.utils.scan:do_scan:584 - hola
-2022-02-23 20:47:45.143 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
-2022-02-23 20:47:45.149 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
-2022-02-23 20:48:29.673 | INFO     | project.utils.scan:do_scan:584 - hola
-2022-02-23 20:48:29.776 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
-2022-02-23 20:48:29.778 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
-2022-02-23 20:48:40.212 | INFO     | project.utils.scan:do_scan:584 - hola
-2022-02-23 20:48:41.938 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
-2022-02-23 20:48:41.943 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
-2022-02-23 20:48:56.559 | INFO     | project.utils.scan:do_scan:584 - hola
-2022-02-23 20:48:56.670 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
-2022-02-23 20:48:56.671 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
-2022-02-23 20:49:04.024 | INFO     | project.utils.scan:do_scan:584 - hola
-2022-02-23 20:49:04.038 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
-2022-02-23 20:49:04.038 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
-2022-02-23 20:51:43.764 | INFO     | project.utils.scan:do_scan:584 - hola
-2022-02-23 20:51:45.396 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
-2022-02-23 20:51:45.396 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
-2022-02-23 20:58:44.605 | INFO     | project.utils.scan:do_scan:604 - hola
-2022-02-23 20:58:44.704 | INFO     | project.utils.scan:__start_scan:476 - Starting to launch threads based on your cpu
-2022-02-23 20:58:44.705 | INFO     | project.utils.scan:__synchronous_way:452 - Using synchronous scan
-2022-02-23 20:58:48.474 | INFO     | project.utils.scan:do_scan:604 - hola
-2022-02-23 20:58:48.481 | INFO     | project.utils.scan:__start_scan:476 - Starting to launch threads based on your cpu
-2022-02-23 20:58:48.482 | INFO     | project.utils.scan:__synchronous_way:452 - Using synchronous scan
-2022-02-23 20:58:55.321 | INFO     | project.utils.scan:do_scan:604 - hola
-2022-02-23 20:58:55.333 | INFO     | project.utils.scan:__start_scan:476 - Starting to launch threads based on your cpu
-2022-02-23 20:58:55.334 | INFO     | project.utils.scan:__synchronous_way:452 - Using synchronous scan
-2022-02-23 21:01:26.276 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
-2022-02-23 21:01:26.280 | INFO     | project.utils.scan:__synchronous_way:451 - Using synchronous scan
-2022-02-23 21:01:30.470 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
-2022-02-23 21:01:30.471 | INFO     | project.utils.scan:__synchronous_way:451 - Using synchronous scan
-2022-02-23 21:16:04.312 | INFO     | project.utils.scan:__start_scan:477 - Starting to launch threads based on your cpu
-2022-02-23 21:16:04.315 | INFO     | project.utils.scan:__synchronous_way:453 - Using synchronous scan
-2022-02-23 21:18:10.354 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-23 21:18:10.357 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-23 21:18:13.721 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-23 21:18:13.722 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-23 21:18:16.934 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-23 21:18:16.935 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-24 18:15:15.223 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-24 18:15:15.224 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-24 18:19:17.309 | INFO     | project.utils.scan:do_scan:592 - holaaa
-2022-02-24 18:19:17.654 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-24 18:19:17.655 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-24 18:19:20.845 | INFO     | project.utils.scan:do_scan:592 - holaaa
-2022-02-24 18:19:20.936 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-24 18:19:20.937 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-24 18:22:12.407 | INFO     | project.utils.scan:do_scan:592 - holaaa
-2022-02-24 18:22:12.721 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-24 18:22:12.722 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-24 18:22:15.988 | INFO     | project.utils.scan:do_scan:592 - holaaa
-2022-02-24 18:22:16.064 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-24 18:22:16.066 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-24 18:42:45.475 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-24 18:42:45.476 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-24 18:42:50.764 | INFO     | project.utils.scan:__start_scan:479 - Starting to launch threads based on your cpu
-2022-02-24 18:42:50.766 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
-2022-02-24 18:44:56.143 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
-2022-02-24 18:44:56.146 | INFO     | project.utils.scan:__synchronous_way:448 - Using synchronous scan
-2022-02-24 18:45:24.965 | INFO     | project.shell.igris:show_settable_variables_necessary:275 - Showing necessary settable variables
+2022-02-23 20:03:53.282 | INFO     | project.utils.scan:do_scan:584 - hola
+2022-02-23 20:05:21.380 | INFO     | project.utils.scan:do_scan:584 - hola
+2022-02-23 20:05:23.601 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
+2022-02-23 20:05:23.602 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
+2022-02-23 20:05:42.159 | INFO     | project.utils.scan:do_scan:584 - hola
+2022-02-23 20:05:42.174 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
+2022-02-23 20:05:42.175 | INFO     | project.utils.scan:__synchronous_way:460 - Using synchronous scan
+2022-02-23 20:22:38.930 | INFO     | project.utils.scan:do_scan:605 - hola
+2022-02-23 20:22:39.063 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-02-23 20:22:39.064 | INFO     | project.utils.scan:__synchronous_way:451 - Using synchronous scan
+2022-02-23 20:24:30.919 | INFO     | project.utils.scan:do_scan:605 - hola
+2022-02-23 20:24:30.932 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-02-23 20:24:30.934 | INFO     | project.utils.scan:__synchronous_way:451 - Using synchronous scan
+2022-02-23 20:24:46.443 | INFO     | project.utils.scan:do_scan:605 - hola
+2022-02-23 20:24:46.541 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-02-23 20:24:46.541 | INFO     | project.utils.scan:__synchronous_way:451 - Using synchronous scan
+2022-02-23 20:30:52.094 | INFO     | project.utils.scan:do_scan:605 - hola
+2022-02-23 20:30:52.189 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-02-23 20:30:52.189 | INFO     | project.utils.scan:__synchronous_way:451 - Using synchronous scan

@@ -5,6 +5,7 @@
 import argparse
 import random
 import shlex
+from typing import Tuple
 
 from halo import Halo
 import cmd2
@@ -14,8 +15,11 @@ from pypsexec.exceptions import PAExecException, SCMRException
 from smbprotocol.exceptions import LogonFailure
 from smbprotocol.exceptions import CannotDelete
 from spinners.spinners import Spinners
-
+from loguru import logger
+from logging import Logger
+from log_symbols import LogSymbols
 from .gatherinfo import PsexecShellVariables
+
 
 @with_default_category("Utilities")
 class Psexec(CommandSet):
@@ -38,7 +42,7 @@ class Psexec(CommandSet):
         separate_dir = actual_work_dir.split("\\")
         n = len(separate_dir)
         if n == 2:
-            psexec_info.possible_work_dir = separate_dir[0] + "\\"
+            psexec_info.possible_work_dir = f"{separate_dir[0]}\\"
         else:
             separator = "\\"
             psexec_info.possible_work_dir = separator.join(separate_dir[: n - 1])
@@ -56,7 +60,7 @@ class Psexec(CommandSet):
         try:
             result = conn.run_executable(
                 executable,
-                arguments="/c " + shell_command,
+                arguments=f"/c {shell_command}",
                 working_dir=actual_work_dir,
             )
 
@@ -106,9 +110,9 @@ class Psexec(CommandSet):
         executable = psexec_info.executable
         actual_work_dir = psexec_info.actual_work_dir
         if executable == "cmd.exe":
-            return ansi.style("CMD->" + actual_work_dir + " >", fg=ansi.fg.green)
+            return ansi.style(f"CMD->{actual_work_dir} >", fg=ansi.fg.green)
         else:
-            return ansi.style("PS->" + actual_work_dir + " >", fg=ansi.fg.yellow)
+            return ansi.style(f"PS->{actual_work_dir} >", fg=ansi.fg.yellow)
 
     def __set_up_directory(self, psexec_info: PsexecShellVariables) -> bool:
         """[ Function to set the new directory ]
@@ -135,7 +139,7 @@ class Psexec(CommandSet):
             elif actual_work_dir == "C:\\":
                 psexec_info.possible_work_dir = actual_work_dir + separate_dir
             else:
-                psexec_info.possible_work_dir = actual_work_dir + "\\" + separate_dir
+                psexec_info.possible_work_dir = f"{actual_work_dir}\\{separate_dir}"
 
         return cd_used
 
@@ -373,10 +377,8 @@ class Psexec(CommandSet):
             passwd,
             encrypt=args.encryption,
         )
-        success_in_connection = self.__try_psexec_connection(conn)
-        if success_in_connection:
-            success_creating_service = self.__prepare_service(conn)
-            if success_creating_service:
+        if success_in_connection := self.__try_psexec_connection(conn):
+            if success_creating_service := self.__prepare_service(conn):
                 self.__psexec_execution_options(args, conn)
 
     def __clean_paexec_files(self, args: argparse.Namespace) -> None:
@@ -408,6 +410,7 @@ class Psexec(CommandSet):
                 f"Cannot delete files in {rhost}. Please restart Igris"
             )
 
+   
     argParser = cmd2.Cmd2ArgumentParser(description="Tool to execute commands remotely")
     command_options = argParser.add_argument_group("Options for running commands")
     command_options.add_argument(

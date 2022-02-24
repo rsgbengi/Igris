@@ -3,14 +3,12 @@ from typing import List, Tuple, Type
 import binascii
 from scapy.all import (
     DNSRR,
-    Ether,
     IP,
     UDP,
     sendp,
     sniff,
     packet,
     IPv6,
-    DNS,
     LLMNRResponse,
     LLMNRQuery,
 )

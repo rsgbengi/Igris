@@ -264,8 +264,7 @@ class NtlmRelay(CommandSet):
         self.__output_sam_file = f"{self._cmd.RHOST}_samhashes.sam"
         self.__output_sam_dir = args.output_sam
 
-        exit_value = self.__file_exits()
-        if exit_value:
+        if self.__file_exits():
             self._cmd.info_logger.info("Exiting ...")
             return False
 
@@ -356,7 +355,6 @@ class NtlmRelay(CommandSet):
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform ntlm relay attack""",
-        epilog = "This command is not designed to use pipes(|) or redirections( >< ) when the relay attacks are in used"
     )
 
     display_options = argParser.add_argument_group(

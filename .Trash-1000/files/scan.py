@@ -20,6 +20,9 @@ from spinners.spinners import Spinners
 from spnego._ntlm_raw.crypto import is_ntlm_hash
 from .gatherinfo import TargetInfo, UserInfo
 from multiprocessing import Process
+from loguru import logger
+from logging import Logger
+import sys
 
 
 @with_default_category("Utilities")
@@ -33,7 +36,7 @@ class ScanForPsexec(CommandSet):
     def scan_postloop(self) -> None:
         """[Function that will be performe when the user exits the shell]"""
         if self.__is_running():
-            self._cmd.info_logger.info(
+            self.__info_logger.info(
                 ansi.style(
                     "The scan process must finished before exit...",
                     fg=ansi.fg.bright_yellow,
@@ -41,7 +44,7 @@ class ScanForPsexec(CommandSet):
             )
             self.__scan_process.terminate()
             self.__scan_process.join()
-            self._cmd.info_logger.success(
+            self.__info_logger.success(
                 ansi.style("The scan has finished", fg=ansi.fg.bright_green)
             )
 
@@ -64,10 +67,10 @@ class ScanForPsexec(CommandSet):
                 str(ip), str(ip), timeout=1, preferredDialect=SMB_DIALECT
             )
 
-            self._cmd.info_logger.debug(f"Connection success using smb1 at {ip}")
+            self.__info_logger.debug(f"Connection success using smb1 at {ip}")
             succeed_in_connection = True
         except Exception:  # SessionError not working as expected
-            self._cmd.info_logger.debug(f"Connection fails using smb1 at {ip}")
+            self.__info_logger.debug(f"Connection fails using smb1 at {ip}")
 
         return succeed_in_connection, smbclient
 
@@ -88,9 +91,9 @@ class ScanForPsexec(CommandSet):
         try:
             smbclient = SMBConnection(str(ip), str(ip), timeout=1)
             succeed_in_connection = True
-            self._cmd.info_logger.debug(f"Connection success using smb3 at {ip}")
+            self.__info_logger.debug(f"Connection success using smb3 at {ip}")
         except Exception:
-            self._cmd.info_logger.debug(f"Connection fails using smb3 at {ip}")
+            self.__info_logger.debug(f"Connection fails using smb3 at {ip}")
 
         return succeed_in_connection, smbclient
 
@@ -124,9 +127,9 @@ class ScanForPsexec(CommandSet):
             else:
                 smbclient.login(user, password)
             succeed_in_login = True
-            self._cmd.info_logger.debug(f"Login successful at {ip}")
+            self.__info_logger.debug(f"Login successful at {ip}")
         except Exception:
-            self._cmd.info_logger.debug(f"Login successful at {ip}")
+            self.__info_logger.debug(f"Login successful at {ip}")
         return succeed_in_login
 
     def __configure_target_info_of_scan(
@@ -141,7 +144,7 @@ class ScanForPsexec(CommandSet):
                                     the current smb connection]
         """
         ip = smbclient.getRemoteName()
-        self._cmd.logger.debug(
+        self.__info_logger.debug(
             f"Loading target info of {smbclient.getServerName()} at {ip}"
         )
         target_info.signed = smbclient.isSigningRequired()
@@ -164,11 +167,11 @@ class ScanForPsexec(CommandSet):
         try:
             smbclient.listPath("ADMIN$", ntpath.normpath("\\*"))
             success_in_psexec = True
-            self._cmd.info_logger.debug(
+            self.__info_logger.debug(
                 f"Possibility of psexec on {smbclient.getServerName()} at {ip}"
             )
         except Exception:
-            self._cmd.info_logger.debug(
+            self.__info_logger.debug(
                 f"Error of psexec on {smbclient.getServerName()} at {ip}"
             )
 
@@ -216,7 +219,7 @@ class ScanForPsexec(CommandSet):
         if exits_results:
             console.print(table)
         else:
-            self._cmd.error_logger.warning(
+            self.__error_logger.warning(
                 "This user has not recollected any information in this subnet"
             )
 
@@ -236,7 +239,7 @@ class ScanForPsexec(CommandSet):
         ):
             self.__show_subnet_information()
         else:
-            self._cmd.error_logger.warning(
+            self.__error_logger.warning(
                 f"the analysis of this {subnet} has not collected any information or no scan has been performed with it yet"
             )
 
@@ -340,12 +343,12 @@ class ScanForPsexec(CommandSet):
             )
 
             self._cmd.terminal_lock.release()
-        self._cmd.info_logger.debug("Asynchronous scanning has been completed.")
+        self.__info_logger.debug("Asynchronous scanning has been completed.")
 
     def __asynchronous_way(self) -> None:
         """[Function that will start the asynchronous scan]"""
-        self._cmd.info_logger.info("Using asynchronous scan.")
-        self._cmd.info_logger.info(
+        self.__scan_info_logger.info("Using asynchronous scan.")
+        self.__scan_info_logger.info(
             ansi.style(
                 "Starting... The messeges will be displayed as new computer is found",
                 fg=ansi.fg.green,
@@ -367,9 +370,10 @@ class ScanForPsexec(CommandSet):
         os_with_color = ansi.style(os, fg=ansi.fg.cyan)
         if target_info.psexec:
             admin = ansi.style(target_info.psexec_info(), fg=ansi.fg.yellow)
-            self.__spinner.warn(f"{admin} {os_with_color} {ip_with_color}")
+            self.__spinner.warn(admin + " " + os_with_color + " " + ip_with_color)
         else:
-            self.__spinner.warn(f"{os_with_color} {ip_with_color}")
+            self.__spinner.info(" " + os_with_color + " " + ip_with_color)
+
         self.__spinner.start()
 
     def __is_user_in_admin_group_synchronous(
@@ -436,15 +440,15 @@ class ScanForPsexec(CommandSet):
                         self.__show_scan_results_synchronous(target_info)
             except KeyboardInterrupt:
                 executor.shutdown()
-                self._cmd.error_logger.warning("\nExiting ...")
-                self._cmd.info_logger.debug("The scan was interrupted")
+                self.__scan_error_logger.warning("\nExiting ...")
+                self.__scan_info_logger.debug("The scan was interrupted")
         self.__spinner.stop()
-        self.__cmd.info_logger.success("Synchronous scanning has been completed")
+        self.__scan_info_logger.success("Synchronous scanning has been completed")
 
     def __synchronous_way(self) -> None:
         """[ Function that will start the synchronous scan]"""
 
-        self._cmd.info_logger.info("Using synchronous scan")
+        self.__scan_info_logger.info("Using synchronous scan")
 
         synchronous_scan_process = Process(
             target=self.__set_up_scan_actions_synchronous
@@ -468,7 +472,7 @@ class ScanForPsexec(CommandSet):
         if not self._cmd.igris_db.check_if_subnet_exits(subnet):
             self._cmd.igris_db.init_new_subnet(subnet)
 
-        self._cmd.info_logger.info("Starting to launch threads based on your cpu")
+        self.__scan_info_logger.info("Starting to launch threads based on your cpu")
         if args.asynchronous:
             self.__asynchronous_way()
         else:
@@ -477,7 +481,7 @@ class ScanForPsexec(CommandSet):
     def __end_scan(self) -> None:
         """[ Process to finished the scan process ]"""
         if self.__is_running:
-            self._cmd.error_logger.warning("Exiting ...")
+            self.__scan_error_logger.warning("Exiting ...")
             self.__scan_process.terminate()
             self.__scan_process.join()
 
@@ -493,11 +497,39 @@ class ScanForPsexec(CommandSet):
             self.__end_scan()
             return False
         if self.__is_running():
-            self._cmd.error_logger.warning(
+            self.__scan_error_logger.warning(
                 "The scan is already running in the background ..."
             )
             return False
         return True
+
+    def __set_up_output_loggers(self) -> Tuple[Logger, Logger]:
+        """[ Function to prepare the logger ]"""
+        # export LOGURU_AUTOINIT=False
+
+        logger.level("DEBUG", icon=LogSymbols.INFO.value)
+        logger.level("SUCCESS", icon=LogSymbols.SUCCESS.value)
+        logger.level("INFO", icon=LogSymbols.INFO.value)
+        logger.level("WARNING", icon=LogSymbols.WARNING.value)
+        logger.level("ERROR", icon=LogSymbols.ERROR.value)
+        fmt = "{level.icon} {message}"
+        logger.add(
+            sink=self._cmd.stdout,
+            level="INFO",
+            format=fmt,
+            filter=lambda record: record["extra"].get("name") == "info",
+        )
+
+        logger.add(
+            sink=sys.stderr,
+            level="WARNING",
+            format=fmt,
+            filter=lambda record: record["extra"].get("name") == "error",
+        )
+
+        info_logger = logger.bind(name="info")
+        error_logger = logger.bind(name="error")
+        return info_logger, error_logger
 
     argParser = cmd2.Cmd2ArgumentParser(
         description="""Tool to know if there is a possibility to perform psexec. 
@@ -549,7 +581,13 @@ class ScanForPsexec(CommandSet):
         user = self._cmd.USER
         passwd = self._cmd.PASSWD
         subnet = self._cmd.SUBNET
-        self._cmd.info_logger.debug(
+
+        (
+            self.__scan_info_logger,
+            self.__scan_error_logger,
+        ) = self.__set_up_output_loggers()
+
+        self.__scan_info_logger.debug(
             f"Starting scan command using user: {user} passwd: {passwd} subnet: {subnet}"
         )
 
@@ -558,6 +596,16 @@ class ScanForPsexec(CommandSet):
             "USER": user,
             "PASSWD": passwd,
         }
+
+        fmt = "{level.icon} {message}"
+        logger.add(
+            self._cmd.stdout,
+            level="INFO",
+            format=fmt,
+            filter=lambda record: record["extra"].get("name") == "pruebas",
+        )
+        prueba = logger.bind(name="pruebas")
+        prueba.info("hola")
 
         if not self.__check_conditions_for_the_attack(args):
             return

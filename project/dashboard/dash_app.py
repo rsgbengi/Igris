@@ -21,7 +21,13 @@ app = dash.Dash(
 app.title = "Igris dashboard"
 
 
-def define_the_style():
+def define_the_style() -> list:
+    """[function to define the style of the dashboard and the nodes of the graph]
+
+    Returns:
+        list: [style set by the function]
+    """
+
     return [
         {"selector": "node", "style": {"content": "data(label)"}},
         {
@@ -91,11 +97,21 @@ def define_the_style():
     ]
 
 
-def define_logo():
+def define_logo() -> html.Img:
+    """[ Function to define the logo]
+    Returns:
+        html.Img: [ Image with the logo ]
+    """
     return html.Img(src=images["logo"], style={"width": "30%"})
 
 
-def define_legend():
+def define_legend() -> dbc.ListGroup:
+    """[ Function to define the legend ]
+
+    Returns:
+        dbc.ListGroup: [ List with all the node types of the graph ]
+    """
+
     return dbc.ListGroup(
         [
             dbc.ListGroupItem(
@@ -167,7 +183,11 @@ def define_legend():
     )
 
 
-def define_tabs():
+def define_tabs() -> dbc.Tabs:
+    """[ Function to define the tabs]
+    Returns:
+        dbc.Tabs: [ Tabs with different types of graphs]
+    """
     return dbc.Tabs(
         [
             dbc.Tab(
@@ -192,11 +212,21 @@ def define_tabs():
     )
 
 
-def define_title():
+def define_title() -> list:
+    """[Function to define the title of the page]
+
+    Returns:
+        list: [ Title of the dashboard ]
+    """
     return [html.H3("Users Graph")]
 
 
-def define_the_header():
+def define_the_header() -> list:
+    """[function to define the header]
+
+    Returns:
+        list: [ List with the corresponding columns for the title and the logo]
+    """
     return [
         dbc.Col(
             define_title(),
@@ -209,7 +239,11 @@ def define_the_header():
     ]
 
 
-def define_the_body():
+def define_the_body() -> list:
+    """[Function to define de body]
+    Returns:
+        list: [ dashboard body ]
+    """
     return [
         dbc.Col(
             [
@@ -229,7 +263,8 @@ def define_the_body():
     ]
 
 
-def define_layout():
+def define_layout() -> None:
+    """[ Function that will define the layout of the dashboard ]"""
     app.layout = dbc.Container(
         [
             html.Div(
@@ -258,7 +293,15 @@ def define_layout():
     )
 
 
-def all_graph_tab(graph_generator):
+def all_graph_tab(graph_generator: GraphGenerator) -> html.Div:
+    """[Function to display the entire user graph]
+
+    Args:
+        graph_generator (GraphGenerator): [Object to generate the graph based on the established situation]
+
+    Returns:
+        html.Div: [ html object with the graph ]
+    """
     return (
         html.Div(
             [
@@ -274,7 +317,16 @@ def all_graph_tab(graph_generator):
     )
 
 
-def psexec_graph_tab(graph_generator):
+def psexec_graph_tab(graph_generator: GraphGenerator) -> html.Div:
+    """[Function to show the users who are administrators in the different computers]
+
+    Args:
+        graph_generator (GraphGenerator): [Object to generate the graph based on the established situation]
+
+    Returns:
+        html.Div: [ html object with the graph ]
+    """
+
     return (
         html.Div(
             [
@@ -290,7 +342,16 @@ def psexec_graph_tab(graph_generator):
     )
 
 
-def not_psexec_graph_tab(graph_generator):
+def not_psexec_graph_tab(graph_generator: GraphGenerator) -> html.Div:
+    """[Function to show the users who are not administrators in the different computers]
+
+    Args:
+        graph_generator (GraphGenerator): [Object to generate the graph based on the established situation]
+
+    Returns:
+        html.Div: [ html object with the graph ]
+    """
+
     return (
         html.Div(
             [
@@ -306,7 +367,16 @@ def not_psexec_graph_tab(graph_generator):
     )
 
 
-def subnet_computer_graph_tab(graph_generator):
+def subnet_computer_graph_tab(graph_generator: GraphGenerator) -> html.Div:
+    """[Function to show computers of a subnet]
+
+    Args:
+        graph_generator (GraphGenerator): [Object to generate the graph based on the established situation]
+
+    Returns:
+        html.Div: [ html object with the graph ]
+    """
+
     return (
         html.Div(
             [
@@ -326,25 +396,39 @@ def subnet_computer_graph_tab(graph_generator):
     Output("tab-content", "children"),
     [Input("tabs", "active_tab")],
 )
-def render_tab_content(active_tab):
+def render_tab_content(active_tab: str) -> html.Div:
+    """[Function to load the graph based on the selected tab]
+
+    Args:
+        active_tab (str): [Tab selected ]
+
+    Returns:
+        html.Div: [ Generated Graph ]
+    """
     graph_generator = GraphGenerator()
-    if active_tab:
-        if active_tab == "all":
-            return all_graph_tab(graph_generator)
-        if active_tab == "psexec":
-            return psexec_graph_tab(graph_generator)
-        if active_tab == "not_psexec":
-            return not_psexec_graph_tab(graph_generator)
-        if active_tab == "computers":
-            return subnet_computer_graph_tab(graph_generator)
-    return "No tab selected"
+    if active_tab == "all":
+        return all_graph_tab(graph_generator)
+    if active_tab == "psexec":
+        return psexec_graph_tab(graph_generator)
+    if active_tab == "not_psexec":
+        return not_psexec_graph_tab(graph_generator)
+    if active_tab == "computers":
+        return subnet_computer_graph_tab(graph_generator)
 
 
 @app.callback(
     Output("node-info-output", "children"),
     Input("igris-graph", "tapNodeData"),
 )
-def display_node_data(data):
+def display_node_data(data: dict):
+    """[Function to show the data of the selected node ]
+
+    Args:
+        data (dict): [ clicked node data ]
+
+    Returns:
+        _type_: [ Node information ]
+    """
     if data:
         return [
             dbc.Row(
@@ -361,12 +445,15 @@ def display_node_data(data):
 
 
 def start_dashboard(lport: str) -> None:
+    """[ Function to start the dash application ]
+
+    Args:
+        lport (str): [ Port through which to display the information ]
+    """
     log = logging.getLogger("werkzeug")
     log.setLevel(logging.ERROR)
     define_layout()
     try:
         app.run_server(debug=False, port=lport)
     except OSError:
-        print(
-            f"[red] The port {lport} is already in used. Exiting ... [red]"
-        )
+        print(f"[red] The port {lport} is already in used. Exiting ... [red]")

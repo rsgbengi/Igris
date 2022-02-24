@@ -56,7 +56,7 @@ class DHCP6(PoisonNetwork):
         level: str = "INFO",
     ):
         super().__init__(ip, ipv6, mac_address, iface, info_logger, level)
-        self.__domain = domain + "."
+        self.__domain = f"{domain}."
         self.__used_ipv6 = []
         self.__ipv6_mask = ipv6_mask
 
@@ -141,7 +141,7 @@ class DHCP6(PoisonNetwork):
             iaid=pkt[DHCP6OptIA_NA].iaid,
             T1=200,
             T2=250,
-            ianaopts=self.__generate_ipv6_address(pkt),
+            ianaopts=self.__generate_ipv6_address(),
         )
         return response
 
@@ -164,7 +164,7 @@ class DHCP6(PoisonNetwork):
             iaid=pkt[DHCP6OptIA_NA].iaid,
             T1=200,
             T2=250,
-            ianaopts=self.__generate_ipv6_address(pkt),
+            ianaopts=self.__generate_ipv6_address(),
         )
         return response
 
@@ -188,7 +188,7 @@ class DHCP6(PoisonNetwork):
             iaid=pkt[DHCP6OptIA_NA].iaid,
             T1=200,
             T2=250,
-            ianaopts=self.__generate_ipv6_address(pkt),
+            ianaopts=self.__generate_ipv6_address(),
         )
         return response
 

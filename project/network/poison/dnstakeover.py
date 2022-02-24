@@ -66,7 +66,7 @@ class DNSTakeOverCommand(CommandSet):
         else:
             self._cmd.error_logger.warning("The attack is not activated")
 
-    def __checking_conditions_for_attack(self, args: argparse.Namespace) -> None:
+    def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
         """[ Method to check if the attack cant be performed]
 
         Args:
@@ -80,12 +80,12 @@ class DNSTakeOverCommand(CommandSet):
                 "The attack is already running in the background"
             )
             return False
-        if args.mask == None:
+        if args.mask is not None:
             self._cmd.error_logger.error(
                 "Error: the following arguments are required: -M/--mask"
             )
             return False
-        if args.domain == None:
+        if args.domain is not None:
             self._cmd.error_logger.error(
                 "Error: the following arguments are required: -DOM/--domain"
             )
@@ -117,8 +117,6 @@ class DNSTakeOverCommand(CommandSet):
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform dns takeover over ipv6 using dhcp6 rogue.""",
-        epilog = "This command is not designed to use pipes(|) or redirections( >< ) when poisoners are invoked"
-
     )
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "

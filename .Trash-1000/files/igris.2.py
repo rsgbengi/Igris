@@ -19,6 +19,8 @@ from ..network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonComm
 from ..utils import Neo4jConnection
 from ..dashboard import DashboardCommand
 
+from logging import StreamHandler
+
 
 COLORS = {
     "black": "\u001b[30;1m",
@@ -53,11 +55,10 @@ class Igris_Shell(cmd2.Cmd):
         self.allow_style = ansi.STYLE_TERMINAL
 
         self.__set_up_file_loggers()
-        self.__error_logger = None
-        self.__info_logger = None
-        self.__id_error_logger = None
-        self.__id_info_logger = None
-        self.register_precmd_hook(self.__set_up_output_loggers)
+        (
+            self.__igris_info_logger,
+            self.__igris_error_logger,
+        ) = self.__set_up_output_loggers()
 
         self.load_modules()
         self.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
@@ -75,13 +76,12 @@ class Igris_Shell(cmd2.Cmd):
         self.__init_databse()
 
     @property
-    def info_logger(self) -> Logger:
+    def igris_info_logger(self) -> Logger:
         return self.__info_logger
+
     @property
     def error_logger(self) -> Logger:
         return self.__error_logger
-
-
 
     @property
     def active_attacks(self) -> None:
@@ -92,8 +92,8 @@ class Igris_Shell(cmd2.Cmd):
             "neo4j://localhost:7687",
             "neo4j",
             "islaplana56",
-            self.__info_logger,
-            self.__error_logger,
+            self.__igris_info_logger,
+            self.__igris_error_logger,
         )
 
     def active_attacks_status(self, attack: str) -> bool:
@@ -208,7 +208,7 @@ class Igris_Shell(cmd2.Cmd):
             cd <new_dir>
         """
         if not args or len(args) != 1:
-            self.__error_logger.error("cd needs one argument:")
+            self.__igris_error_logger.error("cd needs one argument:")
             self.do_help("cd")
             return
 
@@ -225,7 +225,7 @@ class Igris_Shell(cmd2.Cmd):
             except Exception as exception:
                 error = exception
         if error:
-            self.__error_logger.error(error)
+            self.__igris_error_logger.error(error)
 
     def complete_cd(self, text: str, line: str, begidx: int, endidx: int) -> List[str]:
         """[ Allow  user auto-complete when using cd ]
@@ -250,15 +250,15 @@ class Igris_Shell(cmd2.Cmd):
         Returns:
             bool: [ Returns if all variables are correct ]
         """
-        self.__info_logger.debug(
+        self.__igris_info_logger.debug(
             "Checking the correct value of the necessary settable variables "
         )
         for settable_name, settable_value in necessary_settable.items():
             if settable_value == "":
-                self.__error_logger.error(
+                self.__igris_error_logger.error(
                     f"The settable variable {settable_name} is not initialized. Run the command with -SS to show Settable variables"
                 )
-                self.__error_logger.error(
+                self.__igris_error_logger.error(
                     f"Missing settable variable: {settable_name}"
                 )
                 return False
@@ -323,16 +323,9 @@ class Igris_Shell(cmd2.Cmd):
             "logs/info_and_above.log", level="INFO", rotation="1 week", enqueue=True
         )
 
-    def __set_up_output_loggers(
-        self, data: cmd2.plugin.PrecommandData
-    ) -> cmd2.plugin.PrecommandData:
+    def __set_up_output_loggers(self) -> Tuple[Logger, Logger]:
         """[ Function to prepare the logger ]"""
         # export LOGURU_AUTOINIT=False
-
-        if self.__id_info_logger is not None:
-            logger.remove(self.__id_info_logger)
-        if self.__id_error_logger is not None:
-            logger.remove(self.__id_error_logger)
 
         logger.level("DEBUG", icon=LogSymbols.INFO.value)
         logger.level("SUCCESS", icon=LogSymbols.SUCCESS.value)
@@ -340,20 +333,20 @@ class Igris_Shell(cmd2.Cmd):
         logger.level("WARNING", icon=LogSymbols.WARNING.value)
         logger.level("ERROR", icon=LogSymbols.ERROR.value)
         fmt = "{level.icon} {message}"
-        self.__id_info_logger = logger.add(
+        logger.add(
             sink=self.stdout,
             level="INFO",
             format=fmt,
             filter=lambda record: record["extra"].get("name") == "igris_info",
         )
 
-        self.__id_error_logger = logger.add(
+        logger.add(
             sink=sys.stderr,
             level="WARNING",
             format=fmt,
             filter=lambda record: record["extra"].get("name") == "igris_error",
         )
-        self.__info_logger = logger.bind(name="igris_info")
-        self.__error_logger = logger.bind(name="igris_error")
-        return data
 
+        info_logger = logger.bind(name="igris_info")
+        error_logger = logger.bind(name="igris_error")
+        return info_logger, error_logger

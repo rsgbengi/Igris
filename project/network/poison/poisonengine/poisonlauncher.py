@@ -28,7 +28,7 @@ class PoisonLauncher:
         asynchronous: bool,
         domain: str = None,
         ipv6_mask: str = None,
-        threads: list = [],
+        threads: list = None,
     ):
         self.__ip = ip
         self.__ipv6 = ipv6
