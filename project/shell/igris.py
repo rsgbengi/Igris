@@ -77,11 +77,10 @@ class Igris_Shell(cmd2.Cmd):
     @property
     def info_logger(self) -> Logger:
         return self.__info_logger
+
     @property
     def error_logger(self) -> Logger:
         return self.__error_logger
-
-
 
     @property
     def active_attacks(self) -> None:
@@ -92,8 +91,6 @@ class Igris_Shell(cmd2.Cmd):
             "neo4j://localhost:7687",
             "neo4j",
             "islaplana56",
-            self.__info_logger,
-            self.__error_logger,
         )
 
     def active_attacks_status(self, attack: str) -> bool:
@@ -258,9 +255,7 @@ class Igris_Shell(cmd2.Cmd):
                 self.__error_logger.error(
                     f"The settable variable {settable_name} is not initialized. Run the command with -SS to show Settable variables"
                 )
-                self.__error_logger.error(
-                    f"Missing settable variable: {settable_name}"
-                )
+                self.__error_logger.error(f"Missing settable variable: {settable_name}")
                 return False
         return True
 
@@ -356,4 +351,3 @@ class Igris_Shell(cmd2.Cmd):
         self.__info_logger = logger.bind(name="igris_info")
         self.__error_logger = logger.bind(name="igris_error")
         return data
-

@@ -5104,3 +5104,241 @@
 2022-02-24 20:48:43.995 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
 2022-02-24 20:50:56.852 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
 2022-02-24 20:50:56.852 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-02-26 14:20:37.460 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:21:58.074 | DEBUG    | project.utils.scan:do_scan:552 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-02-26 14:21:58.075 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-02-26 14:32:21.304 | DEBUG    | project.utils.scan:do_scan:552 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.200.0/24
+2022-02-26 14:32:21.305 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 14:32:21.879 | INFO     | project.utils.scan:__start_scan:471 - Starting to launch threads based on your cpu
+2022-02-26 14:32:21.879 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-02-26 14:32:23.238 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.0
+2022-02-26 14:32:23.241 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.3
+2022-02-26 14:32:23.243 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.1
+2022-02-26 14:32:23.244 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.5
+2022-02-26 14:32:23.246 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.4
+2022-02-26 14:32:23.249 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.2
+2022-02-26 14:32:24.249 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.5
+2022-02-26 14:32:24.251 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.2
+2022-02-26 14:32:24.253 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.0
+2022-02-26 14:32:24.255 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.4
+2022-02-26 14:32:24.257 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.3
+2022-02-26 14:32:24.258 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.1
+2022-02-26 14:32:25.254 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.6
+2022-02-26 14:32:25.256 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.7
+2022-02-26 14:32:25.258 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.8
+2022-02-26 14:32:25.259 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.9
+2022-02-26 14:32:25.260 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.10
+2022-02-26 14:32:25.262 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.11
+2022-02-26 14:32:26.259 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.6
+2022-02-26 14:32:26.262 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.9
+2022-02-26 14:32:26.263 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.10
+2022-02-26 14:32:26.264 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.11
+2022-02-26 14:32:26.265 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.8
+2022-02-26 14:32:26.266 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.7
+2022-02-26 14:32:27.261 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.12
+2022-02-26 14:32:27.263 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.13
+2022-02-26 14:32:27.264 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.14
+2022-02-26 14:32:27.266 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.15
+2022-02-26 14:32:27.267 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.16
+2022-02-26 14:32:27.268 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.17
+2022-02-26 14:32:28.263 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.12
+2022-02-26 14:32:28.265 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.13
+2022-02-26 14:32:28.266 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.14
+2022-02-26 14:32:28.268 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.15
+2022-02-26 14:32:28.269 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.16
+2022-02-26 14:32:28.270 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.17
+2022-02-26 14:32:29.265 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.18
+2022-02-26 14:32:29.266 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.19
+2022-02-26 14:32:29.268 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.20
+2022-02-26 14:32:29.269 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.21
+2022-02-26 14:32:29.270 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.22
+2022-02-26 14:32:29.271 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.23
+2022-02-26 14:32:30.266 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.18
+2022-02-26 14:32:30.268 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.19
+2022-02-26 14:32:30.269 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.20
+2022-02-26 14:32:30.270 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.21
+2022-02-26 14:32:30.272 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.22
+2022-02-26 14:32:30.273 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.23
+2022-02-26 14:32:31.269 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.24
+2022-02-26 14:32:31.270 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.25
+2022-02-26 14:32:31.272 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.26
+2022-02-26 14:32:31.273 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.27
+2022-02-26 14:32:31.274 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.28
+2022-02-26 14:32:31.275 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.29
+2022-02-26 14:32:32.272 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.24
+2022-02-26 14:32:32.273 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.25
+2022-02-26 14:32:32.274 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.26
+2022-02-26 14:32:32.275 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.27
+2022-02-26 14:32:32.276 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.28
+2022-02-26 14:32:32.277 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.29
+2022-02-26 14:32:33.275 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.30
+2022-02-26 14:32:33.275 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.32
+2022-02-26 14:32:33.275 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.31
+2022-02-26 14:32:33.277 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.33
+2022-02-26 14:32:33.277 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.34
+2022-02-26 14:32:33.279 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.35
+2022-02-26 14:32:34.276 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.30
+2022-02-26 14:32:34.277 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.32
+2022-02-26 14:32:34.277 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.31
+2022-02-26 14:32:34.278 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.33
+2022-02-26 14:32:34.278 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.34
+2022-02-26 14:32:34.280 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.35
+2022-02-26 14:32:35.278 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.37
+2022-02-26 14:32:35.279 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.36
+2022-02-26 14:32:35.279 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.38
+2022-02-26 14:32:35.279 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.39
+2022-02-26 14:32:35.281 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.41
+2022-02-26 14:32:35.280 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.40
+2022-02-26 14:32:36.280 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.37
+2022-02-26 14:32:36.281 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.36
+2022-02-26 14:32:36.282 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.39
+2022-02-26 14:32:36.282 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.41
+2022-02-26 14:32:36.282 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.40
+2022-02-26 14:32:36.283 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.38
+2022-02-26 14:32:37.281 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.42
+2022-02-26 14:32:37.282 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.43
+2022-02-26 14:32:37.283 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.45
+2022-02-26 14:32:37.283 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.47
+2022-02-26 14:32:37.284 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.46
+2022-02-26 14:32:37.284 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.44
+2022-02-26 14:32:38.283 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.42
+2022-02-26 14:32:38.284 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.43
+2022-02-26 14:32:38.284 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.45
+2022-02-26 14:32:38.285 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.44
+2022-02-26 14:32:38.285 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.47
+2022-02-26 14:32:38.286 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.46
+2022-02-26 14:32:39.285 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.48
+2022-02-26 14:32:39.285 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.49
+2022-02-26 14:32:39.286 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.51
+2022-02-26 14:32:39.286 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.50
+2022-02-26 14:32:39.287 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.52
+2022-02-26 14:32:39.287 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.53
+2022-02-26 14:32:40.286 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.48
+2022-02-26 14:32:40.287 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.49
+2022-02-26 14:32:40.288 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.53
+2022-02-26 14:32:40.288 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.52
+2022-02-26 14:32:40.289 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.51
+2022-02-26 14:32:40.289 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.50
+2022-02-26 14:32:41.289 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.54
+2022-02-26 14:32:41.291 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.55
+2022-02-26 14:32:41.293 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.56
+2022-02-26 14:32:41.294 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.59
+2022-02-26 14:32:41.295 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.58
+2022-02-26 14:32:41.297 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.57
+2022-02-26 14:32:42.295 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.55
+2022-02-26 14:32:42.297 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.59
+2022-02-26 14:32:42.298 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.58
+2022-02-26 14:32:42.301 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.54
+2022-02-26 14:32:42.302 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.56
+2022-02-26 14:32:42.304 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.57
+2022-02-26 14:32:43.300 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.60
+2022-02-26 14:32:43.301 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.61
+2022-02-26 14:32:43.303 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.62
+2022-02-26 14:32:43.305 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.63
+2022-02-26 14:32:43.307 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.64
+2022-02-26 14:32:43.308 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.65
+2022-02-26 14:32:44.303 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.60
+2022-02-26 14:32:44.305 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.61
+2022-02-26 14:32:44.307 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.63
+2022-02-26 14:32:44.309 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.62
+2022-02-26 14:32:44.310 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.64
+2022-02-26 14:32:44.312 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.65
+2022-02-26 14:32:45.309 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.66
+2022-02-26 14:32:45.311 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.68
+2022-02-26 14:32:45.314 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.70
+2022-02-26 14:32:45.315 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.71
+2022-02-26 14:32:45.317 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.69
+2022-02-26 14:32:45.319 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.67
+2022-02-26 14:32:46.313 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.66
+2022-02-26 14:32:46.316 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.70
+2022-02-26 14:32:46.320 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.69
+2022-02-26 14:32:46.321 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.67
+2022-02-26 14:32:46.323 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.71
+2022-02-26 14:32:46.324 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.68
+2022-02-26 14:32:47.314 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.72
+2022-02-26 14:32:47.318 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.73
+2022-02-26 14:32:47.321 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.74
+2022-02-26 14:32:47.321 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.75
+2022-02-26 14:32:47.325 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.76
+2022-02-26 14:32:47.325 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.200.77
+2022-02-26 14:32:48.316 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.72
+2022-02-26 14:32:48.319 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.73
+2022-02-26 14:32:48.323 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.75
+2022-02-26 14:32:48.323 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.74
+2022-02-26 14:32:48.326 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.76
+2022-02-26 14:32:48.327 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.200.77
+2022-02-26 14:32:50.959 | DEBUG    | project.utils.scan:do_scan:552 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.200.0/24
+2022-02-26 14:32:51.086 | WARNING  | project.utils.scan:__show_scan_info:239 - the analysis of this 192.168.200.0/24 has not collected any information or no scan has been performed with it yet
+2022-02-26 14:33:06.643 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 14:33:06.643 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 14:33:25.545 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:33:39.784 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:33:41.165 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:33:41.976 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:50:34.146 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:50:36.165 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:50:36.732 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:50:50.977 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 14:50:50.977 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 14:55:25.508 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 14:55:25.509 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 14:56:07.898 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 14:56:07.899 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 14:59:18.514 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 14:59:18.515 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 14:59:55.616 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 14:59:55.618 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:00:48.550 | DEBUG    | project.utils.scan:do_scan:552 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-02-26 15:00:48.550 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:00:48.642 | INFO     | project.utils.scan:__start_scan:471 - Starting to launch threads based on your cpu
+2022-02-26 15:00:48.643 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-02-26 15:00:48.930 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.253.0
+2022-02-26 15:00:48.931 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.253.0
+2022-02-26 15:00:48.931 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.253.1
+2022-02-26 15:00:48.932 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.253.2
+2022-02-26 15:00:48.932 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.253.1
+2022-02-26 15:00:48.933 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb3:93 - Connection fails using smb3 at 192.168.253.2
+2022-02-26 15:00:49.935 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.253.4
+2022-02-26 15:00:49.937 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.253.8
+2022-02-26 15:00:49.939 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.253.5
+2022-02-26 15:00:49.941 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.253.6
+2022-02-26 15:00:49.944 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.253.3
+2022-02-26 15:00:49.946 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 192.168.253.7
+2022-02-26 15:00:54.302 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:00:54.303 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:01:47.867 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:01:47.868 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:03:05.098 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:03:05.099 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:03:55.881 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:03:55.883 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:05:25.171 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:05:25.172 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:06:35.503 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:06:35.504 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:08:16.811 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:08:16.812 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:09:44.202 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:09:44.203 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:33:17.966 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:33:17.967 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:40:29.849 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 15:40:29.850 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:58:21.102 | DEBUG    | project.utils.scan:do_scan:552 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 10.0.3.0/24
+2022-02-26 15:58:21.103 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 15:58:21.369 | INFO     | project.utils.scan:__start_scan:471 - Starting to launch threads based on your cpu
+2022-02-26 15:58:21.370 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-02-26 15:58:22.673 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 10.0.3.0
+2022-02-26 15:58:22.676 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 10.0.3.4
+2022-02-26 15:58:22.678 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 10.0.3.1
+2022-02-26 15:58:22.681 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 10.0.3.2
+2022-02-26 15:58:22.683 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 10.0.3.3
+2022-02-26 15:58:22.685 | DEBUG    | project.utils.scan:__try_scan_connection_with_smb1:70 - Connection fails using smb1 at 10.0.3.5
+2022-02-26 16:11:37.359 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 16:11:37.360 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 16:12:09.331 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 16:12:09.333 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 16:20:29.691 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 16:20:29.692 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-02-26 16:38:56.125 | DEBUG    | project.dashboard.command:do_dashboard:28 - Starting dashboard command using lport: 8050
+2022-02-26 16:38:56.126 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 

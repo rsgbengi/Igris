@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 from loguru import logger
+import loguru
 from py2neo import Node, Relationship, Graph
 from ..gatherinfo import TargetInfo, UserInfo
+from loguru import logger
+from log_symbols import LogSymbols
 
 
 class Neo4jConnection:
@@ -10,14 +13,12 @@ class Neo4jConnection:
         url: str,
         user: str,
         passwd: str,
-        info_logger: logger = None,
-        error_logger: logger = None,
     ) -> None:
         self.__url = url
         self.__user = user
         self.__passwd = passwd
-        self.__info_logger = info_logger
-        self.__error_logger = error_logger
+        self.__info_logger = logger.bind(name="igris_info")
+        self.__error_logger = logger.bind(name="igris_error")
         try:
             self.__graph = Graph(self.__url, auth=(self.__user, self.__passwd))
         except Exception:
@@ -94,9 +95,16 @@ class Neo4jConnection:
         subnet = self.__graph.nodes.match("Subnet", subnet=subnet).first()
         return subnet
 
+    def __relatoinship_subnet_subnet(self, new_node, last_node):
+        relationship = Relationship(last_node, "ANALIZE", new_node)
+        self.__commit(relationship)
+
     def init_new_subnet(self, subnet: str) -> None:
+        subnets = self.get_subnets()
         subnet_node = Node("Subnet", subnet=subnet)
         self.__commit(subnet_node)
+        if len(subnets) != 0:
+            self.__relatoinship_subnet_subnet(subnet_node, subnets[len(subnets) - 1])
 
     def graph_psexec_users(self):
         return self.__graph.run("MATCH p=()-[r:PSEXEC_HERE]->() RETURN p").data()
@@ -109,3 +117,8 @@ class Neo4jConnection:
 
     def get_subnets(self):
         return self.__graph.nodes.match("Subnet").all()
+
+    def get_subnets_with_computers_detected(self):
+        return self.__graph.run(
+            "MATCH (n:Subnet) WHERE size( (n)--() ) > 1 RETURN n"
+        ).data()

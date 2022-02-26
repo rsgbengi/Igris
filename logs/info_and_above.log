@@ -149,3 +149,19 @@
 2022-02-24 18:44:56.143 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
 2022-02-24 18:44:56.146 | INFO     | project.utils.scan:__synchronous_way:448 - Using synchronous scan
 2022-02-24 18:45:24.965 | INFO     | project.shell.igris:show_settable_variables_necessary:275 - Showing necessary settable variables
+2022-02-26 14:20:37.460 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:21:58.075 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-02-26 14:32:21.879 | INFO     | project.utils.scan:__start_scan:471 - Starting to launch threads based on your cpu
+2022-02-26 14:32:21.879 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-02-26 14:32:51.086 | WARNING  | project.utils.scan:__show_scan_info:239 - the analysis of this 192.168.200.0/24 has not collected any information or no scan has been performed with it yet
+2022-02-26 14:33:25.545 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:33:39.784 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:33:41.165 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:33:41.976 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:50:34.146 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:50:36.165 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 14:50:36.732 | INFO     | project.utils.neo.dboperations:__init__:22 - hola
+2022-02-26 15:00:48.642 | INFO     | project.utils.scan:__start_scan:471 - Starting to launch threads based on your cpu
+2022-02-26 15:00:48.643 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-02-26 15:58:21.369 | INFO     | project.utils.scan:__start_scan:471 - Starting to launch threads based on your cpu
+2022-02-26 15:58:21.370 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan

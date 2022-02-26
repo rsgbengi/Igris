@@ -94,6 +94,15 @@ def define_the_style() -> list:
                 "line-color": "black",
             },
         },
+        {
+            "selector": ".subnet_relation",
+            "style": {
+                'mid-source-arrow-color': 'green',
+                'mid-source-arrow-shape': 'diamond',
+                'mid-source-arrow-fill': 'hollow',
+                'line-color': 'green',
+            },
+        },
     ]
 
 
@@ -310,7 +319,7 @@ def all_graph_tab(graph_generator: GraphGenerator) -> html.Div:
                     layout={"name": "cola"},
                     style={"width": "100%", "height": "550px"},
                     stylesheet=define_the_style(),
-                    elements=graph_generator.all_graph(),
+                    elements=graph_generator.define_all_graph(),
                 )
             ]
         ),
