@@ -157,6 +157,14 @@ class GraphGenerator:
         }
 
     def __define_admin_user_node(self, node: Node) -> Tuple[str, Node]:
+        """[ Method to set the format of the admin node ]
+
+        Args:
+            node (Node): [ Neo4j node from py2neo ]
+
+        Returns:
+            Tuple[str, Node]: [ The id of the node and the node itself ]
+        """
         user_id = node["ip"] + node["username"] + node["password"]
         user_node = {
             "classes": "admin",
@@ -170,7 +178,16 @@ class GraphGenerator:
 
         return user_id, user_node
 
-    def __only_not_psexec_users(self, relationship):
+    def __only_not_psexec_users(self, relationship: list) -> list:
+        """[ Method that returns a graph with the relation computer and normal user ]
+
+        Args:
+            relationships (list): [ database query-based relationships ]
+
+        Returns:
+            list: [ Resulting graph ]
+
+        """
         graph = []
         computers_used = []
         for edge in relationship:
@@ -185,7 +202,18 @@ class GraphGenerator:
             graph.append(new_edge)
         return graph
 
-    def __define_edge_normal_user_computer(self, computer_id, user_id):
+    def __define_edge_normal_user_computer(
+        self, computer_id: str, user_id: str
+    ) -> dict:
+        """[ ]
+
+        Args:
+            computer_id (str): _description_
+            user_id (str): _description_
+
+        Returns:
+            dict: _description_
+        """
         return {
             "classes": "user_arrow",
             "data": {

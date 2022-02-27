@@ -10,10 +10,8 @@ from log_symbols import LogSymbols
 from threading import Thread
 from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, Cmd2ArgumentParser, with_argparser
-from cmd2 import as_subcommand_to
 
 from .servers import MaliciousSmbServer
-from ..poison import PoisonLauncher
 
 
 @with_default_category("Man in the middle attacks")
@@ -190,7 +188,7 @@ class SmbServerAttack(CommandSet):
         "-ON",
         "--output_ntlmv2",
         action="store",
-        default="/home/rsgbengi/Igris/loot",
+        default="/home/igris/loot",
         help="Output of the hashes ntlmv2",
     )
 

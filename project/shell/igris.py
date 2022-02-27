@@ -40,7 +40,7 @@ class Igris_Shell(cmd2.Cmd):
     def __init__(self):
         super().__init__(
             auto_load_commands=False,
-            persistent_history_file="/home/rsgbengi/Igris/save/history.json",
+            persistent_history_file="save/history.json",
         )
         self.__credentials_config_variables()
         self.__network_config_variables()
@@ -90,7 +90,7 @@ class Igris_Shell(cmd2.Cmd):
         self.igris_db = Neo4jConnection(
             "neo4j://localhost:7687",
             "neo4j",
-            "islaplana56",
+            "igris",
         )
 
     def active_attacks_status(self, attack: str) -> bool:
@@ -313,9 +313,17 @@ class Igris_Shell(cmd2.Cmd):
         return self.__color_text(logo)
 
     def __set_up_file_loggers(self) -> None:
-        logger.add("logs/all.log", level="DEBUG", rotation="1 week", enqueue=True)
         logger.add(
-            "logs/info_and_above.log", level="INFO", rotation="1 week", enqueue=True
+            "logs/all.log",
+            level="DEBUG",
+            rotation="1 week",
+            enqueue=True,
+        )
+        logger.add(
+            "logs/all.log",
+            level="INFO",
+            rotation="1 week",
+            enqueue=True,
         )
 
     def __set_up_output_loggers(

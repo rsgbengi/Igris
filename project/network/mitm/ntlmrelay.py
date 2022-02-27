@@ -393,7 +393,7 @@ class NtlmRelay(CommandSet):
         "-OS",
         "--output_sam",
         action="store",
-        default="/home/rsgbengi/Igris/loot",
+        default="/home/igris/loot",
         help="Output from the sam hashes",
     )
     attack_options.add_argument(

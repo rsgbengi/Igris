@@ -141,7 +141,7 @@ class ScanForPsexec(CommandSet):
                                     the current smb connection]
         """
         ip = smbclient.getRemoteName()
-        self._cmd.logger.debug(
+        self._cmd.info_logger.debug(
             f"Loading target info of {smbclient.getServerName()} at {ip}"
         )
         target_info.signed = smbclient.isSigningRequired()
@@ -439,7 +439,7 @@ class ScanForPsexec(CommandSet):
                 self._cmd.error_logger.warning("\nExiting ...")
                 self._cmd.info_logger.debug("The scan was interrupted")
         self.__spinner.stop()
-        self.__cmd.info_logger.success("Synchronous scanning has been completed")
+        self._cmd.info_logger.success("Synchronous scanning has been completed")
 
     def __synchronous_way(self) -> None:
         """[ Function that will start the synchronous scan]"""
