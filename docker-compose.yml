@@ -1,12 +1,5 @@
 version: '3'
 services:
-  igris:
-    build: .
-    network_mode: "host"
-    depends_on:
-      - neo4j
-    environment:
-      - LOGURU_AUTOINIT=False
   neo4j:
     image: neo4j:latest
     hostname: neo4j
@@ -17,3 +10,13 @@ services:
       - "7687:7687"
     environment:
       - NEO4J_AUTH=neo4j/igris
+  igris:
+    build: .
+    container_name: igris
+    network_mode: "host"
+    depends_on:
+      - neo4j
+    restart: "no"
+    entrypoint: [ "python3", "/home/igris/app/main.py" ]
+    environment:
+      - LOGURU_AUTOINIT=False

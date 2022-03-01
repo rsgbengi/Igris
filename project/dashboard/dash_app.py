@@ -97,10 +97,10 @@ def define_the_style() -> list:
         {
             "selector": ".subnet_relation",
             "style": {
-                'mid-source-arrow-color': 'green',
-                'mid-source-arrow-shape': 'diamond',
-                'mid-source-arrow-fill': 'hollow',
-                'line-color': 'green',
+                "mid-source-arrow-color": "green",
+                "mid-source-arrow-shape": "diamond",
+                "mid-source-arrow-fill": "hollow",
+                "line-color": "green",
             },
         },
     ]
@@ -335,7 +335,6 @@ def psexec_graph_tab(graph_generator: GraphGenerator) -> html.Div:
     Returns:
         html.Div: [ html object with the graph ]
     """
-
     return (
         html.Div(
             [
@@ -360,7 +359,6 @@ def not_psexec_graph_tab(graph_generator: GraphGenerator) -> html.Div:
     Returns:
         html.Div: [ html object with the graph ]
     """
-
     return (
         html.Div(
             [
@@ -385,7 +383,6 @@ def subnet_computer_graph_tab(graph_generator: GraphGenerator) -> html.Div:
     Returns:
         html.Div: [ html object with the graph ]
     """
-
     return (
         html.Div(
             [
@@ -423,6 +420,7 @@ def render_tab_content(active_tab: str) -> html.Div:
         return not_psexec_graph_tab(graph_generator)
     if active_tab == "computers":
         return subnet_computer_graph_tab(graph_generator)
+    return html.Div([html.P("Something went wrong ...")])
 
 
 @app.callback(

@@ -8,7 +8,7 @@ class GraphGenerator:
         self.__graph_driver = Neo4jConnection(
             "neo4j://localhost:7687",
             "neo4j",
-            "islaplana56",
+            "igris",
         )
 
     def __parse_subnets_all_graph(self, subnets: list, graph: list) -> None:
@@ -205,14 +205,14 @@ class GraphGenerator:
     def __define_edge_normal_user_computer(
         self, computer_id: str, user_id: str
     ) -> dict:
-        """[ ]
+        """[ Method to define an edge  between a user and a computer ]
 
         Args:
-            computer_id (str): _description_
-            user_id (str): _description_
+            computer_id (str): [ The computer identifier ]
+            user_id (str): [ The user identifier ]
 
         Returns:
-            dict: _description_
+            Tuple[str, Node]: [ The id of the node and the node itself ]
         """
         return {
             "classes": "user_arrow",
@@ -222,7 +222,17 @@ class GraphGenerator:
             },
         }
 
-    def __define_normal_user_node(self, node):
+    def __define_normal_user_node(self, node: Node) -> Tuple[str, dict]:
+        """[Method to define a non-administrator user]
+
+        Args:
+
+            node (Node): [ Neo4j node from py2neo ]
+
+        Returns:
+            Tuple[str,dict]: [ The user id of the node and the node itself]
+        """
+
         user_id = node["ip"] + node["username"] + node["password"]
         user_node = {
             "classes": "user",
@@ -236,7 +246,14 @@ class GraphGenerator:
 
         return user_id, user_node
 
-    def __define_computer_node(self, node):
+    def __define_computer_node(self, node: Node) -> Tuple[str, dict]:
+        """[Method to define the node information of a computer]
+
+        Args:
+            node (Node): [ Neo4j node from py2neo ]
+        Returns:
+            Tuple[str,dict]: [the computer id of the node and the node itself]
+        """
         computer_id = node["computer_name"]
         computer_node = {
             "classes": "computer",
@@ -251,27 +268,49 @@ class GraphGenerator:
         }
         return computer_id, computer_node
 
-    def __define_edge_computer_subnet(self, edge, computer_id):
+    def __define_edge_computer_subnet(self, edge: dict, computer_id: str) -> dict:
+        """[Method to define the link between a subnet and a computer]
+        Args:
+            edge (dict): [ Edge between a computer and a subnet defined by py2neo ]
+            computer_id (str): [ The computer identifier ]
+
+        Returns:
+
+            dict: [The edge between the computer and the subnet]
+        """
         subnet_id = edge["p"].end_node["subnet"]
         return {
             "classes": "computer_arrow",
             "data": {"source": computer_id, "target": subnet_id},
         }
 
-    def __parse_subnet_with_computers(self, subnets, graph):
-        print(subnets)
+    def __parse_subnet_with_computers(self, subnets: list, graph: list) -> None:
+        """[ method to create subnet nodes ]
+
+        Args:
+            subnets (list): [ neo4j subnet nodes ]
+            graph (list): [ Resulting graph with subnets and computers ]
+        """
         for subnet in subnets:
             node = {
                 "classes": "subnet",
                 "data": {
-                    "id": subnet["n"]["subnet"],
-                    "label": subnet["n"]["subnet"],
-                    "subnet": subnet["n"]["subnet"],
+                    "id": subnet["s"]["subnet"],
+                    "label": subnet["s"]["subnet"],
+                    "subnet": subnet["s"]["subnet"],
                 },
             }
             graph.append(node)
 
-    def __only_part_of_computer(self, relationship):
+    def __only_part_of_computer(self, relationship: list) -> list:
+        """[Method to create a graph with only subnets and computers]
+
+        Args:
+            relationship (list): [neo4j relationships with hosts and subnets]
+
+        Returns:
+            list: [Graph with only subnets and computers]
+        """
         graph = []
         subnets = self.__graph_driver.get_subnets_with_computers_detected()
         self.__parse_subnet_with_computers(subnets, graph)
@@ -284,14 +323,19 @@ class GraphGenerator:
             graph.append(new_edge)
         return graph
 
-    def graph_psexec_users(self):
+    def graph_psexec_users(self) -> list:
+        """[Method to create a graph with admin users and computers in cytoscape]
+
+        Returns:
+            list: [Resulting graph]
+        """
         relationship = self.__graph_driver.graph_psexec_users()
         return self.__only_psexec_users(relationship)
 
-    def graph_not_psexec_users(self):
+    def graph_not_psexec_users(self) -> list:
         relationship = self.__graph_driver.graph_not_psexec_users()
         return self.__only_not_psexec_users(relationship)
 
-    def graph_with_computers(self):
+    def graph_with_computers(self) -> list:
         relationship = self.__graph_driver.graph_with_computers()
         return self.__only_part_of_computer(relationship)

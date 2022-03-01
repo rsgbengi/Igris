@@ -20,6 +20,7 @@ class Neo4jConnection:
         self.__info_logger = logger.bind(name="igris_info")
         self.__error_logger = logger.bind(name="igris_error")
         try:
+            self.__info_logger.debug("The neo4j dirver has been created successfully")
             self.__graph = Graph(self.__url, auth=(self.__user, self.__passwd))
         except Exception:
             self.__error_logger.error("Failed to create de driver")
@@ -120,5 +121,5 @@ class Neo4jConnection:
 
     def get_subnets_with_computers_detected(self):
         return self.__graph.run(
-            "MATCH (n:Subnet) WHERE size( (n)--() ) > 1 RETURN n"
+            "MATCH (s:Subnet)-[r:PART_OF]-(c:Computer) RETURN s"
         ).data()

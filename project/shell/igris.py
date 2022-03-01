@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 
 from logging import Logger
-from typing import List, Tuple
+from typing import List
 
 import os
 import sys
 import cmd2
-from cmd2 import CommandSet, ansi
+from cmd2 import ansi
 from art import text2art
 from loguru import logger
 from log_symbols import LogSymbols

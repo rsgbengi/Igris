@@ -2,8 +2,10 @@ import argparse
 import concurrent.futures
 import functools
 from ipaddress import IPv4Address, IPv4Network
+import ipaddress
 import ntpath
 import random
+import py2neo
 from rich.console import Console
 from rich.table import Table
 
@@ -465,14 +467,19 @@ class ScanForPsexec(CommandSet):
         """
 
         subnet = self._cmd.SUBNET
-        if not self._cmd.igris_db.check_if_subnet_exits(subnet):
-            self._cmd.igris_db.init_new_subnet(subnet)
+        try:
+            if not self._cmd.igris_db.check_if_subnet_exits(subnet):
+                self._cmd.igris_db.init_new_subnet(subnet)
 
-        self._cmd.info_logger.info("Starting to launch threads based on your cpu")
-        if args.asynchronous:
-            self.__asynchronous_way()
-        else:
-            self.__synchronous_way()
+            self._cmd.info_logger.info("Starting to launch threads based on your cpu")
+            if args.asynchronous:
+                self.__asynchronous_way()
+            else:
+                self.__synchronous_way()
+        except py2neo.ServiceUnavailable:
+            self._cmd.error_logger.error(
+                "Error at connecting to neo4j database. Wait for neo4j to finish starting"
+            )
 
     def __end_scan(self) -> None:
         """[ Process to finished the scan process ]"""
@@ -497,12 +504,18 @@ class ScanForPsexec(CommandSet):
                 "The scan is already running in the background ..."
             )
             return False
+        try:
+            IPv4Network(self._cmd.SUBNET)
+        except ipaddress.AddressValueError:
+            self._cmd.error_logger.error(
+                "Error with the subnet value. Use -SS to see the value."
+            )
+            return False
         return True
 
     argParser = cmd2.Cmd2ArgumentParser(
         description="""Tool to know if there is a possibility to perform psexec. 
         Without arguments this tool will scan the Subnet""",
-        usage="scan\nscan -SI\nscan -SS\n scan -A",
     )
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "
