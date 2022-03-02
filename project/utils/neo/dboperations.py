@@ -4,10 +4,17 @@ import loguru
 from py2neo import Node, Relationship, Graph
 from ..gatherinfo import TargetInfo, UserInfo
 from loguru import logger
-from log_symbols import LogSymbols
 
 
 class Neo4jConnection:
+    """[ Class to generate connections to the database ]
+
+    Args:
+        url (str): [ url to connect to database]
+        user (str): [User of the database (neo4j)]
+        passwd (str): [Password of the database(igris)]
+    """
+
     def __init__(
         self,
         url: str,
@@ -17,8 +24,8 @@ class Neo4jConnection:
         self.__url = url
         self.__user = user
         self.__passwd = passwd
-        self.__info_logger = logger.bind(name="igris_info")
-        self.__error_logger = logger.bind(name="igris_error")
+        self.__info_logger = logger.bind(name="info")
+        self.__error_logger = logger.bind(name="error")
         try:
             self.__info_logger.debug("The neo4j dirver has been created successfully")
             self.__graph = Graph(self.__url, auth=(self.__user, self.__passwd))
@@ -26,6 +33,11 @@ class Neo4jConnection:
             self.__error_logger.error("Failed to create de driver")
 
     def relationship_computer_subnet(self, target_info: TargetInfo) -> None:
+        """[Method that executes a query to obtain the relationships between host and subnet]
+
+        Args:
+            target_info (TargetInfo): [Computer information]
+        """
         computer = self.get_computer(target_info)
         subnet = self.get_subnet(target_info.subnet)
         relationship = Relationship(computer, "PART_OF", subnet)
@@ -34,6 +46,12 @@ class Neo4jConnection:
     def relationship_computer_user(
         self, target_info: TargetInfo, user_status: UserInfo
     ) -> None:
+        """[Method that executes a query to obtain the relationships between computer and normal user]
+
+        Args:
+            target_info (TargetInfo): [Computer information]
+            user_status (UserInfo): [User information]
+        """
         computer = self.get_computer(target_info)
         user = self.get_user(user_status, target_info.ip)
         if target_info.psexec:
@@ -43,9 +61,22 @@ class Neo4jConnection:
         self.__commit(relationship)
 
     def get_computer(self, target_info: TargetInfo) -> Node:
+        """[Method to get a specific computer of the database]
+
+        Args:
+            target_info (TargetInfo): [ Computer information to obtain the ipv4 of the computer ]
+
+        Returns:
+            Node: _description_
+        """
         return self.__graph.nodes.match("Computer", ipv4=target_info.ip).first()
 
     def init_new_computer(self, target_info: TargetInfo):
+        """[Method to insert a new computer to the database]
+
+        Args:
+            target_info (TargetInfo): [ Computer Information ]
+        """
         if self.get_computer(target_info) is None:
             computer = Node(
                 "Computer",
@@ -57,11 +88,26 @@ class Neo4jConnection:
             self.__commit(computer)
 
     def get_user(self, user_status: UserInfo, ipv4: str) -> Node:
+        """[ Method to get a specific user ]
+
+        Args:
+            user_status (UserInfo): [ User information to get a specific user from the datbase ]
+            ipv4 (str): [ Ipv4 of a specific computer ]
+
+        Returns:
+            Node: [The user node ]
+        """
         return self.__graph.nodes.match(
             "User", ip=ipv4, username=user_status.user, password=user_status.passwd
         ).first()
 
     def init_new_user(self, user_status: UserInfo, ipv4: str):
+        """[ Method to start a new user ]
+
+        Args:
+            user_status (UserInfo): [User information to create a new user node  ]
+            ipv4 (str): [Ip of a specific computer ]
+        """
         if self.get_user(user_status, ipv4) is None:
             user = Node(
                 "User", ip=ipv4, username=user_status.user, password=user_status.passwd
@@ -69,10 +115,27 @@ class Neo4jConnection:
             self.__commit(user)
 
     def check_computers_of_a_subnet(self, subnet: str) -> list:
+        """[ Returns all computers of a specific subnet ]
+
+        Args:
+            subnet (str): [ Subnet from where to take the computers ]
+
+        Returns:
+            list: [ list with subnet and computers nodes ]
+        """
         subnet_node = self.get_subnet(subnet)
         return self.__graph.match(r_type="PART_OF", nodes=(None, subnet_node)).all()
 
     def check_nodes_with_psexec(self, computer: Node, user_status: UserInfo) -> str:
+        """[ Method to validate if a user is an administrator on a computer ]
+
+        Args:
+            computer (Node): [ The computer node]
+            user_status (UserInfo): [The information of the user ]
+
+        Returns:
+            str: [ The resolution of the query ]
+        """
         nodes_user = self.get_user(user_status, computer["ipv4"])
         if nodes_user is not None:
             relation = self.__graph.match(
@@ -84,6 +147,14 @@ class Neo4jConnection:
         return "Psexec Here!" if relation else "Not Psexec Here"
 
     def check_if_subnet_exits(self, subnet: str) -> bool:
+        """[ Method to check if a function exists ]
+
+        Args:
+            subnet (str): _description_
+
+        Returns:
+            bool: _description_
+        """
         subnet = self.get_subnet(subnet)
         return subnet is not None
 

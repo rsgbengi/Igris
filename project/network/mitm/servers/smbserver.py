@@ -10,7 +10,6 @@ from .interceptlogging import (
 
 from impacket.examples.ntlmrelayx.servers.smbrelayserver import SMBRelayServer
 from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
-import cmd2
 from threading import Thread
 
 
@@ -21,7 +20,6 @@ class MaliciousSmbServer:
         lhost (str): [ ip of the host that will start the smb server ]
         port (str): [ port for the smb server ]
         info_logger (logger): [  logger to show information on the screen  ]
-        ntlmv2_collected: (dict,optional): [ All ntlm hashes will be saved here ]. Default to None
         asynchronous (bool,optional): [  Attribute to now if the attack will be performed asynchronously  ]. Default to None
         path_file (str,optional): [ Path to the output file ]. Default to None
         alerts_dictionary (dict,optional): [  Attribute that contains the dictionary that manages alerts ]. Default to None
@@ -32,7 +30,6 @@ class MaliciousSmbServer:
         lhost: str,
         port: str,
         info_logger: logger,
-        ntlmv2_collected: dict = None,
         asynchronous: bool = None,
         path_file: str = None,
         alerts_dictionary: dict = None,
@@ -43,7 +40,6 @@ class MaliciousSmbServer:
         self.__asynchronous = asynchronous
         self.__alerts_dictionary = alerts_dictionary
         self.__path_file = path_file
-        self.__ntlmv2_collected = ntlmv2_collected
 
     @property
     def lhost(self) -> str:
@@ -70,7 +66,6 @@ class MaliciousSmbServer:
                     InterceptHandlerOnlyFilesMss(
                         self.__alerts_dictionary,
                         self.__path_file,
-                        self.__ntlmv2_collected,
                     )
                 ],
                 level=0,
@@ -78,7 +73,7 @@ class MaliciousSmbServer:
         else:
             logging.basicConfig(
                 handlers=[
-                    InterceptHandlerStdoutMss(self.__path_file, self.__ntlmv2_collected)
+                    InterceptHandlerStdoutMss(self.__path_file)
                 ],
                 level=0,
             )

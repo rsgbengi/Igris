@@ -23,7 +23,6 @@ class SmbServerAttack(CommandSet):
         self.__smbserver = None
         self.__mss_attack = None
         self.__alerts_dictionary = Manager().dict()
-        self.__ntlmv2_collected = Manager().dict()
         self.__define_alerts()
         self.__alerts_hunter = None
         self.__path_file = os.getcwd()
@@ -101,7 +100,6 @@ class SmbServerAttack(CommandSet):
             self._cmd.LHOST,
             self._cmd.LPORT,
             self._cmd.info_logger,
-            self.__ntlmv2_collected,
             args.Asynchronous,
             self.__path_file,
             self.__alerts_dictionary,
@@ -188,7 +186,7 @@ class SmbServerAttack(CommandSet):
         "-ON",
         "--output_ntlmv2",
         action="store",
-        default="/home/igris/loot",
+        default="loot/",
         help="Output of the hashes ntlmv2",
     )
 
@@ -201,15 +199,15 @@ class SmbServerAttack(CommandSet):
 
         """
         self._cmd.info_logger.debug(
-            f"""Starting malicious smb server attack using ip: {self._cmd.LHOST} ipv6:{self._cmd.IPV6}
+            f"""Starting malicious smb server attack using ip: {self._cmd.LHOST} 
             interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS} lport:{self._cmd.LPORT}"""
         )
+
         if not (self.__checking_conditions_for_attack(args)):
             return
 
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,
-            "IPV6": self._cmd.IPV6,
             "INTERFACE": self._cmd.INTERFACE,
             "MAC_ADDRESS": self._cmd.MAC_ADDRESS,
             "LPORT": self._cmd.LPORT,

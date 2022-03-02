@@ -24,6 +24,11 @@ class DashboardCommand(CommandSet):
 
     @cmd2.with_argparser(argParser)
     def do_dashboard(self, args: argparse.Namespace) -> None:
+        """[ Dashboard to visualize users and computers of a subnet ]
+
+        Args:
+            args (argparse.Namespace): _description_
+        """
         lport = self._cmd.LPORT
         self._cmd.info_logger.debug(f"Starting dashboard command using lport: {lport}")
         settable_variables_required = {

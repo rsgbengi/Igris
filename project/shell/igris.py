@@ -170,7 +170,7 @@ class Igris_Shell(cmd2.Cmd):
         self.add_settable(
             cmd2.Settable("MAC_ADDRESS", str, "Set mac address of your interface", self)
         )
-        self.LPORT = "8050"
+        self.LPORT = "445"
         self.add_settable(cmd2.Settable("LPORT", str, "Set local port", self))
 
         self.IPV6 = "fe80::20c:29ff:fe0e:d73b"
@@ -320,7 +320,7 @@ class Igris_Shell(cmd2.Cmd):
             enqueue=True,
         )
         logger.add(
-            "logs/all.log",
+            "logs/info_above.log",
             level="INFO",
             rotation="1 week",
             enqueue=True,
@@ -347,15 +347,15 @@ class Igris_Shell(cmd2.Cmd):
             sink=self.stdout,
             level="INFO",
             format=fmt,
-            filter=lambda record: record["extra"].get("name") == "igris_info",
+            filter=lambda record: record["extra"].get("name") == "info",
         )
 
         self.__id_error_logger = logger.add(
             sink=sys.stderr,
             level="WARNING",
             format=fmt,
-            filter=lambda record: record["extra"].get("name") == "igris_error",
+            filter=lambda record: record["extra"].get("name") == "error",
         )
-        self.__info_logger = logger.bind(name="igris_info")
-        self.__error_logger = logger.bind(name="igris_error")
+        self.__info_logger = logger.bind(name="info")
+        self.__error_logger = logger.bind(name="error")
         return data

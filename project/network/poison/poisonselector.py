@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import ipaddress
 from .poisonengine import PoisonLauncher
 import argparse
 import sys
@@ -114,7 +115,16 @@ class PoisonCommand(CommandSet):
                 "The attack is already running in the background"
             )
             return False
-
+        try:
+            ipaddress.ip_address(self._cmd.LHOST)
+        except ValueError:
+            self._cmd.error_logger.error("Not valid LHOST")
+            return False
+        try:
+            ipaddress.ip_address(self._cmd.IPV6)
+        except ValueError:
+            self._cmd.error_logger.error("Not valid IPV6")
+            return False
         return True
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
@@ -200,14 +210,13 @@ class PoisonCommand(CommandSet):
             args (argparse.Namespace): [Arguments passed to the attack ]
         """
         self._cmd.info_logger.debug(
-            f"""Starting poison attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} ipv6:{self._cmd.IPV6}
+            f"""Starting poison attack using lhost: {self._cmd.LHOST} ipv6:{self._cmd.IPV6}
             interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS}"""
         )
         if not (self.__checking_conditions_for_attack(args)):
             return
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,
-            "RHOST": self._cmd.RHOST,
             "IPV6": self._cmd.IPV6,
             "INTERFACE": self._cmd.INTERFACE,
             "MAC_ADDRESS": self._cmd.MAC_ADDRESS,
@@ -219,11 +228,11 @@ class PoisonCommand(CommandSet):
 
             self.__create_necessary_components(args)
             self.__wrapper_attack(args)
-            if (not args.Asynchronous):
+            if not args.Asynchronous:
                 self.__poisoner_process = None
 
     def poison_postloop(self) -> None:
-        """[method to stop the attack before the application is terminated]"""
+        """[Method to stop the attack before the application is terminated]"""
         if self.__poisoner_process is not None and self.__poisoner_process:
             self.__poisoner_process.terminate()
             self.__poisoner_process.join()

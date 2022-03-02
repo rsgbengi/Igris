@@ -13,9 +13,7 @@ class PoisonLauncher:
         iface (str): [ interface of the current subnet used ]
         info_logger (logger): [ Logger for the output ]
         asynchronous: (bool): [ To know how the program runs  ]
-        poisoner_selector: [ Dictionary with the poisoners to use ]
         domain: [The domain that you are attacking]
-        threads: [ Threads used in the attack]
     """
 
     def __init__(
@@ -28,7 +26,6 @@ class PoisonLauncher:
         asynchronous: bool,
         domain: str = None,
         ipv6_mask: str = None,
-        threads: list = None,
     ):
         self.__ip = ip
         self.__ipv6 = ipv6
@@ -38,14 +35,13 @@ class PoisonLauncher:
         self.__asynchronous = asynchronous
         self.__poisoner_selector = {
             "MDNS": 0,
-            "DNS": 0,
             "LLMNR": 0,
             "NBT_NS": 0,
             "DNS": 0,
             "DHCP6": 0,
         }
         self.__domain = domain
-        self.__threads = threads
+        self.__threads = []
         self.__ipv6_mask = ipv6_mask
 
     @property

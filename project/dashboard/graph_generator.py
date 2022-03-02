@@ -4,6 +4,8 @@ from py2neo import Node
 
 
 class GraphGenerator:
+    """[Class to generate the different dashboard graphs]
+    """
     def __init__(self) -> None:
         self.__graph_driver = Neo4jConnection(
             "neo4j://localhost:7687",
@@ -333,9 +335,19 @@ class GraphGenerator:
         return self.__only_psexec_users(relationship)
 
     def graph_not_psexec_users(self) -> list:
+        """[ Method to create a graph with normal users and computers in cytoscape]
+
+        Returns:
+            list: [ Resulting Graph ]
+        """
         relationship = self.__graph_driver.graph_not_psexec_users()
         return self.__only_not_psexec_users(relationship)
 
     def graph_with_computers(self) -> list:
+        """[ Method to create a graph with subnets and computers in cytoscape]
+
+        Returns:
+            list: [ Resulting Graph ]
+        """
         relationship = self.__graph_driver.graph_with_computers()
         return self.__only_part_of_computer(relationship)

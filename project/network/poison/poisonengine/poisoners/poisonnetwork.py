@@ -4,8 +4,6 @@ from scapy.all import (
     Ether,
     IP,
     IPv6,
-    UDP,
-    sendp,
     packet,
 )
 import time
