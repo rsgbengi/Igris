@@ -1,2 +1,175 @@
 2022-03-02 20:45:30.695 | ERROR    | project.network.poison.poisonselector:__checking_conditions_for_attack:121 - Not valid LHOST
 2022-03-02 20:45:42.948 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-03 18:18:07.345 | ERROR    | project.shell.igris:do_cd:225 - /home/rsgbengi/Igris/-h is not a directory
+2022-03-03 18:18:09.773 | ERROR    | project.shell.igris:do_cd:225 - /home/rsgbengi/Igris/-h is not a directory
+2022-03-03 18:18:11.325 | ERROR    | project.shell.igris:do_cd:208 - cd needs one argument:
+2022-03-03 18:18:34.160 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-03 18:19:23.985 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:154 - Starting llmnr poisoning...
+2022-03-03 18:19:59.667 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-03-03 18:19:59.709 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-03 18:19:59.748 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to 192.168.253.138[0m
+2022-03-03 18:20:08.470 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-03 18:20:08.512 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to 192.168.253.138[0m
+2022-03-03 18:20:54.831 | INFO     | project.network.poison.poisonengine.poisoners.nbt_ns:start_nbt_ns_poisoning:133 - Starting nbt-ns poisoning...
+2022-03-03 18:21:13.309 | INFO     | project.network.poison.poisonengine.poisoners.nbt_ns:__send_packet:111 - [36m(NBT_NS) Sending packet to 192.168.253.138[0m
+2022-03-03 18:21:16.492 | INFO     | project.network.poison.poisonengine.poisoners.nbt_ns:__send_packet:111 - [36m(NBT_NS) Sending packet to 192.168.253.138[0m
+2022-03-03 18:23:45.609 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:23:46.927 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-03-03 18:23:51.045 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-03 18:24:07.903 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:25:19.048 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 18:25:19.198 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 18:25:19.208 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:25:19.345 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-03 18:25:19.372 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-03 18:25:19.388 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-03 18:25:20.698 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-03 18:25:21.007 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-03 18:25:22.657 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-03 18:25:22.674 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-03 18:25:22.695 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-03 18:25:27.304 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:25:30.091 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-03-03 18:25:55.904 | WARNING  | project.network.mitm.ntlmrelay:__file_exits:217 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2022-03-03 18:26:23.463 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:305 - Running ntlm relay in the background the results will be saved at: loot//192.168.253.138_samhashes.sam 
+2022-03-03 18:26:23.496 | WARNING  | project.network.mitm.ntlmrelay:__checking_directory_options:106 - The specified directory does not exists or you don't have access
+2022-03-03 18:26:23.499 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 18:26:23.521 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:28:14.968 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-03 18:28:18.808 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:298 - Running ntlm relay in the background the results will be saved at: loot/192.168.253.138_samhashes.sam 
+2022-03-03 18:28:18.831 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 18:28:18.854 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:28:32.038 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 18:28:32.102 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 18:28:32.112 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:28:32.191 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-03 18:28:32.209 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-03 18:28:32.216 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-03 18:28:33.463 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-03 18:28:33.629 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-03 18:28:35.326 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-03 18:28:35.335 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-03 18:28:35.345 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-03 18:28:51.074 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:320 - Finishing ntlm relay attack in the background ...
+2022-03-03 18:29:16.541 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:298 - Running ntlm relay in the background the results will be saved at: loot/192.168.253.138_samhashes.sam 
+2022-03-03 18:29:16.562 | INFO     | project.network.mitm.servers.proxyserver:__init__:11 - Starting socks server ...
+2022-03-03 18:29:16.630 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 18:29:16.639 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:29:41.366 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 18:29:41.476 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 18:29:41.487 | INFO     | threading:run:892 - SOCKS: Adding SHADOW/IRON@192.168.253.138(445) to active SOCKS connection. Enjoy
+2022-03-03 18:29:41.488 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:29:49.344 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-12: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:37:32.303 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:37:50.140 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:38:36.431 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:38:58.408 | ERROR    | socketserver:__init__:747 - SOCKS: I don't have a handler for this port
+2022-03-03 18:39:11.718 | ERROR    | socketserver:__init__:747 - SOCKS: I don't have a handler for this port
+2022-03-03 18:39:31.054 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:48:01.753 | ERROR    | socketserver:__init__:747 - SOCKS: I don't have a handler for this port
+2022-03-03 18:48:21.611 | ERROR    | socketserver:__init__:747 - SOCKS: I don't have a handler for this port
+2022-03-03 18:48:48.432 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:48:59.554 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:49:15.581 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:49:23.466 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:49:33.673 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:50:24.425 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 18:51:26.263 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 18:57:57.384 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 19:02:44.127 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 19:07:09.792 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:298 - Running ntlm relay in the background the results will be saved at: loot/192.168.253.138_samhashes.sam 
+2022-03-03 19:07:09.807 | INFO     | project.network.mitm.servers.proxyserver:__init__:11 - Starting socks server ...
+2022-03-03 19:07:09.865 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 19:07:09.873 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 19:07:46.363 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_nbt_ns:90 - Running nbt_ns poisoning in the background
+2022-03-03 19:07:46.983 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 19:07:47.012 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 19:07:47.023 | INFO     | threading:run:892 - SOCKS: Adding SHADOW/IRON@192.168.253.138(445) to active SOCKS connection. Enjoy
+2022-03-03 19:07:47.024 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 19:07:59.612 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 19:08:00.237 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:85 - Finishing attack in the background ...
+2022-03-03 19:08:09.525 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 19:09:03.703 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 20:36:39.624 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:84 - Error: the following arguments are required: -M/--mask
+2022-03-03 20:37:20.605 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:89 - Error: the following arguments are required: -DOM/--domain
+2022-03-03 20:37:20.606 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:95 - Mask invalid
+2022-03-03 20:37:57.769 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:84 - Error: the following arguments are required: -M/--mask
+2022-03-03 20:38:10.201 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:302 - Starting dhcp6 rogue to attack shadow.local.
+2022-03-03 20:39:03.083 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-03 20:39:10.366 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:119 - Running dhcp6 poisoning in the background
+2022-03-03 20:39:19.700 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 20:41:56.963 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 20:41:57.015 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 20:41:57.026 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 20:41:57.083 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-03 20:41:57.091 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-03 20:41:57.101 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-03 20:41:58.201 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-03 20:41:58.268 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-03 20:41:59.035 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-03 20:41:59.044 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-03 20:41:59.054 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-03 20:42:25.752 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:158 - Exiting ntlm relay attack ...
+2022-03-03 20:42:31.721 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:298 - Running ntlm relay in the background the results will be saved at: loot/192.168.253.138_samhashes.sam 
+2022-03-03 20:42:31.727 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 20:42:31.731 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 20:42:39.781 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 20:42:39.918 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 20:42:39.927 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 20:42:40.010 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-03 20:42:40.027 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-03 20:42:40.039 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-03 20:42:41.386 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-03 20:42:41.702 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-03 20:42:42.981 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-03 20:42:42.987 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-03 20:42:42.999 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-03 20:43:37.051 | WARNING  | project.network.mitm.ntlmrelay:__checking_ending_options:238 - The attacks is already running in the background 
+2022-03-03 20:43:41.556 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:320 - Finishing ntlm relay attack in the background ...
+2022-03-03 20:43:45.391 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-03 20:48:16.043 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:114 - The attack is already running in the background
+2022-03-03 20:48:19.943 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:85 - Finishing attack in the background ...
+2022-03-03 20:48:25.393 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-04 17:17:45.644 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-04 17:46:46.495 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-04 17:46:46.504 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 17:46:46.507 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-04 17:46:46.508 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-04 17:46:46.509 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-04 17:46:49.416 | WARNING  | project.network.mitm.mss:__synchronous_attack:75 - Exiting attack ...
+2022-03-04 17:59:36.445 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-04 18:02:51.648 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-04 18:02:56.132 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-04 18:13:30.928 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-04 18:13:30.934 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 18:13:30.937 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-04 18:13:30.938 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-04 18:13:30.938 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-04 18:13:31.938 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-04 18:13:39.275 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-04 18:13:39.280 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 18:24:00.767 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:24:07.802 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:24:15.973 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:24:22.305 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:24:35.588 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:27:08.484 | ERROR    | project.shell.igris:_check_port:363 - The port must be a number
+2022-03-04 18:43:57.872 | ERROR    | project.shell.igris:_check_port:364 - The port must be a number
+2022-03-04 18:44:23.990 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-04 18:44:23.995 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 18:44:23.999 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-04 18:44:23.999 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-04 18:44:24.000 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-04 18:44:24.819 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-04 18:44:29.182 | ERROR    | project.shell.igris:_check_port:363 - The port must be a number
+2022-03-04 18:44:36.784 | ERROR    | project.shell.igris:_check_port:366 - Not valid port number. Must be 0-65535
+2022-03-04 18:46:16.990 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-04 18:46:16.996 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 18:46:17.000 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-04 18:46:17.001 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-04 18:46:17.001 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-04 18:46:20.570 | WARNING  | project.network.mitm.mss:__synchronous_attack:75 - Exiting attack ...
+2022-03-04 18:47:06.678 | ERROR    | project.shell.igris:_check_ip:331 - Not valid LHOST
+2022-03-04 18:51:07.937 | ERROR    | project.shell.igris:_check_ip:331 - Not valid RHOST
+2022-03-04 18:51:25.854 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-04 18:56:23.282 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables

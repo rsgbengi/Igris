@@ -13,19 +13,11 @@ from threading import Thread
 import sys
 import os
 import signal
-from cmd2 import ansi
-import cmd2
-import logging
-from loguru import logger
-from time import sleep
-from json import loads
 import shutil
 from requests import get, RequestException
 from tabulate import tabulate
 
 from log_symbols import LogSymbols
-
-from ..poison import PoisonLauncher
 
 
 @with_default_category("Man in the middle attacks")
@@ -213,7 +205,7 @@ class NtlmRelay(CommandSet):
     def __file_exits(self) -> bool:
         """[ method to check if a file exists to check its overwriting ]"""
         exit = True
-        if os.path.exists(os.getcwd() + "/" + self.__output_sam_file):
+        if os.path.exists(f"{os.getcwd()}/{self.__output_sam_file}"):
             self._cmd.error_logger.warning(
                 "The file will be overwrite, do you want to continue ?(press 'y' to continue but any)"
             )
@@ -248,8 +240,18 @@ class NtlmRelay(CommandSet):
             return False
         return True
 
+    def __check_configurable_variables(self) -> bool:
+        """[Method to check the value of the settable variabes ]
+
+        Returns:
+            bool: [ Check if the LHOST and the RHOST have correct values]
+        """
+        return self._cmd._check_ip(self._cmd.LHOST, "LHOST") and self._cmd._check_ip(
+            self._cmd.RHOST, "RHOST"
+        )
+
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
-        """[ Method to check the actions taken during the attack ]
+        """[ Method to check different things before starting the attack ]
 
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
@@ -267,7 +269,8 @@ class NtlmRelay(CommandSet):
         if self.__file_exits():
             self._cmd.info_logger.info("Exiting ...")
             return False
-
+        if not self.__check_configurable_variables():
+            return False
         self.__configure_alert_thread()
 
         return True
@@ -289,7 +292,6 @@ class NtlmRelay(CommandSet):
         )
 
         self._cmd.active_attacks_configure("NTLM_Relay", True)
-
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
         """[ Method to launch the attack
@@ -393,7 +395,7 @@ class NtlmRelay(CommandSet):
         "-OS",
         "--output_sam",
         action="store",
-        default="loot/",
+        default="loot",
         help="Output from the sam hashes",
     )
     attack_options.add_argument(
@@ -417,22 +419,18 @@ class NtlmRelay(CommandSet):
             args (argparse.Namespace): [Arguments passed to the ntlm relay attack ]
         """
         self._cmd.info_logger.debug(
-            f"""Starting ntlm relay attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} ipv6:{self._cmd.IPV6}
-            interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS} lport:{self._cmd.LPORT}"""
+            f"Starting ntlm relay attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} "
         )
-
-        if not self.__checking_conditions_for_attack(args):
-            return
 
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,
             "RHOST": self._cmd.RHOST,
-            "INTERFACE": self._cmd.INTERFACE,
-            "MAC_ADDRESS": self._cmd.MAC_ADDRESS,
-            "LPORT": self._cmd.LPORT,
         }
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
+            if not self.__checking_conditions_for_attack(args):
+                return
+
             self.__creating_components(args)
             self.__wrapper_attack(args)

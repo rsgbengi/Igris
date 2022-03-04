@@ -67,7 +67,7 @@ class DNSTakeOverCommand(CommandSet):
             self._cmd.error_logger.warning("The attack is not activated")
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
-        """[ Method to check if the attack cant be performed]
+        """[ Method to check different things before starting the attack ]
 
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
@@ -80,12 +80,12 @@ class DNSTakeOverCommand(CommandSet):
                 "The attack is already running in the background"
             )
             return False
-        if args.mask is not None:
+        if args.mask is None:
             self._cmd.error_logger.error(
                 "Error: the following arguments are required: -M/--mask"
             )
             return False
-        if args.domain is not None:
+        if args.domain is None:
             self._cmd.error_logger.error(
                 "Error: the following arguments are required: -DOM/--domain"
             )
@@ -150,7 +150,7 @@ class DNSTakeOverCommand(CommandSet):
         action="store",
         type=str,
         required=False,
-        help="Target domain: Ej: domain.local",
+        help="Target domain: Ex: domain.local",
     )
     attack_options.add_argument(
         "-M",
@@ -158,7 +158,7 @@ class DNSTakeOverCommand(CommandSet):
         action="store",
         type=str,
         required=False,
-        help="IPv6 mask: Ej: fe80::/64",
+        help="IPv6 mask: Ex: fe80::/64",
     )
 
     @with_argparser(argParser)

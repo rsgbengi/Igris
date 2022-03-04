@@ -1,12 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import ipaddress
 from logging import Logger
 from typing import List
 
 import os
 import sys
+import re
 import cmd2
+import netifaces
 from cmd2 import ansi
 from art import text2art
 from loguru import logger
@@ -311,6 +314,74 @@ class Igris_Shell(cmd2.Cmd):
         [[blue]]
         """
         return self.__color_text(logo)
+
+    def _check_ip(self, ip: str, name: str) -> bool:
+        """[ Method to check if the value of an ip is valid]
+
+        Args:
+            ip (str): [ Ip to check]
+            name (str): [ Name of the error to report ]
+
+        Returns:
+            bool: [ Status of the ip ]
+        """
+        try:
+            ipaddress.ip_address(ip)
+        except ValueError:
+            self.error_logger.error(f"Not valid {name}")
+            return False
+        return True
+
+    def _check_mac(self) -> bool:
+        """[ Method to check that the value of the mac_address is valid]
+
+        Returns:
+            bool: [ Evaluation of the check ]
+        """
+        if not re.match(
+            "[0-9a-f]{2}([-:])[0-9a-f]{2}(\\1[0-9a-f]{2}){4}$", self.MAC_ADDRESS.lower()
+        ):
+            self.error_logger.error("Not valid mac address")
+            return False
+        return True
+
+    def _check_interface(self) -> bool:
+        """[ Method to check the value of the interface ]
+
+        Returns:
+            bool: [ Returns if the interface is in the possible interfaces ]
+        """
+        if self.INTERACE not in netifaces.interfaces():
+            self.error_logger.error("The interface is not valid")
+            return False
+        return True
+
+    def _check_port(self, number: str) -> bool:
+        """[ Method to check if the port number is valid]
+
+        Args:
+            number (str): [ The port number]
+
+        Returns:"
+            bool: [ True if the port number is correct ]
+        """
+        if not number.isnumeric():
+            self.error_logger.error("The port must be a number")
+            return False
+        if int(number) < 0 or int(number) > 65535:
+            self.error_logger.error("Not valid port number. Must be 0-65535")
+            return False
+        return True
+
+    def _check_subnet(self) -> bool:
+        try:
+            ipaddress.IPv4Network(self._cmd.SUBNET)
+        except ipaddress.AddressValueError:
+            self._cmd.error_logger.error(
+                "Error with the subnet value. Use -SS to see the value."
+            )
+            return False
+        return True
 
     def __set_up_file_loggers(self) -> None:
         logger.add(

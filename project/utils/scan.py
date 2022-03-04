@@ -492,6 +492,14 @@ class ScanForPsexec(CommandSet):
         """[ Method to check if the scan is already in progress ]"""
         return self.__scan_process is not None and self.__scan_process.is_alive()
 
+    def __check_configurable_variables(self) -> bool:
+        """[Method to check the value of the settable variabes ]
+
+        Returns:
+            bool: [ Check if the SUBNET have correct values]
+        """
+        return self._cmd._check_subnet()
+
     def __check_conditions_for_the_attack(self, args: argparse.Namespace) -> bool:
         if args.show_info:
             self.__show_scan_info()
@@ -504,12 +512,7 @@ class ScanForPsexec(CommandSet):
                 "The scan is already running in the background ..."
             )
             return False
-        try:
-            IPv4Network(self._cmd.SUBNET)
-        except ipaddress.AddressValueError:
-            self._cmd.error_logger.error(
-                "Error with the subnet value. Use -SS to see the value."
-            )
+        if not self.__check_configurable_variables():
             return False
         return True
 
@@ -572,9 +575,9 @@ class ScanForPsexec(CommandSet):
             "PASSWD": passwd,
         }
 
-        if not self.__check_conditions_for_the_attack(args):
-            return
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
+            if not self.__check_conditions_for_the_attack(args):
+                return
             self.__start_scan(args)

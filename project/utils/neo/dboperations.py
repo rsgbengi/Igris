@@ -159,35 +159,63 @@ class Neo4jConnection:
         return subnet is not None
 
     def __commit(self, object_to_commit) -> None:
+        """[Method to commit changes to the database]
+
+        Args:
+            object_to_commit (_type_): [Relationship or node to enter in the database]
+        """
         tx = self.__graph.begin()
         tx.create(object_to_commit)
         tx.commit()
 
-    def get_subnet(self, subnet) -> Node:
-        subnet = self.__graph.nodes.match("Subnet", subnet=subnet).first()
-        return subnet
+    def get_subnet(self, subnet: str) -> Node:
+        """[ Method to get a specific subnet node ]
 
-    def __relatoinship_subnet_subnet(self, new_node, last_node):
+        Args:
+            subnet (str): [ Function to grab a specific subnet node ]
+
+        Returns:
+            Node: [ The subnet node ]
+        """
+        return self.__graph.nodes.match("Subnet", subnet=subnet).first()
+
+    def __relatoinship_subnet_subnet(self, new_node: Node, last_node: Node) -> None:
+        """[ Establish relationship between two subnets ]
+
+        Args:
+            new_node (Node): [ New subnet node introduced ]
+            last_node (Node): [ The last inserted subnet node ]
+        """
         relationship = Relationship(last_node, "ANALIZE", new_node)
         self.__commit(relationship)
 
     def init_new_subnet(self, subnet: str) -> None:
+        """[ Method to init a new subnet node ]
+
+        Args:
+            subnet (str): [ Subnet to create the node ]
+        """
         subnets = self.get_subnets()
         subnet_node = Node("Subnet", subnet=subnet)
         self.__commit(subnet_node)
         if len(subnets) != 0:
             self.__relatoinship_subnet_subnet(subnet_node, subnets[len(subnets) - 1])
 
-    def graph_psexec_users(self):
+    def graph_psexec_users(self) -> list:
+        """[ Method to return no]
+
+        Returns:
+            list: _description_
+        """
         return self.__graph.run("MATCH p=()-[r:PSEXEC_HERE]->() RETURN p").data()
 
-    def graph_not_psexec_users(self):
+    def graph_not_psexec_users(self) -> list:
         return self.__graph.run("MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p").data()
 
-    def graph_with_computers(self):
+    def graph_with_computers(self) -> list:
         return self.__graph.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
 
-    def get_subnets(self):
+    def get_subnets(self) -> list:
         return self.__graph.nodes.match("Subnet").all()
 
     def get_subnets_with_computers_detected(self):

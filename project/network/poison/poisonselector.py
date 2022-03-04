@@ -94,14 +94,14 @@ class PoisonCommand(CommandSet):
         signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __launch_poison_attack(self, args: argparse.Namespace) -> None:
-        """[ Function to launch the components for the attack ]"""
+        """[ Method to launch the components for the attack ]"""
         if args.Asynchronous:
             self.__async_options()
         self.__poison_launcher.start_poisoners()
         self.__poison_launcher.wait_for_the_poisoners()
 
     def __checking_conditions_for_attack(self, args: argparse.Namespace):
-        """[ Method to check if the attack cant be performed]
+        """[ Method to check different things before starting the attack ]
 
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]

@@ -127,8 +127,18 @@ class SmbServerAttack(CommandSet):
         self.__alerts_hunter.dameon = True
         self.__alerts_hunter.start()
 
+    def __check_configurable_variables(self) -> bool:
+        """[Method to check the value of the settable variabes ]
+
+        Returns:
+            bool: [ Check if the LHOST and the LPORT have correct values]
+        """
+        return self._cmd._check_ip(self._cmd.LHOST, "LHOST") and self._cmd._check_port(
+            self._cmd.LPORT
+        )
+
     def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
-        """[ Method to check attack options ]
+        """[ Method to check different things before starting the attack ]
 
         Args:
              args (argparse.Namespace): [ Arguments passed to the attack ]
@@ -147,7 +157,8 @@ class SmbServerAttack(CommandSet):
         if not self.__check_directory():
             self._cmd.error_logger.warning("Error with output file")
             return False
-
+        if not self.__check_configurable_variables():
+            return False
         if args.Asynchronous:
             self.__configure_alerts_thread()
         return True
@@ -199,23 +210,18 @@ class SmbServerAttack(CommandSet):
 
         """
         self._cmd.info_logger.debug(
-            f"""Starting malicious smb server attack using ip: {self._cmd.LHOST} 
-            interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS} lport:{self._cmd.LPORT}"""
+            f"Starting malicious smb server attack using ip: {self._cmd.LHOST} lport:{self._cmd.LPORT}"
         )
-
-        if not (self.__checking_conditions_for_attack(args)):
-            return
 
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,
-            "INTERFACE": self._cmd.INTERFACE,
-            "MAC_ADDRESS": self._cmd.MAC_ADDRESS,
             "LPORT": self._cmd.LPORT,
         }
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
-
+            if not (self.__checking_conditions_for_attack(args)):
+                return
             self.__creating_components(args)
             self.__wrapper_attack(args)
 
