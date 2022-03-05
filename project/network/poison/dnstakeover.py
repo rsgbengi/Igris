@@ -66,11 +66,15 @@ class DNSTakeOverCommand(CommandSet):
         else:
             self._cmd.error_logger.warning("The attack is not activated")
 
-    def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
+    def __checking_conditions_for_attack(
+        self, args: argparse.Namespace, configurable_variables: dict
+    ) -> bool:
         """[ Method to check different things before starting the attack ]
 
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
+            configurable_variables(dict): [ Settable variables used in this command]
+
         """
         if args.end_attack:
             self.__end_process_in_the_background()
@@ -89,12 +93,8 @@ class DNSTakeOverCommand(CommandSet):
             self._cmd.error_logger.error(
                 "Error: the following arguments are required: -DOM/--domain"
             )
-        try:
-            IPv6Network(args.mask)
-        except AddressValueError:
-            self._cmd.error_logger.error("Mask invalid")
+        if not self._cmd._check_configurable_variables(configurable_variables):
             return False
-
         return True
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
@@ -149,7 +149,6 @@ class DNSTakeOverCommand(CommandSet):
         "--domain",
         action="store",
         type=str,
-        required=False,
         help="Target domain: Ex: domain.local",
     )
     attack_options.add_argument(
@@ -157,7 +156,6 @@ class DNSTakeOverCommand(CommandSet):
         "--mask",
         action="store",
         type=str,
-        required=False,
         help="IPv6 mask: Ex: fe80::/64",
     )
 
@@ -169,15 +167,12 @@ class DNSTakeOverCommand(CommandSet):
             args (argparse.Namespace): [Arguments passed to the attack ]
         """
         self._cmd.info_logger.debug(
-            f"""Starting dns takeover attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} ipv6:{self._cmd.IPV6}
+            f"""Starting dns takeover attack using lhost: {self._cmd.LHOST} ipv6:{self._cmd.IPV6}
             interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS}"""
         )
-        if not (self.__checking_conditions_for_attack(args)):
-            return
 
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,
-            "RHOST": self._cmd.RHOST,
             "IPV6": self._cmd.IPV6,
             "INTERFACE": self._cmd.INTERFACE,
             "MAC_ADDRESS": self._cmd.MAC_ADDRESS,
@@ -186,6 +181,10 @@ class DNSTakeOverCommand(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
+            if not (
+                self.__checking_conditions_for_attack(args, settable_variables_required)
+            ):
+                return
 
             self.__create_necessary_components(args)
             self.__wrapper_attack(args)

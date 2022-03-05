@@ -100,11 +100,14 @@ class PoisonCommand(CommandSet):
         self.__poison_launcher.start_poisoners()
         self.__poison_launcher.wait_for_the_poisoners()
 
-    def __checking_conditions_for_attack(self, args: argparse.Namespace):
+    def __checking_conditions_for_attack(
+        self, args: argparse.Namespace, configurable_variables: dict
+    ) -> bool:
         """[ Method to check different things before starting the attack ]
 
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
+            configurable_variables(dict): [ Settable variables used in this command]
         """
 
         if args.end_attack:
@@ -115,16 +118,9 @@ class PoisonCommand(CommandSet):
                 "The attack is already running in the background"
             )
             return False
-        try:
-            ipaddress.ip_address(self._cmd.LHOST)
-        except ValueError:
-            self._cmd.error_logger.error("Not valid LHOST")
+        if not self._cmd._check_configurable_variables(configurable_variables):
             return False
-        try:
-            ipaddress.ip_address(self._cmd.IPV6)
-        except ValueError:
-            self._cmd.error_logger.error("Not valid IPV6")
-            return False
+
         return True
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
@@ -213,8 +209,6 @@ class PoisonCommand(CommandSet):
             f"""Starting poison attack using lhost: {self._cmd.LHOST} ipv6:{self._cmd.IPV6}
             interface: {self._cmd.INTERFACE} mac_address:{self._cmd.MAC_ADDRESS}"""
         )
-        if not (self.__checking_conditions_for_attack(args)):
-            return
         settable_variables_required = {
             "LHOST": self._cmd.LHOST,
             "IPV6": self._cmd.IPV6,
@@ -225,7 +219,10 @@ class PoisonCommand(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
-
+            if not (
+                self.__checking_conditions_for_attack(args, settable_variables_required)
+            ):
+                return
             self.__create_necessary_components(args)
             self.__wrapper_attack(args)
             if not args.Asynchronous:

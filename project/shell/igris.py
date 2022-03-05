@@ -16,6 +16,7 @@ from loguru import logger
 from log_symbols import LogSymbols
 from rich.console import Console
 from rich.table import Table
+from .load import Load
 from ..utils import ScanForPsexec, Psexec
 from .attackstatus import AttackStatus
 from ..network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
@@ -45,6 +46,7 @@ class Igris_Shell(cmd2.Cmd):
             auto_load_commands=False,
             persistent_history_file="save/history.json",
         )
+        # Configure settable variables
         self.__credentials_config_variables()
         self.__network_config_variables()
         # Defect for intro messsage
@@ -63,14 +65,7 @@ class Igris_Shell(cmd2.Cmd):
         self.register_precmd_hook(self.__set_up_output_loggers)
 
         self.load_modules()
-        self.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
-
-        self.register_postloop_hook(self.__mss_module.mss_postloop)
-        self.register_postloop_hook(self.__scan_module.scan_postloop)
-
-        self.register_postloop_hook(self.__poison_module.poison_postloop)
-
-        self.register_postloop_hook(self.__dnstakeover_module.dnstakeover_postloop)
+        self.__before_end_methods()
         # Enabled Attacks
         self.__configure_enabled_attacks()
 
@@ -90,6 +85,7 @@ class Igris_Shell(cmd2.Cmd):
         return self.__active_attacks
 
     def __init_databse(self) -> None:
+        """[Method to initialize the connection to the database]"""
         self.igris_db = Neo4jConnection(
             "neo4j://localhost:7687",
             "neo4j",
@@ -97,12 +93,27 @@ class Igris_Shell(cmd2.Cmd):
         )
 
     def active_attacks_status(self, attack: str) -> bool:
+        """[Method to see if an attack is activated or not]
+
+        Args:
+            attack (str): [Specific attack]
+
+        Returns:
+            bool: [ State of lataque selecting ]
+        """
         return self.__active_attacks[attack]
 
     def active_attacks_configure(self, attack: str, status: bool) -> None:
+        """[ Method to change the status of a command ]
+
+        Args:
+            attack (str): [ Selected attack ]
+            status (bool): [ True of false depending on the state ]
+        """
         self.__active_attacks[attack] = status
 
     def __configure_enabled_attacks(self) -> None:
+        """[ Method to configure the enble attacks]"""
 
         self.__active_attacks = {
             "MDNS_Poisoning": False,
@@ -113,6 +124,16 @@ class Igris_Shell(cmd2.Cmd):
             "MSS": False,
             "NTLM_Relay": False,
         }
+
+    def __before_end_methods(self):
+        """[Method to establish which functions will be executed before the shell ends]"""
+        self.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
+        self.register_postloop_hook(self.__mss_module.mss_postloop)
+        self.register_postloop_hook(self.__scan_module.scan_postloop)
+
+        self.register_postloop_hook(self.__poison_module.poison_postloop)
+
+        self.register_postloop_hook(self.__dnstakeover_module.dnstakeover_postloop)
 
     def load_modules(self) -> None:
         """[ Function to activate the available modules ]"""
@@ -315,7 +336,7 @@ class Igris_Shell(cmd2.Cmd):
         """
         return self.__color_text(logo)
 
-    def _check_ip(self, ip: str, name: str) -> bool:
+    def __check_ip(self, ip: str, name: str) -> bool:
         """[ Method to check if the value of an ip is valid]
 
         Args:
@@ -332,7 +353,7 @@ class Igris_Shell(cmd2.Cmd):
             return False
         return True
 
-    def _check_mac(self) -> bool:
+    def __check_mac(self) -> bool:
         """[ Method to check that the value of the mac_address is valid]
 
         Returns:
@@ -345,7 +366,7 @@ class Igris_Shell(cmd2.Cmd):
             return False
         return True
 
-    def _check_interface(self) -> bool:
+    def __check_interface(self) -> bool:
         """[ Method to check the value of the interface ]
 
         Returns:
@@ -356,7 +377,7 @@ class Igris_Shell(cmd2.Cmd):
             return False
         return True
 
-    def _check_port(self, number: str) -> bool:
+    def __check_port(self, number: str) -> bool:
         """[ Method to check if the port number is valid]
 
         Args:
@@ -373,17 +394,45 @@ class Igris_Shell(cmd2.Cmd):
             return False
         return True
 
-    def _check_subnet(self) -> bool:
+    def __check_subnet(self) -> bool:
         try:
-            ipaddress.IPv4Network(self._cmd.SUBNET)
+            ipaddress.IPv4Network(self.SUBNET)
         except ipaddress.AddressValueError:
-            self._cmd.error_logger.error(
-                "Error with the subnet value. Use -SS to see the value."
+            self.error_logger.error(
+                "Error with the subnet value. Example of correct subnet: 192.168.253.0/24.Use -SS to see the value."
             )
             return False
         return True
 
+    def _check_configurable_variables(self, variables: dict) -> bool:
+        """[ Method to check the value of settable variables ]
+
+        Args:
+            variables (dict): [ variables used in a command ]
+
+        Returns:
+            bool: [ Method evaluation ]
+        """
+        correct_value = True
+        for key in variables:
+            if key == "LHOST":
+                correct_value = self.__check_ip(self.LHOST, "LHOST")
+            if key == "RHOST":
+                correct_value = self.__check_ip(self.RHOST, "RHOST")
+            if key == "LPORT":
+                correct_value = self.__check_port(self.LPORT)
+            if key == "SUBNET":
+                correct_value = self.__check_subnet()
+            if key == "MAC_ADDRESS":
+                correct_value = self.__check_mac()
+            if key == "INTERFACE":
+                correct_value = self.__check_interface()
+            if not correct_value:
+                return correct_value
+        return correct_value
+
     def __set_up_file_loggers(self) -> None:
+        """[ Method to configure the files where the log messages will be saved ]"""
         logger.add(
             "logs/all.log",
             level="DEBUG",

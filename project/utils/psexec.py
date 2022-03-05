@@ -410,7 +410,22 @@ class Psexec(CommandSet):
                 f"Cannot delete files in {rhost}. Please restart Igris"
             )
 
-   
+    def __checking_conditions_for_attack(
+        self, args: argparse.Namespace, configurable_variables: dict
+    ) -> bool:
+        """[ Method to check different things before starting the attack ]
+
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+            configurable_variables(dict): [ Settable variables used in this command]
+        """
+        if not self._cmd._check_configurable_variables(configurable_variables):
+            return False
+        if args.clean_remote_files:
+            self.__clean_paexec_files(args)
+            return False
+        return True
+
     argParser = cmd2.Cmd2ArgumentParser(description="Tool to execute commands remotely")
     command_options = argParser.add_argument_group("Options for running commands")
     command_options.add_argument(
@@ -477,8 +492,6 @@ class Psexec(CommandSet):
             return
         if not self._cmd.check_settable_variables_value(settable_variables_required):
             return
-        if args.clean_remote_files:
-            self.__clean_paexec_files(args)
+        if not self.__checking_conditions_for_attack(args, settable_variables_required):
             return
-
         self.__process_to_perform_psexec(args)

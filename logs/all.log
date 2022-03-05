@@ -3518,3 +3518,64 @@ impacket.nmb.NetBIOSError: Error while reading from remote
 2022-03-04 18:51:25.854 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
 2022-03-04 18:56:23.281 | DEBUG    | project.utils.scan:do_scan:565 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
 2022-03-04 18:56:23.282 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:31:57.971 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 11:32:00.376 | DEBUG    | project.utils.scan:do_scan:568 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-03-05 11:32:00.376 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:32:12.860 | DEBUG    | project.utils.scan:do_scan:568 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: jaklsdkjfk
+2022-03-05 11:32:12.861 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 11:32:17.595 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 11:32:23.366 | DEBUG    | project.utils.scan:do_scan:568 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: jaklsdjfkl
+2022-03-05 11:32:23.367 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 11:32:52.661 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 11:32:58.749 | DEBUG    | project.utils.scan:do_scan:568 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: djflkadj
+2022-03-05 11:32:58.750 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 11:32:58.750 | ERROR    | project.shell.igris:_check_subnet:380 - Error with the subnet value. Use -SS to see the value.
+2022-03-05 11:33:05.915 | DEBUG    | project.utils.scan:do_scan:568 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: djflkadj
+2022-03-05 11:33:05.916 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:34:26.254 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 11:34:31.457 | DEBUG    | project.utils.psexec:do_psexec:472 - Starting psexec with the user Administrator and the password P@$$w0rd! in 192.168.253.138
+2022-03-05 11:34:31.458 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:41:03.112 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 11:41:19.795 | DEBUG    | project.utils.psexec:do_psexec:493 - Starting psexec with the user Administrator and the password P@$$w0rd! in jalksdfj
+2022-03-05 11:41:19.796 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 11:41:30.501 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-05 11:42:15.255 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 11:42:28.281 | DEBUG    | project.utils.psexec:do_psexec:493 - Starting psexec with the user Administrator and the password P@$$w0rd! in jkalsdj
+2022-03-05 11:42:28.282 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 11:42:45.002 | DEBUG    | project.utils.psexec:do_psexec:493 - Starting psexec with the user Administrator and the password P@$$w0rd! in jkalsdj
+2022-03-05 11:42:45.003 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 11:42:55.017 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-05 11:51:44.753 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 11:51:50.769 | DEBUG    | project.utils.psexec:do_psexec:494 - Starting psexec with the user Administrator and the password P@$$w0rd! in 192.168.253.138
+2022-03-05 11:51:50.770 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 11:51:53.838 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-05 11:52:01.908 | DEBUG    | project.utils.psexec:do_psexec:494 - Starting psexec with the user Administrator and the password P@$$w0rd! in ajdklfjdk
+2022-03-05 11:52:01.908 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 11:52:01.908 | ERROR    | project.shell.igris:_check_ip:331 - Not valid RHOST
+2022-03-05 11:53:09.531 | DEBUG    | project.network.mitm.ntlmrelay:do_ntlm_relay:421 - Starting ntlm relay attack using lhost: 192.168.253.135 rhost:ajdklfjdk 
+2022-03-05 11:53:09.532 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 11:53:09.532 | ERROR    | project.network.mitm.ntlmrelay:__show_connections:324 - The ntlm_relay process is not activated
+2022-03-05 11:57:19.466 | DEBUG    | project.network.poison.dnstakeover:do_dns_takeover:171 - Starting dns takeover attack using lhost: 192.168.253.135 rhost:ajdklfjdk ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-05 11:57:19.467 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:84 - Error: the following arguments are required: -M/--mask
+2022-03-05 12:06:31.640 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 15:30:05.159 | DEBUG    | project.utils.scan:do_scan:568 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: 192.168.253.0/24
+2022-03-05 15:30:05.161 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 15:36:49.153 | DEBUG    | project.network.poison.poisonselector:do_poison:212 - Starting poison attack using lhost: 192.168.253.135 ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-05 15:36:49.154 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 15:43:45.148 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 15:43:51.235 | DEBUG    | project.utils.scan:do_scan:562 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: ajksljdf
+2022-03-05 15:43:51.235 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 15:44:23.966 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 15:44:37.109 | DEBUG    | project.utils.scan:do_scan:562 - Starting scan command using user: Administrator passwd: P@$$w0rd! subnet: asljdkf
+2022-03-05 15:44:37.110 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 15:44:37.111 | ERROR    | project.shell.igris:_check_subnet:380 - Error with the subnet value. Example of correct subnet: 192.168.253.0/24.Use -SS to see the value.
+2022-03-05 16:12:13.644 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully
+2022-03-05 16:12:40.136 | DEBUG    | project.utils.psexec:do_psexec:487 - Starting psexec with the user Administrator and the password P@$$w0rd! in ajlsdkfj
+2022-03-05 16:12:40.136 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 16:12:40.137 | ERROR    | project.shell.igris:_check_ip:331 - Not valid RHOST
+2022-03-05 16:12:46.543 | DEBUG    | project.network.poison.dnstakeover:do_dns_takeover:169 - Starting dns takeover attack using lhost: ajslkdf ipv6:fe80::20c:29ff:fe0e:d73b
+            interface: ens33 mac_address:00:0c:29:0e:d7:3b
+2022-03-05 16:12:46.544 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
+2022-03-05 16:12:46.544 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:88 - Error: the following arguments are required: -M/--mask

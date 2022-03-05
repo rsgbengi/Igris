@@ -127,22 +127,16 @@ class SmbServerAttack(CommandSet):
         self.__alerts_hunter.dameon = True
         self.__alerts_hunter.start()
 
-    def __check_configurable_variables(self) -> bool:
-        """[Method to check the value of the settable variabes ]
-
-        Returns:
-            bool: [ Check if the LHOST and the LPORT have correct values]
-        """
-        return self._cmd._check_ip(self._cmd.LHOST, "LHOST") and self._cmd._check_port(
-            self._cmd.LPORT
-        )
-
-    def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
+    def __checking_conditions_for_attack(
+        self, args: argparse.Namespace, configurable_variables: dict
+    ) -> bool:
         """[ Method to check different things before starting the attack ]
 
         Args:
-             args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+            configurable_variables(dict): [ Settable variables used in this command]
         """
+
         if args.end_attack:
             self.__end_process_in_the_background()
             return False
@@ -157,7 +151,8 @@ class SmbServerAttack(CommandSet):
         if not self.__check_directory():
             self._cmd.error_logger.warning("Error with output file")
             return False
-        if not self.__check_configurable_variables():
+
+        if not self._cmd._check_configurable_variables(configurable_variables):
             return False
         if args.Asynchronous:
             self.__configure_alerts_thread()
@@ -220,7 +215,9 @@ class SmbServerAttack(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
-            if not (self.__checking_conditions_for_attack(args)):
+            if not (
+                self.__checking_conditions_for_attack(args, settable_variables_required)
+            ):
                 return
             self.__creating_components(args)
             self.__wrapper_attack(args)

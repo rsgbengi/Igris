@@ -492,15 +492,15 @@ class ScanForPsexec(CommandSet):
         """[ Method to check if the scan is already in progress ]"""
         return self.__scan_process is not None and self.__scan_process.is_alive()
 
-    def __check_configurable_variables(self) -> bool:
-        """[Method to check the value of the settable variabes ]
+    def __check_conditions_for_the_attack(
+        self, args: argparse.Namespace, configurable_variables: dict
+    ) -> bool:
+        """[ Method to check different things before starting the attack ]
 
-        Returns:
-            bool: [ Check if the SUBNET have correct values]
+        Args:
+            args (argparse.Namespace): [ Arguments passed to the attack ]
+            configurable_variables(dict): [ Settable variables used in this command]
         """
-        return self._cmd._check_subnet()
-
-    def __check_conditions_for_the_attack(self, args: argparse.Namespace) -> bool:
         if args.show_info:
             self.__show_scan_info()
             return False
@@ -512,7 +512,7 @@ class ScanForPsexec(CommandSet):
                 "The scan is already running in the background ..."
             )
             return False
-        if not self.__check_configurable_variables():
+        if not self._cmd._check_configurable_variables(configurable_variables):
             return False
         return True
 
@@ -578,6 +578,8 @@ class ScanForPsexec(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
-            if not self.__check_conditions_for_the_attack(args):
+            if not self.__check_conditions_for_the_attack(
+                args, settable_variables_required
+            ):
                 return
             self.__start_scan(args)

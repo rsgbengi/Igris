@@ -240,21 +240,14 @@ class NtlmRelay(CommandSet):
             return False
         return True
 
-    def __check_configurable_variables(self) -> bool:
-        """[Method to check the value of the settable variabes ]
-
-        Returns:
-            bool: [ Check if the LHOST and the RHOST have correct values]
-        """
-        return self._cmd._check_ip(self._cmd.LHOST, "LHOST") and self._cmd._check_ip(
-            self._cmd.RHOST, "RHOST"
-        )
-
-    def __checking_conditions_for_attack(self, args: argparse.Namespace) -> bool:
+    def __checking_conditions_for_attack(
+        self, args: argparse.Namespace, configurable_variables: dict
+    ) -> bool:
         """[ Method to check different things before starting the attack ]
 
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
+            configurable_variables(dict): [ Settable variables used in this command]
 
         """
         if args.show_connections:
@@ -269,7 +262,7 @@ class NtlmRelay(CommandSet):
         if self.__file_exits():
             self._cmd.info_logger.info("Exiting ...")
             return False
-        if not self.__check_configurable_variables():
+        if not self._cmd._check_configurable_variables(configurable_variables):
             return False
         self.__configure_alert_thread()
 
@@ -429,7 +422,9 @@ class NtlmRelay(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
-            if not self.__checking_conditions_for_attack(args):
+            if not self.__checking_conditions_for_attack(
+                args, settable_variables_required
+            ):
                 return
 
             self.__creating_components(args)

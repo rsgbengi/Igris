@@ -3,13 +3,13 @@
 from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, Cmd2ArgumentParser, with_argparser
 import argparse
-from .utils import ScanForPsexec, Psexec
-from .network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
+from ..utils import ScanForPsexec, Psexec
+from ..network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
 from ..dashboard import DashboardCommand
 
 
 @with_default_category("Starters")
-class LoadUtility(CommandSet):
+class Load(CommandSet):
     def __init__(self) -> None:
         super().__init__()
         self.__scan_module = ScanForPsexec()
@@ -63,6 +63,9 @@ class LoadUtility(CommandSet):
             try:
                 self._cmd.register_command_set(self.__ntlm_relay_module)
                 self._cmd.register_command_set(self.__mss_module)
+                self._cmd.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
+                self._cmd.register_postloop_hook(self.__mss_module.mss_postloop)
+
             except ValueError:
 
                 self._cmd.error_logger_error("Mitm module already loaded")
@@ -102,3 +105,6 @@ class LoadUtility(CommandSet):
         if args.mitm:
             self._cmd.unregister_command_set(self.__ntlm_relay_module)
             self._cmd.unregister_command_set(self.__mss_module)
+            self._cmd.unregister_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
+            self._cmd.unregister_postloop_hook(self.__mss_module.mss_postloop)
+

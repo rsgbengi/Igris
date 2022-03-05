@@ -173,3 +173,18 @@
 2022-03-04 18:51:07.937 | ERROR    | project.shell.igris:_check_ip:331 - Not valid RHOST
 2022-03-04 18:51:25.854 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
 2022-03-04 18:56:23.282 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:32:00.376 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:32:58.750 | ERROR    | project.shell.igris:_check_subnet:380 - Error with the subnet value. Use -SS to see the value.
+2022-03-05 11:33:05.916 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:34:31.458 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:41:30.501 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-05 11:42:55.017 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-05 11:51:53.838 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-05 11:52:01.908 | ERROR    | project.shell.igris:_check_ip:331 - Not valid RHOST
+2022-03-05 11:53:09.532 | ERROR    | project.network.mitm.ntlmrelay:__show_connections:324 - The ntlm_relay process is not activated
+2022-03-05 11:57:19.467 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:84 - Error: the following arguments are required: -M/--mask
+2022-03-05 15:30:05.161 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 15:36:49.154 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 15:44:37.111 | ERROR    | project.shell.igris:_check_subnet:380 - Error with the subnet value. Example of correct subnet: 192.168.253.0/24.Use -SS to see the value.
+2022-03-05 16:12:40.137 | ERROR    | project.shell.igris:_check_ip:331 - Not valid RHOST
+2022-03-05 16:12:46.544 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:88 - Error: the following arguments are required: -M/--mask
