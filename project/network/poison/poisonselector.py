@@ -145,7 +145,7 @@ class PoisonCommand(CommandSet):
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform mdns poisoning attack""",
-        epilog="This command is not designed to use pipes(|) or redirections( >< ) when poisoners are invoked",
+        epilog="Next steps\n mss -> To catch ntlmv2 hasehs\n ntlm_relay -> to relay connections",
     )
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "

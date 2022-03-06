@@ -117,6 +117,7 @@ class DNSTakeOverCommand(CommandSet):
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform dns takeover over ipv6 using dhcp6 rogue.""",
+        epilog="Next Steps\n-ntlm_relay -IP6 to relay credentials",
     )
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "

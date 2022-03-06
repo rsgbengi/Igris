@@ -160,7 +160,7 @@ class SmbServerAttack(CommandSet):
 
     argParser = Cmd2ArgumentParser(
         description="""Malicious smb server attack to get hashes net-NTLMv2 """,
-        epilog="This command is not designed to use pipes(|) or redirections( >< ) when the server is in used",
+        epilog="Next steps\n-Try to crack the ntlmv2 hashes in loot/[user].txt\n-psexec with the credentials after cracking them",
     )
 
     display_options = argParser.add_argument_group(

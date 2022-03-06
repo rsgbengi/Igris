@@ -2,7 +2,6 @@ import argparse
 import concurrent.futures
 import functools
 from ipaddress import IPv4Address, IPv4Network
-import ipaddress
 import ntpath
 import random
 import py2neo
@@ -12,7 +11,6 @@ from rich.table import Table
 from halo import Halo
 from typing import Tuple
 import cmd2
-import pandas as pd
 from cmd2 import CommandSet, ansi, with_default_category
 from impacket.smb import SMB_DIALECT
 from impacket.smbconnection import SMBConnection
@@ -242,7 +240,7 @@ class ScanForPsexec(CommandSet):
                 f"the analysis of this {subnet} has not collected any information or no scan has been performed with it yet"
             )
 
-    def __check_conectivity_of_scan(
+    def __check_connectivity_of_scan(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
     ) -> Tuple[bool, TargetInfo, SMBConnection]:
         """[Function to check if the connectivity to a specific remote host is possible]
@@ -312,7 +310,7 @@ class ScanForPsexec(CommandSet):
             possibility_of_login,
             target_info,
             smbclient,
-        ) = self.__check_conectivity_of_scan(user_info, subnet, ip)
+        ) = self.__check_connectivity_of_scan(user_info, subnet, ip)
         if possibility_of_login:
             self.__set_up_scan_results(smbclient, target_info, user_info, subnet)
         if smbclient is not None:
@@ -349,7 +347,7 @@ class ScanForPsexec(CommandSet):
         self._cmd.info_logger.info("Using asynchronous scan.")
         self._cmd.info_logger.info(
             ansi.style(
-                "Starting... The messeges will be displayed as new computer is found",
+                "Starting... The messages will be displayed as new computer is found",
                 fg=ansi.fg.green,
             )
         )
@@ -389,12 +387,12 @@ class ScanForPsexec(CommandSet):
             TargetInfo: [ Returns the target information ]
         """
 
-        self.__spinner.text = "Working in " + str(ip)
+        self.__spinner.text = f"Working in {str(ip)}"
         (
             possibility_of_login,
             target_info,
             smbclient,
-        ) = self.__check_conectivity_of_scan(user_info, subnet, ip)
+        ) = self.__check_connectivity_of_scan(user_info, subnet, ip)
         if possibility_of_login:
             self.__set_up_scan_results(smbclient, target_info, user_info, subnet)
         if smbclient is not None:
@@ -519,6 +517,7 @@ class ScanForPsexec(CommandSet):
     argParser = cmd2.Cmd2ArgumentParser(
         description="""Tool to know if there is a possibility to perform psexec. 
         Without arguments this tool will scan the Subnet""",
+        epilog="Next Steps\n psexec -> To get windows shell",
     )
     display_options = argParser.add_argument_group(
         " Arguments for displaying information "

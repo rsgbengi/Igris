@@ -3579,3 +3579,4 @@ impacket.nmb.NetBIOSError: Error while reading from remote
             interface: ens33 mac_address:00:0c:29:0e:d7:3b
 2022-03-05 16:12:46.544 | DEBUG    | project.shell.igris:check_settable_variables_value:253 - Checking the correct value of the necessary settable variables 
 2022-03-05 16:12:46.544 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:88 - Error: the following arguments are required: -M/--mask
+2022-03-06 10:04:43.635 | DEBUG    | project.utils.neo.dboperations:__init__:30 - The neo4j dirver has been created successfully

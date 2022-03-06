@@ -3,7 +3,7 @@ from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
 import argparse
 
-from .servers import MaliciousSmbServer, ConfigurationSmbRelayServer, Proxy
+from .servers import ConfigurationSmbRelayServer, Proxy
 from impacket.examples.ntlmrelayx.clients.smbrelayclient import SMBRelayClient
 from impacket.examples.ntlmrelayx.attacks.smbattack import SMBAttack
 from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
@@ -350,6 +350,7 @@ class NtlmRelay(CommandSet):
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform ntlm relay attack""",
+        epilog="Next step\n-scan PASS <ntlmhash> -> Password spraying",
     )
 
     display_options = argParser.add_argument_group(
