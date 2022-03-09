@@ -372,7 +372,7 @@ class Igris_Shell(cmd2.Cmd):
         Returns:
             bool: [ Returns if the interface is in the possible interfaces ]
         """
-        if self.INTERACE not in netifaces.interfaces():
+        if self.INTERFACE not in netifaces.interfaces():
             self.error_logger.error("The interface is not valid")
             return False
         return True

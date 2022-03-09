@@ -4,8 +4,8 @@ from py2neo import Node
 
 
 class GraphGenerator:
-    """[Class to generate the different dashboard graphs]
-    """
+    """[Class to generate the different dashboard graphs]"""
+
     def __init__(self) -> None:
         self.__graph_driver = Neo4jConnection(
             "neo4j://localhost:7687",
@@ -167,16 +167,38 @@ class GraphGenerator:
         Returns:
             Tuple[str, Node]: [ The id of the node and the node itself ]
         """
-        user_id = node["ip"] + node["username"] + node["password"]
-        user_node = {
-            "classes": "admin",
-            "data": {
-                "id": user_id,
-                "label": f'{node["username"]}/{node["password"]}',
-                "username": node["username"],
-                "password": node["password"],
-            },
-        }
+        user_id = node["ip"] + node["username"]
+        if ("password" and "ntlm") in node.labels:
+            user_node = {
+                "classes": "admin",
+                "data": {
+                    "id": user_id,
+                    "label": node["username"],
+                    "username": node["username"],
+                    "password": node["password"],
+                    "ntlm": node["ntlm"],
+                },
+            }
+        elif "ntlm" in node.keys():
+            user_node = {
+                "classes": "admin",
+                "data": {
+                    "id": user_id,
+                    "label": node["username"],
+                    "username": node["username"],
+                    "ntlm": node["ntlm"],
+                },
+            }
+        else:
+            user_node = {
+                "classes": "admin",
+                "data": {
+                    "id": user_id,
+                    "label": node["username"],
+                    "username": node["username"],
+                    "password": node["password"],
+                },
+            }
 
         return user_id, user_node
 
@@ -235,16 +257,38 @@ class GraphGenerator:
             Tuple[str,dict]: [ The user id of the node and the node itself]
         """
 
-        user_id = node["ip"] + node["username"] + node["password"]
-        user_node = {
-            "classes": "user",
-            "data": {
-                "id": user_id,
-                "label": f'{node["username"]}/{node["password"]}',
-                "username": node["username"],
-                "password": node["password"],
-            },
-        }
+        user_id = node["ip"] + node["username"]
+        if ("password" and "ntlm") in node.labels:
+            user_node = {
+                "classes": "user",
+                "data": {
+                    "id": user_id,
+                    "label": node["username"],
+                    "username": node["username"],
+                    "password": node["password"],
+                    "ntlm": node["ntlm"],
+                },
+            }
+        elif "ntlm" in node.keys():
+            user_node = {
+                "classes": "user",
+                "data": {
+                    "id": user_id,
+                    "label": node["username"],
+                    "username": node["username"],
+                    "ntlm": node["ntlm"],
+                },
+            }
+        else:
+            user_node = {
+                "classes": "user",
+                "data": {
+                    "id": user_id,
+                    "label": node["username"],
+                    "username": node["username"],
+                    "password": node["password"],
+                },
+            }
 
         return user_id, user_node
 

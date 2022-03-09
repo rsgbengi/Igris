@@ -2,7 +2,9 @@
 from loguru import logger
 import loguru
 from py2neo import Node, Relationship, Graph
+from spnego._ntlm_raw.crypto import is_ntlm_hash
 from ..gatherinfo import TargetInfo, UserInfo
+
 from loguru import logger
 
 
@@ -98,8 +100,31 @@ class Neo4jConnection:
             Node: [The user node ]
         """
         return self.__graph.nodes.match(
-            "User", ip=ipv4, username=user_status.user, password=user_status.passwd
+            "User", ip=ipv4, username=user_status.user.lower()
         ).first()
+
+    def __create_user_node(self, user_status: UserInfo, ipv4: str) -> None:
+        """[ Create a user node from scratch ]
+
+        Args:
+            user_status (UserInfo): [ User information ]
+            ipv4 (str): [ ipv4 of teh computer target ]
+        """
+        if not is_ntlm_hash(user_status.passwd):
+            user = Node(
+                "User",
+                ip=ipv4,
+                username=user_status.user.lower(),
+                password=user_status.passwd,
+            )
+        else:
+            user = Node(
+                "User",
+                ip=ipv4,
+                username=user_status.user.lower(),
+                ntlm=user_status.passwd,
+            )
+        self.__commit(user)
 
     def init_new_user(self, user_status: UserInfo, ipv4: str):
         """[ Method to start a new user ]
@@ -108,11 +133,15 @@ class Neo4jConnection:
             user_status (UserInfo): [User information to create a new user node  ]
             ipv4 (str): [Ip of a specific computer ]
         """
-        if self.get_user(user_status, ipv4) is None:
-            user = Node(
-                "User", ip=ipv4, username=user_status.user, password=user_status.passwd
-            )
-            self.__commit(user)
+        check_node = self.get_user(user_status, ipv4)
+        if check_node is None:
+            self.__create_user_node(user_status, ipv4)
+        else:
+            if not is_ntlm_hash(user_status.passwd):
+                check_node["password"] = user_status.passwd
+            else:
+                check_node["ntlm"] = user_status.passwd
+            self.__graph.push(check_node)
 
     def check_computers_of_a_subnet(self, subnet: str) -> list:
         """[ Returns all computers of a specific subnet ]

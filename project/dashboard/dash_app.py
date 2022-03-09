@@ -256,9 +256,17 @@ def define_the_body() -> list:
     return [
         dbc.Col(
             [
-                html.H2("Node Information", className="display-10"),
-                html.Hr(className="my-2"),
-                html.Div(id="node-info-output"),
+                dbc.Card(
+                    [
+                        dbc.CardBody(
+                            [
+                                html.H2("Node Information", className="display-10"),
+                                html.Hr(className="my-2"),
+                                html.Div(id="node-info-output"),
+                            ]
+                        )
+                    ],
+                )
             ],
             width=2,
         ),
@@ -437,16 +445,18 @@ def display_node_data(data: dict):
         _type_: [ Node information ]
     """
     if data:
-        return [
-            dbc.Row(
-                [
-                    dbc.Col(html.P(f"{key}:", style={"font-weight": "bold"})),
-                    dbc.Col(html.P(f"{info}")),
-                ]
+        accordion_item = [
+            dbc.AccordionItem(
+                dbc.Card(dbc.CardBody(f"{info}"), className="mb-3"),
+                title=f"{key}",
             )
             for key, info in data.items()
             if key not in ["label", "id"]
         ]
+        return dbc.Accordion(
+            accordion_item,
+            flush=True,
+        )
     else:
         return html.P("Press a node to see info")
 

@@ -17,11 +17,11 @@ class UserInfo:
         self.__passwd = passwd
 
     @property
-    def user(self):
+    def user(self) -> str:
         return self.__user
 
     @property
-    def passwd(self):
+    def passwd(self) -> str:
         return self.__passwd
 
 
@@ -97,42 +97,9 @@ class TargetInfo:
     def subnet(self, subnet: str) -> None:
         self.__subnet = subnet
 
+    @property
+    def login_possibility(self) -> bool:
+        return self.__login_possibility
+
     def psexec_info(self) -> str:
-        if self.__psexec:
-            return "PsExec here!"
-        else:
-            return "Not PsExec here!"
-
-
-class SubnetInfo:
-    def __init__(self, subnet: str):
-        self.__subnet = subnet
-        self.__computers = Manager().list()
-        self.__users_used = []
-
-    @property
-    def computers(self) -> Manager().list():
-        return self.__computers
-
-    @property
-    def users_used(self) -> list:
-        return self.__users_used
-
-    @computers.setter
-    def computers(self, new_computer: TargetInfo):
-        self.__computers.append(new_computer)
-
-    def add_computer(self, computer: TargetInfo) -> None:
-        self.__computers.append(computer)
-
-    def add_new_user(self, user: UserInfo) -> None:
-        self.__users_used.append(user)
-
-    def check_if_user_exits(self, user: UserInfo) -> bool:
-        return user in self.__users_used
-
-    def casting_to_list_computers(self):
-        self.__computers = list(self.__computers)
-
-    def casting_to_manager_list_computers(self):
-        self.__computers = Manager().list(self.__computers)
+        return "PsExec here!" if self.__psexec else "Not PsExec here!"

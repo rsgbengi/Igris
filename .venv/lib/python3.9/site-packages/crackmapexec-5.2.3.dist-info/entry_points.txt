@@ -1,0 +1,5 @@
+[console_scripts]
+cme=cme.crackmapexec:main
+cmedb=cme.cmedb:main
+crackmapexec=cme.crackmapexec:main
+

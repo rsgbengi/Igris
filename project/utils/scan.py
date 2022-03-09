@@ -1,25 +1,25 @@
 import argparse
 import concurrent.futures
 import functools
-from ipaddress import IPv4Address, IPv4Network
 import ntpath
 import random
-import py2neo
-from rich.console import Console
-from rich.table import Table
-
-from halo import Halo
+from ipaddress import IPv4Address, IPv4Network
+from multiprocessing import Process
 from typing import Tuple
+
 import cmd2
+import py2neo
 from cmd2 import CommandSet, ansi, with_default_category
+from halo import Halo
 from impacket.smb import SMB_DIALECT
 from impacket.smbconnection import SMBConnection
 from log_symbols import LogSymbols
+from rich.console import Console
+from rich.table import Table
 from spinners.spinners import Spinners
-
 from spnego._ntlm_raw.crypto import is_ntlm_hash
+
 from .gatherinfo import TargetInfo, UserInfo
-from multiprocessing import Process
 
 
 @with_default_category("Utilities")
@@ -264,21 +264,23 @@ class ScanForPsexec(CommandSet):
             conn_without_smb_dialect, smbclient = self.__try_scan_connection_with_smb3(
                 str(ip)
             )
-
         if conn_with_smb_dialect or conn_without_smb_dialect:
-            target_info = TargetInfo(str(ip), subnet, user_info)
+            target_info = TargetInfo(str(ip), subnet=subnet)
             possibility_of_login = self.__check_scan_login_possibility(
                 user_info, smbclient
             )
 
+            self.__configure_target_info_of_scan(target_info, smbclient, subnet)
+            self._cmd.igris_db.init_new_computer(target_info)
+            self._cmd.igris_db.relationship_computer_subnet(target_info)
+
         return possibility_of_login, target_info, smbclient
 
-    def __set_up_scan_results(
+    def __set_up_user_results(
         self,
         smbclient: SMBConnection,
         target_info: TargetInfo,
         user_info: UserInfo,
-        subnet: str,
     ) -> None:
         """[Prepare everything to later show the saved information of the connection
                 asynchronously]
@@ -286,13 +288,11 @@ class ScanForPsexec(CommandSet):
         Args:
             smbclient (SMBConnection): [Object with the current smb connection]
             target_info (targetinfo): [object that contains info of the current target]
+            user_info (UserInfo): [ Object that contains info of the user ]
         """
-        self.__configure_target_info_of_scan(target_info, smbclient, subnet)
         success_in_psexec = self.__check_psexec_possibility(smbclient)
         target_info.psexec = success_in_psexec
         self._cmd.igris_db.init_new_user(user_info, target_info.ip)
-        self._cmd.igris_db.init_new_computer(target_info)
-        self._cmd.igris_db.relationship_computer_subnet(target_info)
         self._cmd.igris_db.relationship_computer_user(target_info, user_info)
 
     def __is_user_in_admin_group_asynchronous(
@@ -306,15 +306,7 @@ class ScanForPsexec(CommandSet):
             subnet (str): [Target subnet to scan]
             ip (IPv4Address): [Ip target of the current remote host]
         """
-        (
-            possibility_of_login,
-            target_info,
-            smbclient,
-        ) = self.__check_connectivity_of_scan(user_info, subnet, ip)
-        if possibility_of_login:
-            self.__set_up_scan_results(smbclient, target_info, user_info, subnet)
-        if smbclient is not None:
-            smbclient.close()
+        self.__recon_of_the_target(user_info, subnet, ip)
 
     def __set_up_scan_actions_asynchronous(self) -> None:
         """[Prepare everything to scan asynchronously  using threads]"""
@@ -368,14 +360,21 @@ class ScanForPsexec(CommandSet):
         if target_info.psexec:
             admin = ansi.style(target_info.psexec_info(), fg=ansi.fg.yellow)
             self.__spinner.warn(f"{admin} {os_with_color} {ip_with_color}")
+        elif target_info.psexec is not None:
+            normal_user = ansi.style(
+                target_info.psexec_info(), fg=ansi.fg.bright_magenta
+            )
+            self.__spinner.info(f"{normal_user} {os_with_color} {ip_with_color}")
         else:
-            self.__spinner.warn(f"{os_with_color} {ip_with_color}")
+
+            self.__spinner.info(f"(Not login) {os_with_color} {ip_with_color}")
+
         self.__spinner.start()
 
     def __is_user_in_admin_group_synchronous(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
     ) -> TargetInfo:
-        """[Function that is used to know if the user is an administrator and
+        """[Method that is used to know if the user is an administrator and
                 is currently able to psexec(synchronous way)]
 
         Args:
@@ -388,13 +387,29 @@ class ScanForPsexec(CommandSet):
         """
 
         self.__spinner.text = f"Working in {str(ip)}"
+        return self.__recon_of_the_target(user_info, subnet, ip)
+
+    def __recon_of_the_target(
+        self, user_info: UserInfo, subnet: str, ip: IPv4Address
+    ) -> TargetInfo:
+        """[Method for collecting information about the relationship of a user and a computer]
+
+        Args:
+            user_info (UserInfo): [ User info needed to know user privilages]
+            subnet (str): [ Target subnet of the scan]
+            ip (IPv4Address): [ Ip target of the current remote host]
+
+        Returns:
+            (TargetInfo): [ Information collected ]
+        """
         (
             possibility_of_login,
             target_info,
             smbclient,
         ) = self.__check_connectivity_of_scan(user_info, subnet, ip)
+
         if possibility_of_login:
-            self.__set_up_scan_results(smbclient, target_info, user_info, subnet)
+            self.__set_up_user_results(smbclient, target_info, user_info)
         if smbclient is not None:
             smbclient.close()
         return target_info

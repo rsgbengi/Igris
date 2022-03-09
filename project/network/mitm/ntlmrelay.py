@@ -88,7 +88,7 @@ class NtlmRelay(CommandSet):
             self.__display_sam_alert()
             self.__display_connection_alert()
 
-    def __checking_directory_options(self, args: argparse.Namespace) -> None:
+    def __checking_directory_options(self) -> None:
         """[Method that will check the options of the output]
 
         Args:
@@ -133,7 +133,7 @@ class NtlmRelay(CommandSet):
         Args:
             args (argparse.Namespace): [ Arguments passed to the attack ]
         """
-        self.__checking_directory_options(args)
+        self.__checking_directory_options()
         self.__checking_asynchronous_options(args)
         self.__checking_proxy_options(args)
 

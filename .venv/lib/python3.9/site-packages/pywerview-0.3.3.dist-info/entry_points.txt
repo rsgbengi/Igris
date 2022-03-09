@@ -1,0 +1,3 @@
+[console_scripts]
+pywerview = pywerview.cli.main:main
+

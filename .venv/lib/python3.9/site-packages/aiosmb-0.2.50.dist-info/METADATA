@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: aiosmb
+Version: 0.2.50
+Summary: Asynchronous SMB protocol implementation
+Home-page: https://github.com/skelsec/aiosmb
+Author: Tamas Jos
+Author-email: info@skelsecprojects.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Requires-Dist: asn1crypto
+Requires-Dist: asysocks (>=0.1.2)
+Requires-Dist: colorama
+Requires-Dist: minikerberos (>=0.2.14)
+Requires-Dist: prompt-toolkit (>=3.0.2)
+Requires-Dist: pycryptodomex
+Requires-Dist: six
+Requires-Dist: tqdm
+Requires-Dist: winacl (>=0.1.1)
+Requires-Dist: winsspi (>=0.0.9)
+
+UNKNOWN
+
+

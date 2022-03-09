@@ -1,0 +1,605 @@
+2022-03-02 20:45:30.695 | ERROR    | project.network.poison.poisonselector:__checking_conditions_for_attack:121 - Not valid LHOST
+2022-03-02 20:45:42.948 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-03 18:18:07.345 | ERROR    | project.shell.igris:do_cd:225 - /home/rsgbengi/Igris/-h is not a directory
+2022-03-03 18:18:09.773 | ERROR    | project.shell.igris:do_cd:225 - /home/rsgbengi/Igris/-h is not a directory
+2022-03-03 18:18:11.325 | ERROR    | project.shell.igris:do_cd:208 - cd needs one argument:
+2022-03-03 18:18:34.160 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-03 18:19:23.985 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:start_llmnr_poisoning:154 - Starting llmnr poisoning...
+2022-03-03 18:19:59.667 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to 192.168.253.1[0m
+2022-03-03 18:19:59.709 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-03 18:19:59.748 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to 192.168.253.138[0m
+2022-03-03 18:20:08.470 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to fe80::f1f5:96d5:abd5:67a0[0m
+2022-03-03 18:20:08.512 | INFO     | project.network.poison.poisonengine.poisoners.llmnr:__send_packet:114 - [36m(LLMNR) Sending packet to 192.168.253.138[0m
+2022-03-03 18:20:54.831 | INFO     | project.network.poison.poisonengine.poisoners.nbt_ns:start_nbt_ns_poisoning:133 - Starting nbt-ns poisoning...
+2022-03-03 18:21:13.309 | INFO     | project.network.poison.poisonengine.poisoners.nbt_ns:__send_packet:111 - [36m(NBT_NS) Sending packet to 192.168.253.138[0m
+2022-03-03 18:21:16.492 | INFO     | project.network.poison.poisonengine.poisoners.nbt_ns:__send_packet:111 - [36m(NBT_NS) Sending packet to 192.168.253.138[0m
+2022-03-03 18:23:45.609 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:23:46.927 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-03-03 18:23:51.045 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-03 18:24:07.903 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:25:19.048 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 18:25:19.198 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 18:25:19.208 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:25:19.345 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-03 18:25:19.372 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-03 18:25:19.388 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-03 18:25:20.698 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-03 18:25:21.007 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-03 18:25:22.657 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-03 18:25:22.674 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-03 18:25:22.695 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-03 18:25:27.304 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:25:30.091 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:165 - Exiting ntlm relay attack ...
+2022-03-03 18:25:55.904 | WARNING  | project.network.mitm.ntlmrelay:__file_exits:217 - The file will be overwrite, do you want to continue ?(press 'y' to continue but any)
+2022-03-03 18:26:23.463 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:305 - Running ntlm relay in the background the results will be saved at: loot//192.168.253.138_samhashes.sam 
+2022-03-03 18:26:23.496 | WARNING  | project.network.mitm.ntlmrelay:__checking_directory_options:106 - The specified directory does not exists or you don't have access
+2022-03-03 18:26:23.499 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 18:26:23.521 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:28:14.968 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-03 18:28:18.808 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:298 - Running ntlm relay in the background the results will be saved at: loot/192.168.253.138_samhashes.sam 
+2022-03-03 18:28:18.831 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 18:28:18.854 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:28:32.038 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 18:28:32.102 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 18:28:32.112 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:28:32.191 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-03 18:28:32.209 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-03 18:28:32.216 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-03 18:28:33.463 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-03 18:28:33.629 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-03 18:28:35.326 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-03 18:28:35.335 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-03 18:28:35.345 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-03 18:28:51.074 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:320 - Finishing ntlm relay attack in the background ...
+2022-03-03 18:29:16.541 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:298 - Running ntlm relay in the background the results will be saved at: loot/192.168.253.138_samhashes.sam 
+2022-03-03 18:29:16.562 | INFO     | project.network.mitm.servers.proxyserver:__init__:11 - Starting socks server ...
+2022-03-03 18:29:16.630 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 18:29:16.639 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 18:29:41.366 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 18:29:41.476 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 18:29:41.487 | INFO     | threading:run:892 - SOCKS: Adding SHADOW/IRON@192.168.253.138(445) to active SOCKS connection. Enjoy
+2022-03-03 18:29:41.488 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:29:49.344 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-12: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 18:37:32.303 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:37:50.140 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:38:36.431 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:38:58.408 | ERROR    | socketserver:__init__:747 - SOCKS: I don't have a handler for this port
+2022-03-03 18:39:11.718 | ERROR    | socketserver:__init__:747 - SOCKS: I don't have a handler for this port
+2022-03-03 18:39:31.054 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:48:01.753 | ERROR    | socketserver:__init__:747 - SOCKS: I don't have a handler for this port
+2022-03-03 18:48:21.611 | ERROR    | socketserver:__init__:747 - SOCKS: I don't have a handler for this port
+2022-03-03 18:48:48.432 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:48:59.554 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:49:15.581 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:49:23.466 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:49:33.673 | ERROR    | socketserver:__init__:747 - SOCKS: Don't have a relay for 192.168.243.138(445)
+2022-03-03 18:50:24.425 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 18:51:26.263 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 18:57:57.384 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 19:02:44.127 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 19:07:09.792 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:298 - Running ntlm relay in the background the results will be saved at: loot/192.168.253.138_samhashes.sam 
+2022-03-03 19:07:09.807 | INFO     | project.network.mitm.servers.proxyserver:__init__:11 - Starting socks server ...
+2022-03-03 19:07:09.865 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 19:07:09.873 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 19:07:46.363 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_nbt_ns:90 - Running nbt_ns poisoning in the background
+2022-03-03 19:07:46.983 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 19:07:47.012 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 19:07:47.023 | INFO     | threading:run:892 - SOCKS: Adding SHADOW/IRON@192.168.253.138(445) to active SOCKS connection. Enjoy
+2022-03-03 19:07:47.024 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 19:07:59.612 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-11: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 19:08:00.237 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:85 - Finishing attack in the background ...
+2022-03-03 19:08:09.525 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 19:09:03.703 | INFO     | impacket.examples.ntlmrelayx.servers.socksplugins.smb:skipAuthentication:99 - SOCKS: Proxying client session for SHADOW/IRON@192.168.253.138(445)
+2022-03-03 20:36:39.624 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:84 - Error: the following arguments are required: -M/--mask
+2022-03-03 20:37:20.605 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:89 - Error: the following arguments are required: -DOM/--domain
+2022-03-03 20:37:20.606 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:95 - Mask invalid
+2022-03-03 20:37:57.769 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:84 - Error: the following arguments are required: -M/--mask
+2022-03-03 20:38:10.201 | INFO     | project.network.poison.poisonengine.poisoners.dhcp6:start_dhcp6_poisoning:302 - Starting dhcp6 rogue to attack shadow.local.
+2022-03-03 20:39:03.083 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-03 20:39:10.366 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_dhcp6:119 - Running dhcp6 poisoning in the background
+2022-03-03 20:39:19.700 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 20:41:56.963 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 20:41:57.015 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 20:41:57.026 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@::ffff:192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 20:41:57.083 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-03 20:41:57.091 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-03 20:41:57.101 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-03 20:41:58.201 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-03 20:41:58.268 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-03 20:41:59.035 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-03 20:41:59.044 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-03 20:41:59.054 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-03 20:42:25.752 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:158 - Exiting ntlm relay attack ...
+2022-03-03 20:42:31.721 | INFO     | project.network.mitm.ntlmrelay:__wrapper_attack:298 - Running ntlm relay in the background the results will be saved at: loot/192.168.253.138_samhashes.sam 
+2022-03-03 20:42:31.727 | INFO     | project.network.mitm.servers.smbserver:start_smb_relay_server:122 - Setting up SMB Server
+2022-03-03 20:42:31.731 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-03 20:42:39.781 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-03 20:42:39.918 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-03 20:42:39.927 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-03 20:42:40.010 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-03 20:42:40.027 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-03 20:42:40.039 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-03 20:42:41.386 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-03 20:42:41.702 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-03 20:42:42.981 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-03 20:42:42.987 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-03 20:42:42.999 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-03 20:43:37.051 | WARNING  | project.network.mitm.ntlmrelay:__checking_ending_options:238 - The attacks is already running in the background 
+2022-03-03 20:43:41.556 | SUCCESS  | project.network.mitm.ntlmrelay:__ends_ntlm_relay:320 - Finishing ntlm relay attack in the background ...
+2022-03-03 20:43:45.391 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-03 20:48:16.043 | WARNING  | project.network.poison.poisonselector:__checking_conditions_for_attack:114 - The attack is already running in the background
+2022-03-03 20:48:19.943 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:85 - Finishing attack in the background ...
+2022-03-03 20:48:25.393 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-04 17:17:45.644 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-04 17:46:46.495 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-04 17:46:46.504 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 17:46:46.507 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-04 17:46:46.508 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-04 17:46:46.509 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-04 17:46:49.416 | WARNING  | project.network.mitm.mss:__synchronous_attack:75 - Exiting attack ...
+2022-03-04 17:59:36.445 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-04 18:02:51.648 | INFO     | project.shell.igris:show_settable_variables_necessary:270 - Showing necessary settable variables
+2022-03-04 18:02:56.132 | INFO     | project.network.poison.poisonengine.poisoners.mdns:start_mdns_poisoning:155 - Starting mdns poisoning...
+2022-03-04 18:13:30.928 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-04 18:13:30.934 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 18:13:30.937 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-04 18:13:30.938 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-04 18:13:30.938 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-04 18:13:31.938 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-04 18:13:39.275 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-04 18:13:39.280 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 18:24:00.767 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:24:07.802 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:24:15.973 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:24:22.305 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:24:35.588 | ERROR    | project.shell.igris:_check_port:363 - Not valid port number. Must be 0-65535
+2022-03-04 18:27:08.484 | ERROR    | project.shell.igris:_check_port:363 - The port must be a number
+2022-03-04 18:43:57.872 | ERROR    | project.shell.igris:_check_port:364 - The port must be a number
+2022-03-04 18:44:23.990 | INFO     | project.network.mitm.mss:__wrapper_attack:88 - Running mss the results will be saved in : loot/
+2022-03-04 18:44:23.995 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 18:44:23.999 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-04 18:44:23.999 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-04 18:44:24.000 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-04 18:44:24.819 | WARNING  | project.network.mitm.mss:__synchronous_attack:76 - Exiting attack ...
+2022-03-04 18:44:29.182 | ERROR    | project.shell.igris:_check_port:363 - The port must be a number
+2022-03-04 18:44:36.784 | ERROR    | project.shell.igris:_check_port:366 - Not valid port number. Must be 0-65535
+2022-03-04 18:46:16.990 | INFO     | project.network.mitm.mss:__wrapper_attack:87 - Running mss the results will be saved in : loot/
+2022-03-04 18:46:16.996 | INFO     | project.network.mitm.servers.smbserver:start_malicious_smbserver:62 - Starting Malicious SMB Server ...
+2022-03-04 18:46:17.000 | INFO     | impacket.smbserver:processConfigFile:4491 - Config file parsed
+2022-03-04 18:46:17.001 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+2022-03-04 18:46:17.001 | INFO     | impacket.dcerpc.v5.rpcrt:addCallbacks:1515 - Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+2022-03-04 18:46:20.570 | WARNING  | project.network.mitm.mss:__synchronous_attack:75 - Exiting attack ...
+2022-03-04 18:47:06.678 | ERROR    | project.shell.igris:_check_ip:331 - Not valid LHOST
+2022-03-04 18:51:07.937 | ERROR    | project.shell.igris:_check_ip:331 - Not valid RHOST
+2022-03-04 18:51:25.854 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-04 18:56:23.282 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:32:00.376 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:32:58.750 | ERROR    | project.shell.igris:_check_subnet:380 - Error with the subnet value. Use -SS to see the value.
+2022-03-05 11:33:05.916 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:34:31.458 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 11:41:30.501 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-05 11:42:55.017 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-05 11:51:53.838 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-05 11:52:01.908 | ERROR    | project.shell.igris:_check_ip:331 - Not valid RHOST
+2022-03-05 11:53:09.532 | ERROR    | project.network.mitm.ntlmrelay:__show_connections:324 - The ntlm_relay process is not activated
+2022-03-05 11:57:19.467 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:84 - Error: the following arguments are required: -M/--mask
+2022-03-05 15:30:05.161 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 15:36:49.154 | INFO     | project.shell.igris:show_settable_variables_necessary:273 - Showing necessary settable variables
+2022-03-05 15:44:37.111 | ERROR    | project.shell.igris:_check_subnet:380 - Error with the subnet value. Example of correct subnet: 192.168.253.0/24.Use -SS to see the value.
+2022-03-05 16:12:40.137 | ERROR    | project.shell.igris:_check_ip:331 - Not valid RHOST
+2022-03-05 16:12:46.544 | ERROR    | project.network.poison.dnstakeover:__checking_conditions_for_attack:88 - Error: the following arguments are required: -M/--mask
+2022-03-06 19:00:46.910 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 19:01:55.903 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 19:02:20.148 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 19:02:55.590 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 19:02:57.296 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 19:03:13.202 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 19:03:38.333 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 19:04:36.605 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 19:10:35.271 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 19:12:16.940 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 19:12:38.762 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 19:12:56.019 | INFO     | project.utils.psexec:__try_psexec_connection:266 - The connection has been established successfully
+2022-03-06 19:12:56.869 | INFO     | project.utils.psexec:__shell:238 - Starting cmd.exe interactively
+2022-03-06 19:13:02.585 | INFO     | project.utils.psexec:__shell:250 - Exiting cmd.exe
+2022-03-06 19:13:32.409 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 19:16:15.876 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-06 19:16:54.319 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-06 19:16:56.469 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-06 19:17:05.816 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-06 19:17:05.865 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-06 19:17:05.870 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-06 19:17:05.904 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-06 19:17:05.912 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-06 19:17:05.923 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-06 19:17:07.026 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-06 19:17:07.100 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-06 19:17:07.651 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-06 19:17:07.665 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-06 19:17:07.669 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-06 19:17:09.458 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-06 19:17:12.194 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:85 - Finishing attack in the background ...
+2022-03-06 19:17:50.705 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 20:13:12.248 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 20:13:42.192 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 20:13:48.517 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 20:16:17.931 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 20:16:20.360 | ERROR    | project.utils.scan:__start_scan:478 - Error at connecting to neo4j database. Wait for neo4j to finish starting
+2022-03-06 20:17:03.085 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 20:17:11.882 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 20:18:03.734 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 20:18:10.730 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 20:21:18.298 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 20:21:32.303 | INFO     | project.utils.psexec:__try_psexec_connection:266 - The connection has been established successfully
+2022-03-06 20:21:33.093 | INFO     | project.utils.psexec:__shell:238 - Starting cmd.exe interactively
+2022-03-06 20:21:35.535 | INFO     | project.utils.psexec:__shell:250 - Exiting cmd.exe
+2022-03-06 20:22:47.304 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 20:47:38.352 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-03-06 20:47:38.352 | INFO     | project.utils.scan:__synchronous_way:450 - Using synchronous scan
+2022-03-06 20:49:03.653 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:445 - Synchronous scanning has been completed
+2022-03-06 20:49:38.386 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-03-06 20:49:38.387 | INFO     | project.utils.scan:__synchronous_way:450 - Using synchronous scan
+2022-03-06 20:51:02.979 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:445 - Synchronous scanning has been completed
+2022-03-06 20:51:14.162 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-03-06 20:51:14.162 | INFO     | project.utils.scan:__synchronous_way:450 - Using synchronous scan
+2022-03-06 20:53:25.612 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-03-06 20:53:25.613 | INFO     | project.utils.scan:__synchronous_way:450 - Using synchronous scan
+2022-03-06 20:54:50.275 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:445 - Synchronous scanning has been completed
+2022-03-06 20:55:13.222 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-06 20:55:15.507 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-06 20:55:34.754 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-06 20:55:37.873 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 20:56:26.986 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-06 20:56:29.497 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-06 20:56:39.043 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/BERU@192.168.253.138 controlled, attacking target smb://192.168.253.139
+2022-03-06 20:56:39.126 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.139 as SHADOW/BERU SUCCEED
+2022-03-06 20:56:39.146 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-4: Connection from SHADOW/BERU@192.168.253.138 controlled, but there are no more targets left!
+2022-03-06 20:56:39.183 | ERROR    | threading:_bootstrap_inner:954 - DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied 
+2022-03-06 20:57:03.905 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-6: Connection from SHADOW/BERU@192.168.253.138 controlled, but there are no more targets left!
+2022-03-06 20:57:10.322 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-06 20:57:56.129 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:85 - Finishing attack in the background ...
+2022-03-06 21:00:52.253 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 21:01:23.526 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 21:01:35.412 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 21:08:14.277 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 21:09:17.576 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 21:09:36.535 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-06 21:09:39.398 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-06 21:09:45.241 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/BERU@192.168.253.138 controlled, attacking target smb://192.168.253.139
+2022-03-06 21:09:45.322 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.139 as SHADOW/BERU SUCCEED
+2022-03-06 21:09:45.326 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/BERU@192.168.253.138 controlled, but there are no more targets left!
+2022-03-06 21:09:45.402 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-06 21:09:45.428 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-06 21:09:45.453 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-06 21:09:46.940 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x352150ddccede2757a74b193d19403ea
+2022-03-06 21:09:47.245 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-06 21:09:48.355 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.139
+2022-03-06 21:09:48.379 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-06 21:09:48.396 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-06 21:09:52.276 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-06 21:10:29.476 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 21:10:34.218 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 21:10:52.044 | INFO     | project.utils.psexec:__try_psexec_connection:266 - The connection has been established successfully
+2022-03-06 21:10:52.686 | INFO     | project.utils.psexec:__shell:238 - Starting cmd.exe interactively
+2022-03-06 21:10:54.238 | INFO     | project.utils.psexec:__shell:250 - Exiting cmd.exe
+2022-03-06 21:16:14.937 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-06 21:16:53.009 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-03-06 21:16:53.010 | INFO     | project.utils.scan:__synchronous_way:450 - Using synchronous scan
+2022-03-06 21:19:40.592 | INFO     | project.utils.scan:__start_scan:475 - Starting to launch threads based on your cpu
+2022-03-06 21:19:40.594 | INFO     | project.utils.scan:__synchronous_way:450 - Using synchronous scan
+2022-03-06 21:22:45.212 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-06 21:22:45.212 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-06 21:31:08.225 | INFO     | project.utils.scan:__start_scan:473 - Starting to launch threads based on your cpu
+2022-03-06 21:31:08.226 | INFO     | project.utils.scan:__synchronous_way:448 - Using synchronous scan
+2022-03-06 21:32:18.096 | INFO     | project.utils.scan:__start_scan:473 - Starting to launch threads based on your cpu
+2022-03-06 21:32:18.097 | INFO     | project.utils.scan:__synchronous_way:448 - Using synchronous scan
+2022-03-06 21:33:37.119 | INFO     | project.utils.scan:__start_scan:473 - Starting to launch threads based on your cpu
+2022-03-06 21:33:37.120 | INFO     | project.utils.scan:__synchronous_way:448 - Using synchronous scan
+2022-03-06 21:35:19.239 | INFO     | project.utils.scan:__start_scan:473 - Starting to launch threads based on your cpu
+2022-03-06 21:35:19.240 | INFO     | project.utils.scan:__synchronous_way:448 - Using synchronous scan
+2022-03-06 21:35:39.539 | INFO     | project.utils.scan:__start_scan:474 - Starting to launch threads based on your cpu
+2022-03-06 21:35:39.539 | INFO     | project.utils.scan:__synchronous_way:449 - Using synchronous scan
+2022-03-06 21:38:53.843 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-06 21:38:53.843 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-06 21:40:11.600 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-06 21:40:11.601 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-06 22:01:48.335 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-06 22:01:51.703 | ERROR    | project.shell.igris:do_cd:249 - /home/rsgbengi/loo is not a directory
+2022-03-06 22:02:21.964 | WARNING  | project.network.mitm.ntlmrelay:__checking_directory_options:98 - The specified directory does not exists or you don't have access
+2022-03-06 22:02:21.975 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-06 22:02:31.203 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-3: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-06 22:02:31.277 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-06 22:02:31.283 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-3: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-06 22:02:31.369 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-06 22:02:31.400 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-06 22:02:31.434 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-06 22:02:32.851 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-06 22:02:32.986 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-06 22:02:33.710 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-06 22:02:33.725 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-06 22:02:33.730 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-06 22:02:35.663 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-06 22:02:57.374 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:85 - Finishing attack in the background ...
+2022-03-06 22:03:56.625 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-06 22:04:14.570 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-07 10:02:05.364 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-07 10:02:07.061 | WARNING  | project.network.mitm.ntlmrelay:__checking_directory_options:98 - The specified directory does not exists or you don't have access
+2022-03-07 10:02:07.066 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-07 10:02:10.708 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-07 10:02:18.367 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-07 10:02:38.270 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-07 10:02:38.332 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-07 10:02:38.341 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-5: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-07 10:02:38.495 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-07 10:02:38.550 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-07 10:02:38.576 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-07 10:02:39.807 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-07 10:02:39.996 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-07 10:02:41.221 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-07 10:02:41.244 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-07 10:02:41.259 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-07 10:02:43.942 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-07 10:02:57.734 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-07 10:03:02.288 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-6: Connection from SHADOW/IRON@192.168.253.138 controlled, attacking target smb://192.168.253.138
+2022-03-07 10:03:02.344 | ERROR    | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON FAILED
+2022-03-07 10:03:07.054 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-07 10:03:31.333 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-07 10:03:36.726 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from SHADOW/IRON@192.168.253.138 controlled, attacking target smb://192.168.253.139
+2022-03-07 10:03:36.829 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.139 as SHADOW/IRON SUCCEED
+2022-03-07 10:03:36.857 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-7: Connection from SHADOW/IRON@192.168.253.138 controlled, but there are no more targets left!
+2022-03-07 10:03:36.995 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-07 10:03:37.062 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-07 10:03:37.079 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-07 10:03:38.369 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x352150ddccede2757a74b193d19403ea
+2022-03-07 10:03:38.644 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-07 10:03:39.936 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.139
+2022-03-07 10:03:39.950 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-07 10:03:39.974 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-07 10:03:41.954 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-07 10:21:51.875 | WARNING  | project.network.mitm.ntlmrelay:__checking_directory_options:98 - The specified directory does not exists or you don't have access
+2022-03-07 10:21:51.923 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-07 10:21:54.000 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-07 10:22:15.124 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 10:22:26.984 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-07 10:22:33.274 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, attacking target smb://192.168.253.138
+2022-03-07 10:22:33.430 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.138 as SHADOW/IRON SUCCEED
+2022-03-07 10:22:33.459 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-9: Connection from SHADOW/IRON@192.168.253.139 controlled, but there are no more targets left!
+2022-03-07 10:22:33.693 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-07 10:22:33.737 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-07 10:22:33.746 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-07 10:22:35.193 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x2300995ed1ba51a87969b344c1be1bc9
+2022-03-07 10:22:35.444 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-07 10:22:37.444 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.138
+2022-03-07 10:22:37.460 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-07 10:22:37.490 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-07 10:22:40.188 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-07 10:22:45.547 | SUCCESS  | project.network.poison.poisonselector:__end_process_in_the_background:85 - Finishing attack in the background ...
+2022-03-07 10:35:16.861 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 10:35:47.499 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-07 10:35:52.034 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-07 10:35:56.782 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 10:36:47.930 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-07 10:37:02.533 | ERROR    | project.utils.scan:__start_scan:478 - Error at connecting to neo4j database. Wait for neo4j to finish starting
+2022-03-07 11:08:02.270 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 11:08:21.930 | INFO     | project.utils.psexec:__try_psexec_connection:266 - The connection has been established successfully
+2022-03-07 11:08:22.636 | INFO     | project.utils.psexec:__shell:238 - Starting cmd.exe interactively
+2022-03-07 11:09:45.116 | INFO     | project.utils.psexec:__shell:250 - Exiting cmd.exe
+2022-03-07 11:09:47.110 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 11:10:40.631 | ERROR    | project.utils.scan:__start_scan:478 - Error at connecting to neo4j database. Wait for neo4j to finish starting
+2022-03-07 15:35:13.192 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 15:35:44.898 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 15:35:44.899 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 15:37:09.786 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:442 - Synchronous scanning has been completed
+2022-03-07 15:37:24.972 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 15:42:53.829 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 15:42:53.829 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 15:46:07.215 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 15:46:07.215 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 15:46:41.278 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 15:46:41.298 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 15:48:17.014 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 15:48:17.014 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 15:49:54.425 | ERROR    | project.shell.igris:__check_subnet:401 - Error with the subnet value. Example of correct subnet: 192.168.253.0/24.Use -SS to see the value.
+2022-03-07 15:50:12.055 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 15:50:12.056 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 15:51:29.001 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 15:51:29.002 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 15:53:46.699 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 15:53:46.701 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 15:53:53.203 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 15:53:53.204 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 16:08:43.829 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 16:08:43.829 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 16:09:02.465 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 16:09:02.466 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 16:10:19.859 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 16:10:19.860 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 16:16:58.171 | INFO     | project.utils.scan:__start_scan:473 - Starting to launch threads based on your cpu
+2022-03-07 16:16:58.171 | INFO     | project.utils.scan:__synchronous_way:448 - Using synchronous scan
+2022-03-07 16:17:22.296 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 16:17:22.296 | INFO     | project.utils.scan:__synchronous_way:447 - Using synchronous scan
+2022-03-07 16:41:37.578 | INFO     | project.utils.scan:__start_scan:474 - Starting to launch threads based on your cpu
+2022-03-07 16:41:37.579 | INFO     | project.utils.scan:__synchronous_way:449 - Using synchronous scan
+2022-03-07 16:51:34.789 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 16:53:14.906 | WARNING  | project.utils.scan:__show_subnet_information:219 - This user has not recollected any information in this subnet
+2022-03-07 16:57:09.582 | INFO     | project.utils.scan:__start_scan:447 - Starting to launch threads based on your cpu
+2022-03-07 16:57:09.583 | INFO     | project.utils.scan:__asynchronous_way:324 - Using asynchronous scan.
+2022-03-07 16:57:09.583 | INFO     | project.utils.scan:__asynchronous_way:325 - [32mStarting... The messages will be displayed as new computer is found[39m
+2022-03-07 16:59:42.287 | INFO     | project.utils.scan:__start_scan:447 - Starting to launch threads based on your cpu
+2022-03-07 16:59:42.288 | INFO     | project.utils.scan:__synchronous_way:422 - Using synchronous scan
+2022-03-07 16:59:55.493 | INFO     | project.utils.scan:__start_scan:447 - Starting to launch threads based on your cpu
+2022-03-07 16:59:55.493 | INFO     | project.utils.scan:__asynchronous_way:324 - Using asynchronous scan.
+2022-03-07 16:59:55.494 | INFO     | project.utils.scan:__asynchronous_way:325 - [32mStarting... The messages will be displayed as new computer is found[39m
+2022-03-07 16:59:59.788 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 17:00:03.656 | WARNING  | project.utils.scan:__show_subnet_information:219 - This user has not recollected any information in this subnet
+2022-03-07 17:01:56.045 | INFO     | project.utils.scan:__start_scan:447 - Starting to launch threads based on your cpu
+2022-03-07 17:01:56.046 | INFO     | project.utils.scan:__synchronous_way:422 - Using synchronous scan
+2022-03-07 17:02:01.791 | INFO     | project.utils.scan:__start_scan:447 - Starting to launch threads based on your cpu
+2022-03-07 17:02:01.792 | INFO     | project.utils.scan:__asynchronous_way:324 - Using asynchronous scan.
+2022-03-07 17:02:01.793 | INFO     | project.utils.scan:__asynchronous_way:325 - [32mStarting... The messages will be displayed as new computer is found[39m
+2022-03-07 17:02:25.491 | INFO     | project.utils.scan:__start_scan:447 - Starting to launch threads based on your cpu
+2022-03-07 17:02:25.492 | INFO     | project.utils.scan:__asynchronous_way:324 - Using asynchronous scan.
+2022-03-07 17:02:25.493 | INFO     | project.utils.scan:__asynchronous_way:325 - [32mStarting... The messages will be displayed as new computer is found[39m
+2022-03-07 17:02:51.547 | INFO     | project.utils.scan:__start_scan:472 - Starting to launch threads based on your cpu
+2022-03-07 17:02:51.548 | INFO     | project.utils.scan:__asynchronous_way:347 - Using asynchronous scan.
+2022-03-07 17:02:51.548 | INFO     | project.utils.scan:__asynchronous_way:348 - [32mStarting... The messages will be displayed as new computer is found[39m
+2022-03-07 17:02:54.277 | WARNING  | project.utils.scan:__end_scan:485 - Exiting ...
+2022-03-07 18:42:52.258 | ERROR    | project.utils.scan:__start_scan:475 - Error at connecting to neo4j database. Wait for neo4j to finish starting
+2022-03-07 18:44:15.671 | INFO     | project.utils.scan:__start_scan:469 - Starting to launch threads based on your cpu
+2022-03-07 18:44:15.671 | INFO     | project.utils.scan:__synchronous_way:444 - Using synchronous scan
+2022-03-07 18:46:16.761 | INFO     | project.utils.scan:__start_scan:469 - Starting to launch threads based on your cpu
+2022-03-07 18:46:16.762 | INFO     | project.utils.scan:__asynchronous_way:346 - Using asynchronous scan.
+2022-03-07 18:46:16.763 | INFO     | project.utils.scan:__asynchronous_way:347 - [32mStarting... The messages will be displayed as new computer is found[39m
+2022-03-07 18:46:18.746 | WARNING  | project.utils.scan:__end_scan:482 - Exiting ...
+2022-03-07 19:59:03.217 | INFO     | project.utils.scan:__start_scan:480 - Starting to launch threads based on your cpu
+2022-03-07 19:59:03.217 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
+2022-03-07 20:00:29.041 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:450 - Synchronous scanning has been completed
+2022-03-07 20:02:06.050 | INFO     | project.utils.scan:__start_scan:480 - Starting to launch threads based on your cpu
+2022-03-07 20:02:06.050 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
+2022-03-07 20:03:23.514 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 20:06:44.170 | INFO     | project.utils.scan:__start_scan:480 - Starting to launch threads based on your cpu
+2022-03-07 20:06:44.170 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
+2022-03-07 20:08:09.562 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:450 - Synchronous scanning has been completed
+2022-03-07 20:11:24.655 | INFO     | project.utils.scan:__start_scan:480 - Starting to launch threads based on your cpu
+2022-03-07 20:11:24.656 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
+2022-03-07 20:12:49.395 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:450 - Synchronous scanning has been completed
+2022-03-07 20:12:59.862 | INFO     | project.utils.scan:__start_scan:480 - Starting to launch threads based on your cpu
+2022-03-07 20:12:59.863 | INFO     | project.utils.scan:__synchronous_way:455 - Using synchronous scan
+2022-03-07 20:14:24.740 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:450 - Synchronous scanning has been completed
+2022-03-07 20:37:04.763 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
+2022-03-07 20:37:04.764 | INFO     | project.utils.scan:__synchronous_way:459 - Using synchronous scan
+2022-03-07 20:41:35.169 | INFO     | project.utils.scan:__start_scan:484 - Starting to launch threads based on your cpu
+2022-03-07 20:41:35.170 | INFO     | project.utils.scan:__synchronous_way:459 - Using synchronous scan
+2022-03-07 20:48:03.314 | INFO     | project.utils.scan:__start_scan:488 - Starting to launch threads based on your cpu
+2022-03-07 20:48:03.315 | INFO     | project.utils.scan:__synchronous_way:463 - Using synchronous scan
+2022-03-07 20:50:07.670 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-07 20:50:07.671 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-07 20:51:32.426 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-07 20:52:34.122 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-07 20:52:34.122 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-07 20:53:58.857 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-07 21:02:08.845 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-07 21:02:08.846 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-07 21:03:33.472 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-07 21:04:38.972 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-07 21:04:48.226 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 21:04:55.903 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-07 21:05:07.317 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-07 21:06:41.303 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 21:06:47.187 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-07 21:06:47.187 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-07 21:20:01.136 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-07 21:20:01.137 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-07 21:21:24.518 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 21:22:37.843 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-07 21:22:43.119 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-07 21:25:07.733 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-07 21:25:07.733 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-07 21:26:32.602 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-08 18:42:52.570 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 18:42:52.571 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 18:44:36.164 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 18:44:36.165 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 18:46:00.909 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-08 18:46:56.533 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-08 18:47:12.298 | INFO     | project.utils.psexec:__try_psexec_connection:266 - The connection has been established successfully
+2022-03-08 18:47:12.740 | INFO     | project.utils.psexec:__shell:238 - Starting cmd.exe interactively
+2022-03-08 18:47:14.286 | INFO     | project.utils.psexec:__shell:250 - Exiting cmd.exe
+2022-03-08 18:48:33.017 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 18:48:33.018 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 18:49:57.344 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-08 18:50:06.557 | INFO     | project.utils.psexec:__try_psexec_connection:266 - The connection has been established successfully
+2022-03-08 18:50:06.640 | INFO     | project.utils.psexec:__shell:238 - Starting cmd.exe interactively
+2022-03-08 18:50:07.989 | INFO     | project.utils.psexec:__shell:250 - Exiting cmd.exe
+2022-03-08 18:50:10.034 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-08 18:52:52.459 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 18:52:52.460 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 18:54:16.861 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-08 18:55:08.650 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 18:55:08.653 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 18:56:32.902 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-08 18:57:23.465 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 18:57:23.465 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 18:58:47.844 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-08 19:01:29.706 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 19:01:29.707 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 19:02:53.983 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-08 19:05:52.487 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 19:05:52.488 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 19:07:17.372 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-08 19:07:48.329 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 19:07:48.331 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 19:09:12.932 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-08 19:11:00.759 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 19:11:00.759 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 19:17:43.569 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-08 19:17:52.023 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-08 19:19:31.873 | INFO     | project.network.poison.poisonengine.poisonlauncher:__create_llmnr:104 - Running llmnr poisoning in the background
+2022-03-08 19:19:56.066 | INFO     | threading:_bootstrap_inner:954 - Setting up SMB Server
+2022-03-08 19:20:01.981 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-99: Connection from SHADOW/BERU@192.168.253.138 controlled, attacking target smb://192.168.253.139
+2022-03-08 19:20:02.036 | INFO     | impacket.smbserver:processRequest:4319 - Authenticating against smb://192.168.253.139 as SHADOW/BERU SUCCEED
+2022-03-08 19:20:02.049 | INFO     | impacket.smbserver:processRequest:4319 - SMBD-Thread-99: Connection from SHADOW/BERU@192.168.253.138 controlled, but there are no more targets left!
+2022-03-08 19:20:02.142 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is in stopped state
+2022-03-08 19:20:02.173 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Service RemoteRegistry is disabled, enabling it
+2022-03-08 19:20:02.181 | INFO     | impacket.examples.secretsdump:enableRegistry:682 - Starting service RemoteRegistry
+2022-03-08 19:20:03.423 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:107 - Target system bootKey: 0x352150ddccede2757a74b193d19403ea
+2022-03-08 19:20:03.502 | INFO     | impacket.examples.ntlmrelayx.attacks.smbattack:run:111 - Dumping local SAM hashes (uid:rid:lmhash:nthash)
+2022-03-08 19:20:04.332 | INFO     | threading:_bootstrap_inner:954 - Done dumping SAM hashes for host: 192.168.253.139
+2022-03-08 19:20:04.338 | INFO     | impacket.examples.secretsdump:finish:725 - Stopping service RemoteRegistry
+2022-03-08 19:20:04.358 | INFO     | impacket.examples.secretsdump:finish:725 - Restoring the disabled state for service RemoteRegistry
+2022-03-08 19:20:06.269 | WARNING  | project.network.mitm.ntlmrelay:__synchronous_attack:157 - Exiting ntlm relay attack ...
+2022-03-08 19:21:08.684 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-08 19:21:22.166 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-08 19:21:30.757 | ERROR    | project.utils.psexec:__try_psexec_connection:270 - Error when creating the connection. Use the scan command to find out if your user has the ability to psexec.
+2022-03-08 19:23:57.963 | INFO     | project.utils.psexec:__try_psexec_connection:266 - The connection has been established successfully
+2022-03-08 19:23:58.210 | INFO     | project.utils.psexec:__shell:238 - Starting cmd.exe interactively
+2022-03-08 19:23:59.557 | INFO     | project.utils.psexec:__shell:250 - Exiting cmd.exe
+2022-03-08 19:24:04.334 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 19:24:04.405 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 19:29:32.024 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 19:29:32.025 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 20:19:33.749 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-08 20:20:04.659 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 20:20:04.659 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-08 20:30:38.098 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-08 20:30:38.099 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 19:02:24.823 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 19:02:24.824 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 19:03:49.976 | SUCCESS  | project.utils.scan:__set_up_scan_actions_synchronous:457 - Synchronous scanning has been completed
+2022-03-09 19:03:57.980 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-09 19:13:46.696 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 19:13:46.697 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 19:15:50.857 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 19:15:50.857 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 19:17:07.585 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 19:17:07.586 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 19:19:02.557 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 19:19:02.558 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 19:54:58.294 | INFO     | project.shell.igris:show_settable_variables_necessary:294 - Showing necessary settable variables
+2022-03-09 19:55:30.706 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 19:55:30.706 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 19:57:23.581 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 19:57:23.582 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 19:58:56.225 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 19:58:56.226 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 20:00:36.790 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 20:00:36.790 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 20:09:20.842 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 20:09:20.843 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 20:09:56.040 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 20:09:56.040 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 20:11:37.881 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 20:11:37.882 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 20:13:12.884 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 20:13:12.884 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 20:16:35.390 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 20:16:35.390 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 20:17:58.266 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 20:17:58.267 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 20:37:59.178 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 20:37:59.179 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
+2022-03-09 20:38:07.679 | INFO     | project.utils.psexec:__try_psexec_connection:266 - The connection has been established successfully
+2022-03-09 20:38:08.100 | INFO     | project.utils.psexec:__shell:238 - Starting cmd.exe interactively
+2022-03-09 20:38:09.373 | INFO     | project.utils.psexec:__shell:250 - Exiting cmd.exe
+2022-03-09 20:38:13.503 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
+2022-03-09 20:38:13.504 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan

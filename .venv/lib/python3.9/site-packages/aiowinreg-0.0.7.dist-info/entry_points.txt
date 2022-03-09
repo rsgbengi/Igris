@@ -1,0 +1,3 @@
+[console_scripts]
+awinreg = aiowinreg.__main__:main
+
