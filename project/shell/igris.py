@@ -14,9 +14,9 @@ from cmd2 import ansi
 from art import text2art
 from loguru import logger
 from log_symbols import LogSymbols
+
 from rich.console import Console
 from rich.table import Table
-from .load import Load
 from ..utils import ScanForPsexec, Psexec
 from .attackstatus import AttackStatus
 from ..network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
@@ -51,9 +51,10 @@ class Igris_Shell(cmd2.Cmd):
         self.__network_config_variables()
         # Defect for intro messsage
         self.intro = self.__banner() + "\n" + text2art("Igris Shell")
-
         self.__path = ""
+
         self._set_prompt()
+
         # Options
         self.allow_style = ansi.STYLE_TERMINAL
 

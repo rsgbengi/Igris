@@ -5,6 +5,7 @@ import ntpath
 import random
 from ipaddress import IPv4Address, IPv4Network
 from multiprocessing import Process
+from socket import J1939_MAX_UNICAST_ADDR
 from typing import Tuple
 
 import cmd2
@@ -14,6 +15,7 @@ from halo import Halo
 from impacket.smb import SMB_DIALECT
 from impacket.smbconnection import SMBConnection
 from log_symbols import LogSymbols
+from rich.panel import Panel
 from rich.console import Console
 from rich.table import Table
 from spinners.spinners import Spinners
@@ -174,18 +176,12 @@ class ScanForPsexec(CommandSet):
 
         return success_in_psexec
 
-    def __show_user_passwd(self) -> None:
-        """[Shows the user and password content of the settable variables]"""
+    def __show_user_subnet(self) -> None:
+        """[Shows the user and subnet content of the settable variables]"""
         user = self._cmd.USER
-        passwd = self._cmd.PASSWD
-
-        self._cmd.poutput(
-            ansi.style("USER -> ", fg=ansi.fg.red) + ansi.style(user, fg=ansi.fg.blue)
-        )
-        self._cmd.poutput(
-            ansi.style("PASSWD -> ", fg=ansi.fg.red)
-            + ansi.style(passwd, fg=ansi.fg.blue)
-        )
+        subnet = self._cmd.SUBNET
+        console = Console()
+        console.print(Panel.fit(f"[red]{user}@{subnet}[/red]"), justify="center")
 
     def __show_subnet_information(self) -> None:
         """[Shows the information of a specific subnet]"""
@@ -214,22 +210,18 @@ class ScanForPsexec(CommandSet):
                     f"[cyan]{computer_node['signed']}[/cyan]",
                 )
         if exits_results:
-            console.print(table)
+            console.print(table, justify="center")
         else:
             self._cmd.error_logger.warning(
                 "This user has not recollected any information in this subnet"
             )
 
     def __show_scan_info(self) -> None:
-        """[Function that will check if it is possible to display the scan
+        """[Method that will check if it is possible to display the scan
         info of a current username and password]
         """
         subnet = self._cmd.SUBNET
-        self.__show_user_passwd()
-        self._cmd.poutput(
-            ansi.style("SUBNET -> ", fg=ansi.fg.red)
-            + ansi.style(subnet, fg=ansi.fg.blue)
-        )
+        self.__show_user_subnet()
         if (
             self._cmd.igris_db.check_if_subnet_exits(subnet)
             and len(self._cmd.igris_db.check_computers_of_a_subnet(subnet)) != 0
@@ -243,7 +235,7 @@ class ScanForPsexec(CommandSet):
     def __check_connectivity_of_scan(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
     ) -> Tuple[bool, TargetInfo, SMBConnection]:
-        """[Function to check if the connectivity to a specific remote host is possible]
+        """[Method to check if the connectivity to a specific remote host is possible]
 
         Args:
             user_info (UserInfo): [Argument that contains values needed for

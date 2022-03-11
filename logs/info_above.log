@@ -1,8 +1,0 @@
-2022-03-09 20:45:25.218 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
-2022-03-09 20:45:25.219 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
-2022-03-09 20:47:34.149 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
-2022-03-09 20:47:34.150 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
-2022-03-09 20:53:42.672 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
-2022-03-09 20:53:42.673 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
-2022-03-09 20:54:55.967 | INFO     | project.utils.scan:__start_scan:487 - Starting to launch threads based on your cpu
-2022-03-09 20:54:55.968 | INFO     | project.utils.scan:__synchronous_way:462 - Using synchronous scan
