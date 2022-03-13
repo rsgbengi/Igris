@@ -5,15 +5,17 @@ services:
     hostname: neo4j
     container_name: neo4j
     network_mode: "host"
-    ports:
-      - "7474:7474"
-      - "7687:7687"
     environment:
       - NEO4J_AUTH=neo4j/igris
+    volumes:
+      - ./neo4j_data:/data/
   igris:
     build: .
     container_name: igris
     network_mode: "host"
+    volumes:
+      - ./loot:/home/igris/loot
+      - ./save:/home/igris/save
     depends_on:
       - neo4j
     restart: "no"

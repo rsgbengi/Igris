@@ -1,2 +1,0 @@
-class CufflinksError(Exception):
-		pass

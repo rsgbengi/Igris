@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 from loguru import logger
 import loguru
-from py2neo import Node, Relationship, Graph
+from py2neo import Node, Relationship, Graph, ServiceUnavailable
+
 from spnego._ntlm_raw.crypto import is_ntlm_hash
 from ..gatherinfo import TargetInfo, UserInfo
 
@@ -251,3 +252,11 @@ class Neo4jConnection:
         return self.__graph.run(
             "MATCH (s:Subnet)-[r:PART_OF]-(c:Computer) RETURN s"
         ).data()
+
+    def check_status(self) -> bool:
+        alive = True
+        try:
+            self.__graph.run("Match () Return 1 Limit 1")
+        except ServiceUnavailable:
+            alive = False
+        return alive

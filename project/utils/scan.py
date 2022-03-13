@@ -5,7 +5,6 @@ import ntpath
 import random
 from ipaddress import IPv4Address, IPv4Network
 from multiprocessing import Process
-from socket import J1939_MAX_UNICAST_ADDR
 from typing import Tuple
 
 import cmd2
@@ -24,7 +23,7 @@ from spnego._ntlm_raw.crypto import is_ntlm_hash
 from .gatherinfo import TargetInfo, UserInfo
 
 
-@with_default_category("Utilities")
+@with_default_category("Recon")
 class ScanForPsexec(CommandSet):
     def __init__(self):
         super().__init__()
@@ -142,7 +141,7 @@ class ScanForPsexec(CommandSet):
             smbclient (SMBConnection): [Argument that contains all information about
                                     the current smb connection]
         """
-        ip = smbclient.getRemoteName()
+        ip = smbclient.getRemoteHost()
         self._cmd.info_logger.debug(
             f"Loading target info of {smbclient.getServerName()} at {ip}"
         )
@@ -181,7 +180,7 @@ class ScanForPsexec(CommandSet):
         user = self._cmd.USER
         subnet = self._cmd.SUBNET
         console = Console()
-        console.print(Panel.fit(f"[red]{user}@{subnet}[/red]"), justify="center")
+        console.print(Panel.fit(f"[red]{user}@{subnet}[/red]"))
 
     def __show_subnet_information(self) -> None:
         """[Shows the information of a specific subnet]"""
@@ -210,7 +209,7 @@ class ScanForPsexec(CommandSet):
                     f"[cyan]{computer_node['signed']}[/cyan]",
                 )
         if exits_results:
-            console.print(table, justify="center")
+            console.print(table)
         else:
             self._cmd.error_logger.warning(
                 "This user has not recollected any information in this subnet"
@@ -472,19 +471,14 @@ class ScanForPsexec(CommandSet):
         """
 
         subnet = self._cmd.SUBNET
-        try:
-            if not self._cmd.igris_db.check_if_subnet_exits(subnet):
-                self._cmd.igris_db.init_new_subnet(subnet)
+        if not self._cmd.igris_db.check_if_subnet_exits(subnet):
+            self._cmd.igris_db.init_new_subnet(subnet)
 
-            self._cmd.info_logger.info("Starting to launch threads based on your cpu")
-            if args.asynchronous:
-                self.__asynchronous_way()
-            else:
-                self.__synchronous_way()
-        except py2neo.ServiceUnavailable:
-            self._cmd.error_logger.error(
-                "Error at connecting to neo4j database. Wait for neo4j to finish starting"
-            )
+        self._cmd.info_logger.info("Starting to launch threads based on your cpu")
+        if args.asynchronous:
+            self.__asynchronous_way()
+        else:
+            self.__synchronous_way()
 
     def __end_scan(self) -> None:
         """[ Process to finished the scan process ]"""
@@ -506,6 +500,9 @@ class ScanForPsexec(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the attack ]
             configurable_variables(dict): [ Settable variables used in this command]
         """
+        if not self._cmd.igris_db.check_status():
+            self._cmd.error_logger.error("The db has not finished starting")
+            return False
         if args.show_info:
             self.__show_scan_info()
             return False

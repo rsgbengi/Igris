@@ -37,4 +37,7 @@ class DashboardCommand(CommandSet):
         if args.show_settable:
             self._cmd.show_settable_variables_necessary(settable_variables_required)
         elif self._cmd.check_settable_variables_value(settable_variables_required):
+            if not self._cmd.igris_db.check_status():
+                self._cmd.error_logger.error("The db has not finished starting")
+                return 
             start_dashboard(lport)

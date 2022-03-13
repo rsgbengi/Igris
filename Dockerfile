@@ -4,6 +4,7 @@ RUN apt-get install net-tools
 RUN apt-get install -y libcap-dev
 RUN apt-get install -y tcpdump
 RUN apt-get install -y proxychains
+RUN apt-get install -y vim 
 RUN useradd --create-home --shell /bin/bash igris
 WORKDIR /home/igris
 RUN mkdir app

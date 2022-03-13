@@ -9,6 +9,7 @@ import os
 import sys
 import re
 import cmd2
+from matplotlib.pyplot import text
 import netifaces
 from cmd2 import ansi
 from art import text2art
@@ -17,27 +18,12 @@ from log_symbols import LogSymbols
 
 from rich.console import Console
 from rich.table import Table
+from rich.panel import Panel
 from ..utils import ScanForPsexec, Psexec
 from .attackstatus import AttackStatus
 from ..network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
 from ..utils import Neo4jConnection
 from ..dashboard import DashboardCommand
-
-
-COLORS = {
-    "black": "\u001b[30;1m",
-    "red": "\u001b[31;1m",
-    "blackred": "\u001b[39;1m",
-    "green": "\u001b[32m",
-    "yellow": "\u001b[33;1m",
-    "blue": "\u001b[34;1m",
-    "magenta": "\u001b[35m",
-    "cyan": "\u001b[36m",
-    "white": "\u001b[37m",
-    "yellow-background": "\u001b[43m",
-    "black-background": "\u001b[40m",
-    "cyan-background": "\u001b[46;1m",
-}
 
 
 class Igris_Shell(cmd2.Cmd):
@@ -50,7 +36,8 @@ class Igris_Shell(cmd2.Cmd):
         self.__credentials_config_variables()
         self.__network_config_variables()
         # Defect for intro messsage
-        self.intro = self.__banner() + "\n" + text2art("Igris Shell")
+        self.__banner()
+
         self.__path = ""
 
         self._set_prompt()
@@ -125,6 +112,22 @@ class Igris_Shell(cmd2.Cmd):
             "MSS": False,
             "NTLM_Relay": False,
         }
+
+    def __banner(self):
+        console = Console()
+        logo = text2art("IGRIS", font="graffiti")
+        console.print(f"[blue]{logo}[/blue]")
+        author_fancy_title = text2art("Author:", font="fancy")
+        version_fancy_title = text2art("Version:", font="fancy")
+        author_fancy = text2art("rsgbengi", font="fancy")
+        version_fancy = text2art("1.0", font="fancy")
+        console.print(
+            Panel.fit(
+                f":dagger: [red]{author_fancy_title}[/red]: [blue]{author_fancy}[/blue]\n:crossed_swords: [red]{version_fancy_title}[/red] [blue]{version_fancy}[/blue] "
+            ),
+        )
+
+        console.print("")
 
     def __before_end_methods(self):
         """[Method to establish which functions will be executed before the shell ends]"""
@@ -301,41 +304,6 @@ class Igris_Shell(cmd2.Cmd):
         for variable, value in necessary_settable_variables.items():
             table.add_row(f"[blue]{variable}[/blue]", f"[bold cyan]{value}[/bold cyan]")
         console.print(table)
-
-    def __color_text(self, text: str) -> str:
-        """[ Function that will color the banner ]
-
-        Args:
-            text (str): [ Text to be colored ]
-
-        Returns:
-            str : [ Colored text ]
-        """
-        for color in COLORS:
-            text = text.replace(f"[[{color}]]", COLORS[color])
-        return text
-
-    def __banner(self) -> str:
-        """[ Function to prepare the banner ]"""
-        logo = """
-        [[black]] _____[[black]]__▄____________    
-        [[black]]_____[[black]]_█▀╓▄▄▄[[red]]▓▓▄µ [[black]]___ [[blue]]
-        [[black]]___ç [[black]]║███████[[red]]██▓▓¿[[black]]__ [[blue]] 
-        [[black]] ___[[black]]╙███████████[[red]]▓▓▓▄[[black]]_
-        [[black]]_____[[blue]]╠█[[black]]██[[blue]]▀[[black]]███╜_[[red]]█▓▓█▌
-        [[black]]______[[black]]██████__ [[red]]╙█▓██
-        [[black]]_____[[blue]],▄▄▀░╔▓▄▓,_[[red]]▓███
-        [[black]]_____[[black]]"█▌[[blue]]▓▓▓▓[[black]]██▀_[[red]]▐███
-        [[black]]_____[[black]]╓███████▌___[[red]]██M
-        [[black]] _____[[black]]ⁿ████████N__[[red]]▐▀[[black]]_
-        [[black]]▐█▄▄██████████▌__'__
-        [[black]] _[[red]]▀██[[black]]██████████[[red]]██▓M[[black]]__
-        [[black]] ___[[red]]└▀█▓▓▓▓▓▓█▀╩[[black]]_____
-        [[black]] _____[[red]]"╫▓▓██▓"[[black]]_______
-        [[black]] ________[[red]]½[[black]]__________
-        [[blue]]
-        """
-        return self.__color_text(logo)
 
     def __check_ip(self, ip: str, name: str) -> bool:
         """[ Method to check if the value of an ip is valid]
