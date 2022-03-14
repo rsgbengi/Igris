@@ -72,9 +72,7 @@ class MaliciousSmbServer:
             )
         else:
             logging.basicConfig(
-                handlers=[
-                    InterceptHandlerStdoutMss(self.__path_file)
-                ],
+                handlers=[InterceptHandlerStdoutMss(self.__path_file)],
                 level=0,
             )
         try:
@@ -82,7 +80,9 @@ class MaliciousSmbServer:
             server.setSMBChallenge("")
             server.start()
         except OSError:
-            self.__info_logger.error("Address already in use. Is ntlm_relay running ? ")
+            self.__info_logger.error(
+                "The address is already in use by another smb server. Use <attack> -E to finish de attack"
+            )
 
 
 class ConfigurationSmbRelayServer:
@@ -131,5 +131,7 @@ class ConfigurationSmbRelayServer:
             server.start()
             server.join()
         except OSError:
-            self.__info_logger.error("Address already in use. Is ntlm_relay running ? ")
+            self.__info_logger.error(
+                "The address is already in use by another smb server. Use <attack> -E to finish de attack."
+            )
         return server

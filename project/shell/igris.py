@@ -29,7 +29,7 @@ class Igris_Shell(cmd2.Cmd):
     def __init__(self):
         super().__init__(
             auto_load_commands=False,
-            persistent_history_file="save/history.json",
+            persistent_history_file="/home/igris/history/history.json",
         )
         # Configure settable variables
         self.__credentials_config_variables()
@@ -160,11 +160,9 @@ class Igris_Shell(cmd2.Cmd):
 
     def __credentials_config_variables(self):
         """[ Settable Variables for credentials ]"""
-        # User
         self.USER = "Administrator"
         self.add_settable(cmd2.Settable("USER", str, "Set user target", self))
 
-        # Password aad3b435b51404eeaad3b435b51404ee:c39f2beb3d2ec06a62cb887fb391dee0
         self.PASSWD = "P@$$w0rd!"
         self.add_settable(
             cmd2.Settable(
@@ -178,7 +176,7 @@ class Igris_Shell(cmd2.Cmd):
     def __network_config_variables(self):
         """[ Settable variables for network ]"""
         # Set LHOST option
-        self.LHOST = "192.168.253.135"
+        self.LHOST = "192.168.253.144"
         self.add_settable(cmd2.Settable("LHOST", str, "Set ip of your machine", self))
 
         # Set SUBNET option
@@ -189,18 +187,18 @@ class Igris_Shell(cmd2.Cmd):
         self.RHOST = "192.168.253.138"
         self.add_settable(cmd2.Settable("RHOST", str, "Set ip of the target", self))
 
-        self.INTERFACE = "ens33"
+        self.INTERFACE = "eth0"
         self.add_settable(
             cmd2.Settable("INTERFACE", str, "Set interface to sniff packets", self)
         )
-        self.MAC_ADDRESS = "00:0c:29:0e:d7:3b"
+        self.MAC_ADDRESS = "00:0c:29:68:f5:aa"
         self.add_settable(
             cmd2.Settable("MAC_ADDRESS", str, "Set mac address of your interface", self)
         )
         self.LPORT = "445"
         self.add_settable(cmd2.Settable("LPORT", str, "Set local port", self))
 
-        self.IPV6 = "fe80::20c:29ff:fe0e:d73b"
+        self.IPV6 = "fe80::20c:29ff:fe68:f5aa"
         self.add_settable(
             cmd2.Settable("IPV6", str, "Set the IPV6 of the target", self)
         )

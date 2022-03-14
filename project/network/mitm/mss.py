@@ -160,7 +160,7 @@ class SmbServerAttack(CommandSet):
 
     argParser = Cmd2ArgumentParser(
         description="""Malicious smb server attack to get hashes net-NTLMv2 """,
-        epilog="Next steps\n-Try to crack the ntlmv2 hashes in loot/[user].txt\n-psexec with the credentials after cracking them",
+        epilog="Next steps\n-Try to crack the ntlmv2 hashes in loot/[user].txt\nPassword spraying with the scan command\n-psexec with the credentials after cracking them",
     )
 
     display_options = argParser.add_argument_group(
@@ -192,7 +192,7 @@ class SmbServerAttack(CommandSet):
         "-ON",
         "--output_ntlmv2",
         action="store",
-        default="loot/",
+        default="/home/igris/loot",
         help="Output of the hashes ntlmv2",
     )
 

@@ -187,14 +187,14 @@ class NtlmRelay(CommandSet):
         current_dir = os.getcwd()
         while True:
             try:
-                os.rename(
-                    f"{current_dir}/{self.__output_sam_file}",
-                    f"{self.__output_sam_dir}/{self.__output_sam_file}",
-                )
-                os.replace(
-                    f"{current_dir}/{self.__output_sam_file}",
-                    f"{self.__output_sam_dir}/{self.__output_sam_file}",
-                )
+                # os.rename(
+                #    f"{current_dir}/{self.__output_sam_file}",
+                #    f"{self.__output_sam_dir}/{self.__output_sam_file}",
+                # )
+                # os.replace(
+                #    f"{current_dir}/{self.__output_sam_file}",
+                #    f"{self.__output_sam_dir}/{self.__output_sam_file}",
+                # )
                 shutil.move(
                     f"{current_dir}/{self.__output_sam_file}",
                     f"{self.__output_sam_dir}/{self.__output_sam_file}",
@@ -389,7 +389,7 @@ class NtlmRelay(CommandSet):
         "-OS",
         "--output_sam",
         action="store",
-        default="loot",
+        default="/home/igris/loot",
         help="Output from the sam hashes",
     )
     attack_options.add_argument(
