@@ -9,7 +9,6 @@ import os
 import sys
 import re
 import cmd2
-from matplotlib.pyplot import text
 import netifaces
 from cmd2 import ansi
 from art import text2art

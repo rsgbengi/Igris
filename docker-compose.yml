@@ -8,14 +8,14 @@ services:
     environment:
       - NEO4J_AUTH=neo4j/igris
     volumes:
-      - ./neo4j_data:/data/
+      - ./save/neo4j_data:/data/
   igris:
     build: .
     container_name: igris
     network_mode: "host"
     volumes:
-      - ./loot:/home/igris/loot
-      - ./save:/home/igris/save
+      - ./save/loot:/home/igris/loot
+      - ./save/history:/home/igris/history
     depends_on:
       - neo4j
     restart: "no"
