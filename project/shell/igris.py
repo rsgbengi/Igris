@@ -27,18 +27,19 @@ from ..dashboard import DashboardCommand
 
 class Igris_Shell(cmd2.Cmd):
     def __init__(self):
+        alias_script = os.path.join(os.path.dirname(__file__), ".startup")
         super().__init__(
             auto_load_commands=False,
             persistent_history_file="/home/igris/history/history.json",
+            startup_script=alias_script,
+            silence_startup_script=True,
         )
         # Configure settable variables
         self.__credentials_config_variables()
         self.__network_config_variables()
         # Defect for intro messsage
         self.__banner()
-
         self.__path = ""
-
         self._set_prompt()
 
         # Options
