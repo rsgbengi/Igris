@@ -16,7 +16,8 @@ import signal
 import shutil
 from requests import get, RequestException
 from tabulate import tabulate
-
+from rich.console import Console
+from rich.table import Table
 from log_symbols import LogSymbols
 
 
@@ -308,9 +309,21 @@ class NtlmRelay(CommandSet):
             try:
                 response = get(url)
                 headers = ["Protocol", "Target", "Username", "Admin", "Port"]
-                self._cmd.poutput(
-                    tabulate(response.json(), headers=headers, tablefmt="sql")
-                )
+
+                console = Console()
+                table = Table(show_header=True, header_style="bold magenta")
+                for header in headers:
+                    table.add_column(header)
+                for row in response.json():
+                    table.add_row(
+                        f"[blue]{row[0]}[/blue]",
+                        f"[blue]{row[1]}[/blue]",
+                        f"[blue]{row[2]}[/blue]",
+                        f"[blue]{row[3]}[/blue]",
+                        f"[blue]{row[4]}[/blue]",
+                    )
+                console.print(table)
+
             except RequestException:
                 self._cmd.error_logger.error("Error while trying to connect")
         else:
