@@ -1,4 +1,3 @@
-from tracemalloc import start
 from cmd2 import CommandSet, with_default_category
 import cmd2
 import argparse
@@ -39,5 +38,5 @@ class DashboardCommand(CommandSet):
         elif self._cmd.check_settable_variables_value(settable_variables_required):
             if not self._cmd.igris_db.check_status():
                 self._cmd.error_logger.error("The db has not finished starting")
-                return 
+                return
             start_dashboard(lport)

@@ -8,6 +8,9 @@ from rich.table import Table
 
 @with_default_category("Utilities")
 class AttackStatus(CommandSet):
+    def __init__(self) -> None:
+        super().__init__()
+
     def __create_table(self) -> Table:
         table = Table(show_header=True, header_style="bold magenta")
         table.add_column("Attack")

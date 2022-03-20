@@ -18,11 +18,10 @@ from log_symbols import LogSymbols
 from rich.console import Console
 from rich.table import Table
 from rich.panel import Panel
-from ..utils import ScanForPsexec, Psexec
-from .attackstatus import AttackStatus
-from ..network import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
-from ..utils import Neo4jConnection
-from ..dashboard import DashboardCommand
+from ..utils import Psexec, AttackStatus, DashboardCommand
+from ..attacks import SmbServerAttack, NtlmRelay, DNSTakeOverCommand, PoisonCommand
+from ..neo import Neo4jConnection
+from ..recon import ScanForPsexec
 
 
 class Igris_Shell(cmd2.Cmd):
@@ -45,6 +44,7 @@ class Igris_Shell(cmd2.Cmd):
         # Options
         self.allow_style = ansi.STYLE_TERMINAL
 
+        # Loggers config
         self.__set_up_file_loggers()
         self.__error_logger = None
         self.__info_logger = None
@@ -129,7 +129,7 @@ class Igris_Shell(cmd2.Cmd):
 
         console.print("")
 
-    def __before_end_methods(self):
+    def __before_end_methods(self) -> None:
         """[Method to establish which functions will be executed before the shell ends]"""
         self.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
         self.register_postloop_hook(self.__mss_module.mss_postloop)
@@ -176,15 +176,12 @@ class Igris_Shell(cmd2.Cmd):
 
     def __network_config_variables(self):
         """[ Settable variables for network ]"""
-        # Set LHOST option
         self.LHOST = "192.168.253.144"
         self.add_settable(cmd2.Settable("LHOST", str, "Set ip of your machine", self))
 
-        # Set SUBNET option
         self.SUBNET = "192.168.253.0/24"
         self.add_settable(cmd2.Settable("SUBNET", str, "Set subnet target", self))
 
-        # IP_TARGET
         self.RHOST = "192.168.253.138"
         self.add_settable(cmd2.Settable("RHOST", str, "Set ip of the target", self))
 

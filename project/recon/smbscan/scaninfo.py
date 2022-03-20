@@ -1,8 +1,3 @@
-from cmd2 import ansi
-from multiprocessing import Manager
-import json
-
-
 class UserInfo:
     """[ Credentials for the user ]
 

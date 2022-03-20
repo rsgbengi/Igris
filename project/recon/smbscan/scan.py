@@ -8,7 +8,6 @@ from multiprocessing import Process
 from typing import Tuple
 
 import cmd2
-import py2neo
 from cmd2 import CommandSet, ansi, with_default_category
 from halo import Halo
 from impacket.smb import SMB_DIALECT
@@ -20,7 +19,7 @@ from rich.table import Table
 from spinners.spinners import Spinners
 from spnego._ntlm_raw.crypto import is_ntlm_hash
 
-from .gatherinfo import TargetInfo, UserInfo
+from .scaninfo import TargetInfo, UserInfo
 
 
 @with_default_category("Recon")
@@ -32,7 +31,7 @@ class ScanForPsexec(CommandSet):
         self.__scan_process = None
 
     def scan_postloop(self) -> None:
-        """[Function that will be performe when the user exits the shell]"""
+        """[Method that will be performe when the user exits the shell]"""
         if self.__is_running():
             self._cmd.info_logger.info(
                 ansi.style(
@@ -49,7 +48,7 @@ class ScanForPsexec(CommandSet):
     def __try_scan_connection_with_smb1(
         self, ip: IPv4Address
     ) -> Tuple[bool, SMBConnection]:
-        """[This function will try to connect to a remote host
+        """[This method will try to connect to a remote host
             using smb1]
 
         Args:
@@ -75,7 +74,7 @@ class ScanForPsexec(CommandSet):
     def __try_scan_connection_with_smb3(
         self, ip: IPv4Address
     ) -> Tuple[bool, SMBConnection]:
-        """[This function will try to connect to a remote host
+        """[This method will try to connect to a remote host
             using smb3]
         Args:
             ip (IPv4Address): [ip of the remote host]
@@ -98,7 +97,7 @@ class ScanForPsexec(CommandSet):
     def __check_scan_login_possibility(
         self, user_info: UserInfo, smbclient: SMBConnection
     ) -> bool:
-        """[Function to know if a user can log in]
+        """[Method to know if a user can log in]
 
         Args:
             user_info (UserInfo): [User info needed to login to the remote
@@ -133,7 +132,7 @@ class ScanForPsexec(CommandSet):
     def __configure_target_info_of_scan(
         self, target_info: TargetInfo, smbclient: SMBConnection, subnet: str
     ) -> None:
-        """[Function to set different values of smbclient into TargetInfo object]
+        """[Method to set different values of smbclient into TargetInfo object]
 
         Args:
             target_info (TargetInfo): [Argument to set information contained
@@ -151,7 +150,7 @@ class ScanForPsexec(CommandSet):
         target_info.subnet = subnet
 
     def __check_psexec_possibility(self, smbclient: SMBConnection) -> bool:
-        """[Function that checks ifa user could do psexec listing the contents
+        """[Method that checks ifa user could do psexec listing the contents
                 of the admin folder]
 
         Args:
@@ -289,7 +288,7 @@ class ScanForPsexec(CommandSet):
     def __is_user_in_admin_group_asynchronous(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
     ) -> None:
-        """[Function that is used to know if the user is an administrator and
+        """[Method that is used to know if the user is an administrator and
                 is currently able to psexec(asynchronous way)]
 
         Args:
@@ -317,7 +316,7 @@ class ScanForPsexec(CommandSet):
         if self._cmd.terminal_lock.acquire(blocking=False):
             self._cmd.async_alert(
                 ansi.style(
-                    f"{LogSymbols.SUCCESS.value} The scan has finished!. uses the YES argument to display the collected information",
+                    f"{LogSymbols.SUCCESS.value} The scan has finished!. Use the -SI argument to display the collected information",
                     fg=ansi.fg.green,
                 )
             )
@@ -326,7 +325,7 @@ class ScanForPsexec(CommandSet):
         self._cmd.info_logger.debug("Asynchronous scanning has been completed.")
 
     def __asynchronous_way(self) -> None:
-        """[Function that will start the asynchronous scan]"""
+        """[Method that will start the asynchronous scan]"""
         self._cmd.info_logger.info("Using asynchronous scan.")
         self._cmd.info_logger.info(
             ansi.style(
@@ -448,7 +447,7 @@ class ScanForPsexec(CommandSet):
         self._cmd.info_logger.success("Synchronous scanning has been completed")
 
     def __synchronous_way(self) -> None:
-        """[ Function that will start the synchronous scan]"""
+        """[ Method that will start the synchronous scan]"""
 
         self._cmd.info_logger.info("Using synchronous scan")
 

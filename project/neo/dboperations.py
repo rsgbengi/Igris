@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 from loguru import logger
-import loguru
 from py2neo import Node, Relationship, Graph, ServiceUnavailable
 
 from spnego._ntlm_raw.crypto import is_ntlm_hash
-from ..gatherinfo import TargetInfo, UserInfo
+from ..recon import TargetInfo, UserInfo
 
 from loguru import logger
 

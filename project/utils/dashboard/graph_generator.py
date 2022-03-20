@@ -1,5 +1,5 @@
 from typing import Tuple
-from ..utils import Neo4jConnection
+from ...neo import Neo4jConnection
 from py2neo import Node
 
 

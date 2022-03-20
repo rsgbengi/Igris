@@ -5,20 +5,15 @@
 import argparse
 import random
 import shlex
-from typing import Tuple
 
 from halo import Halo
 import cmd2
 from cmd2 import CommandSet, ansi, with_default_category
 from pypsexec.client import Client
 from pypsexec.exceptions import PAExecException, SCMRException
-from smbprotocol.exceptions import LogonFailure
 from smbprotocol.exceptions import CannotDelete
 from spinners.spinners import Spinners
-from loguru import logger
-from logging import Logger
-from log_symbols import LogSymbols
-from .gatherinfo import PsexecShellVariables
+from .psexecinfo import PsexecShellVariables
 
 
 @with_default_category("Utilities")

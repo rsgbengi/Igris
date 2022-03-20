@@ -184,18 +184,10 @@ class NtlmRelay(CommandSet):
         self.__config.setSMB2Support(True)
 
     def __store_sam_results_of_target(self) -> None:
-        """[method to save the attack output to a file]"""
+        """[Method to save the attack output to a file]"""
         current_dir = os.getcwd()
         while True:
             try:
-                # os.rename(
-                #    f"{current_dir}/{self.__output_sam_file}",
-                #    f"{self.__output_sam_dir}/{self.__output_sam_file}",
-                # )
-                # os.replace(
-                #    f"{current_dir}/{self.__output_sam_file}",
-                #    f"{self.__output_sam_dir}/{self.__output_sam_file}",
-                # )
                 shutil.move(
                     f"{current_dir}/{self.__output_sam_file}",
                     f"{self.__output_sam_dir}/{self.__output_sam_file}",
@@ -204,7 +196,7 @@ class NtlmRelay(CommandSet):
                 pass
 
     def __file_exits(self) -> bool:
-        """[ method to check if a file exists to check its overwriting ]"""
+        """[ Method to check if a file exists to check its overwriting ]"""
         exit = True
         if os.path.exists(f"{os.getcwd()}/{self.__output_sam_file}"):
             self._cmd.error_logger.warning(

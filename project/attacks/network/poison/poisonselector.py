@@ -144,7 +144,7 @@ class PoisonCommand(CommandSet):
             self.__change_attack_status()
 
     argParser = Cmd2ArgumentParser(
-        description="""Command to perform mdns poisoning attack""",
+        description="""Command to perform poison attacks such us mdns,nbt-ns,dns...""",
         epilog="Next steps\n mss -> To catch ntlmv2 hasehs\n ntlm_relay -> to relay connections",
     )
     display_options = argParser.add_argument_group(
