@@ -23,14 +23,11 @@ class Psexec(CommandSet):
         self.__spinner_list = [key.name for key in Spinners]
         self.__spinner = None
 
-    def __cd_case_previous_directory(
-        self, psexec_info: PsexecShellVariables, separate_dir: list[str]
-    ) -> None:
+    def __cd_case_previous_directory(self, psexec_info: PsexecShellVariables) -> None:
         """[Function to prepare everithing for 'cd ..']
 
         Args:
             psexec_info (PsexecShellVariables): [ Object that containing information of the current session psexec ]
-            separate_dir (str): [ Current directory in a list ]
         """
 
         actual_work_dir = psexec_info.actual_work_dir
@@ -130,7 +127,7 @@ class Psexec(CommandSet):
             cd_used = True
             separate_dir = separate_command[1]
             if separate_dir == "..":
-                self.__cd_case_previous_directory(psexec_info, separate_dir)
+                self.__cd_case_previous_directory(psexec_info)
             elif actual_work_dir == "C:\\":
                 psexec_info.possible_work_dir = actual_work_dir + separate_dir
             else:
@@ -372,9 +369,8 @@ class Psexec(CommandSet):
             passwd,
             encrypt=args.encryption,
         )
-        if success_in_connection := self.__try_psexec_connection(conn):
-            if success_creating_service := self.__prepare_service(conn):
-                self.__psexec_execution_options(args, conn)
+        if self.__try_psexec_connection(conn) and self.__prepare_service(conn):
+            self.__psexec_execution_options(args, conn)
 
     def __clean_paexec_files(self, args: argparse.Namespace) -> None:
         """[Function to clean files from the remote host]

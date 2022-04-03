@@ -481,7 +481,7 @@ class ScanForPsexec(CommandSet):
 
     def __end_scan(self) -> None:
         """[ Process to finished the scan process ]"""
-        if self.__is_running:
+        if self.__is_running():
             self._cmd.error_logger.warning("Exiting ...")
             self.__scan_process.terminate()
             self.__scan_process.join()

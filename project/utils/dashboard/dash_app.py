@@ -120,13 +120,13 @@ def define_legend() -> dbc.ListGroup:
     Returns:
         dbc.ListGroup: [ List with all the node types of the graph ]
     """
-
+    arrow_class = "bi bi-arrow-right-circle-fill"
     return dbc.ListGroup(
         [
             dbc.ListGroupItem(
                 [
                     html.I(
-                        className="bi bi-arrow-right-circle-fill",
+                        className=arrow_class,
                         style={"color": "#c93412"},
                     ),
                     "  Psexec Here",
@@ -135,7 +135,7 @@ def define_legend() -> dbc.ListGroup:
             dbc.ListGroupItem(
                 [
                     html.I(
-                        className="bi bi-arrow-right-circle-fill",
+                        className=arrow_class,
                         style={"color": "blue"},
                     ),
                     "  Not Psexec Here",
@@ -144,7 +144,7 @@ def define_legend() -> dbc.ListGroup:
             dbc.ListGroupItem(
                 [
                     html.I(
-                        className="bi bi-arrow-right-circle-fill",
+                        className=arrow_class,
                         style={"color": "#383534"},
                     ),
                     "  Part of the subnet",

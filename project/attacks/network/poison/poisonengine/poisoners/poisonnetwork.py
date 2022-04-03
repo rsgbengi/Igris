@@ -118,18 +118,14 @@ class PoisonNetwork:
         """
         ip_of_the_packet = None
         if IP in pkt:
-            if pkt[IP].src == self._ip:
-                return
             response /= IP(dst=pkt[IP].src)
             ip_of_the_packet = pkt[IP].src
         elif IPv6 in pkt:
-            if pkt[IPv6].src == self._ipv6:
-                return
             response /= IPv6(dst=pkt[IPv6].src)
             ip_of_the_packet = pkt[IPv6].src
         return response, ip_of_the_packet
 
-    def _start_cleaner(self):
+    def _start_cleaner(self) -> None:
         """[ Method to start the cleaner thread ]"""
         cleaner_thread = Thread(target=self.__cleaner)
         cleaner_thread.daemon = True

@@ -52,13 +52,13 @@ class Igris_Shell(cmd2.Cmd):
         self.__id_info_logger = None
         self.register_precmd_hook(self.__set_up_output_loggers)
 
+        # Attacks
         self.load_modules()
         self.__before_end_methods()
-        # Enabled Attacks
         self.__configure_enabled_attacks()
 
         # configure database
-        self.__init_databse()
+        self.__init_database()
 
     @property
     def info_logger(self) -> Logger:
@@ -72,7 +72,7 @@ class Igris_Shell(cmd2.Cmd):
     def active_attacks(self) -> None:
         return self.__active_attacks
 
-    def __init_databse(self) -> None:
+    def __init_database(self) -> None:
         """[Method to initialize the connection to the database]"""
         self.igris_db = Neo4jConnection(
             "neo4j://localhost:7687",

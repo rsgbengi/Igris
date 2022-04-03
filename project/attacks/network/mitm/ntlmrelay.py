@@ -355,7 +355,7 @@ class NtlmRelay(CommandSet):
 
     argParser = Cmd2ArgumentParser(
         description="""Command to perform ntlm relay attack""",
-        epilog="Next step\n-scan PASS <ntlmhash> -> Password spraying",
+        epilog="Next step\n-Use the scan command to identify potential users",
     )
 
     display_options = argParser.add_argument_group(

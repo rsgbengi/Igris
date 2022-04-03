@@ -121,7 +121,11 @@ class NBT_NS(PoisonNetwork):
         Args:
             pkt (packet): [ Sniffed packet ]
         """
-        if pkt.haslayer(NBNSQueryRequest) and pkt.haslayer(IP) and pkt[IP].src != self.ip:
+        if (
+            pkt.haslayer(NBNSQueryRequest)
+            and pkt.haslayer(IP)
+            and pkt[IP].src != self.ip
+        ):
             response = self._data_link_layer(pkt)
             response, ip_of_the_packet = self._network_layer(pkt, response)
             response = self.__transport_layer(response)
