@@ -53,7 +53,7 @@ class Igris_Shell(cmd2.Cmd):
         self.register_precmd_hook(self.__set_up_output_loggers)
 
         # Attacks
-        self.load_modules()
+        self.__load_modules()
         self.__before_end_methods()
         self.__configure_enabled_attacks()
 
@@ -139,7 +139,7 @@ class Igris_Shell(cmd2.Cmd):
 
         self.register_postloop_hook(self.__dnstakeover_module.dnstakeover_postloop)
 
-    def load_modules(self) -> None:
+    def __load_modules(self) -> None:
         """[ Function to activate the available modules ]"""
         self.__scan_module = ScanForPsexec()
         self.__psexec_module = Psexec()
