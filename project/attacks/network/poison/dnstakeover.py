@@ -93,7 +93,7 @@ class DNSTakeOverCommand(CommandSet):
             self._cmd.error_logger.error(
                 "Error: the following arguments are required: -DOM/--domain"
             )
-        if not self._cmd._check_configurable_variables(configurable_variables):
+        if not self._cmd.check_configurable_variables(configurable_variables):
             return False
         return True
 

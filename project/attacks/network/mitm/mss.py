@@ -152,7 +152,7 @@ class SmbServerAttack(CommandSet):
             self._cmd.error_logger.warning("Error with output file")
             return False
 
-        if not self._cmd._check_configurable_variables(configurable_variables):
+        if not self._cmd.check_configurable_variables(configurable_variables):
             return False
         if args.Asynchronous:
             self.__configure_alerts_thread()

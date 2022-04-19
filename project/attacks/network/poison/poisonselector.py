@@ -118,7 +118,7 @@ class PoisonCommand(CommandSet):
                 "The attack is already running in the background"
             )
             return False
-        if not self._cmd._check_configurable_variables(configurable_variables):
+        if not self._cmd.check_configurable_variables(configurable_variables):
             return False
 
         return True

@@ -410,7 +410,7 @@ class Psexec(CommandSet):
             args (argparse.Namespace): [ Arguments passed to the attack ]
             configurable_variables(dict): [ Settable variables used in this command]
         """
-        if not self._cmd._check_configurable_variables(configurable_variables):
+        if not self._cmd.check_configurable_variables(configurable_variables):
             return False
         if args.clean_remote_files:
             self.__clean_paexec_files(args)

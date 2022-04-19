@@ -176,16 +176,15 @@ class Neo4jConnection:
         return "Psexec Here!" if relation else "Not Psexec Here"
 
     def check_if_subnet_exits(self, subnet: str) -> bool:
-        """[ Method to check if a function exists ]
+        """[ Method to check if a subnet node exists ]
 
         Args:
-            subnet (str): _description_
+            subnet (str): [ The subnet node to check ]
 
         Returns:
-            bool: _description_
+            bool: [ The state of the node ]
         """
-        subnet = self.get_subnet(subnet)
-        return subnet is not None
+        return self.get_subnet(subnet) is not None
 
     def __commit(self, object_to_commit) -> None:
         """[Method to commit changes to the database]
@@ -231,28 +230,56 @@ class Neo4jConnection:
             self.__relatoinship_subnet_subnet(subnet_node, subnets[len(subnets) - 1])
 
     def graph_psexec_users(self) -> list:
-        """[ Method to return no]
+        """[Method that returns all the nodes that have the psexec
+            relationship to generate the graph with only administrators]
 
         Returns:
-            list: _description_
+            list: [The nodes that represent the administrators-only graph]
         """
         return self.__graph.run("MATCH p=()-[r:PSEXEC_HERE]->() RETURN p").data()
 
     def graph_not_psexec_users(self) -> list:
+        """[Method that returns all the nodes that have the not_psexec
+            relationship to generate the graph with only no administrators]
+
+        Returns:
+            list: [The nodes that represent the graph of non-administrators ]
+        """
         return self.__graph.run("MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p").data()
 
     def graph_with_computers(self) -> list:
+        """[ Method that returns all the nodes that have the Part_of
+            relationship to generate the graph with only subnets and computers]
+
+        Returns:
+            list: [The list with the nodes of the computers and subnets]
+        """
         return self.__graph.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
 
     def get_subnets(self) -> list:
+        """[ Method that returns all subnet nodes ]
+
+        Returns:
+            list: [The list with subnet nodes]
+        """
         return self.__graph.nodes.match("Subnet").all()
 
-    def get_subnets_with_computers_detected(self):
+    def get_subnets_with_computers_detected(self) -> list:
+        """[Method to take all subnet nodes that have computers]
+
+        Returns:
+            list: [ List with the subnets that have nodes ]
+        """
         return self.__graph.run(
             "MATCH (s:Subnet)-[r:PART_OF]-(c:Computer) RETURN s"
         ).data()
 
     def check_status(self) -> bool:
+        """[Method to check if the database is up]
+
+        Returns:
+            bool: [ State of the database ]
+        """
         alive = True
         try:
             self.__graph.run("Match () Return 1 Limit 1")

@@ -368,7 +368,7 @@ class Igris_Shell(cmd2.Cmd):
             return False
         return True
 
-    def _check_configurable_variables(self, variables: dict) -> bool:
+    def check_configurable_variables(self, variables: dict) -> bool:
         """[ Method to check the value of settable variables ]
 
         Args:

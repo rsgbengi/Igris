@@ -255,7 +255,7 @@ class NtlmRelay(CommandSet):
         if self.__file_exits():
             self._cmd.info_logger.info("Exiting ...")
             return False
-        if not self._cmd._check_configurable_variables(configurable_variables):
+        if not self._cmd.check_configurable_variables(configurable_variables):
             return False
         self.__configure_alert_thread()
 

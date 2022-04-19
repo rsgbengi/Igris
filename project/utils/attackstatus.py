@@ -12,13 +12,19 @@ class AttackStatus(CommandSet):
         super().__init__()
 
     def __create_table(self) -> Table:
+        """[ Method to initialize the table to return through the attack and
+            status columns ]
+
+        Returns:
+            Table: [ The initialized table ]
+        """
         table = Table(show_header=True, header_style="bold magenta")
         table.add_column("Attack")
         table.add_column("Status")
         return table
 
     def __show_all(self) -> None:
-
+        """[Method to display all attacks and their corresponding status]"""
         console = Console()
         table = self.__create_table()
         for attack, status in self._cmd.active_attacks.items():
@@ -30,6 +36,11 @@ class AttackStatus(CommandSet):
         console.print(table)
 
     def __show_one(self, attack: str) -> None:
+        """[ Method to display the status of a certain selected attack ]
+
+        Args:
+            attack (str): [ Attack to display ]
+        """
         console = Console()
         table = self.__create_table()
         try:
