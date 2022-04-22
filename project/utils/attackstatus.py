@@ -12,11 +12,11 @@ class AttackStatus(CommandSet):
         super().__init__()
 
     def __create_table(self) -> Table:
-        """[ Method to initialize the table to return through the attack and
-            status columns ]
+        """Method to initialize the table to return through the attack and
+            status columns.
 
         Returns:
-            Table: [ The initialized table ]
+            Table: The initialized table.
         """
         table = Table(show_header=True, header_style="bold magenta")
         table.add_column("Attack")
@@ -24,7 +24,7 @@ class AttackStatus(CommandSet):
         return table
 
     def __show_all(self) -> None:
-        """[Method to display all attacks and their corresponding status]"""
+        """ Method to display all attacks and their corresponding status."""
         console = Console()
         table = self.__create_table()
         for attack, status in self._cmd.active_attacks.items():
@@ -36,10 +36,10 @@ class AttackStatus(CommandSet):
         console.print(table)
 
     def __show_one(self, attack: str) -> None:
-        """[ Method to display the status of a certain selected attack ]
+        """Method to display the status of a certain selected attack.
 
         Args:
-            attack (str): [ Attack to display ]
+            attack (str): Attack to display.
         """
         console = Console()
         table = self.__create_table()
@@ -53,7 +53,7 @@ class AttackStatus(CommandSet):
             self._cmd.error_logger.error("This attack does not exist")
 
     argParser = Cmd2ArgumentParser(
-        description="""Command to show status of the attacks"""
+        description="""Command to show status of the attacks."""
     )
 
     display_options = argParser.add_argument_group(

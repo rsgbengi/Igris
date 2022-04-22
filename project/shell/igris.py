@@ -14,6 +14,7 @@ from cmd2 import ansi
 from art import text2art
 from loguru import logger
 from log_symbols import LogSymbols
+from typing import Any
 
 from rich.console import Console
 from rich.table import Table
@@ -73,7 +74,7 @@ class Igris_Shell(cmd2.Cmd):
         return self.__active_attacks
 
     def __init_database(self) -> None:
-        """[Method to initialize the connection to the database]"""
+        """Method to initialize the connection to the database"""
         self.igris_db = Neo4jConnection(
             "neo4j://localhost:7687",
             "neo4j",
@@ -81,27 +82,27 @@ class Igris_Shell(cmd2.Cmd):
         )
 
     def active_attacks_status(self, attack: str) -> bool:
-        """[Method to see if an attack is activated or not]
+        """Method to see if an attack is activated or not.
 
         Args:
-            attack (str): [Specific attack]
+            attack (str): Specific attack.
 
         Returns:
-            bool: [ State of lataque selecting ]
+            bool: State of the selected attack.
         """
         return self.__active_attacks[attack]
 
     def active_attacks_configure(self, attack: str, status: bool) -> None:
-        """[ Method to change the status of a command ]
+        """Method to change the status of an attack.
 
         Args:
-            attack (str): [ Selected attack ]
-            status (bool): [ True of false depending on the state ]
+            attack (str): Selected attack.
+            status (bool): True of false depending on the state.
         """
         self.__active_attacks[attack] = status
 
     def __configure_enabled_attacks(self) -> None:
-        """[ Method to configure the enble attacks]"""
+        """Method to initialize the state of the attacks"""
 
         self.__active_attacks = {
             "MDNS_Poisoning": False,
@@ -114,6 +115,7 @@ class Igris_Shell(cmd2.Cmd):
         }
 
     def __banner(self):
+        """Method to initialize the application banner."""
         console = Console()
         logo = text2art("IGRIS", font="graffiti")
         console.print(f"[blue]{logo}[/blue]")
@@ -130,7 +132,10 @@ class Igris_Shell(cmd2.Cmd):
         console.print("")
 
     def __before_end_methods(self) -> None:
-        """[Method to establish which functions will be executed before the shell ends]"""
+        """Method to establish which functions will be executed before 
+        the shell ends. All the methods have in mind to end 
+        possible processes executed in the background 
+        of the different available commands."""
         self.register_postloop_hook(self.__ntlm_relay_module.ntlm_relay_postloop)
         self.register_postloop_hook(self.__mss_module.mss_postloop)
         self.register_postloop_hook(self.__scan_module.scan_postloop)
@@ -140,7 +145,7 @@ class Igris_Shell(cmd2.Cmd):
         self.register_postloop_hook(self.__dnstakeover_module.dnstakeover_postloop)
 
     def __load_modules(self) -> None:
-        """[ Function to activate the available modules ]"""
+        """Method to load all available commands."""
         self.__scan_module = ScanForPsexec()
         self.__psexec_module = Psexec()
         self.__ntlm_relay_module = NtlmRelay()
@@ -160,7 +165,7 @@ class Igris_Shell(cmd2.Cmd):
         self.register_command_set(self.__dashboard)
 
     def __credentials_config_variables(self):
-        """[ Settable Variables for credentials ]"""
+        """Settable Variables for credentials."""
         self.USER = "Administrator"
         self.add_settable(cmd2.Settable("USER", str, "Set user target", self))
 
@@ -175,7 +180,7 @@ class Igris_Shell(cmd2.Cmd):
         )
 
     def __network_config_variables(self):
-        """[ Settable variables for network ]"""
+        """Settable variables for network."""
         self.LHOST = "192.168.253.144"
         self.add_settable(cmd2.Settable("LHOST", str, "Set ip of your machine", self))
 
@@ -202,21 +207,21 @@ class Igris_Shell(cmd2.Cmd):
         )
 
     def _set_prompt(self) -> None:
-        """[Function that will set the command line format]"""
+        """Function that will set the command line prompt."""
         self.__path = os.getcwd()
         self.prompt = ansi.style("Igris shell -> ", fg=ansi.fg.blue) + ansi.style(
             f"{self.__path} ", fg=ansi.fg.cyan
         )
 
     def postcmd(self, stop: bool, line: str) -> bool:
-        """[ Hook method executed just after a command dispatch is finished ]
+        """Hook method executed just after a command dispatch is finished 
 
         Args:
-            stop (bool): [return True to request the command loop terminate]
-            line (str): [ input of the user ]
+            stop (bool): return True to request the command loop terminate
+            line (str): input of the user 
 
         Returns:
-            bool: [ True if the user use the command 'quit' ]
+            bool: True if the user use the command 'quit' 
         """
         self._set_prompt()
         return stop
@@ -236,7 +241,7 @@ class Igris_Shell(cmd2.Cmd):
 
         error = None
         if not os.path.isdir(path_to_change):
-            error = f"{path_to_change} is not a directory"
+            error = f"{path_to_change} is not a directory."
         elif not os.access(path_to_change, os.R_OK):
             error = f"You do not have read access to {path_to_change}"
         else:
@@ -248,27 +253,27 @@ class Igris_Shell(cmd2.Cmd):
             self.__error_logger.error(error)
 
     def complete_cd(self, text: str, line: str, begidx: int, endidx: int) -> List[str]:
-        """[ Allow  user auto-complete when using cd ]
+        """Allow  user auto-complete when using cd. 
 
         Args:
-            text (str): [ The string prefix we are attempting to match]
-            line (str): [ the current input line with leading whitespace removed]
-            begidx (int): [ The beginning index of the prefix text]
-            endidx (int): [ the ending index of the prefix text]
+            text (str):   The string prefix we are attempting to match.
+            line (str):   the current input line with leading whitespace removed.
+            begidx (int): The beginning index of the prefix text.
+            endidx (int): The ending index of the prefix text.
 
         Returns
-            List[str] : [ A list of possible tab completions ]
+            List[str] :  A list of possible tab completions. 
         """
         return self.path_complete(text, line, begidx, endidx, path_filter=os.path.isdir)
 
-    def check_settable_variables_value(self, necessary_settable: dict[str]) -> bool:
-        """[ Function that checks if the settable variables value don't have an empty value ]
+    def check_settable_variables_value(self, necessary_settable: dict[str,Any]) -> bool:
+        """Method that checks if the settable variables value don't have an empty value.
 
         Args:
-            necessary_settable (dict[str]): [ Dictionary with all settable variables used by the calling funcition ]
+            necessary_settable (dict[str]): Dictionary with all settable variables used by the calling funcition.
 
         Returns:
-            bool: [ Returns if all variables are correct ]
+            bool: Returns if all variables are correct.
         """
         self.__info_logger.debug(
             "Checking the correct value of the necessary settable variables "
@@ -283,12 +288,12 @@ class Igris_Shell(cmd2.Cmd):
         return True
 
     def show_settable_variables_necessary(
-        self, necessary_settable_variables: dict[str]
+        self, necessary_settable_variables: dict[str,Any]
     ) -> None:
-        """[  Show all settable variables that will be needed in the calling command ]
+        """Show all settable variables that will be needed in the calling command.
 
         Args:
-            necessary_settable_variables (dict[str]): [  Dictionary with all settable variables used by the calling funcition ]
+            necessary_settable_variables (dict[str,Any]): Dictionary with all settable variables used by the calling funcition. 
         """
         self.__info_logger.info("Showing necessary settable variables")
         console = Console()
@@ -301,14 +306,14 @@ class Igris_Shell(cmd2.Cmd):
         console.print(table)
 
     def __check_ip(self, ip: str, name: str) -> bool:
-        """[ Method to check if the value of an ip is valid]
+        """Method to check if the value of an ip is valid.
 
         Args:
-            ip (str): [ Ip to check]
-            name (str): [ Name of the error to report ]
+            ip (str): Ip to check.
+            name (str): Name of the error to report.
 
         Returns:
-            bool: [ Status of the ip ]
+            bool: Status of the ip.
         """
         try:
             ipaddress.ip_address(ip)
@@ -318,10 +323,10 @@ class Igris_Shell(cmd2.Cmd):
         return True
 
     def __check_mac(self) -> bool:
-        """[ Method to check that the value of the mac_address is valid]
+        """Method to check that the value of the mac_address is valid.
 
         Returns:
-            bool: [ Evaluation of the check ]
+            bool: Evaluation of the check.
         """
         if not re.match(
             "[0-9a-f]{2}([-:])[0-9a-f]{2}(\\1[0-9a-f]{2}){4}$", self.MAC_ADDRESS.lower()
@@ -331,10 +336,10 @@ class Igris_Shell(cmd2.Cmd):
         return True
 
     def __check_interface(self) -> bool:
-        """[ Method to check the value of the interface ]
+        """ Method to check the value of the interface.
 
         Returns:
-            bool: [ Returns if the interface is in the possible interfaces ]
+            bool: Returns if the interface is in the possible interfaces.
         """
         if self.INTERFACE not in netifaces.interfaces():
             self.error_logger.error("The interface is not valid")
@@ -342,13 +347,13 @@ class Igris_Shell(cmd2.Cmd):
         return True
 
     def __check_port(self, number: str) -> bool:
-        """[ Method to check if the port number is valid]
+        """ Method to check if the port number is valid.
 
         Args:
-            number (str): [ The port number]
+            number (str): The port number.
 
         Returns:"
-            bool: [ True if the port number is correct ]
+            bool: True if the format of the port number is correct.
         """
         if not number.isnumeric():
             self.error_logger.error("The port must be a number")
@@ -359,6 +364,7 @@ class Igris_Shell(cmd2.Cmd):
         return True
 
     def __check_subnet(self) -> bool:
+        """Method to check if the format of a subnet is correct """
         try:
             ipaddress.IPv4Network(self.SUBNET)
         except ipaddress.AddressValueError:
@@ -369,13 +375,13 @@ class Igris_Shell(cmd2.Cmd):
         return True
 
     def check_configurable_variables(self, variables: dict) -> bool:
-        """[ Method to check the value of settable variables ]
+        """Method to check the value of settable variables.
 
         Args:
-            variables (dict): [ variables used in a command ]
+            variables (dict): variables used in a command.
 
         Returns:
-            bool: [ Method evaluation ]
+            bool:  Method evaluation. 
         """
         correct_value = True
         for key in variables:
@@ -396,7 +402,7 @@ class Igris_Shell(cmd2.Cmd):
         return correct_value
 
     def __set_up_file_loggers(self) -> None:
-        """[ Method to configure the files where the log messages will be saved ]"""
+        """Method to configure the loggers that will be used to store the application information in two files."""
         logger.add(
             "logs/all.log",
             level="DEBUG",
@@ -413,7 +419,9 @@ class Igris_Shell(cmd2.Cmd):
     def __set_up_output_loggers(
         self, data: cmd2.plugin.PrecommandData
     ) -> cmd2.plugin.PrecommandData:
-        """[ Function to prepare the logger ]"""
+        """Method to configure the loggers that will 
+        be used to manage stdout and stdin before executing
+        a command. They will be removed for each run to avoid repeats"""
         # export LOGURU_AUTOINIT=False
 
         if self.__id_info_logger is not None:

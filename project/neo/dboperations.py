@@ -9,12 +9,12 @@ from loguru import logger
 
 
 class Neo4jConnection:
-    """[ Class to generate connections to the database ]
+    """Class to generate connections to the database.
 
     Args:
-        url (str): [ url to connect to database]
-        user (str): [User of the database (neo4j)]
-        passwd (str): [Password of the database(igris)]
+        url (str): Url to connect to database.
+        user (str): User of the database (neo4j).
+        passwd (str): Password of the database(igris).
     """
 
     def __init__(
@@ -35,10 +35,10 @@ class Neo4jConnection:
             self.__error_logger.error("Failed to create de driver")
 
     def relationship_computer_subnet(self, target_info: TargetInfo) -> None:
-        """[Method that executes a query to obtain the relationships between host and subnet]
+        """Method that executes a query to obtain the relationships between host and subnet.
 
         Args:
-            target_info (TargetInfo): [Computer information]
+            target_info (TargetInfo): Computer information.
         """
         computer = self.get_computer(target_info)
         subnet = self.get_subnet(target_info.subnet)
@@ -48,11 +48,11 @@ class Neo4jConnection:
     def relationship_computer_user(
         self, target_info: TargetInfo, user_status: UserInfo
     ) -> None:
-        """[Method that executes a query to obtain the relationships between computer and normal user]
+        """Method that executes a query to obtain the relationships between computer and normal user.
 
         Args:
-            target_info (TargetInfo): [Computer information]
-            user_status (UserInfo): [User information]
+            target_info (TargetInfo): Computer information.
+            user_status (UserInfo): User information.
         """
         computer = self.get_computer(target_info)
         user = self.get_user(user_status, target_info.ip)
@@ -63,21 +63,21 @@ class Neo4jConnection:
         self.__commit(relationship)
 
     def get_computer(self, target_info: TargetInfo) -> Node:
-        """[Method to get a specific computer of the database]
+        """ Method to get a specific computer of the database
 
         Args:
-            target_info (TargetInfo): [ Computer information to obtain the ipv4 of the computer ]
+            target_info (TargetInfo): Computer information to obtain the ipv4 of the computer.
 
         Returns:
-            Node: _description_
+            Node: Computer node with a certain ip.
         """
         return self.__graph.nodes.match("Computer", ipv4=target_info.ip).first()
 
     def init_new_computer(self, target_info: TargetInfo):
-        """[Method to insert a new computer to the database]
+        """ Method to insert a new computer to the database.
 
         Args:
-            target_info (TargetInfo): [ Computer Information ]
+            target_info (TargetInfo): Computer Information.
         """
         if self.get_computer(target_info) is None:
             computer = Node(
@@ -90,25 +90,25 @@ class Neo4jConnection:
             self.__commit(computer)
 
     def get_user(self, user_status: UserInfo, ipv4: str) -> Node:
-        """[ Method to get a specific user ]
+        """ Method to get a specific user.
 
         Args:
-            user_status (UserInfo): [ User information to get a specific user from the datbase ]
-            ipv4 (str): [ Ipv4 of a specific computer ]
+            user_status (UserInfo): User information to get a specific user from the datbase.
+            ipv4 (str): Ipv4 of a specific computer.
 
         Returns:
-            Node: [The user node ]
+            Node: The user node.
         """
         return self.__graph.nodes.match(
             "User", ip=ipv4, username=user_status.user.lower()
         ).first()
 
     def __create_user_node(self, user_status: UserInfo, ipv4: str) -> None:
-        """[ Create a user node from scratch ]
+        """ Create a user node from scratch.
 
         Args:
-            user_status (UserInfo): [ User information ]
-            ipv4 (str): [ ipv4 of teh computer target ]
+            user_status (UserInfo): User information.
+            ipv4 (str): ipv4 of the computer target.
         """
         if not is_ntlm_hash(user_status.passwd):
             user = Node(
@@ -127,11 +127,11 @@ class Neo4jConnection:
         self.__commit(user)
 
     def init_new_user(self, user_status: UserInfo, ipv4: str):
-        """[ Method to start a new user ]
+        """ Method to start a new user.
 
         Args:
-            user_status (UserInfo): [User information to create a new user node  ]
-            ipv4 (str): [Ip of a specific computer ]
+            user_status (UserInfo): User information to create a new user node
+            ipv4 (str): Ip of a specific computer.
         """
         check_node = self.get_user(user_status, ipv4)
         if check_node is None:
@@ -144,26 +144,26 @@ class Neo4jConnection:
             self.__graph.push(check_node)
 
     def check_computers_of_a_subnet(self, subnet: str) -> list:
-        """[ Returns all computers of a specific subnet ]
+        """ Returns all computers of a specific subnet. 
 
         Args:
-            subnet (str): [ Subnet from where to take the computers ]
+            subnet (str): Subnet from where to take the computers.
 
         Returns:
-            list: [ list with subnet and computers nodes ]
+            list: Subnet and computers nodes.
         """
         subnet_node = self.get_subnet(subnet)
         return self.__graph.match(r_type="PART_OF", nodes=(None, subnet_node)).all()
 
     def check_nodes_with_psexec(self, computer: Node, user_status: UserInfo) -> str:
-        """[ Method to validate if a user is an administrator on a computer ]
+        """Method to validate if a user is an administrator on a computer.
 
         Args:
-            computer (Node): [ The computer node]
-            user_status (UserInfo): [The information of the user ]
+            computer (Node): The computer node.
+            user_status (UserInfo): The information of the user.
 
         Returns:
-            str: [ The resolution of the query ]
+            str: The resolution of the query.
         """
         nodes_user = self.get_user(user_status, computer["ipv4"])
         if nodes_user is not None:
@@ -176,52 +176,52 @@ class Neo4jConnection:
         return "Psexec Here!" if relation else "Not Psexec Here"
 
     def check_if_subnet_exits(self, subnet: str) -> bool:
-        """[ Method to check if a subnet node exists ]
+        """Method to check if a subnet node exists.
 
         Args:
-            subnet (str): [ The subnet node to check ]
+            subnet (str): The subnet node to check.
 
         Returns:
-            bool: [ The state of the node ]
+            bool: The state of the node.
         """
         return self.get_subnet(subnet) is not None
 
     def __commit(self, object_to_commit) -> None:
-        """[Method to commit changes to the database]
+        """Method to commit changes to the database.
 
         Args:
-            object_to_commit (_type_): [Relationship or node to enter in the database]
+            object_to_commit (_type_): Relationship or node to insert in the database.
         """
         tx = self.__graph.begin()
         tx.create(object_to_commit)
         tx.commit()
 
     def get_subnet(self, subnet: str) -> Node:
-        """[ Method to get a specific subnet node ]
+        """Method to get a specific subnet node.
 
         Args:
-            subnet (str): [ Function to grab a specific subnet node ]
+            subnet (str): Function to grab a specific subnet node.
 
         Returns:
-            Node: [ The subnet node ]
+            Node: The subnet node.
         """
         return self.__graph.nodes.match("Subnet", subnet=subnet).first()
 
     def __relatoinship_subnet_subnet(self, new_node: Node, last_node: Node) -> None:
-        """[ Establish relationship between two subnets ]
+        """Establish relationship between two subnets.
 
         Args:
-            new_node (Node): [ New subnet node introduced ]
-            last_node (Node): [ The last inserted subnet node ]
+            new_node (Node): New subnet node introduced.
+            last_node (Node): The last inserted subnet node.
         """
         relationship = Relationship(last_node, "ANALIZE", new_node)
         self.__commit(relationship)
 
     def init_new_subnet(self, subnet: str) -> None:
-        """[ Method to init a new subnet node ]
+        """Method to init a new subnet node.
 
         Args:
-            subnet (str): [ Subnet to create the node ]
+            subnet (str): Subnet to create the node.
         """
         subnets = self.get_subnets()
         subnet_node = Node("Subnet", subnet=subnet)
@@ -230,55 +230,55 @@ class Neo4jConnection:
             self.__relatoinship_subnet_subnet(subnet_node, subnets[len(subnets) - 1])
 
     def graph_psexec_users(self) -> list:
-        """[Method that returns all the nodes that have the psexec
-            relationship to generate the graph with only administrators]
+        """ Method that returns all the nodes that have the psexec
+            relationship to generate the graph with only administrators.
 
         Returns:
-            list: [The nodes that represent the administrators-only graph]
+            list: The nodes that represent the administrators-only graph.
         """
         return self.__graph.run("MATCH p=()-[r:PSEXEC_HERE]->() RETURN p").data()
 
     def graph_not_psexec_users(self) -> list:
-        """[Method that returns all the nodes that have the not_psexec
-            relationship to generate the graph with only no administrators]
+        """Method that returns all the nodes that have the not_psexec
+            relationship to generate the graph with only no administrators.
 
         Returns:
-            list: [The nodes that represent the graph of non-administrators ]
+            list: The nodes that represent the graph of non-administrators.
         """
         return self.__graph.run("MATCH p=()-[r:NOT_PSEXEC_HERE]->() RETURN p").data()
 
     def graph_with_computers(self) -> list:
-        """[ Method that returns all the nodes that have the Part_of
-            relationship to generate the graph with only subnets and computers]
+        """Method that returns all the nodes that have the Part_of
+            relationship to generate the graph with only subnets and computers.
 
         Returns:
-            list: [The list with the nodes of the computers and subnets]
+            list: The list with the nodes of the computers and subnets
         """
         return self.__graph.run("MATCH p=()-[r:PART_OF]->() RETURN p").data()
 
     def get_subnets(self) -> list:
-        """[ Method that returns all subnet nodes ]
+        """Method that returns all subnet nodes.
 
         Returns:
-            list: [The list with subnet nodes]
+            list: The list with subnet nodes.
         """
         return self.__graph.nodes.match("Subnet").all()
 
     def get_subnets_with_computers_detected(self) -> list:
-        """[Method to take all subnet nodes that have computers]
+        """Method to take all subnet nodes that have computers.
 
         Returns:
-            list: [ List with the subnets that have nodes ]
+            list: List with the subnets that have nodes.
         """
         return self.__graph.run(
             "MATCH (s:Subnet)-[r:PART_OF]-(c:Computer) RETURN s"
         ).data()
 
     def check_status(self) -> bool:
-        """[Method to check if the database is up]
+        """Method to check if the database is up.
 
         Returns:
-            bool: [ State of the database ]
+            bool: State of the database.
         """
         alive = True
         try:
