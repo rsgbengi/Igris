@@ -31,7 +31,9 @@ class ScanForPsexec(CommandSet):
         self.__scan_process = None
 
     def scan_postloop(self) -> None:
-        """[Method that will be performe when the user exits the shell]"""
+        """Method to terminate the command before the 
+        application is terminated to prevent it from running 
+        in the background"""
         if self.__is_running():
             self._cmd.info_logger.info(
                 ansi.style(
@@ -48,14 +50,14 @@ class ScanForPsexec(CommandSet):
     def __try_scan_connection_with_smb1(
         self, ip: IPv4Address
     ) -> Tuple[bool, SMBConnection]:
-        """[This method will try to connect to a remote host
-            using smb1]
+        """Method to try to make a connection using smb1. 
 
         Args:
-            ip (IPv4Address): [ip of the remote host]
+            ip (IPv4Address): ip of the remote host.
 
         Returns:
-            Tuple[bool, SMBConnection]: [Returns the state of the connection and the variable to manipulate the connection]
+            Tuple[bool, SMBConnection]: Returns the state of the connection 
+                    and the variable to manipulate the connection.
         """
         succeed_in_connection = False
         smbclient = None
@@ -66,7 +68,7 @@ class ScanForPsexec(CommandSet):
 
             self._cmd.info_logger.debug(f"Connection success using smb1 at {ip}")
             succeed_in_connection = True
-        except Exception:  # SessionError not working as expected
+        except Exception: 
             self._cmd.info_logger.debug(f"Connection fails using smb1 at {ip}")
 
         return succeed_in_connection, smbclient
@@ -74,13 +76,12 @@ class ScanForPsexec(CommandSet):
     def __try_scan_connection_with_smb3(
         self, ip: IPv4Address
     ) -> Tuple[bool, SMBConnection]:
-        """[This method will try to connect to a remote host
-            using smb3]
+        """Metodo para intentar realizar una conexion usando smb1.
         Args:
-            ip (IPv4Address): [ip of the remote host]
+            ip (IPv4Address): ip of the remote host.
 
         Returns:
-            Tuple[bool, SMBConnection]: [Returns the state of the connection and the variable to manipulate the connection]
+            Tuple[bool, SMBConnection]: Returns the state of the connection and the variable to manipulate the connection.
         """
 
         succeed_in_connection = False
@@ -97,16 +98,17 @@ class ScanForPsexec(CommandSet):
     def __check_scan_login_possibility(
         self, user_info: UserInfo, smbclient: SMBConnection
     ) -> bool:
-        """[Method to know if a user can log in]
+        """Method to check if the credentials used 
+            are valid on a given computer.
 
         Args:
-            user_info (UserInfo): [User info needed to login to the remote
-                                        machine(user,password)]
-            smbclient (SMBConnection): [Argument to manipulate the smb
+            user_info (UserInfo): User info needed to login to the remote
+                                        machine(user,password/nthash).
+            smbclient (SMBConnection): Argument to manipulate the smb
                                             connection, in this case is use
-                                            to perform the login]
+                                            to perform the login.
         Returns:
-            bool : [variable to notify login status]
+            bool : variable to notify login status.
 
         """
 
@@ -132,13 +134,13 @@ class ScanForPsexec(CommandSet):
     def __configure_target_info_of_scan(
         self, target_info: TargetInfo, smbclient: SMBConnection, subnet: str
     ) -> None:
-        """[Method to set different values of smbclient into TargetInfo object]
+        """ Method to set different values of smbclient into TargetInfo object.
 
         Args:
-            target_info (TargetInfo): [Argument to set information contained
-                                            in smbclient]
-            smbclient (SMBConnection): [Argument that contains all information about
-                                    the current smb connection]
+            target_info (TargetInfo): Argument to set information contained
+                                            in smbclient.
+            smbclient (SMBConnection): Argument that contains all information about
+                                    the current smb connection.
         """
         ip = smbclient.getRemoteHost()
         self._cmd.info_logger.debug(
@@ -150,14 +152,14 @@ class ScanForPsexec(CommandSet):
         target_info.subnet = subnet
 
     def __check_psexec_possibility(self, smbclient: SMBConnection) -> bool:
-        """[Method that checks ifa user could do psexec listing the contents
-                of the admin folder]
+        """ Method that checks if a user could do psexec listing the contents
+                of the admin folder.
 
         Args:
-            smbclient (SMBConnection): [Object with the current smb connection]
+            smbclient (SMBConnection): Object with the current smb connection.
 
         Returns:
-            bool : [Returns whether the user can do psexec ]
+            bool : Returns whether the user can do psexec.
         """
         success_in_psexec = False
         ip = smbclient.getRemoteName()
@@ -175,14 +177,15 @@ class ScanForPsexec(CommandSet):
         return success_in_psexec
 
     def __show_user_subnet(self) -> None:
-        """[Shows the user and subnet content of the settable variables]"""
+        """Shows the user and subnet content of the settable variables."""
         user = self._cmd.USER
         subnet = self._cmd.SUBNET
         console = Console()
         console.print(Panel.fit(f"[red]{user}@{subnet}[/red]"))
 
     def __show_subnet_information(self) -> None:
-        """[Shows the information of a specific subnet]"""
+        """Method to display the information collected 
+        from a certain user in a specific subnet."""
         console = Console()
         exits_results = False
         computers = self._cmd.igris_db.check_computers_of_a_subnet(self._cmd.SUBNET)
@@ -215,8 +218,8 @@ class ScanForPsexec(CommandSet):
             )
 
     def __show_scan_info(self) -> None:
-        """[Method that will check if it is possible to display the scan
-        info of a current username and password]
+        """Method that will check if it is possible to display the scan
+        info of a current username and password.
         """
         subnet = self._cmd.SUBNET
         self.__show_user_subnet()
@@ -233,17 +236,17 @@ class ScanForPsexec(CommandSet):
     def __check_connectivity_of_scan(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
     ) -> Tuple[bool, TargetInfo, SMBConnection]:
-        """[Method to check if the connectivity to a specific remote host is possible]
+        """Method to check if the connectivity to a specific remote host is possible.
 
         Args:
-            user_info (UserInfo): [Argument that contains values needed for
-                                        login]
-            subnet (str): [Target subnet to do the scan ]
-            ip (IPv4Address): [Ip of the current machine that the scan is analizing]
+            user_info (UserInfo): Argument that contains values needed for
+                                        login.
+            subnet (str): Target subnet to do the scan.
+            ip (IPv4Address): Ip of the current machine that the scan is analizing.
 
         Returns:
-            Tuple [bool, TargetInfo, SMBConnection]: [ Returns the statuts of the connection  with
-                                                        information collected from the target]
+            Tuple [bool, TargetInfo, SMBConnection]:  Returns the statuts of the connection  with
+                                                        information collected from the target.
         """
 
         possibility_of_login = False
@@ -272,13 +275,12 @@ class ScanForPsexec(CommandSet):
         target_info: TargetInfo,
         user_info: UserInfo,
     ) -> None:
-        """[Prepare everything to later show the saved information of the connection
-                asynchronously]
+        """Method to save the information collected during the connection in neo4j.
 
         Args:
-            smbclient (SMBConnection): [Object with the current smb connection]
-            target_info (targetinfo): [object that contains info of the current target]
-            user_info (UserInfo): [ Object that contains info of the user ]
+            smbclient (SMBConnection): Object with the current smb connection.
+            target_info (targetinfo): Object that contains info of the current target.
+            user_info (UserInfo): Object that contains info of the user.
         """
         success_in_psexec = self.__check_psexec_possibility(smbclient)
         target_info.psexec = success_in_psexec
@@ -288,18 +290,18 @@ class ScanForPsexec(CommandSet):
     def __is_user_in_admin_group_asynchronous(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
     ) -> None:
-        """[Method that is used to know if the user is an administrator and
-                is currently able to psexec(asynchronous way)]
+        """Method that is used to know if the user is an administrator and
+                is currently able to psexec(asynchronous way).
 
         Args:
-            user_info (UserInfo): [User info needed to know user privileges]
-            subnet (str): [Target subnet to scan]
-            ip (IPv4Address): [Ip target of the current remote host]
+            user_info (UserInfo): User info needed to know user privileges.
+            subnet (str): Target subnet to scan.
+            ip (IPv4Address): Ip target of the current remote host.
         """
         self.__recon_of_the_target(user_info, subnet, ip)
 
     def __set_up_scan_actions_asynchronous(self) -> None:
-        """[Prepare everything to scan asynchronously  using threads]"""
+        """Prepare everything to scan asynchronously  using threads."""
         user = self._cmd.USER
         password = self._cmd.PASSWD
         subnet = self._cmd.SUBNET
@@ -325,7 +327,7 @@ class ScanForPsexec(CommandSet):
         self._cmd.info_logger.debug("Asynchronous scanning has been completed.")
 
     def __asynchronous_way(self) -> None:
-        """[Method that will start the asynchronous scan]"""
+        """Method that will start the asynchronous scan."""
         self._cmd.info_logger.info("Using asynchronous scan.")
         self._cmd.info_logger.info(
             ansi.style(
@@ -338,10 +340,11 @@ class ScanForPsexec(CommandSet):
         self.__scan_process.start()
 
     def __show_scan_results_synchronous(self, target_info: TargetInfo) -> None:
-        """[Display the results of an synchronous scan]
+        """Method that makes use of a spinner to 
+        display the information collected by a connection.
 
         Args:
-            target_info (TargetInfo): [Contains all the info to be displayed]
+            target_info (TargetInfo): Contains all the info to be displayed.
         """
         os = target_info.os
         ip = target_info.ip
@@ -364,16 +367,16 @@ class ScanForPsexec(CommandSet):
     def __is_user_in_admin_group_synchronous(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
     ) -> TargetInfo:
-        """[Method that is used to know if the user is an administrator and
-                is currently able to psexec(synchronous way)]
+        """Method that is used to know if the user is an administrator and
+                is currently able to psexec(synchronous way).
 
         Args:
-            user_info (UserInfo): [User info needed to know user privileges]
-            subnet (str): [Target subnet to scan]
-            ip (IPv4Address): [Ip target of the current remote host]
+            user_info (UserInfo): User info needed to know user privileges.
+            subnet (str): Target subnet to scan.
+            ip (IPv4Address): Ip target of the current remote host.
 
         Returns:
-            TargetInfo: [ Returns the target information ]
+            TargetInfo: Returns the target information.
         """
 
         self.__spinner.text = f"Working in {str(ip)}"
@@ -382,15 +385,15 @@ class ScanForPsexec(CommandSet):
     def __recon_of_the_target(
         self, user_info: UserInfo, subnet: str, ip: IPv4Address
     ) -> TargetInfo:
-        """[Method for collecting information about the relationship of a user and a computer]
+        """Method for collecting information about the relationship of a user and a computer.
 
         Args:
-            user_info (UserInfo): [ User info needed to know user privilages]
-            subnet (str): [ Target subnet of the scan]
-            ip (IPv4Address): [ Ip target of the current remote host]
+            user_info (UserInfo): User info needed to know user privilages.
+            subnet (str): Target subnet of the scan.
+            ip (IPv4Address): Ip target of the current remote host.
 
         Returns:
-            (TargetInfo): [ Information collected ]
+            (TargetInfo): Information collected.
         """
         (
             possibility_of_login,
@@ -416,7 +419,7 @@ class ScanForPsexec(CommandSet):
         self.__spinner.start()
 
     def __set_up_scan_actions_synchronous(self) -> None:
-        """[Prepare everything to scan synchronously  using threads]"""
+        """Prepare everything to scan synchronously  using threads."""
 
         user = self._cmd.USER
         password = self._cmd.PASSWD
@@ -447,7 +450,7 @@ class ScanForPsexec(CommandSet):
         self._cmd.info_logger.success("Synchronous scanning has been completed")
 
     def __synchronous_way(self) -> None:
-        """[ Method that will start the synchronous scan]"""
+        """Method that will start the synchronous scan."""
 
         self._cmd.info_logger.info("Using synchronous scan")
 
@@ -463,10 +466,10 @@ class ScanForPsexec(CommandSet):
             self._cmd.poutput("\n")
 
     def __start_scan(self, args: argparse.Namespace) -> None:
-        """[ Start scan of the subnet ]
+        """Start scan of the subnet.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the scan command ]
+            args (argparse.Namespace): Arguments passed to the scan command.
         """
 
         subnet = self._cmd.SUBNET
@@ -480,24 +483,25 @@ class ScanForPsexec(CommandSet):
             self.__synchronous_way()
 
     def __end_scan(self) -> None:
-        """[ Process to finished the scan process ]"""
+        """Process to finished the scan process."""
         if self.__is_running():
             self._cmd.error_logger.warning("Exiting ...")
             self.__scan_process.terminate()
             self.__scan_process.join()
 
-    def __is_running(self) -> None:
-        """[ Method to check if the scan is already in progress ]"""
+    def __is_running(self) -> bool:
+        """ Method to check if the scan is already in progress."""
         return self.__scan_process is not None and self.__scan_process.is_alive()
 
     def __check_conditions_for_the_attack(
         self, args: argparse.Namespace, configurable_variables: dict
     ) -> bool:
-        """[ Method to check different things before starting the attack ]
+        """Method to check how the command should 
+        be executed as well as check some possible errors.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
-            configurable_variables(dict): [ Settable variables used in this command]
+            args (argparse.Namespace): Arguments passed to the attack.
+            configurable_variables(dict): Settable variables used in this command.
         """
         if not self._cmd.igris_db.check_status():
             self._cmd.error_logger.error("The db has not finished starting")
