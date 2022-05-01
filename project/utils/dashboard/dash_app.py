@@ -22,19 +22,14 @@ app.title = "Igris dashboard"
 
 
 def define_the_style() -> list:
-    """[function to define the style of the dashboard and the nodes of the graph]
+    """Function to define the style of the dashboard and the nodes of the graph.
 
     Returns:
-        list: [style set by the function]
+        list: Style set by the function.
     """
 
     return [
-        {"selector": "node", "style": {"content": "data(label)"}},
-        {
-            "selector": "edge",
-            "style": {"curve-style": "bezier"},
-        },
-        {
+       {
             "selector": ".admin",
             "style": {
                 "width": 50,
@@ -107,18 +102,18 @@ def define_the_style() -> list:
 
 
 def define_logo() -> html.Img:
-    """[ Function to define the logo]
+    """Function to define the logo.
     Returns:
-        html.Img: [ Image with the logo ]
+        html.Img: Image with the logo.
     """
     return html.Img(src=images["logo"], style={"width": "30%"})
 
 
 def define_legend() -> dbc.ListGroup:
-    """[ Function to define the legend ]
+    """Function to define the legend.
 
     Returns:
-        dbc.ListGroup: [ List with all the node types of the graph ]
+        dbc.ListGroup: List with all the node types of the graph.
     """
     arrow_class = "bi bi-arrow-right-circle-fill"
     return dbc.ListGroup(
@@ -193,9 +188,9 @@ def define_legend() -> dbc.ListGroup:
 
 
 def define_tabs() -> dbc.Tabs:
-    """[ Function to define the tabs]
+    """Function to define the tabs.
     Returns:
-        dbc.Tabs: [ Tabs with different types of graphs]
+        dbc.Tabs: Tabs with different types of graphs.
     """
     return dbc.Tabs(
         [
@@ -222,19 +217,19 @@ def define_tabs() -> dbc.Tabs:
 
 
 def define_title() -> list:
-    """[Function to define the title of the page]
+    """Function to define the title of the page.
 
     Returns:
-        list: [ Title of the dashboard ]
+        list: Title of the dashboard.
     """
     return [html.H3("Users Graph")]
 
 
 def define_the_header() -> list:
-    """[function to define the header]
+    """Function to define the header.
 
     Returns:
-        list: [ List with the corresponding columns for the title and the logo]
+        list: List with the corresponding columns for the title and the logo.
     """
     return [
         dbc.Col(
@@ -249,9 +244,9 @@ def define_the_header() -> list:
 
 
 def define_the_body() -> list:
-    """[Function to define de body]
+    """Function to define de body.
     Returns:
-        list: [ dashboard body ]
+        list: dashboard body.
     """
     return [
         dbc.Col(
@@ -281,7 +276,7 @@ def define_the_body() -> list:
 
 
 def define_layout() -> None:
-    """[ Function that will define the layout of the dashboard ]"""
+    """Function that will define the layout of the dashboard."""
     app.layout = dbc.Container(
         [
             html.Div(
@@ -311,13 +306,13 @@ def define_layout() -> None:
 
 
 def all_graph_tab(graph_generator: GraphGenerator) -> html.Div:
-    """[Function to display the entire user graph]
+    """Function to display the entire user graph.
 
     Args:
-        graph_generator (GraphGenerator): [Object to generate the graph based on the established situation]
+        graph_generator (GraphGenerator): Object to generate the graph based on the established situation.
 
     Returns:
-        html.Div: [ html object with the graph ]
+        html.Div: html object with the graph.
     """
     return (
         html.Div(
@@ -335,13 +330,13 @@ def all_graph_tab(graph_generator: GraphGenerator) -> html.Div:
 
 
 def psexec_graph_tab(graph_generator: GraphGenerator) -> html.Div:
-    """[Function to show the users who are administrators in the different computers]
+    """Function to show the users who are administrators in the different computers.
 
     Args:
-        graph_generator (GraphGenerator): [Object to generate the graph based on the established situation]
+        graph_generator (GraphGenerator): Object to generate the graph based on the established situation.
 
     Returns:
-        html.Div: [ html object with the graph ]
+        html.Div: html object with the graph.
     """
     return (
         html.Div(
@@ -359,13 +354,13 @@ def psexec_graph_tab(graph_generator: GraphGenerator) -> html.Div:
 
 
 def not_psexec_graph_tab(graph_generator: GraphGenerator) -> html.Div:
-    """[Function to show the users who are not administrators in the different computers]
+    """Function to show the users who are not administrators in the different computers.
 
     Args:
-        graph_generator (GraphGenerator): [Object to generate the graph based on the established situation]
+        graph_generator (GraphGenerator): Object to generate the graph based on the established situation.
 
     Returns:
-        html.Div: [ html object with the graph ]
+        html.Div: html object with the graph.
     """
     return (
         html.Div(
@@ -383,13 +378,13 @@ def not_psexec_graph_tab(graph_generator: GraphGenerator) -> html.Div:
 
 
 def subnet_computer_graph_tab(graph_generator: GraphGenerator) -> html.Div:
-    """[Function to show computers of a subnet]
+    """Function to show computers of a subnet.
 
     Args:
-        graph_generator (GraphGenerator): [Object to generate the graph based on the established situation]
+        graph_generator (GraphGenerator): Object to generate the graph based on the established situation.
 
     Returns:
-        html.Div: [ html object with the graph ]
+        html.Div: html object with the graph.
     """
     return (
         html.Div(
@@ -411,13 +406,13 @@ def subnet_computer_graph_tab(graph_generator: GraphGenerator) -> html.Div:
     [Input("tabs", "active_tab")],
 )
 def render_tab_content(active_tab: str) -> html.Div:
-    """[Function to load the graph based on the selected tab]
+    """Function to load the graph based on the selected tab.
 
     Args:
-        active_tab (str): [Tab selected ]
+        active_tab (str): Tab selected.
 
     Returns:
-        html.Div: [ Generated Graph ]
+        html.Div: Generated Graph.
     """
     graph_generator = GraphGenerator()
     if active_tab == "all":
@@ -436,13 +431,13 @@ def render_tab_content(active_tab: str) -> html.Div:
     Input("igris-graph", "tapNodeData"),
 )
 def display_node_data(data: dict):
-    """[Function to show the data of the selected node ]
+    """Function to show the data of the selected node.
 
     Args:
-        data (dict): [ clicked node data ]
+        data (dict): clicked node data.
 
     Returns:
-        _type_: [ Node information ]
+        _type_: Node information.
     """
     if data:
         accordion_item = [
@@ -462,10 +457,10 @@ def display_node_data(data: dict):
 
 
 def start_dashboard(lport: str) -> None:
-    """[ Function to start the dash application ]
+    """Function to start the dash application.
 
     Args:
-        lport (str): [ Port through which to display the information ]
+        lport (str): Port through which to display the information.
     """
     log = logging.getLogger("werkzeug")
     log.setLevel(logging.ERROR)

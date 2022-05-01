@@ -4,7 +4,7 @@ from py2neo import Node
 
 
 class GraphGenerator:
-    """[Class to generate the different dashboard graphs]"""
+    """Class to generate the different dashboard graphs."""
 
     def __init__(self) -> None:
         self.__graph_driver = Neo4jConnection(
@@ -14,11 +14,11 @@ class GraphGenerator:
         )
 
     def __parse_subnets_all_graph(self, subnets: list, graph: list) -> None:
-        """[Method to generate the "subnet" nodes along with their edged to other subnet nodes]
+        """Method to generate the "subnet" nodes along with their edged to other subnet nodes.
 
         Args:
-            subnets (list): [ subnet nodes formed as a result of the database query ]
-            graph (list): [ list with the nodes that will later form the graph using cytoscape ]
+            subnets (list): subnet nodes formed as a result of the database query.
+            graph (list): list with the nodes that will later form the graph using cytoscape.
         """
         nodes_to_relate = []
         for i, subnet in enumerate(subnets):
@@ -41,14 +41,14 @@ class GraphGenerator:
     def __subnets_relationship(
         self, first_subnet_id: str, second_subnet_id: str
     ) -> dict:
-        """[ method to create the relationship between two subnet nodes ]
+        """Method to create the relationship between two subnet nodes.
 
         Args:
-            first_subnet_id (str): [ subnet corresponding to the first node]
-            second_subnet_id (str): [ subnet corresponding to the second node]
+            first_subnet_id (str): Subnet corresponding to the first node.
+            second_subnet_id (str): Subnet corresponding to the second node.
 
         Returns:
-            dict: [ The edge generated ]
+            dict: The edge generated.
         """
         return {
             "classes": "subnet_relation",
@@ -59,11 +59,11 @@ class GraphGenerator:
         }
 
     def __computer_psexec_relationships(self, relationships: list, graph: list) -> None:
-        """[ Method to establish the relationship between a computer node and a user node that is an administrator ]
+        """Method to establish the relationship between a computer node and a user node that is an administrator.
 
         Args:
-            relationships (list): [ database query-based relationships ]
-            graph (list): [ list with the nodes that will later form the graph using cytoscape ]
+            relationships (list): database query-based relationships.
+            graph (list): list with the nodes that will later form the graph using cytoscape.
         """
         for edge in relationships:
             user_id, user_node = self.__define_admin_user_node(edge["p"].start_node)
@@ -75,10 +75,10 @@ class GraphGenerator:
     def __computer_not_psexec_relationships(
         self, relationships: list, graph: list
     ) -> None:
-        """[ Method to establish the relationship between a computer node and a user node that is an normal user ]
+        """Method to establish the relationship between a computer node and and a non-admin user.
         Args:
-            relationships (list): [ database query-based relationships ]
-            graph (list): [ list with the nodes that will later form the graph using cytoscape ]
+            relationships (list): database query-based relationships.
+            graph (list): list with the nodes that will later form the graph using cytoscape.
         """
         for edge in relationships:
             user_id, user_node = self.__define_normal_user_node(edge["p"].start_node)
@@ -88,10 +88,10 @@ class GraphGenerator:
             graph.append(new_edge)
 
     def __computer_part_of_relationship(self, relationships: list, graph: list) -> None:
-        """[ Method to establish the relationship between a computer node and a subnet node ]
+        """Method to establish the relationship between a computer node and a subnet node.
         Args:
-            relationships (list): [ database query-based relationships ]
-            graph (list): [ list with the nodes that will later form the graph using cytoscape ]
+            relationships (list): database query-based relationships.
+            graph (list): list with the nodes that will later form the graph using cytoscape.
         """
         for edge in relationships:
             computer_id, computer_node = self.__define_computer_node(
@@ -102,9 +102,9 @@ class GraphGenerator:
             graph.append(new_edge)
 
     def define_all_graph(self) -> list:
-        """[ Method that returns the entire graph to later be represented in cytoscape ]
+        """Method that returns the entire graph to later be represented in cytoscape.
         Returns:
-            list: [ Resulting graph ]
+            list:Resulting graph.
         """
         graph_result = []
         subnets = self.__graph_driver.get_subnets()
@@ -118,14 +118,14 @@ class GraphGenerator:
         return graph_result
 
     def __only_psexec_users(self, relationship: list) -> list:
-        """[ Method that returns a graph with the relation computer and administrator ]
+        """Method that returns a graph with the relation computer and administrator.
 
         Args:
 
-            relationships (list): [ database query-based relationships ]
+            relationships (list): database query-based relationships.
 
         Returns:
-            list: [ Resulting graph ]
+            list: Resulting graph.
         """
         graph = []
         computers_used = []
@@ -141,14 +141,14 @@ class GraphGenerator:
         return graph
 
     def __define_edge_admin_user_computer(self, computer_id: str, user_id: str) -> dict:
-        """[ Method to define the link between an administrator and a computer]
+        """Method to define the link between an administrator and a computer.
 
         Args:
-            computer_id (str): [Identifier of the computer]
+            computer_id (str): Identifier of the computer.
             user_id (str): [ Identifier of the user ]
 
         Returns:
-            dict: [ Returns the new edge between a user and a computer ]
+            dict: Returns the new edge between a user and a computer.
         """
         return {
             "classes": "admin_arrow",
@@ -159,13 +159,13 @@ class GraphGenerator:
         }
 
     def __define_admin_user_node(self, node: Node) -> Tuple[str, Node]:
-        """[ Method to set the format of the admin node ]
+        """Method to set the format of the admin node.
 
         Args:
-            node (Node): [ Neo4j node from py2neo ]
+            node (Node): Neo4j node from py2neo.
 
         Returns:
-            Tuple[str, Node]: [ The id of the node and the node itself ]
+            Tuple[str, Node]: The id of the node and the node itself.
         """
         user_id = node["ip"] + node["username"]
         if ("password" and "ntlm") in node.labels:
@@ -203,13 +203,13 @@ class GraphGenerator:
         return user_id, user_node
 
     def __only_not_psexec_users(self, relationship: list) -> list:
-        """[ Method that returns a graph with the relation computer and normal user ]
+        """ Method that returns a graph with the relation computer and normal user.
 
         Args:
-            relationships (list): [ database query-based relationships ]
+            relationships (list): database query-based relationships.
 
         Returns:
-            list: [ Resulting graph ]
+            list: Resulting graph.
 
         """
         graph = []
@@ -229,14 +229,14 @@ class GraphGenerator:
     def __define_edge_normal_user_computer(
         self, computer_id: str, user_id: str
     ) -> dict:
-        """[ Method to define an edge  between a user and a computer ]
+        """Method to define an edge  between a user and a computer.
 
         Args:
-            computer_id (str): [ The computer identifier ]
-            user_id (str): [ The user identifier ]
+            computer_id (str): The computer identifier.
+            user_id (str): The user identifier.
 
         Returns:
-            Tuple[str, Node]: [ The id of the node and the node itself ]
+            Tuple[str, Node]: The id of the node and the node itself.
         """
         return {
             "classes": "user_arrow",
@@ -247,14 +247,14 @@ class GraphGenerator:
         }
 
     def __define_normal_user_node(self, node: Node) -> Tuple[str, dict]:
-        """[Method to define a non-administrator user]
+        """Method to define a non-administrator user.
 
         Args:
 
-            node (Node): [ Neo4j node from py2neo ]
+            node (Node): Neo4j node from py2neo.
 
         Returns:
-            Tuple[str,dict]: [ The user id of the node and the node itself]
+            Tuple[str,dict]: the user id of the node and the node itself.
         """
 
         user_id = node["ip"] + node["username"]
@@ -293,12 +293,12 @@ class GraphGenerator:
         return user_id, user_node
 
     def __define_computer_node(self, node: Node) -> Tuple[str, dict]:
-        """[Method to define the node information of a computer]
+        """Method to define the node information of a computer.
 
         Args:
-            node (Node): [ Neo4j node from py2neo ]
+            node (Node): Neo4j node from py2neo.
         Returns:
-            Tuple[str,dict]: [the computer id of the node and the node itself]
+            Tuple[str,dict]: the computer id of the node and the node itself.
         """
         computer_id = node["computer_name"]
         computer_node = {
@@ -315,14 +315,14 @@ class GraphGenerator:
         return computer_id, computer_node
 
     def __define_edge_computer_subnet(self, edge: dict, computer_id: str) -> dict:
-        """[Method to define the link between a subnet and a computer]
+        """Method to define the link between a subnet and a computer.
         Args:
-            edge (dict): [ Edge between a computer and a subnet defined by py2neo ]
-            computer_id (str): [ The computer identifier ]
+            edge (dict): Edge between a computer and a subnet defined by py2neo.
+            computer_id (str): The computer identifier.
 
         Returns:
 
-            dict: [The edge between the computer and the subnet]
+            dict: The edge between the computer and the subnet.
         """
         subnet_id = edge["p"].end_node["subnet"]
         return {
@@ -331,11 +331,11 @@ class GraphGenerator:
         }
 
     def __parse_subnet_with_computers(self, subnets: list, graph: list) -> None:
-        """[ method to create subnet nodes ]
+        """Method to create subnet nodes for cytoscape.
 
         Args:
-            subnets (list): [ neo4j subnet nodes ]
-            graph (list): [ Resulting graph with subnets and computers ]
+            subnets (list):neo4j subnet nodes.
+            graph (list): Resulting graph with subnets and computers.
         """
         for subnet in subnets:
             node = {
@@ -349,13 +349,13 @@ class GraphGenerator:
             graph.append(node)
 
     def __only_part_of_computer(self, relationship: list) -> list:
-        """[Method to create a graph with only subnets and computers]
+        """Method to create a graph with only subnets and computers.
 
         Args:
-            relationship (list): [neo4j relationships with hosts and subnets]
+            relationship (list): neo4j relationships with hosts and subnets.
 
         Returns:
-            list: [Graph with only subnets and computers]
+            list: Graph with only subnets and computers.
         """
         graph = []
         subnets = self.__graph_driver.get_subnets_with_computers_detected()
@@ -370,28 +370,28 @@ class GraphGenerator:
         return graph
 
     def graph_psexec_users(self) -> list:
-        """[Method to create a graph with admin users and computers in cytoscape]
+        """Method to create a graph with admin users and computers in cytoscape.
 
         Returns:
-            list: [Resulting graph]
+            list: Resulting graph
         """
         relationship = self.__graph_driver.graph_psexec_users()
         return self.__only_psexec_users(relationship)
 
     def graph_not_psexec_users(self) -> list:
-        """[ Method to create a graph with normal users and computers in cytoscape]
+        """Method to create a graph with normal users and computers in cytoscape.
 
         Returns:
-            list: [ Resulting Graph ]
+            list: Resulting Graph.
         """
         relationship = self.__graph_driver.graph_not_psexec_users()
         return self.__only_not_psexec_users(relationship)
 
     def graph_with_computers(self) -> list:
-        """[ Method to create a graph with subnets and computers in cytoscape]
+        """Method to create a graph with subnets and computers in cytoscape.
 
         Returns:
-            list: [ Resulting Graph ]
+            list: Resulting Graph.
         """
         relationship = self.__graph_driver.graph_with_computers()
         return self.__only_part_of_computer(relationship)

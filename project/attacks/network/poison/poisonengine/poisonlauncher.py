@@ -157,14 +157,14 @@ class PoisonLauncher:
     def __start_dhcp6(self):
         """[ Method to start the dhcp6 poisoner ]"""
         dhcp6_thread = Thread(target=self.__dhcp6_poisoner.start_dhcp6_poisoning)
-        dhcp6_thread.dameon = True
+        dhcp6_thread.daemon = True
         dhcp6_thread.start()
         self.__threads.append(dhcp6_thread)
 
     def __start_dns(self):
         """[ Method to start the dhcp6 poisoner ]"""
         dns_thread = Thread(target=self.__dns_poisoner.start_dns_poisoning)
-        dns_thread.dameon = True
+        dns_thread.daemon = True
         dns_thread.start()
         self.__threads.append(dns_thread)
 

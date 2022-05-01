@@ -8,7 +8,6 @@ from .dash_app import start_dashboard
 class DashboardCommand(CommandSet):
     argParser = cmd2.Cmd2ArgumentParser(
         description="""Tool to show information in a graph dashboard""",
-        epilog="This command is not designed to use pipes(|) or redirections( >< ) when using the scan",
     )
 
     display_options = argParser.add_argument_group(
@@ -23,10 +22,10 @@ class DashboardCommand(CommandSet):
 
     @cmd2.with_argparser(argParser)
     def do_dashboard(self, args: argparse.Namespace) -> None:
-        """[ Dashboard to visualize users and computers of a subnet ]
+        """Dashboard to visualize users and computers of a subnet.
 
         Args:
-            args (argparse.Namespace): _description_
+            args (argparse.Namespace): Arguments.
         """
         lport = self._cmd.LPORT
         self._cmd.info_logger.debug(f"Starting dashboard command using lport: {lport}")
