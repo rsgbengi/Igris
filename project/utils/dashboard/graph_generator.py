@@ -145,7 +145,7 @@ class GraphGenerator:
 
         Args:
             computer_id (str): Identifier of the computer.
-            user_id (str): [ Identifier of the user ]
+            user_id (str):  Identifier of the user.
 
         Returns:
             dict: Returns the new edge between a user and a computer.
@@ -203,7 +203,7 @@ class GraphGenerator:
         return user_id, user_node
 
     def __only_not_psexec_users(self, relationship: list) -> list:
-        """ Method that returns a graph with the relation computer and normal user.
+        """Method that returns a graph with the relation computer and normal user.
 
         Args:
             relationships (list): database query-based relationships.

@@ -5,8 +5,9 @@ from impacket.examples.ntlmrelayx.servers.socksserver import SOCKS
 from threading import Thread
 from loguru import logger
 
+
 class Proxy:
-    def __init__(self,info_logger:logger):
+    def __init__(self, info_logger: logger):
         self.__info_logger = info_logger
         self.__info_logger.info("Starting socks server ...")
         self.__server = SOCKS()

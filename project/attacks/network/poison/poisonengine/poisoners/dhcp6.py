@@ -250,7 +250,6 @@ class DHCP6(PoisonNetwork):
         """
         self.info_logger.debug("Packet crafted: ")
         self.info_logger.debug(response.summary())
-        # if ip_of_the_packet not in self.targets_used:
         if response.haslayer(DHCP6_Advertise):
             self.info_logger.log(
                 self.logger_level,
@@ -263,7 +262,6 @@ class DHCP6(PoisonNetwork):
             )
 
         sendp(response, verbose=False)
-        # self.targets_used.append(ip_of_the_packet)
 
     def __filter_for_dhcp6(self, pkt: packet) -> bool:
         """[ Filter by sniffed packets of interest ]

@@ -31,7 +31,7 @@ class SmbServerAttack(CommandSet):
         """[ Method to check if a directory exists ]"""
         return os.path.isdir(self.__path_file) and os.access(
             self.__path_file, os.X_OK | os.W_OK
-        )  # Executing and wirte
+        )  
 
     def __define_alerts(self):
         """[ Method to define the dictionary that triggers the alerts ]"""

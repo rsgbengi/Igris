@@ -18,14 +18,14 @@ class DNSTakeOverCommand(CommandSet):
         self.__poison_launcher = None
 
     def __poison_configuration(self) -> None:
-        """[ Method to configure the dhcp6 rogue attack ]"""
+        """Method to configure the dhcp6 rogue attack"""
         self.__poison_launcher.activate_dhcp6()
         self._cmd.active_attacks_configure("DHCP6_Rogue", True)
 
     def __create_necessary_components(self, args: argparse.Namespace) -> None:
-        """[ Method to create the necessary classes ]
+        """Method to create the necessary classes.
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
 
         """
         self.__poison_launcher = PoisonLauncher(
@@ -41,18 +41,23 @@ class DNSTakeOverCommand(CommandSet):
         self.__poison_configuration()
 
     def __async_options(self) -> None:
-        """[ Configuration in case of an asynchronous attack ]"""
+        """Configuration in case of an asynchronous attack."""
         sys.stdout = open("/dev/null", "w")
         signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __launch_attack(self, args: argparse.Namespace) -> None:
+        """Method to launch the attack based on the selected poisoners.
+
+        Args:
+            args (argparse.Namespace): Arguments passed to the attack.
+        """
         if args.Asynchronous:
             self.__async_options()
         self.__poison_launcher.start_poisoners()
         self.__poison_launcher.wait_for_the_poisoners()
 
     def __end_process_in_the_background(self) -> None:
-        """[ Method to stop the attack by the user ]"""
+        """Method to stop the attack by the user."""
         if (
             self.__dnstakeover_process is not None
             and self.__dnstakeover_process.is_alive
@@ -69,11 +74,11 @@ class DNSTakeOverCommand(CommandSet):
     def __checking_conditions_for_attack(
         self, args: argparse.Namespace, configurable_variables: dict
     ) -> bool:
-        """[ Method to check different things before starting the attack ]
+        """Method to check different things before starting the attack.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
-            configurable_variables(dict): [ Settable variables used in this command]
+            args (argparse.Namespace): Arguments passed to the attack.
+            configurable_variables(dict): Settable variables used in this command.
 
         """
         if args.end_attack:
@@ -98,10 +103,10 @@ class DNSTakeOverCommand(CommandSet):
         return True
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
-        """[ Method to prepare the attack ]
+        """Method to prepare the attack.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
         """
 
         self.__dnstakeover_process = Process(target=self.__launch_attack, args=(args,))
@@ -162,10 +167,10 @@ class DNSTakeOverCommand(CommandSet):
 
     @with_argparser(argParser)
     def do_dns_takeover(self, args: argparse.Namespace) -> None:
-        """[ Command to perform dns takeover over ipv6 attack ]
+        """Command to perform dns takeover over ipv6.
 
         Args:
-            args (argparse.Namespace): [Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
         """
         self._cmd.info_logger.debug(
             f"""Starting dns takeover attack using lhost: {self._cmd.LHOST} ipv6:{self._cmd.IPV6}
@@ -191,7 +196,7 @@ class DNSTakeOverCommand(CommandSet):
             self.__wrapper_attack(args)
 
     def dnstakeover_postloop(self) -> None:
-        """[method to stop the attack before the application is terminated]"""
+        """Method to stop the attack before the application is terminated"""
         if self.__dnstakeover_process is not None and self.__dnstakeover_process:
             self.__dnstakeover_process.terminate()
             self.__dnstakeover_process.join()

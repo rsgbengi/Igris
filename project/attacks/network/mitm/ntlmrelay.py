@@ -3,6 +3,7 @@ from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
 import argparse
 
+import contextlib
 from .servers import ConfigurationSmbRelayServer, Proxy
 from impacket.examples.ntlmrelayx.clients.smbrelayclient import SMBRelayClient
 from impacket.examples.ntlmrelayx.attacks.smbattack import SMBAttack
@@ -187,13 +188,11 @@ class NtlmRelay(CommandSet):
         """[Method to save the attack output to a file]"""
         current_dir = os.getcwd()
         while True:
-            try:
+            with contextlib.suppress(FileNotFoundError):
                 shutil.move(
                     f"{current_dir}/{self.__output_sam_file}",
                     f"{self.__output_sam_dir}/{self.__output_sam_file}",
                 )
-            except FileNotFoundError:
-                pass
 
     def __file_exits(self) -> bool:
         """[ Method to check if a file exists to check its overwriting ]"""
