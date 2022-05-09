@@ -16,7 +16,8 @@ from .servers import MaliciousSmbServer
 
 @with_default_category("Man in the middle attacks")
 class SmbServerAttack(CommandSet):
-    """[ Class containing smbrelay attack ]"""
+    """[Class to deploy a malicious SMB server
+    that captures ntlmv2 hashes]"""
 
     def __init__(self) -> None:
         super().__init__()
@@ -28,18 +29,22 @@ class SmbServerAttack(CommandSet):
         self.__path_file = os.getcwd()
 
     def __check_directory(self) -> bool:
-        """[ Method to check if a directory exists ]"""
+        """Method to check if a directory exists.
+
+        Returns:
+            bool: Directory status.
+        """
         return os.path.isdir(self.__path_file) and os.access(
             self.__path_file, os.X_OK | os.W_OK
-        )  
+        )
 
     def __define_alerts(self):
-        """[ Method to define the dictionary that triggers the alerts ]"""
+        """Method to define the dictionary that triggers the alerts."""
         self.__alerts_dictionary["new_ntlmv2"] = 0
         self.__alerts_dictionary["stop"] = 0
 
     def __display_ntlmv2(self):
-        """[ Method to show an alert in case of finding a new hash ]"""
+        """Method to show an alert in case of finding a new hash."""
         while self.__alerts_dictionary["stop"] == 0:
             if self.__alerts_dictionary["new_ntlmv2"] == 1:
                 if self._cmd.terminal_lock.acquire(blocking=False):
@@ -49,23 +54,23 @@ class SmbServerAttack(CommandSet):
                     self._cmd.terminal_lock.release()
                 self.__alerts_dictionary["new_ntlmv2"] = 0
 
-    def __components_to_launch(self):
-        """[ Method to launch the poisoner and malicious smb server ]"""
+    def __components_to_launch(self) -> None:
+        """Method to launch the poisoner and malicious smb server."""
         self.__smbserver.start_malicious_smbserver()
 
-    def __async_options(self):
-        """[ Configuration in case of an asynchronous attack ]"""
+    def __async_options(self) -> None:
+        """Configuration in case of an asynchronous attack."""
         sys.stdout = open("/dev/null", "w")
         signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __launch_attack(self, args: argparse.Namespace) -> None:
-        """[ Method to launch the components necessary for the attack ]"""
+        """Method to launch the components necessary for the attack."""
         if args.Asynchronous:
             self.__async_options()
         self.__components_to_launch()
 
     def __synchronous_attack(self):
-        """[ Method to perform the attack synchronously ]"""
+        """Method to perform the attack synchronously."""
         try:
             self.__mss_attack.join()
         except KeyboardInterrupt:
@@ -77,9 +82,9 @@ class SmbServerAttack(CommandSet):
             self._cmd.active_attacks_configure("MSS", False)
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
-        """[ Method to launch the attack ]
+        """Method to launch the attack.
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
         """
 
         self.__mss_attack = Process(target=self.__launch_attack, args=(args,))
@@ -91,9 +96,9 @@ class SmbServerAttack(CommandSet):
             self.__synchronous_attack()
 
     def __creating_components(self, args: argparse.Namespace) -> None:
-        """[ Method to create the necessary classes ]
+        """Method to create the necessary classes.
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
 
         """
         self.__smbserver = MaliciousSmbServer(
@@ -107,7 +112,7 @@ class SmbServerAttack(CommandSet):
         self._cmd.active_attacks_configure("MSS", True)
 
     def __end_process_in_the_background(self):
-        """[ Method to stop the attack by the user ]"""
+        """Method to stop the attack by the user."""
         if self.__mss_attack is not None and self.__mss_attack.is_alive:
             self._cmd.info_logger.success("Finishing attack in the background ...")
             self.__mss_attack.terminate()
@@ -122,7 +127,7 @@ class SmbServerAttack(CommandSet):
             self._cmd.error_logger.error("Not background process found ")
 
     def __configure_alerts_thread(self):
-        """[ Method to configure the thread that shows alerts ]"""
+        """Method to configure the thread that shows alerts."""
         self.__alerts_hunter = Thread(target=self.__display_ntlmv2)
         self.__alerts_hunter.dameon = True
         self.__alerts_hunter.start()
@@ -130,11 +135,11 @@ class SmbServerAttack(CommandSet):
     def __checking_conditions_for_attack(
         self, args: argparse.Namespace, configurable_variables: dict
     ) -> bool:
-        """[ Method to check different things before starting the attack ]
+        """Method to check different things before starting the attack.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
-            configurable_variables(dict): [ Settable variables used in this command]
+            args (argparse.Namespace): Arguments passed to the attack.
+            configurable_variables(dict): Settable variables used in this command.
         """
 
         if args.end_attack:
@@ -160,7 +165,9 @@ class SmbServerAttack(CommandSet):
 
     argParser = Cmd2ArgumentParser(
         description="""Malicious smb server attack to get hashes net-NTLMv2 """,
-        epilog="Next steps\n-Try to crack the ntlmv2 hashes in loot/[user].txt\n-Use the scan command to identify potential users\n-psexec with the credentials after cracking them",
+        epilog="""Next steps\n-Try to crack the ntlmv2 hashes in loot/[user].txt
+        \n-Use the scan command to identify potential users\n-psexec with the 
+        credentials after cracking them""",
     )
 
     display_options = argParser.add_argument_group(
@@ -198,10 +205,10 @@ class SmbServerAttack(CommandSet):
 
     @with_argparser(argParser)
     def do_mss(self, args: argparse.Namespace) -> None:
-        """[ Command to create a malicious smb server to get ntlm hashes ]
+        """Command to create a malicious smb server to get ntlm hashes.
 
         Args:
-            args (argparse.Namespace): [Arguments passed to the smb_relay command]
+            args (argparse.Namespace): Arguments passed to the smb_relay command.
 
         """
         self._cmd.info_logger.debug(

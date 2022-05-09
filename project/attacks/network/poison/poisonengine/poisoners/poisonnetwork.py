@@ -11,15 +11,15 @@ from threading import Thread
 
 
 class PoisonNetwork:
-    """[ Class with all the information needed to perform a poisoning attack ]
+    """Class with all the information needed to perform a poisoning attack.
 
     Args:
-        ip (str): [ ipv4 of the attacker ]
-        ipv6 (str): [ ipv6 of the attacker ]
-        mac_addres (str): [ mac_address of the attacker ]
-        iface (str): [ interface for sniffing packets  ]
-        info_logger (logger): [ Logger for the output ]
-        level (logger): [ Logger level to display information ]
+        ip (str): ipv4 of the attacker.
+        ipv6 (str): ipv6 of the attacker.
+        mac_addres (str): mac_address of the attacker.
+        iface (str): interface for sniffing packets.
+        info_logger (logger): Logger for the output.
+        level (logger): Logger level to display information.
     """
 
     def __init__(
@@ -96,25 +96,25 @@ class PoisonNetwork:
         self._info_logger = info_logger
 
     def _data_link_layer(self, pkt: packet) -> packet:
-        """[ Add link layer to response packet ]
+        """Add link layer to response packet.
 
         Args:
-            pkt (packet): [ sniffed packet ]
+            pkt (packet): Sniffed packet.
 
         Returns:
-            [ packet ]: [ Package with link layer added ]
+            packet: Package with link layer added.
         """
         return Ether(dst=pkt[Ether].src, src=self._mac_address)
 
     def _network_layer(self, pkt: packet, response: packet) -> Tuple[packet.Type, str]:
-        """[ Add network layer to the response packet ]
+        """Add network layer to the response packet.
 
         Args:
-            pkt (packet): [ sniffed packet ]
-            response (packet): [ Packet to be send to the victim  ]
+            pkt (packet): Sniffed packet.
+            response (packet): Packet to be send to the victim.
 
         Returns:
-            Tuple[packet.Type, str]: [ malicious package and ip of the target ]
+            Tuple[packet.Type, str]: Malicious package and ip of the target.
         """
         ip_of_the_packet = None
         if IP in pkt:
@@ -126,13 +126,13 @@ class PoisonNetwork:
         return response, ip_of_the_packet
 
     def _start_cleaner(self) -> None:
-        """[ Method to start the cleaner thread ]"""
+        """Method to start the cleaner thread."""
         cleaner_thread = Thread(target=self.__cleaner)
         cleaner_thread.daemon = True
         cleaner_thread.start()
 
     def __cleaner(self) -> None:
-        """[ Function to clean the list of objectives every 3 seconds ]"""
+        """Method to clean the list of objectives every 3 seconds."""
         while True:
             time.sleep(10)
             self.targets_used.clear()

@@ -24,7 +24,8 @@ from log_symbols import LogSymbols
 
 @with_default_category("Man in the middle attacks")
 class NtlmRelay(CommandSet):
-    """[Class containing the ntlm relay attack]"""
+    """Class containing the ntlm relay attack.It allows the launch of a SOCKS
+    server as well as carrying out attacks by ipv6."""
 
     def __init__(self):
         super().__init__()
@@ -42,21 +43,21 @@ class NtlmRelay(CommandSet):
         self.__clients = {"SMB": SMBRelayClient}
         self.__config = None
 
-    def __define_alerts(self):
-        """[ Method to define the alert trigger dictionary ]"""
+    def __define_alerts(self) -> None:
+        """Method to define the alert trigger dictionary."""
         self.__alerts_dictionary["sam_dump"] = 0
         self.__alerts_dictionary["new_connection"] = 0
         self.__alerts_dictionary["stop"] = 0
 
-    def __configure_alert_thread(self):
+    def __configure_alert_thread(self) -> None:
 
-        """[ Method to configure the thread that displays alerts ]"""
+        """Method to configure the thread that displays alerts."""
         self.__alerts_hunter = Thread(target=self.__display_alerts)
         self.__alerts_hunter.dameon = True
         self.__alerts_hunter.start()
 
-    def __display_sam_alert(self):
-        """[ Method that displays a message if the sam has been dumped ]"""
+    def __display_sam_alert(self) -> None:
+        """Method that displays a message if the sam has been dumped."""
         if self.__alerts_dictionary["sam_dump"] == 1:
             if self._cmd.terminal_lock.acquire(blocking=False):
                 self._cmd.async_alert(
@@ -69,8 +70,8 @@ class NtlmRelay(CommandSet):
 
             self.__alerts_dictionary["sam_dump"] = 0
 
-    def __display_connection_alert(self):
-        """[ Method that displays a message if a new connection has been found ]"""
+    def __display_connection_alert(self) -> None:
+        """Method that displays a message if a new connection has been found."""
         if self.__alerts_dictionary["new_connection"] == 1:
             if self._cmd.terminal_lock.acquire(blocking=False):
                 self._cmd.async_alert(
@@ -84,17 +85,17 @@ class NtlmRelay(CommandSet):
             self.__alerts_dictionary["new_connection"] = 0
 
     def __display_alerts(self) -> None:
-
-        """[ Method that will be checking if the attack is over to finish the thread that shows the alerts ]"""
+        """Method that will be checking if the attack is over to finish the
+        thread that shows the alerts."""
         while self.__alerts_dictionary["stop"] != 1:
             self.__display_sam_alert()
             self.__display_connection_alert()
 
     def __checking_directory_options(self) -> None:
-        """[Method that will check the options of the output]
+        """Method that will check the options of the output.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
         """
         if not self.__check_directory():
             self._cmd.error_logger.warning(
@@ -107,10 +108,10 @@ class NtlmRelay(CommandSet):
         move_sam_result.start()
 
     def __checking_asynchronous_options(self, args: argparse.Namespace) -> None:
-        """[Method that will check the options of the asynchronous attack]
+        """Method that will check the options of the asynchronous attack.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
         """
 
         if args.Asynchronous:
@@ -118,10 +119,10 @@ class NtlmRelay(CommandSet):
             signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     def __checking_proxy_options(self, args: argparse.Namespace) -> None:
-        """[Method that will check the options of the proxy]
+        """Method that will check the options of the proxy.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
         """
 
         if args.proxy:
@@ -130,26 +131,27 @@ class NtlmRelay(CommandSet):
             self.__config.setRunSocks(True, sock_server)
 
     def __checking_attack_options(self, args: argparse.Namespace) -> None:
-        """[Method that will check the options of the attack]
+        """Method that will check the options of the attack.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
         """
         self.__checking_directory_options()
         self.__checking_asynchronous_options(args)
         self.__checking_proxy_options(args)
 
     def __launch_attack(self, args: argparse.Namespace) -> None:
-        """[ Method that check options of the attack and  launch the threads that will control the mdns poisoner and the smb server ]
+        """Method that will check the status of the attack
+            and will launch an smb server that redirects connections.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
         """
         self.__checking_attack_options(args)
         self.__smb_relay_server.start_smb_relay_server()
 
-    def __synchronous_attack(self):
-        """[ Method to perform the attack synchronously ]"""
+    def __synchronous_attack(self) -> None:
+        """Method to perform the attack synchronously."""
         try:
             self.__ntlm_relay_process.join()
         except KeyboardInterrupt:
@@ -161,11 +163,10 @@ class NtlmRelay(CommandSet):
             self._cmd.active_attacks_configure("NTLM_Relay", False)
 
     def __configure_ntlm_relay_attack(self, args: argparse.Namespace) -> None:
-        """[ Method to configure the class NTLMRelayxConfig
+        """Method to configure the class NTLMRelayxConfig.
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
-
-        ]"""
+            args (argparse.Namespace): Arguments passed to the attack.
+        """
         target = TargetsProcessor(
             singleTarget=self._cmd.RHOST,
             protocolClients=self.__clients,
@@ -185,7 +186,7 @@ class NtlmRelay(CommandSet):
         self.__config.setSMB2Support(True)
 
     def __store_sam_results_of_target(self) -> None:
-        """[Method to save the attack output to a file]"""
+        """Method to save the attack output to a file."""
         current_dir = os.getcwd()
         while True:
             with contextlib.suppress(FileNotFoundError):
@@ -195,7 +196,7 @@ class NtlmRelay(CommandSet):
                 )
 
     def __file_exits(self) -> bool:
-        """[ Method to check if a file exists to check its overwriting ]"""
+        """Method to check if a file exists to check its overwriting."""
         exit = True
         if os.path.exists(f"{os.getcwd()}/{self.__output_sam_file}"):
             self._cmd.error_logger.warning(
@@ -210,16 +211,20 @@ class NtlmRelay(CommandSet):
         return exit
 
     def __check_directory(self) -> bool:
-        """[ Method to check if a directory exists ]"""
+        """Method to check if a directory exists.
+
+        Returns:
+            bool: Directory status.
+        """
         return os.path.isdir(self.__output_sam_dir) and os.access(
             self.__output_sam_dir, os.X_OK | os.W_OK
-        )  # Executing and wirte
+        )  
 
     def __checking_ending_options(self, args: argparse.Namespace) -> bool:
-        """[Method to set options when ending the attack]
+        """Method to set options when ending the attack.
 
         Args:
-              args (argparse.Namespace): [ Arguments passed to the attack ]
+              args (argparse.Namespace): Arguments passed to the attack.
 
         """
         if args.end_attack:
@@ -235,11 +240,11 @@ class NtlmRelay(CommandSet):
     def __checking_conditions_for_attack(
         self, args: argparse.Namespace, configurable_variables: dict
     ) -> bool:
-        """[ Method to check different things before starting the attack ]
+        """Method to check different things before starting the attack.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
-            configurable_variables(dict): [ Settable variables used in this command]
+            args (argparse.Namespace): Arguments passed to the attack.
+            configurable_variables(dict): Settable variables used in this command.
 
         """
         if args.show_connections:

