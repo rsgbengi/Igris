@@ -7,6 +7,11 @@ from loguru import logger
 
 
 class Proxy:
+    """Class to initialize a SOCKS server to act as a proxy.
+    Args:
+        info_logger (logger): logger to show information on the screen.
+    """
+
     def __init__(self, info_logger: logger):
         self.__info_logger = info_logger
         self.__info_logger.info("Starting socks server ...")

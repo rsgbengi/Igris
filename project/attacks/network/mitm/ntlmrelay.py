@@ -24,9 +24,6 @@ from log_symbols import LogSymbols
 
 @with_default_category("Man in the middle attacks")
 class NtlmRelay(CommandSet):
-    """Class containing the ntlm relay attack.It allows the launch of a SOCKS
-    server as well as carrying out attacks by ipv6."""
-
     def __init__(self):
         super().__init__()
         self.__smb_relay_server = None
@@ -266,10 +263,9 @@ class NtlmRelay(CommandSet):
         return True
 
     def __creating_components(self, args: argparse.Namespace) -> None:
-        """[ Method to configure the classes to use ]
-
+        """Method to configure the classes to use.
         Args:
-            args (argparse.Namespace): [ Arguments passed to the attack ]
+            args (argparse.Namespace): Arguments passed to the attack.
 
         """
         self.__configure_ntlm_relay_attack(args)
@@ -284,11 +280,10 @@ class NtlmRelay(CommandSet):
         self._cmd.active_attacks_configure("NTLM_Relay", True)
 
     def __wrapper_attack(self, args: argparse.Namespace) -> None:
-        """[ Method to launch the attack
+        """Method to launch the attack
             Args:
-                args (argparse.Namespace): [ Arguments passed to the attack ]
-
-        ]"""
+                args (argparse.Namespace): Arguments passed to the attack.
+        """
         self.__ntlm_relay_process = Process(target=self.__launch_attack, args=(args,))
         self.__ntlm_relay_process.start()
         if not args.Asynchronous:
@@ -299,7 +294,7 @@ class NtlmRelay(CommandSet):
             )
 
     def __show_connections(self) -> None:
-        """[ Method to display captured connections ]"""
+        """Method to show the connections captured in the SOCKS server."""
         if self.__ntlm_relay_process is not None:
             url = f"http://{self._cmd.LHOST}:9090/ntlmrelayx/api/v1.0/relays"
             try:
@@ -326,7 +321,7 @@ class NtlmRelay(CommandSet):
             self._cmd.error_logger.error("The ntlm_relay process is not activated")
 
     def __ends_ntlm_relay(self) -> None:
-        """[ Method to terminate the attack by the user ]"""
+        """Method to terminate the attack by the user."""
         if self.__ntlm_relay_process is not None and self.__ntlm_relay_process.is_alive:
             self._cmd.info_logger.success(
                 "Finishing ntlm relay attack in the background ..."
@@ -347,7 +342,7 @@ class NtlmRelay(CommandSet):
             )
 
     def ntlm_relay_postloop(self) -> None:
-        """[ Method to stop the attack before the application closes ]"""
+        """Method to stop the attack before the application closes."""
         if self.__ntlm_relay_process is not None and self.__ntlm_relay_process.is_alive:
             self._cmd.info_logger.debug("Finishing ntlm_relay process ...")
             self.__ntlm_relay_process.terminate()
@@ -416,10 +411,10 @@ class NtlmRelay(CommandSet):
 
     @with_argparser(argParser)
     def do_ntlm_relay(self, args: argparse.Namespace) -> None:
-        """[ Command to perform ntlm relay attack ]
+        """Command to perform ntlm relay attack.
 
         Args:
-            args (argparse.Namespace): [Arguments passed to the ntlm relay attack ]
+            args (argparse.Namespace): Arguments passed to the ntlm relay attack.
         """
         self._cmd.info_logger.debug(
             f"Starting ntlm relay attack using lhost: {self._cmd.LHOST} rhost:{self._cmd.RHOST} "

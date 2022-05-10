@@ -16,9 +16,6 @@ from .servers import MaliciousSmbServer
 
 @with_default_category("Man in the middle attacks")
 class SmbServerAttack(CommandSet):
-    """[Class to deploy a malicious SMB server
-    that captures ntlmv2 hashes]"""
-
     def __init__(self) -> None:
         super().__init__()
         self.__smbserver = None

@@ -1,9 +1,9 @@
 class UserInfo:
-    """[ Credentials for the user ]
+    """Credentials for the user.
 
     Args:
-        user (str): [ User credential ]
-        passwd (str): [ Passwd credential ]
+        user (str): User credential.
+        passwd (str): Password credential.
     """
 
     def __init__(self, user: str, passwd: str) -> None:
@@ -21,14 +21,16 @@ class UserInfo:
 
 
 class TargetInfo:
-    """[ Class for grouping information to scan a subnet]
+    """Class for grouping information to scan a subnet.
 
     Args:
-        ip (str): [ ip target of the current machine ]
-        os (str, optional): [ Operating System of the target ]. Defaults to None.
-        signed (bool, optional): [ To check possibility of doing psexec ]. Defaults to None.
-        computer_name (str, optional): [ Name of the remote pc ]. Defaults to None.
-        psexec (bool, optional): [ To check possibility of psexec]. Defaults to False.
+        ip (str): ip target of the current machine.
+        os (str, optional): Operating System of the target. Defaults to None.
+        signed (bool, optional): To check possibility of doing psexec. 
+            Defaults to None.
+        computer_name (str, optional): Name of the remote pc. Defaults to None.
+        psexec (bool, optional): To check possibility of psexec. Defaults to 
+            False.
     """
 
     def __init__(

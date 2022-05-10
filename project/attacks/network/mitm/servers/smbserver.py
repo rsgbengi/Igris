@@ -14,15 +14,17 @@ from threading import Thread
 
 
 class MaliciousSmbServer:
-    """[ Class that contains the configuration for the smbserver ]
+    """Class that contains the configuration for the smbserver.
 
     Args:
-        lhost (str): [ ip of the host that will start the smb server ]
-        port (str): [ port for the smb server ]
-        info_logger (logger): [  logger to show information on the screen  ]
-        asynchronous (bool,optional): [  Attribute to now if the attack will be performed asynchronously  ]. Default to None
-        path_file (str,optional): [ Path to the output file ]. Default to None
-        alerts_dictionary (dict,optional): [  Attribute that contains the dictionary that manages alerts ]. Default to None
+        lhost (str): ip of the host that will start the smb server.
+        port (str): port for the smb server.
+        info_logger (logger): logger to show information on the screen.
+        asynchronous (bool,optional): Attribute to now if the attack will be 
+            performed asynchronously. Default to None
+        path_file (str,optional): Path to the output file. Default to None
+        alerts_dictionary (dict,optional): Attribute that contains the 
+            dictionary that manages alerts. Default to None
     """
 
     def __init__(
@@ -58,7 +60,7 @@ class MaliciousSmbServer:
         self.__lhost = lhost
 
     def start_malicious_smbserver(self) -> None:
-        """[ Function to start the malicious smb server ]"""
+        """Method to start the malicious smb server."""
         self.__info_logger.info("Starting Malicious SMB Server ...")
         if self.__asynchronous:
             logging.basicConfig(
@@ -86,12 +88,14 @@ class MaliciousSmbServer:
 
 
 class ConfigurationSmbRelayServer:
-    """[ Class to configure the smb relay server ]
+    """Class to configure the smb relay server.
     Args:
-        config (NLTMRelayxConfig) : [ Configuration for the ntlm relay attack ]
-        info_logger (logger): [ logger to show information on the screen ]
-        asynchronous (bool,optional): [ Attribute to now if the attack will be performed asynchronously ]. Default to None
-        alerts_dictionary (dict,optional): [ Attribute that contains the dictionary that manages alerts ]. Default to None
+        config (NLTMRelayxConfig) : Configuration for the ntlm relay attack.
+        info_logger (logger): logger to show information on the screen.
+        asynchronous (bool,optional): Attribute to now if the attack will be 
+            performed asynchronously. Default to None
+        alerts_dictionary (dict,optional): Attribute that contains the 
+            dictionary that manages alerts. Default to None
     """
 
     def __init__(
@@ -111,7 +115,8 @@ class ConfigurationSmbRelayServer:
         return self.__asynchronous
 
     def start_smb_relay_server(self) -> Thread:
-        """[ Method to configure the smb server based on the configurations proposed by the user ]"""
+        """Method to configure the smb server based on the configurations 
+            proposed by the user."""
         if self.__asynchronous:
 
             logging.basicConfig(

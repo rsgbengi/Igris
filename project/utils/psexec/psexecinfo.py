@@ -2,14 +2,18 @@ from pypsexec.client import Client
 
 
 class PsexecShellVariables:
-    """[Class to group all the information to perform psexec]
+    """Class to group all the information to perform psexec.
 
     Args:
-        conn (Client): [ Object with the current psexec connection ]
-        executable (str): [ Program that will be executed Ej: cmd.exe or powershell.exe ]
-        actual_work_dir (str, optional): [ Current directory to run executables]. Defaults to "C:\Windows\System32".
-        possible_work_dir (str, optional): [ Directory to change in case of perform cd ]. Defaults to "C:\Windows\System32".
-        shell_command (str , optional): [ Command run in  cmd.exe or powershell.exe]. Defaults to None."""
+        conn (Client): Object with the current psexec connection.
+        executable (str): Program that will be executed Ej: cmd.exe or 
+            powershell.exe.
+        actual_work_dir (str, optional): Current directory to run executables. 
+            Defaults to "C:\Windows\System32".
+        possible_work_dir (str, optional): Directory to change in case of 
+            perform cd. Defaults to "C:\Windows\System32".
+        shell_command (str , optional): Command run in  cmd.exe or 
+            powershell.exe. Defaults to None."""
 
     def __init__(
         self,
