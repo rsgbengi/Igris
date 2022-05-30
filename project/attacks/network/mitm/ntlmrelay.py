@@ -170,8 +170,6 @@ class NtlmRelay(CommandSet):
         )
         self.__config = NTLMRelayxConfig()
         if args.ipv6:
-
-            self.__config.setWpadOptions(self._cmd.LHOST, 1)
             self.__config.setIPv6(True)
             self.__config.setInterfaceIp("")
         else:

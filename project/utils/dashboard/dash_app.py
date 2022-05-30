@@ -32,6 +32,7 @@ def define_the_style() -> list:
        {
             "selector": ".admin",
             "style": {
+                "content":"data(label)",
                 "width": 50,
                 "height": 50,
                 "background-fit": "cover",
@@ -41,6 +42,7 @@ def define_the_style() -> list:
         {
             "selector": ".user",
             "style": {
+                "content":"data(label)",
                 "width": 50,
                 "height": 50,
                 "background-fit": "cover",
@@ -50,6 +52,7 @@ def define_the_style() -> list:
         {
             "selector": ".computer",
             "style": {
+                "content":"data(label)",
                 "width": 50,
                 "height": 50,
                 "background-fit": "cover",
@@ -59,6 +62,7 @@ def define_the_style() -> list:
         {
             "selector": ".subnet",
             "style": {
+                "content":"data(label)",
                 "width": 50,
                 "height": 50,
                 "background-fit": "cover",
