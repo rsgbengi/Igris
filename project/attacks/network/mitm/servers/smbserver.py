@@ -82,7 +82,7 @@ class MaliciousSmbServer:
             server.start()
         except OSError:
             self.__info_logger.error(
-                "The address is already in use by another smb server. Use <attack> -E to finish de attack"
+                "Error with the selected local address(LHOST). Use <attack> -E to finish de attack"
             )
 
 
@@ -136,5 +136,5 @@ class ConfigurationSmbRelayServer:
             server.join()
         except OSError:
             self.__info_logger.error(
-                "The address is already in use by another smb server. Use <attack> -E to finish de attack."
+                "Error with the selected local address(LHOST). Use <attack> -E to finish de attack."
             )

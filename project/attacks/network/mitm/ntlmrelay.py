@@ -206,7 +206,7 @@ class NtlmRelay(CommandSet):
             return False
         if self.__ntlm_relay_process is not None:
             self._cmd.error_logger.warning(
-                "The attacks is already running in the background "
+                "The attacks is already running in the background. Use -E to finish it."
             )
             return False
         return True

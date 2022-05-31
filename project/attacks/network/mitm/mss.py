@@ -144,7 +144,7 @@ class SmbServerAttack(CommandSet):
             return False
         if self.__mss_attack is not None:
             self._cmd.error_logger.warning(
-                "The attack is already running in the background"
+                "The attack is already running in the background. Use -E to finish it."
             )
             return False
         if args.output_ntlmv2 != ".":
