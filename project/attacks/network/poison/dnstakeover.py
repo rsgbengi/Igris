@@ -5,9 +5,7 @@ from .poisonengine import PoisonLauncher
 import argparse
 from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
-from threading import Thread
 from multiprocessing import Process
-from ipaddress import IPv6Network, AddressValueError
 
 
 @with_default_category("Spoofing Attacks")

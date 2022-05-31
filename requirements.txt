@@ -42,7 +42,6 @@ future==0.18.2
 halo==0.0.31
 hyperlink==21.0.0
 idna==3.3
-impacket==0.9.23
 incremental==21.3.0
 interchange==2021.0.4
 ipykernel==6.7.0

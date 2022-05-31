@@ -10,7 +10,6 @@ from .interceptlogging import (
 
 from impacket.examples.ntlmrelayx.servers.smbrelayserver import SMBRelayServer
 from impacket.examples.ntlmrelayx.utils.config import NTLMRelayxConfig
-from threading import Thread
 
 
 class MaliciousSmbServer:
@@ -114,7 +113,7 @@ class ConfigurationSmbRelayServer:
     def asynchronous(self) -> bool:
         return self.__asynchronous
 
-    def start_smb_relay_server(self) -> Thread:
+    def start_smb_relay_server(self) -> None:
         """Method to configure the smb server based on the configurations 
             proposed by the user."""
         if self.__asynchronous:
@@ -139,4 +138,3 @@ class ConfigurationSmbRelayServer:
             self.__info_logger.error(
                 "The address is already in use by another smb server. Use <attack> -E to finish de attack."
             )
-        return server

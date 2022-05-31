@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-import ipaddress
 from .poisonengine import PoisonLauncher
 import argparse
 import sys
 import signal
 from cmd2.command_definition import with_default_category
 from cmd2 import CommandSet, with_default_category, Cmd2ArgumentParser, with_argparser
-from threading import Thread
 from multiprocessing import Process
 
 

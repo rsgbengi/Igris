@@ -8,6 +8,8 @@ RUN apt-get install -y proxychains
 RUN apt-get install -y vim 
 RUN apt-get install -y wget 
 RUN apt-get install -y unzip
+RUN apt-get install -y git
+
 
 # Create user igris and installation of lsd
 RUN useradd --create-home --shell /bin/bash igris
@@ -29,6 +31,13 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY proxychains.conf /etc/proxychains.conf 
 COPY . .
+
+#Fix impacket
+RUN git clone https://github.com/rsgbengi/impacket.git
+WORKDIR /home/igris/app/impacket
+RUN python3 -m pip install .
+WORKDIR /home/igris/app
+RUN rm -r impacket
 
 # Start of the application
 CMD ["python","/home/igris/app/main.py"]
