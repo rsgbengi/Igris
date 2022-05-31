@@ -270,7 +270,8 @@ class Igris_Shell(cmd2.Cmd):
         """Method that checks if the settable variables value don't have an empty value.
 
         Args:
-            necessary_settable (dict[str]): Dictionary with all settable variables used by the calling funcition.
+            necessary_settable (dict[str]): Dictionary with 
+                all settable variables used by the calling function.
 
         Returns:
             bool: Returns if all variables are correct.
@@ -293,7 +294,8 @@ class Igris_Shell(cmd2.Cmd):
         """Show all settable variables that will be needed in the calling command.
 
         Args:
-            necessary_settable_variables (dict[str,Any]): Dictionary with all settable variables used by the calling funcition. 
+            necessary_settable_variables (dict[str,Any]): Dictionary with all 
+                settable variables used by the calling function. 
         """
         self.__info_logger.info("Showing necessary settable variables")
         console = Console()
@@ -402,7 +404,8 @@ class Igris_Shell(cmd2.Cmd):
         return correct_value
 
     def __set_up_file_loggers(self) -> None:
-        """Method to configure the loggers that will be used to store the application information in two files."""
+        """Method to configure the loggers that will be used to 
+        store the application information in two files."""
         logger.add(
             "logs/all.log",
             level="DEBUG",
@@ -421,8 +424,15 @@ class Igris_Shell(cmd2.Cmd):
     ) -> cmd2.plugin.PrecommandData:
         """Method to configure the loggers that will 
         be used to manage stdout and stdin before executing
-        a command. They will be removed for each run to avoid repeats"""
-        # export LOGURU_AUTOINIT=False
+        a command. They will be removed for each run to avoid repeats
+
+        Args:
+            data (cmd2.plugin.PrecommandData): Data of the command selected.
+
+        Returns:
+            cmd2.plugin.PrecommandData: Data returned of the command selected.
+        """
+    
 
         if self.__id_info_logger is not None:
             logger.remove(self.__id_info_logger)
