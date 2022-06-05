@@ -25,7 +25,7 @@ class InterceptHandlerMss(logging.Handler):
         """
 
         user = message.split("::")[0]
-        file_created = f"{self.__path_file}/{user}_ntlmv2.txt"
+        file_created = f"{self.__path_file}/{user}_netntlm.txt"
         if not os.path.exists(file_created):
             with open(file_created, "w") as output_file:
                 output_file.write(message + "\n")
