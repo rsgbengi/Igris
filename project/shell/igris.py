@@ -187,7 +187,7 @@ class Igris_Shell(cmd2.Cmd):
         self.SUBNET = "192.168.253.0/24"
         self.add_settable(cmd2.Settable("SUBNET", str, "Set subnet target", self))
 
-        self.RHOST = "192.168.253.138"
+        self.RHOST = "192.168.253.128"
         self.add_settable(cmd2.Settable("RHOST", str, "Set ip of the target", self))
 
         self.INTERFACE = "eth0"
