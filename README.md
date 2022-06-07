@@ -8,7 +8,7 @@
 <div align="center">
   Igris
   <br>
-  Python tool to audit active directory environments.
+  <h4> Python tool to audit active directory environments.</h4>
 </div>
 
 <div align="center">
@@ -103,7 +103,7 @@ docker-compose run igris
 
 ## Usage
 <details>
-<summary>Commands <summary>
+<summary>Commands</summary>
 
 ```
 Documented commands (use 'help -v' for verbose/'help <topic>' for details):
@@ -147,7 +147,7 @@ run_pyscript          Run a Python script file inside the console
 run_script            Run commands in script file that is encoded as either ASCII or UTF-8 text       
 set                   Set a settable parameter or show current settings of parameters                 
 shell                 Execute a command as if at the OS prompt                                        
-shortcuts             List available shortcuts  
+shortcuts             List available shortcuts     
 ```
 </details>
 
