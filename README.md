@@ -6,7 +6,7 @@
 </h1>
 
 <div align="center">
-  Igris
+  <h1>Igris<h1>
   <br>
   <h4> Python tool to audit active directory environments.</h4>
 </div>
