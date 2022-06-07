@@ -57,9 +57,9 @@ when auditing an active directory environment.
 <br>
 
 
-|                             Banner                              |                         Example of command                          |
-| :-------------------------------------------------------------: | :-----------------------------------------------------------------: |
-| <img src="docs/images/portada.png" title="Banner" width="100%"> | <img src="docs/images/ejemplo.png" title="Login Page" width="100%"> |
+|                             Banner                             |                         Example of command                          |
+| :------------------------------------------------------------: | :-----------------------------------------------------------------: |
+| <img src="docs/images/portada.png" title="Banner" width="50%"> | <img src="docs/images/ejemplo.png" title="Login Page" width="50%%"> |
 
 </details>
 
