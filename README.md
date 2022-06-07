@@ -3,11 +3,11 @@
     <!-- Please provide path to your logo here -->
     <img src="docs/images/logo.png" alt="Logo" width="450" height="450">
   </a>
+  <br>
+  Igris
 </h1>
 
 <div align="center">
-  <h1>Igris<h1>
-  <br>
   <h4> Python tool to audit active directory environments.</h4>
 </div>
 
