@@ -1,7 +1,7 @@
 <h1 align="center">
   <a href="https://github.com/rsgbengi/Igris.git">
     <!-- Please provide path to your logo here -->
-    <img src="docs/images/normal.png" alt="Logo" width="100" height="100">
+    <img src="docs/images/logo.png" alt="Logo" width="450" height="450">
   </a>
 </h1>
 
@@ -16,7 +16,6 @@
 
 [![Project license](https://img.shields.io/github/license/rsgbengi/https://github.com/rsgbengi/Igris.git.svg?style=flat-square)](LICENSE)
 
-[![Pull Requests welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](https://github.com/rsgbengi/https://github.com/rsgbengi/Igris.git/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
 [![code with love by rsgbengi](https://img.shields.io/badge/%3C%2F%3E%20with%20%E2%99%A5%20by-rsgbengi-ff1414.svg?style=flat-square)](https://github.com/rsgbengi)
 
 </div>
@@ -31,6 +30,7 @@
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+- [Key feautres](#key-feautres)
 - [Usage](#usage)
 - [Project assistance](#project-assistance)
 - [Contributing](#contributing)
@@ -68,25 +68,21 @@ when auditing an active directory environment.
 ### Built With
 
 #### Main Python modules
-- Cmd2
-- Impacket
-- Rich
-- Pypsexec
-- Scapy
-- Py2neo
-- Dash
-- Cytoscape
+- [Cmd2](https://cmd2.readthedocs.io/en/stable/)
+- [Impacket](https://github.com/SecureAuthCorp/impacket)
+- [Rich](https://github.com/Textualize/rich)
+- [Pypsexec](https://pypi.org/project/pypsexec/)
+- [Scapy](https://scapy.net/)
+- [Py2neo](https://py2neo.org/2021.1/)
+- [Dash](https://github.com/plotly/dash)
 #### Technologies 
-- Neo4j
-- Docker
+- [Neo4j](https://neo4j.com/)
+- [Docker](https://www.docker.com/)
 
 ## Getting Started
 
-
-
-
 ### Prerequisites
-- Installation of docker and docker-compose. 
+- Installation of [docker](https://docs.docker.com/engine/install/ubuntu/) and [docker-compose](https://github.com/docker/compose). 
 
 ### Installation
 In the main project directory run:
@@ -94,8 +90,67 @@ In the main project directory run:
 docker-compose build 
 docker-compose run igris
 ```
+## Key feautres
+- Custom CLI
+- mDNS, NBT-NS, DNS AND LLMNR poisoners
+- SMB server to get net-ntlmv2 hashes 
+- *NTLM Relay* attack
+- Domain recognition using the SMB protocol
+- Remote command execution using psexec (cmd.exe and powershell.exe interactive)
+- Built-in *pass the hash* technique for both remote execution and recognition
+- Representation of the information obtained through a control panel that makes use of neo4j
+
 
 ## Usage
+<details>
+<summary>Commands <summary>
+
+```
+Documented commands (use 'help -v' for verbose/'help <topic>' for details):
+
+Man in the middle attacks
+======================================================================================================
+mss                   Malicious smb server attack to get hashes net-NTLMv2                            
+ntlm_relay            Command to perform ntlm relay attack                                            
+
+Poisoning Attacks
+======================================================================================================
+poison                Command to perform poison attacks such us mdns,nbt-ns,dns...                    
+
+Recon
+======================================================================================================
+scan                  Tool to know if there is a possibility to perform psexec.                       
+                      Without arguments this tool will scan the Subnet                                
+
+Spoofing Attacks
+======================================================================================================
+dns_takeover          Command to perform dns takeover over ipv6 using dhcp6 rogue.                    
+
+Utilities
+======================================================================================================
+attack_status         Command to show status of the attacks.                                          
+dashboard             Tool to show information in a graph dashboard                                   
+psexec                Tool to execute commands remotely                                               
+
+Uncategorized
+======================================================================================================
+alias                 Manage aliases                                                                  
+cd                    Change the directoy.                                                            
+                      Usage:                                                                          
+                      cd <new_dir>                                                                    
+edit                  Run a text editor and optionally open a file with it                            
+help                  List available commands or provide detailed help for a specific command         
+history               View, run, edit, save, or clear previously entered commands                     
+macro                 Manage macros                                                                   
+quit                  Exit this application                                                           
+run_pyscript          Run a Python script file inside the console                                     
+run_script            Run commands in script file that is encoded as either ASCII or UTF-8 text       
+set                   Set a settable parameter or show current settings of parameters                 
+shell                 Execute a command as if at the OS prompt                                        
+shortcuts             List available shortcuts  
+```
+</details>
+
 <details>
 <summary>poison</summary>
 
