@@ -1,1 +1,1 @@
-from .igris import Igris_Shell
+from .shell import Igris_Shell

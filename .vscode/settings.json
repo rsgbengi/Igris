@@ -1,4 +1,6 @@
 {
     "restructuredtext.confPath": "${workspaceFolder}/docs",
-    "restructuredtext.languageServer.disabled": true
+    "restructuredtext.languageServer.disabled": true,
+    "esbonio.server.enabled": false,
+    "esbonio.sphinx.confDir": "/mnt/igris_pc/docs"
 }

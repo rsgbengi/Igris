@@ -1,3 +1,0 @@
-#!/home/rsgbengi/Igris/.venv/bin/python
-import ldapdomaindump
-ldapdomaindump.main()
