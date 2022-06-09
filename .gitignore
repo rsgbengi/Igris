@@ -1,5 +1,9 @@
 
-save/history.json
+save/
+logs/
+.vscode/
+.venv/
+*.pyc
 .Trash-1000/files/rockyou.2.2.txt.trashinfo
 .Trash-1000/files/rockyou.3.txt.trashinfo
 .Trash-1000/info/rockyou.2.2.2.txt.trashinfo
