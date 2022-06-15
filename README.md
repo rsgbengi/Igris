@@ -4,7 +4,6 @@
     <img src="docs/images/nuevo.jpg" alt="Logo" width="450" height="450">
   </a>
   <br>
-  Igris
 </h1>
 
 <div align="center">
