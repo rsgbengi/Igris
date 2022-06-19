@@ -27,11 +27,13 @@
   - [Built With](#built-with)
     - [Main Python modules](#main-python-modules)
     - [Technologies](#technologies)
+- [Documentation](#documentation)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Key feautres](#key-feautres)
 - [Usage](#usage)
+- [Next Features](#next-features)
 - [Project assistance](#project-assistance)
 - [Contributing](#contributing)
 - [Authors & contributors](#authors--contributors)
@@ -45,12 +47,7 @@
 ## About
 
 <table><tr><td>
-Igris is a tool made in Python oriented mainly to
-facilitate audits (penetration tests or pentesting) in Micro-
-soft Windows specifically in active directory. The main objective has been
-develop a complete framework that had different commands that
-allow its users to carry out the classic attacks that are usually done to the
-when auditing an active directory environment.
+Igris is a tool made in Python oriented mainly to facilitate audits (penetration tests or pentesting) in Microsoft Windows specifically in the active directory. The main objective has been to develop a complete framework that has different commands that allow its users to carry out the classic attacks that are usually done when auditing an active directory environment.
 
 <details>
 <summary>Screenshot</summary>
@@ -79,6 +76,8 @@ when auditing an active directory environment.
 - [Neo4j](https://neo4j.com/)
 - [Docker](https://www.docker.com/)
 
+## Documentation 
+To learn more about how to use the tool, it is recommended to view the official [documentation](https://rsgbengi.gitbook.io/igris/).
 ## Getting Started
 
 ### Prerequisites
@@ -346,7 +345,10 @@ Options for running commands:
 
 
 
-
+## Next Features
+- Improve dashboard.
+- Improve management of when network resource resolution requests are answered.
+- Incorporate methods to collect more domain information using powershell and LDAP
 ## Project assistance
 
 If you want to say **thank you** or/and support active development of Igris:
