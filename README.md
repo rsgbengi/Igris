@@ -1,7 +1,7 @@
 <h1 align="center">
   <a href="https://github.com/rsgbengi/Igris.git">
     <!-- Please provide path to your logo here -->
-    <img src="docs/images/logo.png" alt="Logo" width="450" height="450">
+    <img src="docs/images/igris.jpg" alt="Logo" width="450" height="450">
   </a>
   <br>
   Igris
